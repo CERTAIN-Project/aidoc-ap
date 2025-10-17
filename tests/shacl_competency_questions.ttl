@@ -1,0 +1,176 @@
+# SHACL Shapes for aidoc-ap ontology based on Competency Questions
+# This file provides a set of shapes to validate an AI system's metadata
+# against key requirements for documentation, transparency, and compliance.
+
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix aidoc: <https://www.example.org/aidoc-ap#>.
+@prefix airo: <https://w3id.org/airo#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix mls: <http://www.w3.org/ns/mls#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix vair: <https://w3id.org/vair#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+
+# Shape to validate core AI System information (CQ: Purpose, Provider, Version)
+aidoc:AISystemCoreShape a sh:NodeShape ;
+    sh:targetClass aidoc:AI_System ;
+    sh:label "AI System Core Information Shape"@en ;
+    sh:comment "Checks if a system has an intended purpose, a provider, and a version."@en ;
+    sh:property [
+        sh:path aidoc:intendedPurpose ;
+        sh:name "intended purpose"@en ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "An AI system must have an intended purpose as per the AI Act."@en ;
+    ] ;
+    sh:property ;
+    sh:property [
+        sh:path aidoc:version ;
+        sh:name "version"@en ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "An AI system must have a version number."@en ;
+    ].
+
+# Shape to validate system dependencies and hardware requirements (CQ: Dependencies, Hardware)
+aidoc:AISystemDependencyShape a sh:NodeShape ;
+    sh:targetClass aidoc:AI_System ;
+    sh:label "AI System Dependency and Hardware Shape"@en ;
+    sh:comment "Checks for dependencies, software packages, and hardware requirements."@en ;
+    sh:property [
+        sh:path aidoc:dependsOn ;
+        sh:name "depends on"@en ;
+        sh:minCount 1 ;
+        sh:class aidoc:AI_Artifact ;
+        sh:message "An AI system must specify its components or other systems it depends on."@en ;
+    ] ;
+    sh:property [
+        sh:path aidoc:requiresHardware ;
+        sh:name "requires hardware"@en ;
+        sh:minCount 1 ;
+        sh:class aidoc:HardwareComponent ;
+        sh:message "An AI system must specify the hardware it needs to run."@en ;
+    ].
+
+# Shape to validate system delivery and interface (CQ: Physical form, Interface)
+aidoc:AISystemInterfaceShape a sh:NodeShape ;
+    sh:targetClass aidoc:AI_System ;
+    sh:label "AI System Interface Shape"@en ;
+    sh:comment "Checks for system's physical form and user interfaces."@en ;
+    sh:property [
+        sh:path aidoc:modality ;
+        sh:name "modality"@en ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "An AI system must have a modality describing its physical form."@en ;
+    ] ;
+    sh:property [
+        sh:path aidoc:hasInterface ;
+        sh:name "has interface"@en ;
+        sh:minCount 1 ;
+        sh:class aidoc:Interface ;
+        sh:message "An AI system must have an interface for users or operators."@en ;
+    ].
+
+# Shape to validate data provenance and processing (CQ: Data origin, cleaning)
+aidoc:DataWranglingShape a sh:NodeShape ;
+    sh:targetClass aidoc:DataWrangling ;
+    sh:label "Data Wrangling Activity Shape"@en ;
+    sh:comment "Checks if a data wrangling activity is properly documented with inputs, outputs, and responsible agents."@en ;
+    sh:property ;
+    sh:property ;
+    sh:property.
+
+# Shape to validate ML pipeline and model architecture (CQ: Architecture, Algorithms)
+aidoc:MLModelShape a sh:NodeShape ;
+    sh:targetClass aidoc:AI_Model ;
+    sh:label "AI Model Architecture and Algorithm Shape"@en ;
+    sh:comment "Checks if an AI model's architecture and algorithm are documented."@en ;
+    sh:property [
+        sh:path aidoc:usesAlgorithm ;
+        sh:name "uses algorithm"@en ;
+        sh:minCount 1 ;
+        sh:class aidoc:Algorithm ;
+        sh:message "An AI Model must specify the algorithm it is based on."@en ;
+    ] ;
+    sh:property [
+        sh:path aidoc:hasArchitecture ;
+        sh:name "has architecture"@en ;
+        sh:minCount 1 ;
+        sh:datatype rdfs:Literal ;
+        sh:message "An AI Model must have a description of its architecture."@en ;
+    ].
+
+# Shape to validate system testing and performance evaluation (CQ: Testing, Metrics)
+aidoc:ModelEvaluationShape a sh:NodeShape ;
+    sh:targetClass aidoc:ModelEvaluation ;
+    sh:label "Model Evaluation Shape"@en ;
+    sh:comment "Checks for documented testing and performance metrics."@en ;
+    sh:property [
+        sh:path prov:used ;
+        sh:name "used model and data"@en ;
+        sh:minCount 2 ;
+        sh:class prov:Entity ;
+        sh:message "A Model Evaluation activity must specify the model and test data it used."@en ;
+    ] ;
+    sh:property [
+        sh:path aidoc:hasPerformanceMetric ;
+        sh:name "has performance metric"@en ;
+        sh:minCount 1 ;
+        sh:class aidoc:PerformanceMetric ;
+        sh:message "A Model Evaluation must specify the performance metrics used."@en ;
+    ] ;
+    sh:property [
+        sh:path aidoc:evaluationMethod ;
+        sh:name "evaluation method"@en ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A Model Evaluation must have a description of its evaluation method."@en ;
+    ].
+
+# Shape to validate risk management documentation (CQ: Risks, Mitigation)
+aidoc:RiskManagementShape a sh:NodeShape ;
+    sh:targetClass aidoc:AI_System ;
+    sh:label "Risk Management Shape"@en ;
+    sh:comment "Checks if a system has identified and mitigated risks."@en ;
+    sh:property ;
+    sh:property.
+
+# Shape to validate security measures (CQ: Cybersecurity, Reliability)
+aidoc:CybersecurityShape a sh:NodeShape ;
+    sh:targetClass aidoc:AI_System ;
+    sh:label "Cybersecurity Shape"@en ;
+    sh:comment "Checks if a system is protected from cyber threats and has transparency measures."@en ;
+    sh:property ;
+    sh:property.
+
+# Shape to validate post-market monitoring and decommissioning (CQ: Monitoring, Decommissioning)
+aidoc:PostMarketShape a sh:NodeShape ;
+    sh:targetClass aidoc:AI_System ;
+    sh:label "Post-Market and Decommissioning Shape"@en ;
+    sh:comment "Checks for post-market monitoring and decommissioning processes."@en ;
+    sh:property ;
+    sh:property.
+
+# Shape to validate transparency and human oversight (CQ: Human oversight, XAI)
+aidoc:TransparencyShape a sh:NodeShape ;
+    sh:targetClass aidoc:AI_System ;
+    sh:label "Transparency and Human Oversight Shape"@en ;
+    sh:comment "Checks for transparency measures, including explainable AI and human oversight mechanisms."@en ;
+    sh:property [
+        sh:path aidoc:hasHumanOversight ;
+        sh:name "has human oversight mechanism"@en ;
+        sh:minCount 1 ;
+        sh:class aidoc:HumanOversightMechanism ;
+        sh:message "An AI system must have a mechanism for human oversight."@en ;
+    ] ;
+    sh:property.
+
+# Shape to validate compliance documentation (CQ: Standards, Declaration of Conformity)
+aidoc:ComplianceShape a sh:NodeShape ;
+    sh:targetClass aidoc:AI_System ;
+    sh:label "Compliance and Standards Shape"@en ;
+    sh:comment "Checks if the system has applied standards and has a Declaration of Conformity."@en ;
+    sh:property ;
+    sh:property.
