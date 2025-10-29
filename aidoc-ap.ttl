@@ -713,6 +713,50 @@ aidoc:ReinforcementLearning a aidoc:AIMethodCategory ;
     skos:broader aidoc:MachineLearning ;
     skos:definition "Techniques that learn optimal actions through trial and error by receiving feedback in the form of rewards or penalties." .   
 
+### Second-level descriptors under Supervised Learning
+aidoc:Classification a aidoc:AIMethodCategory ; 
+    rdfs:label "Classification" ;
+    skos:broader aidoc:SupervisedLearning ;
+    skos:definition "Techniques that assign input data to predefined categories or classes." .
+
+aidoc:Regression a aidoc:AIMethodCategory ;
+    rdfs:label "Regression" ;
+    skos:broader aidoc:SupervisedLearning ;
+    skos:definition "Techniques that predict continuous output values based on input data." .
+
+### Second-level descriptors under Unsupervised Learning
+aidoc:Clustering a aidoc:AIMethodCategory ;
+    rdfs:label "Clustering" ;
+    skos:broader aidoc:UnsupervisedLearning ;
+    skos:definition "Techniques that group similar data points together based on their features." .
+
+aidoc:DimensionReduction a aidoc:AIMethodCategory ;
+    rdfs:label "Dimension Reduction" ;
+    skos:broader aidoc:UnsupervisedLearning ;
+    skos:definition "Techniques that reduce the number of features in the data while preserving important information." .
+
+### Second-level descriptors under Semi-Supervised Learning
+aidoc:GraphBasedSemiSupervisedLearning a aidoc:AIMethodCategory ;
+    rdfs:label "Graph-Based Semi-Supervised Learning" ;
+    skos:broader aidoc:SemiSupervisedLearning .
+
+aidoc:StatisticalApproaches a aidoc:AIMethodCategory ;
+    rdfs:label "Statistical Approaches" ;
+    skos:broader aidoc:SemiSupervisedLearning .
+
+aidoc:ModifiedLearningConcepts a aidoc:AIMethodCategory ;
+    rdfs:label "Modified Learning Concepts" ; 
+    skos:broader aidoc:SemiSupervisedLearning .
+
+### Second-level descriptors under Reinforcement Learning
+aidoc:ModelFreeReinforcementLearning a aidoc:AIMethodCategory ;
+    rdfs:label "Model-Free Reinforcement Learning" ;
+    skos:broader aidoc:ReinforcementLearning .
+
+aidoc:ModelBasedReinforcementLearning a aidoc:AIMethodCategory ;
+    rdfs:label "Model-Based Reinforcement Learning" ;
+    skos:broader aidoc:ReinforcementLearning .
+
 ### Second-level descriptors under Hybrid Learning
 aidoc:HybridNeuronalSystems a aidoc:AIMethodCategory ;
     rdfs:label "Hybrid Neuronal Systems" ;
@@ -729,3 +773,24 @@ aidoc:ConversationalLearning a aidoc:AIMethodCategory ;
     skos:broader aidoc:HybridLearning ;
     skos:definition "Methods that involve interactive learning through dialogue or feedback from users or other agents." .
 
+
+###  First-level descriptors under AISystemCapability
+<https://w3id.org/aidoc-ap#SensoryInputProcessing> a <https://w3id.org/aidoc-ap#AISystemCapability> ;
+    rdfs:label "Sensory Input Processing" ;
+    skos:broader <https://w3id.org/aidoc-ap#AISystemCapability> ;
+    skos:definition "Internal sensory processing refers to AI system capabilities for interpreting data about its own internal states, such as position, orientation, pose, spatial configuration, or physical integrity, enabling self-monitoring and maintaining stability or optimal functioning." .
+
+<https://w3id.org/aidoc-ap#KnowledgeProcessing> a <https://w3id.org/aidoc-ap#AISystemCapability> ;
+    rdfs:label "Knowledge Processing" ;
+    skos:broader <https://w3id.org/aidoc-ap#AISystemCapability> ;
+    skos:definition "Knowledge processing refers to AI system capabilities for handling different types of knowledge—factual, conceptual, procedural, and metacognitive—through activities such as recognizing patterns, classifying information, generating concepts, executing procedures, and applying reflective reasoning to solve problems and adapt to new situations." .
+
+<https://w3id.org/aidoc-ap#ActionControlProcessing> a <https://w3id.org/aidoc-ap#AISystemCapability> ;
+    rdfs:label "Action Control Processing" ; 
+    skos:broader <https://w3id.org/aidoc-ap#AISystemCapability> ;
+    skos:definition "Action control processing refers to AI system capabilities that enable movement and control through mechanical, electronic, or software components, allowing simulation and execution of human-like behaviors, object manipulation, and natural gestures with high precision." .
+
+<https://w3id.org/aidoc-ap#CommunicationProcessing> a <https://w3id.org/aidoc-ap#AISystemCapability> ;
+    rdfs:label "Communication Processing" ;
+    skos:broader <https://w3id.org/aidoc-ap#AISystemCapability> ;
+    skos:definition "Communication processing encompasses AI system capabilities for transmitting and exchanging information, either unidirectionally without feedback or bidirectionally and omnidirectionally with feedback, enabling content generation and interactive communication in individual or group contexts." .
