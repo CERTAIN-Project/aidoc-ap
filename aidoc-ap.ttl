@@ -3,6 +3,8 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <http://www.w3.org/2002/07/owl#> .
 
 [ rdf:type owl:Ontology
@@ -22,6 +24,30 @@
 
 ###  http://purl.org/dc/terms/hasPart
 <http://purl.org/dc/terms/hasPart> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/aidoc-ap#hasCapability
+<https://w3id.org/aidoc-ap#hasCapability> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
+                                                          rdfs:range <https://w3id.org/aidoc-ap#AISystemCapability> ;
+                                                          rdfs:comment "Relates an AISystem to an AISystemCapability it is designed to exhibit or support" ;
+                                                          rdfs:label "has capability"@en .
+
+
+###  https://w3id.org/aidoc-ap#implementsTask
+<https://w3id.org/aidoc-ap#implementsTask> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <https://w3id.org/aidoc-ap#AIMethod> ;
+                                            rdfs:range <https://w3id.org/aidoc-ap#AITask> ;
+                                            rdfs:comment "Links an AIMethod to the AITask it is designed to perform."@en ;
+                                            rdfs:label "implements task"@en .
+
+
+###  https://w3id.org/aidoc-ap#supportsCapability
+<https://w3id.org/aidoc-ap#supportsCapability> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain <https://w3id.org/aidoc-ap#AITask> ;
+                                               rdfs:range <https://w3id.org/aidoc-ap#AISystemCapability> ;
+                                               rdfs:comment "Indicates that an AITask contributes to achieving a broader AISystemCapability."@en ;
+                                               rdfs:label "supports capability"@en .
 
 
 ###  https://w3id.org/aidoc-ap#appliesStandard
@@ -151,12 +177,12 @@
                                          rdfs:label "stores logs at"@en .
 
 
-###  https://w3id.org/aidoc-ap#usesAlgorithm
-<https://w3id.org/aidoc-ap#usesAlgorithm> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/aidoc-ap#usesAIMethod
+<https://w3id.org/aidoc-ap#usesAIMethod> rdf:type owl:ObjectProperty ;
                                           rdfs:domain <https://w3id.org/aidoc-ap#AI_Model> ;
-                                          rdfs:range <https://w3id.org/aidoc-ap#Algorithm> ;
-                                          rdfs:comment "Links an AI model to the abstract algorithm it is based on."@en ;
-                                          rdfs:label "uses algorithm"@en .
+                                          rdfs:range <https://w3id.org/aidoc-ap#AIMethod> ;
+                                          rdfs:comment "Links an AI model to the specific AI method it is based on."@en ;
+                                          rdfs:label "uses AI method"@en .
 
 
 #################################################################
@@ -211,6 +237,75 @@
 #################################################################
 #    Classes
 #################################################################
+
+###  http://mlcommons.org/croissant/1.0#Dataset
+<http://mlcommons.org/croissant/1.0#Dataset> rdf:type owl:Class .
+
+
+###  https://w3id.org/aidoc-ap#AISystemCapability
+<https://w3id.org/aidoc-ap#AISystemCapability> rdf:type owl:Class ;
+                                               rdfs:comment "Represents a category of tasks or functions that an AI system can perform, such as sensory, knowledge, or control action processing."@en ;
+                                               rdfs:label "AI System Capability"@en .
+
+
+### https://w3id.org/aidoc-ap#AITask
+<https://w3id.org/aidoc-ap#AITask> rdf:type owl:Class ;
+                                   rdfs:comment "An action to achieve a specific goal using an AI model."@en ;
+                                   rdfs:label "AI Task"@en .
+
+
+###  https://w3id.org/aidoc-ap#AIMethodCategory
+<https://w3id.org/aidoc-ap#AIMethodCategory> a rdfs:Class ;
+    rdfs:label "AI Method Category" ;
+    rdfs:comment "A conceptual grouping of AI methods based on shared characteristics, such as machine learning, search optimization, or knowledge representation."@en .
+
+
+###  http://www.w3.org/ns/dqv#Metric
+<http://www.w3.org/ns/dqv#Metric> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/mls#Dataset
+<http://www.w3.org/ns/mls#Dataset> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/mls#Algorithm
+<http://www.w3.org/ns/mls#Algorithm> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/mls#Experiment
+<http://www.w3.org/ns/mls#Experiment> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/mls#Implementation
+<http://www.w3.org/ns/mls#Implementation> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/mls#Model
+<http://www.w3.org/ns/mls#Model> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/mls#Software
+<http://www.w3.org/ns/mls#Software> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
 
 
 ###  https://w3id.org/aidoc-ap#AIDeployer
@@ -267,7 +362,7 @@
 <https://w3id.org/aidoc-ap#AI_Model> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.w3.org/ns/mls#Model> ,
                                                      <https://w3id.org/aidoc-ap#AI_Artifact> ;
-                                     rdfs:comment "Represents a trained, deployable AI model."@en ;
+                                     rdfs:comment "A computational representation that enables an AI method to execute an AI task."@en ;
                                      rdfs:label "AI Model"@en .
 
 
@@ -279,12 +374,11 @@
                                       <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/airo#AISystem> .
 
 
-###  https://w3id.org/aidoc-ap#Algorithm
-<https://w3id.org/aidoc-ap#Algorithm> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://www.w3.org/ns/mls#Algorithm> ,
-                                                      <https://w3id.org/aidoc-ap#AI_Artifact> ;
-                                      rdfs:comment "Represents the abstract concept of an algorithm."@en ;
-                                      rdfs:label "Algorithm"@en .
+###  https://w3id.org/aidoc-ap#AIMethod
+<https://w3id.org/aidoc-ap#AIMethod> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.w3.org/ns/mls#Algorithm> ;
+                                     rdfs:comment "Reflects a mathematical algorithm which computes input data to execute an AI task."@en ;
+                                     rdfs:label "AI Method"@en .
 
 
 ###  https://w3id.org/aidoc-ap#Auditor
@@ -513,12 +607,125 @@
                                                 rdfs:label "Transparency Measure"@en .
 
 
+###  https://w3id.org/airo#AIRisk
+<https://w3id.org/airo#AIRisk> rdf:type owl:Class .
+
+
 #################################################################
 #    Annotations
 #################################################################
 
-<https://w3id.org/aidoc-ap#hasArchitecture> rdfs:label "has architecture"@en ;
-                                            rdfs:comment "Links a system or model to a description of its architecture."@en .
+<https://w3id.org/aidoc-ap#hasArchitecture> rdfs:comment "Links a system or model to a description of its architecture."@en ;
+                                            rdfs:label "has architecture"@en .
 
 
-###  Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi
+#################################################################
+#    Individuals
+#################################################################
+### Hierarchical Modeling ###
+# Top-level categories as subclasses and SKOS concepts
+<https://w3id.org/aidoc-ap#TraditionalAI> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
+    rdfs:label "Traditional AI Techniques" ;
+    skos:broader <https://w3id.org/aidoc-ap#AIMethodCategory> ;
+    skos:definition "Algorithmic strategies for search, optimization, planning and decision making" .
+
+<https://w3id.org/aidoc-ap#SymbolicAI> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
+    rdfs:label "Symbolic AI" ;
+    skos:broader <https://w3id.org/aidoc-ap#AIMethodCategory> ;
+    skos:definition "Methods that use knowledge representation and logic-based reasoning to model knowledge and make inferences." .
+
+<https://w3id.org/aidoc-ap#MachineLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
+    rdfs:label "Machine Learning" ;
+    skos:broader <https://w3id.org/aidoc-ap#AIMethodCategory> ;
+    skos:definition "Methods that learn patterns from data, including supervised, unsupervised, semi-supervised, self-supervised, and reinforcement learning." .
+
+<https://w3id.org/aidoc-ap#HybridLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
+    rdfs:label "Hybrid Learning" ;
+    skos:broader <https://w3id.org/aidoc-ap#AIMethodCategory> ;
+    skos:definition "Methods that combine different learning paradigms, such as hybrid neuronal systems, learning with knowledge, and conversational learning." .
+
+
+### Second-level descriptors under Traditional AI
+aidoc:Search a aidoc:AIMethodCategory ;
+    rdfs:label "Search" ;
+    skos:broader aidoc:TraditionalAI ;
+    skos:definition "Techniques for exploring state spaces to find solutions." .
+
+aidoc:Optimization a aidoc:AIMethodCategory ;
+    rdfs:label "Optimization" ;
+    skos:broader aidoc:TraditionalAI ;
+    skos:definition "Methods for improving solutions iteratively, including heuristic and metaheuristic approaches." .
+
+aidoc:Planning a aidoc:AIMethodCategory ;
+    rdfs:label "Planning" ;
+    skos:broader aidoc:TraditionalAI ;
+    skos:definition "Approaches for autonomous and semi-autonomous planning procedures as well as plan recognition." .
+
+aidoc:DecisionMaking a aidoc:AIMethodCategory ;
+    rdfs:label "Decision Making" ;
+    skos:broader aidoc:TraditionalAI ;
+    skos:definition "Approaches for selecting optimal actions under constraints or uncertainty." .
+
+### Second-level descriptors under Symbolic AI
+aidoc:KnowledgeRepresentation a aidoc:AIMethodCategory ;
+    rdfs:label "Knowledge Representation" ;
+    skos:broader aidoc:SymbolicAI ;
+    skos:definition "Methods for structuring and organizing knowledge, including ontologies, semantic networks, and knowledge graphs." . 
+
+aidoc:LogicalReasoning a aidoc:AIMethodCategory ;
+    rdfs:label "Logical Reasoning" ;
+    skos:broader aidoc:SymbolicAI ;
+    skos:definition "Methods that use rules and principles for formal as well as interactive verification to identify patterns and logical structures and make logical deductions." .  
+
+aidoc:ProbabilisticReasoning a aidoc:AIMethodCategory ;
+    rdfs:label "Probabilistic Reasoning" ;
+    skos:broader aidoc:SymbolicAI ;
+    skos:definition "Techniques that handle uncertainty and incomplete information using probabilistic models, such as Bayesian networks and Markov decision processes." .
+
+aidoc:NonProbabilisticReasoning a aidoc:AIMethodCategory ;
+    rdfs:label "Non-Probabilistic Reasoning" ;
+    skos:broader aidoc:SymbolicAI ;
+    skos:definition "Techniques that do not rely on probabilistic models, such as qualitative procedures, rule-based approaches, reasoning with uncertainty as well as reasoning with belief functions." .
+
+### Second-level descriptors under Machine Learning
+aidoc:SupervisedLearning a aidoc:AIMethodCategory ;
+    rdfs:label "Supervised Learning" ;
+    skos:broader aidoc:MachineLearning ;
+    skos:definition "Techniques that learn from labeled data to make predictions or classifications." .
+
+aidoc:UnsupervisedLearning a aidoc:AIMethodCategory ;
+    rdfs:label "Unsupervised Learning" ;
+    skos:broader aidoc:MachineLearning ;
+    skos:definition "Techniques that identify patterns and structures in unlabeled data." . 
+
+aidoc:SemiSupervisedLearning a aidoc:AIMethodCategory ;
+    rdfs:label "Semi-Supervised Learning" ;
+    skos:broader aidoc:MachineLearning ;
+    skos:definition "Techniques that combine a small amount of labeled data with a large amount of unlabeled data during training." .
+
+aidoc:SelfSupervisedLearning a aidoc:AIMethodCategory ;
+    rdfs:label "Self-Supervised Learning" ;
+    skos:broader aidoc:MachineLearning ;
+    skos:definition "Techniques that generate their own labels from the input data to learn useful representations." .
+
+aidoc:ReinforcementLearning a aidoc:AIMethodCategory ;
+    rdfs:label "Reinforcement Learning" ;
+    skos:broader aidoc:MachineLearning ;
+    skos:definition "Techniques that learn optimal actions through trial and error by receiving feedback in the form of rewards or penalties." .   
+
+### Second-level descriptors under Hybrid Learning
+aidoc:HybridNeuronalSystems a aidoc:AIMethodCategory ;
+    rdfs:label "Hybrid Neuronal Systems" ;
+    skos:broader aidoc:HybridLearning ;
+    skos:definition "Methods that combine neural architectures with symbolic reasoning or other AI techniques." .
+
+aidoc:LearningWithKnowledge a aidoc:AIMethodCategory ;
+    rdfs:label "Learning with Knowledge" ;
+    skos:broader aidoc:HybridLearning ;
+    skos:definition "Techniques that integrate both symbolic or explicit knowledge representation and machine learning approaches." .
+
+aidoc:ConversationalLearning a aidoc:AIMethodCategory ;
+    rdfs:label "Conversational Learning" ;
+    skos:broader aidoc:HybridLearning ;
+    skos:definition "Methods that involve interactive learning through dialogue or feedback from users or other agents." .
+
