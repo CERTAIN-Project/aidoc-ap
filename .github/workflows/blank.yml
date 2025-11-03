@@ -1,0 +1,83 @@
+name: Validate TTL RDF File
+
+on:
+  push:
+    paths:
+      - "aidoc-ap.ttl"
+  pull_request:
+    paths:
+      - "aidoc-ap.ttl"
+  workflow_dispatch:
+
+jobs:
+  validate-ttl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Set up dependencies
+        run: sudo apt-get update && sudo apt-get install -y curl jq
+
+      - name: Convert TTL to RDF/XML
+        id: convert_rdf
+        run: |
+          ttl_file="aidoc-ap.ttl"
+          echo "Converting $ttl_file to RDF/XML via EasyRDF..."
+          curl 'https://www.easyrdf.org/converter' \
+            -X POST \
+            --data-urlencode "data=$(cat $ttl_file)" \
+            --data-urlencode "uri=http://njh.me/" \
+            --data-urlencode "out=rdfxml" \
+            --data-urlencode "raw=1" \
+            --data-urlencode "in=guess" \
+            -o converted.rdf
+
+          if [ ! -s converted.rdf ]; then
+            echo "❌ RDF conversion failed (empty result)"
+            exit 1
+          fi
+
+      - name: Build OOPS request XML
+        run: |
+          cat > request.xml <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <OOPSRequest>
+                        <OntologyUrl></OntologyUrl>
+                        <OntologyContent><![CDATA[
+          $(cat converted.rdf)
+             ]]></OntologyContent>
+                <Pitfalls></Pitfalls>
+                <OutputFormat>RDF/XML</OutputFormat>
+              </OOPSRequest>
+          EOF
+
+      - name: Validate RDF with OOPS Linked Data Linter
+        id: lint_rdf
+        run: |
+          echo "Sending RDF to OOPS..."
+          curl -s -X POST https://oops.linkeddata.es/rest \
+            -H "Content-Type: application/xml" \
+            -d @request.xml \
+            -o lint_result.xml
+
+          if grep -q "<error>" lint_result.xml; then
+            echo "❌ OOPS Linter reported errors:"
+            grep "<error>" lint_result.xml || true
+            exit 1
+          else
+            echo "✅ RDF validation completed successfully."
+          fi
+
+      - name: Upload RDF and lint result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rdf-validation-results
+          path: |
+            converted.rdf
+            lint_result.xml
