@@ -1,4 +1,5 @@
 output/
+reports/
 .venv
 
 .DS_Store
