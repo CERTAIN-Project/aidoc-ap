@@ -1,3 +1,6 @@
+@prefix : <https://w3id.org/aidoc-ap#> .
+@base <https://w3id.org/aidoc-ap#> .
+
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -8,8 +11,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <https://schema.org/> .
-@prefix aidoc: <https://w3id.org/aidoc-ap#> .
-@base <http://www.w3.org/2002/07/owl#> .
 
 
 #################################################################
@@ -689,131 +690,131 @@
 
 
 ### Second-level descriptors under Traditional AI
-aidoc:Search a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#Search> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Search" ;
-    skos:broader aidoc:TraditionalAI ;
+    skos:broader <https://w3id.org/aidoc-ap#TraditionalAI> ;
     skos:definition "Techniques for exploring state spaces to find solutions." .
 
-aidoc:Optimization a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#Optimization> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Optimization" ;
-    skos:broader aidoc:TraditionalAI ;
+    skos:broader <https://w3id.org/aidoc-ap#TraditionalAI> ;
     skos:definition "Methods for improving solutions iteratively, including heuristic and metaheuristic approaches." .
 
-aidoc:Planning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#Planning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Planning" ;
-    skos:broader aidoc:TraditionalAI ;
+    skos:broader <https://w3id.org/aidoc-ap#TraditionalAI> ;
     skos:definition "Approaches for autonomous and semi-autonomous planning procedures as well as plan recognition." .
 
-aidoc:DecisionMaking a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#DecisionMaking> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Decision Making" ;
-    skos:broader aidoc:TraditionalAI ;
+    skos:broader <https://w3id.org/aidoc-ap#TraditionalAI> ;
     skos:definition "Approaches for selecting optimal actions under constraints or uncertainty." .
 
 ### Second-level descriptors under Symbolic AI
-aidoc:KnowledgeRepresentation a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#KnowledgeRepresentation> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Knowledge Representation" ;
-    skos:broader aidoc:SymbolicAI ;
+    skos:broader <https://w3id.org/aidoc-ap#SymbolicAI> ;
     skos:definition "Methods for structuring and organizing knowledge, including ontologies, semantic networks, and knowledge graphs." . 
 
-aidoc:LogicalReasoning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#LogicalReasoning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Logical Reasoning" ;
-    skos:broader aidoc:SymbolicAI ;
+    skos:broader <https://w3id.org/aidoc-ap#SymbolicAI> ;
     skos:definition "Methods that use rules and principles for formal as well as interactive verification to identify patterns and logical structures and make logical deductions." .  
 
-aidoc:ProbabilisticReasoning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#ProbabilisticReasoning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Probabilistic Reasoning" ;
-    skos:broader aidoc:SymbolicAI ;
+    skos:broader <https://w3id.org/aidoc-ap#SymbolicAI> ;
     skos:definition "Techniques that handle uncertainty and incomplete information using probabilistic models, such as Bayesian networks and Markov decision processes." .
 
-aidoc:NonProbabilisticReasoning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#NonProbabilisticReasoning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Non-Probabilistic Reasoning" ;
-    skos:broader aidoc:SymbolicAI ;
+    skos:broader <https://w3id.org/aidoc-ap#SymbolicAI> ;
     skos:definition "Techniques that do not rely on probabilistic models, such as qualitative procedures, rule-based approaches, reasoning with uncertainty as well as reasoning with belief functions." .
 
 ### Second-level descriptors under Machine Learning
-aidoc:SupervisedLearning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#SupervisedLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Supervised Learning" ;
-    skos:broader aidoc:MachineLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#MachineLearning> ;
     skos:definition "Techniques that learn from labeled data to make predictions or classifications." .
 
-aidoc:UnsupervisedLearning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#UnsupervisedLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Unsupervised Learning" ;
-    skos:broader aidoc:MachineLearning ;
-    skos:definition "Techniques that identify patterns and structures in unlabeled data." . 
+    skos:broader <https://w3id.org/aidoc-ap#MachineLearning> ;
+    skos:definition "Techniques that identify patterns and structures in unlabeled data." .
 
-aidoc:SemiSupervisedLearning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#SemiSupervisedLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Semi-Supervised Learning" ;
-    skos:broader aidoc:MachineLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#MachineLearning> ;
     skos:definition "Techniques that combine a small amount of labeled data with a large amount of unlabeled data during training." .
 
-aidoc:SelfSupervisedLearning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#SelfSupervisedLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Self-Supervised Learning" ;
-    skos:broader aidoc:MachineLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#MachineLearning> ;
     skos:definition "Techniques that generate their own labels from the input data to learn useful representations." .
 
-aidoc:ReinforcementLearning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#ReinforcementLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Reinforcement Learning" ;
-    skos:broader aidoc:MachineLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#MachineLearning> ;
     skos:definition "Techniques that learn optimal actions through trial and error by receiving feedback in the form of rewards or penalties." .   
 
 ### Second-level descriptors under Supervised Learning
-aidoc:Classification a aidoc:AIMethodCategory ; 
+<https://w3id.org/aidoc-ap#Classification> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Classification" ;
-    skos:broader aidoc:SupervisedLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#SupervisedLearning> ;
     skos:definition "Techniques that assign input data to predefined categories or classes." .
 
-aidoc:Regression a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#Regression> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Regression" ;
-    skos:broader aidoc:SupervisedLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#SupervisedLearning> ;
     skos:definition "Techniques that predict continuous output values based on input data." .
 
 ### Second-level descriptors under Unsupervised Learning
-aidoc:Clustering a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#Clustering> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Clustering" ;
-    skos:broader aidoc:UnsupervisedLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#UnsupervisedLearning> ;
     skos:definition "Techniques that group similar data points together based on their features." .
 
-aidoc:DimensionReduction a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#DimensionReduction> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Dimension Reduction" ;
-    skos:broader aidoc:UnsupervisedLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#UnsupervisedLearning> ;
     skos:definition "Techniques that reduce the number of features in the data while preserving important information." .
 
 ### Second-level descriptors under Semi-Supervised Learning
-aidoc:GraphBasedSemiSupervisedLearning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#GraphBasedSemiSupervisedLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Graph-Based Semi-Supervised Learning" ;
-    skos:broader aidoc:SemiSupervisedLearning .
+    skos:broader <https://w3id.org/aidoc-ap#SemiSupervisedLearning> .
 
-aidoc:StatisticalApproaches a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#StatisticalApproaches> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Statistical Approaches" ;
-    skos:broader aidoc:SemiSupervisedLearning .
+    skos:broader <https://w3id.org/aidoc-ap#SemiSupervisedLearning> .
 
-aidoc:ModifiedLearningConcepts a aidoc:AIMethodCategory ;
-    rdfs:label "Modified Learning Concepts" ; 
-    skos:broader aidoc:SemiSupervisedLearning .
+<https://w3id.org/aidoc-ap#ModifiedLearningConcepts> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
+    rdfs:label "Modified Learning Concepts" ;
+    skos:broader <https://w3id.org/aidoc-ap#SemiSupervisedLearning> .
 
 ### Second-level descriptors under Reinforcement Learning
-aidoc:ModelFreeReinforcementLearning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#ModelFreeReinforcementLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Model-Free Reinforcement Learning" ;
-    skos:broader aidoc:ReinforcementLearning .
+    skos:broader <https://w3id.org/aidoc-ap#ReinforcementLearning> .
 
-aidoc:ModelBasedReinforcementLearning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#ModelBasedReinforcementLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Model-Based Reinforcement Learning" ;
-    skos:broader aidoc:ReinforcementLearning .
+    skos:broader <https://w3id.org/aidoc-ap#ReinforcementLearning> .
 
 ### Second-level descriptors under Hybrid Learning
-aidoc:HybridNeuronalSystems a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#HybridNeuronalSystems> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Hybrid Neuronal Systems" ;
-    skos:broader aidoc:HybridLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#HybridLearning> ;
     skos:definition "Methods that combine neural architectures with symbolic reasoning or other AI techniques." .
 
-aidoc:LearningWithKnowledge a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#LearningWithKnowledge> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Learning with Knowledge" ;
-    skos:broader aidoc:HybridLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#HybridLearning> ;
     skos:definition "Techniques that integrate both symbolic or explicit knowledge representation and machine learning approaches." .
 
-aidoc:ConversationalLearning a aidoc:AIMethodCategory ;
+<https://w3id.org/aidoc-ap#ConversationalLearning> a <https://w3id.org/aidoc-ap#AIMethodCategory> ;
     rdfs:label "Conversational Learning" ;
-    skos:broader aidoc:HybridLearning ;
+    skos:broader <https://w3id.org/aidoc-ap#HybridLearning> ;
     skos:definition "Methods that involve interactive learning through dialogue or feedback from users or other agents." .
 
 
