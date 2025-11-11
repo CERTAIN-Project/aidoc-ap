@@ -53,6 +53,7 @@ jobs:
             -ontFile aidoc-ap.ttl \
             -outFolder docs \
             -includeAnnotationProperties \
+            -includeImportedOntologies \
             -getOntologyMetadata \
             -rewriteAll \
             -webVowl \

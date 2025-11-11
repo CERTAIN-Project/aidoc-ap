@@ -17,7 +17,7 @@
 #    Ontology Metadata (for Widoco)
 #################################################################
 
-<https://w3id.org/aidoc-ap>
+<https://w3id.org/aidoc-ap#>
     rdf:type owl:Ontology ;
     dcterms:title "AI Documentation Application Profile"@en ;
     dcterms:description "The AI Documentation Application Profile (AIDOC-AP) is designed to provide a structured, machine-readable model of an AI system and its entire lifecycle. It is built as a modular framework, rooted in established semantic web standards and enhanced with domain-specific concepts from the research material provided. The core of AIDOC-AP is a graph-based representation that captures the provenance of all AI artifacts, the activities that create and modify them, and the agents responsible for those activities."@en ;
@@ -96,7 +96,7 @@
 
 ###  https://w3id.org/aidoc-ap#appliesStandard
 <https://w3id.org/aidoc-ap#appliesStandard> rdf:type owl:ObjectProperty ;
-                                            rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                            rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                             rdfs:range <https://w3id.org/aidoc-ap#Standard> ;
                                             rdfs:comment "Links an AI system to a standard it has applied for compliance."@en ;
                                             rdfs:label "applies standard"@en .
@@ -105,29 +105,23 @@
 ###  https://w3id.org/aidoc-ap#dependsOn
 <https://w3id.org/aidoc-ap#dependsOn> rdf:type owl:ObjectProperty ;
                                       rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ;
-                                      rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                      rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                       rdfs:range <https://w3id.org/aidoc-ap#AI_Artifact> ;
                                       rdfs:comment "Links a system or component to its software or hardware dependencies."@en ;
                                       rdfs:label "depends on"@en .
 
 
-###  https://w3id.org/aidoc-ap#hasArchitecture
-<https://w3id.org/aidoc-ap#hasArchitecture> rdf:type owl:ObjectProperty ;
-                                            rdfs:domain <https://w3id.org/aidoc-ap#AI_Model> ,
-                                                        <https://w3id.org/aidoc-ap#AI_System> .
-
-
 ###  https://w3id.org/aidoc-ap#hasComponent
 <https://w3id.org/aidoc-ap#hasComponent> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                         rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                          rdfs:range <https://w3id.org/aidoc-ap#AI_Artifact> ;
-                                         rdfs:comment "Links an AI_System to its constituent components like models and datasets."@en ;
+                                         rdfs:comment "Links an AISystem to its constituent components like models and datasets."@en ;
                                          rdfs:label "has component"@en .
 
 
 ###  https://w3id.org/aidoc-ap#hasDeclarationOfConformity
 <https://w3id.org/aidoc-ap#hasDeclarationOfConformity> rdf:type owl:ObjectProperty ;
-                                                       rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                                       rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                                        rdfs:range <https://w3id.org/aidoc-ap#DeclarationOfConformity> ;
                                                        rdfs:comment "Links an AI system to its EU Declaration of Conformity document."@en ;
                                                        rdfs:label "has declaration of conformity"@en .
@@ -135,7 +129,7 @@
 
 ###  https://w3id.org/aidoc-ap#hasHumanOversight
 <https://w3id.org/aidoc-ap#hasHumanOversight> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                              rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                               rdfs:range <https://w3id.org/aidoc-ap#HumanOversightMechanism> ;
                                               rdfs:comment "Links an AI system to a mechanism for human oversight or intervention."@en ;
                                               rdfs:label "has human oversight"@en .
@@ -143,7 +137,7 @@
 
 ###  https://w3id.org/aidoc-ap#hasInterface
 <https://w3id.org/aidoc-ap#hasInterface> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                         rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                          rdfs:range <https://w3id.org/aidoc-ap#Interface> ;
                                          rdfs:comment "Links an AI system to the interface it provides to users or operators."@en ;
                                          rdfs:label "has interface"@en .
@@ -151,9 +145,9 @@
 
 ###  https://w3id.org/aidoc-ap#hasLifecycleStage
 <https://w3id.org/aidoc-ap#hasLifecycleStage> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                              rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                               rdfs:range <https://w3id.org/aidoc-ap#AI_Activity> ;
-                                              rdfs:comment "Links an AI_System to a specific AI_Activity."@en ;
+                                              rdfs:comment "Links an AISystem to a specific AI_Activity."@en ;
                                               rdfs:label "has lifecycle stage"@en .
 
 
@@ -175,7 +169,7 @@
 
 ###  https://w3id.org/aidoc-ap#hasTransparencyMeasure
 <https://w3id.org/aidoc-ap#hasTransparencyMeasure> rdf:type owl:ObjectProperty ;
-                                                   rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                                   rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                                    rdfs:range <https://w3id.org/aidoc-ap#TransparencyMeasure> ;
                                                    rdfs:comment "Links an AI system to measures in place to ensure transparency."@en ;
                                                    rdfs:label "has transparency measure"@en .
@@ -183,7 +177,7 @@
 
 ###  https://w3id.org/aidoc-ap#isDeployedBy
 <https://w3id.org/aidoc-ap#isDeployedBy> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                         rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                          rdfs:range <https://w3id.org/aidoc-ap#AIDeployer> ;
                                          rdfs:comment "Links an AI system to its deployer."@en ;
                                          rdfs:label "is deployed by"@en .
@@ -191,7 +185,7 @@
 
 ###  https://w3id.org/aidoc-ap#isProvidedBy
 <https://w3id.org/aidoc-ap#isProvidedBy> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                         rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                          rdfs:range <https://w3id.org/aidoc-ap#AIProvider> ;
                                          rdfs:comment "Links an AI system to its provider."@en ;
                                          rdfs:label "is provided by"@en .
@@ -207,7 +201,7 @@
 
 ###  https://w3id.org/aidoc-ap#requiresHardware
 <https://w3id.org/aidoc-ap#requiresHardware> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                             rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                              rdfs:range <https://w3id.org/aidoc-ap#HardwareComponent> ;
                                              rdfs:comment "Links a system to the hardware components it needs to run."@en ;
                                              rdfs:label "requires hardware"@en .
@@ -251,12 +245,16 @@
 
 ###  https://w3id.org/aidoc-ap#hasArchitecture
 <https://w3id.org/aidoc-ap#hasArchitecture> rdf:type owl:DatatypeProperty ;
-                                            rdfs:range rdfs:Literal .
+                                            rdfs:comment "Links a system or model to a description of its architecture."@en ;
+                                            rdfs:label "has architecture"@en ;
+                                            rdfs:range rdfs:Literal ;
+                                            rdfs:domain <https://w3id.org/aidoc-ap#AI_Model> ,
+                                                        <https://w3id.org/aidoc-ap#AISystem> .
 
 
 ###  https://w3id.org/aidoc-ap#intendedPurpose
 <https://w3id.org/aidoc-ap#intendedPurpose> rdf:type owl:DatatypeProperty ;
-                                            rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                            rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                             rdfs:range xsd:string ;
                                             rdfs:comment "The intended purpose of the AI system, as per the AI Act."@en ;
                                             rdfs:label "intended purpose"@en .
@@ -264,7 +262,7 @@
 
 ###  https://w3id.org/aidoc-ap#modality
 <https://w3id.org/aidoc-ap#modality> rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain <https://w3id.org/aidoc-ap#AI_System> ;
+                                     rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                      rdfs:range xsd:string ;
                                      rdfs:comment "The physical form or modality in which the AI system is provided (e.g., standalone software, API)."@en ;
                                      rdfs:label "modality"@en .
@@ -410,8 +408,8 @@
                                      rdfs:label "AI Model"@en .
 
 
-###  https://w3id.org/aidoc-ap#AI_System
-<https://w3id.org/aidoc-ap#AI_System> rdf:type owl:Class ;
+###  https://w3id.org/aidoc-ap#AISystem
+<https://w3id.org/aidoc-ap#AISystem> rdf:type owl:Class ;
                                       rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                       rdfs:comment "The central entity representing the entire AI system."@en ;
                                       rdfs:label "AI System"@en ;
@@ -654,13 +652,6 @@
 ###  https://w3id.org/airo#AIRisk
 <https://w3id.org/airo#AIRisk> rdf:type owl:Class .
 
-
-#################################################################
-#    Annotations
-#################################################################
-
-<https://w3id.org/aidoc-ap#hasArchitecture> rdfs:comment "Links a system or model to a description of its architecture."@en ;
-                                            rdfs:label "has architecture"@en .
 
 
 #################################################################
