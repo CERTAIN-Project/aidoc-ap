@@ -1,0 +1,76 @@
+name: Build & Deploy Widoco
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "aidoc-ap.ttl"
+      - ".github/workflows/widoco.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Cache Widoco
+        id: cache-widoco
+        uses: actions/cache@v4
+        with:
+          path: widoco/
+          key: widoco-1.4.25-jdk17
+
+      - name: Download Widoco (JDK 17)
+        if: steps.cache-widoco.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p widoco
+          curl -L -o widoco/widoco-1.4.25-jar-with-dependencies_JDK-17.jar \
+            https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-17.jar
+
+      - name: Build docs with Widoco
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          java -Xmx1G -jar widoco/widoco-1.4.25-jar-with-dependencies_JDK-17.jar \
+            -ontFile aidoc-ap.ttl \
+            -outFolder docs \
+            -includeAnnotationProperties \
+            -getOntologyMetadata \
+            -rewriteAll \
+            -webVowl \
+            -saveConfig config-widoco.properties
+          touch docs/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
