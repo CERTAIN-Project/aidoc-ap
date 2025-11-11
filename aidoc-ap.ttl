@@ -3,12 +3,55 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <https://schema.org/> .
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
 @base <http://www.w3.org/2002/07/owl#> .
 
-[ rdf:type owl:Ontology
- ] .
+
+#################################################################
+#    Ontology Metadata (for Widoco)
+#################################################################
+
+<https://w3id.org/aidoc-ap>
+    rdf:type owl:Ontology ;
+    dcterms:title "AI Documentation Application Profile"@en ;
+    dcterms:description "The AI Documentation Application Profile (AIDOC-AP) is designed to provide a structured, machine-readable model of an AI system and its entire lifecycle. It is built as a modular framework, rooted in established semantic web standards and enhanced with domain-specific concepts from the research material provided. The core of AIDOC-AP is a graph-based representation that captures the provenance of all AI artifacts, the activities that create and modify them, and the agents responsible for those activities."@en ;
+    dcterms:creator [
+        rdf:type foaf:Person ;
+        foaf:name "Sebastian Neumaier" ;
+        foaf:mbox <mailto:sebastian.neumaier@ustp.at> ;
+        foaf:organization "University of Applied Sciences St. Pölten"
+    ], [
+        rdf:type foaf:Person ;
+        foaf:name "Fabian Kovac" ;
+        foaf:mbox <mailto:fabian.kovac@ustp.at> ;
+        foaf:organization "University of Applied Sciences St. Pölten"
+    ], [
+        rdf:type foaf:Person ;
+        foaf:name "Timea Pahi" ;
+        foaf:mbox <mailto:timea.pahi@ustp.at> ;
+        foaf:organization "University of Applied Sciences St. Pölten"
+    ] ;
+    dcterms:publisher [
+        foaf:name "CERTAIN Project" ;
+        foaf:homepage <https://certain-project.eu> 
+    ] ;
+    dcterms:issued "2025-11-11"^^xsd:date ;
+    owl:versionInfo "1.0.0" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "aidoc" ;
+    vann:preferredNamespaceUri "https://w3id.org/aidoc-ap#" ;
+    schema:keywords "AI systems, ontology, AIDOC-AP, AI lifecycle, AI Act"@en ;
+    schema:funding <https://cordis.europa.eu/project/id/101189650> ;
+    dcterms:language "en" ;
+    rdfs:label "AIDOC-AP"@en ;
+    rdfs:comment "Metadata and semantic definitions for documenting and describing AI systems and their components."@en ;
+    owl:versionIRI <https://w3id.org/aidoc-ap/1.0.0> ;
+    foaf:logo <https://certain-project.eu/wp-content/uploads/sites/154/2025/01/Certain-logo-w@2x.png> .
 
 #################################################################
 #    Annotation properties
