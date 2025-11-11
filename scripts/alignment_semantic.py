@@ -6,15 +6,28 @@ import pandas as pd
 from rdflib import Graph, RDFS, Namespace, URIRef, Literal
 from rdflib.namespace import PROV, XSD, OWL, RDF
 import uuid
+from openai import OpenAI
+
+from dotenv import load_dotenv
+load_dotenv()
+
 
 AIDOC_FILE = "aidoc-ap.ttl"
 REFERENCE_DIR = "reference_ontologies/"
 INPUT_DIR = "reports/alignment_structural"
 os.makedirs("reports/alignment_semantic", exist_ok=True)
 OUTPUT_DIR = "reports/alignment_semantic"
-OLLAMA_MODEL = "llama3.1:8b" 
-OLLAMA_URL = "http://localhost:11434/api/generate"
+
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434") + "/v1/"
+print(f"Using Ollama URL: {OLLAMA_URL}, Model: {OLLAMA_MODEL}")
 CONF_THRESHOLD = 0.5
+
+client = OpenAI(
+    base_url=OLLAMA_URL,
+    # required but ignored
+    api_key='ollama',
+)
 
 # ==========================
 # LOAD GRAPHS
@@ -78,17 +91,21 @@ Return JSON in this format only:
 }}
 """
 
-
 def query_ollama(prompt):
-    response = requests.post(OLLAMA_URL, json={
-        "model": OLLAMA_MODEL,
-        "prompt": prompt,
-        "stream": False,
-        "temperature": 0.2,
-        "format": "json"
-    })
-    response.raise_for_status()
-    return response.json()["response"]
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                'role': 'user',
+                'content': prompt,
+            }
+        ],
+        model=OLLAMA_MODEL,
+    )
+    response = chat_completion.choices[0].message.content
+    response = response.replace("```json", "")
+    response = response.replace("```", "")
+    json_result = json.loads(response)
+    return json_result
 
 for fname in os.listdir(INPUT_DIR):
     if not fname.endswith("_alignment.csv"):
@@ -139,8 +156,7 @@ for fname in os.listdir(INPUT_DIR):
         )
 
         try:
-            output = query_ollama(prompt)
-            result = json.loads(output)
+            result = query_ollama(prompt)
             relation_str = result.get("relation", "skos:relatedMatch")
             conf = float(result.get("confidence", 0.0))
             rationale = result.get("comment", "")
