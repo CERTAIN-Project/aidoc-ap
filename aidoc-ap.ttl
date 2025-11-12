@@ -44,7 +44,7 @@
         foaf:homepage <https://certain-project.eu> 
     ] ;
     dcterms:issued "2025-11-11"^^xsd:date ;
-    owl:versionInfo "1.0.0" ;
+    owl:versionInfo "1.0" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "aidoc" ;
     vann:preferredNamespaceUri "https://w3id.org/aidoc-ap#" ;
@@ -52,7 +52,7 @@
     schema:funding <https://cordis.europa.eu/project/id/101189650> ;
     dcterms:language "en" ;
     rdfs:label "AIDOC-AP"@en ;
-    owl:versionIRI <https://w3id.org/aidoc-ap/1.0.0> .
+    owl:versionIRI <https://w3id.org/aidoc-ap/1.0> .
  
 
 #################################################################
