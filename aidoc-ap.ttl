@@ -12,20 +12,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <https://schema.org/> .
 @prefix widoco: <https://w3id.org/widoco/vocab#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 
 
 #################################################################
-#    Ontology Metadata (for Widoco)
+#    Ontology Metadata 
 #################################################################
 
 <https://w3id.org/aidoc-ap#>
     rdf:type owl:Ontology ;
-    dcterms:title "AI Documentation Application Profile"@en ;
-    dcterms:abstract "The AI Documentation Application Profile (AIDOC-AP) is designed to provide a structured, machine-readable model of an AI system and its entire lifecycle. It is built as a modular framework, rooted in established semantic web standards and enhanced with domain-specific concepts from the research material provided. The core of AIDOC-AP is a graph-based representation that captures the provenance of all AI artifacts, the activities that create and modify them, and the agents responsible for those activities."@en ;
+    dcterms:title "AIDOC-AP - AI Documentation Application Profile"@en ;
     dcterms:description "The AI Documentation Application Profile (AIDOC-AP) is designed to provide a structured, machine-readable model of an AI system and its entire lifecycle. It is built as a modular framework, rooted in established semantic web standards and enhanced with domain-specific concepts from the research material provided. The core of AIDOC-AP is a graph-based representation that captures the provenance of all AI artifacts, the activities that create and modify them, and the agents responsible for those activities."@en ;
-    widoco:introduction """This ontology provides a semantic vocabulary for documenting AI systems and their lifecycle. Use the classes and properties defined here to create RDF graphs describing AI systems, their components (models, datasets), activities (training, deployment), and responsible agents (providers, deployers). The ontology extends W3C PROV and integrates with existing standards.
-
-<b>Note:</b> This documentation is currently under construction and in active development. The content presented here is not final and may change significantly."""@en ;
     dcterms:creator [
         rdf:type foaf:Person ;
         foaf:name "Sebastian Neumaier" ;
@@ -55,9 +52,8 @@
     schema:funding <https://cordis.europa.eu/project/id/101189650> ;
     dcterms:language "en" ;
     rdfs:label "AIDOC-AP"@en ;
-    # rdfs:comment "Metadata and semantic definitions for documenting and describing AI systems and their components."@en ;
-    owl:versionIRI <https://w3id.org/aidoc-ap/1.0.0> ;
-    foaf:logo <https://certain-project.eu/wp-content/uploads/sites/154/2025/01/Certain-logo-w@2x.png> .
+    owl:versionIRI <https://w3id.org/aidoc-ap/1.0.0> .
+ 
 
 #################################################################
 #    Annotation properties

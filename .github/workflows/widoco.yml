@@ -54,7 +54,7 @@ jobs:
             -outFolder docs \
             -includeAnnotationProperties \
             -includeImportedOntologies \
-            -getOntologyMetadata \
+            -confFile docs/config.properties \
             -rewriteAll \
             -webVowl \
             -saveConfig config-widoco.properties
