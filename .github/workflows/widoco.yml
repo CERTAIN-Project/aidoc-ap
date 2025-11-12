@@ -57,7 +57,8 @@ jobs:
             -confFile docs/config.properties \
             -rewriteAll \
             -webVowl \
-            -saveConfig config-widoco.properties
+            -oops \
+            -excludeProvenance
           touch docs/.nojekyll
 
       - name: Upload artifact
