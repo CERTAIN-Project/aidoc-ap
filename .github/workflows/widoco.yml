@@ -47,11 +47,11 @@ jobs:
 
       - name: Build docs with Widoco
         run: |
-          rm -rf docs
-          mkdir -p docs
+          rm -rf site
+          mkdir -p site
           java -Xmx1G -jar widoco/widoco-1.4.25-jar-with-dependencies_JDK-17.jar \
             -ontFile aidoc-ap.ttl \
-            -outFolder docs \
+            -outFolder site \
             -includeAnnotationProperties \
             -includeImportedOntologies \
             -confFile docs/config.properties \
@@ -59,12 +59,12 @@ jobs:
             -webVowl \
             -oops \
             -excludeProvenance
-          touch docs/.nojekyll
+          touch site/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: site
 
   deploy:
     needs: build
