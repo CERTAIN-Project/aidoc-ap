@@ -59,7 +59,7 @@ jobs:
             -webVowl \
             -oops \
             -excludeProvenance \
-            -noPlaceHolderText
+            -noPlaceHolderText \
             -uniteSections
           touch site/.nojekyll
           cp site/index-en.html site/index.html
