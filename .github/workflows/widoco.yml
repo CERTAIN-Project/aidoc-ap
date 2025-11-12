@@ -58,7 +58,8 @@ jobs:
             -rewriteAll \
             -webVowl \
             -oops \
-            -excludeProvenance
+            -excludeProvenance \
+            -noPlaceHolderText
           touch site/.nojekyll
 
       - name: Upload artifact
