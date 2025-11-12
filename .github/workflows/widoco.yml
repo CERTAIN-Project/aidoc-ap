@@ -61,6 +61,7 @@ jobs:
             -excludeProvenance \
             -noPlaceHolderText
           touch site/.nojekyll
+          mv site/index-en.html site/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
