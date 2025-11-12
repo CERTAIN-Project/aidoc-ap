@@ -60,6 +60,7 @@ jobs:
             -oops \
             -excludeProvenance \
             -noPlaceHolderText
+            -uniteSections
           touch site/.nojekyll
           cp site/index-en.html site/index.html
 
