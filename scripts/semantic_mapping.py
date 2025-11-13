@@ -1,7 +1,9 @@
 import os
 import csv
 import json
-from rdflib import Graph, RDF, RDFS, Namespace
+import datetime
+from rdflib import Graph, RDF, RDFS, Namespace, URIRef, Literal
+from rdflib.namespace import XSD, SKOS, PROV
 from openai import OpenAI
 
 
@@ -11,7 +13,8 @@ load_dotenv()
 # ========== CONFIGURATION ==========
 AIACT_FILE = "annex_4.ttl"
 ENTITY_FILE = "output/aidoc-entities.csv"
-OUTPUT_FILE = "reports/semantic_mapping.json"
+OUTPUT_FILE = "reports/semantic_mapping.ttl"
+OUTPUT_JSON = "reports/semantic_mapping.json"
 
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434") + "/v1/"
@@ -19,8 +22,7 @@ print(f"Using Ollama URL: {OLLAMA_URL}, Model: {OLLAMA_MODEL}")
 
 client = OpenAI(
     base_url=OLLAMA_URL,
-    # required but ignored
-    api_key='ollama',
+    api_key=os.getenv("OLLAMA_API_KEY")
 )
 
 os.makedirs("reports", exist_ok=True)
@@ -47,11 +49,46 @@ for s in g.subjects(RDF.type, AIACT.Requirement):
     if label and description:
         requirements.append({
             "id": str(s).split("#")[-1],
+            "uri": str(s),
             "label": str(label),
             "text": str(description)
         })
 
 print(f"Loaded {len(requirements)} Annex IV requirements and {len(ontology_entities)} ontology entities.")
+
+# ========== SETUP RDF GRAPH FOR OUTPUT ==========
+coverage_graph = Graph()
+DQV = Namespace("http://www.w3.org/ns/dqv#")
+COV = Namespace("https://w3id.org/aidoc-ap/coverage#")
+AIDOC = Namespace("https://w3id.org/aidoc-ap#")
+
+coverage_graph.bind("dqv", DQV)
+coverage_graph.bind("prov", PROV)
+coverage_graph.bind("xsd", XSD)
+coverage_graph.bind("cov", COV)
+coverage_graph.bind("aidoc", AIDOC)
+coverage_graph.bind("skos", SKOS)
+coverage_graph.bind("aiact", AIACT)
+
+# Define the metric once
+metric_uri = COV.annexCoverageMetric
+coverage_graph.add((metric_uri, RDF.type, DQV.Metric))
+coverage_graph.add((metric_uri, SKOS.prefLabel, Literal("Annex IV Coverage Score", lang="en")))
+coverage_graph.add((metric_uri, SKOS.definition, Literal("Heuristic coverage of a requirement by AIDOC-AP terms (0..1)", lang="en")))
+
+# Activity and agent
+run_timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d")
+activity_uri = URIRef(f"https://w3id.org/aidoc-ap/coverage/llm-run/{run_timestamp}")
+agent_uri = URIRef("https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot")
+
+coverage_graph.add((activity_uri, RDF.type, PROV.Activity))
+coverage_graph.add((activity_uri, RDFS.label, Literal(f"LLM Coverage Analysis using {OLLAMA_MODEL}")))
+coverage_graph.add((activity_uri, PROV.startedAtTime, Literal(datetime.datetime.utcnow().isoformat() + "Z", datatype=XSD.dateTime)))
+
+coverage_graph.add((agent_uri, RDF.type, PROV.SoftwareAgent))
+coverage_graph.add((agent_uri, RDFS.label, Literal(f"LLM Alignment Bot ({OLLAMA_MODEL})")))
+
+ontology_version_uri = URIRef("https://w3id.org/aidoc-ap/1.0")
 
 # ========== DEFINE LLM PROMPT ==========
 prompt_template = """
@@ -67,12 +104,14 @@ Compare it to the following ontology elements (classes, properties, or concepts)
 Identify:
 1. The ontology terms that best represent this requirement.
 2. A coverage score between 0.0 and 1.0 indicating how well the ontology covers this requirement.
-3. Any missing concepts or terms that should be added.
+3. A brief explanation (2-3 sentences) justifying the coverage score.
+4. Any missing concepts or terms that should be added.
 
 Return the result as strict JSON with the following structure:
 {{
   "coverage_score": float,
   "matched_terms": [list of ontology term labels],
+  "reasoning": "Brief explanation for the coverage score",
   "missing": [list of missing term suggestions]
 }}
 """
@@ -94,6 +133,12 @@ def query_ollama(prompt):
     json_result = json.loads(response)
     return json_result
 
+# Create a mapping from labels to URIs for matched terms
+label_to_uri = {}
+for entity in ontology_entities:
+    if entity.get("label") and entity.get("iri"):
+        label_to_uri[entity["label"]] = entity["iri"]
+
 results = []
 
 for req in requirements:
@@ -108,21 +153,61 @@ for req in requirements:
         result = {
             "coverage_score": 0,
             "matched_terms": [],
-            "missing": [f"Error: {str(e)}"]
+            "reasoning": f"Error: {str(e)}",
+            "missing": []
         }
 
+    coverage_score = result.get("coverage_score", 0)
+    matched_terms = result.get("matched_terms", [])
+    reasoning = result.get("reasoning", "")
+    missing = result.get("missing", [])
+    
     results.append({
         "requirement": req["label"],
         "requirement_id": req["id"],
-        "coverage_score": result.get("coverage_score", 0),
-        "matched_terms": result.get("matched_terms", []),
-        "missing": result.get("missing", [])
+        "coverage_score": coverage_score,
+        "matched_terms": matched_terms,
+        "reasoning": reasoning,
+        "missing": missing
     })
-    print(f"Debug info for {req['label']}: {result}")
+    print(f"Processing {req['label']}: coverage={coverage_score}")
 
+    # Create RDF measurement
+    measurement_uri = URIRef(f"https://w3id.org/aidoc-ap/coverage#{req['id']}")
+    
+    coverage_graph.add((measurement_uri, RDF.type, DQV.QualityMeasurement))
+    coverage_graph.add((measurement_uri, DQV.isMeasurementOf, metric_uri))
+    coverage_graph.add((measurement_uri, DQV.computedOn, ontology_version_uri))
+    coverage_graph.add((measurement_uri, DQV.value, Literal(coverage_score, datatype=XSD.decimal)))
+    coverage_graph.add((measurement_uri, COV.forRequirement, URIRef(req["uri"])))
+    
+    # Add reasoning/explanation
+    if reasoning:
+        coverage_graph.add((measurement_uri, COV.reasoning, Literal(reasoning, lang="en")))
+    
+    # Add matched terms
+    for term_label in matched_terms:
+        if term_label in label_to_uri:
+            term_uri = URIRef(label_to_uri[term_label])
+            coverage_graph.add((measurement_uri, COV.matchedTerm, term_uri))
+    
+    # Add missing labels
+    for missing_label in missing:
+        coverage_graph.add((measurement_uri, COV.missingLabel, Literal(missing_label)))
+    
+    # Provenance
+    coverage_graph.add((measurement_uri, PROV.wasGeneratedBy, activity_uri))
+    coverage_graph.add((measurement_uri, PROV.wasAttributedTo, agent_uri))
+
+# Close activity
+coverage_graph.add((activity_uri, PROV.endedAtTime, Literal(datetime.datetime.utcnow().isoformat() + "Z", datatype=XSD.dateTime)))
 
 # ========== SAVE RESULTS ==========
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(results, f, indent=2, ensure_ascii=False)
+# Save as TTL
+coverage_graph.serialize(destination=OUTPUT_FILE, format="turtle")
+print(f"✅ Semantic mapping (TTL) saved to {OUTPUT_FILE}")
 
-print(f"✅ Semantic mapping complete — results saved to {OUTPUT_FILE}")
+# Save JSON for compatibility
+with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+    json.dump(results, f, indent=2, ensure_ascii=False)
+print(f"✅ Semantic mapping (JSON) saved to {OUTPUT_JSON}")

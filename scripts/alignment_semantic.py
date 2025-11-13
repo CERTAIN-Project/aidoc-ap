@@ -25,8 +25,7 @@ CONF_THRESHOLD = 0.5
 
 client = OpenAI(
     base_url=OLLAMA_URL,
-    # required but ignored
-    api_key='ollama',
+    api_key=os.getenv("OLLAMA_API_KEY")
 )
 
 # ==========================
