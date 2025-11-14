@@ -19,7 +19,7 @@
   const aidocAnchor = iri => {
     // try #localName first
     const id = iri.includes('#') ? iri.split('#')[1] : iri.split('/').pop();
-    return `#${encodeURIComponent(id)}`;
+    return `/#${encodeURIComponent(id)}`;
   };
 
   // --- load data: prefer JSON (build-time), else TTL (client-side) ----------
@@ -128,7 +128,7 @@
   function filter(list){
     return list.filter(m => {
       if (state.ns && m.target_ns!==state.ns) return false;
-      if (state.relation && m.relation!==state.relation) return false;
+      if (state.relation && pref(m.relation)!==state.relation) return false;
       if (state.run && m.run!==state.run) return false;
       if (state.conf && (m.confidence||0) < state.conf) return false;
       if (state.q) {
