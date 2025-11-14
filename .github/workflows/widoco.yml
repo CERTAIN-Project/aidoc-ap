@@ -63,8 +63,10 @@ jobs:
             -uniteSections
           touch site/.nojekyll
           cp site/index-en.html site/index.html
+          cp docs/alignments/* site/alignments/
+          cp docs/assets/* site/assets/
           cp docs/coverage.html site/coverage.html
-          cp docs/alignment.html site/alignment.html
+          cp docs/alignments.html site/alignments.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
