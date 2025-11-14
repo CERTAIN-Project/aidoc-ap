@@ -16,29 +16,8 @@
     return 'low';
   };
 
-  // --- load data: prefer JSON, else TTL fallback ----------------------------
-  async function loadJSONorTTL(){
-    // Try JSON first (faster)
-    try {
-      const res = await fetch(window.COVERAGE_JSON || 'resources/semantic_mapping.json', {cache:'no-store'});
-      if (res.ok) {
-        const data = await res.json();
-        // Transform to internal format
-        const measurements = data.map(item => ({
-          requirement_id: item.requirement_id,
-          requirement: item.requirement,
-          coverage_score: item.coverage_score,
-          matched_terms: item.matched_terms || [],
-          missing: item.missing || [],
-          reasoning: item.reasoning || '',
-          run: null, // will be populated if we have run info
-          agent: null
-        }));
-        return { measurements, runs: [] };
-      }
-    } catch(e){ /* fall through to TTL */ }
-
-    // TTL fallback
+  // --- load data: load from TTL ----------------------------
+  async function loadFromTTL(){
     await loadScript('https://unpkg.com/n3@1.17.4/browser/n3.min.js');
     const ttlUrl = window.COVERAGE_TTL || 'resources/semantic_mapping.ttl';
     const txt = await (await fetch(ttlUrl, {cache:'no-store'})).text();
@@ -54,6 +33,7 @@
     }
 
     const RDF  = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
+    const RDFS = 'http://www.w3.org/2000/01/rdf-schema#';
     const DQV  = 'http://www.w3.org/ns/dqv#';
     const COV  = 'https://w3id.org/aidoc-ap/coverage#';
     const PROV = 'http://www.w3.org/ns/prov#';
@@ -64,7 +44,7 @@
       if (qs.some(q => q.predicate.id===RDF && q.object.id===PROV+'Activity')) {
         const started = obj(byS, s, PROV+'startedAtTime');
         const ended   = obj(byS, s, PROV+'endedAtTime');
-        const label   = obj(byS, s, 'http://www.w3.org/2000/01/rdf-schema#label');
+        const label   = obj(byS, s, RDFS+'label');
         runMap[s] = { 
           id: s, 
           startedAt: lit(started), 
@@ -173,7 +153,7 @@
   }
 
   // --- render ---------------------------------------------------------------
-  const [coverageData, reqMap] = await Promise.all([loadJSONorTTL(), loadRequirements()]);
+  const [coverageData, reqMap] = await Promise.all([loadFromTTL(), loadRequirements()]);
   const {measurements, runs} = coverageData;
 
   // Enrich measurements with requirement labels
