@@ -1,0 +1,99 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+align:19e1fb0c-4a3a-4723-a384-62551d9c9d56 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:a7f2dc71-2761-4195-8374-8185e63e0003 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts define 'Standard' in the context of AI systems. The airo concept adds precision by specifying it's a *technical specification* adopted by a *recognised standardisation body* and importantly notes *compliance is not compulsory*. The AIDOC concept is more general, encompassing any harmonised or other standard. While not strictly equivalent, they represent very similar ideas and could be used interchangeably in many contexts. The airo definition adds useful constraints."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Standard ;
+    align:target <https://w3id.org/airo#Standard> .
+
+align:1ba34025-e033-4691-9824-f4b19d2a6701 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:a7f2dc71-2761-4195-8374-8185e63e0003 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Despite the airo concept being more verbose and legally precise, both concepts define the same entity: the developer or provider of an AI system. The airo concept simply provides a more detailed description including legal persons and scenarios regarding placing on the market or putting into service. The core meaning remains identical, representing an entity with the responsibility for an AI system."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/airo#AIProvider> .
+
+align:38d5cdfd-47a5-4d3c-a01a-e844bce3d131 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:a7f2dc71-2761-4195-8374-8185e63e0003 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts define an AI Model as a core component for performing AI tasks, relying on mathematical or computational representation to generate outputs from inputs. Despite slight differences in phrasing ('computational representation' vs 'mathematical construct'), the core meaning and intended use are virtually identical. The high lexical similarity score supports this."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:AI_Model ;
+    align:target <https://w3id.org/airo#AIModel> .
+
+align:810e4e49-1220-4818-b094-473f28e46cca a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:a7f2dc71-2761-4195-8374-8185e63e0003 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts describe *what* an AI system can do. The 'AI System Capability' description is slightly more detailed in specifying types of processing (sensory, knowledge, control), while 'AI Capability' is more abstractly defined as enabling realisation of purposes. Given the high lexical similarity and overlapping meaning, a close match is appropriate; further investigation would be needed to determine if they are truly equivalent."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AISystemCapability ;
+    align:target <https://w3id.org/airo#AICapability> .
+
+align:b764555c-9490-41b2-8305-a3fc45822cf6 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:a7f2dc71-2761-4195-8374-8185e63e0003 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts relate to entities involved with AI systems. 'AI Deployer' focuses on *using* AI in a professional setting, while 'AI Developer' focuses on *creating* AI. They are distinct but closely related roles within the AI lifecycle. They aren't equivalent, broader, or narrower, but represent different facets of AI work.  The lexical similarity score of 0.783 supports this close relationship."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/airo#AIDeveloper> .
+
+align:d90d12ac-f1fe-4714-b697-30e310c451e1 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:a7f2dc71-2761-4195-8374-8185e63e0003 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "The labels are identical (lexical similarity 1.0) and the descriptions are highly aligned. The airo concept provides a more detailed definition, but this can be considered elaboration rather than a distinction in meaning. Given the high lexical similarity and semantic overlap, equivalence is the most appropriate relation."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:AI_System ;
+    align:target <https://w3id.org/airo#AISystem> .
+
+align:dff439ff-5e02-4e0c-a56f-e6600a0b9b2c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:a7f2dc71-2761-4195-8374-8185e63e0003 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "The definitions are highly similar, though the airo concept provides a more legally precise definition by explicitly including natural and legal persons and excluding personal, non-professional use. Given the lexical similarity of 1.0 and overlap in core meaning, it's reasonable to consider them equivalent for many practical interoperability scenarios. The additional legal nuance in the 'airo' definition doesn't significantly alter the fundamental concept being represented."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/airo#AIDeployer> .
+
+aidoc:AIProvider owl:equivalentClass <https://w3id.org/airo#AIProvider> .
+
+aidoc:AISystemCapability skos:closeMatch <https://w3id.org/airo#AICapability> .
+
+aidoc:AI_Model owl:equivalentClass <https://w3id.org/airo#AIModel> .
+
+aidoc:AI_System owl:equivalentClass <https://w3id.org/airo#AISystem> .
+
+aidoc:Standard skos:closeMatch <https://w3id.org/airo#Standard> .
+
+aidoc:AIDeployer owl:equivalentClass <https://w3id.org/airo#AIDeployer> ;
+    skos:closeMatch <https://w3id.org/airo#AIDeveloper> .
+
+align:a7f2dc71-2761-4195-8374-8185e63e0003 a prov:Activity ;
+    prov:endedAtTime "2025-11-13T07:53:53+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-13T07:53:33+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:LLMAlignmentBot .
+
+align:LLMAlignmentBot a prov:SoftwareAgent ;
+    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+

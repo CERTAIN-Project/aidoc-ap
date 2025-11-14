@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>AIDOC‑AP · Alignments</title>
+  <!-- minimal styles to blend with Widoco -->
+  <link rel="stylesheet" href="assets/widoco-like.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="widoco-theme">
+<header class="page-header">
+  <h1 class="title">AIDOC‑AP — Cross‑Ontology Alignments</h1>
+  <p class="subtitle">
+    Mappings between <code>aidoc:</code> terms and external ontologies,
+    with relation type, confidence, rationale and provenance (PROV‑O).
+  </p>
+  <nav class="crumbs">
+    <a href="index.html">← Back to ontology</a>
+  </nav>
+</header>
+
+<main>
+  <section class="filters">
+    <div class="row">
+      <input id="q" class="search" placeholder="Filter by AIDOC term, target IRI, relation, rationale…">
+      <select id="ontologySel" title="Target ontology">
+        <option value="">All target ontologies</option>
+      </select>
+      <select id="relationSel" title="Mapping relation">
+        <option value="">All relations</option>
+        <option value="owl:equivalentClass">owl:equivalentClass</option>
+        <option value="skos:exactMatch">skos:exactMatch</option>
+        <option value="skos:closeMatch">skos:closeMatch</option>
+        <option value="skos:broadMatch">skos:broadMatch</option>
+        <option value="skos:narrowMatch">skos:narrowMatch</option>
+        <option value="skos:relatedMatch">skos:relatedMatch</option>
+      </select>
+      <select id="runSel" title="PROV run/version">
+        <option value="">All runs</option>
+      </select>
+      <select id="confSel" title="Confidence threshold">
+        <option value="">Any confidence</option>
+        <option value="0.9">≥ 0.90</option>
+        <option value="0.8">≥ 0.80</option>
+        <option value="0.7">≥ 0.70</option>
+      </select>
+    </div>
+    <div class="legend">
+      <span class="pill eqv">equivalent</span>
+      <span class="pill exact">exact</span>
+      <span class="pill close">close</span>
+      <span class="pill broad">broad</span>
+      <span class="pill narrow">narrow</span>
+      <span class="pill related">related</span>
+    </div>
+  </section>
+
+  <section id="summary" class="summary"></section>
+
+  <section class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width:24%">AIDOC Term</th>
+          <th style="width:16%">Relation</th>
+          <th>Target (Ontology)</th>
+          <th style="width:9%">Conf.</th>
+          <th style="width:10%">Run</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+
+  <section id="details" class="drawer hidden">
+    <header>
+      <h2>Mapping details</h2>
+      <button id="closeDetails" title="Close">×</button>
+    </header>
+    <div id="detailsBody"></div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <p>SKOS mapping relations and PROV‑O provenance are used for interoperability. </p>
+  <ul>
+    <li><a target="_blank" href="https://www.w3.org/2004/02/skos/specs">SKOS spec</a></li>
+    <li><a target="_blank" href="https://www.w3.org/TR/prov-o/">PROV‑O spec</a></li>
+  </ul>
+</footer>
+
+<script>
+/** If you want to parse TTL in the browser, list your TTLs here or
+ *  let CI generate docs/alignments-manifest.json with ["alignments/airo-alignments.ttl", ...] */
+window.ALIGNMENT_TTLS = [
+  "alignments/airo-alignments.ttl"
+];
+</script>
+<script src="assets/alignments.js"></script>
+</body>

@@ -132,6 +132,7 @@ for fname in os.listdir(INPUT_DIR):
     start_time = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
     alignment_graph.add((activity_uri, PROV.startedAtTime, Literal(start_time, datatype=XSD.dateTime)))
     alignment_graph.add((activity_uri, PROV.wasAssociatedWith, agent_uri))
+    alignment_graph.add((activity_uri, PROV.used, URIRef(f"https://ollama.com/library/{OLLAMA_MODEL}")))
     # ==========================
 
     for _, row in df.iterrows():
