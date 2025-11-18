@@ -79,9 +79,12 @@ aiact:req6 a aiact:Requirement , skos:Concept ;
     rdfs:label "Illustrations and markings" ;
     dcterms:description "Photographs or illustrations showing the external features, marking and internal layout of the product." ;
     aiact:aiLifecycleStage "Software Pipeline: Deployment" ;
-    aiact:hasCompetencyQuestion aiact:cq6_1 .
+    aiact:hasCompetencyQuestion aiact:cq6_1 , aiact:cq6_2 , aiact:cq6_3 , aiact:cq6_4 .
 
 aiact:cq6_1 a aiact:CompetencyQuestion ; rdfs:label "What is the physical form of the product?" .
+aiact:cq6_2 a aiact:CompetencyQuestion ; rdfs:label "What visual documentation (photographs, diagrams) exists showing external features?" .
+aiact:cq6_3 a aiact:CompetencyQuestion ; rdfs:label "What markings (CE, labels) are present on the product?" .
+aiact:cq6_4 a aiact:CompetencyQuestion ; rdfs:label "How is the internal layout or component arrangement documented?" .
 
 ### 7. User interface for deployer
 aiact:req7 a aiact:Requirement , skos:Concept ;
