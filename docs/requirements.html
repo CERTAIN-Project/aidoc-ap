@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>AIDOC‑AP · AI Act Requirements</title>
+  <!-- minimal styles to blend with Widoco -->
+  <link rel="stylesheet" href="assets/widoco-like.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="widoco-theme">
+<header class="page-header">
+  <h1 class="title">AIDOC‑AP — AI Act Annex IV Requirements</h1>
+  <p class="subtitle">
+    Technical documentation requirements from the EU AI Act Annex IV,
+    with lifecycle stages and competency questions.
+  </p>
+  <nav class="crumbs">
+    <a href="index-en.html">← Back to ontology</a> · 
+    <a href="coverage.html">View Coverage Analysis →</a> · 
+    <a href="alignments.html">View Alignments →</a>
+  </nav>
+</header>
+
+<main>
+  <section class="filters">
+    <div class="row">
+      <input id="q" class="search" placeholder="Filter by requirement, description, lifecycle stage, competency question…">
+      <select id="stageSel" title="AI Lifecycle Stage">
+        <option value="">All lifecycle stages</option>
+      </select>
+    </div>
+  </section>
+
+  <section id="summary" class="summary"></section>
+
+  <section class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width:5%">#</th>
+          <th style="width:25%">Requirement</th>
+          <th style="width:40%">Description</th>
+          <th style="width:20%">AI Lifecycle Stage</th>
+          <th style="width:10%">CQs</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+
+  <section id="details" class="drawer hidden">
+    <header>
+      <h2>Requirement details</h2>
+      <button id="closeDetails" title="Close">×</button>
+    </header>
+    <div id="detailsBody"></div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <p>Requirements based on <a target="_blank" href="https://artificialintelligenceact.eu/annex/4/">EU AI Act Annex IV</a>.</p>
+  <p><strong>Related pages:</strong> <a href="coverage.html">Coverage Analysis</a> | <a href="alignments.html">Alignments</a> | <a href="index-en.html">Ontology Documentation</a></p>
+</footer>
+
+<script>
+/** Load requirements from annex_4.ttl */
+window.REQUIREMENTS_TTL = '../annex_4.ttl';
+</script>
+<script src="assets/requirements.js"></script>
+</body>
+</html>

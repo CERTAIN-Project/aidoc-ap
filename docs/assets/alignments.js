@@ -16,11 +16,7 @@
     return `<span class="pill related">related</span>`;
   };
 
-  const aidocAnchor = iri => {
-    // try #localName first
-    const id = iri.includes('#') ? iri.split('#')[1] : iri.split('/').pop();
-    return `/#${encodeURIComponent(id)}`;
-  };
+
 
   // --- load data: prefer JSON (build-time), else TTL (client-side) ----------
   async function loadJSONorTTL(){
@@ -147,7 +143,7 @@
     </p>`;
     $('#rows').innerHTML = list.map(m => `
       <tr data-mid="${esc(m.mapping)}">
-        <td><a href="${aidocAnchor(m.source)}">${esc(m.source.split('#')[1]||m.source.split('/').pop())}</a></td>
+        <td><a href="${esc(m.source)}">${esc(m.source.split('#')[1]||m.source.split('/').pop())}</a></td>
         <td>${pillFor(m.relation)} <code>${esc(pref(m.relation))}</code></td>
         <td><a target="_blank" href="${esc(m.target)}">${esc(m.target)}</a><br>
             <span class="badge ns">${esc(m.target_ns||short(m.target||''))}</span></td>
@@ -173,7 +169,7 @@
     if(!m) return;
     const run = m.run ? runs.find(r=>r.id===m.run) : null;
     $('#detailsBody').innerHTML = `
-      <p><strong>Source (AIDOC):</strong> <a href="${aidocAnchor(m.source)}">${esc(m.source)}</a></p>
+      <p><strong>Source (AIDOC):</strong> <a href="${esc(m.source)}">${esc(m.source)}</a></p>
       <p><strong>Relation:</strong> <code>${esc(pref(m.relation))}</code> ${pillFor(m.relation)}</p>
       <p><strong>Target:</strong> <a target="_blank" href="${esc(m.target)}">${esc(m.target)}</a></p>
       <p><strong>Confidence:</strong> ${m.confidence!=null?m.confidence:'—'}</p>

@@ -5,11 +5,6 @@
   const byId = id => document.getElementById(id);
   const esc = s => (s||'').replace(/[&<>"]/g,c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
 
-  const aidocAnchor = iri => {
-    const id = iri.includes('#') ? iri.split('#')[1] : iri.split('/').pop();
-    return `/#${encodeURIComponent(id)}`;
-  };
-
   const coverageClass = score => {
     if (score >= 0.9) return 'high';
     if (score >= 0.8) return 'medium';
@@ -295,7 +290,7 @@
     const matchedHtml = (m.matched_terms || []).map(t => {
       // Try to link to ontology term
       const termUri = `https://w3id.org/aidoc-ap#${t.replace(/ /g, '_')}`;
-      return `<span class="term-badge"><a href="${aidocAnchor(termUri)}" style="color:inherit">${esc(t)}</a></span>`;
+      return `<span class="term-badge"><a href="${esc(termUri)}" style="color:inherit">${esc(t)}</a></span>`;
     }).join(' ');
 
     const missingHtml = (m.missing || []).map(t => 
