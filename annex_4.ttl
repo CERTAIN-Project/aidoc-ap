@@ -112,61 +112,72 @@ aiact:req9 a aiact:Requirement , skos:Concept ;
     rdfs:label "System architecture and algorithms" ;
     dcterms:description "A detailed description of the system architecture, including algorithms." ;
     aiact:aiLifecycleStage "ML Pipeline: Model Engineering" ;
-    aiact:hasCompetencyQuestion aiact:cq9_1 .
+    aiact:hasCompetencyQuestion aiact:cq9_1 , aiact:cq9_2 , aiact:cq9_3 , aiact:cq9_4 .
 
 aiact:cq9_1 a aiact:CompetencyQuestion ; rdfs:label "What is the architecture and what algorithms are used?" .
+aiact:cq9_2 a aiact:CompetencyQuestion ; rdfs:label "Which software components make up the system and how are they connected?" .
+aiact:cq9_3 a aiact:CompetencyQuestion ; rdfs:label "How do software components feed into each other and into the overall processing pipeline?" .
+aiact:cq9_4 a aiact:CompetencyQuestion ; rdfs:label "Which computational resources are used for development, training, testing and validation?" .
 
 ### 10. Data requirements
 aiact:req10 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Data requirements" ;
-    dcterms:description "A description of the data requirements in terms of data type, format, sources and how the data are processed." ;
+    dcterms:description "A description of the data requirements in terms of data type, format, sources and how the data are processed, including available data sheets." ;
     aiact:aiLifecycleStage "Data Pipeline: Exploration and Validation" ;
-    aiact:hasCompetencyQuestion aiact:cq10_1 .
+    aiact:hasCompetencyQuestion aiact:cq10_1 , aiact:cq10_2 , aiact:cq10_3 .
 
 aiact:cq10_1 a aiact:CompetencyQuestion ; rdfs:label "What data is needed and how is it processed?" .
+aiact:cq10_2 a aiact:CompetencyQuestion ; rdfs:label "Are there data sheets describing the required data and their main characteristics?" .
+aiact:cq10_3 a aiact:CompetencyQuestion ; rdfs:label "What are the scope, main characteristics and sources of the required data?" .
 
 ### 11. Training, validation, testing data
 aiact:req11 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Training, validation, testing data" ;
-    dcterms:description "A description of the data used for training, validation and testing of the AI system, including its provenance and how the data was obtained." ;
+    dcterms:description "A description of the data used for training, validation and testing of the AI system, including its provenance, how the data was obtained and documented." ;
     aiact:aiLifecycleStage "Data Pipeline: Data Training and Testing" ;
-    aiact:hasCompetencyQuestion aiact:cq11_1 , aiact:cq11_2 , aiact:cq11_3 .
+    aiact:hasCompetencyQuestion aiact:cq11_1 , aiact:cq11_2 , aiact:cq11_3 , aiact:cq11_4 , aiact:cq11_5 .
 
 aiact:cq11_1 a aiact:CompetencyQuestion ; rdfs:label "What data is used?" .
 aiact:cq11_2 a aiact:CompetencyQuestion ; rdfs:label "Where does it come from?" .
 aiact:cq11_3 a aiact:CompetencyQuestion ; rdfs:label "How was it obtained?" .
+aiact:cq11_4 a aiact:CompetencyQuestion ; rdfs:label "Are there training data sheets describing the datasets and their use for training, validation and testing?" .
+aiact:cq11_5 a aiact:CompetencyQuestion ; rdfs:label "What are the selection criteria and sampling strategy for the training, validation and testing data?" .
 
 ### 12. Measures for data quality
 aiact:req12 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Measures for data quality" ;
-    dcterms:description "A description of the measures taken to ensure the quality of the data used, including cleaning and enrichment processes." ;
+    dcterms:description "A description of the measures taken to ensure the quality of the data used, including cleaning, enrichment processes and labeling procedures." ;
     aiact:aiLifecycleStage "Data Pipeline: Wrangling (Cleaning)" ;
-    aiact:hasCompetencyQuestion aiact:cq12_1 .
+    aiact:hasCompetencyQuestion aiact:cq12_1 , aiact:cq12_2 .
 
 aiact:cq12_1 a aiact:CompetencyQuestion ; rdfs:label "How is the data cleaned, filtered, and validated?" .
+aiact:cq12_2 a aiact:CompetencyQuestion ; rdfs:label "What labeling procedures and guidelines are used to assign labels to the data?" .
 
 ### 13. Training methodologies
 aiact:req13 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Training methodologies" ;
-    dcterms:description "A detailed description of the training methodologies and techniques used." ;
+    dcterms:description "A detailed description of the training methodologies and techniques used, including configuration of computational resources and data usage." ;
     aiact:aiLifecycleStage "ML Pipeline: Model Engineering" ;
-    aiact:hasCompetencyQuestion aiact:cq13_1 .
+    aiact:hasCompetencyQuestion aiact:cq13_1 , aiact:cq13_2 , aiact:cq13_3 .
 
 aiact:cq13_1 a aiact:CompetencyQuestion ; rdfs:label "How was the model trained? What techniques were used?" .
+aiact:cq13_2 a aiact:CompetencyQuestion ; rdfs:label "How are training, validation and testing datasets used within the training workflow?" .
+aiact:cq13_3 a aiact:CompetencyQuestion ; rdfs:label "What computational resources and configurations are used during training?" .
 
 ### 14. Testing and validation procedures
 aiact:req14 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Testing and validation procedures" ;
-    dcterms:description "A description of the testing and validation procedures used." ;
+    dcterms:description "A description of the testing and validation procedures used, including computational resources." ;
     aiact:aiLifecycleStage "ML Pipeline: Model Evaluation" ;
-    aiact:hasCompetencyQuestion aiact:cq14_1 .
+    aiact:hasCompetencyQuestion aiact:cq14_1 , aiact:cq14_2 .
 
 aiact:cq14_1 a aiact:CompetencyQuestion ; rdfs:label "How was the system tested and validated?" .
+aiact:cq14_2 a aiact:CompetencyQuestion ; rdfs:label "What computational resources are used during testing and validation?" .
 
 ### 15. Risk management system
 aiact:req15 a aiact:Requirement , skos:Concept ;

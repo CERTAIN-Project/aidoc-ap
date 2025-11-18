@@ -131,6 +131,22 @@
                                          rdfs:label "has component"@en .
 
 
+###  https://w3id.org/aidoc-ap#hasSoftwareComponent
+<https://w3id.org/aidoc-ap#hasSoftwareComponent> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
+                                                rdfs:range <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                                                rdfs:comment "Links an AI system to its software components, such as services or modules that participate in the overall processing."@en ;
+                                                rdfs:label "has software component"@en .
+
+
+###  https://w3id.org/aidoc-ap#feedsIntoComponent
+<https://w3id.org/aidoc-ap#feedsIntoComponent> rdf:type owl:ObjectProperty ;
+                                               rdfs:domain <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                                               rdfs:range <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                                               rdfs:comment "Indicates that the output of one software component is used as input by another, forming part of the system's processing flow."@en ;
+                                               rdfs:label "feeds into component"@en .
+
+
 ###  https://w3id.org/aidoc-ap#hasDeclarationOfConformity
 <https://w3id.org/aidoc-ap#hasDeclarationOfConformity> rdf:type owl:ObjectProperty ;
                                                        rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
@@ -321,6 +337,110 @@
                                     rdfs:comment "Description of what the visual documentation shows (e.g., 'external view', 'internal layout', 'marking placement')."@en ;
                                     rdfs:label "depicts"@en ;
                                     skos:closeMatch <http://xmlns.com/foaf/0.1/depicts> .
+
+
+###  https://w3id.org/aidoc-ap#resourceType
+<https://w3id.org/aidoc-ap#resourceType> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <https://w3id.org/aidoc-ap#ComputationalResource> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "Type of computational resource used (e.g., GPU cluster, CPU server, cloud instance)."@en ;
+                                         rdfs:label "resource type"@en .
+
+
+###  https://w3id.org/aidoc-ap#resourceVendor
+<https://w3id.org/aidoc-ap#resourceVendor> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/aidoc-ap#ComputationalResource> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Provider or vendor of the computational resource (e.g., cloud provider, hardware manufacturer)."@en ;
+                                           rdfs:label "resource vendor"@en .
+
+
+###  https://w3id.org/aidoc-ap#resourceConfiguration
+<https://w3id.org/aidoc-ap#resourceConfiguration> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/aidoc-ap#ComputationalResource> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment "Configuration details of the computational resource (e.g., number and type of GPUs, CPU cores, memory, accelerator type)."@en ;
+                                                  rdfs:label "resource configuration"@en .
+
+
+###  https://w3id.org/aidoc-ap#dataScope
+<https://w3id.org/aidoc-ap#dataScope> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <https://w3id.org/aidoc-ap#Dataset> ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:comment "Project-specific summary of the scope of the data contained in the dataset (e.g., population, geography, time period). For interoperable modeling, more specific aspects SHOULD be captured using dcterms:spatial, dcterms:temporal and dcterms:coverage."@en ;
+                                      rdfs:label "data scope"@en .
+
+
+###  https://w3id.org/aidoc-ap#dataCharacteristic
+<https://w3id.org/aidoc-ap#dataCharacteristic> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/aidoc-ap#Dataset> ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Project-specific summary of key characteristics of the dataset, such as feature types, label distributions, data modalities or known biases. For interoperable descriptions, individual variables SHOULD be modeled with schema:variableMeasured and quality aspects with dqv:hasQualityMeasurement / dqv:hasQualityAnnotation."@en ;
+                                               rdfs:label "data characteristic"@en .
+
+
+###  https://w3id.org/aidoc-ap#dataCollectionMethod
+<https://w3id.org/aidoc-ap#dataCollectionMethod> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <https://w3id.org/aidoc-ap#Dataset> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Project-specific description of the method used to collect the data (e.g., manual annotation, web scraping, sensor logs). For interoperability, this SHOULD be complemented with dcterms:provenance and, where appropriate, schema:measurementTechnique."@en ;
+                                                 rdfs:label "data collection method"@en .
+
+
+###  https://w3id.org/aidoc-ap#dataSelectionCriteria
+<https://w3id.org/aidoc-ap#dataSelectionCriteria> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/aidoc-ap#Dataset> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment "Project-specific description of inclusion and exclusion criteria or sampling strategy used to select data for the dataset. Related sampling and bias information MAY also be represented using dqv:hasQualityAnnotation on the dataset or a dedicated sampling-plan resource."@en ;
+                                                  rdfs:label "data selection criteria"@en .
+
+
+###  https://w3id.org/aidoc-ap#labelingGuideline
+<https://w3id.org/aidoc-ap#labelingGuideline> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <https://w3id.org/aidoc-ap#LabelingProcedure> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Guidelines or instructions provided to annotators when assigning labels."@en ;
+                                              rdfs:label "labeling guideline"@en .
+
+
+###  https://w3id.org/aidoc-ap#annotatorType
+<https://w3id.org/aidoc-ap#annotatorType> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <https://w3id.org/aidoc-ap#LabelingProcedure> ;
+                                          rdfs:range xsd:string ;
+                                          rdfs:comment "Type of annotators involved in the labeling procedure (e.g., domain experts, laypersons, crowd workers)."@en ;
+                                          rdfs:label "annotator type"@en .
+
+
+###  https://w3id.org/aidoc-ap#annotationTool
+<https://w3id.org/aidoc-ap#annotationTool> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <https://w3id.org/aidoc-ap#LabelingProcedure> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "Tool or platform used to perform annotation (e.g., internal tool, external labeling platform)."@en ;
+                                           rdfs:label "annotation tool"@en .
+
+
+###  https://w3id.org/aidoc-ap#outlierHandlingMethod
+<https://w3id.org/aidoc-ap#outlierHandlingMethod> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <https://w3id.org/aidoc-ap#DataCleaningProcedure> ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment "Methods used to identify and handle outliers or other problematic records in the data."@en ;
+                                                  rdfs:label "outlier handling method"@en .
+
+
+###  https://w3id.org/aidoc-ap#missingDataStrategy
+<https://w3id.org/aidoc-ap#missingDataStrategy> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <https://w3id.org/aidoc-ap#DataCleaningProcedure> ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment "Strategy for handling missing data (e.g., imputation, deletion, flagging)."@en ;
+                                                rdfs:label "missing data strategy"@en .
+
+
+###  https://w3id.org/aidoc-ap#qualityMetricsUsed
+<https://w3id.org/aidoc-ap#qualityMetricsUsed> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <https://w3id.org/aidoc-ap#DataCleaningProcedure> ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "Data quality metrics or thresholds used to assess the dataset after cleaning."@en ;
+                                               rdfs:label "quality metrics used"@en .
 
 
 #################################################################
@@ -711,6 +831,13 @@
                                                    rdfs:label "Software Implementation"@en .
 
 
+###  https://w3id.org/aidoc-ap#SoftwareComponent
+<https://w3id.org/aidoc-ap#SoftwareComponent> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/aidoc-ap#AIArtifact> ;
+                                              rdfs:comment "A logical or physical software component of the AI system, such as a service, module, or microservice participating in the overall processing."@en ;
+                                              rdfs:label "Software Component"@en .
+
+
 ###  https://w3id.org/aidoc-ap#Standard
 <https://w3id.org/aidoc-ap#Standard> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
@@ -724,6 +851,41 @@
                                                 rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                                 rdfs:comment "A feature or measure to ensure the transparency of an AI system."@en ;
                                                 rdfs:label "Transparency Measure"@en .
+
+
+###  https://w3id.org/aidoc-ap#ComputationalResource
+<https://w3id.org/aidoc-ap#ComputationalResource> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                                 rdfs:comment "A computational resource used during the AI lifecycle, such as GPUs, CPUs, clusters or cloud instances."@en ;
+                                                 rdfs:label "Computational Resource"@en .
+
+
+###  https://w3id.org/aidoc-ap#DataSheet
+<https://w3id.org/aidoc-ap#DataSheet> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                      rdfs:comment "Structured documentation for a dataset or training configuration, including provenance, scope and main characteristics."@en ;
+                                      rdfs:label "Data Sheet"@en .
+
+
+###  https://w3id.org/aidoc-ap#TrainingDataSheet
+<https://w3id.org/aidoc-ap#TrainingDataSheet> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/aidoc-ap#DataSheet> ;
+                                              rdfs:comment "A data sheet focusing on training methodologies, techniques, hyperparameters and dataset usage for training, validation and testing."@en ;
+                                              rdfs:label "Training Data Sheet"@en .
+
+
+###  https://w3id.org/aidoc-ap#LabelingProcedure
+<https://w3id.org/aidoc-ap#LabelingProcedure> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/aidoc-ap#DataPipeline> ;
+                                              rdfs:comment "An activity describing how data labels were assigned, including annotators, tools and guidelines."@en ;
+                                              rdfs:label "Labeling Procedure"@en .
+
+
+###  https://w3id.org/aidoc-ap#DataCleaningProcedure
+<https://w3id.org/aidoc-ap#DataCleaningProcedure> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <https://w3id.org/aidoc-ap#DataWrangling> ;
+                                                  rdfs:comment "A procedure describing how data cleaning is performed, such as outlier detection and removal of invalid records."@en ;
+                                                  rdfs:label "Data Cleaning Procedure"@en .
 
 
 
