@@ -68,6 +68,7 @@ jobs:
           cp docs/assets/* site/assets/
           cp docs/coverage.html site/coverage.html
           cp docs/alignments.html site/alignments.html
+          cp docs/requirements.html site/requirements.html
           cp annex_4.ttl site/annex_4.ttl
 
       - name: Upload artifact

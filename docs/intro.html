@@ -15,7 +15,166 @@
 
 <h3 id="additional-resources" class="list">Additional Resources</h3>
 <span>Explore additional resources linked to the AIDOC‑AP ontology.</span>
-<ul>
-  <li><a href="coverage.html">Coverage (Annex IV)</a> — LLM‑based assessment of how well AIDOC‑AP covers EU AI Act Annex IV requirements.</li>
-  <li><a href="alignments.html">Alignments</a> — Cross‑ontology mappings with confidence & rationale.</li>
-</ul>
+
+<style>
+.resource-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+.resource-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.resource-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  border-color: #0066cc;
+}
+.resource-card h4 {
+  margin: 0 0 10px 0;
+  color: #0066cc;
+  font-size: 1.2em;
+}
+.resource-card p {
+  margin: 10px 0;
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.resource-card .stats {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0 10px 0;
+  flex-wrap: wrap;
+}
+.resource-card .stat-badge {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 0.85em;
+  color: #333;
+  white-space: nowrap;
+}
+.resource-card .stat-badge strong {
+  color: #0066cc;
+  font-size: 1.1em;
+}
+.resource-card .cta {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+.resource-card .cta:hover {
+  text-decoration: underline;
+}
+.resource-card .icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2em;
+  opacity: 0.1;
+}
+</style>
+
+<div class="resource-cards">
+  <div class="resource-card">
+    <span class="icon">📋</span>
+    <h4><a href="requirements.html">AI Act Requirements</a></h4>
+    <p>List of technical documentation requirements extracted from EU AI Act Annex IV, with descriptions, lifecycle stages, and competency questions.</p>
+    <div class="stats">
+      <span class="stat-badge"><strong id="req-count">28</strong> requirements</span>
+      <span class="stat-badge"><strong id="cq-count">—</strong> competency questions</span>
+    </div>
+    <a href="requirements.html" class="cta">View all requirements →</a>
+  </div>
+
+  <div class="resource-card">
+    <span class="icon">📊</span>
+    <h4><a href="coverage.html">Coverage Analysis</a></h4>
+    <p>LLM‑based assessment evaluating how well AIDOC‑AP covers EU AI Act Annex IV requirements, with detailed reasoning and gap analysis.</p>
+    <div class="stats">
+      <span class="stat-badge"><strong id="cov-avg">—</strong> avg coverage</span>
+      <span class="stat-badge"><strong id="cov-high">—</strong> excellent (≥90%)</span>
+    </div>
+    <a href="coverage.html" class="cta">View coverage analysis →</a>
+  </div>
+
+  <div class="resource-card">
+    <span class="icon">🔗</span>
+    <h4><a href="alignments.html">Cross‑Ontology Alignments</a></h4>
+    <p>Mappings between AIDOC‑AP terms and external ontologies (AIRO, ML‑Schema, PROV‑O, etc.) with relation types, confidence scores, and provenance.</p>
+    <div class="stats">
+      <span class="stat-badge"><strong id="align-count">—</strong> mappings</span>
+      <span class="stat-badge"><strong id="align-ontos">—</strong> ontologies</span>
+    </div>
+    <a href="alignments.html" class="cta">View alignments →</a>
+  </div>
+</div>
+
+<script>
+// Dynamically load stats for each resource
+(async function loadResourceStats(){
+  // Load requirements count and CQs
+  try {
+    const resp = await fetch('resources/annex_4.ttl');
+    const txt = await resp.text();
+    const cqMatches = txt.match(/aiact:cq\d+_\d+/g);
+    if (cqMatches) {
+      document.getElementById('cq-count').textContent = new Set(cqMatches).size;
+    }
+  } catch(e) { console.log('Could not load requirements stats'); }
+
+  // Load coverage stats
+  try {
+    const resp = await fetch('resources/semantic_mapping.ttl');
+    if (resp.ok) {
+      const txt = await resp.text();
+      const valueMatches = txt.match(/dqv:value\s+"?([0-9.]+)"?/g);
+      if (valueMatches) {
+        const scores = valueMatches.map(m => parseFloat(m.match(/([0-9.]+)/)[1]));
+        const avg = scores.reduce((a,b)=>a+b,0) / scores.length;
+        const high = scores.filter(s => s >= 0.9).length;
+        document.getElementById('cov-avg').textContent = (avg * 100).toFixed(0) + '%';
+        document.getElementById('cov-high').textContent = high;
+      }
+    }
+  } catch(e) { console.log('Could not load coverage stats'); }
+
+  // Load alignment stats
+  try {
+    const manifestResp = await fetch('resources/alignments-manifest.json');
+    if (manifestResp.ok) {
+      const manifest = await manifestResp.json();
+      const files = manifest.files || [];
+      document.getElementById('align-ontos').textContent = files.length;
+      
+      // Count total mappings across all files
+      let totalMappings = 0;
+      for (const file of files) {
+        try {
+          const resp = await fetch(file);
+          const txt = await resp.text();
+          const mappingMatches = txt.match(/a\s+alignment:Mapping/g);
+          if (mappingMatches) {
+            totalMappings += mappingMatches.length;
+          }
+        } catch(e) { /* skip */ }
+      }
+      if (totalMappings > 0) {
+        document.getElementById('align-count').textContent = totalMappings;
+      }
+    }
+  } catch(e) { console.log('Could not load alignment stats'); }
+})();
+</script>
+
