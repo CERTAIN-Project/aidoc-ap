@@ -1,0 +1,39 @@
+@prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+align:691b7a66-8806-4b76-a8ea-293a8e1d235f a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:fe5a792e-a37d-46c2-89f5-06f50199f011 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description (albeit the second lacks detail). The `mex-perf` concept explicitly links to a well-established URI (PROV-O) representing an entity, strongly indicating semantic equivalence. While the `AIDOC` description is empty, the shared label and the external URI in `mex-perf` are strong indicators."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source prov:Entity ;
+    align:target <http://www.w3.org/ns/prov-o#Entity> .
+
+align:9476d8e0-b771-4cb3-a7b5-c0e5e2e56c17 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:fe5a792e-a37d-46c2-89f5-06f50199f011 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description, and the `mex-perf` concept utilizes a well-established URI from the PROV-O ontology for 'Activity'. Given the 1.0 lexical similarity and the reference to a standard ontology, it's highly likely they represent the same concept, making `owl:equivalentClass` the most appropriate relation."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source prov:Activity ;
+    align:target <http://www.w3.org/ns/prov-o#Activity> .
+
+prov:Activity owl:equivalentClass <http://www.w3.org/ns/prov-o#Activity> .
+
+align:fe5a792e-a37d-46c2-89f5-06f50199f011 a prov:Activity ;
+    prov:endedAtTime "2025-11-17T15:47:10+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-17T15:47:01+00:00"^^xsd:dateTime ;
+    prov:used <https://ollama.com/library/gemma3:27b> ;
+    prov:wasAssociatedWith align:LLMAlignmentBot .
+
+prov:Entity owl:equivalentClass <http://www.w3.org/ns/prov-o#Entity> .
+
+align:LLMAlignmentBot a prov:SoftwareAgent ;
+    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+

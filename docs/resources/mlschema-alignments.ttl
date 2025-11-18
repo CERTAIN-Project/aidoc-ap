@@ -1,0 +1,52 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+align:22a9e480-1510-42b7-b077-b1fee7f1bc7b a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:80d4c05c-08be-46f4-bdd0-1545582dc7aa ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description, and while the mlschema concept has a URI indicating formal definition, the core meaning appears identical. Assuming the descriptions are also identical beyond what is provided, this is a strong indication of equivalence. The presence of a URI in mlschema indicates a more formal, machine-readable definition, but doesn't change the semantic meaning."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source <http://mlcommons.org/croissant/1.0#Dataset> ;
+    align:target <http://www.w3.org/ns/mls#Dataset> .
+
+align:c64f8f6e-07ed-45ba-8d0f-6cd46da67158 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:80d4c05c-08be-46f4-bdd0-1545582dc7aa ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and a highly similar description, representing a dataset. The mlschema concept also provides a URI which further solidifies its definition. Given the 1.0 lexical similarity score, they appear to be defined identically."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:Dataset ;
+    align:target <http://www.w3.org/ns/mls#Dataset> .
+
+align:e07f2c4b-2fe9-4741-8e73-84753a20cdd4 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:80d4c05c-08be-46f4-bdd0-1545582dc7aa ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Despite slight differences in phrasing, both concepts fundamentally describe the activity of evaluating a model's performance. The `mlschema` definition is more formal and clearly links to performance measures and specifications, but this doesn't change the core meaning. The lexical similarity of 1.0 supports a strong equivalence."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:ModelEvaluation ;
+    align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
+
+<http://mlcommons.org/croissant/1.0#Dataset> owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
+
+aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
+
+aidoc:ModelEvaluation owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
+
+align:80d4c05c-08be-46f4-bdd0-1545582dc7aa a prov:Activity ;
+    prov:endedAtTime "2025-11-17T15:47:55+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-17T15:47:49+00:00"^^xsd:dateTime ;
+    prov:used <https://ollama.com/library/gemma3:27b> ;
+    prov:wasAssociatedWith align:LLMAlignmentBot .
+
+align:LLMAlignmentBot a prov:SoftwareAgent ;
+    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+

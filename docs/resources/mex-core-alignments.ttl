@@ -1,0 +1,137 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+align:1ff68bbb-c0d5-4b6f-8549-b147cefc5c59 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description. While the AIDOC concept lacks a URI, the high lexical similarity and identical definitions strongly suggest they represent the same class. The absence of further distinguishing information pushes this towards equivalence."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source <http://www.w3.org/ns/mls#Experiment> ;
+    align:target <http://mex.aksw.org/mex-core#Experiment> .
+
+align:315c04a4-4cfb-4473-8e5c-fb52db8dded7 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts represent an 'Organization'. The URIs, while different, point to widely used and accepted definitions of organizations. The lexical similarity is perfect. While different namespaces, the meaning is identical."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source foaf:Organization ;
+    align:target <http://www.w3.org/ns/prov-o#Organization> .
+
+align:3ce4d0e9-c3c2-41a3-818b-c3e9ae66025b a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description, indicating a high degree of semantic overlap. While the mex-core concept includes a URI providing context, the core meaning conveyed by the label and description appears identical. Considering only the provided information, they are likely equivalent."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source <http://www.w3.org/ns/mls#Dataset> ;
+    align:target <http://mex.aksw.org/mex-core#Dataset> .
+
+align:7e42ca2c-4ff5-4ff0-9996-3af72374c1d8 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts are labeled 'Activity' and have identical descriptions (though the AIDOC description is empty). Furthermore, the mex-core concept explicitly links to the W3C PROV ontology definition for Activity, suggesting a common understanding. Given the 1.0 lexical similarity and the shared label and intent, equivalence is highly probable."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source prov:Activity ;
+    align:target <http://www.w3.org/ns/prov-o#Activity> .
+
+align:82bdae51-0af7-4466-8d90-c63e2d933d86 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description. While the lack of a full description in the AIDOC concept is a limitation, the identical labels strongly suggest equivalence. The MEX-core concept provides a URI, indicating it's a formally defined class, reinforcing the likelihood of equivalence."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source <http://www.w3.org/ns/mls#Model> ;
+    align:target <http://mex.aksw.org/mex-core#Model> .
+
+align:8d674f1d-36dc-47ab-9889-ac9d09c067fd a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description, and the `mex-core` concept explicitly uses a well-established URI. While a more detailed analysis of the ontologies would be ideal, the high lexical similarity and lack of differentiating information strongly suggest they represent the same class."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source prov:Entity ;
+    align:target <http://www.w3.org/ns/prov-o#Entity> .
+
+align:b41d93c0-8b6b-40dc-b39a-3370587b5c50 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts represent 'Person'. While the URIs are different, the lexical similarity is 1.0 and the descriptions are implicitly aligned. The difference in namespace is primarily a matter of provenance and doesn't affect semantic meaning in this case. Considering they are both defining a 'Person', it's safe to consider them equivalent classes."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source foaf:Person ;
+    align:target <http://www.w3.org/ns/prov-o#Person> .
+
+align:c29e30e3-4144-45dc-be76-3094d6de01f5 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description, and the `mex-core` Agent is defined using a well-established URI from the PROV-O ontology. While the AIDOC description is empty, the label match and potential implicit alignment with PROV-O strongly suggest equivalence.  Without further information on the AIDOC 'Agent' definition, assuming equivalence is reasonable."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source prov:Agent ;
+    align:target <http://www.w3.org/ns/prov-o#Agent> .
+
+align:e1f8b93f-6f69-40af-897b-fc84e4ff5f3e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and, crucially, describe a 'Dataset'. While the AIDOC description is minimal, the structural similarity and identical label strongly suggest equivalence. The mex-core URI provides further definition but doesn't contradict the basic meaning. Without further descriptive detail in AIDOC, assuming equivalence is reasonable."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:Dataset ;
+    align:target <http://mex.aksw.org/mex-core#Dataset> .
+
+align:e866340b-864f-4111-8e9f-53a3e3cecba7 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:61a6fa55-6dd0-417b-8180-c0b27a725805 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description. While the `mex-core` concept defines a URI, the lack of differing information suggests a high degree of equivalence. Without further context about the specific semantics within each ontology, assuming equivalence is justifiable."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source <http://mlcommons.org/croissant/1.0#Dataset> ;
+    align:target <http://mex.aksw.org/mex-core#Dataset> .
+
+<http://mlcommons.org/croissant/1.0#Dataset> owl:equivalentClass <http://mex.aksw.org/mex-core#Dataset> .
+
+<http://www.w3.org/ns/mls#Dataset> owl:equivalentClass <http://mex.aksw.org/mex-core#Dataset> .
+
+<http://www.w3.org/ns/mls#Experiment> owl:equivalentClass <http://mex.aksw.org/mex-core#Experiment> .
+
+<http://www.w3.org/ns/mls#Model> owl:equivalentClass <http://mex.aksw.org/mex-core#Model> .
+
+prov:Agent owl:equivalentClass <http://www.w3.org/ns/prov-o#Agent> .
+
+foaf:Organization owl:equivalentClass <http://www.w3.org/ns/prov-o#Organization> .
+
+foaf:Person owl:equivalentClass <http://www.w3.org/ns/prov-o#Person> .
+
+aidoc:Dataset owl:equivalentClass <http://mex.aksw.org/mex-core#Dataset> .
+
+prov:Activity owl:equivalentClass <http://www.w3.org/ns/prov-o#Activity> .
+
+align:61a6fa55-6dd0-417b-8180-c0b27a725805 a prov:Activity ;
+    prov:endedAtTime "2025-11-17T15:47:42+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-17T15:47:24+00:00"^^xsd:dateTime ;
+    prov:used <https://ollama.com/library/gemma3:27b> ;
+    prov:wasAssociatedWith align:LLMAlignmentBot .
+
+prov:Entity owl:equivalentClass <http://www.w3.org/ns/prov-o#Entity> .
+
+align:LLMAlignmentBot a prov:SoftwareAgent ;
+    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+

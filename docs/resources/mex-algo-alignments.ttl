@@ -1,0 +1,39 @@
+@prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+align:7c6a9879-92ee-4208-ac3d-2f08ef27cb9c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:2b353f3a-7e93-4695-b37f-4673a2bbb59f ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description. While the `mex-algo` concept has a URI, indicating a more formal definition, the core meaning appears identical.  Without further context regarding the intended modeling differences, we can assume equivalence."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source <http://www.w3.org/ns/mls#Algorithm> ;
+    align:target <http://mex.aksw.org/mex-algo#Algorithm> .
+
+align:e68f42a2-a422-4c47-8f6c-c4c56ead4130 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:2b353f3a-7e93-4695-b37f-4673a2bbb59f ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and, crucially, the `mex-algo` concept explicitly links to a well-established provenance ontology (`prov-o`) entity. Given the identical label, and the `mex-algo` concept's grounding within a standard ontology, it’s highly probable they represent the same class, despite the lack of a detailed description in AIDOC. We can assume a high degree of equivalence."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source prov:Entity ;
+    align:target <http://www.w3.org/ns/prov-o#Entity> .
+
+<http://www.w3.org/ns/mls#Algorithm> owl:equivalentClass <http://mex.aksw.org/mex-algo#Algorithm> .
+
+align:2b353f3a-7e93-4695-b37f-4673a2bbb59f a prov:Activity ;
+    prov:endedAtTime "2025-11-17T15:47:59+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-17T15:47:55+00:00"^^xsd:dateTime ;
+    prov:used <https://ollama.com/library/gemma3:27b> ;
+    prov:wasAssociatedWith align:LLMAlignmentBot .
+
+prov:Entity owl:equivalentClass <http://www.w3.org/ns/prov-o#Entity> .
+
+align:LLMAlignmentBot a prov:SoftwareAgent ;
+    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+

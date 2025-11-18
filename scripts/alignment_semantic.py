@@ -1,6 +1,5 @@
 import os
 import json
-import requests
 import datetime
 import pandas as pd
 from rdflib import Graph, RDFS, Namespace, URIRef, Literal
@@ -112,7 +111,7 @@ for fname in os.listdir(INPUT_DIR):
 
     REF = Graph().parse(REFERENCE_DIR + fname.replace('_alignment.csv','.ttl'), format="turtle")
     STRUCTURAL_FILE = os.path.join(INPUT_DIR, fname)
-    OUTPUT_FILE = os.path.join(OUTPUT_DIR, fname.replace("_alignment.csv", "_semantic_alignment.ttl"))  
+    OUTPUT_FILE = os.path.join(OUTPUT_DIR, fname.replace("_alignment.csv", "-alignments.ttl"))  
     df = pd.read_csv(STRUCTURAL_FILE)
 
     # ==========================

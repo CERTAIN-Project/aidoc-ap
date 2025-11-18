@@ -1,0 +1,28 @@
+@prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+align:8105e27b-bb87-48cd-96e7-7fa7481442e0 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:896efeb1-7338-4c3c-9e6e-e54cd08b4276 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "The lexical similarity is 1.0, indicating identical labels. The mcro concept explicitly references the well-known FOAF 'Agent' definition using a URI. Given the identical labels and the established meaning of the FOAF 'Agent', it is highly likely they represent the same concept. We can confidently assert equivalence."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source prov:Agent ;
+    align:target foaf:Agent .
+
+prov:Agent owl:equivalentClass foaf:Agent .
+
+align:896efeb1-7338-4c3c-9e6e-e54cd08b4276 a prov:Activity ;
+    prov:endedAtTime "2025-11-17T15:48:01+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-17T15:47:59+00:00"^^xsd:dateTime ;
+    prov:used <https://ollama.com/library/gemma3:27b> ;
+    prov:wasAssociatedWith align:LLMAlignmentBot .
+
+align:LLMAlignmentBot a prov:SoftwareAgent ;
+    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+

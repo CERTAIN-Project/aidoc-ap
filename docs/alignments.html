@@ -92,11 +92,37 @@
 </footer>
 
 <script>
-/** If you want to parse TTL in the browser, list your TTLs here or
- *  let CI generate docs/resources-manifest.json with ["resources/airo-alignments.ttl", ...] */
-window.ALIGNMENT_TTLS = [
-  "resources/airo-alignments.ttl"
-];
+/** Auto-discover all *-alignments.ttl files in resources/ directory.
+ *  Falls back to manifest if fetch fails (for static hosting). */
+(async function loadAlignmentsList() {
+  try {
+    // Try to fetch the directory listing (works on some servers with directory indexing)
+    const resp = await fetch('resources/');
+    const html = await resp.text();
+    // Extract all *-alignments.ttl links from directory listing
+    const matches = html.matchAll(/href="([^"]*-alignments\.ttl)"/gi);
+    const files = Array.from(matches, m => `resources/${m[1]}`);
+    
+    if (files.length > 0) {
+      window.ALIGNMENT_TTLS = files;
+      console.log(`✓ Auto-discovered ${files.length} alignment files`);
+      return;
+    }
+  } catch (e) {
+    console.log('Directory listing not available, trying manifest...');
+  }
+  
+  // Fallback: try to load a manifest file (you can generate this in CI)
+  try {
+    const resp = await fetch('resources/alignments-manifest.json');
+    const manifest = await resp.json();
+    window.ALIGNMENT_TTLS = manifest.files || [];
+    console.log(`✓ Loaded ${window.ALIGNMENT_TTLS.length} files from manifest`);
+  } catch (e) {
+    console.error('⚠ Could not load alignments: no directory listing or manifest found');
+    window.ALIGNMENT_TTLS = [];
+  }
+})();
 </script>
 <script src="assets/alignments.js"></script>
 </body>
