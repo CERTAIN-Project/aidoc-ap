@@ -575,7 +575,7 @@
                                                      <https://w3id.org/aidoc-ap#AIArtifact> ;
                                      rdfs:comment "A computational representation that enables an AI method to execute an AI task."@en ;
                                      rdfs:label "AI Model"@en ;
-                                     owl:equivalentClass equivalent <https://w3id.org/airo#AIModel> .
+                                     owl:equivalentClass <https://w3id.org/airo#AIModel> .
 
 
 ###  https://w3id.org/aidoc-ap#AISystem
@@ -770,7 +770,7 @@
                                             rdfs:subClassOf <https://w3id.org/aidoc-ap#MLPipeline> ;
                                             rdfs:comment "Activity of assessing performance, robustness, and accuracy."@en ;
                                             rdfs:label "Model Evaluation"@en ;
-                                            owl:equivalentClass equivalent <http://www.w3.org/ns/mls#ModelEvaluation> .
+                                            owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
 
 
 ###  https://w3id.org/aidoc-ap#ModelPackaging
