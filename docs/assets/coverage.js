@@ -106,7 +106,7 @@
     // Load requirement labels from annex_4.ttl
     try {
       await loadScript('https://unpkg.com/n3@1.17.4/browser/n3.min.js');
-      const ttlUrl = window.REQUIREMENTS_TTL || 'resources/annex_4.ttl';
+      const ttlUrl = window.REQUIREMENTS_TTL || 'annex_4.ttl';
       const txt = await (await fetch(ttlUrl, {cache:'no-store'})).text();
       const parser = new N3.Parser();
       const quads = parser.parse(txt);

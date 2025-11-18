@@ -126,7 +126,7 @@
 (async function loadResourceStats(){
   // Load requirements count and CQs
   try {
-    const resp = await fetch('resources/annex_4.ttl');
+    const resp = await fetch('annex_4.ttl');
     const txt = await resp.text();
     const cqMatches = txt.match(/aiact:cq\d+_\d+/g);
     if (cqMatches) {
