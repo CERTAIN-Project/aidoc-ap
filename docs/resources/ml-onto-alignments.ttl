@@ -1,62 +1,37 @@
 @prefix aidoc: <https://w3id.org/aidoc-ap#> .
 @prefix align: <https://w3id.org/aidoc-ap/alignment#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:0e56c8c7-f0ad-407a-a832-f07ba4ec2be2 a prov:Entity,
+align:c7b9a9f9-b78e-4cec-920e-79a707ffc748 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:566c677e-939f-435c-8be2-621ac770215d ;
+    prov:wasGeneratedBy align:52ce4b00-9b0f-40e7-8ca8-73de43a67b40 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label 'Agent' and, despite differing levels of detail in their descriptions (AIDOC provides none, ml-onto provides a URI pointing to a well-defined ontology), the lexical similarity is perfect. The URI in ml-onto strongly suggests a standard definition for 'Agent' that the AIDOC concept likely intends to represent.  Without further information on the AIDOC 'Agent' concept's axioms or intended use, it’s reasonable to assume equivalence."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source prov:Agent ;
-    align:target foaf:Agent .
-
-align:60a0ce2a-4aea-4c3f-9105-1a4d398220de a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:566c677e-939f-435c-8be2-621ac770215d ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and description. While the ml-onto concept has a URI providing further context, the core meaning remains identical. The lexical similarity score of 1.0 strongly suggests equivalence."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source <http://mlcommons.org/croissant/1.0#Dataset> ;
-    align:target <http://www.w3.org/ns/mls#Dataset> .
-
-align:799a3bdd-f548-4f8f-b327-17535bfddb66 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:566c677e-939f-435c-8be2-621ac770215d ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and description focusing on assessing model performance. The ml-onto concept benefits from a defined URI, adding precision, but conceptually they represent the same thing. High lexical similarity supports equivalence."^^xsd:string ;
+    align:rationale "The labels are identical, the lexical similarity is perfect (1.0), and the descriptions are functionally equivalent - both referring to the process of assessing model performance. The ml-onto concept has a defined URI indicating formal ontological status, while the AIDOC concept doesn't explicitly define that, but within context, they represent the same concept."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:ModelEvaluation ;
     align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:8a0e811f-3e46-4e84-852b-9e76313097b4 a prov:Entity,
+align:fb538a56-4b36-4323-87c1-8f6b11fa79eb a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:566c677e-939f-435c-8be2-621ac770215d ;
+    prov:wasGeneratedBy align:52ce4b00-9b0f-40e7-8ca8-73de43a67b40 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and description concerning a 'Dataset'. The ml-onto concept has a defined URI which adds semantic richness, but the core meaning appears identical. High lexical similarity supports equivalence."^^xsd:string ;
+    align:rationale "Both concepts share identical labels and descriptions (although the ml-onto description is empty, the label provides strong indication of equivalence). Given the limited information and identical labels, equivalence is the most appropriate assessment. The ml-onto concept also benefits from a defined URI, strengthening the connection."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
-
-<http://mlcommons.org/croissant/1.0#Dataset> owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
-
-prov:Agent owl:equivalentClass foaf:Agent .
 
 aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
 
 aidoc:ModelEvaluation owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:566c677e-939f-435c-8be2-621ac770215d a prov:Activity ;
-    prov:endedAtTime "2025-11-17T15:47:49+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-17T15:47:42+00:00"^^xsd:dateTime ;
+align:52ce4b00-9b0f-40e7-8ca8-73de43a67b40 a prov:Activity ;
+    prov:endedAtTime "2025-11-18T13:04:14+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-18T13:04:10+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

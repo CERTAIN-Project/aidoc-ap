@@ -6,101 +6,65 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:03a51f26-688b-4f69-874c-f733f3d40063 a prov:Entity,
+align:0c7d46b4-a88a-4ca5-bc82-9b745cc679bc a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3068c52a-7168-42bc-9b6d-4a055b9099a3 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts represent the same entity – an 'AI System'. The descriptions are nearly identical, differing only in the context of accountability planning in the second definition. The lexical similarity is perfect (1.0). Given the overlapping descriptions and identical labels, 'equivalentClass' is the most appropriate relationship."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/rains#AI_System> .
-
-align:1405f8e3-e69e-4006-8c6d-0cd5e2702b9f a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3068c52a-7168-42bc-9b6d-4a055b9099a3 ;
+    prov:wasGeneratedBy align:b7a48d78-8f61-4da4-98c7-836c7cba1c91 ;
     align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to records of events. The RAINS ontology concept is more specific, framing 'Log' as a type of 'AccountableResult' related to 'Changes' within an 'Implementation' stage, implying a more formal and process-oriented context. The AIDOC concept is a general description. While not strictly equivalent, they clearly overlap in meaning and purpose, making closeMatch the most appropriate relation."^^xsd:string ;
+    align:rationale "Both concepts represent 'Log' as a record of events. The RAINS ontology concept is more specific, framing it as a type of accountable result linked to changes during implementation. The AIDOC concept is a general definition. The high lexical similarity and overlapping meaning suggest a close match, but the specificity of the RAINS definition prevents a perfect equivalence."^^xsd:string ;
     align:relation skos:closeMatch ;
     align:source aidoc:Log ;
     align:target <https://w3id.org/rains#Log> .
 
-align:1e811570-cfb8-4eef-bbd2-1779331faf6c a prov:Entity,
+align:387851a2-bd15-49df-974d-1fd2febf3364 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3068c52a-7168-42bc-9b6d-4a055b9099a3 ;
+    prov:wasGeneratedBy align:b7a48d78-8f61-4da4-98c7-836c7cba1c91 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts define 'Dataset' as a collection of data items. The lexical similarity is perfect (1.0), and the descriptions are highly aligned. The URI provides a standard definition within the MLS namespace, while the AIDOC concept appears to be a more general purpose definition, but functionally equivalent."^^xsd:string ;
+    align:rationale "Both definitions refer to the same concept - a system leveraging artificial intelligence. While the AIDOC definition is more descriptive, and the RAINS definition is contextualized within accountability planning, they fundamentally define the same thing. The high lexical similarity (1.0) reinforces this equivalency. Given the definitions’ substantial overlap, `owl:equivalentClass` is the most appropriate relation."^^xsd:string ;
     align:relation owl:equivalentClass ;
-    align:source aidoc:Dataset ;
-    align:target <http://www.w3.org/ns/mls#Dataset> .
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/rains#AI_System> .
 
-align:3215f637-33e9-43b2-978b-dc09f813c239 a prov:Entity,
+align:3d82b34d-a308-4b91-aeb4-47417db02df6 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3068c52a-7168-42bc-9b6d-4a055b9099a3 ;
+    prov:wasGeneratedBy align:b7a48d78-8f61-4da4-98c7-836c7cba1c91 ;
     align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts address the same core idea – mechanisms for human intervention in systems. The RAINS concept is more specific, detailing integration *within* AI systems and the *types* of oversight (stop, review, alter). The AIDOC concept is a more general description. Thus, they are closely related but not strictly equivalent due to the increased specificity of the RAINS concept."^^xsd:string ;
+    align:rationale "Both concepts focus on human involvement in overseeing systems, particularly AI systems. The RAINS concept is more specific, detailing the integration of human operators into AI decision processes, while the AIDOC concept is a broader, generic description. The lexical similarity score of 0.801 supports a close relationship."^^xsd:string ;
     align:relation skos:closeMatch ;
     align:source aidoc:HumanOversightMechanism ;
     align:target <https://w3id.org/rains#SystemHumanOversightMechanism> .
 
-align:6e2014b1-d079-4436-b1dc-3b5f10542e87 a prov:Entity,
+align:51d9679c-e80a-4c6f-b2ba-438c346144bf a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3068c52a-7168-42bc-9b6d-4a055b9099a3 ;
+    prov:wasGeneratedBy align:b7a48d78-8f61-4da4-98c7-836c7cba1c91 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts define 'Dataset' as a collection of data items. The lexical similarity is perfect (1.0), and the descriptions are highly aligned, suggesting semantic equivalence despite the different namespace URIs. While differing namespaces technically prevent a strict owl:sameAs declaration without further context, they represent the same concept."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:Dataset ;
+    align:target <http://www.w3.org/ns/mls#Dataset> .
+
+align:b918ee23-f373-4c4b-89ba-0ed47d54b8a7 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:b7a48d78-8f61-4da4-98c7-836c7cba1c91 ;
     align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts define a 'Change Log', indicating a record of modifications. The RAINS ontology concept is more specific, linking it to accountable actions, design specifications, and requiring specific information elements (Change, ChangeJustification). The AIDOC concept is a general definition. While not strictly equivalent, they represent the same core idea with differing levels of granularity."^^xsd:string ;
+    align:rationale "Both concepts refer to evaluating model performance. The AIDOC concept is a general description, while the ontology concept links evaluation to specific results and a performance measure setting. The ontological definition provides more detail by specifying it *is a* `rains:EvaluationResult` and connects to performance measures, suggesting they are highly related but not strictly equivalent due to the increased specificity of the ontology concept."^^xsd:string ;
     align:relation skos:closeMatch ;
-    align:source aidoc:ChangeLog ;
-    align:target <https://w3id.org/rains#ChangeLog> .
-
-align:7436d4e5-b273-4dd2-aa42-0664f76cd253 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3068c52a-7168-42bc-9b6d-4a055b9099a3 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The lexical similarity is 1.0, and the descriptions are essentially identical – defining 'Software' as a piece of code. The Ontosoft definition provides additional clarifying details about categorization best practices, but doesn't change the fundamental meaning. Given the identical definitions, an equivalentClass relationship is appropriate."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source <http://www.w3.org/ns/mls#Software> ;
-    align:target <http://ontosoft.org/software#Software> .
-
-align:e78cae39-696a-499e-ab70-34171b7b0e1e a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3068c52a-7168-42bc-9b6d-4a055b9099a3 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and, crucially, describe an 'Agent'. The lack of a URI in the AIDOC concept suggests it may *be* derived from or intended to align with a more formally defined ontology like the one with the URI. The 1.0 lexical similarity further supports equivalence. Without further information about the AIDOC ontology's definitions, assuming equivalence is reasonable."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source prov:Agent ;
-    align:target <https://w3id.org/ep-plan#Agent> .
-
-align:ec2e2621-b217-4bcd-9d75-ac3951eeeae9 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3068c52a-7168-42bc-9b6d-4a055b9099a3 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Despite the different levels of detail in the descriptions, both concepts fundamentally define the activity of assessing a model's performance. The second concept provides a more formal definition linking to ML-Schema and specifying it as a 'rains:EvaluationResult' linked to performance measures, but this is essentially elaborating on the same activity described by the AIDOC concept. The high lexical similarity confirms this close relationship."^^xsd:string ;
-    align:relation owl:equivalentClass ;
     align:source aidoc:ModelEvaluation ;
     align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:fdd25ec8-e054-4111-b878-88268b58bc80 a prov:Entity,
+align:e3d4042f-b9d7-41db-b1df-9c8f491cdb64 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3068c52a-7168-42bc-9b6d-4a055b9099a3 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts define a 'Dataset' as a collection of data items. The lexical similarity is perfect (1.0), and the descriptions are nearly identical in meaning. The URI provides standardization within a specific namespace which adds more value, but doesn't change the fundamental equivalence."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source <http://mlcommons.org/croissant/1.0#Dataset> ;
-    align:target <http://www.w3.org/ns/mls#Dataset> .
-
-<http://mlcommons.org/croissant/1.0#Dataset> owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
-
-<http://www.w3.org/ns/mls#Software> owl:equivalentClass <http://ontosoft.org/software#Software> .
-
-prov:Agent owl:equivalentClass <https://w3id.org/ep-plan#Agent> .
+    prov:wasGeneratedBy align:b7a48d78-8f61-4da4-98c7-836c7cba1c91 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts define a 'Change Log', indicating similar intent. However, the RAINS concept is more specific, linking it to accountable results, design specifications, and requiring specific information elements (Change & ChangeJustification). The AIDOC concept is a generic description. Therefore they are a close, but not exact match."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:ChangeLog ;
+    align:target <https://w3id.org/rains#ChangeLog> .
 
 aidoc:AISystem owl:equivalentClass <https://w3id.org/rains#AI_System> .
 
@@ -112,11 +76,11 @@ aidoc:HumanOversightMechanism skos:closeMatch <https://w3id.org/rains#SystemHuma
 
 aidoc:Log skos:closeMatch <https://w3id.org/rains#Log> .
 
-aidoc:ModelEvaluation owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
+aidoc:ModelEvaluation skos:closeMatch <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:3068c52a-7168-42bc-9b6d-4a055b9099a3 a prov:Activity ;
-    prov:endedAtTime "2025-11-17T15:48:19+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-17T15:48:01+00:00"^^xsd:dateTime ;
+align:b7a48d78-8f61-4da4-98c7-836c7cba1c91 a prov:Activity ;
+    prov:endedAtTime "2025-11-18T13:04:29+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-18T13:04:18+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

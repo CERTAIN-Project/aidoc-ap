@@ -5,45 +5,33 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:22a9e480-1510-42b7-b077-b1fee7f1bc7b a prov:Entity,
+align:62eeed64-97ac-40f9-a170-41a96bec38d8 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:80d4c05c-08be-46f4-bdd0-1545582dc7aa ;
+    prov:wasGeneratedBy align:dfee47a0-2b50-4b8e-921b-a8b77a43ec51 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and description, and while the mlschema concept has a URI indicating formal definition, the core meaning appears identical. Assuming the descriptions are also identical beyond what is provided, this is a strong indication of equivalence. The presence of a URI in mlschema indicates a more formal, machine-readable definition, but doesn't change the semantic meaning."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source <http://mlcommons.org/croissant/1.0#Dataset> ;
-    align:target <http://www.w3.org/ns/mls#Dataset> .
-
-align:c64f8f6e-07ed-45ba-8d0f-6cd46da67158 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:80d4c05c-08be-46f4-bdd0-1545582dc7aa ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and a highly similar description, representing a dataset. The mlschema concept also provides a URI which further solidifies its definition. Given the 1.0 lexical similarity score, they appear to be defined identically."^^xsd:string ;
+    align:rationale "Both concepts share the same label and description (though mlschema's description is empty, the intent is clearly the same). The high lexical similarity supports an equivalence relationship. The URI provided for the mlschema concept further solidifies this, suggesting a standardized definition."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
 
-align:e07f2c4b-2fe9-4741-8e73-84753a20cdd4 a prov:Entity,
+align:7eed196e-250b-4063-a663-261e352495f4 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:80d4c05c-08be-46f4-bdd0-1545582dc7aa ;
+    prov:wasGeneratedBy align:dfee47a0-2b50-4b8e-921b-a8b77a43ec51 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Despite slight differences in phrasing, both concepts fundamentally describe the activity of evaluating a model's performance. The `mlschema` definition is more formal and clearly links to performance measures and specifications, but this doesn't change the core meaning. The lexical similarity of 1.0 supports a strong equivalence."^^xsd:string ;
+    align:rationale "Despite slightly different phrasing, both concepts fundamentally describe the process of assessing a model's performance. `mlschema` provides a more technical description focusing on connecting performance measures to values, while `AIDOC` uses broader terms. Given the 1.0 lexical similarity, they are effectively equivalent for most use cases."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:ModelEvaluation ;
     align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
-
-<http://mlcommons.org/croissant/1.0#Dataset> owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
 
 aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
 
 aidoc:ModelEvaluation owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:80d4c05c-08be-46f4-bdd0-1545582dc7aa a prov:Activity ;
-    prov:endedAtTime "2025-11-17T15:47:55+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-17T15:47:49+00:00"^^xsd:dateTime ;
+align:dfee47a0-2b50-4b8e-921b-a8b77a43ec51 a prov:Activity ;
+    prov:endedAtTime "2025-11-18T13:04:17+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-18T13:04:14+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

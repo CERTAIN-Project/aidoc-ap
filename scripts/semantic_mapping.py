@@ -12,7 +12,7 @@ load_dotenv()
 
 # ========== CONFIGURATION ==========
 AIACT_FILE = "annex_4.ttl"
-ENTITY_FILE = "output/aidoc-entities.csv"
+ENTITY_FILE = "reports/aidoc-entities.csv"
 OUTPUT_FILE = "reports/semantic_mapping.ttl"
 OUTPUT_JSON = "reports/semantic_mapping.json"
 
@@ -162,6 +162,12 @@ for req in requirements:
     reasoning = result.get("reasoning", "")
     missing = result.get("missing", [])
     
+    # Filter matched terms to AIDOC namespace only for JSON output
+    matched_terms = [
+        t for t in matched_terms
+        if t in label_to_uri and str(label_to_uri[t]).startswith(str(AIDOC))
+    ]
+
     results.append({
         "requirement": req["label"],
         "requirement_id": req["id"],
@@ -185,11 +191,12 @@ for req in requirements:
     if reasoning:
         coverage_graph.add((measurement_uri, COV.reasoning, Literal(reasoning, lang="en")))
     
-    # Add matched terms
+    # Add matched terms (restricted to AIDOC namespace)
     for term_label in matched_terms:
         if term_label in label_to_uri:
             term_uri = URIRef(label_to_uri[term_label])
-            coverage_graph.add((measurement_uri, COV.matchedTerm, term_uri))
+            if str(term_uri).startswith(str(AIDOC)):
+                coverage_graph.add((measurement_uri, COV.matchedTerm, term_uri))
     
     # Add missing labels
     for missing_label in missing:

@@ -4,9 +4,9 @@ import os
 from pathlib import Path
 
 # --- configuration ---
-os.makedirs("output", exist_ok=True)
+os.makedirs("reports", exist_ok=True)
 INPUT_FILE = "aidoc-ap.ttl"
-OUTPUT_FILE = "output/aidoc-entities.csv"
+OUTPUT_FILE = "reports/aidoc-entities.csv"
 
 # --- load graph ---
 g = Graph()

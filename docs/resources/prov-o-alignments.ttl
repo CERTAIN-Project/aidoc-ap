@@ -1,37 +1,11 @@
 @prefix align: <https://w3id.org/aidoc-ap/alignment#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:261a7984-fc08-4757-8bae-6996a9308dc8 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:89121a22-3187-498e-badf-1bb4eb703c8e ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts represent a 'Person'. While the URIs differ (different namespaces), the lexical similarity is 1.0 and the descriptions are virtually identical.  Given this strong alignment, and the common understanding of 'Person', we can confidently assert equivalence. The difference in URI simply indicates different ontological origins."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source foaf:Person ;
-    align:target prov:Person .
-
-align:91b45852-331b-44f7-b9eb-577c77ba8ff6 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:89121a22-3187-498e-badf-1bb4eb703c8e ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts represent Organizations, sharing the same label and a high lexical similarity. The URIs differ, but the semantics appear identical. Given the strong lexical similarity and conceptual overlap, an equivalentClass relationship is highly probable. While a full analysis of the broader ontologies would be ideal, based on the provided information, equivalence is the most appropriate relationship."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source foaf:Organization ;
-    align:target prov:Organization .
-
-foaf:Organization owl:equivalentClass prov:Organization .
-
-foaf:Person owl:equivalentClass prov:Person .
-
-align:89121a22-3187-498e-badf-1bb4eb703c8e a prov:Activity ;
-    prov:endedAtTime "2025-11-17T15:48:39+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-17T15:48:35+00:00"^^xsd:dateTime ;
+align:be9beedb-516e-4a34-9a97-bf5fd4cc146f a prov:Activity ;
+    prov:endedAtTime "2025-11-18T13:04:40+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-18T13:04:40+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

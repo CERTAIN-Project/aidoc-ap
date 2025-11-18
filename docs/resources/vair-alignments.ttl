@@ -5,81 +5,45 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:3d27da77-acc2-4d7f-b884-4f74d4caa61a a prov:Entity,
+align:1a960251-1fda-43cd-9fd7-d17a6dc11f08 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:452177c1-592a-42df-a9e9-54f74a887938 ;
+    prov:wasGeneratedBy align:071b6b53-2f97-4543-ba94-e99a77f6a8bc ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts define the deployment phase of an AI system and share nearly identical descriptions. The URI in the vair concept provides a formal identifier, but the core meaning is the same. Given the lexical similarity score of 1.0 and the overlapping descriptions, equivalence is highly likely."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source aidoc:Deployment ;
-    align:target <https://w3id.org/vair#Deployment> .
-
-align:726f094d-ecc1-4655-be70-185964cee04e a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:452177c1-592a-42df-a9e9-54f74a887938 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Despite the lack of detailed description for the AIDOC concept, the identical label and the comprehensive definition of the vair concept strongly suggest equivalence. The vair definition is sufficiently general to encompass what 'Model' likely represents in the AIDOC context. The lexical similarity is perfect."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source <http://www.w3.org/ns/mls#Model> ;
-    align:target <https://w3id.org/vair#Model> .
-
-align:7b5f5422-9007-46f4-a060-6cf208d73f9a a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:452177c1-592a-42df-a9e9-54f74a887938 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and a high lexical similarity. While the AIRDOC description is absent, the VAIR description ('Refers to a stand alone software system') is a generally applicable definition for 'Software'. In the absence of conflicting information, equivalence is the most appropriate relationship."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source <http://www.w3.org/ns/mls#Software> ;
-    align:target <https://w3id.org/vair#Software> .
-
-align:7e5632a8-1dcf-4361-9d9c-7b8fdbee6e50 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:452177c1-592a-42df-a9e9-54f74a887938 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical (lexical similarity 1.0). While the AIDOC concept lacks a formal URI, the semantic meaning is clearly equivalent to the vair concept. Given the perfect lexical match and synonymous descriptions, an equivalent class relationship is highly probable."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source aidoc:TransparencyMeasure ;
-    align:target <https://w3id.org/vair#TransparencyMeasure> .
-
-align:8275738d-faab-4f67-a4e5-6b65dfd3ea78 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:452177c1-592a-42df-a9e9-54f74a887938 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The vair concept is a specific instance of the broader 'Declaration of Conformity' described by the AIDOC concept. The URI provided by vair clearly indicates its specific focus (EU AI Act), making it a specialized type of conformity declaration. The high lexical similarity and overlapping descriptions support a strong equivalence."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source aidoc:DeclarationOfConformity ;
-    align:target <https://w3id.org/vair#EUDeclarationOfConformity> .
-
-align:85c9e031-7881-4107-8723-6a44f6328d5c a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:452177c1-592a-42df-a9e9-54f74a887938 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and a highly similar, if not identical, description. The vair concept provides a URI, indicating it's formally defined, but the core meaning aligns perfectly with the AIDOC concept.  Given the 1.0 lexical similarity, equivalence is strongly indicated."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source <http://www.w3.org/ns/mls#Algorithm> ;
-    align:target <https://w3id.org/vair#Algorithm> .
-
-align:c3035db5-a4c5-44ce-ba98-7c6efeffc553 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:452177c1-592a-42df-a9e9-54f74a887938 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and description, indicating they represent the same concept - a standard applied to an AI system. The lexical similarity of 1.0 further confirms this. Given the information provided, equivalence is the most appropriate relation."^^xsd:string ;
+    align:rationale "Both concepts define 'Standard' related to AI systems with identical labels and meaning. The lexical similarity score of 1.0 further strengthens the assumption. The vair concept also provides a URI, indicating defined semantics, though the AIDOC description is sufficient to suggest equivalence."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:Standard ;
     align:target <https://w3id.org/airo#Standard> .
 
-<http://www.w3.org/ns/mls#Algorithm> owl:equivalentClass <https://w3id.org/vair#Algorithm> .
+align:59efc0df-c487-4804-bcf5-ef8fff6cdab9 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:071b6b53-2f97-4543-ba94-e99a77f6a8bc ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "The labels and descriptions are identical (lexical similarity 1.0). The vair concept also provides a URI, indicating it's a formally defined class. While further investigation of the broader ontologies would confirm absolute equivalence, based on the provided information, they represent the same concept."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:TransparencyMeasure ;
+    align:target <https://w3id.org/vair#TransparencyMeasure> .
 
-<http://www.w3.org/ns/mls#Model> owl:equivalentClass <https://w3id.org/vair#Model> .
+align:6c8d2773-60de-42e6-abb5-7910bbe2e544 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:071b6b53-2f97-4543-ba94-e99a77f6a8bc ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "The vair concept is a more specific instance of the AIDOC concept, explicitly referencing the AI Act. However, the descriptions and labels are highly similar, indicating a strong equivalence. Given the lexical similarity score of 0.827 and the overlapping meaning, it's reasonable to consider them equivalent classes. The vair concept provides a more precise context, but doesn't fundamentally change the *type* of document being described."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:DeclarationOfConformity ;
+    align:target <https://w3id.org/vair#EUDeclarationOfConformity> .
 
-<http://www.w3.org/ns/mls#Software> owl:equivalentClass <https://w3id.org/vair#Software> .
+align:f6d3972e-eb9b-4109-83dd-d052fb20e5b3 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:071b6b53-2f97-4543-ba94-e99a77f6a8bc ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts define the 'Deployment' phase of an AI system, encompassing the delivery and configuration for operation in a production environment. The descriptions are highly similar and essentially synonymous. The presence of a URI in the vair concept simply provides formal identification."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:Deployment ;
+    align:target <https://w3id.org/vair#Deployment> .
 
 aidoc:DeclarationOfConformity owl:equivalentClass <https://w3id.org/vair#EUDeclarationOfConformity> .
 
@@ -89,9 +53,9 @@ aidoc:Standard owl:equivalentClass <https://w3id.org/airo#Standard> .
 
 aidoc:TransparencyMeasure owl:equivalentClass <https://w3id.org/vair#TransparencyMeasure> .
 
-align:452177c1-592a-42df-a9e9-54f74a887938 a prov:Activity ;
-    prov:endedAtTime "2025-11-17T15:47:24+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-17T15:47:10+00:00"^^xsd:dateTime ;
+align:071b6b53-2f97-4543-ba94-e99a77f6a8bc a prov:Activity ;
+    prov:endedAtTime "2025-11-18T13:04:08+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-18T13:04:01+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

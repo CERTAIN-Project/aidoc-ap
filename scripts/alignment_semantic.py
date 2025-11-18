@@ -141,6 +141,10 @@ for fname in os.listdir(INPUT_DIR):
         ref_uri = URIRef(ref_iri)
         similarity = row.get("similarity", 0.0)
 
+        # Only keep alignments where the source term is from the AIDOC namespace
+        if not str(aidoc_uri).startswith("https://w3id.org/aidoc-ap#"):
+            continue
+
         aidoc_desc = describe_entity(AIDOC, aidoc_uri)
         ref_desc = describe_entity(REF, ref_uri)
 
