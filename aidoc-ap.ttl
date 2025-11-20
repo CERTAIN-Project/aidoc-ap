@@ -129,11 +129,13 @@
 ###  https://w3id.org/aidoc-ap#hasComponent
 <https://w3id.org/aidoc-ap#hasComponent> rdf:type owl:ObjectProperty ;
                                          rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
-                                         rdfs:range <https://w3id.org/aidoc-ap#AIArtifact>,
-                                                    <https://w3id.org/airo#AIComponent> ;
+                                         rdfs:range [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <https://w3id.org/aidoc-ap#AIArtifact>
+                                                                  <https://w3id.org/airo#AIComponent> )
+                                                   ] ;
                                          rdfs:comment "Links an AISystem to its constituent components like models and datasets."@en ;
                                          rdfs:label "has component"@en ;
-                                         skos:closeMatch <https://w3id.org/airo#hasComponent>.
+                                         skos:closeMatch <https://w3id.org/airo#hasComponent> .
 
 
 ###  https://w3id.org/aidoc-ap#hasSoftwareComponent
@@ -321,8 +323,10 @@
                                             rdfs:comment "Links a system or model to a description of its architecture."@en ;
                                             rdfs:label "has architecture"@en ;
                                             rdfs:range rdfs:Literal ;
-                                            rdfs:domain <https://w3id.org/aidoc-ap#AIModel> ,
-                                                        <https://w3id.org/aidoc-ap#AISystem> .
+                                            rdfs:domain [ rdf:type owl:Class ;
+                                                         owl:unionOf ( <https://w3id.org/aidoc-ap#AIModel>
+                                                                      <https://w3id.org/aidoc-ap#AISystem> )
+                                                       ] .
 
 
 ###  https://w3id.org/aidoc-ap#intendedPurpose
