@@ -30,7 +30,7 @@
     vann:preferredNamespacePrefix "aiact" ;
     vann:preferredNamespaceUri "https://w3id.org/aidoc-ap/requirements#" ;
     rdfs:seeAlso <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689> ;
-    owl:versionInfo "1.0.0" .
+    owl:versionInfo "1.0" .
 
 ################################################################################
 # Classes

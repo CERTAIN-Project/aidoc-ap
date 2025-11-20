@@ -25,6 +25,45 @@
     const RDFS = 'http://www.w3.org/2000/01/rdf-schema#';
     const DCTERMS = 'http://purl.org/dc/terms/';
     const AIACT = 'https://w3id.org/aidoc-ap/requirements#';
+    const FOAF = 'http://xmlns.com/foaf/0.1/';
+    const OWL = 'http://www.w3.org/2002/07/owl#';
+
+    // Extract ontology metadata
+    const ontoUri = 'https://w3id.org/aidoc-ap/requirements';
+    const ontoQuads = byS.get(ontoUri) || [];
+    const metadata = {
+      created: lit(obj(byS, ontoUri, DCTERMS+'created')),
+      modified: lit(obj(byS, ontoUri, DCTERMS+'modified')),
+      version: lit(obj(byS, ontoUri, OWL+'versionInfo')),
+      license: lit(obj(byS, ontoUri, DCTERMS+'license')),
+      authors: []
+    };
+
+    // Extract authors from blank nodes
+    for (const q of ontoQuads) {
+      if (q.predicate.id === DCTERMS+'creator' && q.object.termType === 'BlankNode') {
+        const creatorNode = q.object.id;
+        const name = lit(obj(byS, creatorNode, FOAF+'name'));
+        const org = lit(obj(byS, creatorNode, FOAF+'organization'));
+        if (name) {
+          metadata.authors.push(org ? `${name} (${org})` : name);
+        }
+      }
+    }
+
+    // Update UI with metadata
+    if (byId('meta-created')) byId('meta-created').textContent = metadata.created || 'N/A';
+    if (byId('meta-modified')) byId('meta-modified').textContent = metadata.modified || 'N/A';
+    if (byId('meta-version')) byId('meta-version').textContent = metadata.version || 'N/A';
+    if (byId('meta-authors')) byId('meta-authors').textContent = metadata.authors.length > 0 ? metadata.authors.join(', ') : 'N/A';
+    if (byId('meta-license')) {
+      const licenseEl = byId('meta-license');
+      if (metadata.license) {
+        licenseEl.innerHTML = `<a href="${esc(metadata.license)}" target="_blank">${esc(metadata.license)}</a>`;
+      } else {
+        licenseEl.textContent = 'N/A';
+      }
+    }
 
     const requirements = [];
     const cqMap = new Map(); // map CQ URIs to labels
