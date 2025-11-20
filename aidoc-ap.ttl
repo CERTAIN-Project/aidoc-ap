@@ -79,7 +79,8 @@
                                                           rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                                           rdfs:range <https://w3id.org/aidoc-ap#AISystemCapability> ;
                                                           rdfs:comment "Relates an AISystem to an AISystemCapability it is designed to exhibit or support" ;
-                                                          rdfs:label "has capability"@en .
+                                                          rdfs:label "has capability"@en ;
+                                                          owl:equivalentClass <https://w3id.org/airo#hasCapability> .
 
 
 ###  https://w3id.org/aidoc-ap#implementsTask
@@ -103,16 +104,18 @@
                                             rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                             rdfs:range <https://w3id.org/aidoc-ap#Standard> ;
                                             rdfs:comment "Links an AI system to a standard it has applied for compliance."@en ;
-                                            rdfs:label "applies standard"@en .
+                                            rdfs:label "applies standard"@en ;
+                                            skos:closeMatch <https://w3id.org/airo#conformsToStandard> .
 
 
 ###  https://w3id.org/aidoc-ap#dependsOn
 <https://w3id.org/aidoc-ap#dependsOn> rdf:type owl:ObjectProperty ;
                                       rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ;
                                       rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
-                                      rdfs:range <https://w3id.org/aidoc-ap#AIArtifact> ;
+                                      rdfs:range <https://w3id.org/aidoc-ap#AIArtifact>;
                                       rdfs:comment "Links a system or component to its software or hardware dependencies."@en ;
-                                      rdfs:label "depends on"@en .
+                                      rdfs:label "depends on"@en ;
+                                      skos:closeMatch <https://w3id.org/airo#hasComponent> .
 
 
 ###  https://w3id.org/aidoc-ap#hasVisualDocumentation
@@ -126,13 +129,16 @@
 ###  https://w3id.org/aidoc-ap#hasComponent
 <https://w3id.org/aidoc-ap#hasComponent> rdf:type owl:ObjectProperty ;
                                          rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
-                                         rdfs:range <https://w3id.org/aidoc-ap#AIArtifact> ;
+                                         rdfs:range <https://w3id.org/aidoc-ap#AIArtifact>,
+                                                    <https://w3id.org/airo#AIComponent> ;
                                          rdfs:comment "Links an AISystem to its constituent components like models and datasets."@en ;
-                                         rdfs:label "has component"@en .
+                                         rdfs:label "has component"@en ;
+                                         skos:closeMatch <https://w3id.org/airo#hasComponent>.
 
 
 ###  https://w3id.org/aidoc-ap#hasSoftwareComponent
 <https://w3id.org/aidoc-ap#hasSoftwareComponent> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <https://w3id.org/aidoc-ap#hasComponent> ;
                                                 rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                                 rdfs:range <https://w3id.org/aidoc-ap#SoftwareComponent> ;
                                                 rdfs:comment "Links an AI system to its software components, such as services or modules that participate in the overall processing."@en ;
@@ -174,10 +180,16 @@
 ###  https://w3id.org/aidoc-ap#hasLifecycleStage
 <https://w3id.org/aidoc-ap#hasLifecycleStage> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
-                                              rdfs:range <https://w3id.org/aidoc-ap#AIActivity> ;
-                                              rdfs:comment "Links an AISystem to a specific AIActivity."@en ;
+                                              rdfs:range <https://w3id.org/airo#AILifecyclePhase> ;
+                                              rdfs:comment "Links an AISystem to a specific AI Lifecycle Phase."@en ;
                                               rdfs:label "has lifecycle stage"@en .
 
+###  https://w3id.org/aidoc-ap#hasAIActivity
+<https://w3id.org/aidoc-ap#hasAIActivity> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://w3id.org/airo#AILifecyclePhase> ;
+                                              rdfs:range <https://w3id.org/airo#AIActivity> ;
+                                              rdfs:comment "Links an AI Lifecycle Phase to a specific AI Activity."@en ;
+                                              rdfs:label "has lifecycle stage"@en .
 
 ###  https://w3id.org/aidoc-ap#hasPerformanceMetric
 <https://w3id.org/aidoc-ap#hasPerformanceMetric> rdf:type owl:ObjectProperty ;
@@ -193,7 +205,8 @@
                                     rdfs:range <https://w3id.org/airo#AIRisk> ;
                                     rdfs:comment "Links an AI artifact (e.g., model or dataset) or an AI system to an associated risk. Risk means the combination of the probability of an occurrence of harm and the severity of that harm."@en ;
                                     rdfs:label "has risk"@en ;
-                                    dcterms:source "EU AI Act 2024/1689, Article 3(2)" .
+                                    dcterms:source "EU AI Act 2024/1689, Article 3(2)" ;
+                                    skos:exactMatch <https://w3id.org/airo#hasRisk> .
 
 
 ###  https://w3id.org/aidoc-ap#hasTransparencyMeasure
@@ -209,7 +222,8 @@
                                          rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                          rdfs:range <https://w3id.org/aidoc-ap#AIDeployer> ;
                                          rdfs:comment "Links an AI system to its deployer."@en ;
-                                         rdfs:label "is deployed by"@en .
+                                         rdfs:label "is deployed by"@en ;
+                                         skos:exactMatch <https://w3id.org/airo#isDeployedBy> .
 
 
 ###  https://w3id.org/aidoc-ap#isProvidedBy
@@ -217,7 +231,8 @@
                                          rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                          rdfs:range <https://w3id.org/aidoc-ap#AIProvider> ;
                                          rdfs:comment "Links an AI system to its provider."@en ;
-                                         rdfs:label "is provided by"@en .
+                                         rdfs:label "is provided by"@en ;
+                                         skos:exactMatch <https://w3id.org/airo#isProvidedBy> .
 
 
 ###  https://w3id.org/aidoc-ap#logsActivity
@@ -233,7 +248,8 @@
                                              rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
                                              rdfs:range <https://w3id.org/aidoc-ap#HardwareComponent> ;
                                              rdfs:comment "Links a system to the hardware components it needs to run."@en ;
-                                             rdfs:label "requires hardware"@en .
+                                             rdfs:label "requires hardware"@en ;
+                                             skos:relatedMatch <https://w3id.org/airo#runsOnHardware>.
 
 
 ###  https://w3id.org/aidoc-ap#storesLogsAt
@@ -249,7 +265,8 @@
                                           rdfs:domain <https://w3id.org/aidoc-ap#AIModel> ;
                                           rdfs:range <https://w3id.org/aidoc-ap#AIMethod> ;
                                           rdfs:comment "Links an AI model to the specific AI method it is based on."@en ;
-                                          rdfs:label "uses AI method"@en .
+                                          rdfs:label "uses AI method"@en ;
+                                          skos:relatedMatch <https://w3id.org/airo#AITechnique> .
 
 
 ###  https://w3id.org/aidoc-ap#usesTrainingData
@@ -257,7 +274,8 @@
                                              rdfs:domain <https://w3id.org/aidoc-ap#DataTraining> ;
                                              rdfs:range <https://w3id.org/aidoc-ap#Dataset> ;
                                              rdfs:comment "Links a training activity to the dataset used for training."@en ;
-                                             rdfs:label "uses training data"@en .
+                                             rdfs:label "uses training data"@en ;
+                                             skos:relatedMatch <https://w3id.org/airo#hasTrainingData> .
 
 
 ###  https://w3id.org/aidoc-ap#usesValidationData
@@ -265,7 +283,8 @@
                                                rdfs:domain <https://w3id.org/aidoc-ap#DataValidation> ;
                                                rdfs:range <https://w3id.org/aidoc-ap#Dataset> ;
                                                rdfs:comment "Links a validation activity to the dataset used for validation."@en ;
-                                               rdfs:label "uses validation data"@en .
+                                               rdfs:label "uses validation data"@en ;
+                                               skos:relatedMatch <ttps://w3id.org/airo#hasValidationData> .
 
 
 ###  https://w3id.org/aidoc-ap#usesTestData
@@ -273,7 +292,8 @@
                                          rdfs:domain <https://w3id.org/aidoc-ap#DataTesting> ;
                                          rdfs:range <https://w3id.org/aidoc-ap#Dataset> ;
                                          rdfs:comment "Links a testing activity to the dataset used for testing."@en ;
-                                         rdfs:label "uses test data"@en .
+                                         rdfs:label "uses test data"@en ;
+                                         skos:relatedMatch <https://w3id.org/airo#hasTrainingData> .
 
 
 #################################################################
@@ -454,13 +474,15 @@
 ###  https://w3id.org/aidoc-ap#AISystemCapability
 <https://w3id.org/aidoc-ap#AISystemCapability> rdf:type owl:Class ;
                                                rdfs:comment "Represents a category of tasks or functions that an AI system can perform, such as sensory, knowledge, or control action processing."@en ;
-                                               rdfs:label "AI System Capability"@en .
+                                               rdfs:label "AI System Capability"@en ;
+                                               owl:equivalentClass <https://w3id.org/airo#AICapability> .
 
 
 ### https://w3id.org/aidoc-ap#AITask
 <https://w3id.org/aidoc-ap#AITask> rdf:type owl:Class ;
                                    rdfs:comment "An action to achieve a specific goal using an AI model."@en ;
-                                   rdfs:label "AI Task"@en .
+                                   rdfs:label "AI Task"@en ;
+                                   owl:equivalentClass <https://w3id.org/airo#Purpose>.
 
 
 ###  https://w3id.org/aidoc-ap#AIMethodCategory
@@ -543,9 +565,11 @@
 <https://w3id.org/aidoc-ap#AIResearcher> rdf:type owl:Class ;
                                          rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ,
                                                          <http://xmlns.com/foaf/0.1/Person> ,
-                                                         <https://w3id.org/aidoc-ap#AIAgent> ;
+                                                         <https://w3id.org/aidoc-ap#AIAgent> ,
+                                                         <https://w3id.org/airo#AIDeveloper> ;
                                          rdfs:comment "A person involved in the technical development of an AI system."@en ;
                                          rdfs:label "AI Researcher"@en .
+                                         
 
 
 ###  https://w3id.org/aidoc-ap#AIActivity
@@ -559,14 +583,17 @@
 <https://w3id.org/aidoc-ap#AIAgent> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
                                      rdfs:comment "A superclass for all agents involved in the AI lifecycle, derived from prov:Agent."@en ;
-                                     rdfs:label "AI Agent"@en .
+                                     rdfs:label "AI Agent"@en ;
+                                     skos:closeMatch <http://www.w3.org/airo#Stakeholder> .
 
 
 ###  https://w3id.org/aidoc-ap#AIArtifact
 <https://w3id.org/aidoc-ap#AIArtifact> rdf:type owl:Class ;
                                         rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                         rdfs:comment "A superclass for all tangible inputs and outputs of the AI lifecycle, derived from prov:Entity for provenance tracking."@en ;
-                                        rdfs:label "AI Artifact"@en .
+                                        rdfs:label "AI Artifact"@en ;
+                                        skos:narrowMatch <https://w3id.org/airo#Input> ,
+                                                         <https://w3id.org/airo#Output> .
 
 
 ###  https://w3id.org/aidoc-ap#AIModel
@@ -591,7 +618,8 @@
 <https://w3id.org/aidoc-ap#AIMethod> rdf:type owl:Class ;
                                      rdfs:subClassOf <http://www.w3.org/ns/mls#Algorithm> ;
                                      rdfs:comment "Reflects a mathematical algorithm which computes input data to execute an AI task."@en ;
-                                     rdfs:label "AI Method"@en .
+                                     rdfs:label "AI Method"@en ;
+                                     skos:broadMatch <https://w3id.org/airo#AITechnique> .
 
 
 ###  https://w3id.org/aidoc-ap#Auditor
@@ -674,7 +702,8 @@
 <https://w3id.org/aidoc-ap#Dataset> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://mlcommons.org/croissant/1.0#Dataset> ,
                                                     <http://www.w3.org/ns/mls#Dataset> ,
-                                                    <https://w3id.org/aidoc-ap#AIArtifact> ;
+                                                    <https://w3id.org/aidoc-ap#AIArtifact>,
+                                                    <https://www.w3.org/ns/dcat#Dataset> ;
                                     rdfs:comment "Represents a dataset used in the AI lifecycle."@en ;
                                     rdfs:label "Dataset"@en .
 
@@ -683,7 +712,8 @@
 <https://w3id.org/aidoc-ap#DeclarationOfConformity> rdf:type owl:Class ;
                                                     rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                                     rdfs:comment "A document declaring the system's conformity with standards, such as the EU Declaration of Conformity."@en ;
-                                                    rdfs:label "Declaration of Conformity"@en .
+                                                    rdfs:label "Declaration of Conformity"@en ;
+                                                    owl:equivalentClass <https://w3id.org/vair#EUDeclarationOfConformity>.
 
 
 ###  https://w3id.org/aidoc-ap#Decommissioning
@@ -726,19 +756,22 @@
 <https://w3id.org/aidoc-ap#HardwareComponent> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                               rdfs:comment "Represents the hardware required for an AI system to run."@en ;
-                                              rdfs:label "Hardware Component"@en .
+                                              rdfs:label "Hardware Component"@en ;
+                                              owl:equivalentClass <https://w3id.org/vair#Hardware> .
 
 
 ###  https://w3id.org/aidoc-ap#HumanOversightMechanism
 <https://w3id.org/aidoc-ap#HumanOversightMechanism> rdf:type owl:Class ;
                                                     rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                                     rdfs:comment "A mechanism or measure to facilitate human intervention or supervision."@en ;
-                                                    rdfs:label "Human Oversight Mechanism"@en .
+                                                    rdfs:label "Human Oversight Mechanism"@en ;
+                                                    owl:equivalentClass <https://w3id.org/airo#HumanInvolvement> .
 
 
 ###  https://w3id.org/aidoc-ap#Interface
 <https://w3id.org/aidoc-ap#Interface> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ,
+                                                      <https://w3id.org/airo#AIComponent>;
                                       rdfs:comment "The interface provided for users or operators of an AI system."@en ;
                                       rdfs:label "Interface"@en .
 
@@ -747,7 +780,8 @@
 <https://w3id.org/aidoc-ap#Log> rdf:type owl:Class ;
                                 rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                 rdfs:comment "A record of system events, performance, and traceability."@en ;
-                                rdfs:label "Log"@en .
+                                rdfs:label "Log"@en ;
+                                skos:closeMatch <https://w3id.org/vair#TestLog> .
 
 
 ###  https://w3id.org/aidoc-ap#MLPipeline
@@ -820,7 +854,8 @@
                                                rdfs:subClassOf <http://www.w3.org/ns/mls#Software> ,
                                                                <http://www.w3.org/ns/prov#Entity> ;
                                                rdfs:comment "A software package or library that the AI system depends on."@en ;
-                                               rdfs:label "Software Dependency"@en .
+                                               rdfs:label "Software Dependency"@en ;
+                                               skos:closeMatch <https://w3id.org/vair#Library> .
 
 
 ###  https://w3id.org/aidoc-ap#SoftwareImplementation
@@ -828,14 +863,16 @@
                                                    rdfs:subClassOf <http://www.w3.org/ns/mls#Implementation> ,
                                                                    <https://w3id.org/aidoc-ap#AIArtifact> ;
                                                    rdfs:comment "Represents the concrete, executable software that realizes an algorithm."@en ;
-                                                   rdfs:label "Software Implementation"@en .
+                                                   rdfs:label "Software Implementation"@en ;
+                                                   owl:equivalentClass <https://w3id.org/vair#Software> .
 
 
 ###  https://w3id.org/aidoc-ap#SoftwareComponent
 <https://w3id.org/aidoc-ap#SoftwareComponent> rdf:type owl:Class ;
                                               rdfs:subClassOf <https://w3id.org/aidoc-ap#AIArtifact> ;
                                               rdfs:comment "A logical or physical software component of the AI system, such as a service, module, or microservice participating in the overall processing."@en ;
-                                              rdfs:label "Software Component"@en .
+                                              rdfs:label "Software Component"@en ;
+                                              skos:closeMatch <https://w3id.org/vair#Tool> .
 
 
 ###  https://w3id.org/aidoc-ap#Standard
@@ -843,7 +880,7 @@
                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                      rdfs:comment "A harmonised or other standard applied to the AI system."@en ;
                                      rdfs:label "Standard"@en ;
-                                     <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/airo#Standard> .
+                                     owl:equivalentClass <https://w3id.org/airo#Standard> .
 
 
 ###  https://w3id.org/aidoc-ap#TransparencyMeasure
@@ -857,14 +894,16 @@
 <https://w3id.org/aidoc-ap#ComputationalResource> rdf:type owl:Class ;
                                                  rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                                  rdfs:comment "A computational resource used during the AI lifecycle, such as GPUs, CPUs, clusters or cloud instances."@en ;
-                                                 rdfs:label "Computational Resource"@en .
+                                                 rdfs:label "Computational Resource"@en ;
+                                                 skos:narrowMatch <https://w3id.org/airo#HardwarePlatform> .
 
 
 ###  https://w3id.org/aidoc-ap#DataSheet
 <https://w3id.org/aidoc-ap#DataSheet> rdf:type owl:Class ;
                                       rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                                       rdfs:comment "Structured documentation for a dataset or training configuration, including provenance, scope and main characteristics."@en ;
-                                      rdfs:label "Data Sheet"@en .
+                                      rdfs:label "Data Sheet"@en ;
+                                      owl:equivalentClass <https://w3id.org/vair#Datasheet>.
 
 
 ###  https://w3id.org/aidoc-ap#TrainingDataSheet
