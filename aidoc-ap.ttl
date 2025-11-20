@@ -190,8 +190,8 @@
 ###  https://w3id.org/aidoc-ap#hasRisk
 <https://w3id.org/aidoc-ap#hasRisk> rdf:type owl:ObjectProperty ;
                                     rdfs:domain <https://w3id.org/aidoc-ap#AIArtifact> ;
-                                    rdfs:range <https://w3id.org/airo#AIRisk> ;
-                                    rdfs:comment "Links an AI artifact (e.g., model or dataset) or an AI system to an associated risk. Risk means the combination of the probability of an occurrence of harm and the severity of that harm."@en ;
+                                    rdfs:range <https://w3id.org/airo#Risk> ;
+                                    rdfs:comment "Links an AI artifact (e.g., model or dataset) or an AI system to an associated risk. An AI risk can be modelled using the AIRO ontology. Risk means the combination of the probability of an occurrence of harm and the severity of that harm."@en ;
                                     rdfs:label "has risk"@en ;
                                     dcterms:source "EU AI Act 2024/1689, Article 3(2)" .
 
