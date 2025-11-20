@@ -100,8 +100,6 @@ You can then:
 Assuming a Python virtual environment in `.venv` and dependencies installed:
 
 ```bash
-cd /Users/sneumaier/Repos/aidoc-ap
-
 # Structural alignments between AIDOC-AP and reference ontologies
 .venv/bin/python scripts/alignment_structural.py
 
