@@ -480,8 +480,6 @@
 
 <https://w3id.org/airo#AIComponent> rdf:type owl:Class .
 
-<https://w3id.org/airo#AIDeveloper> rdf:type owl:Class .
-
 <https://w3id.org/airo#Standard> rdf:type owl:Class .
 
 <http://www.w3.org/ns/mls#ModelEvaluation> rdf:type owl:Class .
@@ -615,10 +613,10 @@
 <https://w3id.org/aidoc-ap#AIResearcher> rdf:type owl:Class ;
                                          rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ,
                                                          <http://xmlns.com/foaf/0.1/Person> ,
-                                                         <https://w3id.org/aidoc-ap#AIAgent> ,
-                                                         <https://w3id.org/airo#AIDeveloper> ;
+                                                         <https://w3id.org/aidoc-ap#AIAgent> ;
                                          rdfs:comment "A person involved in the technical development of an AI system."@en ;
-                                         rdfs:label "AI Researcher"@en .
+                                         rdfs:label "AI Researcher"@en ;
+                                         skos:broadMatch <https://w3id.org/airo#AIDeveloper> .
                                          
 
 
@@ -634,7 +632,7 @@
                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
                                      rdfs:comment "A superclass for all agents involved in the AI lifecycle, derived from prov:Agent."@en ;
                                      rdfs:label "AI Agent"@en ;
-                                     skos:closeMatch <http://www.w3.org/airo#Stakeholder> .
+                                     skos:exactMatch <http://www.w3.org/airo#Stakeholder> .
 
 
 ###  https://w3id.org/aidoc-ap#AIArtifact
