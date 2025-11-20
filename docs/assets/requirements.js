@@ -48,6 +48,7 @@
         const label = lit(obj(byS, s, RDFS+'label'));
         const desc = lit(obj(byS, s, DCTERMS+'description'));
         const stage = lit(obj(byS, s, AIACT+'aiLifecycleStage'));
+        const source = lit(obj(byS, s, DCTERMS+'source'));
         
         // Collect all competency questions
         const cqs = [];
@@ -67,6 +68,7 @@
           label: label || reqId,
           description: desc || '',
           lifecycleStage: stage || 'Not specified',
+          source: source || '',
           competencyQuestions: cqs
         });
       }
@@ -164,7 +166,7 @@
     if(!r) return;
 
     const reqNum = parseInt(r.id.replace('req', ''));
-    const euActUrl = `https://artificialintelligenceact.eu/annex/4/#${reqNum}`;
+    const euActUrl = 'https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-4';
 
     const cqsHtml = (r.competencyQuestions || []).map(cq => 
       `<li>${esc(cq)}</li>`
@@ -191,7 +193,8 @@
       <hr>
       <h4>Source</h4>
       <p><strong>URI:</strong> <code>${esc(r.uri)}</code></p>
-      <p><strong>EU AI Act:</strong> <a target="_blank" href="${euActUrl}">View original text in Annex IV →</a></p>
+      ${r.source ? `<p><strong>Reference:</strong> ${esc(r.source)}</p>` : ''}
+      <p><strong>Official Text:</strong> <a target="_blank" href="${euActUrl}">EU AI Act 2024/1689, Annex IV →</a></p>
     `;
     byId('details').classList.remove('hidden');
   }

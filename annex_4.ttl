@@ -3,19 +3,69 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+################################################################################
+# Ontology Metadata
+################################################################################
+<https://w3id.org/aidoc-ap/requirements> a owl:Ontology ;
+    dcterms:title "AIDOC-AP Requirements Ontology"@en ;
+    dcterms:description "Formal representation of EU AI Act (Regulation 2024/1689) Annex IV technical documentation requirements with competency questions and lifecycle stage mappings."@en ;
+    dcterms:creator [
+        rdf:type foaf:Person ;
+        foaf:name "Sebastian Neumaier" ;
+        foaf:mbox <mailto:sebastian.neumaier@ustp.at> ;
+        foaf:organization "University of Applied Sciences St. Pölten"
+    ], [
+        rdf:type foaf:Person ;
+        foaf:name "Timea Pahi" ;
+        foaf:organization "University of Applied Sciences St. Pölten"
+    ] ;
+    dcterms:created "2025-11-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2025-11-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:source <https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-4> ;
+    vann:preferredNamespacePrefix "aiact" ;
+    vann:preferredNamespaceUri "https://w3id.org/aidoc-ap/requirements#" ;
+    rdfs:seeAlso <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689> ;
+    owl:versionInfo "1.0.0" .
 
 ################################################################################
 # Classes
 ################################################################################
-aiact:Requirement a rdfs:Class ;
-    rdfs:label "AI Act Annex IV Requirement"@en .
+aiact:Requirement a rdfs:Class , owl:Class ;
+    rdfs:label "AI Act Annex IV Requirement"@en ;
+    rdfs:comment "A technical documentation requirement from EU AI Act Regulation (EU) 2024/1689, Annex IV. Each requirement specifies information that must be included in the technical documentation of high-risk AI systems."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/requirements> .
 
 aiact: a skos:ConceptScheme ;
-  skos:prefLabel "AI Act Annex IV Requirements"@en .
+    skos:prefLabel "AI Act Annex IV Requirements"@en ;
+    skos:definition "A structured vocabulary of the technical documentation requirements from Annex IV of the EU AI Act (Regulation 2024/1689), organized by lifecycle stages and linked to competency questions."@en ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV" .
 
+aiact:CompetencyQuestion a rdfs:Class , owl:Class ;
+    rdfs:label "Competency Question"@en ;
+    rdfs:comment "A competency question that operationalizes an AI Act requirement by defining a specific query that can be answered using the technical documentation. Competency questions serve as validation criteria for requirement coverage."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/requirements> .
 
-aiact:CompetencyQuestion a rdfs:Class ;
-    rdfs:label "Competency Question" .
+################################################################################
+# Properties
+################################################################################
+aiact:hasCompetencyQuestion a rdf:Property , owl:ObjectProperty ;
+    rdfs:label "has competency question"@en ;
+    rdfs:comment "Links a requirement to its associated competency questions that operationalize and validate the requirement."@en ;
+    rdfs:domain aiact:Requirement ;
+    rdfs:range aiact:CompetencyQuestion ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/requirements> .
+
+aiact:aiLifecycleStage a rdf:Property , owl:DatatypeProperty ;
+    rdfs:label "AI lifecycle stage"@en ;
+    rdfs:comment "The AI system development lifecycle stage(s) to which this requirement primarily applies. Values follow the pattern: Pipeline Type: Stage (e.g., 'ML Pipeline: Model Engineering', 'Data Pipeline: Exploration and Validation')."@en ;
+    rdfs:domain aiact:Requirement ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/requirements> .
 
 ################################################################################
 # Requirements + Competency Questions
@@ -25,19 +75,21 @@ aiact:CompetencyQuestion a rdfs:Class ;
 aiact:req1 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "General description of the AI system" ;
-    dcterms:description "A general description of the AI system including its intended purpose and the person or persons responsible for its development." ;
+    dcterms:description "A general description of the AI system including its intended purpose, the name of the provider and the version of the system reflecting its relation to previous versions." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 1(a)" ;
     aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
     aiact:hasCompetencyQuestion aiact:cq1_1 , aiact:cq1_2 , aiact:cq1_3 .
 
-aiact:cq1_1 a aiact:CompetencyQuestion ; rdfs:label "What is the purpose of the system?" .
-aiact:cq1_2 a aiact:CompetencyQuestion ; rdfs:label "Who is the provider?" .
-aiact:cq1_3 a aiact:CompetencyQuestion ; rdfs:label "What is the version?" .
+aiact:cq1_1 a aiact:CompetencyQuestion ; rdfs:label "What is the intended purpose of the AI system?" .
+aiact:cq1_2 a aiact:CompetencyQuestion ; rdfs:label "What is the name of the provider?" .
+aiact:cq1_3 a aiact:CompetencyQuestion ; rdfs:label "What is the version of the system and its relation to previous versions?" .
 
 ### 2. Interaction with hardware/software
 aiact:req2 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Interaction with hardware/software" ;
-    dcterms:description "The manner in which the AI system interacts with hardware or software it runs on or interfaces with, including other AI systems where applicable." ;
+    dcterms:description "How the AI system interacts with, or can be used to interact with, hardware or software, including with other AI systems, that are not part of the AI system itself, where applicable." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 1(b)" ;
     aiact:aiLifecycleStage "Software Pipeline: Deployment" ;
     aiact:hasCompetencyQuestion aiact:cq2_1 .
 
@@ -47,7 +99,8 @@ aiact:cq2_1 a aiact:CompetencyQuestion ; rdfs:label "What components or other sy
 aiact:req3 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Software/firmware versioning" ;
-    dcterms:description "The versions of relevant software or firmware and any requirement related to software or firmware updates." ;
+    dcterms:description "The versions of relevant software or firmware, and any requirements related to version updates." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 1(c)" ;
     aiact:aiLifecycleStage "ML Pipeline: Model Versioning" ;
     aiact:hasCompetencyQuestion aiact:cq3_1 .
 
@@ -57,7 +110,8 @@ aiact:cq3_1 a aiact:CompetencyQuestion ; rdfs:label "What software dependencies 
 aiact:req4 a aiact:Requirement, skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Deployment forms" ;
-    dcterms:description "A description of all forms in which the AI system is placed on the market or put into service." ;
+    dcterms:description "The description of all the forms in which the AI system is placed on the market or put into service, such as software packages embedded into hardware, downloads, or APIs." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 1(d)" ;
     aiact:aiLifecycleStage "Software Pipeline: Deployment" ;
     aiact:hasCompetencyQuestion aiact:cq4_1 .
 
@@ -67,7 +121,8 @@ aiact:cq4_1 a aiact:CompetencyQuestion ; rdfs:label "How is the AI system provid
 aiact:req5 a aiact:Requirement, skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Hardware required" ;
-    dcterms:description "A description of the hardware on which the AI system is intended to run." ;
+    dcterms:description "The description of the hardware on which the AI system is intended to run." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 1(e)" ;
     aiact:aiLifecycleStage "Software Pipeline: Deployment" ;
     aiact:hasCompetencyQuestion aiact:cq5_1 .
 
@@ -77,7 +132,8 @@ aiact:cq5_1 a aiact:CompetencyQuestion ; rdfs:label "What hardware does the AI s
 aiact:req6 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Illustrations and markings" ;
-    dcterms:description "Photographs or illustrations showing the external features, marking and internal layout of the product." ;
+    dcterms:description "Where the AI system is a component of products, photographs or illustrations showing external features, the marking and internal layout of those products." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 1(f)" ;
     aiact:aiLifecycleStage "Software Pipeline: Deployment" ;
     aiact:hasCompetencyQuestion aiact:cq6_1 , aiact:cq6_2 , aiact:cq6_3 , aiact:cq6_4 .
 
@@ -86,239 +142,204 @@ aiact:cq6_2 a aiact:CompetencyQuestion ; rdfs:label "What visual documentation (
 aiact:cq6_3 a aiact:CompetencyQuestion ; rdfs:label "What markings (CE, labels) are present on the product?" .
 aiact:cq6_4 a aiact:CompetencyQuestion ; rdfs:label "How is the internal layout or component arrangement documented?" .
 
-### 7. User interface for deployer
+### 7. User interface and instructions for use
 aiact:req7 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "User interface for deployer" ;
-    dcterms:description "A basic description of the user interface provided to the deployer." ;
+    rdfs:label "User interface and instructions for use" ;
+    dcterms:description "A basic description of the user-interface provided to the deployer; instructions for use for the deployer, and a basic description of the user-interface provided to the deployer, where applicable." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 1(g) and 1(h)" ;
     aiact:aiLifecycleStage "Software Pipeline: Deployment" ;
-    aiact:hasCompetencyQuestion aiact:cq7_1 .
+    aiact:hasCompetencyQuestion aiact:cq7_1 , aiact:cq7_2 .
 
 aiact:cq7_1 a aiact:CompetencyQuestion ; rdfs:label "What interface is provided for operators or deployers?" .
+aiact:cq7_2 a aiact:CompetencyQuestion ; rdfs:label "What instructions for use are provided to the deployer?" .
 
 ### 8. Elements of system and development process
 aiact:req8 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
     rdfs:label "Elements of system and development process" ;
-    dcterms:description "A detailed description of the elements of the AI system and the processes for its development." ;
+    dcterms:description "The methods and steps performed for the development of the AI system, including, where relevant, recourse to pre-trained systems or tools provided by third parties and how those were used, integrated or modified by the provider." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 2(a)" ;
     aiact:aiLifecycleStage "ML Pipeline: Model Engineering" ;
     aiact:hasCompetencyQuestion aiact:cq8_1 .
 
 aiact:cq8_1 a aiact:CompetencyQuestion ; rdfs:label "What are the components and steps of development?" .
 
-### 9. System architecture and algorithms
+### 9. Design specifications of the system
 aiact:req9 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "System architecture and algorithms" ;
-    dcterms:description "A detailed description of the system architecture, including algorithms." ;
+    rdfs:label "Design specifications of the system" ;
+    dcterms:description "The design specifications of the system, namely the general logic of the AI system and of the algorithms; the key design choices including the rationale and assumptions made, including with regard to persons or groups of persons in respect of who, the system is intended to be used; the main classification choices; what the system is designed to optimise for, and the relevance of the different parameters; the description of the expected output and output quality of the system; the decisions about any possible trade-off made regarding the technical solutions adopted to comply with the requirements set out in Chapter III, Section 2." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 2(b)" ;
     aiact:aiLifecycleStage "ML Pipeline: Model Engineering" ;
-    aiact:hasCompetencyQuestion aiact:cq9_1 , aiact:cq9_2 , aiact:cq9_3 , aiact:cq9_4 .
+    aiact:hasCompetencyQuestion aiact:cq9_1 , aiact:cq9_2 , aiact:cq9_3 , aiact:cq9_4 , aiact:cq9_5 , aiact:cq9_6 , aiact:cq9_7 .
 
-aiact:cq9_1 a aiact:CompetencyQuestion ; rdfs:label "What is the architecture and what algorithms are used?" .
-aiact:cq9_2 a aiact:CompetencyQuestion ; rdfs:label "Which software components make up the system and how are they connected?" .
-aiact:cq9_3 a aiact:CompetencyQuestion ; rdfs:label "How do software components feed into each other and into the overall processing pipeline?" .
-aiact:cq9_4 a aiact:CompetencyQuestion ; rdfs:label "Which computational resources are used for development, training, testing and validation?" .
+aiact:cq9_1 a aiact:CompetencyQuestion ; rdfs:label "What is the general logic of the AI system and of the algorithms?" .
+aiact:cq9_2 a aiact:CompetencyQuestion ; rdfs:label "What are the key design choices including the rationale and assumptions made?" .
+aiact:cq9_3 a aiact:CompetencyQuestion ; rdfs:label "With regard to which persons or groups of persons is the system intended to be used?" .
+aiact:cq9_4 a aiact:CompetencyQuestion ; rdfs:label "What are the main classification choices?" .
+aiact:cq9_5 a aiact:CompetencyQuestion ; rdfs:label "What is the system designed to optimise for, and what is the relevance of the different parameters?" .
+aiact:cq9_6 a aiact:CompetencyQuestion ; rdfs:label "What is the description of the expected output and output quality of the system?" .
+aiact:cq9_7 a aiact:CompetencyQuestion ; rdfs:label "What decisions about any possible trade-off were made regarding the technical solutions adopted to comply with Chapter III, Section 2 requirements?" .
 
-### 10. Data requirements
+### 10. System architecture
 aiact:req10 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Data requirements" ;
-    dcterms:description "A description of the data requirements in terms of data type, format, sources and how the data are processed, including available data sheets." ;
-    aiact:aiLifecycleStage "Data Pipeline: Exploration and Validation" ;
-    aiact:hasCompetencyQuestion aiact:cq10_1 , aiact:cq10_2 , aiact:cq10_3 .
+    rdfs:label "System architecture" ;
+    dcterms:description "The description of the system architecture explaining how software components build on or feed into each other and integrate into the overall processing; the computational resources used to develop, train, test and validate the AI system." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 2(c)" ;
+    aiact:aiLifecycleStage "ML Pipeline: Model Engineering" ;
+    aiact:hasCompetencyQuestion aiact:cq10_1 , aiact:cq10_2 , aiact:cq10_3 , aiact:cq10_4 .
 
-aiact:cq10_1 a aiact:CompetencyQuestion ; rdfs:label "What data is needed and how is it processed?" .
-aiact:cq10_2 a aiact:CompetencyQuestion ; rdfs:label "Are there data sheets describing the required data and their main characteristics?" .
-aiact:cq10_3 a aiact:CompetencyQuestion ; rdfs:label "What are the scope, main characteristics and sources of the required data?" .
+aiact:cq10_1 a aiact:CompetencyQuestion ; rdfs:label "What is the architecture and what algorithms are used?" .
+aiact:cq10_2 a aiact:CompetencyQuestion ; rdfs:label "Which software components make up the system and how are they connected?" .
+aiact:cq10_3 a aiact:CompetencyQuestion ; rdfs:label "How do software components feed into each other and into the overall processing pipeline?" .
+aiact:cq10_4 a aiact:CompetencyQuestion ; rdfs:label "Which computational resources are used for development, training, testing and validation?" .
 
-### 11. Training, validation, testing data
+### 11. Data requirements
 aiact:req11 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Training, validation, testing data" ;
-    dcterms:description "A description of the data used for training, validation and testing of the AI system, including its provenance, how the data was obtained and documented." ;
-    aiact:aiLifecycleStage "Data Pipeline: Data Training and Testing" ;
+    rdfs:label "Data requirements" ;
+    dcterms:description "Where relevant, the data requirements in terms of datasheets describing the training methodologies and techniques and the training data sets used, including a general description of these data sets, information about their provenance, scope and main characteristics; how the data was obtained and selected; labelling procedures (e.g. for supervised learning), data cleaning methodologies (e.g. outliers detection)." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 2(d)" ;
+    aiact:aiLifecycleStage "Data Pipeline: Exploration and Validation" ;
     aiact:hasCompetencyQuestion aiact:cq11_1 , aiact:cq11_2 , aiact:cq11_3 , aiact:cq11_4 , aiact:cq11_5 .
 
-aiact:cq11_1 a aiact:CompetencyQuestion ; rdfs:label "What data is used?" .
-aiact:cq11_2 a aiact:CompetencyQuestion ; rdfs:label "Where does it come from?" .
-aiact:cq11_3 a aiact:CompetencyQuestion ; rdfs:label "How was it obtained?" .
-aiact:cq11_4 a aiact:CompetencyQuestion ; rdfs:label "Are there training data sheets describing the datasets and their use for training, validation and testing?" .
-aiact:cq11_5 a aiact:CompetencyQuestion ; rdfs:label "What are the selection criteria and sampling strategy for the training, validation and testing data?" .
+aiact:cq11_1 a aiact:CompetencyQuestion ; rdfs:label "What are the datasheets describing the training methodologies and techniques?" .
+aiact:cq11_2 a aiact:CompetencyQuestion ; rdfs:label "What are the training data sets used, including their provenance, scope and main characteristics?" .
+aiact:cq11_3 a aiact:CompetencyQuestion ; rdfs:label "How was the data obtained and selected?" .
+aiact:cq11_4 a aiact:CompetencyQuestion ; rdfs:label "What are the labelling procedures?" .
+aiact:cq11_5 a aiact:CompetencyQuestion ; rdfs:label "What are the data cleaning methodologies?" .
 
-### 12. Measures for data quality
+### 12. Assessment of human oversight measures
 aiact:req12 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Measures for data quality" ;
-    dcterms:description "A description of the measures taken to ensure the quality of the data used, including cleaning, enrichment processes and labeling procedures." ;
-    aiact:aiLifecycleStage "Data Pipeline: Wrangling (Cleaning)" ;
+    rdfs:label "Assessment of human oversight measures" ;
+    dcterms:description "Assessment of the human oversight measures needed in accordance with Article 14, including an assessment of the technical measures needed to facilitate the interpretation of the outputs of AI systems by the deployers, in accordance with Article 13(3), point (d)." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 2(e)" ;
+    aiact:aiLifecycleStage "ML Pipeline: Model Evaluation" ;
     aiact:hasCompetencyQuestion aiact:cq12_1 , aiact:cq12_2 .
 
-aiact:cq12_1 a aiact:CompetencyQuestion ; rdfs:label "How is the data cleaned, filtered, and validated?" .
-aiact:cq12_2 a aiact:CompetencyQuestion ; rdfs:label "What labeling procedures and guidelines are used to assign labels to the data?" .
+aiact:cq12_1 a aiact:CompetencyQuestion ; rdfs:label "What human oversight measures are needed in accordance with Article 14?" .
+aiact:cq12_2 a aiact:CompetencyQuestion ; rdfs:label "What technical measures are needed to facilitate the interpretation of the outputs by deployers?" .
 
-### 13. Training methodologies
+### 13. Pre-determined changes to the AI system
 aiact:req13 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Training methodologies" ;
-    dcterms:description "A detailed description of the training methodologies and techniques used, including configuration of computational resources and data usage." ;
-    aiact:aiLifecycleStage "ML Pipeline: Model Engineering" ;
-    aiact:hasCompetencyQuestion aiact:cq13_1 , aiact:cq13_2 , aiact:cq13_3 .
+    rdfs:label "Pre-determined changes to the AI system" ;
+    dcterms:description "Where applicable, a detailed description of pre-determined changes to the AI system and its performance, together with all the relevant information related to the technical solutions adopted to ensure continuous compliance of the AI system with the relevant requirements set out in Chapter III, Section 2." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 2(f)" ;
+    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
+    aiact:hasCompetencyQuestion aiact:cq13_1 , aiact:cq13_2 .
 
-aiact:cq13_1 a aiact:CompetencyQuestion ; rdfs:label "How was the model trained? What techniques were used?" .
-aiact:cq13_2 a aiact:CompetencyQuestion ; rdfs:label "How are training, validation and testing datasets used within the training workflow?" .
-aiact:cq13_3 a aiact:CompetencyQuestion ; rdfs:label "What computational resources and configurations are used during training?" .
+aiact:cq13_1 a aiact:CompetencyQuestion ; rdfs:label "What are the pre-determined changes to the AI system and its performance?" .
+aiact:cq13_2 a aiact:CompetencyQuestion ; rdfs:label "What technical solutions are adopted to ensure continuous compliance?" .
 
-### 14. Testing and validation procedures
+### 14. Validation and testing procedures
 aiact:req14 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Testing and validation procedures" ;
-    dcterms:description "A description of the testing and validation procedures used, including computational resources." ;
+    rdfs:label "Validation and testing procedures" ;
+    dcterms:description "The validation and testing procedures used, including information about the validation and testing data used and their main characteristics; metrics used to measure accuracy, robustness and compliance with other relevant requirements set out in Chapter III, Section 2, as well as potentially discriminatory impacts; test logs and all test reports dated and signed by the responsible persons, including with regard to predetermined changes as referred to under point (f)." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 2(g)" ;
     aiact:aiLifecycleStage "ML Pipeline: Model Evaluation" ;
-    aiact:hasCompetencyQuestion aiact:cq14_1 , aiact:cq14_2 .
+    aiact:hasCompetencyQuestion aiact:cq14_1 , aiact:cq14_2 , aiact:cq14_3 , aiact:cq14_4 .
 
-aiact:cq14_1 a aiact:CompetencyQuestion ; rdfs:label "How was the system tested and validated?" .
-aiact:cq14_2 a aiact:CompetencyQuestion ; rdfs:label "What computational resources are used during testing and validation?" .
+aiact:cq14_1 a aiact:CompetencyQuestion ; rdfs:label "What validation and testing procedures are used?" .
+aiact:cq14_2 a aiact:CompetencyQuestion ; rdfs:label "What are the validation and testing data used and their main characteristics?" .
+aiact:cq14_3 a aiact:CompetencyQuestion ; rdfs:label "What metrics are used to measure accuracy, robustness and compliance, as well as potentially discriminatory impacts?" .
+aiact:cq14_4 a aiact:CompetencyQuestion ; rdfs:label "Are test logs and test reports available, dated and signed by responsible persons?" .
 
-### 15. Risk management system
+### 15. Cybersecurity measures
 aiact:req15 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Risk management system" ;
-    dcterms:description "A description of the risk management system in accordance with Article 9." ;
-    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
-    aiact:hasCompetencyQuestion aiact:cq15_1 , aiact:cq15_2 .
+    rdfs:label "Cybersecurity measures" ;
+    dcterms:description "Cybersecurity measures put in place." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 2(h)" ;
+    aiact:aiLifecycleStage "Software Pipeline: Build and Deployment" ;
+    aiact:hasCompetencyQuestion aiact:cq15_1 .
 
-aiact:cq15_1 a aiact:CompetencyQuestion ; rdfs:label "What risks were identified and mitigated?" .
-aiact:cq15_2 a aiact:CompetencyQuestion ; rdfs:label "How often are risks re-evaluated?" .
+aiact:cq15_1 a aiact:CompetencyQuestion ; rdfs:label "What cybersecurity measures are put in place?" .
 
-### 16. Post-market monitoring
+### 16. Monitoring, functioning and control
 aiact:req16 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Post-market monitoring" ;
-    dcterms:description "A description of the post-market monitoring system in accordance with Article 61." ;
-    aiact:aiLifecycleStage "Software Pipeline: Decommissioning" ;
-    aiact:hasCompetencyQuestion aiact:cq16_1 .
+    rdfs:label "Monitoring, functioning and control" ;
+    dcterms:description "Detailed information about the monitoring, functioning and control of the AI system, in particular with regard to: its capabilities and limitations in performance, including the degrees of accuracy for specific persons or groups of persons on which the system is intended to be used and the overall expected level of accuracy in relation to its intended purpose; the foreseeable unintended outcomes and sources of risks to health and safety, fundamental rights and discrimination in view of the intended purpose of the AI system; the human oversight measures needed in accordance with Article 14, including the technical measures put in place to facilitate the interpretation of the outputs of AI systems by the deployers; specifications on input data, as appropriate." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 3" ;
+    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
+    aiact:hasCompetencyQuestion aiact:cq16_1 , aiact:cq16_2 , aiact:cq16_3 .
 
-aiact:cq16_1 a aiact:CompetencyQuestion ; rdfs:label "How is the system monitored after deployment? Are decommissioning processes in place?" .
+aiact:cq16_1 a aiact:CompetencyQuestion ; rdfs:label "What are the capabilities and limitations in performance, including degrees of accuracy for specific persons or groups?" .
+aiact:cq16_2 a aiact:CompetencyQuestion ; rdfs:label "What are the foreseeable unintended outcomes and sources of risks to health and safety, fundamental rights and discrimination?" .
+aiact:cq16_3 a aiact:CompetencyQuestion ; rdfs:label "What human oversight measures and technical measures for output interpretation are needed?" .
 
-### 17. Cybersecurity measures
+### 17. Appropriateness of performance metrics
 aiact:req17 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Cybersecurity measures" ;
-    dcterms:description "A description of the measures implemented to ensure the cybersecurity of the AI system." ;
-    aiact:aiLifecycleStage "Software Pipeline: Build and Deployment" ;
+    rdfs:label "Appropriateness of performance metrics" ;
+    dcterms:description "A description of the appropriateness of the performance metrics for the specific AI system." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 4" ;
+    aiact:aiLifecycleStage "ML Pipeline: Model Evaluation" ;
     aiact:hasCompetencyQuestion aiact:cq17_1 .
 
-aiact:cq17_1 a aiact:CompetencyQuestion ; rdfs:label "How is the system protected from cyber threats?" .
+aiact:cq17_1 a aiact:CompetencyQuestion ; rdfs:label "What is the description of the appropriateness of the performance metrics for the specific AI system?" .
 
-### 18. Accuracy, robustness, resilience
+### 18. Risk management
 aiact:req18 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Accuracy, robustness, resilience" ;
-    dcterms:description "A description of the measures designed to ensure the accuracy, robustness and cybersecurity of the high-risk AI system." ;
-    aiact:aiLifecycleStage "ML Pipeline: Model Evaluation" ;
+    rdfs:label "Risk management" ;
+    dcterms:description "A detailed description of the risk management system in accordance with Article 9." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 5" ;
+    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
     aiact:hasCompetencyQuestion aiact:cq18_1 .
 
-aiact:cq18_1 a aiact:CompetencyQuestion ; rdfs:label "How reliable is the system? What protections exist?" .
+aiact:cq18_1 a aiact:CompetencyQuestion ; rdfs:label "What is the detailed description of the risk management system in accordance with Article 9?" .
 
-### 19. Human oversight mechanisms
+### 19. Changes to the AI system throughout its lifecycle
 aiact:req19 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Human oversight mechanisms" ;
-    dcterms:description "A description of the human oversight measures referred to in Article 14." ;
-    aiact:aiLifecycleStage "ML Pipeline: Model Evaluation" ;
+    rdfs:label "Changes to the AI system throughout its lifecycle" ;
+    dcterms:description "A description of relevant changes made by the provider to the system through its lifecycle." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 6" ;
+    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
     aiact:hasCompetencyQuestion aiact:cq19_1 .
 
-aiact:cq19_1 a aiact:CompetencyQuestion ; rdfs:label "How can humans supervise or intervene in system output?" .
+aiact:cq19_1 a aiact:CompetencyQuestion ; rdfs:label "What changes have been made to the system through its lifecycle?" .
 
-### 20. Transparency for users
+### 20. Harmonised standards and common specifications
 aiact:req20 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Transparency for users" ;
-    dcterms:description "A description of the technical solutions adopted with a view to ensuring transparency of the AI system." ;
-    aiact:aiLifecycleStage "Software Pipeline: Deployment" ;
-    aiact:hasCompetencyQuestion aiact:cq20_1 .
+    rdfs:label "Harmonised standards and common specifications" ;
+    dcterms:description "List of the harmonised standards applied in full or in part the references of which have been published in the Official Journal of the European Union; where no such harmonised standards have been applied, a detailed description of the solutions adopted to meet the requirements set out in Chapter III, Section 2, including a list of other relevant standards and technical specifications applied." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 7" ;
+    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
+    aiact:hasCompetencyQuestion aiact:cq20_1 , aiact:cq20_2 .
 
-aiact:cq20_1 a aiact:CompetencyQuestion ; rdfs:label "What information regarding inputs/outputs is provided? Are there explainable AI features?" .
+aiact:cq20_1 a aiact:CompetencyQuestion ; rdfs:label "What harmonised standards have been applied in full or in part?" .
+aiact:cq20_2 a aiact:CompetencyQuestion ; rdfs:label "If no harmonised standards are applied, what solutions are adopted to meet Chapter III, Section 2 requirements?" .
 
-### 21. Logging capabilities
-aiact:req21 a aiact:Requirement, skos:Concept ;
+### 21. EU declaration of conformity
+aiact:req21 a aiact:Requirement , skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Logging capabilities" ;
-    dcterms:description "A description of the logging capabilities in accordance with Article 12." ;
-    aiact:aiLifecycleStage "Data Pipeline: Monitoring and Logging" ;
+    rdfs:label "EU declaration of conformity" ;
+    dcterms:description "A copy of the EU declaration of conformity referred to in Article 47." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 8" ;
+    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
     aiact:hasCompetencyQuestion aiact:cq21_1 .
 
-aiact:cq21_1 a aiact:CompetencyQuestion ; rdfs:label "What activities are logged? How are logs stored and accessed?" .
+aiact:cq21_1 a aiact:CompetencyQuestion ; rdfs:label "Is there a copy of the EU declaration of conformity?" .
 
-### 22. Lifecycle performance assurance
-aiact:req22 a aiact:Requirement , skos:Concept ;
+### 22. Post-market monitoring system
+aiact:req22 a aiact:Requirement, skos:Concept ;
     skos:inScheme aiact: ;
-    rdfs:label "Lifecycle performance assurance" ;
-    dcterms:description "A description of the system's capability to perform consistently throughout its lifecycle." ;
-    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
-    aiact:hasCompetencyQuestion aiact:cq22_1 .
-
-aiact:cq22_1 a aiact:CompetencyQuestion ; rdfs:label "How is system functionality maintained long-term?" .
-
-### 23. Appropriateness of performance metrics
-aiact:req23 a aiact:Requirement , skos:Concept ;
-    skos:inScheme aiact: ;
-    rdfs:label "Appropriateness of performance metrics" ;
-    dcterms:description "A description of the appropriateness of the performance metrics." ;
-    aiact:aiLifecycleStage "ML Pipeline: Model Evaluation" ;
-    aiact:hasCompetencyQuestion aiact:cq23_1 .
-
-aiact:cq23_1 a aiact:CompetencyQuestion ; rdfs:label "Are the metrics appropriate? Which ones are used and how are they evaluated?" .
-
-### 24. Risk management (detailed)
-aiact:req24 a aiact:Requirement , skos:Concept ;
-    skos:inScheme aiact: ;
-    rdfs:label "Risk management (detailed)" ;
-    dcterms:description "A detailed description of the risk management system in accordance with Article 9." ;
-    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
-    aiact:hasCompetencyQuestion aiact:cq24_1 .
-
-aiact:cq24_1 a aiact:CompetencyQuestion ; rdfs:label "What is the detailed structure of the risk management process?" .
-
-### 25. Changes to the system lifecycle
-aiact:req25 a aiact:Requirement , skos:Concept ;
-    skos:inScheme aiact: ;
-    rdfs:label "Changes to the system lifecycle" ;
-    dcterms:description "A description of the changes made by the provider to the system through its lifecycle." ;
-    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
-    aiact:hasCompetencyQuestion aiact:cq25_1 .
-
-aiact:cq25_1 a aiact:CompetencyQuestion ; rdfs:label "What changes have been made during the lifecycle?" .
-
-### 26. Applied standards
-aiact:req26 a aiact:Requirement , skos:Concept ;
-    skos:inScheme aiact: ;
-    rdfs:label "Applied standards" ;
-    dcterms:description "A copy of the standards applied, including harmonised standards and other relevant specifications." ;
-    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
-    aiact:hasCompetencyQuestion aiact:cq26_1 .
-
-aiact:cq26_1 a aiact:CompetencyQuestion ; rdfs:label "Which standards have been applied?" .
-
-### 27. EU Declaration of Conformity
-aiact:req27 a aiact:Requirement , skos:Concept ;
-    skos:inScheme aiact: ;
-    rdfs:label "EU Declaration of Conformity" ;
-    dcterms:description "A copy of the EU Declaration of Conformity referred to in Article 47." ;
-    aiact:aiLifecycleStage "Cross-cutting / All Pipelines" ;
-    aiact:hasCompetencyQuestion aiact:cq27_1 .
-
-aiact:cq27_1 a aiact:CompetencyQuestion ; rdfs:label "Is there a valid EU Declaration of Conformity?" .
-
-### 28. Post-market performance evaluation
-aiact:req28 a aiact:Requirement , skos:Concept ;
-    skos:inScheme aiact: ;
-    rdfs:label "Post-market performance evaluation" ;
-    dcterms:description "A detailed description of the system established to evaluate the AI system performance in the post-market phase." ;
+    rdfs:label "Post-market monitoring system" ;
+    dcterms:description "A detailed description of the system in place to evaluate the AI system performance in the post-market phase in accordance with Article 72, including the post-market monitoring plan referred to in Article 72(3)." ;
+    dcterms:source "EU AI Act 2024/1689, Annex IV, Section 9" ;
     aiact:aiLifecycleStage "Software Pipeline: Deployment" ;
-    aiact:hasCompetencyQuestion aiact:cq28_1 .
+    aiact:hasCompetencyQuestion aiact:cq22_1 , aiact:cq22_2 .
 
-aiact:cq28_1 a aiact:CompetencyQuestion ; rdfs:label "What system is in place to evaluate performance post-market?" .
+aiact:cq22_1 a aiact:CompetencyQuestion ; rdfs:label "What system is established to evaluate the AI system performance in the post-market phase?" .
+aiact:cq22_2 a aiact:CompetencyQuestion ; rdfs:label "Is there a post-market monitoring plan as referred to in Article 72(3)?" .
 
 ################################################################################
 # End of document
