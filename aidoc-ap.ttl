@@ -189,7 +189,7 @@
 ###  https://w3id.org/aidoc-ap#hasAIActivity
 <https://w3id.org/aidoc-ap#hasAIActivity> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <https://w3id.org/airo#AILifecyclePhase> ;
-                                              rdfs:range <https://w3id.org/airo#AIActivity> ;
+                                              rdfs:range <https://w3id.org/aidoc-ap#AIActivity> ;
                                               rdfs:comment "Links an AI Lifecycle Phase to a specific AI Activity."@en ;
                                               rdfs:label "has lifecycle stage"@en .
 
@@ -204,7 +204,7 @@
 ###  https://w3id.org/aidoc-ap#hasRisk
 <https://w3id.org/aidoc-ap#hasRisk> rdf:type owl:ObjectProperty ;
                                     rdfs:domain <https://w3id.org/aidoc-ap#AIArtifact> ;
-                                    rdfs:range <https://w3id.org/airo#AIRisk> ;
+                                    rdfs:range <https://w3id.org/airo#Risk> ;
                                     rdfs:comment "Links an AI artifact (e.g., model or dataset) or an AI system to an associated risk. Risk means the combination of the probability of an occurrence of harm and the severity of that harm."@en ;
                                     rdfs:label "has risk"@en ;
                                     dcterms:source "EU AI Act 2024/1689, Article 3(2)" ;
@@ -500,13 +500,11 @@
 
 <https://w3id.org/airo#hasCapability> rdf:type owl:ObjectProperty .
 
-<https://w3id.org/airo#AIActivity> rdf:type owl:Class .
-
 <https://w3id.org/airo#AILifecyclePhase> rdf:type owl:Class .
 
 <https://w3id.org/airo#AICapability> rdf:type owl:Class .
 
-<https://w3id.org/airo#AIRisk> rdf:type owl:Class .
+<https://w3id.org/airo#Risk> rdf:type owl:Class .
 
 <https://w3id.org/airo#AIProvider> rdf:type owl:Class .
 
