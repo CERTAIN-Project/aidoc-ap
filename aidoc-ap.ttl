@@ -80,7 +80,7 @@
                                                           rdfs:range <https://w3id.org/aidoc-ap#AISystemCapability> ;
                                                           rdfs:comment "Relates an AISystem to an AISystemCapability it is designed to exhibit or support" ;
                                                           rdfs:label "has capability"@en ;
-                                                          owl:equivalentClass <https://w3id.org/airo#hasCapability> .
+                                                          owl:equivalentProperty <https://w3id.org/airo#hasCapability> .
 
 
 ###  https://w3id.org/aidoc-ap#implementsTask
