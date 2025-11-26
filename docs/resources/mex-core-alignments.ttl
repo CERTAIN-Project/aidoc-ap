@@ -5,21 +5,21 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:19f95ed3-d385-4ff5-87fa-7ca5b9e1b7b7 a prov:Entity,
+align:7c3ab7b9-1839-4fee-9faf-cc0ca7e417b9 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:0e678fd4-2315-43d1-bf58-f5e3e4d35f27 ;
+    prov:wasGeneratedBy align:35e43958-4ed0-4223-978d-56755d2266cb ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and describe a 'Dataset'. The mex-core concept provides a URI, indicating a formal definition, but the description is missing, making a definitive statement impossible without further inspection. However, given the 1.0 lexical similarity and identical labels it is highly likely they are equivalent."^^xsd:string ;
+    align:rationale "Both concepts share the same label and describe a 'Dataset'. While the `mex-core` concept has a URI providing a formal definition and location, the lack of a description in `mex-core` isn't disqualifying given the identical labels.  Without further information differentiating their meaning, they are considered equivalent."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:Dataset ;
     align:target <http://mex.aksw.org/mex-core#Dataset> .
 
 aidoc:Dataset owl:equivalentClass <http://mex.aksw.org/mex-core#Dataset> .
 
-align:0e678fd4-2315-43d1-bf58-f5e3e4d35f27 a prov:Activity ;
-    prov:endedAtTime "2025-11-18T13:04:10+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-18T13:04:08+00:00"^^xsd:dateTime ;
+align:35e43958-4ed0-4223-978d-56755d2266cb a prov:Activity ;
+    prov:endedAtTime "2025-11-26T14:13:10+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-26T14:13:08+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

@@ -1,0 +1,89 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+align:333e0fb3-12e7-42f7-944e-197f50e33532 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:5ce923ba-e24e-4974-a527-f3b271187b38 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts represent 'Log' as a record of events. However, the RAINS concept defines it more specifically as a type of 'AccountableResult' linked to 'Changes' and includes the subclass 'Change Log'. The AIDOC definition is more generic. While not strictly equivalent, they clearly overlap in meaning and purpose, making 'closeMatch' the most appropriate relation."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Log ;
+    align:target <https://w3id.org/rains#Log> .
+
+align:4ed7b378-e085-47a1-826a-a8f557e225dc a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:5ce923ba-e24e-4974-a527-f3b271187b38 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to a 'Change Log', indicating similar intent. However, the RAINS concept is more specific, framing it as a type of 'AccountableResult' tied to design specifications and requiring 'Change' and 'ChangeJustification' information elements. The AIDOC concept is a general lifecycle change log. This suggests a close, but not exact, equivalence."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:ChangeLog ;
+    align:target <https://w3id.org/rains#ChangeLog> .
+
+align:80c60a44-30d8-4859-b64e-54896f060268 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:5ce923ba-e24e-4974-a527-f3b271187b38 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to mechanisms for human intervention in AI systems. The RAINS concept is more specific, detailing *how* an AI system integrates human operators (stop, review, alter), while the AIDOC concept is a more general description of a mechanism. The lexical similarity score of 0.801 supports a close relationship."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:HumanOversightMechanism ;
+    align:target <https://w3id.org/rains#SystemHumanOversightMechanism> .
+
+align:a356d0e9-08fc-41af-a3b2-32bc7203e805 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:5ce923ba-e24e-4974-a527-f3b271187b38 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts define 'Dataset' with very similar descriptions. The RAINS concept utilizes a standard URI, suggesting a formal definition already present in a well-established vocabulary. Given the 1.0 lexical similarity and overlapping meaning, they can be considered equivalent classes."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:Dataset ;
+    align:target <http://www.w3.org/ns/mls#Dataset> .
+
+align:b6640697-4461-4c7f-b95a-42f962bec6fb a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:5ce923ba-e24e-4974-a527-f3b271187b38 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to evaluating a model. The `rains` concept is more specific, defining Model Evaluation as a particular type of `rains:EvaluationResult` and linking it to performance measures. The `AIDOC` concept is a more general description of the activity. They are highly similar but not strictly equivalent due to the level of detail and connection to a specific result type in `rains`."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:ModelEvaluation ;
+    align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
+
+align:cc8b0d72-da8d-4d79-af4a-887557d30a64 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:5ce923ba-e24e-4974-a527-f3b271187b38 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both definitions describe the same concept: a machine-based system that uses inference to produce outputs influencing environments. The RAINS definition is more context-specific (linked to accountability plans) but does not change the fundamental meaning of what an 'AI System' *is*. Given the 1.0 lexical similarity and overlapping scope, equivalence is highly probable."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/rains#AI_System> .
+
+aidoc:AISystem owl:equivalentClass <https://w3id.org/rains#AI_System> .
+
+aidoc:ChangeLog skos:closeMatch <https://w3id.org/rains#ChangeLog> .
+
+aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
+
+aidoc:HumanOversightMechanism skos:closeMatch <https://w3id.org/rains#SystemHumanOversightMechanism> .
+
+aidoc:Log skos:closeMatch <https://w3id.org/rains#Log> .
+
+aidoc:ModelEvaluation skos:closeMatch <http://www.w3.org/ns/mls#ModelEvaluation> .
+
+align:5ce923ba-e24e-4974-a527-f3b271187b38 a prov:Activity ;
+    prov:endedAtTime "2025-11-26T14:13:21+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-26T14:13:10+00:00"^^xsd:dateTime ;
+    prov:used <https://ollama.com/library/gemma3:27b> ;
+    prov:wasAssociatedWith align:LLMAlignmentBot .
+
+align:LLMAlignmentBot a prov:SoftwareAgent ;
+    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+

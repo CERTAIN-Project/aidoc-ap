@@ -5,22 +5,22 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:c7b9a9f9-b78e-4cec-920e-79a707ffc748 a prov:Entity,
+align:091d5782-3166-44b2-8b8e-ebebefe08f12 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:52ce4b00-9b0f-40e7-8ca8-73de43a67b40 ;
+    prov:wasGeneratedBy align:52af403a-84ab-418c-a5b4-a64138698289 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "The labels are identical, the lexical similarity is perfect (1.0), and the descriptions are functionally equivalent - both referring to the process of assessing model performance. The ml-onto concept has a defined URI indicating formal ontological status, while the AIDOC concept doesn't explicitly define that, but within context, they represent the same concept."^^xsd:string ;
+    align:rationale "Both concepts share the same label and description focusing on assessing model performance. The presence of a URI in the ml-onto concept further suggests a standardized, formal definition that aligns with the AIDOC concept's intent. High lexical similarity reinforces this equivalence."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:ModelEvaluation ;
     align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:fb538a56-4b36-4323-87c1-8f6b11fa79eb a prov:Entity,
+align:c33b519a-ad14-4670-8425-36e18e14b595 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:52ce4b00-9b0f-40e7-8ca8-73de43a67b40 ;
+    prov:wasGeneratedBy align:52af403a-84ab-418c-a5b4-a64138698289 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share identical labels and descriptions (although the ml-onto description is empty, the label provides strong indication of equivalence). Given the limited information and identical labels, equivalence is the most appropriate assessment. The ml-onto concept also benefits from a defined URI, strengthening the connection."^^xsd:string ;
+    align:rationale "Both concepts share the same label and description focuses on the same domain (datasets in the AI/ML lifecycle). The lack of a description in `ml-onto` doesn't negate the strong lexical similarity and implied semantic overlap. Assuming a foundational ontology like `ml-onto` intends to represent general concepts, equivalence is highly probable."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
@@ -29,9 +29,9 @@ aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
 
 aidoc:ModelEvaluation owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:52ce4b00-9b0f-40e7-8ca8-73de43a67b40 a prov:Activity ;
-    prov:endedAtTime "2025-11-18T13:04:14+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-18T13:04:10+00:00"^^xsd:dateTime ;
+align:52af403a-84ab-418c-a5b4-a64138698289 a prov:Activity ;
+    prov:endedAtTime "2025-11-26T14:13:24+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-26T14:13:21+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

@@ -5,33 +5,33 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:62eeed64-97ac-40f9-a170-41a96bec38d8 a prov:Entity,
+align:08de1581-084f-4300-9a6a-ddc921dbbd97 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:dfee47a0-2b50-4b8e-921b-a8b77a43ec51 ;
+    prov:wasGeneratedBy align:cd029a82-6fc5-467c-a75b-0972437c8bdd ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and description (though mlschema's description is empty, the intent is clearly the same). The high lexical similarity supports an equivalence relationship. The URI provided for the mlschema concept further solidifies this, suggesting a standardized definition."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source aidoc:Dataset ;
-    align:target <http://www.w3.org/ns/mls#Dataset> .
-
-align:7eed196e-250b-4063-a663-261e352495f4 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:dfee47a0-2b50-4b8e-921b-a8b77a43ec51 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Despite slightly different phrasing, both concepts fundamentally describe the process of assessing a model's performance. `mlschema` provides a more technical description focusing on connecting performance measures to values, while `AIDOC` uses broader terms. Given the 1.0 lexical similarity, they are effectively equivalent for most use cases."^^xsd:string ;
+    align:rationale "Despite differing levels of detail in the descriptions, both concepts denote the process of assessing a model's performance. The mlschema definition provides a more formal articulation of *how* evaluation is represented (connecting measure specification with value), but the fundamental *what* (assessing model performance) is identical. The lexical similarity of 1.0 strongly supports equivalence."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:ModelEvaluation ;
     align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
+
+align:4902a81f-e65f-4e53-98ca-871b1da5e37e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:cd029a82-6fc5-467c-a75b-0972437c8bdd ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and description (although mlschema’s description is empty, the label and URI context heavily imply equivalence). The high lexical similarity score further supports this. Without more detailed information about the attributes and restrictions of each concept, assuming equivalence is highly probable."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:Dataset ;
+    align:target <http://www.w3.org/ns/mls#Dataset> .
 
 aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
 
 aidoc:ModelEvaluation owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:dfee47a0-2b50-4b8e-921b-a8b77a43ec51 a prov:Activity ;
-    prov:endedAtTime "2025-11-18T13:04:17+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-18T13:04:14+00:00"^^xsd:dateTime ;
+align:cd029a82-6fc5-467c-a75b-0972437c8bdd a prov:Activity ;
+    prov:endedAtTime "2025-11-26T14:13:27+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-26T14:13:24+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 
