@@ -80,7 +80,7 @@
                                                           rdfs:range <https://w3id.org/aidoc-ap#AISystemCapability> ;
                                                           rdfs:comment "Relates an AISystem to an AISystemCapability it is designed to exhibit or support" ;
                                                           rdfs:label "has capability"@en ;
-                                                          owl:equivalentClass <https://w3id.org/airo#hasCapability> .
+                                                          owl:equivalentProperty <https://w3id.org/airo#hasCapability> .
 
 
 ###  https://w3id.org/aidoc-ap#implementsTask
@@ -129,11 +129,13 @@
 ###  https://w3id.org/aidoc-ap#hasComponent
 <https://w3id.org/aidoc-ap#hasComponent> rdf:type owl:ObjectProperty ;
                                          rdfs:domain <https://w3id.org/aidoc-ap#AISystem> ;
-                                         rdfs:range <https://w3id.org/aidoc-ap#AIArtifact>,
-                                                    <https://w3id.org/airo#AIComponent> ;
+                                         rdfs:range [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <https://w3id.org/aidoc-ap#AIArtifact>
+                                                                  <https://w3id.org/airo#AIComponent> )
+                                                   ] ;
                                          rdfs:comment "Links an AISystem to its constituent components like models and datasets."@en ;
                                          rdfs:label "has component"@en ;
-                                         skos:closeMatch <https://w3id.org/airo#hasComponent>.
+                                         skos:closeMatch <https://w3id.org/airo#hasComponent> .
 
 
 ###  https://w3id.org/aidoc-ap#hasSoftwareComponent
@@ -187,7 +189,7 @@
 ###  https://w3id.org/aidoc-ap#hasAIActivity
 <https://w3id.org/aidoc-ap#hasAIActivity> rdf:type owl:ObjectProperty ;
                                               rdfs:domain <https://w3id.org/airo#AILifecyclePhase> ;
-                                              rdfs:range <https://w3id.org/airo#AIActivity> ;
+                                              rdfs:range <https://w3id.org/aidoc-ap#AIActivity> ;
                                               rdfs:comment "Links an AI Lifecycle Phase to a specific AI Activity."@en ;
                                               rdfs:label "has lifecycle stage"@en .
 
@@ -321,8 +323,10 @@
                                             rdfs:comment "Links a system or model to a description of its architecture."@en ;
                                             rdfs:label "has architecture"@en ;
                                             rdfs:range rdfs:Literal ;
-                                            rdfs:domain <https://w3id.org/aidoc-ap#AIModel> ,
-                                                        <https://w3id.org/aidoc-ap#AISystem> .
+                                            rdfs:domain [ rdf:type owl:Class ;
+                                                         owl:unionOf ( <https://w3id.org/aidoc-ap#AIModel>
+                                                                      <https://w3id.org/aidoc-ap#AISystem> )
+                                                       ] .
 
 
 ###  https://w3id.org/aidoc-ap#intendedPurpose
@@ -467,6 +471,48 @@
 #    Classes
 #################################################################
 
+### External class/property declarations to address OOPS P34 (untyped class)
+# These terms are used as classes/properties in this ontology but may not
+# be explicitly declared in their original sources. Declaring them here
+# avoids the "untyped class" pitfall reported by the OOPS scanner.
+
+<https://w3id.org/vair#Software> rdf:type owl:Class .
+
+<https://w3id.org/airo#AIComponent> rdf:type owl:Class .
+
+<https://w3id.org/airo#Standard> rdf:type owl:Class .
+
+<http://www.w3.org/ns/mls#ModelEvaluation> rdf:type owl:Class .
+
+<https://w3id.org/airo#Purpose> rdf:type owl:Class .
+
+<https://w3id.org/airo#AIModel> rdf:type owl:Class .
+
+<https://w3id.org/airo#AISystem> rdf:type owl:Class .
+
+<https://w3id.org/vair#Datasheet> rdf:type owl:Class .
+
+<https://w3id.org/airo#HumanInvolvement> rdf:type owl:Class .
+
+<https://w3id.org/vair#Hardware> rdf:type owl:Class .
+
+<https://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class .
+
+<https://w3id.org/airo#hasCapability> rdf:type owl:ObjectProperty .
+
+<https://w3id.org/airo#AILifecyclePhase> rdf:type owl:Class .
+
+<https://w3id.org/airo#AICapability> rdf:type owl:Class .
+
+<https://w3id.org/airo#Risk> rdf:type owl:Class .
+
+<https://w3id.org/airo#AIProvider> rdf:type owl:Class .
+
+<https://w3id.org/airo#AIDeployer> rdf:type owl:Class .
+
+<https://w3id.org/vair#EUDeclarationOfConformity> rdf:type owl:Class .
+
+
 ###  http://mlcommons.org/croissant/1.0#Dataset
 <http://mlcommons.org/croissant/1.0#Dataset> rdf:type owl:Class .
 
@@ -565,10 +611,10 @@
 <https://w3id.org/aidoc-ap#AIResearcher> rdf:type owl:Class ;
                                          rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ,
                                                          <http://xmlns.com/foaf/0.1/Person> ,
-                                                         <https://w3id.org/aidoc-ap#AIAgent> ,
-                                                         <https://w3id.org/airo#AIDeveloper> ;
+                                                         <https://w3id.org/aidoc-ap#AIAgent> ;
                                          rdfs:comment "A person involved in the technical development of an AI system."@en ;
-                                         rdfs:label "AI Researcher"@en .
+                                         rdfs:label "AI Researcher"@en ;
+                                         skos:broadMatch <https://w3id.org/airo#AIDeveloper> .
                                          
 
 
@@ -584,7 +630,7 @@
                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
                                      rdfs:comment "A superclass for all agents involved in the AI lifecycle, derived from prov:Agent."@en ;
                                      rdfs:label "AI Agent"@en ;
-                                     skos:closeMatch <http://www.w3.org/airo#Stakeholder> .
+                                     skos:exactMatch <http://www.w3.org/airo#Stakeholder> .
 
 
 ###  https://w3id.org/aidoc-ap#AIArtifact
