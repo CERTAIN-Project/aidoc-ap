@@ -33,7 +33,7 @@ jobs:
           ZIP_URL="https://github.com/liveontologies/elk-reasoner/releases/download/v${ELK_VERSION}/elk-distribution-cli-${ELK_VERSION}.zip"
           curl -sSfL "$ZIP_URL" -o elk-distribution-cli-${ELK_VERSION}.zip
           unzip -q elk-distribution-cli-${ELK_VERSION}.zip -d elk-dist
-          ELK_JAR=$(find elk-dist -type f -name 'elk-cli-*.jar' | head -n1)
+          ELK_JAR=$(find elk-dist -type f -name 'elk.jar' | head -n1)
           if [ -z "$ELK_JAR" ]; then
             echo "ELK CLI JAR not found in distribution" >&2
             exit 1
@@ -46,7 +46,7 @@ jobs:
         run: |
           set -e
           mkdir -p elk-output
-          ELK_JAR=$(find elk-dist -type f -name 'elk-cli-*.jar' | head -n1)
+          ELK_JAR=$(find elk-dist -type f -name 'elk.jar' | head -n1)
           if [ ! -f "$ELK_JAR" ]; then
             echo "ELK JAR not found: $ELK_JAR" >&2
             exit 1
