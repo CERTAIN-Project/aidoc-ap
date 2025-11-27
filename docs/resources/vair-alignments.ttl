@@ -5,45 +5,45 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:1a960251-1fda-43cd-9fd7-d17a6dc11f08 a prov:Entity,
+align:686f6299-1528-49b0-b526-7d26ff692c2d a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:071b6b53-2f97-4543-ba94-e99a77f6a8bc ;
+    prov:wasGeneratedBy align:514a0517-55f2-4730-9673-79d7b03c1e6a ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts define 'Standard' related to AI systems with identical labels and meaning. The lexical similarity score of 1.0 further strengthens the assumption. The vair concept also provides a URI, indicating defined semantics, though the AIDOC description is sufficient to suggest equivalence."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source aidoc:Standard ;
-    align:target <https://w3id.org/airo#Standard> .
-
-align:59efc0df-c487-4804-bcf5-ef8fff6cdab9 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:071b6b53-2f97-4543-ba94-e99a77f6a8bc ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical (lexical similarity 1.0). The vair concept also provides a URI, indicating it's a formally defined class. While further investigation of the broader ontologies would confirm absolute equivalence, based on the provided information, they represent the same concept."^^xsd:string ;
-    align:relation owl:equivalentClass ;
-    align:source aidoc:TransparencyMeasure ;
-    align:target <https://w3id.org/vair#TransparencyMeasure> .
-
-align:6c8d2773-60de-42e6-abb5-7910bbe2e544 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:071b6b53-2f97-4543-ba94-e99a77f6a8bc ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The vair concept is a more specific instance of the AIDOC concept, explicitly referencing the AI Act. However, the descriptions and labels are highly similar, indicating a strong equivalence. Given the lexical similarity score of 0.827 and the overlapping meaning, it's reasonable to consider them equivalent classes. The vair concept provides a more precise context, but doesn't fundamentally change the *type* of document being described."^^xsd:string ;
+    align:rationale "The vair concept is a more specific instance of the AIDOC 'Declaration of Conformity', explicitly referencing the AI Act. Given the high lexical similarity and overlapping semantic meaning, they can be considered equivalent, with the vair concept offering greater precision. The AIDOC concept serves as a general superclass."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:DeclarationOfConformity ;
     align:target <https://w3id.org/vair#EUDeclarationOfConformity> .
 
-align:f6d3972e-eb9b-4109-83dd-d052fb20e5b3 a prov:Entity,
+align:8e3e03a3-8833-48ad-856b-347da9844d0c a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:071b6b53-2f97-4543-ba94-e99a77f6a8bc ;
+    prov:wasGeneratedBy align:514a0517-55f2-4730-9673-79d7b03c1e6a ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts define the 'Deployment' phase of an AI system, encompassing the delivery and configuration for operation in a production environment. The descriptions are highly similar and essentially synonymous. The presence of a URI in the vair concept simply provides formal identification."^^xsd:string ;
+    align:rationale "Both concepts share the same label and definition (although the vair concept lacks a textual description - this is often the case in minimal ontologies). The lexical similarity is 1.0 indicating a perfect match in terms of naming. Given this, we can confidently assert they are equivalent classes."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:Standard ;
+    align:target <https://w3id.org/airo#Standard> .
+
+align:9cfddec7-563d-4ad6-81bf-558934edfabd a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:514a0517-55f2-4730-9673-79d7b03c1e6a ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts define the 'Deployment' phase of an AI system, focusing on delivering and configuring it for production. The descriptions are highly similar, differing only in phrasing. The lexical similarity score of 1.0 further supports this strong alignment."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:Deployment ;
     align:target <https://w3id.org/vair#Deployment> .
+
+align:b0943c26-5b5e-4bd4-a7ef-72ff631cb16e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:514a0517-55f2-4730-9673-79d7b03c1e6a ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts have identical labels and descriptions addressing the same topic – measures to ensure AI system transparency. The lexical similarity is perfect (1.0). Though one has a URI and the other doesn't, given the core meaning is identical, they are functionally equivalent classes."^^xsd:string ;
+    align:relation owl:equivalentClass ;
+    align:source aidoc:TransparencyMeasure ;
+    align:target <https://w3id.org/vair#TransparencyMeasure> .
 
 aidoc:DeclarationOfConformity owl:equivalentClass <https://w3id.org/vair#EUDeclarationOfConformity> .
 
@@ -53,9 +53,9 @@ aidoc:Standard owl:equivalentClass <https://w3id.org/airo#Standard> .
 
 aidoc:TransparencyMeasure owl:equivalentClass <https://w3id.org/vair#TransparencyMeasure> .
 
-align:071b6b53-2f97-4543-ba94-e99a77f6a8bc a prov:Activity ;
-    prov:endedAtTime "2025-11-18T13:04:08+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-18T13:04:01+00:00"^^xsd:dateTime ;
+align:514a0517-55f2-4730-9673-79d7b03c1e6a a prov:Activity ;
+    prov:endedAtTime "2025-11-26T14:13:08+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-11-26T14:13:01+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

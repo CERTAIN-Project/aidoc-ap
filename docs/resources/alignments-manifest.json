@@ -7,8 +7,8 @@
     "resources/mex-perf-alignments.ttl",
     "resources/ml-onto-alignments.ttl",
     "resources/mlschema-alignments.ttl",
-    "resources/ontology-alignments.ttl",
     "resources/prov-o-alignments.ttl",
+    "resources/rains-alignments.ttl",
     "resources/vair-alignments.ttl"
   ],
   "count": 10,
