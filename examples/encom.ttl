@@ -1,0 +1,568 @@
+@prefix : <http://www.semanticweb.org/certain/ontologies/2025/10/encom/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/certain/ontologies/2025/10/encom/> .
+
+<http://www.semanticweb.org/certain/ontologies/2025/10/encom> rdf:type owl:Ontology ;
+                                                               owl:imports <https://w3id.org/aidoc-ap/1.0> ,
+                                                                           <https://w3id.org/airo/1.0> ,
+                                                                           <https://w3id.org/vair/1.0> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://w3id.org/aidoc-ap#intendedPurpose
+<https://w3id.org/aidoc-ap#intendedPurpose> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/isFictional
+:isFictional rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:boolean ;
+             rdfs:label "is fictional" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/AI_ISO_Standard
+:AI_ISO_Standard rdf:type owl:NamedIndividual ,
+                          <https://w3id.org/vair#ISOIEC22989-2022> ;
+                 :isFictional "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Accuracy
+:Accuracy rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/dqv#QualityMeasurement> ,
+                   <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Admin_Backend
+:Admin_Backend rdf:type owl:NamedIndividual ,
+                        <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+               <https://w3id.org/aidoc-ap#dependsOn> :FastAPI ,
+                                                     :Python .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Admin_frontend
+:Admin_frontend rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/aidoc-ap#Interface> ,
+                         <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                <https://w3id.org/aidoc-ap#dependsOn> :NextJS ,
+                                                      :React ,
+                                                      :TailwindCSS .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Apache_Airflow
+:Apache_Airflow rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                <https://w3id.org/aidoc-ap#version> "2.10.5-python3.12" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Apache_Airflow_Worker
+:Apache_Airflow_Worker rdf:type owl:NamedIndividual ,
+                                <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                       <https://w3id.org/aidoc-ap#version> "2.10.5-python3.12" ;
+                       rdfs:comment "scaleable" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Authentik
+:Authentik rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+           <https://w3id.org/aidoc-ap#version> "2025.4" ;
+           <http://purl.org/dc/terms/description> "Authentication service and identity management" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Basic_Endpoint_Security
+:Basic_Endpoint_Security rdf:type owl:NamedIndividual ,
+                                  <https://w3id.org/vair#SecurityMeasure> ;
+                         <https://w3id.org/airo#modifiesRiskConcept> :Outside_Data_Manipulation ;
+                         :isFictional "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/ChangeLog
+:ChangeLog rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/aidoc-ap#ChangeLog> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Combined_Energy_and_Weather_Data
+:Combined_Energy_and_Weather_Data rdf:type owl:NamedIndividual ,
+                                           <https://w3id.org/aidoc-ap#Dataset> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Completeness
+:Completeness rdf:type owl:NamedIndividual ,
+                       <http://www.w3.org/ns/dqv#QualityMeasurement> ,
+                       <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Consistency
+:Consistency rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/ns/dqv#QualityMeasurement> ,
+                      <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Correctness
+:Correctness rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/ns/dqv#QualityMeasurement> ,
+                      <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Daily_Training_Frequency
+:Daily_Training_Frequency rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Data_Point_Quality_Confirmation
+:Data_Point_Quality_Confirmation rdf:type owl:NamedIndividual ,
+                                          <https://w3id.org/aidoc-ap#DataCleaningProcedure> ;
+                                 <http://purl.org/dc/terms/description> "Only data points with a confirmed quality (flagged by the grid operator) are used for training the models" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Data_Poisoning
+:Data_Poisoning rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/vair#DataPoisoning> ;
+                <https://w3id.org/airo#isRiskSourceFor> :Outside_Data_Manipulation ;
+                :isFictional "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Data_Validation
+:Data_Validation rdf:type owl:NamedIndividual ,
+                          <https://w3id.org/aidoc-ap#DataValidation> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Database
+:Database rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/aidoc-ap#SoftwareComponent> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Development_Stage
+:Development_Stage rdf:type owl:NamedIndividual ,
+                            <https://w3id.org/vair#Development> ;
+                   <https://w3id.org/aidoc-ap#hasAIActivity> :Data_Point_Quality_Confirmation ,
+                                                             :EPEX_Data_Acquisition ,
+                                                             :EnergyDataAcquisition ,
+                                                             :MLflow_Model_Versioning ,
+                                                             :Model_Engineering ,
+                                                             :Training_Activity ,
+                                                             :WeatherDataAcquisition .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Docker
+:Docker rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+        <https://w3id.org/aidoc-ap#version> "28.0.1, build 068a01e" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Docker_Compose
+:Docker_Compose rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                <https://w3id.org/aidoc-ap#version> "v2.33.1" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/EEGFaktura
+:EEGFaktura rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/dpv#DataSource> ;
+            <http://purl.org/dc/terms/description> "service which collects energy data of subscribed energy communities" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/EPEX_Data_Acquisition
+:EPEX_Data_Acquisition rdf:type owl:NamedIndividual ,
+                                <https://w3id.org/aidoc-ap#DataAcquisitionActivity> ;
+                       <https://w3id.org/dpv#hasData> :EPEX_spot_AT_exchange_prices .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/EPEX_spot_AT_exchange_prices
+:EPEX_spot_AT_exchange_prices rdf:type owl:NamedIndividual ,
+                                       <https://w3id.org/aidoc-ap#Dataset> ;
+                              <https://w3id.org/dpv#hasData> :aWATTar .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Encom
+:Encom rdf:type owl:NamedIndividual ,
+                <https://w3id.org/aidoc-ap#AISystem> ;
+       <https://w3id.org/aidoc-ap#appliesStandard> :AI_ISO_Standard ;
+       <https://w3id.org/aidoc-ap#hasComponent> :Encom_AI_Model ,
+                                                :Encom_Implementation ;
+       <https://w3id.org/aidoc-ap#hasLifecycleStage> :Operation ;
+       <https://w3id.org/aidoc-ap#hasRisk> :Outside_Data_Manipulation ,
+                                           :Unpermitted_predictions ;
+       <https://w3id.org/aidoc-ap#hasSoftwareComponent> :Admin_Backend ,
+                                                        :Admin_frontend ,
+                                                        :Apache_Airflow ,
+                                                        :Apache_Airflow_Worker ,
+                                                        :Authentik ,
+                                                        :Database ,
+                                                        :Docker ,
+                                                        :Grafana ,
+                                                        :MLflow ,
+                                                        :Minio_Bucket ,
+                                                        :traefik ;
+       <https://w3id.org/aidoc-ap#requiresHardware> :Server_1 ,
+                                                    :Server_2 ,
+                                                    :Server_3 ,
+                                                    :Server_4 ;
+       <https://w3id.org/airo#hasModality> <https://w3id.org/vair#Service> ;
+       <https://w3id.org/airo#hasPurpose> :Predict_energy_consumption_and_generation_data ,
+                                          :Predict_optimal_schedules_of_participation_factors_of_a_metering_point ,
+                                          :Predict_single_metering_points_or_semantic_groups_of_metering_points ;
+       <https://w3id.org/airo#hasRiskControl> :User_Training ;
+       <https://w3id.org/airo#isDeployedBy> :Encom_Data_Scientiest ;
+       <https://w3id.org/airo#isDevelopedBy> :Encom_Data_Scientiest ;
+       <https://w3id.org/airo#isProvidedBy> :Encom_Data_Scientiest ;
+       <https://w3id.org/dpv#hasData> :Energy_Data ;
+       rdfs:label "Energy Community AI" ;
+       <https://w3id.org/aidoc-ap#intendedPurpose> "Predict energy consumption and generation data" ,
+                                                   "Predict optimal schedules of participation factors of a metering point" ,
+                                                   "Predict single metering points or semantic groups of metering points" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Encom_AI_Model
+:Encom_AI_Model rdf:type owl:NamedIndividual ,
+                         <https://w3id.org/aidoc-ap#AIModel> ;
+                <https://w3id.org/aidoc-ap#usesAIMethod> :XGBoost ;
+                <https://w3id.org/airo#hasComponent> :Hyperparameters .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Encom_Data_Scientiest
+:Encom_Data_Scientiest rdf:type owl:NamedIndividual ,
+                                <https://w3id.org/aidoc-ap#AIDeployer> ,
+                                <https://w3id.org/aidoc-ap#AIProvider> ,
+                                <https://w3id.org/aidoc-ap#AIResearcher> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Encom_Implementation
+:Encom_Implementation rdf:type owl:NamedIndividual ,
+                               <https://w3id.org/aidoc-ap#SoftwareImplementation> ;
+                      <https://w3id.org/aidoc-ap#dependsOn> :Pandas ,
+                                                            :Plotly ,
+                                                            :Python ,
+                                                            :matplotlib ,
+                                                            :optuna ,
+                                                            :seaborn ,
+                                                            :xgboost .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/EnergyDataAcquisition
+:EnergyDataAcquisition rdf:type owl:NamedIndividual ,
+                                <https://w3id.org/aidoc-ap#DataAcquisitionActivity> ;
+                       <https://w3id.org/dpv#hasData> :Energy_Data .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Energy_Data
+:Energy_Data rdf:type owl:NamedIndividual ,
+                      <https://w3id.org/aidoc-ap#Dataset> ;
+             <http://www.w3.org/ns/dqv#hasQualityMeasurement> :Accuracy ,
+                                                              :Completeness ,
+                                                              :Consistency ,
+                                                              :Correctness ,
+                                                              :Freedom_from_redundancy ,
+                                                              :Relevance ,
+                                                              :Timeliness ,
+                                                              :Uniformity ;
+             <https://w3id.org/dpv#hasDataSource> :EEGFaktura ;
+             <http://purl.org/dc/terms/description> "readings of metering points, where each reading has a corresponding quality flag" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/FastAPI
+:FastAPI rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/aidoc-ap#SoftwareDependency> ;
+         <https://w3id.org/aidoc-ap#version> "0.116.0" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Freedom_from_redundancy
+:Freedom_from_redundancy rdf:type owl:NamedIndividual ,
+                                  <http://www.w3.org/ns/dqv#QualityMeasurement> ,
+                                  <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/GeoSphere_Austria
+:GeoSphere_Austria rdf:type owl:NamedIndividual ,
+                            <https://w3id.org/dpv#DataSource> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Grafana
+:Grafana rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/aidoc-ap#Interface> ,
+                  <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+         <https://w3id.org/aidoc-ap#version> "12.0.2" ;
+         <http://purl.org/dc/terms/description> "Dashboard" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Hyperparameters
+:Hyperparameters rdf:type owl:NamedIndividual ,
+                          <https://w3id.org/airo#AIComponent> ;
+                 <https://w3id.org/airo#usesTechnique> <https://w3id.org/vair#BayesianOptimisation> ;
+                 <http://purl.org/dc/terms/description> "updated on a monthly basis" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/MLflow
+:MLflow rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/aidoc-ap#SoftwareComponent> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/MLflow_Model_Versioning
+:MLflow_Model_Versioning rdf:type owl:NamedIndividual ,
+                                  <https://w3id.org/aidoc-ap#ModelVersioning> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Minio_Bucket
+:Minio_Bucket rdf:type owl:NamedIndividual ,
+                       <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+              <https://w3id.org/aidoc-ap#version> "RELEASE.2025-04-03T14-56-28Z" ;
+              <http://purl.org/dc/terms/description> "stores log backups" ;
+              rdfs:label "Minio S3" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Model_Engineering
+:Model_Engineering rdf:type owl:NamedIndividual ,
+                            <https://w3id.org/aidoc-ap#ModelEngineering> ;
+                   <https://w3id.org/airo#hasFrequency> :Daily_Training_Frequency ;
+                   <https://w3id.org/aidoc-ap#frequency> "daily" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Model_Evaluation
+:Model_Evaluation rdf:type owl:NamedIndividual ,
+                           <https://w3id.org/aidoc-ap#ModelEvaluation> ;
+                  <https://w3id.org/aidoc-ap#hasPerformanceMetric> :Accuracy ,
+                                                                   :Completeness ,
+                                                                   :Consistency ,
+                                                                   :Correctness ,
+                                                                   :Freedom_from_redundancy ,
+                                                                   :Relevance ,
+                                                                   :Timeliness ,
+                                                                   :Uniformity .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Monitoring_an_Logging
+:Monitoring_an_Logging rdf:type owl:NamedIndividual ,
+                                <https://w3id.org/aidoc-ap#DataMonitoringAndLogging> ;
+                       <https://w3id.org/aidoc-ap#logsActivity> :Data_Point_Quality_Confirmation ,
+                                                                :Data_Validation ;
+                       <https://w3id.org/aidoc-ap#storesLogsAt> :Minio_Bucket ;
+                       <http://purl.org/dc/terms/description> "logs are rotated weekly" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/NextJS
+:NextJS rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/aidoc-ap#SoftwareDependency> ;
+        <https://w3id.org/aidoc-ap#version> "15.2.4" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Operation
+:Operation rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/vair#Operation> ;
+           <https://w3id.org/aidoc-ap#hasAIActivity> :Monitoring_an_Logging .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Outside_Data_Manipulation
+:Outside_Data_Manipulation rdf:type owl:NamedIndividual ,
+                                    <https://w3id.org/airo#Risk> ;
+                           <https://w3id.org/airo#hasConsequence> <https://w3id.org/vair#Harm> ;
+                           :isFictional "true"^^xsd:boolean ;
+                           <http://purl.org/dc/terms/description> "Outside manipulation in order to sabotage the system" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Pandas
+:Pandas rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/aidoc-ap#SoftwareDependency> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Plotly
+:Plotly rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/aidoc-ap#SoftwareDependency> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Predict_energy_consumption_and_generation_data
+:Predict_energy_consumption_and_generation_data rdf:type owl:NamedIndividual ,
+                                                         <https://w3id.org/airo#Purpose> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Predict_optimal_schedules_of_participation_factors_of_a_metering_point
+:Predict_optimal_schedules_of_participation_factors_of_a_metering_point rdf:type owl:NamedIndividual ,
+                                                                                 <https://w3id.org/airo#Purpose> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Predict_single_metering_points_or_semantic_groups_of_metering_points
+:Predict_single_metering_points_or_semantic_groups_of_metering_points rdf:type owl:NamedIndividual ,
+                                                                               <https://w3id.org/airo#Purpose> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Predictions
+:Predictions rdf:type owl:NamedIndividual ,
+                      <https://w3id.org/aidoc-ap#Dataset> ,
+                      <https://w3id.org/vair#Prediction> ;
+             <http://purl.org/dc/terms/description> "energy consumption and generation" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Python
+:Python rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/aidoc-ap#SoftwareDependency> ;
+        <https://w3id.org/airo#hasVersion> :Version_3.12 ;
+        rdfs:comment "3.12" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/React
+:React rdf:type owl:NamedIndividual ,
+                <https://w3id.org/aidoc-ap#SoftwareDependency> ;
+       <https://w3id.org/aidoc-ap#version> "19.1.0" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Relevance
+:Relevance rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/ns/dqv#QualityMeasurement> ,
+                    <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Server_1
+:Server_1 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/aidoc-ap#HardwareComponent> ;
+          <http://purl.org/dc/terms/description> """8 CPU cores
+16GB of memory
+Ubuntu Server 24.04 LTS""" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Server_2
+:Server_2 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/aidoc-ap#HardwareComponent> ;
+          <http://purl.org/dc/terms/description> """8 CPU cores
+16GB of memory
+Ubuntu Server 24.04 LTS""" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Server_3
+:Server_3 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/aidoc-ap#HardwareComponent> ;
+          <http://purl.org/dc/terms/description> """8 CPU cores
+16GB of memory
+Ubuntu Server 24.04 LTS""" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Server_4
+:Server_4 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/aidoc-ap#HardwareComponent> ;
+          <http://purl.org/dc/terms/description> """8 CPU cores
+16GB of memory
+Ubuntu Server 24.04 LTS""" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/TailwindCSS
+:TailwindCSS rdf:type owl:NamedIndividual ,
+                      <https://w3id.org/aidoc-ap#SoftwareDependency> ;
+             <https://w3id.org/aidoc-ap#version> "1.0.7" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Timeliness
+:Timeliness rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/ns/dqv#QualityMeasurement> ,
+                     <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Training_Activity
+:Training_Activity rdf:type owl:NamedIndividual ,
+                            <https://w3id.org/aidoc-ap#DataTraining> ;
+                   <https://w3id.org/aidoc-ap#usesTrainingData> :Combined_Energy_and_Weather_Data ;
+                   <https://w3id.org/airo#hasFrequency> :Daily_Training_Frequency ;
+                   <https://w3id.org/aidoc-ap#frequency> "daily" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Uniformity
+:Uniformity rdf:type owl:NamedIndividual ,
+                     <http://www.w3.org/ns/dqv#QualityMeasurement> ,
+                     <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Unpermitted_predictions
+:Unpermitted_predictions rdf:type owl:NamedIndividual ,
+                                  <https://w3id.org/airo#Misuse> ;
+                         <https://w3id.org/airo#hasConsequence> <https://w3id.org/vair#Harm> ;
+                         :isFictional "true"^^xsd:boolean ;
+                         <http://purl.org/dc/terms/description> "Utilizing energy consumption to predict member behaviour for use in malicious activitie like choosing burglary targets or mapping escape routes." .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Update_Libraries
+:Update_Libraries rdf:type owl:NamedIndividual ,
+                           <https://w3id.org/airo#Change> ;
+                  <https://w3id.org/airo#hasChangedEntity> :Encom ;
+                  <http://purl.org/dc/terms/description> "keeping the system and the used libraries up to date" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/User_Training
+:User_Training rdf:type owl:NamedIndividual ,
+                        <https://w3id.org/vair#UserTraining> ;
+               <https://w3id.org/airo#modifiesRiskConcept> :Outside_Data_Manipulation ;
+               :isFictional "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Version_3.12
+:Version_3.12 rdf:type owl:NamedIndividual ,
+                       <https://w3id.org/airo#Version> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/WeatherDataAcquisition
+:WeatherDataAcquisition rdf:type owl:NamedIndividual ,
+                                 <https://w3id.org/aidoc-ap#DataAcquisitionActivity> ;
+                        <https://w3id.org/dpv#hasData> :Weather_Data .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Weather_Data
+:Weather_Data rdf:type owl:NamedIndividual ,
+                       <https://w3id.org/aidoc-ap#Dataset> ;
+              <https://w3id.org/dpv#hasDataSource> :GeoSphere_Austria ;
+              <http://purl.org/dc/terms/description> "Weather dasta of past month" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/XGBoost
+:XGBoost rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/aidoc-ap#AIMethod> ;
+         <https://w3id.org/airo#producesOutput> :Predictions ;
+         rdfs:label "Extreme Gradient Boosting" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/aWATTar
+:aWATTar rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/dpv#DataSource> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/git-sync_container
+:git-sync_container rdf:type owl:NamedIndividual ,
+                             <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                    <https://w3id.org/aidoc-ap#version> "Alpine Linux version 3.21.3" ;
+                    <http://purl.org/dc/terms/description> "Keeps the latest tag on the main branch and the airflow instance in sync" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/matplotlib
+:matplotlib rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/aidoc-ap#SoftwareDependency> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/optuna
+:optuna rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/aidoc-ap#SoftwareDependency> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/seaborn
+:seaborn rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/aidoc-ap#SoftwareDependency> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/traefik
+:traefik rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+         <https://w3id.org/aidoc-ap#version> "3.2" ;
+         <http://purl.org/dc/terms/description> "Reverse proxy" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/xgboost
+:xgboost rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/aidoc-ap#SoftwareDependency> .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
