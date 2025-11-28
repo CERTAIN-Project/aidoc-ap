@@ -962,6 +962,13 @@ foaf:Person rdf:type owl:Class .
             rdfs:label "Deployment"@en .
 
 
+###  https://w3id.org/aidoc-ap#SoftwareVersioning
+:SoftwareVersioning rdf:type owl:Class ;
+                    rdfs:subClassOf :SoftwareCodePipeline ;
+                    rdfs:comment "Activity of managing revisions and tracking changes in software iterations."@en ;
+                    rdfs:label "Software Versioning"@en .
+
+
 ###  https://w3id.org/aidoc-ap#ExplainableAIFeature
 :ExplainableAIFeature rdf:type owl:Class ;
                       rdfs:subClassOf :TransparencyMeasure ;
