@@ -180,7 +180,7 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
             owl:unionOf ( :AIArtifact :AISystem )
            ] ;
            rdfs:range :AIArtifact ;
-           rdfs:comment "Links a system or component to its software or hardware dependencies."@en ;
+           rdfs:comment "Links a system or component to its software."@en ;
            rdfs:label "depends on"@en ;
            skos:closeMatch <https://w3id.org/airo#hasComponent> .
 
