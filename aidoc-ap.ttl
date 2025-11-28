@@ -435,6 +435,14 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
         owl:inverseOf :isStoredAt .
 
 
+###  https://w3id.org/aidoc-ap#affects
+:affects rdf:type owl:ObjectProperty ;
+         rdfs:domain :AIActivity ;
+         rdfs:range :AIArtifact ;
+         rdfs:comment "Links an activity to the artifact it affects or modifies."@en ;
+         rdfs:label "affects"@en .
+
+
 ###  https://w3id.org/airo#hasCapability
 <https://w3id.org/airo#hasCapability> rdf:type owl:ObjectProperty .
 
