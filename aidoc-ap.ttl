@@ -11,6 +11,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix widoco: <https://w3id.org/widoco/vocab#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix server: <http://w3id.org/devops-infra/server#> .
 @base <https://w3id.org/aidoc-ap#> .
 
 <https://w3id.org/aidoc-ap#> rdf:type owl:Ontology ;
@@ -337,9 +338,13 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
 
 ###  https://w3id.org/aidoc-ap#requiresHardware
 :requiresHardware rdf:type owl:ObjectProperty ;
-                  rdfs:domain :AISystem ;
-                  rdfs:range :HardwareComponent ;
-                  rdfs:comment "Links a system to the hardware components it needs to run."@en ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :AISystem :AIArtifact )
+                              ] ;
+                  rdfs:range [ rdf:type owl:Class ;
+                               owl:unionOf ( :HardwareComponent server:Server )
+                             ] ;
+                  rdfs:comment "Links a system or artifact to the hardware components or servers it needs to run."@en ;
                   rdfs:label "requires hardware"@en ;
                   skos:relatedMatch <https://w3id.org/airo#runsOnHardware> .
 
