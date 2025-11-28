@@ -451,6 +451,16 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
                                rdfs:label "provides computational resource"@en .
 
 
+###  https://w3id.org/aidoc-ap#hasResponsibleDeveloper
+:hasResponsibleDeveloper rdf:type owl:ObjectProperty ;
+                         rdfs:domain :SoftwareDevelopment ;
+                         rdfs:range [ rdf:type owl:Class ;
+                                      owl:unionOf ( :AIResearcher <https://w3id.org/airo#AIDeveloper> )
+                                    ] ;
+                         rdfs:comment "Links a software development activity to the developers responsible for it."@en ;
+                         rdfs:label "has responsible developer"@en .
+
+
 ###  https://w3id.org/airo#hasCapability
 <https://w3id.org/airo#hasCapability> rdf:type owl:ObjectProperty .
 
@@ -983,6 +993,13 @@ foaf:Person rdf:type owl:Class .
                     rdfs:subClassOf :SoftwareCodePipeline ;
                     rdfs:comment "Activity of managing revisions and tracking changes in software iterations."@en ;
                     rdfs:label "Software Versioning"@en .
+
+
+###  https://w3id.org/aidoc-ap#SoftwareDevelopment
+:SoftwareDevelopment rdf:type owl:Class ;
+                     rdfs:subClassOf :SoftwareCodePipeline ;
+                     rdfs:comment "Activity of developing and writing software code for the AI system."@en ;
+                     rdfs:label "Software Development"@en .
 
 
 ###  https://w3id.org/aidoc-ap#ExplainableAIFeature
