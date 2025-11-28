@@ -396,6 +396,40 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
                     skos:relatedMatch <ttps://w3id.org/airo#hasValidationData> .
 
 
+###  https://w3id.org/aidoc-ap#hasSourceDataset
+:hasSourceDataset rdf:type owl:ObjectProperty ;
+                  rdfs:domain :DataProcessing ;
+                  rdfs:range :Dataset ;
+                  rdfs:comment "Links a DataProcessing activity to its source datasets."@en ;
+                  rdfs:label "has source dataset"@en .
+
+
+###  https://w3id.org/aidoc-ap#producesDataset
+:producesDataset rdf:type owl:ObjectProperty ;
+                 rdfs:domain :DataProcessing ;
+                 rdfs:range :Dataset ;
+                 rdfs:comment "Links a DataProcessing activity to the finished dataset it produces."@en ;
+                 rdfs:label "produces dataset"@en .
+
+
+###  https://w3id.org/aidoc-ap#isStoredAt
+:isStoredAt rdf:type owl:ObjectProperty ;
+            rdfs:domain :AIArtifact ;
+            rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+            rdfs:comment "Links an AI artifact to the location or entity where it is stored."@en ;
+            rdfs:label "is stored at"@en ;
+            owl:inverseOf :stores .
+
+
+###  https://w3id.org/aidoc-ap#stores
+:stores rdf:type owl:ObjectProperty ;
+        rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+        rdfs:range :AIArtifact ;
+        rdfs:comment "Links a storage location or entity to the AI artifacts it stores."@en ;
+        rdfs:label "stores"@en ;
+        owl:inverseOf :isStoredAt .
+
+
 ###  https://w3id.org/airo#hasCapability
 <https://w3id.org/airo#hasCapability> rdf:type owl:ObjectProperty .
 
@@ -882,6 +916,13 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :DataPipeline ;
                rdfs:comment "Activity of ensuring data quality through cleaning, filtering, and enrichment."@en ;
                rdfs:label "Data Wrangling/Cleaning"@en .
+
+
+###  https://w3id.org/aidoc-ap#DataProcessing
+:DataProcessing rdf:type owl:Class ;
+  rdfs:subClassOf :DataPipeline ;
+  rdfs:comment "Activity of combining, preprocessing data resulting in a different dataset."@en ;
+  rdfs:label "Data Processing"@en .
 
 
 ###  https://w3id.org/aidoc-ap#Dataset
