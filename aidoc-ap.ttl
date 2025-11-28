@@ -443,6 +443,14 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
          rdfs:label "affects"@en .
 
 
+###  https://w3id.org/aidoc-ap#providesComputationalResource
+:providesComputationalResource rdf:type owl:ObjectProperty ;
+                               rdfs:domain :HardwareComponent ;
+                               rdfs:range :ComputationalResource ;
+                               rdfs:comment "Links a hardware component to the computational resource it provides."@en ;
+                               rdfs:label "provides computational resource"@en .
+
+
 ###  https://w3id.org/airo#hasCapability
 <https://w3id.org/airo#hasCapability> rdf:type owl:ObjectProperty .
 
