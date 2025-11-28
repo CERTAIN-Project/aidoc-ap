@@ -756,6 +756,58 @@ foaf:Person rdf:type owl:Class .
            rdfs:comment "A log of changes made to the system during its lifecycle."@en ;
            rdfs:label "Change Log"@en .
 
+# Object property linking ChangeLog to ChangeRecord
+###  https://w3id.org/aidoc-ap#hasChangeRecord
+:hasChangeRecord rdf:type owl:ObjectProperty ;
+  rdfs:domain :ChangeLog ;
+  rdfs:range :ChangeRecord ;
+  rdfs:comment "Links a ChangeLog to one or more ChangeRecords."@en ;
+  rdfs:label "has change record"@en .
+
+
+###  https://w3id.org/aidoc-ap#ChangeRecord
+:ChangeRecord rdf:type owl:Class ;
+  rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+  rdfs:comment "A record of a change, including reason, start and end date, stakeholders, and the change itself."@en ;
+  rdfs:label "Change Record"@en .
+
+# Data properties for ChangeRecord
+###  https://w3id.org/aidoc-ap#reasonForChange
+:reasonForChange rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range xsd:string ;
+  rdfs:comment "The reason for the change."@en ;
+  rdfs:label "reason for change"@en .
+
+###  https://w3id.org/aidoc-ap#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range xsd:date ;
+  rdfs:comment "The start date of the change."@en ;
+  rdfs:label "start date"@en .
+
+###  https://w3id.org/aidoc-ap#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range xsd:date ;
+  rdfs:comment "The end date of the change."@en ;
+  rdfs:label "end date"@en .
+
+# Object properties for ChangeRecord
+###  https://w3id.org/aidoc-ap#hasStakeholder
+:hasStakeholder rdf:type owl:ObjectProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range [ rdf:type owl:Class ; owl:unionOf ( <https://w3id.org/airo#Stakeholder> :AIAgent ) ] ;
+  rdfs:comment "Links the change record to stakeholders (airo:stakeholder or aidoc-ap:AIAgent)."@en ;
+  rdfs:label "has stakeholder"@en .
+
+###  https://w3id.org/aidoc-ap#recordsChange
+:recordsChange rdf:type owl:ObjectProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range <https://w3id.org/airo#Change> ;
+  rdfs:comment "Links the change record to the change (airo:Change)."@en ;
+  rdfs:label "records change"@en .
+
 
 ###  https://w3id.org/aidoc-ap#ComputationalResource
 :ComputationalResource rdf:type owl:Class ;
