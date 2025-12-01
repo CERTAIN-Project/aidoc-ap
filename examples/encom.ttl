@@ -34,31 +34,6 @@
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/certain/ontologies/2025/10/encom#Deployment
-:Deployment rdf:type owl:NamedIndividual ,
-                     <https://w3id.org/vair#Deployment> ;
-            <https://w3id.org/aidoc-ap#hasAIActivity> :Software_Deployment .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2025/10/encom#Software_Deployment
-:Software_Deployment rdf:type owl:NamedIndividual ,
-                              <https://w3id.org/aidoc-ap#Deployment> .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2025/10/encom#Software_Development
-:Software_Development rdf:type owl:NamedIndividual ,
-                               <https://w3id.org/aidoc-ap#SoftwareDevelopment> ;
-                      <https://w3id.org/aidoc-ap#hasResponsibleDeveloper> :Encom_Data_Scientiest ;
-                      <http://purl.org/dc/terms/description> "Feature branching methodology, reviewed by devs/DS, merged to staging, merged to main, tagged" .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2025/10/encom#Timescale_DB
-:Timescale_DB rdf:type owl:NamedIndividual ,
-                       <https://w3id.org/aidoc-ap#SoftwareComponent> ;
-              <https://w3id.org/aidoc-ap#requiresHardware> :Server_1 ;
-              <https://w3id.org/aidoc-ap#version> "pg17" .
-
-
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/AI_ISO_Standard
 :AI_ISO_Standard rdf:type owl:NamedIndividual ,
                           <https://w3id.org/vair#ISOIEC22989-2022> ;
@@ -184,16 +159,22 @@
                    <https://w3id.org/aidoc-ap#SoftwareComponent> .
 
 
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Deployment
+:Deployment rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/vair#Deployment> ;
+            <https://w3id.org/aidoc-ap#hasAIActivity> :Software_Deployment .
+
+
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Development_Stage
 :Development_Stage rdf:type owl:NamedIndividual ,
                             <https://w3id.org/vair#Development> ;
-                   <https://w3id.org/aidoc-ap#hasAIActivity> :Software_Development ,
-                                                             :Combine_Datasets_Activity ,
+                   <https://w3id.org/aidoc-ap#hasAIActivity> :Combine_Datasets_Activity ,
                                                              :Data_Point_Quality_Confirmation ,
                                                              :EPEX_Data_Acquisition ,
                                                              :EnergyDataAcquisition ,
                                                              :MLflow_Model_Versioning ,
                                                              :Model_Engineering ,
+                                                             :Software_Development ,
                                                              :Training_Activity ,
                                                              :WeatherDataAcquisition .
 
@@ -234,11 +215,12 @@
        <https://w3id.org/aidoc-ap#appliesStandard> :AI_ISO_Standard ;
        <https://w3id.org/aidoc-ap#hasComponent> :Encom_AI_Model ,
                                                 :Encom_Implementation ;
-       <https://w3id.org/aidoc-ap#hasLifecycleStage> :Operation ;
+       <https://w3id.org/aidoc-ap#hasLifecycleStage> :Deployment ,
+                                                     :Development_Stage ,
+                                                     :Operation ;
        <https://w3id.org/aidoc-ap#hasRisk> :Outside_Data_Manipulation ,
                                            :Unpermitted_predictions ;
-       <https://w3id.org/aidoc-ap#hasSoftwareComponent> :Timescale_DB ,
-                                                        :Admin_Backend ,
+       <https://w3id.org/aidoc-ap#hasSoftwareComponent> :Admin_Backend ,
                                                         :Admin_frontend ,
                                                         :Apache_Airflow ,
                                                         :Apache_Airflow_Worker ,
@@ -248,6 +230,7 @@
                                                         :Grafana ,
                                                         :MLflow ,
                                                         :Minio_Bucket ,
+                                                        :Timescale_DB ,
                                                         :traefik ;
        <https://w3id.org/aidoc-ap#requiresHardware> :Server_1 ,
                                                     :Server_2 ,
@@ -504,6 +487,18 @@
           <http://w3id.org/devops-infra/server#operatingSystem> "Ubuntu Server 24.04 LTS" .
 
 
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Software_Deployment
+:Software_Deployment rdf:type owl:NamedIndividual ,
+                              <https://w3id.org/aidoc-ap#Deployment> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Software_Development
+:Software_Development rdf:type owl:NamedIndividual ,
+                               <https://w3id.org/aidoc-ap#SoftwareDevelopment> ;
+                      <https://w3id.org/aidoc-ap#hasResponsibleDeveloper> :Encom_Data_Scientiest ;
+                      <http://purl.org/dc/terms/description> "Feature branching methodology, reviewed by devs/DS, merged to staging, merged to main, tagged" .
+
+
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Software_Versioning
 :Software_Versioning rdf:type owl:NamedIndividual ,
                               <https://w3id.org/aidoc-ap#SoftwareVersioning> ;
@@ -520,6 +515,13 @@
 :Timeliness rdf:type owl:NamedIndividual ,
                      <http://www.w3.org/ns/dqv#QualityMeasurement> ,
                      <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Timescale_DB
+:Timescale_DB rdf:type owl:NamedIndividual ,
+                       <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+              <https://w3id.org/aidoc-ap#requiresHardware> :Server_1 ;
+              <https://w3id.org/aidoc-ap#version> "pg17" .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Training_Activity
