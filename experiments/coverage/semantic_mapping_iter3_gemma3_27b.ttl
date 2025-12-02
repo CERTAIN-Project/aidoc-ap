@@ -1,0 +1,675 @@
+@prefix aiact: <https://w3id.org/aidoc-ap/requirements#> .
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix cov: <https://w3id.org/aidoc-ap/coverage#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cov:req10_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req10 ;
+    cov:matchedTerm aidoc:AIModel,
+        aidoc:AISystem,
+        aidoc:ComputationalResource,
+        aidoc:DataPipeline,
+        aidoc:MLPipeline,
+        aidoc:SoftwareCodePipeline,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareImplementation,
+        aidoc:feedsIntoComponent,
+        aidoc:hasArchitecture,
+        aidoc:hasSoftwareComponent,
+        aidoc:resourceConfiguration,
+        aidoc:resourceType,
+        aidoc:resourceVendor ;
+    cov:missingLabel "Dependency Diagram",
+        "Detailed Resource Specifications",
+        "Processing Flow Detail",
+        "System Integration Diagram",
+        "System Topology" ;
+    cov:reasoning "The ontology provides strong mapping to the requirement regarding the description of the system architecture and computational resources. Concepts like 'Software Component', 'Software Implementation', and the relationships 'feeds into component' and 'has software component' directly address the flow of information and integration. 'Computational Resource' coupled with its attributes (type, configuration, vendor) maps well to the 'computational resources' aspect. The pipelines (Machine Learning, Software, Data) represent processing steps and flow. The score isn't perfect because detailed configuration and integration specifics beyond component identification aren't fully represented."@en .
+
+cov:req11_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req11 ;
+    cov:matchedTerm aidoc:DataAcquisitionActivity,
+        aidoc:DataCleaningProcedure,
+        aidoc:DataPipeline,
+        aidoc:DataTesting,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:DataWrangling,
+        aidoc:Dataset,
+        aidoc:LabelingProcedure,
+        aidoc:TrainingDataSheet,
+        aidoc:annotationTool,
+        aidoc:annotatorType,
+        aidoc:dataCollectionMethod,
+        aidoc:dataScope,
+        aidoc:dataSelectionCriteria,
+        aidoc:labelingGuideline,
+        aidoc:missingDataStrategy,
+        aidoc:outlierHandlingMethod ;
+    cov:missingLabel "Data Access Control Policy",
+        "Data Provenance Documentation",
+        "Data Quality Report",
+        "Data Versioning",
+        "Labeling Quality Control Process" ;
+    cov:reasoning "The ontology extensively covers the data aspects of the AI Act requirement. It includes clear distinctions between training, validation, and testing data, detailed activities around data acquisition and cleaning, and a strong focus on describing the data itself (characteristics, scope, collection methods). However, documentation focus isn’t fully captured by a single ontology element, and the specific link between data documentation and traceability could be stronger."@en .
+
+cov:req12_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req12 ;
+    cov:matchedTerm aidoc:AIDeployer,
+        aidoc:AISystem,
+        aidoc:DataMonitoringAndLogging,
+        aidoc:DataSheet,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:ExplainableAIFeature,
+        aidoc:HumanOversightMechanism,
+        aidoc:Interface,
+        aidoc:Log,
+        aidoc:ModelEvaluation,
+        aidoc:PerformanceMetric,
+        aidoc:TrainingDataSheet,
+        aidoc:TransparencyMeasure ;
+    cov:missingLabel "Assessment Activity",
+        "Human-AI Interaction Protocol",
+        "Interpretation Procedure",
+        "Oversight Requirement",
+        "Risk Assessment Activity",
+        "Technical Explanation Requirement" ;
+    cov:reasoning "The ontology covers the requirement well by explicitly representing human oversight mechanisms, explainability features, transparency measures and the roles of deployers and providers. The inclusion of data sheets, logs, performance metrics, model evaluation, and data validation provides elements for technical interpretation and monitoring. However, the explicit connection between oversight, technical measures for interpretation, and *assessment* is not fully captured as a dedicated relationship or class. "@en .
+
+cov:req13_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req13 ;
+    cov:matchedTerm aidoc:AIArtifact,
+        aidoc:AISystem,
+        aidoc:ChangeLog,
+        aidoc:DataCleaningProcedure,
+        aidoc:DataMonitoringAndLogging,
+        aidoc:DataPipeline,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:DataWrangling,
+        aidoc:Deployment,
+        aidoc:Log,
+        aidoc:MLPipeline,
+        aidoc:ModelEngineering,
+        aidoc:ModelPackaging,
+        aidoc:ModelVersioning,
+        aidoc:PostMarketMonitoringActivity,
+        aidoc:PostMarketPerformanceEvaluationActivity,
+        aidoc:SoftwareCodePipeline,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareImplementation,
+        aidoc:dependsOn,
+        aidoc:hasComponent,
+        aidoc:hasLifecycleStage,
+        aidoc:hasPerformanceMetric,
+        aidoc:hasSoftwareComponent,
+        aidoc:version ;
+    cov:missingLabel "Compliance Record",
+        "Performance Deviation Report",
+        "System Modification Request",
+        "Technical Solution Documentation" ;
+    cov:reasoning "The ontology provides strong coverage for tracking changes (Change Log, Model Versioning), the details of the AI system itself (Software Component, AI System, version), the process of building and deploying it (Software Code Pipeline, Deployment), and the post-market monitoring activities. While the ontology is granular, there is some lack of explicit term that directly indicates 'detailed description and relevant information' along with the linkage between multiple artifact modifications. Thus, the score is not 1.0."@en .
+
+cov:req14_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req14 ;
+    cov:matchedTerm aidoc:AIActivity,
+        aidoc:AIDeployer,
+        aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:ChangeLog,
+        aidoc:DataPipeline,
+        aidoc:DataSheet,
+        aidoc:DataTesting,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:DataWrangling,
+        aidoc:DeclarationOfConformity,
+        aidoc:Log,
+        aidoc:ModelEvaluation,
+        aidoc:PerformanceMetric,
+        aidoc:SoftwareComponent,
+        aidoc:TrainingDataSheet,
+        aidoc:feedsIntoComponent,
+        aidoc:hasComponent,
+        aidoc:hasLifecycleStage,
+        aidoc:hasPerformanceMetric,
+        aidoc:logsActivity,
+        aidoc:storesLogsAt,
+        aidoc:usesTestData,
+        aidoc:usesTrainingData,
+        aidoc:usesValidationData ;
+    cov:missingLabel "Bias Detection Method",
+        "Compliance Report",
+        "Discriminatory Impact Assessment",
+        "Predetermined Changes Log",
+        "Test Case Specification",
+        "Test Data Provenance",
+        "Test Environment Configuration" ;
+    cov:reasoning "The ontology extensively covers the requirement by focusing on activities related to data, model evaluation, and system lifecycle management. Key elements like data acquisition, training, validation, testing, and result logging are all represented. It also includes linkage to documentation and responsible parties. The main gap relates to explicit representation of discriminatory impact assessments and the need to link those to the metrics used."@en .
+
+cov:req15_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req15 ;
+    cov:matchedTerm aidoc:ChangeLog,
+        aidoc:DataCleaningProcedure,
+        aidoc:DataMonitoringAndLogging,
+        aidoc:DataPipeline,
+        aidoc:DataTesting,
+        aidoc:DataWrangling,
+        aidoc:Deployment,
+        aidoc:HumanOversightMechanism,
+        aidoc:ModelEngineering,
+        aidoc:PostMarketMonitoringActivity,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareDependency,
+        aidoc:SoftwareImplementation,
+        aidoc:hasSoftwareComponent,
+        aidoc:requiresHardware ;
+    cov:missingLabel "Authentication and Authorization Controls",
+        "Encryption Implementation",
+        "Incident Response Plan",
+        "Security Audit",
+        "Security Patching",
+        "Security Policy",
+        "Security Testing (Penetration Testing, Static/Dynamic Analysis)",
+        "Vulnerability Management" ;
+    cov:reasoning "The ontology provides strong coverage of cybersecurity measures through concepts related to software integrity (Software Component, Software Dependency), data quality (Data Cleaning Procedure, Data Wrangling/Cleaning), monitoring and logging (Data Monitoring and Logging, Logs Activity), and lifecycle activities like deployment and post-market surveillance. The inclusion of change logs also helps. While not explicitly stated as ‘cybersecurity,’ these contribute to a secure system. The high score reflects the breadth of these contributing factors and existing links within the ontology."@en .
+
+cov:req16_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req16 ;
+    cov:matchedTerm aidoc:AIDeployer,
+        aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:AISystemCapability,
+        aidoc:DataSheet,
+        aidoc:DataTesting,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:DataWrangling,
+        aidoc:HumanOversightMechanism,
+        aidoc:ModelEvaluation,
+        aidoc:PerformanceMetric,
+        aidoc:TrainingDataSheet,
+        aidoc:hasDeclarationOfConformity,
+        aidoc:hasHumanOversight,
+        aidoc:hasPerformanceMetric,
+        aidoc:hasRisk,
+        aidoc:intendedPurpose ;
+    cov:missingLabel "Accuracy Disparity",
+        "Adverse Impact Analysis",
+        "Bias Assessment",
+        "Data Drift Monitoring",
+        "Discrimination Risk",
+        "Explainable AI Feature",
+        "Fairness Metric",
+        "Monitoring Plan",
+        "Risk Mitigation Strategy",
+        "Robustness Testing",
+        "Transparency Report",
+        "Unintended Consequence" ;
+    cov:reasoning "The ontology comprehensively covers most aspects of the AI Act requirement.  Terms like 'AI System', 'Data Sheet', and specific data activities (Training, Validation, Testing) directly address information about the system's functioning and data used.  However, detailed representation of *unforeseen* outcomes, and specific *degrees of accuracy for specific persons/groups* require more granular modelling which is partially covered by “Data characteristic” and “Data scope” but needs expansion. The inclusion of 'Human Oversight Mechanism', 'AI Deployer', and 'AI Provider' demonstrates coverage of the actors and measures needed for compliance."@en .
+
+cov:req17_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req17 ;
+    cov:matchedTerm aidoc:AIMethod,
+        aidoc:AIModel,
+        aidoc:AISystem,
+        aidoc:AITask,
+        aidoc:DataTesting,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:ModelEvaluation,
+        aidoc:PerformanceMetric,
+        aidoc:evaluationMethod,
+        aidoc:intendedPurpose,
+        aidoc:qualityMetricsUsed ;
+    cov:missingLabel "Acceptable Performance Threshold",
+        "Operational Context for Performance",
+        "Performance Metric Justification",
+        "Performance Metric Risk Association",
+        "Performance Metric Trade-off" ;
+    cov:reasoning "The ontology provides several terms directly related to performance metrics (Performance Metric), how those metrics are derived through evaluation and testing (Model Evaluation, Data Training, Data Validation, Data Testing), and the components that contribute to those metrics (AI System, AI Task, AI Model, AI Method). The inclusion of 'intended purpose' and 'quality metrics used' further strengthens representation, indicating understanding of *why* a metric is chosen.  A high score is given as the essential elements are covered, but lack detailed linking of performance metrics to specific risks or operational contexts."@en .
+
+cov:req18_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req18 ;
+    cov:matchedTerm aidoc:AIActivity,
+        aidoc:AIDeployer,
+        aidoc:AIMethod,
+        aidoc:AIModel,
+        aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:AITask,
+        aidoc:DataPipeline,
+        aidoc:DataTesting,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:DataWrangling,
+        aidoc:HumanOversightMechanism,
+        aidoc:MLPipeline,
+        aidoc:ModelEngineering,
+        aidoc:ModelPackaging,
+        aidoc:ModelVersioning,
+        aidoc:PostMarketMonitoringActivity,
+        aidoc:PostMarketPerformanceEvaluationActivity,
+        aidoc:SoftwareCodePipeline,
+        aidoc:hasAIActivity,
+        aidoc:hasComponent,
+        aidoc:hasPerformanceMetric,
+        aidoc:hasRisk,
+        aidoc:logsActivity,
+        aidoc:requiresHardware ;
+    cov:missingLabel "Audit Trail",
+        "Change Control Procedure",
+        "Compliance Documentation",
+        "Data Governance Policy",
+        "Incident Reporting Mechanism",
+        "Risk Assessment Procedure",
+        "Risk Mitigation Strategy",
+        "Risk Register",
+        "Security Measures" ;
+    cov:reasoning "The ontology provides robust coverage for the components of an AI system lifecycle which would contribute to a risk management system. It includes terms for activities like training, validation, deployment and post-market monitoring, as well as elements around data quality and model versioning. Elements such as risk association, hardware considerations and human oversight further contribute to a strong representation of a compliant system, however there is missing specificity around *how* risks are identified and mitigated."@en .
+
+cov:req19_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.9 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req19 ;
+    cov:matchedTerm aidoc:AIActivity,
+        aidoc:AISystem,
+        aidoc:ChangeLog,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:DataWrangling,
+        aidoc:Log,
+        aidoc:ModelEngineering,
+        aidoc:ModelPackaging,
+        aidoc:ModelVersioning,
+        aidoc:SoftwareCodePipeline,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareImplementation ;
+    cov:missingLabel "Audit Trail",
+        "Change Request",
+        "Configuration Change",
+        "Incident Report",
+        "System Update/Revision" ;
+    cov:reasoning "The ontology offers excellent coverage through terms directly addressing change tracking (Change Log, Log), model & data lifecycle activities (Training, Validation, Engineering, Packaging, Versioning), and software development aspects.  The inclusion of general AI Activity and the AI System class further supports capturing changes throughout the system's lifecycle. The ontology provides a robust framework for documenting the evolution of the AI system and its components."@en .
+
+cov:req1_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req1 ;
+    cov:matchedTerm aidoc:AIMethod,
+        aidoc:AIModel,
+        aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:SoftwareComponent,
+        aidoc:hasDeclarationOfConformity,
+        aidoc:intendedPurpose,
+        aidoc:version ;
+    cov:missingLabel "AI System Description",
+        "Relationship to Previous Versions",
+        "System Documentation" ;
+    cov:reasoning "The ontology strongly covers the requirement through direct representations of 'AI System', 'AI Provider' and the concept of 'version'. The term 'intended purpose' captures the system's functionality directly, and linking the 'AI System' to a 'Declaration of Conformity' is consistent with documentation needs.  Further the system is formed of composed 'AI Method' and 'AI Model' realized as 'Software Component'. While a few concepts are relevant, representing the full 'description' aspect requires combination of these terms."@en .
+
+cov:req20_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req20 ;
+    cov:matchedTerm aidoc:AIActivity,
+        aidoc:AIArtifact,
+        aidoc:AIDeployer,
+        aidoc:AIMethod,
+        aidoc:AIModel,
+        aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:ChangeLog,
+        aidoc:DataPipeline,
+        aidoc:DataSheet,
+        aidoc:DataTesting,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:DeclarationOfConformity,
+        aidoc:Log,
+        aidoc:MLPipeline,
+        aidoc:ModelEngineering,
+        aidoc:ModelPackaging,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareDependency,
+        aidoc:SoftwareImplementation,
+        aidoc:Standard,
+        aidoc:appliesStandard ;
+    cov:missingLabel "Alternative Solution Description",
+        "Compliance Evidence",
+        "Harmonised Standard Reference",
+        "Non-Harmonised Standard Solution",
+        "Standards Mapping" ;
+    cov:reasoning "The ontology offers strong coverage through terms explicitly related to declarations of conformity, standards, and the complete AI system lifecycle. Relevant concepts like data sheets, training/validation/testing, model and software engineering, dependencies, and lifecycle activities are well represented. While several terms are matched, the direct link between *listing standards* and documenting a specific *solution adopted* when no standards apply is somewhat fragmented. The ontology relies on linking activities and artifacts, but a more specific connection for the alternate solution description is missing."@en .
+
+cov:req21_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.95 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req21 ;
+    cov:matchedTerm aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:DeclarationOfConformity,
+        aidoc:hasDeclarationOfConformity,
+        aidoc:isProvidedBy ;
+    cov:missingLabel "Conformity Assessment Report",
+        "Declaration Submission Timestamp",
+        "Technical Documentation" ;
+    cov:reasoning "The ontology explicitly includes 'Declaration of Conformity' as a class. The 'has declaration of conformity' property directly links an AI System to its declaration. Including 'AI System', 'is provided by', and 'AI Provider' grounds the requirement within the overall AI lifecycle and clarifies *who* is responsible for providing the declaration.  These terms comprehensively capture the essence of the AI Act's requirement."@en .
+
+cov:req22_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req22 ;
+    cov:matchedTerm aidoc:AIActivity,
+        aidoc:AIDeployer,
+        aidoc:AIMethod,
+        aidoc:AIModel,
+        aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:DataMonitoringAndLogging,
+        aidoc:DataPipeline,
+        aidoc:DataTesting,
+        aidoc:PerformanceMetric,
+        aidoc:PostMarketMonitoringActivity,
+        aidoc:PostMarketPerformanceEvaluationActivity,
+        aidoc:SoftwareComponent,
+        aidoc:hasComponent,
+        aidoc:hasLifecycleStage,
+        aidoc:hasPerformanceMetric,
+        aidoc:logsActivity ;
+    cov:missingLabel "Incident Investigation Procedure",
+        "Performance Degradation Thresholds",
+        "Post-Market Monitoring Plan",
+        "Remediation Action Plan",
+        "Risk Re-evaluation Frequency" ;
+    cov:reasoning "The ontology provides strong coverage of post-market monitoring and evaluation activities, including logging, performance metrics, and the roles of AI Deployer and Provider. While it acknowledges the AI System itself and its components, linking these to the specific *plan* for evaluation (as the Act requires) is a slight gap. The granularity of linking lifecycle stages to specific activities is sufficient to represent the plan."@en .
+
+cov:req2_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req2 ;
+    cov:matchedTerm aidoc:AIMethod,
+        aidoc:AIModel,
+        aidoc:AISystem,
+        aidoc:AITask,
+        aidoc:HardwareComponent,
+        aidoc:Interface,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareDependency,
+        aidoc:SoftwareImplementation,
+        aidoc:dependsOn,
+        aidoc:feedsIntoComponent,
+        aidoc:hasComponent,
+        aidoc:hasSoftwareComponent,
+        aidoc:implementsTask,
+        aidoc:requiresHardware,
+        aidoc:usesAIMethod ;
+    cov:missingLabel "AI System Interaction",
+        "API Specification",
+        "Communication Protocol",
+        "Data Exchange Format",
+        "External System Dependency",
+        "Inter-AI System Communication" ;
+    cov:reasoning "The ontology provides strong representation of the interaction between the AI system and its dependent software/hardware components, and how data flows via software components. Terms like 'Software Dependency', 'Software Component', 'Hardware Component', and specific relationship properties like 'depends on' directly address the requirement.  The inclusion of AI Method, Model & Task allows tracing of the operation with external systems. The score is not 1.0 as it lacks explicit representation of interactions *between* AI systems, focusing primarily on the interaction of the described AI system with external components."@en .
+
+cov:req3_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req3 ;
+    cov:matchedTerm aidoc:ChangeLog,
+        aidoc:DataPipeline,
+        aidoc:MLPipeline,
+        aidoc:ModelVersioning,
+        aidoc:SoftwareCodePipeline,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareImplementation ;
+    cov:missingLabel "Software Update Policy",
+        "Update Requirement",
+        "Update Schedule",
+        "Version Compatibility" ;
+    cov:reasoning "The ontology strongly covers the 'version' aspect through 'Model Versioning' and 'Version' attributes. It also covers aspects related to the *how* of updates through the various pipeline terms (software, machine learning, data) and 'Change Log'. However, it lacks a direct, explicit representation of *requirements* related to updates or a centralized place to store information about the necessary update cadence, which lowers the score slightly."@en .
+
+cov:req4_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req4 ;
+    cov:matchedTerm aidoc:AIDeployer,
+        aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:HardwareComponent,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareImplementation,
+        aidoc:hasComponent,
+        aidoc:requiresHardware ;
+    cov:missingLabel "API Specification",
+        "Deployment Environment",
+        "Download Location",
+        "Embedded System Architecture",
+        "Packaging Format" ;
+    cov:reasoning "The ontology provides excellent coverage for identifying *how* the system is delivered and utilized – through Software Components, Hardware Components, and the relationships between those and the AI System itself. Terms such as 'Modality' specifically address the form in which the system is provided. The AI Deployer and AI Provider link the AI System to the responsible parties, implicitly covering 'put into service' and 'placed on the market'. The score isn't perfect as it doesn’t *explicitly* capture the comprehensive list of modalities (downloads, API, embedded systems), but relies on inference from existing terms."@en .
+
+cov:req5_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.9 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req5 ;
+    cov:matchedTerm aidoc:ComputationalResource,
+        aidoc:HardwareComponent,
+        aidoc:requiresHardware,
+        aidoc:resourceConfiguration,
+        aidoc:resourceType,
+        aidoc:resourceVendor ;
+    cov:missingLabel "Hardware Intercompatibility",
+        "Hardware Specifications",
+        "Operating System Requirements" ;
+    cov:reasoning "The ontology directly includes 'Hardware Component' and 'Computational Resource' which represent the hardware on which the AI system runs. Further, properties like 'resource configuration', 'resource type', and 'resource vendor' allow for detailed description of the hardware. ‘requires hardware’ explicitly links a system to its necessary hardware. This offers a high degree of coverage, even allowing for nuanced descriptions of the hardware"@en .
+
+cov:req6_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.95 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req6 ;
+    cov:matchedTerm aidoc:AISystem,
+        aidoc:HardwareComponent,
+        aidoc:SoftwareComponent,
+        aidoc:VisualDocumentation,
+        aidoc:depicts,
+        aidoc:hasVisualDocumentation ;
+    cov:missingLabel "Marking Specification",
+        "Physical Dimensions/Geometry",
+        "Product Illustration/Schematic" ;
+    cov:reasoning "The ontology explicitly includes 'Visual Documentation' and the relationship 'has visual documentation', directly addressing the requirement. Terms like 'AI System', 'Software Component', and 'Hardware Component' represent the 'products' the requirement references, and the 'depicts' property can detail *what* the visual documentation shows (external features, marking, layout). The ontological structure is sufficient to capture the documentation requirement with high fidelity."@en .
+
+cov:req7_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req7 ;
+    cov:matchedTerm aidoc:AIDeployer,
+        aidoc:AIProvider,
+        aidoc:DataSheet,
+        aidoc:DeclarationOfConformity,
+        aidoc:Interface,
+        aidoc:VisualDocumentation,
+        aidoc:hasInterface,
+        aidoc:isDeployedBy,
+        aidoc:isProvidedBy ;
+    cov:missingLabel "Instructions for Use",
+        "User-Interface Specification" ;
+    cov:reasoning "The ontology provides strong coverage of the requirement, explicitly capturing the user interface, the deployer and the provider. The concepts ‘Interface’ and ‘Visual Documentation’ relate to documentation, and ‘AI Deployer’ and ‘AI Provider’ explicitly refer to the actors and their responsibility. The ‘has interface’ property connects the AI System to its interface, establishing the necessary documentation."@en .
+
+cov:req8_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req8 ;
+    cov:matchedTerm aidoc:AIActivity,
+        aidoc:AIMethod,
+        aidoc:AIModel,
+        aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:DataPipeline,
+        aidoc:DataSheet,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:DataWrangling,
+        aidoc:MLPipeline,
+        aidoc:ModelEngineering,
+        aidoc:ModelPackaging,
+        aidoc:ModelVersioning,
+        aidoc:SoftwareCodePipeline,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareDependency,
+        aidoc:SoftwareImplementation,
+        aidoc:TrainingDataSheet,
+        aidoc:dependsOn,
+        aidoc:feedsIntoComponent,
+        aidoc:hasComponent,
+        aidoc:hasSoftwareComponent ;
+    cov:missingLabel "Integration Procedure",
+        "Modification Log",
+        "Pre-trained System Reference",
+        "Provenance Detail",
+        "Third-party Tool Integration Details" ;
+    cov:reasoning "The ontology comprehensively covers the aspects of development steps, particularly regarding the AI Provider, the system’s structure (components, dependencies), and the data used in model creation (training, validation, cleaning). The inclusion of pipelines, model engineering, and versioning are also strong representations. The ‘has component’ and ‘depends on’ relations effectively capture the integration of different elements. However, specific details on *how* the tools were modified or integrated aren't explicitly stated, which slightly lowers the coverage score."@en .
+
+cov:req9_iter3_gemma3_27b a dqv:QualityMeasurement ;
+    dqv:computedOn <https://w3id.org/aidoc-ap/iter3_gemma3_27b> ;
+    dqv:isMeasurementOf cov:annexCoverageMetric ;
+    dqv:value 0.85 ;
+    prov:wasAttributedTo <https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> ;
+    prov:wasGeneratedBy <https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> ;
+    cov:forRequirement aiact:req9 ;
+    cov:matchedTerm aidoc:AIDeployer,
+        aidoc:AIMethod,
+        aidoc:AIModel,
+        aidoc:AIProvider,
+        aidoc:AISystem,
+        aidoc:ChangeLog,
+        aidoc:DataPipeline,
+        aidoc:DataSheet,
+        aidoc:DataTesting,
+        aidoc:DataTraining,
+        aidoc:DataValidation,
+        aidoc:DataWrangling,
+        aidoc:MLPipeline,
+        aidoc:ModelEngineering,
+        aidoc:ModelEvaluation,
+        aidoc:PerformanceMetric,
+        aidoc:SoftwareCodePipeline,
+        aidoc:SoftwareComponent,
+        aidoc:SoftwareImplementation,
+        aidoc:TrainingDataSheet,
+        aidoc:hasArchitecture,
+        aidoc:hasComponent,
+        aidoc:hasDeclarationOfConformity,
+        aidoc:hasInterface,
+        aidoc:hasPerformanceMetric,
+        aidoc:hasTransparencyMeasure,
+        aidoc:intendedPurpose,
+        aidoc:version ;
+    cov:missingLabel "Assumptions (related to persons or groups)",
+        "Classification Choices (specific to the AI system)",
+        "Design Rationale",
+        "Key Design Choices",
+        "Optimization Goals",
+        "Output Quality Assessment",
+        "System Logic Description",
+        "Trade-off Analysis" ;
+    cov:reasoning "The ontology provides a strong foundation with terms covering model engineering, data handling (training, validation, testing, cleaning), system architecture, performance evaluation, and explicit links to the AI provider/deployer.  It also covers aspects of documentation and change management. The breadth of terms allows for a good representation of the AI Act requirement, although capturing the nuance of 'trade-offs' and the explicit rationale behind design choices needs refinement."@en .
+
+<https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot> a prov:SoftwareAgent ;
+    rdfs:label "LLM Alignment Bot (gemma3:27b)" .
+
+cov:annexCoverageMetric a dqv:Metric ;
+    skos:definition "Heuristic coverage of a requirement by AIDOC-AP terms (0..1)"@en ;
+    skos:prefLabel "Annex IV Coverage Score"@en .
+
+<https://w3id.org/aidoc-ap/coverage/llm-run/iter3_gemma3_27b_2025-12-01> a prov:Activity ;
+    rdfs:label "LLM Coverage Analysis using gemma3:27b" ;
+    prov:endedAtTime "2025-12-01T11:25:18.814565+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-12-01T11:23:24.528792+00:00"^^xsd:dateTime .
+
