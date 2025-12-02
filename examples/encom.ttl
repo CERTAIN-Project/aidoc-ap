@@ -7,7 +7,8 @@
 @base <http://www.semanticweb.org/certain/ontologies/2025/10/encom/> .
 
 <http://www.semanticweb.org/certain/ontologies/2025/10/encom> rdf:type owl:Ontology ;
-                                                               owl:imports <https://w3id.org/aidoc-ap/1.0> ,
+                                                               owl:imports <http://w3id.org/devops-infra/server/1.0.0> ,
+                                                                           <https://w3id.org/aidoc-ap/1.0> ,
                                                                            <https://w3id.org/airo/1.0> ,
                                                                            <https://w3id.org/vair/1.0> .
 
@@ -49,7 +50,8 @@
 :Admin_Backend rdf:type owl:NamedIndividual ,
                         <https://w3id.org/aidoc-ap#SoftwareComponent> ;
                <https://w3id.org/aidoc-ap#dependsOn> :FastAPI ,
-                                                     :Python .
+                                                     :Python ;
+               <https://w3id.org/aidoc-ap#requiresHardware> :Server_2 .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Admin_frontend
@@ -58,18 +60,21 @@
                          <https://w3id.org/aidoc-ap#SoftwareComponent> ;
                 <https://w3id.org/aidoc-ap#dependsOn> :NextJS ,
                                                       :React ,
-                                                      :TailwindCSS .
+                                                      :TailwindCSS ;
+                <https://w3id.org/aidoc-ap#requiresHardware> :Server_2 .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Apache_Airflow
 :Apache_Airflow rdf:type owl:NamedIndividual ,
                          <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                <https://w3id.org/aidoc-ap#requiresHardware> :Server_3 ;
                 <https://w3id.org/aidoc-ap#version> "2.10.5-python3.12" .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Apache_Airflow_Worker
 :Apache_Airflow_Worker rdf:type owl:NamedIndividual ,
                                 <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                       <https://w3id.org/aidoc-ap#requiresHardware> :Server_4 ;
                        <https://w3id.org/aidoc-ap#version> "2.10.5-python3.12" ;
                        rdfs:comment "scaleable" .
 
@@ -77,6 +82,7 @@
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Authentik
 :Authentik rdf:type owl:NamedIndividual ,
                     <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+           <https://w3id.org/aidoc-ap#requiresHardware> :Server_2 ;
            <https://w3id.org/aidoc-ap#version> "2025.4" ;
            <http://purl.org/dc/terms/description> "Authentication service and identity management" .
 
@@ -90,12 +96,22 @@
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/ChangeLog
 :ChangeLog rdf:type owl:NamedIndividual ,
-                    <https://w3id.org/aidoc-ap#ChangeLog> .
+                    <https://w3id.org/aidoc-ap#ChangeLog> ;
+           <https://w3id.org/aidoc-ap#hasChangeRecord> :Updated_dependencies .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Combine_Datasets_Activity
+:Combine_Datasets_Activity rdf:type owl:NamedIndividual ,
+                                    <https://w3id.org/aidoc-ap#DataProcessing> ;
+                           <https://w3id.org/aidoc-ap#hasSourceDataset> :Energy_Data ,
+                                                                        :Weather_Data ;
+                           <https://w3id.org/aidoc-ap#producesDataset> :Combined_Energy_and_Weather_Data .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Combined_Energy_and_Weather_Data
 :Combined_Energy_and_Weather_Data rdf:type owl:NamedIndividual ,
-                                           <https://w3id.org/aidoc-ap#Dataset> .
+                                           <https://w3id.org/aidoc-ap#Dataset> ;
+                                  <https://w3id.org/aidoc-ap#isStoredAt> :Minio_Bucket .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Completeness
@@ -143,14 +159,22 @@
                    <https://w3id.org/aidoc-ap#SoftwareComponent> .
 
 
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Deployment
+:Deployment rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/vair#Deployment> ;
+            <https://w3id.org/aidoc-ap#hasAIActivity> :Software_Deployment .
+
+
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Development_Stage
 :Development_Stage rdf:type owl:NamedIndividual ,
                             <https://w3id.org/vair#Development> ;
-                   <https://w3id.org/aidoc-ap#hasAIActivity> :Data_Point_Quality_Confirmation ,
+                   <https://w3id.org/aidoc-ap#hasAIActivity> :Combine_Datasets_Activity ,
+                                                             :Data_Point_Quality_Confirmation ,
                                                              :EPEX_Data_Acquisition ,
                                                              :EnergyDataAcquisition ,
                                                              :MLflow_Model_Versioning ,
                                                              :Model_Engineering ,
+                                                             :Software_Development ,
                                                              :Training_Activity ,
                                                              :WeatherDataAcquisition .
 
@@ -191,7 +215,9 @@
        <https://w3id.org/aidoc-ap#appliesStandard> :AI_ISO_Standard ;
        <https://w3id.org/aidoc-ap#hasComponent> :Encom_AI_Model ,
                                                 :Encom_Implementation ;
-       <https://w3id.org/aidoc-ap#hasLifecycleStage> :Operation ;
+       <https://w3id.org/aidoc-ap#hasLifecycleStage> :Deployment ,
+                                                     :Development_Stage ,
+                                                     :Operation ;
        <https://w3id.org/aidoc-ap#hasRisk> :Outside_Data_Manipulation ,
                                            :Unpermitted_predictions ;
        <https://w3id.org/aidoc-ap#hasSoftwareComponent> :Admin_Backend ,
@@ -204,6 +230,7 @@
                                                         :Grafana ,
                                                         :MLflow ,
                                                         :Minio_Bucket ,
+                                                        :Timescale_DB ,
                                                         :traefik ;
        <https://w3id.org/aidoc-ap#requiresHardware> :Server_1 ,
                                                     :Server_2 ,
@@ -292,6 +319,7 @@
 :Grafana rdf:type owl:NamedIndividual ,
                   <https://w3id.org/aidoc-ap#Interface> ,
                   <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+         <https://w3id.org/aidoc-ap#requiresHardware> :Server_2 ;
          <https://w3id.org/aidoc-ap#version> "12.0.2" ;
          <http://purl.org/dc/terms/description> "Dashboard" .
 
@@ -316,6 +344,7 @@
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Minio_Bucket
 :Minio_Bucket rdf:type owl:NamedIndividual ,
                        <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+              <https://w3id.org/aidoc-ap#requiresHardware> :Server_1 ;
               <https://w3id.org/aidoc-ap#version> "RELEASE.2025-04-03T14-56-28Z" ;
               <http://purl.org/dc/terms/description> "stores log backups" ;
               rdfs:label "Minio S3" .
@@ -399,6 +428,7 @@
 :Predictions rdf:type owl:NamedIndividual ,
                       <https://w3id.org/aidoc-ap#Dataset> ,
                       <https://w3id.org/vair#Prediction> ;
+             <https://w3id.org/aidoc-ap#isStoredAt> :Minio_Bucket ;
              <http://purl.org/dc/terms/description> "energy consumption and generation" .
 
 
@@ -423,34 +453,56 @@
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Server_1
 :Server_1 rdf:type owl:NamedIndividual ,
-                   <https://w3id.org/aidoc-ap#HardwareComponent> ;
-          <http://purl.org/dc/terms/description> """8 CPU cores
-16GB of memory
-Ubuntu Server 24.04 LTS""" .
+                   <http://w3id.org/devops-infra/server#Server> ;
+          <http://w3id.org/devops-infra/server#cpu> "Octa Core CPU with Hyperthreading" ;
+          <http://w3id.org/devops-infra/server#memory> "16.0"^^xsd:float ;
+          <http://w3id.org/devops-infra/server#numberCPUs> 1 ;
+          <http://w3id.org/devops-infra/server#operatingSystem> "Ubuntu Server 24.04 LTS" .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Server_2
 :Server_2 rdf:type owl:NamedIndividual ,
-                   <https://w3id.org/aidoc-ap#HardwareComponent> ;
-          <http://purl.org/dc/terms/description> """8 CPU cores
-16GB of memory
-Ubuntu Server 24.04 LTS""" .
+                   <http://w3id.org/devops-infra/server#Server> ;
+          <http://w3id.org/devops-infra/server#cpu> "Octa Core CPU with Hyperthreading" ;
+          <http://w3id.org/devops-infra/server#memory> "16.0"^^xsd:float ;
+          <http://w3id.org/devops-infra/server#numberCPUs> 1 ;
+          <http://w3id.org/devops-infra/server#operatingSystem> "Ubuntu Server 24.04 LTS" .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Server_3
 :Server_3 rdf:type owl:NamedIndividual ,
-                   <https://w3id.org/aidoc-ap#HardwareComponent> ;
-          <http://purl.org/dc/terms/description> """8 CPU cores
-16GB of memory
-Ubuntu Server 24.04 LTS""" .
+                   <http://w3id.org/devops-infra/server#Server> ;
+          <http://w3id.org/devops-infra/server#cpu> "Octa Core CPU with Hyperthreading" ;
+          <http://w3id.org/devops-infra/server#memory> "16.0"^^xsd:float ;
+          <http://w3id.org/devops-infra/server#numberCPUs> 1 ;
+          <http://w3id.org/devops-infra/server#operatingSystem> "Ubuntu Server 24.04 LTS" .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Server_4
 :Server_4 rdf:type owl:NamedIndividual ,
-                   <https://w3id.org/aidoc-ap#HardwareComponent> ;
-          <http://purl.org/dc/terms/description> """8 CPU cores
-16GB of memory
-Ubuntu Server 24.04 LTS""" .
+                   <http://w3id.org/devops-infra/server#Server> ;
+          <http://w3id.org/devops-infra/server#cpu> "Octa Core CPU with Hyperthreading" ;
+          <http://w3id.org/devops-infra/server#memory> "16.0"^^xsd:float ;
+          <http://w3id.org/devops-infra/server#numberCPUs> 1 ;
+          <http://w3id.org/devops-infra/server#operatingSystem> "Ubuntu Server 24.04 LTS" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Software_Deployment
+:Software_Deployment rdf:type owl:NamedIndividual ,
+                              <https://w3id.org/aidoc-ap#Deployment> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Software_Development
+:Software_Development rdf:type owl:NamedIndividual ,
+                               <https://w3id.org/aidoc-ap#SoftwareDevelopment> ;
+                      <https://w3id.org/aidoc-ap#hasResponsibleDeveloper> :Encom_Data_Scientiest ;
+                      <http://purl.org/dc/terms/description> "Feature branching methodology, reviewed by devs/DS, merged to staging, merged to main, tagged" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Software_Versioning
+:Software_Versioning rdf:type owl:NamedIndividual ,
+                              <https://w3id.org/aidoc-ap#SoftwareVersioning> ;
+                     <http://purl.org/dc/terms/description> "all pipelines are tracked and versioned on GitHub" .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/TailwindCSS
@@ -463,6 +515,13 @@ Ubuntu Server 24.04 LTS""" .
 :Timeliness rdf:type owl:NamedIndividual ,
                      <http://www.w3.org/ns/dqv#QualityMeasurement> ,
                      <https://w3id.org/aidoc-ap#PerformanceMetric> .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Timescale_DB
+:Timescale_DB rdf:type owl:NamedIndividual ,
+                       <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+              <https://w3id.org/aidoc-ap#requiresHardware> :Server_1 ;
+              <https://w3id.org/aidoc-ap#version> "pg17" .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Training_Activity
@@ -492,6 +551,15 @@ Ubuntu Server 24.04 LTS""" .
                            <https://w3id.org/airo#Change> ;
                   <https://w3id.org/airo#hasChangedEntity> :Encom ;
                   <http://purl.org/dc/terms/description> "keeping the system and the used libraries up to date" .
+
+
+###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Updated_dependencies
+:Updated_dependencies rdf:type owl:NamedIndividual ,
+                               <https://w3id.org/aidoc-ap#ChangeRecord> ;
+                      <https://w3id.org/aidoc-ap#recordsChange> :ChangeLog ;
+                      <https://w3id.org/airo#hasStakeholder> :Encom_Data_Scientiest ;
+                      <https://w3id.org/aidoc-ap#reasonForChange> "outdated software dependencies" ;
+                      <http://purl.org/dc/terms/description> "updated software dependencies" .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/User_Training
@@ -534,6 +602,7 @@ Ubuntu Server 24.04 LTS""" .
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/git-sync_container
 :git-sync_container rdf:type owl:NamedIndividual ,
                              <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+                    <https://w3id.org/aidoc-ap#requiresHardware> :Server_3 ;
                     <https://w3id.org/aidoc-ap#version> "Alpine Linux version 3.21.3" ;
                     <http://purl.org/dc/terms/description> "Keeps the latest tag on the main branch and the airflow instance in sync" .
 
@@ -556,6 +625,7 @@ Ubuntu Server 24.04 LTS""" .
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/traefik
 :traefik rdf:type owl:NamedIndividual ,
                   <https://w3id.org/aidoc-ap#SoftwareComponent> ;
+         <https://w3id.org/aidoc-ap#requiresHardware> :Server_2 ;
          <https://w3id.org/aidoc-ap#version> "3.2" ;
          <http://purl.org/dc/terms/description> "Reverse proxy" .
 

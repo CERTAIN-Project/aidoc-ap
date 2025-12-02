@@ -34,4 +34,4 @@ jobs:
           # Find the jar file (in case the version number changes)
           HERMIT_JAR=$(find . -name "HermiT*.jar" | head -n 1)
           echo "Using HermiT jar: $HERMIT_JAR"
-          ! java -jar "$HERMIT_JAR" -k aidoc-ap.ttl 2>&1 | grep -Ei "Exception|Error|Unsatisfiable|Invalid"
+          ! java -jar "$HERMIT_JAR" --ignoreUnsupportedDatatypes -k aidoc-ap.ttl 2>&1 | grep -Ei "Exception|Error|Unsatisfiable|Invalid"

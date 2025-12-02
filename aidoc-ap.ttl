@@ -11,6 +11,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix widoco: <https://w3id.org/widoco/vocab#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix server: <http://w3id.org/devops-infra/server#> .
 @base <https://w3id.org/aidoc-ap#> .
 
 <https://w3id.org/aidoc-ap#> rdf:type owl:Ontology ;
@@ -337,9 +338,13 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
 
 ###  https://w3id.org/aidoc-ap#requiresHardware
 :requiresHardware rdf:type owl:ObjectProperty ;
-                  rdfs:domain :AISystem ;
-                  rdfs:range :HardwareComponent ;
-                  rdfs:comment "Links a system to the hardware components it needs to run."@en ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :AISystem :AIArtifact )
+                              ] ;
+                  rdfs:range [ rdf:type owl:Class ;
+                               owl:unionOf ( :HardwareComponent server:Server )
+                             ] ;
+                  rdfs:comment "Links a system or artifact to the hardware components or servers it needs to run."@en ;
                   rdfs:label "requires hardware"@en ;
                   skos:relatedMatch <https://w3id.org/airo#runsOnHardware> .
 
@@ -394,6 +399,66 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
                     rdfs:comment "Links a validation activity to the dataset used for validation."@en ;
                     rdfs:label "uses validation data"@en ;
                     skos:relatedMatch <ttps://w3id.org/airo#hasValidationData> .
+
+
+###  https://w3id.org/aidoc-ap#hasSourceDataset
+:hasSourceDataset rdf:type owl:ObjectProperty ;
+                  rdfs:domain :DataProcessing ;
+                  rdfs:range :Dataset ;
+                  rdfs:comment "Links a DataProcessing activity to its source datasets."@en ;
+                  rdfs:label "has source dataset"@en .
+
+
+###  https://w3id.org/aidoc-ap#producesDataset
+:producesDataset rdf:type owl:ObjectProperty ;
+                 rdfs:domain :DataProcessing ;
+                 rdfs:range :Dataset ;
+                 rdfs:comment "Links a DataProcessing activity to the finished dataset it produces."@en ;
+                 rdfs:label "produces dataset"@en .
+
+
+###  https://w3id.org/aidoc-ap#isStoredAt
+:isStoredAt rdf:type owl:ObjectProperty ;
+            rdfs:domain :AIArtifact ;
+            rdfs:range <http://www.w3.org/ns/prov#Entity> ;
+            rdfs:comment "Links an AI artifact to the location or entity where it is stored."@en ;
+            rdfs:label "is stored at"@en ;
+            owl:inverseOf :stores .
+
+
+###  https://w3id.org/aidoc-ap#stores
+:stores rdf:type owl:ObjectProperty ;
+        rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+        rdfs:range :AIArtifact ;
+        rdfs:comment "Links a storage location or entity to the AI artifacts it stores."@en ;
+        rdfs:label "stores"@en ;
+        owl:inverseOf :isStoredAt .
+
+
+###  https://w3id.org/aidoc-ap#affects
+:affects rdf:type owl:ObjectProperty ;
+         rdfs:domain :AIActivity ;
+         rdfs:range :AIArtifact ;
+         rdfs:comment "Links an activity to the artifact it affects or modifies."@en ;
+         rdfs:label "affects"@en .
+
+
+###  https://w3id.org/aidoc-ap#providesComputationalResource
+:providesComputationalResource rdf:type owl:ObjectProperty ;
+                               rdfs:domain :HardwareComponent ;
+                               rdfs:range :ComputationalResource ;
+                               rdfs:comment "Links a hardware component to the computational resource it provides."@en ;
+                               rdfs:label "provides computational resource"@en .
+
+
+###  https://w3id.org/aidoc-ap#hasResponsibleDeveloper
+:hasResponsibleDeveloper rdf:type owl:ObjectProperty ;
+                         rdfs:domain :SoftwareDevelopment ;
+                         rdfs:range [ rdf:type owl:Class ;
+                                      owl:unionOf ( :AIResearcher <https://w3id.org/airo#AIDeveloper> )
+                                    ] ;
+                         rdfs:comment "Links a software development activity to the developers responsible for it."@en ;
+                         rdfs:label "has responsible developer"@en .
 
 
 ###  https://w3id.org/airo#hasCapability
@@ -756,6 +821,58 @@ foaf:Person rdf:type owl:Class .
            rdfs:comment "A log of changes made to the system during its lifecycle."@en ;
            rdfs:label "Change Log"@en .
 
+# Object property linking ChangeLog to ChangeRecord
+###  https://w3id.org/aidoc-ap#hasChangeRecord
+:hasChangeRecord rdf:type owl:ObjectProperty ;
+  rdfs:domain :ChangeLog ;
+  rdfs:range :ChangeRecord ;
+  rdfs:comment "Links a ChangeLog to one or more ChangeRecords."@en ;
+  rdfs:label "has change record"@en .
+
+
+###  https://w3id.org/aidoc-ap#ChangeRecord
+:ChangeRecord rdf:type owl:Class ;
+  rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+  rdfs:comment "A record of a change, including reason, start and end date, stakeholders, and the change itself."@en ;
+  rdfs:label "Change Record"@en .
+
+# Data properties for ChangeRecord
+###  https://w3id.org/aidoc-ap#reasonForChange
+:reasonForChange rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range xsd:string ;
+  rdfs:comment "The reason for the change."@en ;
+  rdfs:label "reason for change"@en .
+
+###  https://w3id.org/aidoc-ap#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range xsd:date ;
+  rdfs:comment "The start date of the change."@en ;
+  rdfs:label "start date"@en .
+
+###  https://w3id.org/aidoc-ap#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range xsd:date ;
+  rdfs:comment "The end date of the change."@en ;
+  rdfs:label "end date"@en .
+
+# Object properties for ChangeRecord
+###  https://w3id.org/aidoc-ap#hasStakeholder
+:hasStakeholder rdf:type owl:ObjectProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range [ rdf:type owl:Class ; owl:unionOf ( <https://w3id.org/airo#Stakeholder> :AIAgent ) ] ;
+  rdfs:comment "Links the change record to stakeholders (airo:stakeholder or aidoc-ap:AIAgent)."@en ;
+  rdfs:label "has stakeholder"@en .
+
+###  https://w3id.org/aidoc-ap#recordsChange
+:recordsChange rdf:type owl:ObjectProperty ;
+  rdfs:domain :ChangeRecord ;
+  rdfs:range <https://w3id.org/airo#Change> ;
+  rdfs:comment "Links the change record to the change (airo:Change)."@en ;
+  rdfs:label "records change"@en .
+
 
 ###  https://w3id.org/aidoc-ap#ComputationalResource
 :ComputationalResource rdf:type owl:Class ;
@@ -832,6 +949,13 @@ foaf:Person rdf:type owl:Class .
                rdfs:label "Data Wrangling/Cleaning"@en .
 
 
+###  https://w3id.org/aidoc-ap#DataProcessing
+:DataProcessing rdf:type owl:Class ;
+  rdfs:subClassOf :DataPipeline ;
+  rdfs:comment "Activity of combining, preprocessing data resulting in a different dataset."@en ;
+  rdfs:label "Data Processing"@en .
+
+
 ###  https://w3id.org/aidoc-ap#Dataset
 :Dataset rdf:type owl:Class ;
          rdfs:subClassOf <http://mlcommons.org/croissant/1.0#Dataset> ,
@@ -862,6 +986,20 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :SoftwareCodePipeline ;
             rdfs:comment "Activity of delivering the AI system to production environments."@en ;
             rdfs:label "Deployment"@en .
+
+
+###  https://w3id.org/aidoc-ap#SoftwareVersioning
+:SoftwareVersioning rdf:type owl:Class ;
+                    rdfs:subClassOf :SoftwareCodePipeline ;
+                    rdfs:comment "Activity of managing revisions and tracking changes in software iterations."@en ;
+                    rdfs:label "Software Versioning"@en .
+
+
+###  https://w3id.org/aidoc-ap#SoftwareDevelopment
+:SoftwareDevelopment rdf:type owl:Class ;
+                     rdfs:subClassOf :SoftwareCodePipeline ;
+                     rdfs:comment "Activity of developing and writing software code for the AI system."@en ;
+                     rdfs:label "Software Development"@en .
 
 
 ###  https://w3id.org/aidoc-ap#ExplainableAIFeature
