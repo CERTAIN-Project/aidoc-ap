@@ -17,7 +17,7 @@ This work is developed as part of the [**CERTAIN** project](https://certain-proj
 
 - `annex_4.ttl`  
 	Extracted **Annex IV requirements** as a separate ontology, with:
-	- 28 requirements as `aiact:Requirement`
+	- 22 requirements as `aiact:Requirement`
 	- textual descriptions (`dcterms:description`) and lifecycle phase annotations
 	- associated **competency questions** that express what a knowledge graph should be able to answer for each requirement
 
