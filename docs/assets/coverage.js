@@ -217,9 +217,6 @@
   // Calculate stats based on active measurements
   const activeMeasurements = getActiveMeasurements();
   const totalReqs = activeMeasurements.length;
-  // Calculate stats based on active measurements
-  const activeMeasurements = getActiveMeasurements();
-  const totalReqs = activeMeasurements.length;
   const avgCoverage = activeMeasurements.reduce((sum, m) => sum + m.coverage_score, 0) / totalReqs;
   const excellentCount = activeMeasurements.filter(m => m.coverage_score >= 0.9).length;
   const goodCount = activeMeasurements.filter(m => m.coverage_score >= 0.85 && m.coverage_score < 0.9).length;
