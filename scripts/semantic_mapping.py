@@ -2,6 +2,7 @@ import os
 import csv
 import json
 import datetime
+import shutil
 from rdflib import Graph, RDF, RDFS, Namespace, URIRef, Literal
 from rdflib.namespace import XSD, SKOS, PROV
 from openai import OpenAI
@@ -77,13 +78,15 @@ coverage_graph.add((metric_uri, SKOS.prefLabel, Literal("Annex IV Coverage Score
 coverage_graph.add((metric_uri, SKOS.definition, Literal("Heuristic coverage of a requirement by AIDOC-AP terms (0..1)", lang="en")))
 
 # Activity and agent
-run_timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d")
+# Use ISO timestamp with time to ensure uniqueness for multiple runs per day
+run_timestamp_full = datetime.datetime.utcnow()
+run_timestamp = run_timestamp_full.strftime("%Y-%m-%dT%H-%M-%S")  # Format: 2025-12-04T14-30-15
 activity_uri = URIRef(f"https://w3id.org/aidoc-ap/coverage/llm-run/{run_timestamp}")
 agent_uri = URIRef("https://w3id.org/aidoc-ap/alignment#LLMCoverageBot")
 
 coverage_graph.add((activity_uri, RDF.type, PROV.Activity))
 coverage_graph.add((activity_uri, RDFS.label, Literal(f"LLM Coverage Analysis using {OLLAMA_MODEL}")))
-coverage_graph.add((activity_uri, PROV.startedAtTime, Literal(datetime.datetime.utcnow().isoformat() + "Z", datatype=XSD.dateTime)))
+coverage_graph.add((activity_uri, PROV.startedAtTime, Literal(run_timestamp_full.isoformat() + "Z", datatype=XSD.dateTime)))
 
 coverage_graph.add((agent_uri, RDF.type, PROV.SoftwareAgent))
 coverage_graph.add((agent_uri, RDFS.label, Literal(f"LLM Coverage Bot ({OLLAMA_MODEL})")))
@@ -178,8 +181,9 @@ for req in requirements:
     })
     print(f"Processing {req['label']}: coverage={coverage_score}")
 
-    # Create RDF measurement
-    measurement_uri = URIRef(f"https://w3id.org/aidoc-ap/coverage#{req['id']}")
+    # Create RDF measurement with unique URI per run
+    # This allows multiple runs to coexist in the same TTL file
+    measurement_uri = URIRef(f"https://w3id.org/aidoc-ap/coverage#{req['id']}-{run_timestamp}")
     
     coverage_graph.add((measurement_uri, RDF.type, DQV.QualityMeasurement))
     coverage_graph.add((measurement_uri, DQV.isMeasurementOf, metric_uri))
@@ -210,11 +214,29 @@ for req in requirements:
 coverage_graph.add((activity_uri, PROV.endedAtTime, Literal(datetime.datetime.utcnow().isoformat() + "Z", datatype=XSD.dateTime)))
 
 # ========== SAVE RESULTS ==========
+# Load existing TTL file if it exists (to append new runs)
+if os.path.exists(OUTPUT_FILE):
+    print(f"Loading existing coverage data from {OUTPUT_FILE}")
+    existing_graph = Graph()
+    existing_graph.parse(OUTPUT_FILE, format="turtle")
+    
+    # Merge with existing data
+    for triple in existing_graph:
+        coverage_graph.add(triple)
+    
+    print(f"Merged with existing data ({len(existing_graph)} existing triples)")
+
 # Save as TTL
 coverage_graph.serialize(destination=OUTPUT_FILE, format="turtle")
-print(f"✅ Semantic mapping (TTL) saved to {OUTPUT_FILE}")
+print(f"✅ Semantic mapping (TTL) saved to {OUTPUT_FILE} ({len(coverage_graph)} total triples)")
 
-# Save JSON for compatibility
+# Copy to docs/resources for website
+docs_output = "docs/resources/semantic_mapping.ttl"
+os.makedirs(os.path.dirname(docs_output), exist_ok=True)
+shutil.copy2(OUTPUT_FILE, docs_output)
+print(f"✅ Copied to {docs_output} for website")
+
+# Save JSON for compatibility (only current run)
 with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 print(f"✅ Semantic mapping (JSON) saved to {OUTPUT_JSON}")
