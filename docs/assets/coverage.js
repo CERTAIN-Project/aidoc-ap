@@ -79,6 +79,7 @@
         }
 
         measurements.push({
+          measurementUri: s, // Keep the unique measurement URI
           requirement_id: reqId,
           requirement: null, // will load from requirements TTL
           coverage_score: score ? Number(score.object.value) : 0,
@@ -161,57 +162,112 @@
     }
   });
 
-  // Sort by requirement ID
-  measurements.sort((a, b) => {
-    const numA = parseInt(a.requirement_id.replace('req', ''));
-    const numB = parseInt(b.requirement_id.replace('req', ''));
-    return numA - numB;
+  // Group measurements by run - if no run filter selected, use the most recent for each requirement
+  const measurementsByRun = {};
+  const latestMeasurements = {};
+  
+  measurements.forEach(m => {
+    if (!measurementsByRun[m.run]) {
+      measurementsByRun[m.run] = [];
+    }
+    measurementsByRun[m.run].push(m);
+    
+    // Track latest measurement per requirement (for default view)
+    if (!latestMeasurements[m.requirement_id] || 
+        (m.run > latestMeasurements[m.requirement_id].run)) {
+      latestMeasurements[m.requirement_id] = m;
+    }
+  });
+
+  // Sort runs by date (newest first)
+  runs.sort((a, b) => {
+    const dateA = a.startedAt || a.id;
+    const dateB = b.startedAt || b.id;
+    return dateB.localeCompare(dateA);
+  });
+
+  // Sort runs by date (newest first)
+  runs.sort((a, b) => {
+    const dateA = a.startedAt || a.id;
+    const dateB = b.startedAt || b.id;
+    return dateB.localeCompare(dateA);
   });
 
   // Populate run filter
   runs.forEach(r => { 
     const o=document.createElement('option'); 
     o.value=r.id; 
-    o.textContent = r.label || r.id.split('/').pop(); 
+    const date = r.startedAt ? r.startedAt.split('T')[0] : '';
+    const agentLabel = r.label ? r.label.replace('LLM Coverage Analysis using ', '') : r.id.split('/').pop();
+    o.textContent = date ? `${date} (${agentLabel})` : agentLabel; 
     byId('runSel').appendChild(o); 
   });
 
-  // Calculate stats
-  const totalReqs = measurements.length;
-  const avgCoverage = measurements.reduce((sum, m) => sum + m.coverage_score, 0) / totalReqs;
-  const excellentCount = measurements.filter(m => m.coverage_score >= 0.9).length;
-  const goodCount = measurements.filter(m => m.coverage_score >= 0.85 && m.coverage_score < 0.9).length;
+  // Get active measurement set based on selected run
+  function getActiveMeasurements() {
+    if (state.run) {
+      // Filter by selected run
+      return measurements.filter(m => m.run === state.run);
+    } else {
+      // Use latest measurement for each requirement
+      return Object.values(latestMeasurements);
+    }
+  }
 
-  byId('stats').innerHTML = `
-    <div class="stat-card">
-      <h3>${totalReqs}</h3>
-      <p>Total Requirements</p>
-    </div>
-    <div class="stat-card">
-      <h3>${(avgCoverage * 100).toFixed(1)}%</h3>
-      <p>Average Coverage</p>
-    </div>
-    <div class="stat-card">
-      <h3>${excellentCount}</h3>
-      <p>Excellent (≥ 0.90)</p>
-    </div>
-    <div class="stat-card">
-      <h3>${goodCount}</h3>
-      <p>Good (0.85-0.89)</p>
-    </div>
-  `;
+  // Calculate stats based on active measurements
+  const activeMeasurements = getActiveMeasurements();
+  const totalReqs = activeMeasurements.length;
+  // Calculate stats based on active measurements
+  const activeMeasurements = getActiveMeasurements();
+  const totalReqs = activeMeasurements.length;
+  const avgCoverage = activeMeasurements.reduce((sum, m) => sum + m.coverage_score, 0) / totalReqs;
+  const excellentCount = activeMeasurements.filter(m => m.coverage_score >= 0.9).length;
+  const goodCount = activeMeasurements.filter(m => m.coverage_score >= 0.85 && m.coverage_score < 0.9).length;
 
-  // Overall coverage bar
-  const overallClass = coverageClass(avgCoverage);
-  byId('overallBar').className = `coverage-fill ${overallClass}`;
-  byId('overallBar').style.width = `${avgCoverage * 100}%`;
-  byId('overallText').textContent = `${(avgCoverage * 100).toFixed(1)}%`;
+  function updateStats() {
+    const active = getActiveMeasurements();
+    const total = active.length;
+    const avg = active.reduce((sum, m) => sum + m.coverage_score, 0) / total;
+    const excellent = active.filter(m => m.coverage_score >= 0.9).length;
+    const good = active.filter(m => m.coverage_score >= 0.85 && m.coverage_score < 0.9).length;
+
+    byId('stats').innerHTML = `
+      <div class="stat-card">
+        <h3>${total}</h3>
+        <p>Total Requirements</p>
+      </div>
+      <div class="stat-card">
+        <h3>${(avg * 100).toFixed(1)}%</h3>
+        <p>Average Coverage</p>
+      </div>
+      <div class="stat-card">
+        <h3>${excellent}</h3>
+        <p>Excellent (≥ 0.90)</p>
+      </div>
+      <div class="stat-card">
+        <h3>${good}</h3>
+        <p>Good (0.85-0.89)</p>
+      </div>
+    `;
+
+    // Overall coverage bar
+    const overallClass = coverageClass(avg);
+    byId('overallBar').className = `coverage-fill ${overallClass}`;
+    byId('overallBar').style.width = `${avg * 100}%`;
+    byId('overallText').textContent = `${(avg * 100).toFixed(1)}%`;
+  }
+
+  updateStats();
 
   // State management
   const state = { q:'', coverage:'', run:'' };
   byId('q').oninput = e => { state.q = e.target.value.toLowerCase(); draw(); };
   byId('coverageSel').onchange = e => { state.coverage = e.target.value; draw(); };
-  byId('runSel').onchange = e => { state.run = e.target.value; draw(); };
+  byId('runSel').onchange = e => { 
+    state.run = e.target.value; 
+    updateStats(); 
+    draw(); 
+  };
   byId('closeDetails').onclick = () => byId('details').classList.add('hidden');
 
   function filter(list){
@@ -224,7 +280,6 @@
           if (m.coverage_score < threshold) return false;
         }
       }
-      if (state.run && m.run !== state.run) return false;
       if (state.q) {
         const hay = [
           m.requirement, 
@@ -240,8 +295,17 @@
   }
 
   function draw(){
-    const list = filter(measurements);
-    $('#summary').innerHTML = `<p>${list.length} of ${totalReqs} requirement(s) shown.</p>`;
+    const active = getActiveMeasurements();
+    const list = filter(active);
+    const totalInView = active.length;
+    $('#summary').innerHTML = `<p>${list.length} of ${totalInView} requirement(s) shown.</p>`;
+    
+    // Sort by requirement number
+    list.sort((a, b) => {
+      const numA = parseInt(a.requirement_id.replace('req', ''));
+      const numB = parseInt(b.requirement_id.replace('req', ''));
+      return numA - numB;
+    });
     
     $('#rows').innerHTML = list.map((m, idx) => {
       const reqNum = parseInt(m.requirement_id.replace('req', ''));
@@ -259,7 +323,7 @@
         ` <span class="missing-badge">+${(m.missing || []).length - 2} more</span>` : '';
 
       return `
-        <tr class="requirement-row" data-reqid="${esc(m.requirement_id)}">
+        <tr class="requirement-row" data-measurementid="${esc(m.measurementUri)}">
           <td>${reqNum}</td>
           <td><strong>${esc(m.requirement || m.requirement_id)}</strong></td>
           <td>
@@ -276,12 +340,12 @@
 
     // Row click => open details
     document.querySelectorAll('tbody tr').forEach(tr=>{
-      tr.onclick = () => showDetails(tr.getAttribute('data-reqid'));
+      tr.onclick = () => showDetails(tr.getAttribute('data-measurementid'));
     });
   }
 
-  function showDetails(reqId){
-    const m = measurements.find(x => x.requirement_id === reqId);
+  function showDetails(measurementUri){
+    const m = measurements.find(x => x.measurementUri === measurementUri);
     if(!m) return;
 
     const run = m.run ? runs.find(r => r.id === m.run) : null;
