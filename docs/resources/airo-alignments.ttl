@@ -6,65 +6,65 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:0224d3be-1f45-4699-ba9b-3a2646014b78 a prov:Entity,
+align:0bd98110-b502-4bd1-8047-4b8900c347fd a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b24daeab-9ec8-40ea-93e4-8407199107de ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to a 'Standard' in the context of AI systems. The airo concept provides a more precise definition, specifying adoption by a standardization body and non-compulsory compliance. The AIDOC concept is broader, simply stating a 'harmonised or other standard'. While not strictly equivalent, they represent very similar concepts with a slight difference in granularity. Therefore, a close match is the most appropriate relationship."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:Standard ;
-    align:target <https://w3id.org/airo#Standard> .
-
-align:15ee327c-0590-407f-b94a-85261be311f7 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b24daeab-9ec8-40ea-93e4-8407199107de ;
-    align:confidence "0.98"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical. The only difference is the presence of a URI in the 'airo' concept, indicating it is formally defined in an ontology. Given the complete textual overlap, they are considered equivalent classes."^^xsd:string ;
+    prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
+    align:confidence "0.99"^^xsd:float ;
+    align:rationale "The labels and descriptions are identical. The airo concept provides a URI, indicating it’s formally defined; however, the descriptive semantics are the same. Therefore, they are equivalent."^^xsd:string ;
     align:relation owl:equivalentClass ;
-    align:source aidoc:AIProvider ;
-    align:target <https://w3id.org/airo#AIProvider> .
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/airo#AIDeployer> .
 
-align:2e68542c-8990-45c4-ba68-069158f8cd9f a prov:Entity,
+align:16f6624f-76c6-4ead-9ee6-187e09f55d9a a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b24daeab-9ec8-40ea-93e4-8407199107de ;
+    prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "The AIDOC 'Dataset' concept and the airo concept (using the DCAT vocabulary's Dataset) have a lexical similarity score of 1.0 and represent the same concept – a collection of data. The airo concept is explicitly defined using a widely adopted vocabulary (DCAT), and while the AIDOC description is briefer, the core meaning is identical. Therefore, they can be considered equivalent classes."^^xsd:string ;
+    align:rationale "The AIDOC 'Dataset' concept and the airo concept (using the DCAT vocabulary's Dataset) have identical labels and descriptions (though the airo description is empty, it references a well-defined standard). The lexical similarity is 1.0 indicating a strong match. While AIDOC might add additional properties specific to the 'AI lifecycle', the core meaning is the same. Therefore they can be considered equivalent."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:Dataset ;
     align:target <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
 
-align:30cfd4f9-387c-4cf1-92e5-190e05a6d260 a prov:Entity,
+align:2c146d59-f475-4188-b157-0c0f5c084a35 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b24daeab-9ec8-40ea-93e4-8407199107de ;
+    prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts define an 'AI Model' and their descriptions are highly similar; one emphasizes enablement of a task, the other the result (inference/prediction). Given the high lexical similarity and overlapping definitions, an equivalentClass relationship is appropriate. The difference in emphasis isn't significant enough to warrant a broader/narrower relationship."^^xsd:string ;
+    align:rationale "Both concepts define an 'AI Model' as a computational/mathematical entity capable of generating outputs from inputs. The descriptions are highly similar and functionally equivalent, despite slightly different phrasing. The lexical similarity of 1.0 strongly supports this."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:AIModel ;
     align:target <https://w3id.org/airo#AIModel> .
 
-align:858a56b8-40b0-4d74-82aa-f0cc8936ec9a a prov:Entity,
+align:39f4f0ca-cd3f-4e2d-9420-d1d77ba6c505 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b24daeab-9ec8-40ea-93e4-8407199107de ;
+    prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to standards applied to AI systems. The airo concept provides a more formal definition referencing standardisation bodies and clarifying voluntary compliance, while the AIDOC concept is a more general description.  Given the high lexical similarity and overlapping intent, a close match is appropriate."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Standard ;
+    align:target <https://w3id.org/airo#Standard> .
+
+align:761a1347-b42b-4fce-8b0a-6226d29ef4d1 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
     align:confidence "0.99"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical. The only difference is the presence of a URI in the airo concept, which is standard practice for formally defining ontological entities and doesn't affect semantic equivalence."^^xsd:string ;
+    align:rationale "The labels and descriptions are identical. The only difference is that 'airo' provides a URI, which indicates it's part of a formally defined ontology. Given the 1.0 lexical similarity score and identical definitions, these concepts are effectively equivalent."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/airo#AISystem> .
 
-align:9687e482-924d-476e-9229-e5b0973e4553 a prov:Entity,
+align:bce1b463-d30f-45d7-b963-69099f807685 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b24daeab-9ec8-40ea-93e4-8407199107de ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical. The airo concept also has a URI providing a clear identifier, strengthening the assertion of equivalence. While a URI is good practice, its presence doesn't change the semantic meaning of the concept itself in this case."^^xsd:string ;
+    prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
+    align:confidence "0.99"^^xsd:float ;
+    align:rationale "The labels and descriptions are identical. The 'airo' concept also provides a URI, establishing it as a formally defined class, but the core meaning is the same. Therefore, they are equivalent classes."^^xsd:string ;
     align:relation owl:equivalentClass ;
-    align:source aidoc:AIDeployer ;
-    align:target <https://w3id.org/airo#AIDeployer> .
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/airo#AIProvider> .
 
 aidoc:AIDeployer owl:equivalentClass <https://w3id.org/airo#AIDeployer> .
 
@@ -78,9 +78,9 @@ aidoc:Dataset owl:equivalentClass <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
 
 aidoc:Standard skos:closeMatch <https://w3id.org/airo#Standard> .
 
-align:b24daeab-9ec8-40ea-93e4-8407199107de a prov:Activity ;
-    prov:endedAtTime "2025-11-26T14:13:38+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-26T14:13:27+00:00"^^xsd:dateTime ;
+align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 a prov:Activity ;
+    prov:endedAtTime "2025-12-04T12:57:48+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-12-04T12:57:39+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

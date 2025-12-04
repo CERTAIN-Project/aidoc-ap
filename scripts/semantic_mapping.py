@@ -79,14 +79,14 @@ coverage_graph.add((metric_uri, SKOS.definition, Literal("Heuristic coverage of 
 # Activity and agent
 run_timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d")
 activity_uri = URIRef(f"https://w3id.org/aidoc-ap/coverage/llm-run/{run_timestamp}")
-agent_uri = URIRef("https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot")
+agent_uri = URIRef("https://w3id.org/aidoc-ap/alignment#LLMCoverageBot")
 
 coverage_graph.add((activity_uri, RDF.type, PROV.Activity))
 coverage_graph.add((activity_uri, RDFS.label, Literal(f"LLM Coverage Analysis using {OLLAMA_MODEL}")))
 coverage_graph.add((activity_uri, PROV.startedAtTime, Literal(datetime.datetime.utcnow().isoformat() + "Z", datatype=XSD.dateTime)))
 
 coverage_graph.add((agent_uri, RDF.type, PROV.SoftwareAgent))
-coverage_graph.add((agent_uri, RDFS.label, Literal(f"LLM Alignment Bot ({OLLAMA_MODEL})")))
+coverage_graph.add((agent_uri, RDFS.label, Literal(f"LLM Coverage Bot ({OLLAMA_MODEL})")))
 
 ontology_version_uri = URIRef("https://w3id.org/aidoc-ap/1.0")
 

@@ -3,9 +3,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:54262c97-2826-47a7-ae8f-b3dd1f6cf0cd a prov:Activity ;
-    prov:endedAtTime "2025-11-26T14:13:27+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-26T14:13:27+00:00"^^xsd:dateTime ;
+align:54ffc707-0473-4de4-b79b-7942641ec8fc a prov:Activity ;
+    prov:endedAtTime "2025-12-04T12:57:39+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-12-04T12:57:39+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

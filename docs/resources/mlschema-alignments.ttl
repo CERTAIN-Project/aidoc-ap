@@ -5,22 +5,22 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:08de1581-084f-4300-9a6a-ddc921dbbd97 a prov:Entity,
+align:39030344-3fbb-498e-807d-afe8f0af7b22 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:cd029a82-6fc5-467c-a75b-0972437c8bdd ;
+    prov:wasGeneratedBy align:ae754564-c461-46f7-b717-bbaca59aef94 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Despite differing levels of detail in the descriptions, both concepts denote the process of assessing a model's performance. The mlschema definition provides a more formal articulation of *how* evaluation is represented (connecting measure specification with value), but the fundamental *what* (assessing model performance) is identical. The lexical similarity of 1.0 strongly supports equivalence."^^xsd:string ;
+    align:rationale "Despite slight differences in phrasing, both concepts fundamentally represent the process of evaluating a model's performance. The `mlschema` definition is more detailed, explicitly mentioning performance measures and specifications, but this detail doesn't change the core meaning. The lexical similarity is perfect, further supporting equivalence."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:ModelEvaluation ;
     align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:4902a81f-e65f-4e53-98ca-871b1da5e37e a prov:Entity,
+align:772ea501-7b6e-421f-8c48-990a0dbeaa82 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:cd029a82-6fc5-467c-a75b-0972437c8bdd ;
+    prov:wasGeneratedBy align:ae754564-c461-46f7-b717-bbaca59aef94 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and description (although mlschema’s description is empty, the label and URI context heavily imply equivalence). The high lexical similarity score further supports this. Without more detailed information about the attributes and restrictions of each concept, assuming equivalence is highly probable."^^xsd:string ;
+    align:rationale "Both concepts share the same label and a very high lexical similarity. While the `mlschema` concept includes a URI providing formal identification, the core meaning – representing a dataset – appears identical. Without further information about internal attributes or constraints, they can be considered equivalent."^^xsd:string ;
     align:relation owl:equivalentClass ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
@@ -29,9 +29,9 @@ aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
 
 aidoc:ModelEvaluation owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:cd029a82-6fc5-467c-a75b-0972437c8bdd a prov:Activity ;
-    prov:endedAtTime "2025-11-26T14:13:27+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-11-26T14:13:24+00:00"^^xsd:dateTime ;
+align:ae754564-c461-46f7-b717-bbaca59aef94 a prov:Activity ;
+    prov:endedAtTime "2025-12-04T12:57:39+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2025-12-04T12:57:35+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 
