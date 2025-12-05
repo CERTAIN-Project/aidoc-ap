@@ -203,6 +203,9 @@
     byId('runSel').appendChild(o); 
   });
 
+    // State management
+  const state = { q:'', coverage:'', run:'' };
+  
   // Get active measurement set based on selected run
   function getActiveMeasurements() {
     if (state.run) {
@@ -256,8 +259,6 @@
 
   updateStats();
 
-  // State management
-  const state = { q:'', coverage:'', run:'' };
   byId('q').oninput = e => { state.q = e.target.value.toLowerCase(); draw(); };
   byId('coverageSel').onchange = e => { state.coverage = e.target.value; draw(); };
   byId('runSel').onchange = e => { 
