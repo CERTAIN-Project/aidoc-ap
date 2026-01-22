@@ -1,0 +1,17 @@
+# CQ14.4: Are test logs and test reports available, dated and signed by responsible persons?
+# Requirement 14: Validation and testing procedures
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?monitoringActivity ?logsActivity ?logStorage ?logStorageLabel ?description
+WHERE {
+  ?monitoringActivity a aidoc:DataMonitoringAndLogging .
+  OPTIONAL { ?monitoringActivity aidoc:logsActivity ?logsActivity . }
+  OPTIONAL { 
+    ?monitoringActivity aidoc:storesLogsAt ?logStorage .
+    OPTIONAL { ?logStorage rdfs:label ?logStorageLabel . }
+  }
+  OPTIONAL { ?monitoringActivity dcterms:description ?description . }
+}

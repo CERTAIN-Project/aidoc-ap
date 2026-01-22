@@ -1,0 +1,18 @@
+# CQ7.2: What instructions for use are provided to the deployer?
+# Requirement 7: User interface and instructions for use
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?intendedPurpose ?interface ?interfaceDescription
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL { ?system aidoc:intendedPurpose ?intendedPurpose . }
+  OPTIONAL {
+    ?system aidoc:hasInterface ?interface .
+    ?interface dcterms:description ?interfaceDescription .
+  }
+}

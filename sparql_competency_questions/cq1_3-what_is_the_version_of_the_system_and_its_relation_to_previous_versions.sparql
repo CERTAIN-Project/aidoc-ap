@@ -1,0 +1,20 @@
+# CQ1.3: What is the version of the system and its relation to previous versions?
+# Requirement 1: General description of the AI system
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?version ?versionInfo ?changeLog ?changeRecord ?changeDescription
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL { ?system aidoc:version ?version . }
+  OPTIONAL { ?system airo:hasVersion ?versionInfo . }
+  OPTIONAL {
+    ?changeLog a aidoc:ChangeLog .
+    ?changeLog aidoc:hasChangeRecord ?changeRecord .
+    OPTIONAL { ?changeRecord dcterms:description ?changeDescription . }
+  }
+}

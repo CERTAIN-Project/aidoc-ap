@@ -1,0 +1,34 @@
+# CQ2.1: What components or other systems does it depend on?
+# Requirement 2: Interaction with hardware/software
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?component ?componentType ?componentLabel ?dependency ?dependencyLabel
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  {
+    # Software components
+    ?system aidoc:hasSoftwareComponent ?component .
+    ?component a ?componentType .
+    OPTIONAL { ?component rdfs:label ?componentLabel . }
+    OPTIONAL { 
+      ?component aidoc:dependsOn ?dependency .
+      OPTIONAL { ?dependency rdfs:label ?dependencyLabel . }
+    }
+  } UNION {
+    # General components
+    ?system aidoc:hasComponent ?component .
+    ?component a ?componentType .
+    OPTIONAL { ?component rdfs:label ?componentLabel . }
+    OPTIONAL { 
+      ?component aidoc:dependsOn ?dependency .
+      OPTIONAL { ?dependency rdfs:label ?dependencyLabel . }
+    }
+  }
+  FILTER(?componentType != owl:NamedIndividual)
+}

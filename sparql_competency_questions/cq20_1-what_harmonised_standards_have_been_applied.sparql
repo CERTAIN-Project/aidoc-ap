@@ -1,0 +1,16 @@
+# CQ20.1: What harmonised standards have been applied in full or in part?
+# Requirement 20: Harmonised standards and common specifications
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?standard ?standardType ?standardLabel
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  ?system aidoc:appliesStandard ?standard .
+  OPTIONAL { ?standard a ?standardType . FILTER(?standardType != owl:NamedIndividual) }
+  OPTIONAL { ?standard rdfs:label ?standardLabel . }
+}

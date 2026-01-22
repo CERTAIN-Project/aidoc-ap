@@ -1,0 +1,21 @@
+# CQ9.4: What are the main classification choices?
+# Requirement 9: Design specifications of the system
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?system ?model ?method ?methodLabel ?methodCategory ?categoryLabel
+WHERE {
+  ?system a aidoc:AISystem .
+  ?system aidoc:hasComponent ?model .
+  ?model a aidoc:AIModel .
+  ?model aidoc:usesAIMethod ?method .
+  OPTIONAL { ?method rdfs:label ?methodLabel . }
+  OPTIONAL { 
+    ?method a ?methodCategory .
+    ?methodCategory rdfs:subClassOf* aidoc:AIMethodCategory .
+    OPTIONAL { ?methodCategory rdfs:label ?categoryLabel . }
+  }
+}

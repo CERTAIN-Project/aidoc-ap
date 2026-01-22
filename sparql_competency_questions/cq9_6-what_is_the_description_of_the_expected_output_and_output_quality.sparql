@@ -1,0 +1,21 @@
+# CQ9.6: What is the description of the expected output and output quality of the system?
+# Requirement 9: Design specifications of the system
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX vair: <https://w3id.org/vair#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?method ?output ?outputDescription ?outputType
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  ?system aidoc:hasComponent ?model .
+  ?model a aidoc:AIModel .
+  ?model aidoc:usesAIMethod ?method .
+  ?method airo:producesOutput ?output .
+  OPTIONAL { ?output dcterms:description ?outputDescription . }
+  OPTIONAL { ?output a ?outputType . FILTER(?outputType != owl:NamedIndividual) }
+}

@@ -1,0 +1,19 @@
+# CQ22.1: What system is established to evaluate the AI system performance in the post-market phase?
+# Requirement 22: Post-market monitoring system
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX vair: <https://w3id.org/vair#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?operationStage ?monitoringActivity ?activityDescription ?logsActivity ?logStorage
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  ?system aidoc:hasLifecycleStage ?operationStage .
+  ?operationStage a vair:Operation .
+  ?operationStage aidoc:hasAIActivity ?monitoringActivity .
+  OPTIONAL { ?monitoringActivity dcterms:description ?activityDescription . }
+  OPTIONAL { ?monitoringActivity aidoc:logsActivity ?logsActivity . }
+  OPTIONAL { ?monitoringActivity aidoc:storesLogsAt ?logStorage . }
+}

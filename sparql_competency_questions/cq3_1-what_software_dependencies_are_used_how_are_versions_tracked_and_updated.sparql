@@ -1,0 +1,33 @@
+# CQ3.1: What software dependencies are used? How are versions tracked and updated?
+# Requirement 3: Software/firmware versioning
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?dependency ?dependencyLabel ?version ?versioningActivity ?versioningDescription
+WHERE {
+  ?system a aidoc:AISystem .
+  {
+    # Direct software components with versions
+    ?system aidoc:hasSoftwareComponent ?dependency .
+    OPTIONAL { ?dependency rdfs:label ?dependencyLabel . }
+    OPTIONAL { ?dependency aidoc:version ?version . }
+  } UNION {
+    # Components that the system depends on
+    ?system aidoc:hasComponent ?component .
+    ?component aidoc:dependsOn ?dependency .
+    ?dependency a aidoc:SoftwareDependency .
+    OPTIONAL { ?dependency rdfs:label ?dependencyLabel . }
+    OPTIONAL { ?dependency aidoc:version ?version . }
+  } UNION {
+    # Software versioning activities
+    ?versioningActivity a aidoc:SoftwareVersioning .
+    OPTIONAL { ?versioningActivity dcterms:description ?versioningDescription . }
+  } UNION {
+    # Model versioning activities
+    ?versioningActivity a aidoc:ModelVersioning .
+    OPTIONAL { ?versioningActivity dcterms:description ?versioningDescription . }
+  }
+}

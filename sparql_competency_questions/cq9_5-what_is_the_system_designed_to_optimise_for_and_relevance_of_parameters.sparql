@@ -1,0 +1,21 @@
+# CQ9.5: What is the system designed to optimise for, and what is the relevance of the different parameters?
+# Requirement 9: Design specifications of the system
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?purpose ?model ?hyperparameters ?hyperparamDescription ?technique
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL { ?system airo:hasPurpose ?purpose . }
+  OPTIONAL {
+    ?system aidoc:hasComponent ?model .
+    ?model a aidoc:AIModel .
+    ?model airo:hasComponent ?hyperparameters .
+    OPTIONAL { ?hyperparameters dcterms:description ?hyperparamDescription . }
+    OPTIONAL { ?hyperparameters airo:usesTechnique ?technique . }
+  }
+}

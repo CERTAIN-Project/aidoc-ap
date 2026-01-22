@@ -1,0 +1,22 @@
+# CQ7.1: What interface is provided for operators or deployers?
+# Requirement 7: User interface and instructions for use
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?interface ?interfaceLabel ?interfaceDescription
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  {
+    ?system aidoc:hasInterface ?interface .
+    OPTIONAL { ?interface rdfs:label ?interfaceLabel . }
+    OPTIONAL { ?interface dcterms:description ?interfaceDescription . }
+  } UNION {
+    ?system aidoc:hasSoftwareComponent ?interface .
+    ?interface a aidoc:Interface .
+    OPTIONAL { ?interface rdfs:label ?interfaceLabel . }
+    OPTIONAL { ?interface dcterms:description ?interfaceDescription . }
+  }
+}

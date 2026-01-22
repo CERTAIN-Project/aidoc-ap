@@ -1,0 +1,18 @@
+# CQ9.7: What decisions about any possible trade-off were made regarding the technical solutions adopted to comply with Chapter III, Section 2 requirements?
+# Requirement 9: Design specifications of the system
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?standard ?riskControl ?riskControlDescription
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL { ?system aidoc:appliesStandard ?standard . }
+  OPTIONAL { 
+    ?system airo:hasRiskControl ?riskControl .
+    OPTIONAL { ?riskControl dcterms:description ?riskControlDescription . }
+  }
+}

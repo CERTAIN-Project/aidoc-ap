@@ -1,0 +1,24 @@
+# CQ15.1: What cybersecurity measures are put in place?
+# Requirement 15: Cybersecurity measures
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX vair: <https://w3id.org/vair#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?securityMeasure ?measureLabel ?measureDescription ?mitigatesRisk
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  {
+    ?securityMeasure a vair:SecurityMeasure .
+    OPTIONAL { ?securityMeasure rdfs:label ?measureLabel . }
+    OPTIONAL { ?securityMeasure dcterms:description ?measureDescription . }
+    OPTIONAL { ?securityMeasure airo:modifiesRiskConcept ?mitigatesRisk . }
+  } UNION {
+    ?system airo:hasRiskControl ?securityMeasure .
+    OPTIONAL { ?securityMeasure rdfs:label ?measureLabel . }
+    OPTIONAL { ?securityMeasure dcterms:description ?measureDescription . }
+  }
+}

@@ -1,0 +1,23 @@
+# CQ16.1: What are the capabilities and limitations in performance, including degrees of accuracy for specific persons or groups?
+# Requirement 16: Monitoring, functioning and control
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?capability ?capabilityLabel ?capabilityDefinition ?evaluation ?metric ?metricLabel
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL {
+    ?system aidoc:hasCapability ?capability .
+    OPTIONAL { ?capability rdfs:label ?capabilityLabel . }
+    OPTIONAL { ?capability skos:definition ?capabilityDefinition . }
+  }
+  OPTIONAL {
+    ?evaluation a aidoc:ModelEvaluation .
+    ?evaluation aidoc:hasPerformanceMetric ?metric .
+    OPTIONAL { ?metric rdfs:label ?metricLabel . }
+  }
+}

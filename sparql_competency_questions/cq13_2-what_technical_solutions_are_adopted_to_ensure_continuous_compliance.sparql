@@ -1,0 +1,22 @@
+# CQ13.2: What technical solutions are adopted to ensure continuous compliance?
+# Requirement 13: Pre-determined changes to the AI system
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?standard ?standardType ?riskControl ?controlDescription
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL { 
+    ?system aidoc:appliesStandard ?standard .
+    OPTIONAL { ?standard a ?standardType . FILTER(?standardType != owl:NamedIndividual) }
+  }
+  OPTIONAL {
+    ?system airo:hasRiskControl ?riskControl .
+    OPTIONAL { ?riskControl dcterms:description ?controlDescription . }
+  }
+}

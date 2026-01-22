@@ -1,0 +1,22 @@
+# CQ11.1: What are the datasheets describing the training methodologies and techniques?
+# Requirement 11: Data requirements
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?datasheet ?datasheetType ?description
+WHERE {
+  {
+    ?datasheet a aidoc:DataSheet .
+    ?datasheet a ?datasheetType .
+    OPTIONAL { ?datasheet dcterms:description ?description . }
+    FILTER(?datasheetType != owl:NamedIndividual)
+  } UNION {
+    ?datasheet a aidoc:TrainingDataSheet .
+    ?datasheet a ?datasheetType .
+    OPTIONAL { ?datasheet dcterms:description ?description . }
+    FILTER(?datasheetType != owl:NamedIndividual)
+  }
+}

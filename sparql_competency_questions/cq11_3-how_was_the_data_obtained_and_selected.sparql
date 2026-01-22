@@ -1,0 +1,22 @@
+# CQ11.3: How was the data obtained and selected?
+# Requirement 11: Data requirements
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?dataset ?datasetLabel ?acquisitionActivity ?dataSource ?dataSourceDescription ?collectionMethod ?selectionCriteria
+WHERE {
+  {
+    ?acquisitionActivity a aidoc:DataAcquisitionActivity .
+    ?acquisitionActivity dpv:hasData ?dataset .
+    OPTIONAL { ?dataset rdfs:label ?datasetLabel . }
+    OPTIONAL { 
+      ?dataset dpv:hasDataSource ?dataSource .
+      OPTIONAL { ?dataSource dcterms:description ?dataSourceDescription . }
+    }
+  }
+  OPTIONAL { ?dataset aidoc:dataCollectionMethod ?collectionMethod . }
+  OPTIONAL { ?dataset aidoc:dataSelectionCriteria ?selectionCriteria . }
+}

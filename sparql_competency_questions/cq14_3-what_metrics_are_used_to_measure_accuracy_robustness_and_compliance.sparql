@@ -1,0 +1,16 @@
+# CQ14.3: What metrics are used to measure accuracy, robustness and compliance, as well as potentially discriminatory impacts?
+# Requirement 14: Validation and testing procedures
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?evaluation ?metric ?metricLabel ?metricType ?evaluationMethod
+WHERE {
+  ?evaluation a aidoc:ModelEvaluation .
+  ?evaluation aidoc:hasPerformanceMetric ?metric .
+  OPTIONAL { ?metric rdfs:label ?metricLabel . }
+  OPTIONAL { ?metric a ?metricType . FILTER(?metricType != owl:NamedIndividual) }
+  OPTIONAL { ?evaluation aidoc:evaluationMethod ?evaluationMethod . }
+}

@@ -1,0 +1,28 @@
+# CQ14.2: What are the validation and testing data used and their main characteristics?
+# Requirement 14: Validation and testing procedures
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?activity ?activityType ?dataset ?datasetLabel ?description ?characteristic ?qualityMeasurement ?dataSource
+WHERE {
+  {
+    ?activity a aidoc:DataValidation .
+    ?activity aidoc:usesValidationData ?dataset .
+    ?activity a ?activityType .
+  } UNION {
+    ?activity a aidoc:DataTesting .
+    ?activity aidoc:usesTestData ?dataset .
+    ?activity a ?activityType .
+  }
+  OPTIONAL { ?dataset rdfs:label ?datasetLabel . }
+  OPTIONAL { ?dataset dcterms:description ?description . }
+  OPTIONAL { ?dataset aidoc:dataCharacteristic ?characteristic . }
+  OPTIONAL { ?dataset dqv:hasQualityMeasurement ?qualityMeasurement . }
+  OPTIONAL { ?dataset dpv:hasDataSource ?dataSource . }
+  FILTER(?activityType != owl:NamedIndividual)
+}

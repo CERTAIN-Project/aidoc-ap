@@ -1,0 +1,22 @@
+# CQ13.1: What are the pre-determined changes to the AI system and its performance?
+# Requirement 13: Pre-determined changes to the AI system
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?changeLog ?changeRecord ?changeDescription ?reason ?startDate ?endDate ?change
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL {
+    ?changeLog a aidoc:ChangeLog .
+    ?changeLog aidoc:hasChangeRecord ?changeRecord .
+    OPTIONAL { ?changeRecord dcterms:description ?changeDescription . }
+    OPTIONAL { ?changeRecord aidoc:reasonForChange ?reason . }
+    OPTIONAL { ?changeRecord aidoc:startDate ?startDate . }
+    OPTIONAL { ?changeRecord aidoc:endDate ?endDate . }
+    OPTIONAL { ?changeRecord aidoc:recordsChange ?change . }
+  }
+}

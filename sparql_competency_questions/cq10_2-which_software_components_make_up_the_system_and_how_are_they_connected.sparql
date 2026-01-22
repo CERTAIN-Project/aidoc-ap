@@ -1,0 +1,20 @@
+# CQ10.2: Which software components make up the system and how are they connected?
+# Requirement 10: System architecture
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?component ?componentLabel ?componentDescription ?feedsInto ?feedsIntoLabel
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  ?system aidoc:hasSoftwareComponent ?component .
+  OPTIONAL { ?component rdfs:label ?componentLabel . }
+  OPTIONAL { ?component dcterms:description ?componentDescription . }
+  OPTIONAL { 
+    ?component aidoc:feedsIntoComponent ?feedsInto .
+    OPTIONAL { ?feedsInto rdfs:label ?feedsIntoLabel . }
+  }
+}
+ORDER BY ?componentLabel

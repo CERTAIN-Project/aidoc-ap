@@ -1,0 +1,21 @@
+# CQ8.1: What are the components and steps of development?
+# Requirement 8: Elements of system and development process
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX vair: <https://w3id.org/vair#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?developmentStage ?activity ?activityType ?activityDescription
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  ?system aidoc:hasLifecycleStage ?developmentStage .
+  ?developmentStage a vair:Development .
+  ?developmentStage aidoc:hasAIActivity ?activity .
+  ?activity a ?activityType .
+  OPTIONAL { ?activity dcterms:description ?activityDescription . }
+  FILTER(?activityType != owl:NamedIndividual)
+}
+ORDER BY ?activityType

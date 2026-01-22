@@ -1,0 +1,27 @@
+# CQ18.1: What is the detailed description of the risk management system in accordance with Article 9?
+# Requirement 18: Risk management
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX vair: <https://w3id.org/vair#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?risk ?riskDescription ?riskSource ?riskSourceDescription ?riskControl ?controlDescription ?consequence
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  {
+    ?system aidoc:hasRisk ?risk .
+    OPTIONAL { ?risk dcterms:description ?riskDescription . }
+    OPTIONAL { 
+      ?riskSource airo:isRiskSourceFor ?risk .
+      OPTIONAL { ?riskSource dcterms:description ?riskSourceDescription . }
+    }
+    OPTIONAL { ?risk airo:hasConsequence ?consequence . }
+  }
+  OPTIONAL {
+    ?system airo:hasRiskControl ?riskControl .
+    OPTIONAL { ?riskControl dcterms:description ?controlDescription . }
+  }
+}

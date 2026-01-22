@@ -1,0 +1,17 @@
+# CQ1.1: What is the intended purpose of the AI system?
+# Requirement 1: General description of the AI system
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX airo: <https://w3id.org/airo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?intendedPurpose ?purpose ?purposeLabel
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL { ?system aidoc:intendedPurpose ?intendedPurpose . }
+  OPTIONAL { 
+    ?system airo:hasPurpose ?purpose .
+    OPTIONAL { ?purpose rdfs:label ?purposeLabel . }
+  }
+}

@@ -1,0 +1,18 @@
+# CQ6.2: What visual documentation (photographs, diagrams) exists showing external features?
+# Requirement 6: Illustrations and markings
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?visualDoc ?depicts ?docType
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL {
+    ?system aidoc:hasVisualDocumentation ?visualDoc .
+    ?visualDoc a ?docType .
+    OPTIONAL { ?visualDoc aidoc:depicts ?depicts . }
+    FILTER(?docType != owl:NamedIndividual)
+  }
+}

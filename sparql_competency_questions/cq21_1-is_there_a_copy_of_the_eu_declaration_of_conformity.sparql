@@ -1,0 +1,18 @@
+# CQ21.1: Is there a copy of the EU declaration of conformity?
+# Requirement 21: EU declaration of conformity
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX vair: <https://w3id.org/vair#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?system ?systemLabel ?declaration ?declarationType ?declarationLabel
+WHERE {
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?system rdfs:label ?systemLabel . }
+  OPTIONAL {
+    ?system aidoc:hasDeclarationOfConformity ?declaration .
+    OPTIONAL { ?declaration a ?declarationType . FILTER(?declarationType != owl:NamedIndividual) }
+    OPTIONAL { ?declaration rdfs:label ?declarationLabel . }
+  }
+}

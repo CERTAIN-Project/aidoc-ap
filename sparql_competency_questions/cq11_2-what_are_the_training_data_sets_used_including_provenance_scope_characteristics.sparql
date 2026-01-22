@@ -1,0 +1,24 @@
+# CQ11.2: What are the training data sets used, including their provenance, scope and main characteristics?
+# Requirement 11: Data requirements
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?dataset ?datasetLabel ?description ?dataSource ?dataSourceLabel ?characteristic ?scope ?qualityMeasurement
+WHERE {
+  ?trainingActivity a aidoc:DataTraining .
+  ?trainingActivity aidoc:usesTrainingData ?dataset .
+  OPTIONAL { ?dataset rdfs:label ?datasetLabel . }
+  OPTIONAL { ?dataset dcterms:description ?description . }
+  OPTIONAL { 
+    ?dataset dpv:hasDataSource ?dataSource .
+    OPTIONAL { ?dataSource rdfs:label ?dataSourceLabel . }
+    OPTIONAL { ?dataSource dcterms:description ?dataSourceLabel . }
+  }
+  OPTIONAL { ?dataset aidoc:dataCharacteristic ?characteristic . }
+  OPTIONAL { ?dataset aidoc:dataScope ?scope . }
+  OPTIONAL { ?dataset dqv:hasQualityMeasurement ?qualityMeasurement . }
+}
