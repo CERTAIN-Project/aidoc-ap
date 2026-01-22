@@ -252,7 +252,7 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
 :hasLifecycleStage rdf:type owl:ObjectProperty ;
                    rdfs:domain :AISystem ;
                    rdfs:range <https://w3id.org/airo#AILifecyclePhase> ;
-                   rdfs:comment "Links an AISystem to a specific AI Lifecycle Phase."@en ;
+                   rdfs:comment "Links an AI system to its various phases throughout its entire lifecycle."@en ;
                    rdfs:label "has lifecycle stage"@en .
 
 
