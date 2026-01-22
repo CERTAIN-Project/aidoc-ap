@@ -667,11 +667,6 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
 <http://www.w3.org/ns/mls#Model> rdf:type owl:Class .
 
 
-###  http://www.w3.org/ns/mls#ModelEvaluation
-<http://www.w3.org/ns/mls#ModelEvaluation> rdf:type owl:Class ;
-                                           owl:equivalentClass :ModelEvaluation .
-
-
 ###  http://www.w3.org/ns/mls#Software
 <http://www.w3.org/ns/mls#Software> rdf:type owl:Class .
 
