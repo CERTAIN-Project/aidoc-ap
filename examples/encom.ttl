@@ -7,7 +7,8 @@
 @base <http://www.semanticweb.org/certain/ontologies/2025/10/encom/> .
 
 <http://www.semanticweb.org/certain/ontologies/2025/10/encom> rdf:type owl:Ontology ;
-                                                               owl:imports <http://w3id.org/devops-infra/server/1.0.0> ,
+                                                               owl:imports <http://purl.org/cld/freq/> ,
+                                                                           <http://w3id.org/devops-infra/server/1.0.0> ,
                                                                            <https://w3id.org/aidoc-ap/1.0> ,
                                                                            <https://w3id.org/airo/1.0> ,
                                                                            <https://w3id.org/vair/1.0> .
@@ -15,6 +16,10 @@
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  https://w3id.org/aidoc-ap#frequency
+<https://w3id.org/aidoc-ap#frequency> rdf:type owl:AnnotationProperty .
+
 
 ###  https://w3id.org/aidoc-ap#intendedPurpose
 <https://w3id.org/aidoc-ap#intendedPurpose> rdf:type owl:AnnotationProperty .
@@ -353,8 +358,8 @@
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Model_Engineering
 :Model_Engineering rdf:type owl:NamedIndividual ,
                             <https://w3id.org/aidoc-ap#ModelEngineering> ;
-                   <https://w3id.org/airo#hasFrequency> :Daily_Training_Frequency ;
-                   <https://w3id.org/aidoc-ap#frequency> "daily" .
+                   <https://w3id.org/aidoc-ap#hasFrequency> <http://purl.org/cld/freq/daily> ;
+                   <https://w3id.org/airo#hasFrequency> :Daily_Training_Frequency .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Model_Evaluation
@@ -529,7 +534,7 @@
                             <https://w3id.org/aidoc-ap#DataTraining> ;
                    <https://w3id.org/aidoc-ap#usesTrainingData> :Combined_Energy_and_Weather_Data ;
                    <https://w3id.org/airo#hasFrequency> :Daily_Training_Frequency ;
-                   <https://w3id.org/aidoc-ap#frequency> "daily" .
+                   <https://w3id.org/aidoc-ap#hasFrequency> <http://purl.org/cld/freq/daily> .
 
 
 ###  http://www.semanticweb.org/certain/ontologies/2025/10/encom/Uniformity
