@@ -302,6 +302,14 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
                         rdfs:label "has visual documentation"@en .
 
 
+###  https://w3id.org/aidoc-ap#hasFrequency
+:hasFrequency rdf:type owl:ObjectProperty ;
+              rdfs:domain :AIActivity ;
+              rdfs:range <http://purl.org/dc/terms/Frequency> ;
+              rdfs:comment "Specifies the frequency or recurrence pattern at which an AI activity is performed."@en ;
+              rdfs:label "has Frequency"@en .
+
+
 ###  https://w3id.org/aidoc-ap#implementsTask
 :implementsTask rdf:type owl:ObjectProperty ;
                 rdfs:domain :AIMethod ;
@@ -532,14 +540,6 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
                   rdfs:range xsd:string ;
                   rdfs:comment "The methodology used to evaluate a performance metric."@en ;
                   rdfs:label "evaluation method"@en .
-
-
-###  https://w3id.org/aidoc-ap#frequency
-:frequency rdf:type owl:DatatypeProperty ;
-           rdfs:domain :AIActivity ;
-           rdfs:range xsd:string ;
-           rdfs:comment "The frequency with which an activity (e.g., risk re-evaluation) is performed."@en ;
-           rdfs:label "frequency"@en .
 
 
 ###  https://w3id.org/aidoc-ap#hasArchitecture
@@ -1233,6 +1233,10 @@ foaf:Person rdf:type owl:Class .
 
 ###  https://www.w3.org/ns/dcat#Dataset
 <https://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class .
+
+
+###  http://purl.org/dc/terms/Frequency
+<http://purl.org/dc/terms/Frequency> rdf:type owl:Class .
 
 
 #################################################################
