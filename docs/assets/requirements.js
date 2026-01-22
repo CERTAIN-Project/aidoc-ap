@@ -237,6 +237,13 @@
     `;
     byId('details').classList.remove('hidden');
   }
+  
+  // Expose for deep-linking
+  window.showDetails = showDetails;
 
+  // Draw initial UI
   draw();
+  
+  // Notify page scripts that rows now exist
+  window.dispatchEvent(new Event("requirements:rendered"));
 })();

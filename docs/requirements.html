@@ -92,5 +92,41 @@
 window.REQUIREMENTS_TTL = 'annex_4.ttl';
 </script>
 <script src="assets/requirements.js"></script>
+<script>
+  function handleShowRequirementHash() {
+    const hash = decodeURIComponent(window.location.hash);
+
+    // Expect: #show-req-<id>
+    const match = hash.match(/^#show-req-(\d+)$/);
+    if (!match) return;
+
+    const num = Number(match[1]);
+    if (!Number.isInteger(num) || num < 1 || num > 100) return;
+
+    const reqId = "req" + num;
+
+    const row = document.querySelector(
+      `tr.requirement-row[data-reqid="${CSS.escape(reqId)}"]`
+    );
+
+    if (!row) return; // rows not drawn yet
+
+    row.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    if (typeof window.showDetails === "function") {
+      window.showDetails(reqId);
+    }
+  }
+
+  // Run once DOM is ready
+  window.addEventListener("DOMContentLoaded", handleShowRequirementHash);
+
+  // Run when user changes the hash
+  window.addEventListener("hashchange", handleShowRequirementHash);
+
+  // Run again after requirements.js finishes rendering
+  window.addEventListener("requirements:rendered", handleShowRequirementHash);
+</script>
+
 </body>
 </html>
