@@ -963,7 +963,7 @@ foaf:Person rdf:type owl:Class .
 
 ###  https://w3id.org/aidoc-ap#DeclarationOfConformity
 :DeclarationOfConformity rdf:type owl:Class ;
-                         owl:equivalentClass <https://w3id.org/vair#EUDeclarationOfConformity> ;
+                         skos:narrowMatch <https://w3id.org/vair#EUDeclarationOfConformity> ;
                          rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                          rdfs:comment "A document declaring the system's conformity with standards, such as the EU Declaration of Conformity."@en ;
                          rdfs:label "Declaration of Conformity"@en .
