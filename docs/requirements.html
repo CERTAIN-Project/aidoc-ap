@@ -88,15 +88,16 @@
 </footer>
 
 <script>
-/** Load requirements from annex_4.ttl */
-window.REQUIREMENTS_TTL = 'annex_4.ttl';
+  /** Load requirements from annex_4.ttl */
+  window.REQUIREMENTS_TTL = 'annex_4.ttl';
 </script>
 <script src="assets/requirements.js"></script>
 <script>
+  let deepLinkHandled = false;
+
   function handleShowRequirementHash() {
     const hash = decodeURIComponent(window.location.hash);
 
-    // Expect: #show-req-<id>
     const match = hash.match(/^#show-req-(\d+)$/);
     if (!match) return;
 
@@ -109,23 +110,40 @@ window.REQUIREMENTS_TTL = 'annex_4.ttl';
       `tr.requirement-row[data-reqid="${CSS.escape(reqId)}"]`
     );
 
-    if (!row) return; // rows not drawn yet
+    if (!row) return;
 
     row.scrollIntoView({ behavior: "smooth", block: "start" });
 
     if (typeof window.showDetails === "function") {
       window.showDetails(reqId);
     }
+
+    deepLinkHandled = true;
   }
 
-  // Run once DOM is ready
+  // Run immediately (in case scripts load after navigation)
+  handleShowRequirementHash();
+
+  // Normal page load
   window.addEventListener("DOMContentLoaded", handleShowRequirementHash);
 
-  // Run when user changes the hash
-  window.addEventListener("hashchange", handleShowRequirementHash);
+  // Hash changed
+  window.addEventListener("hashchange", () => {
+    deepLinkHandled = false;
+    handleShowRequirementHash();
+  });
 
-  // Run again after requirements.js finishes rendering
-  window.addEventListener("requirements:rendered", handleShowRequirementHash);
+  // Requirements finished rendering
+  window.addEventListener("requirements:rendered", () => {
+    if (!deepLinkHandled) handleShowRequirementHash();
+  });
+
+  // Fallback: retry a few times (covers SPA / markdown navigators)
+  let tries = 0;
+  const retry = setInterval(() => {
+    if (deepLinkHandled || tries++ > 20) return clearInterval(retry);
+    handleShowRequirementHash();
+  }, 250);
 </script>
 
 </body>
