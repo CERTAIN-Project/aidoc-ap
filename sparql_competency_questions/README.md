@@ -35,7 +35,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-1`](https://w3id.org/aidoc-ap/requirements#show-req-1) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-1`](https://certain-project.github.io/aidoc-ap/requirements#show-req-1) |
 | **Description** | A general description of the AI system including its intended purpose, the name of the provider and the version of the system reflecting its relation to previous versions. |
 | **AI Lifecycle Stage** | Cross-cutting / All Pipelines |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 1(a) |
@@ -109,7 +109,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-2`](https://w3id.org/aidoc-ap/requirements#show-req-2) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-2`](https://certain-project.github.io/aidoc-ap/requirements#show-req-2) |
 | **Description** | How the AI system interacts with, or can be used to interact with, hardware or software, including with other AI systems, that are not part of the AI system itself, where applicable. |
 | **AI Lifecycle Stage** | Software Pipeline: Deployment |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 1(b) |
@@ -154,7 +154,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-3`](https://w3id.org/aidoc-ap/requirements#show-req-3) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-3`](https://certain-project.github.io/aidoc-ap/requirements#show-req-3) |
 | **Description** | The versions of relevant software or firmware, and any requirements related to version updates. |
 | **AI Lifecycle Stage** | ML Pipeline: Model Versioning |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 1(c) |
@@ -196,7 +196,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-4`](https://w3id.org/aidoc-ap/requirements#show-req-4) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-4`](https://certain-project.github.io/aidoc-ap/requirements#show-req-4) |
 | **Description** | The description of all the forms in which the AI system is placed on the market or put into service, such as software packages embedded into hardware, downloads, or APIs. |
 | **AI Lifecycle Stage** | Software Pipeline: Deployment |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 1(d) |
@@ -231,7 +231,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-5`](https://w3id.org/aidoc-ap/requirements#show-req-5) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-5`](https://certain-project.github.io/aidoc-ap/requirements#show-req-5) |
 | **Description** | The description of the hardware on which the AI system is intended to run. |
 | **AI Lifecycle Stage** | Software Pipeline: Deployment |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 1(e) |
@@ -263,7 +263,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-6`](https://w3id.org/aidoc-ap/requirements#show-req-6) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-6`](https://certain-project.github.io/aidoc-ap/requirements#show-req-6) |
 | **Description** | Where the AI system is a component of products, photographs or illustrations showing external features, the marking and internal layout of those products. |
 | **AI Lifecycle Stage** | Software Pipeline: Deployment |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 1(f) |
@@ -348,7 +348,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-7`](https://w3id.org/aidoc-ap/requirements#show-req-7) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-7`](https://certain-project.github.io/aidoc-ap/requirements#show-req-7) |
 | **Description** | A basic description of the user-interface provided to the deployer; instructions for use for the deployer, and a basic description of the user-interface provided to the deployer, where applicable. |
 | **AI Lifecycle Stage** | Software Pipeline: Deployment |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 1(g) and 1(h) |
@@ -403,7 +403,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-8`](https://w3id.org/aidoc-ap/requirements#show-req-8) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-8`](https://certain-project.github.io/aidoc-ap/requirements#show-req-8) |
 | **Description** | The methods and steps performed for the development of the AI system, including, where relevant, recourse to pre-trained systems or tools provided by third parties and how those were used, integrated or modified by the provider. |
 | **AI Lifecycle Stage** | ML Pipeline: Model Engineering |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 2(a) |
@@ -437,7 +437,7 @@ ORDER BY ?activityType
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-9`](https://w3id.org/aidoc-ap/requirements#show-req-9) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-9`](https://certain-project.github.io/aidoc-ap/requirements#show-req-9) |
 | **Description** | The design specifications of the system, namely the general logic of the AI system and of the algorithms; the key design choices including the rationale and assumptions made, including with regard to persons or groups of persons in respect of who, the system is intended to be used; the main classification choices; what the system is designed to optimise for, and the relevance of the different parameters; the description of the expected output and output quality of the system; the decisions about any possible trade-off made regarding the technical solutions adopted to comply with the requirements set out in Chapter III, Section 2. |
 | **AI Lifecycle Stage** | ML Pipeline: Model Engineering |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 2(b) |
@@ -600,7 +600,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-10`](https://w3id.org/aidoc-ap/requirements#show-req-10) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-10`](https://certain-project.github.io/aidoc-ap/requirements#show-req-10) |
 | **Description** | The description of the system architecture explaining how software components build on or feed into each other and integrate into the overall processing; the computational resources used to develop, train, test and validate the AI system. |
 | **AI Lifecycle Stage** | ML Pipeline: Model Engineering |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 2(c) |
@@ -704,7 +704,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-11`](https://w3id.org/aidoc-ap/requirements#show-req-11) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-11`](https://certain-project.github.io/aidoc-ap/requirements#show-req-11) |
 | **Description** | Where relevant, the data requirements in terms of datasheets describing the training methodologies and techniques and the training data sets used, including a general description of these data sets, information about their provenance, scope and main characteristics; how the data was obtained and selected; labelling procedures (e.g. for supervised learning), data cleaning methodologies (e.g. outliers detection). |
 | **AI Lifecycle Stage** | Data Pipeline: Exploration and Validation |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 2(d) |
@@ -823,7 +823,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-12`](https://w3id.org/aidoc-ap/requirements#show-req-12) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-12`](https://certain-project.github.io/aidoc-ap/requirements#show-req-12) |
 | **Description** | Assessment of the human oversight measures needed in accordance with Article 14, including an assessment of the technical measures needed to facilitate the interpretation of the outputs of AI systems by the deployers, in accordance with Article 13(3), point (d). |
 | **AI Lifecycle Stage** | ML Pipeline: Model Evaluation |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 2(e) |
@@ -874,7 +874,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-13`](https://w3id.org/aidoc-ap/requirements#show-req-13) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-13`](https://certain-project.github.io/aidoc-ap/requirements#show-req-13) |
 | **Description** | Where applicable, a detailed description of pre-determined changes to the AI system and its performance, together with all the relevant information related to the technical solutions adopted to ensure continuous compliance of the AI system with the relevant requirements set out in Chapter III, Section 2. |
 | **AI Lifecycle Stage** | Cross-cutting / All Pipelines |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 2(f) |
@@ -933,7 +933,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-14`](https://w3id.org/aidoc-ap/requirements#show-req-14) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-14`](https://certain-project.github.io/aidoc-ap/requirements#show-req-14) |
 | **Description** | The validation and testing procedures used, including information about the validation and testing data used and their main characteristics; metrics used to measure accuracy, robustness and compliance with other relevant requirements set out in Chapter III, Section 2, as well as potentially discriminatory impacts; test logs and all test reports dated and signed by the responsible persons, including with regard to predetermined changes as referred to under point (f). |
 | **AI Lifecycle Stage** | ML Pipeline: Model Evaluation |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 2(g) |
@@ -1039,7 +1039,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-15`](https://w3id.org/aidoc-ap/requirements#show-req-15) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-15`](https://certain-project.github.io/aidoc-ap/requirements#show-req-15) |
 | **Description** | Cybersecurity measures put in place. |
 | **AI Lifecycle Stage** | Software Pipeline: Build and Deployment |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 2(h) |
@@ -1076,7 +1076,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-16`](https://w3id.org/aidoc-ap/requirements#show-req-16) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-16`](https://certain-project.github.io/aidoc-ap/requirements#show-req-16) |
 | **Description** | Detailed information about the monitoring, functioning and control of the AI system, in particular with regard to: its capabilities and limitations in performance, including the degrees of accuracy for specific persons or groups of persons on which the system is intended to be used and the overall expected level of accuracy in relation to its intended purpose; the foreseeable unintended outcomes and sources of risks to health and safety, fundamental rights and discrimination in view of the intended purpose of the AI system; the human oversight measures needed in accordance with Article 14, including the technical measures put in place to facilitate the interpretation of the outputs of AI systems by the deployers; specifications on input data, as appropriate. |
 | **AI Lifecycle Stage** | Cross-cutting / All Pipelines |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 3 |
@@ -1155,7 +1155,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-17`](https://w3id.org/aidoc-ap/requirements#show-req-17) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-17`](https://certain-project.github.io/aidoc-ap/requirements#show-req-17) |
 | **Description** | A description of the appropriateness of the performance metrics for the specific AI system. |
 | **AI Lifecycle Stage** | ML Pipeline: Model Evaluation |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 4 |
@@ -1186,7 +1186,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-18`](https://w3id.org/aidoc-ap/requirements#show-req-18) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-18`](https://certain-project.github.io/aidoc-ap/requirements#show-req-18) |
 | **Description** | A detailed description of the risk management system in accordance with Article 9. |
 | **AI Lifecycle Stage** | Cross-cutting / All Pipelines |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 5 |
@@ -1226,7 +1226,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-19`](https://w3id.org/aidoc-ap/requirements#show-req-19) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-19`](https://certain-project.github.io/aidoc-ap/requirements#show-req-19) |
 | **Description** | A description of relevant changes made by the provider to the system through its lifecycle. |
 | **AI Lifecycle Stage** | Cross-cutting / All Pipelines |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 6 |
@@ -1266,7 +1266,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-20`](https://w3id.org/aidoc-ap/requirements#show-req-20) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-20`](https://certain-project.github.io/aidoc-ap/requirements#show-req-20) |
 | **Description** | List of the harmonised standards applied in full or in part the references of which have been published in the Official Journal of the European Union; where no such harmonised standards have been applied, a detailed description of the solutions adopted to meet the requirements set out in Chapter III, Section 2, including a list of other relevant standards and technical specifications applied. |
 | **AI Lifecycle Stage** | Cross-cutting / All Pipelines |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 7 |
@@ -1320,7 +1320,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-21`](https://w3id.org/aidoc-ap/requirements#show-req-21) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-21`](https://certain-project.github.io/aidoc-ap/requirements#show-req-21) |
 | **Description** | A copy of the EU declaration of conformity referred to in Article 47. |
 | **AI Lifecycle Stage** | Cross-cutting / All Pipelines |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 8 |
@@ -1351,7 +1351,7 @@ WHERE {
 
 | Property | Value |
 |----------|-------|
-| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-22`](https://w3id.org/aidoc-ap/requirements#show-req-22) |
+| **URI** | [`https://w3id.org/aidoc-ap/requirements#show-req-22`](https://certain-project.github.io/aidoc-ap/requirements#show-req-22) |
 | **Description** | A detailed description of the system in place to evaluate the AI system performance in the post-market phase in accordance with Article 72, including the post-market monitoring plan referred to in Article 72(3). |
 | **AI Lifecycle Stage** | Software Pipeline: Deployment |
 | **Source** | EU AI Act 2024/1689, Annex IV, Section 9 |
