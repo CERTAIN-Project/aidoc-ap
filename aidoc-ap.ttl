@@ -640,10 +640,6 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
 #    Classes
 #################################################################
 
-###  http://mlcommons.org/croissant/1.0#Dataset
-<http://mlcommons.org/croissant/1.0#Dataset> rdf:type owl:Class .
-
-
 ###  http://www.w3.org/ns/dqv#Metric
 <http://www.w3.org/ns/dqv#Metric> rdf:type owl:Class .
 
@@ -961,8 +957,7 @@ foaf:Person rdf:type owl:Class .
 
 ###  https://w3id.org/aidoc-ap#Dataset
 :Dataset rdf:type owl:Class ;
-         rdfs:subClassOf <http://mlcommons.org/croissant/1.0#Dataset> ,
-                         <http://www.w3.org/ns/mls#Dataset> ,
+         rdfs:subClassOf <http://www.w3.org/ns/mls#Dataset> ,
                          :AIArtifact ,
                          <https://www.w3.org/ns/dcat#Dataset> ;
          rdfs:comment "Represents a dataset used in the AI lifecycle."@en ;
