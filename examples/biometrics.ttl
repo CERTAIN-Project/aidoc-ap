@@ -1,0 +1,435 @@
+@prefix : <http://www.semanticweb.org/certain/ontologies/2025/11/biometrics/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix airo: <https://w3id.org/airo#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vair: <https://w3id.org/vair#> .
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix schema: <https://schema.org/> .
+@prefix server: <http://w3id.org/devops-infra/server#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://www.semanticweb.org/certain/ontologies/2025/11/biometrics/> .
+
+<http://www.semanticweb.org/certain/ontologies/2025/11/biometrics> rdf:type owl:Ontology ;
+    owl:imports <https://w3id.org/aidoc-ap/1.0> ,
+                <https://w3id.org/airo/1.0> ,
+                <https://w3id.org/vair/1.0> ;
+    dcterms:description "Documents an AI-based biometric recognition system for border control, designed for EU AI Act compliance."@en ;
+    dcterms:issued "2026-02-10"^^xsd:date ;
+    dcterms:title "AI-Based Biometric Recognition for Border Control"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+# =====================================================================
+# AI System
+# =====================================================================
+
+###  The main AI system: biometric recognition for border control
+:BiometricRecognitionSystem rdf:type owl:NamedIndividual ,
+                                     aidoc:AISystem ;
+    aidoc:appliesStandard :ISO_IEC_9868 ,
+                          :ISO_IEC_19795 ,
+                          :ISO_IEC_30107 ,
+                          :ISO_IEC_20059 ;
+    aidoc:hasComponent :BiometricAIModel ,
+                       :FaceDetectionComponent ,
+                       :FaceQualityEvaluationComponent ,
+                       :FaceFeatureExtractionComponent ,
+                       :PresentationAttackDetectionComponent ,
+                       :MorphingAttackDetectionComponent ,
+                       :BiometricComparisonComponent ;
+    aidoc:hasLifecycleStage :DevelopmentStage ,
+                            :DeploymentStage ,
+                            :OperationStage ;
+    aidoc:hasHumanOversight :BorderGuardOversight ;
+    aidoc:hasTransparencyMeasure :BorderGuardTraining ,
+                                 :TravellerTransparencyPlan ;
+    airo:hasAISubject :Travellers ;
+    airo:hasAIUser :BorderGuards ;
+    airo:hasPurpose :BiometricIdentityVerification ;
+    airo:isProvidedBy :BiometricProvider ;
+    airo:isAppliedWithinDomain vair:BorderControlManagement ;
+    aidoc:intendedPurpose "1:1 identity verification of travellers at automated border gates by comparing a passport face image with a live-acquired face image." ;
+    aidoc:modality "Integrated hardware/software product deployed at border control gates, personalised per deployer." ;
+    dcterms:description "A high-risk AI system for biometric identity verification at border control. Travellers expect fairness and privacy protection; border guards expect workload reduction; border authorities expect robustness against identity fraud."@en ;
+    rdfs:comment "Two levels: system level (operational deployment per deployer) and component level (algorithm containers, updated periodically). Only the component level is in scope."@en ;
+    rdfs:label "Biometric Recognition System"@en .
+
+
+# =====================================================================
+# Agents / Stakeholders
+# =====================================================================
+
+###  BiometricProvider — the AI system provider
+:BiometricProvider rdf:type owl:NamedIndividual ,
+              aidoc:AIProvider ;
+     rdfs:comment "Provider of the biometric system."@en ;
+     rdfs:label "BiometricProvider"@en .
+
+###  Border guards — end users of the system
+:BorderGuards rdf:type owl:NamedIndividual ,
+                       airo:AIUser ;
+              dcterms:description "End users who operate the system at border gates."@en ;
+              rdfs:label "Border Guards"@en .
+
+###  Travellers — data subjects
+:Travellers rdf:type owl:NamedIndividual ,
+                     airo:AISubject ,
+                     dpv:DataSubject ;
+            dcterms:description "Data subjects whose biometric data is processed at border control."@en ;
+            rdfs:label "Travellers"@en .
+
+###  Evaluator — third-party evaluator
+:Evaluator rdf:type owl:NamedIndividual ,
+                aidoc:Auditor ;
+       rdfs:comment "Independent third-party evaluator that tests the core algorithms of the system."@en ;
+       rdfs:label "Evaluator"@en .
+
+###  Border authorities — deployers
+:BorderAuthorities rdf:type owl:NamedIndividual ,
+                            aidoc:AIDeployer ;
+                   dcterms:description "Deploy biometric systems at border control points and require robustness against identity fraud."@en ;
+                   rdfs:label "Border Authorities"@en .
+
+
+# =====================================================================
+# Purposes
+# =====================================================================
+
+###  Biometric identity verification purpose
+:BiometricIdentityVerification rdf:type owl:NamedIndividual ,
+                                        airo:Purpose ;
+    dcterms:description "1:1 identity verification of travellers at border control by comparing a face recorded in the passport with a live face acquired at the gate."@en ;
+    rdfs:label "Biometric Identity Verification"@en .
+
+
+# =====================================================================
+# Standards (Annex IV, 7)
+# =====================================================================
+
+:ISO_IEC_9868 rdf:type owl:NamedIndividual ,
+                       aidoc:Standard ;
+    dcterms:description "ISO/IEC 9868 on development, design, use and maintenance of biometric identification systems."@en ;
+    rdfs:label "ISO/IEC 9868"@en .
+
+:ISO_IEC_19795 rdf:type owl:NamedIndividual ,
+                        aidoc:Standard ;
+    dcterms:description "ISO/IEC 19795 series on biometric testing and reporting."@en ;
+    rdfs:label "ISO/IEC 19795 series"@en .
+
+:ISO_IEC_30107 rdf:type owl:NamedIndividual ,
+                        aidoc:Standard ;
+    dcterms:description "ISO/IEC 30107 series on presentation attack detection."@en ;
+    rdfs:label "ISO/IEC 30107 series"@en .
+
+:ISO_IEC_20059 rdf:type owl:NamedIndividual ,
+                        aidoc:Standard ;
+    dcterms:description "ISO/IEC 20059 on morphing attacks."@en ;
+    rdfs:label "ISO/IEC 20059"@en .
+
+
+# =====================================================================
+# Declaration of Conformity (Annex IV, 8)
+# =====================================================================
+
+###  No EU Declaration of Conformity is available
+:DeclarationOfConformityStatus rdf:type owl:NamedIndividual ,
+                                        aidoc:DeclarationOfConformity ;
+    dcterms:description "Not yet available. Planned but not applicable at the current algorithm-level scope."@en ;
+    rdfs:label "Declaration of Conformity (not available)"@en .
+
+
+# =====================================================================
+# AI Model and Components (Annex IV, 2(a))
+# =====================================================================
+
+###  The biometric AI model
+:BiometricAIModel rdf:type owl:NamedIndividual ,
+                           aidoc:AIModel ;
+    aidoc:usesAIMethod :DeepLearningMethod ;
+    dcterms:description "Trained on face data using proprietary and state-of-the-art techniques. Models are learnt from scratch and exported in a proprietary format."@en ;
+    rdfs:comment "Algorithm containers are updated periodically as improved algorithm versions become available."@en ;
+    rdfs:label "Biometric AI Model"@en .
+
+###  AI Method
+:DeepLearningMethod rdf:type owl:NamedIndividual ,
+                             aidoc:AIMethod ;
+    rdfs:comment "Proprietary and state-of-the-art deep learning techniques for biometric recognition."@en ;
+    rdfs:label "Deep Learning (Biometric Recognition)"@en .
+
+
+# =====================================================================
+# Software Components — Biometric Process Steps (Annex IV, 2(a))
+# =====================================================================
+
+:FaceDetectionComponent rdf:type owl:NamedIndividual ,
+                                 aidoc:SoftwareComponent ;
+    aidoc:feedsIntoComponent :FaceQualityEvaluationComponent ;
+    dcterms:description "Detects faces in captured images as the first step of the biometric process."@en ;
+    rdfs:label "Face Detection"@en .
+
+:FaceQualityEvaluationComponent rdf:type owl:NamedIndividual ,
+                                         aidoc:SoftwareComponent ;
+    aidoc:feedsIntoComponent :FaceFeatureExtractionComponent ;
+    dcterms:description "Evaluates the quality of detected face images to ensure suitability for biometric comparison."@en ;
+    rdfs:label "Face Quality Evaluation"@en .
+
+:FaceFeatureExtractionComponent rdf:type owl:NamedIndividual ,
+                                         aidoc:SoftwareComponent ;
+    aidoc:feedsIntoComponent :BiometricComparisonComponent ;
+    dcterms:description "Extracts and encodes face features from the face image for biometric comparison."@en ;
+    rdfs:label "Face Features Extraction and Encoding"@en .
+
+:PresentationAttackDetectionComponent rdf:type owl:NamedIndividual ,
+                                               aidoc:SoftwareComponent ;
+    dcterms:description "Detects presentation attacks aimed at spoofing the biometric system."@en ;
+    rdfs:label "Presentation Attack Detection"@en .
+
+:MorphingAttackDetectionComponent rdf:type owl:NamedIndividual ,
+                                           aidoc:SoftwareComponent ;
+    dcterms:description "Detects morphing attacks on face images used in identity documents."@en ;
+    rdfs:label "Morphing Attack Detection"@en .
+
+:BiometricComparisonComponent rdf:type owl:NamedIndividual ,
+                                       aidoc:SoftwareComponent ;
+    airo:producesOutput :ComparisonResult ;
+    dcterms:description "Compares passport and live face images. In 1:1 mode, a match opens the gate; a non-match triggers manual review. In 1:N mode, always human-supervised."@en ;
+    rdfs:label "Biometric Comparison"@en .
+
+:ComparisonResult rdf:type owl:NamedIndividual ,
+                           airo:Output ;
+    dcterms:description "The output of the biometric comparison indicating a match (hit) or non-match."@en ;
+    rdfs:label "Comparison Result"@en .
+
+
+# =====================================================================
+# Lifecycle Stages
+# =====================================================================
+
+:DevelopmentStage rdf:type owl:NamedIndividual ,
+                           vair:Development ;
+    aidoc:hasAIActivity :ModelEngineeringActivity ,
+                        :TrainingActivity ,
+                        :FaceDataAcquisition ,
+                        :InternalValidationActivity ;
+    rdfs:label "Development Stage"@en .
+
+:DeploymentStage rdf:type owl:NamedIndividual ,
+                          vair:Deployment ;
+    aidoc:hasAIActivity :SoftwareDeploymentActivity ;
+    rdfs:label "Deployment Stage"@en .
+
+:OperationStage rdf:type owl:NamedIndividual ,
+                         vair:Operation ;
+    aidoc:hasAIActivity :MonitoringAndLoggingActivity ,
+                        :PostMarketMonitoring ,
+                        :RiskManagementActivity ;
+    rdfs:label "Operation Stage"@en .
+
+
+# =====================================================================
+# Data Pipeline — Exploration and Validation (Annex IV, 2(c))
+# =====================================================================
+
+###  Face data — input data requirements
+:FaceDataPassport rdf:type owl:NamedIndividual ,
+                           aidoc:Dataset ;
+    aidoc:dataCharacteristic "Biometric face image recorded in the traveller's passport." ;
+    dcterms:description "One of the two face images required for 1:1 ID verification: the face recorded in the passport."@en ;
+    rdfs:label "Passport Face Data"@en .
+
+:FaceDataLive rdf:type owl:NamedIndividual ,
+                       aidoc:Dataset ;
+    aidoc:dataCharacteristic "Live-acquired biometric face image captured at the border control gate." ;
+    dcterms:description "One of the two face images required for 1:1 ID verification: the face acquired live at the gate."@en ;
+    rdfs:label "Live Face Data"@en .
+
+:FaceDataAcquisition rdf:type owl:NamedIndividual ,
+                              aidoc:DataAcquisitionActivity ;
+    dpv:hasData :FaceDataPassport ,
+                :FaceDataLive ;
+    dcterms:description "Two face images per person are required for 1:1 verification: one from the passport, one acquired live. No data is retained at product or algorithm level."@en ;
+    rdfs:label "Face Data Acquisition"@en .
+
+
+# =====================================================================
+# Data Pipeline — Training, Validation and Testing Data (Annex IV, 2(d))
+# =====================================================================
+
+:FaceTrainingDatasets rdf:type owl:NamedIndividual ,
+                               aidoc:Dataset ;
+    aidoc:dataCollectionMethod "Public datasets, internally collected data, or client databases. All non-public data correspond to consent forms (GDPR compliant)." ;
+    aidoc:dataScope "About 50 face databases available; more than 10 selected per use case for training and evaluation." ;
+    aidoc:dataCharacteristic "Face image datasets of varying demographics and conditions." ;
+    dcterms:description "Face data from public, internal, or client databases. All non-public data is GDPR-compliant with consent forms."@en ;
+    rdfs:label "Face Training Datasets"@en .
+
+:TrainingActivity rdf:type owl:NamedIndividual ,
+                           aidoc:DataTraining ;
+    aidoc:usesTrainingData :FaceTrainingDatasets ;
+    dcterms:description "Uses proprietary and state-of-the-art training techniques. Models are mostly trained from scratch and exported in a proprietary format for integration into components."@en ;
+    rdfs:label "Model Training Activity"@en .
+
+
+# =====================================================================
+# Data Pipeline — Monitoring & Logging (Annex IV, 3(g) / Article 12)
+# =====================================================================
+
+:MonitoringAndLoggingActivity rdf:type owl:NamedIndividual ,
+                                       aidoc:DataMonitoringAndLogging ;
+    dcterms:description "Biometric comparison results are logged for accuracy analysis. Product-level logs track gate health and performance. Logged data includes comparison scores, traveller positioning, face image quality, and sensor status."@en ;
+    rdfs:label "Monitoring and Logging Activity"@en .
+
+:ComparisonScoreLog rdf:type owl:NamedIndividual ,
+                             aidoc:Log ;
+    dcterms:description "Logs of biometric comparison scores produced during operation."@en ;
+    rdfs:label "Comparison Score Log"@en .
+
+:FaceImageQualityLog rdf:type owl:NamedIndividual ,
+                              aidoc:Log ;
+    dcterms:description "Logs of face image quality marks assessed during biometric processing."@en ;
+    rdfs:label "Face Image Quality Log"@en .
+
+:SensorStatusLog rdf:type owl:NamedIndividual ,
+                          aidoc:Log ;
+    dcterms:description "Logs of sensor status at the border control gate."@en ;
+    rdfs:label "Sensor Status Log"@en .
+
+:TravellerPositioningLog rdf:type owl:NamedIndividual ,
+                                   aidoc:Log ;
+    dcterms:description "Logs of traveller positioning within the gate."@en ;
+    rdfs:label "Traveller Positioning Log"@en .
+
+
+# =====================================================================
+# Machine Learning Pipeline — Model Engineering (Annex IV, 2(a), 2(b))
+# =====================================================================
+
+:ModelEngineeringActivity rdf:type owl:NamedIndividual ,
+                                   aidoc:ModelEngineering ;
+    dcterms:description "Algorithm components are updated periodically as improved versions become available. Biometric process steps: face detection, quality evaluation, feature extraction, presentation attack detection, morphing attack detection, and comparison."@en ;
+    rdfs:label "Model Engineering Activity"@en .
+
+
+# =====================================================================
+# Machine Learning Pipeline — Model Evaluation (Annex IV, 2(g), 3(d), 4)
+# =====================================================================
+
+:InternalValidationActivity rdf:type owl:NamedIndividual ,
+                                     aidoc:ModelEvaluation ;
+    aidoc:hasPerformanceMetric :BiometricAccuracyMetric ;
+    aidoc:evaluationMethod "Validated on 10+ databases per use case. Validation hardware matches operational deployment platforms." ;
+    dcterms:description "Internal validation on selected databases, complemented by external public tests (e.g., NIST) using unknown, large-scale datasets to reduce bias."@en ;
+    rdfs:label "Internal Validation and Testing"@en .
+
+:NISTPublicTesting rdf:type owl:NamedIndividual ,
+                            aidoc:ModelEvaluation ;
+    aidoc:hasPerformanceMetric :BiometricAccuracyMetric ;
+    aidoc:evaluationMethod "Public benchmarks using unknown, large-scale datasets for unbiased external evaluation." ;
+    dcterms:description "External evaluation through NIST public tests with unknown, large-scale datasets to ensure unbiased results."@en ;
+    rdfs:label "NIST Public Testing"@en .
+
+:BiometricAccuracyMetric rdf:type owl:NamedIndividual ,
+                                  aidoc:PerformanceMetric ,
+                                  dqv:QualityMeasurement ;
+    dcterms:description "Performance metrics defined in appropriate biometric standards on testing and reporting (ISO/IEC 19795 series)."@en ;
+    rdfs:label "Biometric Accuracy Metric"@en .
+
+
+# =====================================================================
+# Human Oversight (Annex IV, 3(e) / Article 14)
+# =====================================================================
+
+:BorderGuardOversight rdf:type owl:NamedIndividual ,
+                               aidoc:HumanOversightMechanism ;
+    dcterms:description "Border guards provide human oversight. In 1:1 mode, matches open the gate automatically; non-matches go to manual review. In 1:N mode, always human-supervised."@en ;
+    rdfs:comment "At the algorithm/component level, testing is the only way to measure the result of the AI."@en ;
+    rdfs:label "Border Guard Oversight"@en .
+
+
+# =====================================================================
+# Transparency Measures (Annex IV, 3(f))
+# =====================================================================
+
+:BorderGuardTraining rdf:type owl:NamedIndividual ,
+                              aidoc:TransparencyMeasure ;
+    dcterms:description "For border guards, a training is prepared explaining the input and outputs of the system."@en ;
+    rdfs:label "Border Guard Training"@en .
+
+:TravellerTransparencyPlan rdf:type owl:NamedIndividual ,
+                                     aidoc:TransparencyMeasure ;
+    dcterms:description "For travellers (data subjects): this is part of the plans to have transparency in place."@en ;
+    rdfs:label "Traveller Transparency Plan (planned)"@en .
+
+
+# =====================================================================
+# Risk Management (Annex IV, 3(a), 5 / Article 9)
+# =====================================================================
+
+:RiskManagementActivity rdf:type owl:NamedIndividual ,
+                                  aidoc:AIActivity ;
+    dcterms:description "Risk management covers algorithm, product, and system levels, each with an associated privacy impact assessment. Currently under development, building on existing devSecOps processes to meet AI Act requirements."@en ;
+    rdfs:label "Risk Management System"@en .
+
+
+# =====================================================================
+# Deployment (Annex IV, 1(b), 1(d), 1(e), 1(f), 1(g))
+# =====================================================================
+
+:SoftwareDeploymentActivity rdf:type owl:NamedIndividual ,
+                                     aidoc:Deployment ;
+    dcterms:description "Each deployed system is a customisation of the base product, adapted to the customer's environment."@en ;
+    rdfs:label "Software Deployment"@en .
+
+
+# =====================================================================
+# Post-Market Performance Evaluation (Annex IV, 9 / Article 72)
+# =====================================================================
+
+:PostMarketMonitoring rdf:type owl:NamedIndividual ,
+                               aidoc:PostMarketMonitoringActivity ;
+    dcterms:description "Each gate is permanently monitored. A feedback loop from deployments to the provider is in place and will be finalized for AI Act compliance. The deployer is responsible for monitoring; the provider supports on request."@en ;
+    rdfs:label "Post-Market Monitoring"@en .
+
+
+# =====================================================================
+# Change Log (Annex IV, 6)
+# =====================================================================
+
+:ChangeLog rdf:type owl:NamedIndividual ,
+                    aidoc:ChangeLog ;
+    dcterms:description "Algorithm-level changes are enabled by encapsulating algorithms in components. Transition periods are managed per deployer requirements."@en ;
+    rdfs:comment "Only algorithm-level changes are tracked."@en ;
+    rdfs:label "Biometric System Change Log"@en .
+
+
+# =====================================================================
+# Decommissioning (Annex IV, 3(b))
+# =====================================================================
+
+:DecommissioningActivity rdf:type owl:NamedIndividual ,
+                                  aidoc:Decommissioning ;
+    dcterms:description "Gates are decommissioned when replaced by a new provider, or on malfunction — in which case manual passport inspection resumes."@en ;
+    rdfs:label "Decommissioning"@en .
+
+
+# =====================================================================
+# FRIA (Fundamental Rights Impact Assessment)
+# =====================================================================
+
+:FRIAStatus rdf:type owl:NamedIndividual ,
+                     airo:Documentation ;
+    dcterms:description "FRIA under development. Proportionality established by ICAO's adoption of biometric passports. By default, no biometric data is retained; temporary retention is possible only if legally acceptable and required by the deployer."@en ;
+    rdfs:label "FRIA Status (under development)"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
