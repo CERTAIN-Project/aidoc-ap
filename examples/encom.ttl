@@ -180,6 +180,7 @@
                                                              :MLflow_Model_Versioning ,
                                                              :Model_Engineering ,
                                                              :Software_Development ,
+                                                             :Software_Versioning ,
                                                              :Training_Activity ,
                                                              :WeatherDataAcquisition .
 
@@ -220,6 +221,7 @@
        <https://w3id.org/aidoc-ap#appliesStandard> :AI_ISO_Standard ;
        <https://w3id.org/aidoc-ap#hasComponent> :Encom_AI_Model ,
                                                 :Encom_Implementation ;
+       <https://w3id.org/aidoc-ap#hasChangeLog> :ChangeLog ;
        <https://w3id.org/aidoc-ap#hasLifecycleStage> :Deployment ,
                                                      :Development_Stage ,
                                                      :Operation ;
@@ -232,6 +234,7 @@
                                                         :Authentik ,
                                                         :Database ,
                                                         :Docker ,
+                                                        :Docker_Compose ,
                                                         :Grafana ,
                                                         :MLflow ,
                                                         :Minio_Bucket ,
