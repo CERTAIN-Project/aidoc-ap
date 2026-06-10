@@ -248,6 +248,12 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
               rdfs:comment "Links an AI system to the interface it provides to users or operators."@en ;
               rdfs:label "has interface"@en .
 
+###  https://w3id.org/aidoc-ap#hasChangeLog
+:hasChangeLog rdf:type owl:ObjectProperty ;
+              rdfs:domain :AISystem ;
+              rdfs:range :ChangeLog ;
+              rdfs:comment "Links an AI system to its change log."@en ;
+              rdfs:label "has changelog"@en .
 
 ###  https://w3id.org/aidoc-ap#hasLifecycleStage
 :hasLifecycleStage rdf:type owl:ObjectProperty ;
@@ -344,6 +350,13 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
               rdfs:comment "Links a monitoring activity to the type of activity that is logged."@en ;
               rdfs:label "logs activity"@en .
 
+###  https://w3id.org/aidoc-ap#logsActivity
+:producesLog rdf:type owl:ObjectProperty ;
+              rdfs:domain :DataMonitoringAndLogging ;
+              rdfs:range :Log ;
+              rdfs:comment "Links a monitoring activity to the log it produces."@en ;
+              rdfs:label "produces log"@en .
+
 
 ###  https://w3id.org/aidoc-ap#requiresHardware
 :requiresHardware rdf:type owl:ObjectProperty ;
@@ -412,17 +425,17 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
 
 ###  https://w3id.org/aidoc-ap#hasSourceDataset
 :hasSourceDataset rdf:type owl:ObjectProperty ;
-                  rdfs:domain :DataProcessing ;
+                  rdfs:domain :DataPipeline ;
                   rdfs:range :Dataset ;
-                  rdfs:comment "Links a DataProcessing activity to its source datasets."@en ;
+                  rdfs:comment "Links a DataPipeline activity to its source datasets."@en ;
                   rdfs:label "has source dataset"@en .
 
 
 ###  https://w3id.org/aidoc-ap#producesDataset
 :producesDataset rdf:type owl:ObjectProperty ;
-                 rdfs:domain :DataProcessing ;
+                 rdfs:domain :DataPipeline ;
                  rdfs:range :Dataset ;
-                 rdfs:comment "Links a DataProcessing activity to the finished dataset it produces."@en ;
+                 rdfs:comment "Links a DataPipeline activity to the finished dataset it produces."@en ;
                  rdfs:label "produces dataset"@en .
 
 
