@@ -53,7 +53,12 @@ def similarity(a, b):
 
 def extract_entities(g):
     entities = {}
-    for s in g.subjects(rdflib.RDF.type, OWL.Class):
+    # DPV (and other SKOS-based vocabularies) declare concepts as
+    # rdfs:Class / skos:Concept rather than owl:Class
+    subjects = set(g.subjects(rdflib.RDF.type, OWL.Class))
+    subjects.update(g.subjects(rdflib.RDF.type, RDFS.Class))
+    subjects.update(g.subjects(rdflib.RDF.type, SKOS.Concept))
+    for s in subjects:
         labels = []
         # common label predicates
         for lbl in g.objects(s, RDFS.label):
