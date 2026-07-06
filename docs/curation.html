@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>AIDOC‑AP · Alignment Curation</title>
+  <link rel="stylesheet" href="assets/widoco-like.css?v=2">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .cur-toolbar { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin:.8rem 0; }
+    .cur-toolbar input[type=text], .cur-toolbar select {
+      padding:.45rem .6rem; border:1px solid #ccc; border-radius:6px; font:inherit; }
+    .progress-wrap { flex:1; min-width:220px; background:#eee; border-radius:6px; height:22px; position:relative; overflow:hidden; }
+    .progress-bar { background:#2e7d32; height:100%; width:0; transition:width .2s; }
+    .progress-label { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+      font-size:.8rem; color:#222; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:0 .5rem; }
+    .card { border:1px solid #ddd; border-radius:10px; padding:1.1rem 1.3rem; margin:1rem 0;
+      box-shadow:0 1px 4px rgba(0,0,0,.06); background:#fff; }
+    .pair { display:grid; grid-template-columns:1fr 52px 1fr; gap:.8rem; align-items:start; }
+    .term h3 { margin:.1rem 0 .3rem; font-size:1.05rem; }
+    .term .iri { font-size:.75rem; word-break:break-all; }
+    .term .desc { font-size:.88rem; color:#333; margin-top:.35rem; }
+    .rel-arrow { text-align:center; font-size:1.4rem; color:#666; padding-top:1.2rem; }
+    .llm-box { background:#f6f8fa; border-radius:8px; padding:.6rem .8rem; margin-top:.9rem; font-size:.88rem; }
+    .llm-box .rel { font-weight:600; font-family:monospace; }
+    .badge { display:inline-block; padding:.1rem .5rem; border-radius:999px; font-size:.75rem; margin-left:.4rem; }
+    .badge.hi { background:#e8f5e9; color:#1b5e20; }
+    .badge.lo { background:#fff3e0; color:#e65100; }
+    .actions { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1rem; align-items:center; }
+    .btn { padding:.5rem 1rem; border-radius:8px; border:1px solid transparent; font:inherit; cursor:pointer; }
+    .btn.accept { background:#2e7d32; color:#fff; }
+    .btn.reject { background:#c62828; color:#fff; }
+    .btn.modify { background:#f9a825; color:#222; }
+    .btn.skip   { background:#eceff1; color:#333; border-color:#cfd8dc; }
+    .btn.ghost  { background:#fff; color:#333; border-color:#bbb; }
+    .btn:hover { filter:brightness(.93); }
+    .btn.sel { outline:3px solid #1a73e8; }
+    .kbd { font:inherit; font-size:.72rem; opacity:.75; margin-left:.3rem; border:1px solid currentColor;
+      border-radius:4px; padding:0 .25rem; }
+    #modifyRel { display:none; }
+    #noteInp { flex:1; min-width:180px; padding:.45rem .6rem; border:1px solid #ccc; border-radius:6px; font:inherit; }
+    .queue { width:100%; border-collapse:collapse; font-size:.84rem; margin-top:1rem; }
+    .queue th, .queue td { padding:.3rem .5rem; border-bottom:1px solid #eee; text-align:left; }
+    .queue tr { cursor:pointer; }
+    .queue tr:hover { background:#f0f8ff; }
+    .queue tr.current { background:#e3f2fd; }
+    .st { font-weight:600; }
+    .st.accept { color:#2e7d32; } .st.reject { color:#c62828; } .st.modify { color:#b28704; }
+    .st.open { color:#999; font-weight:400; }
+    .topline { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap; }
+    .muted { color:#777; font-size:.82rem; }
+    .banner { background:#fff8e1; border:1px solid #ffe082; border-radius:8px; padding:.6rem .9rem;
+      font-size:.86rem; margin:.6rem 0; }
+  </style>
+</head>
+<body class="widoco-theme">
+<header class="page-header">
+  <nav class="site-nav">
+    <a class="brand" href="index-en.html">AIDOC<span>‑AP</span></a>
+    <a class="nav-link" href="index-en.html">Ontology</a>
+    <a class="nav-link" href="requirements.html">Requirements</a>
+    <a class="nav-link" href="alignments.html">Alignments</a>
+    <a class="nav-link" href="coverage.html">Coverage</a>
+    <a class="nav-link active" href="curation.html">Curation</a>
+    <a class="nav-link" href="https://github.com/CERTAIN-Project/aidoc-ap">GitHub ↗</a>
+  </nav>
+  <div class="head-inner">
+    <h1 class="title">Alignment Curation</h1>
+    <p class="subtitle">
+      Expert review of LLM‑suggested mappings between <code>aidoc:</code> terms and reference ontologies.
+      Decisions are stored locally per curator and exported as JSON for merging.
+    </p>
+  </div>
+</header>
+
+<main>
+  <section class="cur-toolbar">
+    <label>Curator:
+      <input type="text" id="curator" placeholder="Kürzel, z.B. SN" size="6" maxlength="12">
+    </label>
+    <select id="fOnto"><option value="">All ontologies</option></select>
+    <select id="fStatus">
+      <option value="open">Open only</option>
+      <option value="">All</option>
+      <option value="done">Decided only</option>
+    </select>
+    <div class="progress-wrap"><div class="progress-bar" id="pbar"></div>
+      <div class="progress-label" id="plabel">–</div></div>
+    <button class="btn ghost" id="exportBtn" title="Download decisions as JSON">Export</button>
+    <button class="btn ghost" id="importBtn" title="Load a previously exported JSON">Import</button>
+    <input type="file" id="importFile" accept=".json" style="display:none">
+  </section>
+
+  <div class="banner" id="banner" hidden></div>
+
+  <section class="card" id="card" hidden>
+    <div class="topline">
+      <span class="muted" id="posInfo"></span>
+      <span class="muted" id="metaInfo"></span>
+    </div>
+    <div class="pair">
+      <div class="term">
+        <h3 id="aLabel"></h3>
+        <div class="iri"><a id="aIri" target="_blank" rel="noopener"></a></div>
+      </div>
+      <div class="rel-arrow">⇄</div>
+      <div class="term">
+        <h3 id="rLabel"></h3>
+        <div class="iri"><a id="rIri" target="_blank" rel="noopener"></a></div>
+      </div>
+    </div>
+    <div class="llm-box">
+      LLM suggestion: <span class="rel" id="llmRel"></span>
+      <span class="badge" id="confBadge"></span>
+      <span class="badge" id="lexBadge"></span>
+      <div id="llmRat" style="margin-top:.4rem"></div>
+    </div>
+    <div class="actions">
+      <button class="btn accept" id="btnAccept">Accept<span class="kbd">A</span></button>
+      <button class="btn modify" id="btnModify">Modify<span class="kbd">M</span></button>
+      <select id="modifyRel">
+        <option>owl:equivalentClass</option>
+        <option>skos:closeMatch</option>
+        <option>skos:broadMatch</option>
+        <option>skos:narrowMatch</option>
+        <option>skos:relatedMatch</option>
+      </select>
+      <button class="btn reject" id="btnReject">Reject<span class="kbd">R</span></button>
+      <button class="btn skip" id="btnSkip">Skip<span class="kbd">S</span></button>
+      <button class="btn ghost" id="btnUndo" title="Clear decision for this pair">Undo<span class="kbd">U</span></button>
+    </div>
+    <div class="actions">
+      <input id="noteInp" placeholder="Optional note (edge cases, direction issues, …)">
+      <button class="btn ghost" id="btnPrev">←</button>
+      <button class="btn ghost" id="btnNext">→</button>
+    </div>
+  </section>
+
+  <section>
+    <table class="queue" id="queue">
+      <thead><tr><th>#</th><th>AIDOC term</th><th>Reference term</th><th>Ontology</th>
+        <th>LLM relation</th><th>Conf.</th><th>Status</th></tr></thead>
+      <tbody id="qbody"></tbody>
+    </table>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <p class="muted">Decision rules: <strong>accept</strong> = relation and direction correct ·
+  <strong>modify</strong> = meaningful relation, but a different one (choose from the list) ·
+  <strong>reject</strong> = no meaningful semantic relation.
+  Judge against the definition in the reference ontology, not only the label.
+  Keyboard: A/M/R/S decide, U undo, ←/→ navigate.</p>
+</footer>
+
+<script src="assets/curation.js"></script>
+</body>
+</html>
