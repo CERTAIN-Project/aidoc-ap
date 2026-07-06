@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>AIDOC‑AP · Overview</title>
+  <link rel="stylesheet" href="assets/widoco-like.css?v=3">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .lead { font-size:1.05rem; color:var(--fg); max-width:74ch; margin:.6rem 0 1.8rem; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin:1.4rem 0 2rem; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:1.1rem 1.2rem; background:#fff;
+      box-shadow:var(--shadow); display:flex; flex-direction:column; gap:.35rem; text-decoration:none; color:inherit; transition:border-color .15s, box-shadow .15s; }
+    .card:hover { border-color:var(--accent); box-shadow:0 2px 10px rgba(21,94,158,.12); text-decoration:none; }
+    .card h3 { margin:0; font-size:1.08rem; color:var(--accent); }
+    .card p { margin:0; color:var(--muted); font-size:.92rem; }
+    .card .go { margin-top:.4rem; font-size:.85rem; color:var(--accent); font-weight:600; }
+    .cite { background:var(--row); border:1px solid var(--line); border-radius:10px; padding:1rem 1.2rem; max-width:74ch; }
+    .cite h3 { margin:0 0 .4rem; font-size:1rem; }
+    .cite dl { display:grid; grid-template-columns:auto 1fr; gap:.3rem 1rem; margin:0; font-size:.9rem; }
+    .cite dt { color:var(--muted); } .cite dd { margin:0; }
+  </style>
+</head>
+<body class="widoco-theme">
+<header class="page-header">
+  <nav class="site-nav">
+    <a class="brand" href="index-en.html">AIDOC<span>‑AP</span></a>
+    <a class="nav-link active" href="overview.html">Overview</a>
+    <a class="nav-link" href="requirements.html">Requirements</a>
+    <a class="nav-link" href="alignments.html">Alignments</a>
+    <a class="nav-link" href="coverage.html">Coverage</a>
+    <a class="nav-link" href="https://github.com/CERTAIN-Project/aidoc-ap">GitHub ↗</a>
+  </nav>
+  <div class="head-inner">
+    <h1 class="title">AIDOC‑AP — Application Profile for AI System Documentation</h1>
+    <p class="subtitle">A machine‑readable representation of the technical documentation the EU AI Act requires for high‑risk AI systems.</p>
+  </div>
+</header>
+
+<main>
+  <p class="lead">AIDOC‑AP is an application profile that structures the technical documentation obligation of the EU AI Act (Article 11 / Annex IV) as an OWL ontology, reusing established vocabularies where possible. It is developed with an LLM‑assisted, competency‑question‑driven pipeline and validated on real pilot systems. Explore the resource below.</p>
+
+  <div class="cards">
+    <a class="card" href="index-en.html">
+      <h3>Ontology</h3>
+      <p>The AIDOC‑AP classes and properties, generated documentation, and the OWL/Turtle download.</p>
+      <span class="go">Browse the ontology →</span>
+    </a>
+    <a class="card" href="requirements.html">
+      <h3>Requirements &amp; CQs</h3>
+      <p>The 22 Annex IV requirements formalised as concepts, each with lifecycle stage and competency questions.</p>
+      <span class="go">View requirements →</span>
+    </a>
+    <a class="card" href="alignments.html">
+      <h3>Alignments</h3>
+      <p>Curated mappings from AIDOC‑AP terms to reference ontologies (AIRO, VAIR, DPV, PROV‑O, …) for interoperability.</p>
+      <span class="go">See alignments →</span>
+    </a>
+    <a class="card" href="coverage.html">
+      <h3>Coverage</h3>
+      <p>How well the ontology covers Annex IV — across development iterations and by empirical competency‑question answering on pilot knowledge graphs.</p>
+      <span class="go">See coverage →</span>
+    </a>
+  </div>
+
+  <section class="cite">
+    <h3>Cite &amp; reuse</h3>
+    <dl>
+      <dt>Paper</dt><dd>Neumaier, Dam, Kovac. <em>AIDOC‑AP: An Application Profile for Technical Documentation of AI Systems.</em> Under review, Semantic Web Journal.</dd>
+      <dt>Ontology</dt><dd><a href="https://w3id.org/aidoc-ap">https://w3id.org/aidoc-ap</a></dd>
+      <dt>DOI</dt><dd><a href="https://doi.org/10.5281/zenodo.17787787">10.5281/zenodo.17787787</a></dd>
+      <dt>License</dt><dd>CC BY 4.0</dd>
+      <dt>Code</dt><dd><a href="https://github.com/CERTAIN-Project/aidoc-ap">github.com/CERTAIN-Project/aidoc-ap</a></dd>
+    </dl>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <p>Developed in the Horizon Europe project <a href="https://certain-project.eu/">CERTAIN</a> (Grant No. 101189650).</p>
+</footer>
+</body>
+</html>

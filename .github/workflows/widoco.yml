@@ -68,6 +68,7 @@ jobs:
           mkdir -p site/resources site/assets
           cp docs/resources/* site/resources/
           cp docs/assets/* site/assets/
+          cp docs/overview.html site/overview.html
           cp docs/coverage.html site/coverage.html
           cp docs/alignments.html site/alignments.html
           cp docs/requirements.html site/requirements.html

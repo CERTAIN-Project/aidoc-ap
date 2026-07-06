@@ -1,0 +1,104 @@
+{
+ "coverage_by_model": [
+  {
+   "model": "Gemma 3 27B",
+   "iter1": 0.639,
+   "iter1_std": 0.0,
+   "iter2": 0.764,
+   "iter2_std": 0.0,
+   "iter3": 0.855,
+   "iter3_std": 0.0,
+   "gain": 0.216
+  },
+  {
+   "model": "GPT-OSS 120B",
+   "iter1": 0.395,
+   "iter1_std": 0.001,
+   "iter2": 0.495,
+   "iter2_std": 0.007,
+   "iter3": 0.74,
+   "iter3_std": 0.005,
+   "gain": 0.345
+  },
+  {
+   "model": "Llama 3.3 70B",
+   "iter1": 0.564,
+   "iter1_std": 0.0,
+   "iter2": 0.7,
+   "iter2_std": 0.0,
+   "iter3": 0.791,
+   "iter3_std": 0.0,
+   "gain": 0.227
+  },
+  {
+   "model": "Apertus 70B",
+   "iter1": 0.855,
+   "iter1_std": 0.0,
+   "iter2": 0.85,
+   "iter2_std": 0.0,
+   "iter3": 0.868,
+   "iter3_std": 0.0,
+   "gain": 0.013
+  }
+ ],
+ "temperature": {
+  "0.0": {
+   "1": 0.613,
+   "2": 0.702,
+   "3": 0.813
+  },
+  "1.0": {
+   "1": 0.6,
+   "2": 0.695,
+   "3": 0.813
+  }
+ },
+ "cq_validation": [
+  {
+   "kg": "bank",
+   "display": "Investment recommendation",
+   "domain": "Financial services (III-5)",
+   "answered": 39,
+   "total": 50,
+   "share": 0.78,
+   "triples": 335
+  },
+  {
+   "kg": "encom",
+   "display": "Energy forecasting",
+   "domain": "Critical infrastructure (III-2)",
+   "answered": 38,
+   "total": 50,
+   "share": 0.76,
+   "triples": 369
+  },
+  {
+   "kg": "civicvoice",
+   "display": "Civic participation",
+   "domain": "Content clustering",
+   "answered": 35,
+   "total": 50,
+   "share": 0.7,
+   "triples": 275
+  },
+  {
+   "kg": "biometrics",
+   "display": "Biometric verification",
+   "domain": "Biometrics (III-1)",
+   "answered": 28,
+   "total": 50,
+   "share": 0.56,
+   "triples": 251
+  },
+  {
+   "kg": "hr-ai",
+   "display": "HR / recruitment",
+   "domain": "Employment (III-4)",
+   "answered": 18,
+   "total": 50,
+   "share": 0.36,
+   "triples": 151
+  }
+ ],
+ "n_seeds": 3
+}

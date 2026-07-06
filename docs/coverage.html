@@ -2,182 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>AIDOC‑AP · EU AI Act Coverage</title>
-  <link rel="stylesheet" href="assets/widoco-like.css?v=2">
+  <title>AIDOC‑AP · Annex IV Coverage</title>
+  <link rel="stylesheet" href="assets/widoco-like.css?v=3">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    .coverage-bar {
-      height: 24px;
-      background: #e9ecef;
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-    }
-    .coverage-fill {
-      height: 100%;
-      transition: width 0.3s ease;
-    }
-    .coverage-fill.high { background: linear-gradient(90deg, #28a745, #34ce57); }
-    .coverage-fill.medium { background: linear-gradient(90deg, #ffc107, #ffcd39); }
-    .coverage-fill.low { background: linear-gradient(90deg, #dc3545, #e4606d); }
-    .coverage-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-weight: 600;
-      font-size: 0.85em;
-      color: #fff;
-      text-shadow: 0 0 3px rgba(0,0,0,0.3);
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin: 20px 0;
-    }
-    .stat-card {
-      background: var(--row);
-      padding: 16px;
-      border-radius: 8px;
-      border: 1px solid #e7edf4;
-      text-align: center;
-    }
-    .stat-card h3 {
-      margin: 0 0 4px 0;
-      font-size: 2.2em;
-      color: var(--accent);
-    }
-    .stat-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9em;
-    }
-    .requirement-row {
-      cursor: pointer;
-    }
-    .term-badge {
-      display: inline-block;
-      padding: 2px 6px;
-      background: #e9f5ff;
-      border: 1px solid #c8e7ff;
-      border-radius: 3px;
-      font-size: 0.75em;
-      color: #0a6ebd;
-      margin: 2px;
-    }
-    .missing-badge {
-      display: inline-block;
-      padding: 2px 6px;
-      background: #fff3cd;
-      border: 1px solid #ffe6a3;
-      border-radius: 3px;
-      font-size: 0.75em;
-      color: #856404;
-      margin: 2px;
-    }
-    .coverage-score {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.9em;
-    }
-    .coverage-score.high { background: #d4edda; color: #155724; }
-    .coverage-score.medium { background: #fff3cd; color: #856404; }
-    .coverage-score.low { background: #f8d7da; color: #721c24; }
+    .lead { color:var(--muted); max-width:70ch; margin:.4rem 0 1.4rem; }
+    .sec { margin:2.2rem 0; }
+    .sec > h2 { font-size:1.2rem; margin:0 0 .3rem; }
+    .sec > p.hint { color:var(--muted); max-width:72ch; margin:.2rem 0 1rem; font-size:.94rem; }
+    .bar { position:relative; height:20px; background:#eef1f5; border-radius:5px; overflow:hidden; min-width:60px; }
+    .bar > span { position:absolute; inset:0 auto 0 0; border-radius:5px; }
+    .bar.g1 > span { background:#c7d9ec; } .bar.g2 > span { background:#7fb0dd; } .bar.g3 > span { background:#2f7ec4; }
+    .cov-cell { display:flex; align-items:center; gap:.5rem; }
+    .cov-cell .val { font-variant-numeric:tabular-nums; min-width:2.6em; }
+    .cov-cell .std { color:var(--muted); font-size:.8rem; }
+    .cqbar { height:22px; background:#eef1f5; border-radius:5px; overflow:hidden; position:relative; }
+    .cqbar > span { position:absolute; inset:0 auto 0 0; background:linear-gradient(90deg,#2e7d32,#57a35a); }
+    .cqbar > b { position:absolute; right:8px; top:0; line-height:22px; font-size:.8rem; color:#123; }
+    .gain { color:#1b6e2e; font-weight:600; }
+    .note { background:var(--accent-soft); border:1px solid #cfe3f3; border-radius:8px;
+      padding:.7rem 1rem; font-size:.9rem; color:#234; max-width:74ch; }
+    .databadge { font-size:.78rem; color:var(--muted); }
   </style>
 </head>
 <body class="widoco-theme">
 <header class="page-header">
   <nav class="site-nav">
     <a class="brand" href="index-en.html">AIDOC<span>‑AP</span></a>
-    <a class="nav-link" href="index-en.html">Ontology</a>
+    <a class="nav-link" href="overview.html">Overview</a>
     <a class="nav-link" href="requirements.html">Requirements</a>
     <a class="nav-link" href="alignments.html">Alignments</a>
     <a class="nav-link active" href="coverage.html">Coverage</a>
-    <a class="nav-link" href="curation.html">Curation</a>
     <a class="nav-link" href="https://github.com/CERTAIN-Project/aidoc-ap">GitHub ↗</a>
   </nav>
   <div class="head-inner">
-    <h1 class="title">EU AI Act Annex IV Coverage</h1>
-    <p class="subtitle">
-      LLM‑based assessment of how well the AIDOC‑AP ontology covers EU AI Act Annex IV technical documentation requirements.
-    </p>
+    <h1 class="title">Annex IV Coverage</h1>
+    <p class="subtitle">How well AIDOC‑AP covers the EU AI Act Annex IV technical documentation requirements — measured two complementary ways.</p>
   </div>
 </header>
 
 <main>
-  <section>
-    <div class="stats" id="stats"></div>
-    
-    <div style="margin: 20px 0;">
-      <h3>Overall Coverage</h3>
-      <div class="coverage-bar">
-        <div id="overallBar" class="coverage-fill"></div>
-        <div id="overallText" class="coverage-text"></div>
-      </div>
-    </div>
+  <p class="lead">Coverage is assessed (1) by an LLM evaluator that scores how well each Annex IV requirement is supported, tracked across three ontology development iterations, and (2) empirically, by running the 50 competency questions as SPARQL queries against real instantiated knowledge graphs — a measure that does not rely on any LLM judgement.</p>
+
+  <section class="sec" id="byModelSec">
+    <h2>1 · Coverage growth across ontology iterations</h2>
+    <p class="hint">LLM‑estimated coverage (mean over three seeded runs, temperature 0) after each development iteration: (1) core classes, (2) + system‑architecture module, (3) + data‑requirements module. Consistent across model families.</p>
+    <div class="table-wrap"><table class="table" id="byModel"></table></div>
+    <p class="note" id="tempNote"></p>
   </section>
 
-  <section class="filters">
-    <div class="row">
-      <input id="q" class="search" placeholder="Filter by requirement, matched terms, or reasoning…">
-      <select id="coverageSel" title="Coverage threshold">
-        <option value="">All coverage levels</option>
-        <option value="0.9">≥ 0.90 (Excellent)</option>
-        <option value="0.85">≥ 0.85 (Good)</option>
-        <option value="0.75">≥ 0.75 (Moderate)</option>
-        <option value="0.5">< 0.85 (Needs improvement)</option>
-      </select>
-      <select id="runSel" title="Analysis run/version">
-        <option value="">All runs</option>
-      </select>
-    </div>
+  <section class="sec" id="cqSec">
+    <h2>2 · Empirical competency‑question answering</h2>
+    <p class="hint">Each pilot knowledge graph is queried with the 50 Annex IV competency questions (SPARQL). The bar shows how many return a bound answer — an LLM‑independent coverage signal. Unanswered questions are dominated by physical‑product items (external markings, internal layout) that do not apply to software systems.</p>
+    <div class="table-wrap"><table class="table" id="cq"></table></div>
   </section>
 
-  <section id="summary" class="summary"></section>
-
-  <section class="table-wrap">
-    <table class="table">
-      <thead>
-        <tr>
-          <th style="width:5%">#</th>
-          <th style="width:30%">Requirement</th>
-          <th style="width:15%">Coverage</th>
-          <th style="width:25%">Matched Terms</th>
-          <th style="width:25%">Missing Concepts</th>
-        </tr>
-      </thead>
-      <tbody id="rows"></tbody>
-    </table>
-  </section>
-
-  <section id="details" class="drawer hidden">
-    <header>
-      <h2>Requirement details</h2>
-      <button id="closeDetails" title="Close">×</button>
-    </header>
-    <div id="detailsBody"></div>
-  </section>
+  <p class="databadge" id="badge"></p>
 </main>
 
 <footer class="page-footer">
-  <p>Coverage analysis performed using LLM-based semantic comparison against EU AI Act Annex IV requirements. Scores are heuristic and should be reviewed by domain experts.</p>
-    <p><strong>Related pages:</strong> <a href="requirements.html">AI Act Requirements</a> | <a href="alignments.html">Alignments</a> | <a href="index-en.html">Ontology Documentation</a></p>
-  <ul>
-    <li><a target="_blank" href="https://www.w3.org/TR/vocab-dqv/">DQV (Data Quality Vocabulary)</a></li>
-    <li><a target="_blank" href="https://www.w3.org/TR/prov-o/">PROV‑O spec</a></li>
-  </ul>
+  <p><strong>Related:</strong> <a href="requirements.html">Requirements &amp; competency questions</a> · <a href="alignments.html">Alignments</a> · <a href="overview.html">Overview</a>. Reproduce via <code>scripts/run_coverage_multirun.py</code> and <code>scripts/run_cq_validation.py</code>.</p>
 </footer>
 
-<script>
-/** Coverage data sources */
-window.COVERAGE_JSON = 'resources/semantic_mapping.json';
-window.COVERAGE_TTL = 'resources/semantic_mapping.ttl';
-window.REQUIREMENTS_TTL = 'annex_4.ttl';
-</script>
 <script src="assets/coverage.js"></script>
 </body>
 </html>

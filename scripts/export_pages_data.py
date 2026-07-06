@@ -14,9 +14,11 @@ Run after every update of docs/resources/*.ttl:
     python scripts/export_pages_data.py
 """
 
+import csv
 import glob
 import json
 import os
+from collections import defaultdict
 
 from rdflib import Graph, RDF, RDFS, Namespace
 
@@ -111,6 +113,115 @@ def export_coverage():
           f"{len(requirements)} requirements → docs/resources/coverage-data.json")
 
 
+# Human-readable model names and pilot metadata for the UI.
+MODEL_LABELS = {
+    "gemma3:27b": "Gemma 3 27B",
+    "llama3.3:70b": "Llama 3.3 70B",
+    "gpt-oss:120b": "GPT-OSS 120B",
+}
+PILOT_META = {  # examples/<name> -> (display, domain / Annex III)
+    "encom": ("Energy forecasting", "Critical infrastructure (III-2)"),
+    "biometrics": ("Biometric verification", "Biometrics (III-1)"),
+    "bank": ("Investment recommendation", "Financial services (III-5)"),
+    "civicvoice": ("Civic participation", "Content clustering"),
+    "hr-ai": ("HR / recruitment", "Employment (III-4)"),
+}
+
+
+def _apertus_label(model):
+    return "Apertus 70B" if "apertus" in model.lower() else MODEL_LABELS.get(model, model)
+
+
+def export_experiments():
+    """Export the coverage matrix and empirical CQ-answering results for the UI.
+
+    The coverage matrix is aggregated directly from the per-cell run JSONs in
+    reports/, so it is robust to the summary CSV being rewritten by a running
+    experiment and automatically includes only models whose 3x3 (iteration x
+    seed) cells at temperature 0 are complete."""
+    import re
+    import statistics
+
+    out = {"coverage_by_model": [], "temperature": None, "cq_validation": [],
+           "n_seeds": 3}
+
+    # (model, temperature, iteration) -> list of per-run average coverage
+    cells = defaultdict(list)
+    pat = re.compile(r"semantic_mapping_(.+)_iter(\w+)_T([\d_]+)_run(\d+)\.json")
+    for p in glob.glob("reports/semantic_mapping_*iter*_T*_run*.json"):
+        m = pat.search(os.path.basename(p))
+        if not m:
+            continue
+        model, it, temp = m.group(1), m.group(2), m.group(3).replace("_", ".")
+        try:
+            results = json.load(open(p, encoding="utf-8"))
+        except Exception:
+            continue
+        scores = [float(r.get("coverage_score", 0)) for r in results
+                  if not str(r.get("reasoning", "")).startswith("Error")]
+        if scores:
+            cells[(model, temp, it)].append(sum(scores) / len(scores))
+
+    def tag_label(tag):
+        t = tag.lower()
+        if "apertus" in t:
+            return "Apertus 70B"
+        if t.startswith("gemma3_27b"):
+            return "Gemma 3 27B"
+        if t.startswith("gpt_oss_120b"):
+            return "GPT-OSS 120B"
+        if t.startswith("llama3_3_70b"):
+            return "Llama 3.3 70B"
+        return tag
+
+    models = sorted({m for (m, t, i) in cells if t == "0.0"},
+                    key=lambda m: ("apertus" in m.lower(), m))
+    complete = []  # models with a full T=0 matrix, used for the fair averages
+    for m in models:
+        iters = {i: cells.get((m, "0.0", i), []) for i in ("1", "2", "3")}
+        if not all(len(iters[i]) >= 3 for i in ("1", "2", "3")):
+            continue  # skip models whose T=0 matrix is not yet complete
+        complete.append(m)
+        row = {"model": tag_label(m)}
+        for i in ("1", "2", "3"):
+            row[f"iter{i}"] = round(statistics.mean(iters[i]), 3)
+            row[f"iter{i}_std"] = round(statistics.pstdev(iters[i]), 3)
+        row["gain"] = round(row["iter3"] - row["iter1"], 3)
+        out["coverage_by_model"].append(row)
+
+    # temperature comparison over the complete models only (fair T=0 vs T=1.0)
+    temp = {}
+    for t in ("0.0", "1.0"):
+        per_iter = {}
+        for i in ("1", "2", "3"):
+            vals = [statistics.mean(cells[(m, t, i)]) for m in complete
+                    if cells.get((m, t, i))]
+            if len(vals) == len(complete) and vals:
+                per_iter[i] = round(sum(vals) / len(vals), 3)
+        if per_iter:
+            temp[t] = per_iter
+    if temp:
+        out["temperature"] = temp
+
+    cqfile = "reports/cq_validation_summary.csv"
+    if os.path.exists(cqfile):
+        for r in csv.DictReader(open(cqfile)):
+            disp, domain = PILOT_META.get(r["kg"], (r["kg"], ""))
+            out["cq_validation"].append({
+                "kg": r["kg"], "display": disp, "domain": domain,
+                "answered": int(r["answered"]), "total": int(r["total_cqs"]),
+                "share": float(r["share"]), "triples": int(r["triples"]),
+            })
+        out["cq_validation"].sort(key=lambda x: -x["answered"])
+
+    os.makedirs("docs/resources", exist_ok=True)
+    with open("docs/resources/experiments-data.json", "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=1, ensure_ascii=False)
+    print(f"✅ {len(out['coverage_by_model'])} models, "
+          f"{len(out['cq_validation'])} pilots → docs/resources/experiments-data.json")
+
+
 if __name__ == "__main__":
     export_alignments()
     export_coverage()
+    export_experiments()
