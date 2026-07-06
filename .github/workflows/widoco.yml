@@ -5,6 +5,8 @@ on:
     branches: [ main ]
     paths:
       - "aidoc-ap.ttl"
+      - "annex_4.ttl"
+      - "docs/**"
       - ".github/workflows/widoco.yml"
   workflow_dispatch:
 
@@ -69,6 +71,9 @@ jobs:
           cp docs/coverage.html site/coverage.html
           cp docs/alignments.html site/alignments.html
           cp docs/requirements.html site/requirements.html
+          cp docs/curation.html site/curation.html
+          cp docs/alignments.json site/alignments.json
+          cp docs/runs.json site/runs.json
           cp annex_4.ttl site/annex_4.ttl
 
       - name: Upload artifact
