@@ -15,11 +15,14 @@ PYTHON=".venv/bin/python"
 [ -x "$PYTHON" ] || PYTHON="python3"
 export PYTHONUNBUFFERED=1
 
-# load .env for OLLAMA_URL
+# Preserve variables passed on the command line before sourcing .env, so that
+# `COVERAGE_MODELS=... ./run_experiments.sh` is not clobbered by the .env value.
+_PRESET_MODELS="${COVERAGE_MODELS:-}"
+# load .env for OLLAMA_URL / credentials
 set -a; [ -f .env ] && source .env; set +a
 OLLAMA_URL="${OLLAMA_URL:-http://localhost:11434}"
 
-MODELS="${COVERAGE_MODELS:-gemma3:27b,llama3.3:70b,gpt-oss:120b}"
+MODELS="${_PRESET_MODELS:-${COVERAGE_MODELS:-gemma3:27b,llama3.3:70b,gpt-oss:120b}}"
 ALIGNMENT_MODEL="${ALIGNMENT_MODEL:-gemma3:27b}"
 # lexical candidate threshold: deliberately below the 0.75 semantic threshold so
 # that the LLM stage (and the below-threshold curation for the false-negative

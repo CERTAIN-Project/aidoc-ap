@@ -1,6 +1,7 @@
 import os
 import csv
 import json
+import re
 import datetime
 import shutil
 import time
@@ -145,35 +146,61 @@ Return the result as strict JSON with the following structure:
 """
 
 # ========== RUN LLM COMPARISON ==========
+def parse_coverage_json(text):
+    """Robustly extract the coverage result from an LLM reply.
+
+    As in the alignment step, malformed JSON (unescaped quotes/newlines in the
+    free-text reasoning, trailing commas) is repaired rather than retried
+    (deterministic at temperature 0). Falls back to regex-extracting the scalar
+    coverage_score and the list fields so a single bad character in the
+    reasoning does not discard an otherwise valid evaluation."""
+    text = text.replace("```json", "").replace("```", "")
+    i, j = text.find("{"), text.rfind("}")
+    core = text[i:j + 1] if (i != -1 and j > i) else text
+    for candidate in (core, re.sub(r",(\s*[}\]])", r"\1", core)):
+        try:
+            return json.loads(candidate)
+        except Exception:
+            pass
+    score = re.search(r'"coverage_score"\s*:\s*([0-9]*\.?[0-9]+)', text)
+    if score is None:
+        raise ValueError(f"could not parse coverage_score from reply: {text[:160]!r}")
+
+    def _list(field):
+        m = re.search(r'"%s"\s*:\s*\[(.*?)\]' % field, text, re.S)
+        return re.findall(r'"([^"]+)"', m.group(1)) if m else []
+
+    reason = re.search(r'"reasoning"\s*:\s*"(.*?)"\s*[},]', text, re.S)
+    return {
+        "coverage_score": float(score.group(1)),
+        "matched_terms": _list("matched_terms"),
+        "reasoning": reason.group(1).replace('\n', ' ') if reason else "",
+        "missing": _list("missing"),
+    }
+
+
 def query_ollama(prompt, max_attempts=4):
     # Each requirement is evaluated in a fresh, independent single-turn request;
     # no conversation state is carried over between requirements or runs.
-    # Retries with backoff: the shared server serialises requests per port, so
-    # transient timeouts/connection errors are expected under load.
+    # Retry with backoff ONLY on API/transport errors; JSON parsing is handled
+    # separately by parse_coverage_json and is not retried.
     last_err = None
     for attempt in range(1, max_attempts + 1):
         try:
             chat_completion = client.chat.completions.create(
-                messages=[
-                    {
-                        'role': 'user',
-                        'content': prompt,
-                    }
-                ],
+                messages=[{'role': 'user', 'content': prompt}],
                 model=OLLAMA_MODEL,
                 temperature=TEMPERATURE,
                 seed=SEED,
             )
-            response = chat_completion.choices[0].message.content
-            response = response.replace("```json", "")
-            response = response.replace("```", "")
-            return json.loads(response)
         except Exception as e:
             last_err = e
             if attempt < max_attempts:
                 wait = 5 * 3 ** (attempt - 1)  # 5s, 15s, 45s
-                print(f"  retry {attempt}/{max_attempts - 1} after error: {e} (waiting {wait}s)")
+                print(f"  retry {attempt}/{max_attempts - 1} after API error: {e} (waiting {wait}s)")
                 time.sleep(wait)
+            continue
+        return parse_coverage_json(chat_completion.choices[0].message.content)
     raise last_err
 
 # Create a mapping from labels to URIs for matched terms

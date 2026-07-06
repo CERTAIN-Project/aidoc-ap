@@ -1,5 +1,6 @@
 import os
 import json
+import re
 import datetime
 import time
 import pandas as pd
@@ -104,33 +105,56 @@ Return JSON in this format only:
 }}
 """
 
+def parse_relation_json(text):
+    """Robustly extract {relation, confidence, comment} from an LLM reply.
+
+    LLMs occasionally emit JSON that is invalid (unescaped quotes or newlines
+    inside the free-text comment, trailing commas). Retrying is pointless at
+    temperature 0 because the reply is deterministic, so we repair/extract
+    instead: (1) strict JSON on the outermost object, (2) drop trailing commas,
+    (3) regex-extract the fixed schema fields (relation and confidence are
+    simple values not affected by comment-quoting issues)."""
+    text = text.replace("```json", "").replace("```", "")
+    i, j = text.find("{"), text.rfind("}")
+    core = text[i:j + 1] if (i != -1 and j > i) else text
+    for candidate in (core, re.sub(r",(\s*[}\]])", r"\1", core)):
+        try:
+            return json.loads(candidate)
+        except Exception:
+            pass
+    rel = re.search(r'"relation"\s*:\s*"([^"]+)"', text)
+    conf = re.search(r'"confidence"\s*:\s*([0-9]*\.?[0-9]+)', text)
+    com = re.search(r'"(?:comment|explanation|rationale)"\s*:\s*"(.*?)"\s*[},]', text, re.S)
+    if rel or conf:
+        return {
+            "relation": rel.group(1) if rel else "skos:relatedMatch",
+            "confidence": float(conf.group(1)) if conf else 0.0,
+            "comment": com.group(1).replace('\n', ' ') if com else "",
+        }
+    raise ValueError(f"could not parse relation/confidence from reply: {text[:160]!r}")
+
+
 def query_ollama(prompt, max_attempts=4):
-    # Retries with backoff: the shared server serialises requests per port, so
-    # transient timeouts/connection errors are expected under load.
+    # Retry with backoff ONLY on API/transport errors (the shared server
+    # serialises requests, so transient timeouts are expected). JSON parsing is
+    # handled separately by parse_relation_json and is not retried.
     last_err = None
     for attempt in range(1, max_attempts + 1):
         try:
             chat_completion = client.chat.completions.create(
-                messages=[
-                    {
-                        'role': 'user',
-                        'content': prompt,
-                    }
-                ],
+                messages=[{'role': 'user', 'content': prompt}],
                 model=OLLAMA_MODEL,
                 temperature=TEMPERATURE,
                 seed=SEED,
             )
-            response = chat_completion.choices[0].message.content
-            response = response.replace("```json", "")
-            response = response.replace("```", "")
-            return json.loads(response)
         except Exception as e:
             last_err = e
             if attempt < max_attempts:
                 wait = 5 * 3 ** (attempt - 1)  # 5s, 15s, 45s
-                print(f"  retry {attempt}/{max_attempts - 1} after error: {e} (waiting {wait}s)")
+                print(f"  retry {attempt}/{max_attempts - 1} after API error: {e} (waiting {wait}s)")
                 time.sleep(wait)
+            continue
+        return parse_relation_json(chat_completion.choices[0].message.content)
     raise last_err
 
 for fname in os.listdir(INPUT_DIR):
