@@ -1,6 +1,6 @@
 # AIDOC-AP – AI Documentation Application Profile
 
-**AIDOC-AP** is an application profile for documenting AI systems and their lifecycle in a structured, machine-readable way, with a **primary focus on Annex IV of the EU AI Act**. It provides an ontology to represent technical documentation requirements such as system architecture, data, training/validation/testing procedures, risk and performance information.
+**AIDOC-AP** is an application profile for documenting AI systems and their lifecycle in a structured, machine-readable way, **grounded in the technical documentation obligation of Article 11 and Annex IV of the EU AI Act**. It provides an ontology to represent technical documentation requirements such as system architecture, data, training/validation/testing procedures, risk and performance information.
 
 The ontology is published under the persistent identifier: [`https://w3id.org/aidoc-ap#`](https://w3id.org/aidoc-ap).
 
@@ -22,7 +22,7 @@ This work is developed as part of the [**CERTAIN** project](https://certain-proj
 	- associated **competency questions** that express what a knowledge graph should be able to answer for each requirement
 
 - `reference_ontologies/`  
-	Reference ontologies used for validation and alignment (e.g. AIRO, PROV-O, MLS, DCAT3, DQV, VAIR, MEX). See also the original ontology specifications:
+	Reference ontologies used for validation and alignment (e.g. AIRO, PROV-O, MLS, DCAT3, DQV, VAIR, MEX, and the Data Privacy Vocabulary DPV with its AI, TECH and AI Act extensions). See also the original ontology specifications:
 	- AIRO: <https://w3id.org/airo>
 	- PROV-O: <https://www.w3.org/TR/prov-o/>
 	- MLS: <https://github.com/ML-Schema/core>
@@ -30,6 +30,7 @@ This work is developed as part of the [**CERTAIN** project](https://certain-proj
 	- DQV: <https://www.w3.org/TR/vocab-dqv/>
 	- VAIR: <https://w3id.org/vair>
 	- MEX: <http://mex.aksw.org/>
+	- DPV (incl. AI / TECH / AI Act extensions): <https://w3id.org/dpv>
 
 - `reports/`  
 	Generated outputs from the scripts:
@@ -46,9 +47,14 @@ This work is developed as part of the [**CERTAIN** project](https://certain-proj
 - `scripts/`  
 	Python scripts for extracting entities, computing alignments and assessing coverage with respect to Annex IV:
 	- `extract_entities.py`: extract AIDOC-AP entities into CSV
-	- `alignment_structural.py`: compute structural alignments between AIDOC-AP and reference ontologies
-	- `alignment_semantic.py`: compute LLM-based semantic alignments
-	- `semantic_mapping.py`: Annex-IV coverage analysis using an LLM
+	- `alignment_structural.py`: compute structural (lexical) alignments between AIDOC-AP and reference ontologies
+	- `alignment_semantic.py`: compute LLM-based semantic alignments; writes a per-ontology curation sheet of all judgements
+	- `semantic_mapping.py`: Annex-IV coverage analysis using an LLM (competency questions included in the prompt)
+	- `run_coverage_multirun.py`: run the coverage matrix (model × iteration × temperature × seeded run) and aggregate mean/std
+	- `run_cq_validation.py`: empirical, SPARQL-based competency-question answering over the example knowledge graphs
+	- `export_curation_ui_data.py` / `merge_curation.py` / `analyze_curation.py`: prepare, merge and analyse the expert curation of alignments
+	- `export_pages_data.py`: pre-aggregate the alignment/coverage/experiment data for the GitHub Pages site
+	- `run_experiments.sh`: end-to-end driver (preflight, alignment, coverage matrix)
 	- `generate_alignment_manifest.py`: generate a manifest of all alignment files
 
 
@@ -68,7 +74,7 @@ The design of AIDOC-AP is driven by the technical documentation obligations in *
 	- logging, risk, performance and transparency information
 
 - **Alignments to reference ontologies**  
-	To ensure interoperability, AIDOC-AP reuses related vocabularies (e.g. PROV-O, MLS, DCAT, DQV, FOAF, SKOS) and aligns key concepts to external ontologies such as AIRO, VAIR, MEX, PROV-O and MLS. Structural alignments are computed in `alignment_structural.py`, while `alignment_semantic.py` uses an LLM to propose semantic correspondences.
+	To ensure interoperability, AIDOC-AP reuses related vocabularies (e.g. PROV-O, MLS, DCAT, DQV, FOAF, SKOS) and aligns key concepts to external ontologies such as AIRO, VAIR, MEX, PROV-O, MLS and DPV. Structural (lexical) alignments are computed in `alignment_structural.py`, while `alignment_semantic.py` uses an LLM to propose semantic correspondences that are then curated by domain experts.
 
 - **Annex IV coverage assessment**  
 	The `semantic_mapping.py` script uses an LLM to compare each Annex IV requirement with the AIDOC-AP ontology terms. For each requirement, it produces:
@@ -115,7 +121,7 @@ Generated results are written to the `reports/` folder.
 
 ## Project Context – CERTAIN
 
-AIDOC-AP is developed **within the CERTAIN project** and applied in its use cases and pilots. CERTAIN investigates methods and tools to ensure compliance, transparency and accountability of AI systems. AIDOC-AP serves as the semantic backbone for representing AI system documentation a coverage of Annex IV requirements across different domains.
+AIDOC-AP is developed **within the CERTAIN project** and applied in its use cases and pilots. CERTAIN investigates methods and tools to ensure compliance, transparency and accountability of AI systems. AIDOC-AP serves as the semantic backbone for representing AI system documentation and assessing coverage of Annex IV requirements across different domains.
 
 The project is funded by the European Union's Horizon Europe research and innovation programme HORIZON-CL4-2024-DATA-01-01 under grant agreement No. 101189650.
 
