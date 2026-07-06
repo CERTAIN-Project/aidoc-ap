@@ -1,6 +1,7 @@
 import os
 import json
 import datetime
+import time
 import pandas as pd
 from rdflib import Graph, RDFS, Namespace, URIRef, Literal
 from rdflib.namespace import PROV, XSD, OWL, RDF
@@ -17,10 +18,13 @@ INPUT_DIR = "reports/alignment_structural"
 os.makedirs("reports/alignment_semantic", exist_ok=True)
 OUTPUT_DIR = "reports/alignment_semantic"
 
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:27b")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434") + "/v1/"
-print(f"Using Ollama URL: {OLLAMA_URL}, Model: {OLLAMA_MODEL}")
-CONF_THRESHOLD = 0.5
+CONF_THRESHOLD = float(os.getenv("CONF_THRESHOLD", "0.75"))
+TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.0"))
+SEED = int(os.getenv("LLM_SEED", "42"))
+print(f"Using Ollama URL: {OLLAMA_URL}, Model: {OLLAMA_MODEL}, "
+      f"Threshold: {CONF_THRESHOLD}, Temperature: {TEMPERATURE}, Seed: {SEED}")
 
 client = OpenAI(
     base_url=OLLAMA_URL,
@@ -72,14 +76,25 @@ Description: {ref_comment}
 
 Lexical similarity score (0–1): {similarity}
 
-Decide whether these two terms are:
-- equivalentClass
-- broader
-- narrower
-- related
-- unrelated
+Decide which single relation holds between the AIDOC concept and the {REF} concept.
+Use exactly one of the following relations, applying these definitions:
 
-If related, specify the appropriate SKOS or OWL relation (e.g., skos:closeMatch, skos:broadMatch, owl:equivalentClass).
+- owl:equivalentClass — the two concepts denote the same class: every instance of
+  one is necessarily an instance of the other.
+- skos:closeMatch — the concepts are sufficiently similar that they can be used
+  interchangeably in some applications, but their meanings are not identical.
+- skos:broadMatch — the {REF} concept has a broader (more general) meaning that
+  subsumes the AIDOC concept.
+- skos:narrowMatch — the {REF} concept has a narrower (more specific) meaning
+  that is subsumed by the AIDOC concept.
+- skos:relatedMatch — the concepts are associatively related, but neither
+  equivalent nor in a hierarchical (broader/narrower) relation.
+- unrelated — no meaningful semantic relation between the concepts.
+
+Also return a score between 0.0 and 1.0 expressing how strongly the given labels
+and descriptions support the chosen relation. This score is used only as a
+heuristic to rank and filter candidate mappings for subsequent human review;
+it is not treated as a calibrated probability.
 
 Return JSON in this format only:
 {{
@@ -89,21 +104,34 @@ Return JSON in this format only:
 }}
 """
 
-def query_ollama(prompt):
-    chat_completion = client.chat.completions.create(
-        messages=[
-            {
-                'role': 'user',
-                'content': prompt,
-            }
-        ],
-        model=OLLAMA_MODEL,
-    )
-    response = chat_completion.choices[0].message.content
-    response = response.replace("```json", "")
-    response = response.replace("```", "")
-    json_result = json.loads(response)
-    return json_result
+def query_ollama(prompt, max_attempts=4):
+    # Retries with backoff: the shared server serialises requests per port, so
+    # transient timeouts/connection errors are expected under load.
+    last_err = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            chat_completion = client.chat.completions.create(
+                messages=[
+                    {
+                        'role': 'user',
+                        'content': prompt,
+                    }
+                ],
+                model=OLLAMA_MODEL,
+                temperature=TEMPERATURE,
+                seed=SEED,
+            )
+            response = chat_completion.choices[0].message.content
+            response = response.replace("```json", "")
+            response = response.replace("```", "")
+            return json.loads(response)
+        except Exception as e:
+            last_err = e
+            if attempt < max_attempts:
+                wait = 5 * 3 ** (attempt - 1)  # 5s, 15s, 45s
+                print(f"  retry {attempt}/{max_attempts - 1} after error: {e} (waiting {wait}s)")
+                time.sleep(wait)
+    raise last_err
 
 for fname in os.listdir(INPUT_DIR):
     if not fname.endswith("_alignment.csv"):
@@ -111,8 +139,14 @@ for fname in os.listdir(INPUT_DIR):
 
     REF = Graph().parse(REFERENCE_DIR + fname.replace('_alignment.csv','.ttl'), format="turtle")
     STRUCTURAL_FILE = os.path.join(INPUT_DIR, fname)
-    OUTPUT_FILE = os.path.join(OUTPUT_DIR, fname.replace("_alignment.csv", "-alignments.ttl"))  
+    OUTPUT_FILE = os.path.join(OUTPUT_DIR, fname.replace("_alignment.csv", "-alignments.ttl"))
+    CURATION_FILE = os.path.join(OUTPUT_DIR, fname.replace("_alignment.csv", "-curation.csv"))
     df = pd.read_csv(STRUCTURAL_FILE)
+
+    # All LLM judgments (incl. below-threshold and unrelated) are recorded for
+    # expert curation and false-negative analysis; the TTL output only contains
+    # mappings at or above CONF_THRESHOLD.
+    curation_rows = []
 
     # ==========================
     # Initialize RDF graph
@@ -164,7 +198,23 @@ for fname in os.listdir(INPUT_DIR):
             conf = float(result.get("confidence", 0.0))
             rationale = result.get("comment", "")
 
-            if conf >= CONF_THRESHOLD:
+            curation_rows.append({
+                "aidoc_iri": str(aidoc_uri),
+                "aidoc_label": aidoc_desc["label"],
+                "ref_iri": str(ref_uri),
+                "ref_label": ref_desc["label"],
+                "lexical_similarity": similarity,
+                "llm_relation": relation_str,
+                "llm_confidence": conf,
+                "llm_rationale": rationale,
+                "above_threshold": conf >= CONF_THRESHOLD,
+                "curator_decision": "",   # accept | reject | modify
+                "curator_relation": "",   # filled if decision == modify
+                "curator_name": "",
+                "curator_notes": "",
+            })
+
+            if conf >= CONF_THRESHOLD and relation_str.strip().lower() != "unrelated":
 
                 # --- Determine appropriate namespace for relation ---
                 if relation_str.startswith("skos:"):
@@ -204,7 +254,9 @@ for fname in os.listdir(INPUT_DIR):
     alignment_graph.add((activity_uri, PROV.endedAtTime, Literal(end_time, datatype=XSD.dateTime)))
 
     alignment_graph.serialize(destination=OUTPUT_FILE, format="turtle")
+    pd.DataFrame(curation_rows).to_csv(CURATION_FILE, index=False)
 
     print(f"Semantic alignment with descriptions saved as Turtle → {OUTPUT_FILE}")
+    print(f"Curation sheet (all {len(curation_rows)} LLM judgments) → {CURATION_FILE}")
 
 print("✅ Semantic alignment completed.")

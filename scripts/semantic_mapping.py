@@ -3,6 +3,7 @@ import csv
 import json
 import datetime
 import shutil
+import time
 from rdflib import Graph, RDF, RDFS, Namespace, URIRef, Literal
 from rdflib.namespace import XSD, SKOS, PROV
 from openai import OpenAI
@@ -13,13 +14,24 @@ load_dotenv()
 
 # ========== CONFIGURATION ==========
 AIACT_FILE = "annex_4.ttl"
-ENTITY_FILE = "reports/aidoc-entities.csv"
+# ENTITY_FILE can be overridden to evaluate historical ontology iterations
+# (e.g. reports/experiments/entities_iter1_gemma3_27b.csv)
+ENTITY_FILE = os.getenv("ENTITY_FILE", "reports/aidoc-entities.csv")
 OUTPUT_FILE = "reports/semantic_mapping.ttl"
 OUTPUT_JSON = "reports/semantic_mapping.json"
 
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:27b")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434") + "/v1/"
-print(f"Using Ollama URL: {OLLAMA_URL}, Model: {OLLAMA_MODEL}")
+TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.0"))
+SEED = int(os.getenv("LLM_SEED", "42"))
+# Optional tag to keep outputs of separate experiment runs apart
+# (e.g. "gemma3_27b_run1"); empty tag preserves the default file names.
+RUN_TAG = os.getenv("RUN_TAG", "").strip()
+if RUN_TAG:
+    OUTPUT_FILE = f"reports/semantic_mapping_{RUN_TAG}.ttl"
+    OUTPUT_JSON = f"reports/semantic_mapping_{RUN_TAG}.json"
+print(f"Using Ollama URL: {OLLAMA_URL}, Model: {OLLAMA_MODEL}, "
+      f"Temperature: {TEMPERATURE}, Seed: {SEED}, Run tag: {RUN_TAG or '(none)'}")
 
 client = OpenAI(
     base_url=OLLAMA_URL,
@@ -47,12 +59,19 @@ requirements = []
 for s in g.subjects(RDF.type, AIACT.Requirement):
     label = g.value(s, RDFS.label)
     description = g.value(s, Namespace("http://purl.org/dc/terms/").description)
+    # associated competency questions are part of the evaluator input
+    cqs = []
+    for cq in g.objects(s, AIACT.hasCompetencyQuestion):
+        cq_label = g.value(cq, RDFS.label)
+        if cq_label:
+            cqs.append(str(cq_label))
     if label and description:
         requirements.append({
             "id": str(s).split("#")[-1],
             "uri": str(s),
             "label": str(label),
-            "text": str(description)
+            "text": str(description),
+            "cqs": sorted(cqs)
         })
 
 print(f"Loaded {len(requirements)} Annex IV requirements and {len(ontology_entities)} ontology entities.")
@@ -87,6 +106,8 @@ agent_uri = URIRef("https://w3id.org/aidoc-ap/alignment#LLMCoverageBot")
 coverage_graph.add((activity_uri, RDF.type, PROV.Activity))
 coverage_graph.add((activity_uri, RDFS.label, Literal(f"LLM Coverage Analysis using {OLLAMA_MODEL}")))
 coverage_graph.add((activity_uri, PROV.startedAtTime, Literal(run_timestamp_full.isoformat() + "Z", datatype=XSD.dateTime)))
+coverage_graph.add((activity_uri, COV.temperature, Literal(TEMPERATURE, datatype=XSD.decimal)))
+coverage_graph.add((activity_uri, COV.seed, Literal(SEED, datatype=XSD.integer)))
 
 coverage_graph.add((agent_uri, RDF.type, PROV.SoftwareAgent))
 coverage_graph.add((agent_uri, RDFS.label, Literal(f"LLM Coverage Bot ({OLLAMA_MODEL})")))
@@ -99,6 +120,10 @@ You are an ontology and AI compliance expert.
 
 Given the following AI Act requirement:
 "{requirement_text}"
+
+The requirement is operationalised through these competency questions, which a
+knowledge graph using the ontology must be able to answer:
+{competency_questions}
 
 Compare it to the following ontology elements (classes, properties, or concepts):
 
@@ -120,21 +145,36 @@ Return the result as strict JSON with the following structure:
 """
 
 # ========== RUN LLM COMPARISON ==========
-def query_ollama(prompt):
-    chat_completion = client.chat.completions.create(
-        messages=[
-            {
-                'role': 'user',
-                'content': prompt,
-            }
-        ],
-        model=OLLAMA_MODEL,
-    )
-    response = chat_completion.choices[0].message.content
-    response = response.replace("```json", "")
-    response = response.replace("```", "")
-    json_result = json.loads(response)
-    return json_result
+def query_ollama(prompt, max_attempts=4):
+    # Each requirement is evaluated in a fresh, independent single-turn request;
+    # no conversation state is carried over between requirements or runs.
+    # Retries with backoff: the shared server serialises requests per port, so
+    # transient timeouts/connection errors are expected under load.
+    last_err = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            chat_completion = client.chat.completions.create(
+                messages=[
+                    {
+                        'role': 'user',
+                        'content': prompt,
+                    }
+                ],
+                model=OLLAMA_MODEL,
+                temperature=TEMPERATURE,
+                seed=SEED,
+            )
+            response = chat_completion.choices[0].message.content
+            response = response.replace("```json", "")
+            response = response.replace("```", "")
+            return json.loads(response)
+        except Exception as e:
+            last_err = e
+            if attempt < max_attempts:
+                wait = 5 * 3 ** (attempt - 1)  # 5s, 15s, 45s
+                print(f"  retry {attempt}/{max_attempts - 1} after error: {e} (waiting {wait}s)")
+                time.sleep(wait)
+    raise last_err
 
 # Create a mapping from labels to URIs for matched terms
 label_to_uri = {}
@@ -145,8 +185,10 @@ for entity in ontology_entities:
 results = []
 
 for req in requirements:
+    cq_text = "\n".join(f"- {cq}" for cq in req["cqs"]) or "- (no competency questions defined)"
     prompt = prompt_template.format(
         requirement_text=req["text"],
+        competency_questions=cq_text,
         ontology_terms=entity_text
     )
 
@@ -230,11 +272,12 @@ if os.path.exists(OUTPUT_FILE):
 coverage_graph.serialize(destination=OUTPUT_FILE, format="turtle")
 print(f"✅ Semantic mapping (TTL) saved to {OUTPUT_FILE} ({len(coverage_graph)} total triples)")
 
-# Copy to docs/resources for website
-docs_output = "docs/resources/semantic_mapping.ttl"
-os.makedirs(os.path.dirname(docs_output), exist_ok=True)
-shutil.copy2(OUTPUT_FILE, docs_output)
-print(f"✅ Copied to {docs_output} for website")
+# Copy to docs/resources for website (only for default runs, not tagged experiments)
+if not RUN_TAG:
+    docs_output = "docs/resources/semantic_mapping.ttl"
+    os.makedirs(os.path.dirname(docs_output), exist_ok=True)
+    shutil.copy2(OUTPUT_FILE, docs_output)
+    print(f"✅ Copied to {docs_output} for website")
 
 # Save JSON for compatibility (only current run)
 with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
