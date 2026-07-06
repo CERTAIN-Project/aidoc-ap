@@ -90,7 +90,7 @@
     <h4><a href="requirements.html">AI Act Requirements</a></h4>
     <p>List of technical documentation requirements extracted from EU AI Act Annex IV, with descriptions, lifecycle stages, and competency questions.</p>
     <div class="stats">
-      <span class="stat-badge"><strong id="req-count">28</strong> requirements</span>
+      <span class="stat-badge"><strong id="req-count">—</strong> requirements</span>
       <span class="stat-badge"><strong id="cq-count">—</strong> competency questions</span>
     </div>
     <a href="requirements.html" class="cta">View all requirements →</a>
@@ -99,10 +99,10 @@
   <div class="resource-card">
     <span class="icon">📊</span>
     <h4><a href="coverage.html">Coverage Analysis</a></h4>
-    <p>LLM‑based assessment evaluating how well AIDOC‑AP covers EU AI Act Annex IV requirements, with detailed reasoning and gap analysis.</p>
+    <p>How well AIDOC‑AP covers EU AI Act Annex IV — across ontology development iterations and by empirical, SPARQL‑based competency‑question answering on pilot knowledge graphs.</p>
     <div class="stats">
-      <span class="stat-badge"><strong id="cov-avg">—</strong> avg coverage</span>
-      <span class="stat-badge"><strong id="cov-high">—</strong> excellent (≥90%)</span>
+      <span class="stat-badge"><strong id="cov-avg">—</strong> avg coverage (final iter.)</span>
+      <span class="stat-badge"><strong id="cov-pilots">—</strong> pilots CQ‑tested</span>
     </div>
     <a href="coverage.html" class="cta">View coverage analysis →</a>
   </div>
@@ -110,7 +110,7 @@
   <div class="resource-card">
     <span class="icon">🔗</span>
     <h4><a href="alignments.html">Cross‑Ontology Alignments</a></h4>
-    <p>Mappings between AIDOC‑AP terms and external ontologies (AIRO, ML‑Schema, PROV‑O, etc.) with relation types, confidence scores, and provenance.</p>
+    <p>Mappings between AIDOC‑AP terms and external ontologies (AIRO, VAIR, DPV, PROV‑O, etc.) with relation types and provenance.</p>
     <div class="stats">
       <span class="stat-badge"><strong id="align-count">—</strong> mappings</span>
       <span class="stat-badge"><strong id="align-ontos">—</strong> ontologies</span>
@@ -120,59 +120,36 @@
 </div>
 
 <script>
-// Dynamically load stats for each resource
+// Dynamically load stats for each resource card from the pre-aggregated JSON
+// (falls back silently if a file is missing).
 (async function loadResourceStats(){
-  // Load requirements count and CQs
-  try {
-    const resp = await fetch('annex_4.ttl');
-    const txt = await resp.text();
-    const cqMatches = txt.match(/aiact:cq\d+_\d+/g);
-    if (cqMatches) {
-      document.getElementById('cq-count').textContent = new Set(cqMatches).size;
-    }
-  } catch(e) { console.log('Could not load requirements stats'); }
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
 
-  // Load coverage stats
+  // Requirements + competency questions from annex_4.ttl
   try {
-    const resp = await fetch('resources/semantic_mapping.ttl');
-    if (resp.ok) {
-      const txt = await resp.text();
-      const valueMatches = txt.match(/dqv:value\s+"?([0-9.]+)"?/g);
-      if (valueMatches) {
-        const scores = valueMatches.map(m => parseFloat(m.match(/([0-9.]+)/)[1]));
-        const avg = scores.reduce((a,b)=>a+b,0) / scores.length;
-        const high = scores.filter(s => s >= 0.9).length;
-        document.getElementById('cov-avg').textContent = (avg * 100).toFixed(0) + '%';
-        document.getElementById('cov-high').textContent = high;
-      }
-    }
-  } catch(e) { console.log('Could not load coverage stats'); }
+    const txt = await (await fetch('annex_4.ttl')).text();
+    const reqs = txt.match(/aiact:req\d+\b/g);
+    const cqs = txt.match(/aiact:cq\d+_\d+/g);
+    if (reqs) set('req-count', new Set(reqs).size);
+    if (cqs) set('cq-count', new Set(cqs).size);
+  } catch(e) { console.log('req/cq stats unavailable'); }
 
-  // Load alignment stats
+  // Coverage: final-iteration average + number of pilots (experiments-data.json)
   try {
-    const manifestResp = await fetch('resources/alignments-manifest.json');
-    if (manifestResp.ok) {
-      const manifest = await manifestResp.json();
-      const files = manifest.files || [];
-      document.getElementById('align-ontos').textContent = files.length;
-      
-      // Count total mappings across all files
-      let totalMappings = 0;
-      for (const file of files) {
-        try {
-          const resp = await fetch(file);
-          const txt = await resp.text();
-          const mappingMatches = txt.match(/a\s+alignment:Mapping/g);
-          if (mappingMatches) {
-            totalMappings += mappingMatches.length;
-          }
-        } catch(e) { /* skip */ }
-      }
-      if (totalMappings > 0) {
-        document.getElementById('align-count').textContent = totalMappings;
-      }
+    const d = await (await fetch('resources/experiments-data.json')).json();
+    const t0 = d.temperature && d.temperature['0.0'];
+    if (t0 && t0['3'] != null) set('cov-avg', Math.round(t0['3'] * 100) + '%');
+    if (Array.isArray(d.cq_validation)) set('cov-pilots', d.cq_validation.length);
+  } catch(e) { console.log('coverage stats unavailable'); }
+
+  // Alignments: same source as the alignments page (alignments.json)
+  try {
+    const maps = await (await fetch('alignments.json')).json();
+    if (Array.isArray(maps)) {
+      set('align-count', maps.length);
+      set('align-ontos', new Set(maps.map(m => m.target_ns).filter(Boolean)).size);
     }
-  } catch(e) { console.log('Could not load alignment stats'); }
+  } catch(e) { console.log('alignment stats unavailable'); }
 })();
 </script>
 
