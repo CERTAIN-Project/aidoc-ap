@@ -22,8 +22,8 @@
   async function loadJSONorTTL(){
     try {
       const [mapsRes, runsRes] = await Promise.all([
-        fetch('alignments.json', {cache:'no-store'}),
-        fetch('runs.json', {cache:'no-store'})
+        fetch('alignments.json'),
+        fetch('runs.json')
       ]);
       if (mapsRes.ok) {
         const maps = await mapsRes.json();
@@ -39,7 +39,7 @@
     const runMap = {};
 
     for (const ttl of ttlFiles) {
-      const txt = await (await fetch(ttl, {cache:'no-store'})).text();
+      const txt = await (await fetch(ttl)).text();
       const parser = new N3.Parser();
       const quads = parser.parse(txt);
 

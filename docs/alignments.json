@@ -1,0 +1,233 @@
+[
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#0bd98110-b502-4bd1-8047-4b8900c347fd",
+  "source": "https://w3id.org/aidoc-ap#AIDeployer",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://w3id.org/airo#AIDeployer",
+  "target_ns": "https://w3id.org/airo",
+  "confidence": 0.99,
+  "rationale": "The labels and descriptions are identical. The airo concept provides a URI, indicating it’s formally defined; however, the descriptive semantics are the same. Therefore, they are equivalent.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#81cb70f3-0d6c-483a-84e9-b50314eb3e48"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#16f6624f-76c6-4ead-9ee6-187e09f55d9a",
+  "source": "https://w3id.org/aidoc-ap#Dataset",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://www.w3.org/TR/vocab-dcat-3/Dataset",
+  "target_ns": "https://www.w3.org/TR/vocab-dcat-3",
+  "confidence": 0.95,
+  "rationale": "The AIDOC 'Dataset' concept and the airo concept (using the DCAT vocabulary's Dataset) have identical labels and descriptions (though the airo description is empty, it references a well-defined standard). The lexical similarity is 1.0 indicating a strong match. While AIDOC might add additional properties specific to the 'AI lifecycle', the core meaning is the same. Therefore they can be considered equivalent.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#81cb70f3-0d6c-483a-84e9-b50314eb3e48"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#2c146d59-f475-4188-b157-0c0f5c084a35",
+  "source": "https://w3id.org/aidoc-ap#AIModel",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://w3id.org/airo#AIModel",
+  "target_ns": "https://w3id.org/airo",
+  "confidence": 0.95,
+  "rationale": "Both concepts define an 'AI Model' as a computational/mathematical entity capable of generating outputs from inputs. The descriptions are highly similar and functionally equivalent, despite slightly different phrasing. The lexical similarity of 1.0 strongly supports this.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#81cb70f3-0d6c-483a-84e9-b50314eb3e48"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#39f4f0ca-cd3f-4e2d-9420-d1d77ba6c505",
+  "source": "https://w3id.org/aidoc-ap#Standard",
+  "relation": "http://www.w3.org/2004/02/skos/core#closeMatch",
+  "target": "https://w3id.org/airo#Standard",
+  "target_ns": "https://w3id.org/airo",
+  "confidence": 0.85,
+  "rationale": "Both concepts refer to standards applied to AI systems. The airo concept provides a more formal definition referencing standardisation bodies and clarifying voluntary compliance, while the AIDOC concept is a more general description.  Given the high lexical similarity and overlapping intent, a close match is appropriate.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#81cb70f3-0d6c-483a-84e9-b50314eb3e48"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#761a1347-b42b-4fce-8b0a-6226d29ef4d1",
+  "source": "https://w3id.org/aidoc-ap#AISystem",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://w3id.org/airo#AISystem",
+  "target_ns": "https://w3id.org/airo",
+  "confidence": 0.99,
+  "rationale": "The labels and descriptions are identical. The only difference is that 'airo' provides a URI, which indicates it's part of a formally defined ontology. Given the 1.0 lexical similarity score and identical definitions, these concepts are effectively equivalent.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#81cb70f3-0d6c-483a-84e9-b50314eb3e48"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#bce1b463-d30f-45d7-b963-69099f807685",
+  "source": "https://w3id.org/aidoc-ap#AIProvider",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://w3id.org/airo#AIProvider",
+  "target_ns": "https://w3id.org/airo",
+  "confidence": 0.99,
+  "rationale": "The labels and descriptions are identical. The 'airo' concept also provides a URI, establishing it as a formally defined class, but the core meaning is the same. Therefore, they are equivalent classes.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#81cb70f3-0d6c-483a-84e9-b50314eb3e48"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#278b8c14-f85f-46bd-97a9-2560d62caad9",
+  "source": "https://w3id.org/aidoc-ap#Dataset",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "http://mex.aksw.org/mex-core#Dataset",
+  "target_ns": "http://mex.aksw.org/mex-core",
+  "confidence": 0.95,
+  "rationale": "Both concepts share the same label and, critically, describe a 'Dataset'. The `mex-core` concept also provides a URI, solidifying its definition. Absence of a description in `mex-core` isn't a dealbreaker, given the label match and context. While further investigation of the full ontologies would *perfectly* confirm equivalence, based on the provided information they are highly likely equivalent",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#16dc778c-5eee-41d5-b1df-346ed57a117f"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#4efcf1e7-d104-4174-8325-8d608eaf2937",
+  "source": "https://w3id.org/aidoc-ap#Dataset",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "http://www.w3.org/ns/mls#Dataset",
+  "target_ns": "http://www.w3.org/ns/mls",
+  "confidence": 0.95,
+  "rationale": "Both concepts share the same label and describe a 'Dataset'. While the ml-onto concept includes a URI and the AIDOC concept does not, the descriptions are essentially identical indicating a very strong semantic overlap. Without further information about the broader context of each ontology, an equivalent class relationship is the most appropriate.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#c6f56a4d-0704-47e8-95b0-905050445669"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#5dbfc6e6-14e8-483f-958c-8862a4e0d048",
+  "source": "https://w3id.org/aidoc-ap#ModelEvaluation",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "http://www.w3.org/ns/mls#ModelEvaluation",
+  "target_ns": "http://www.w3.org/ns/mls",
+  "confidence": 0.95,
+  "rationale": "Both concepts have the same label and, despite the ml-onto concept lacking a verbose description, the implied meaning from its URI suggests functional equivalence. The lexical similarity is perfect.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#c6f56a4d-0704-47e8-95b0-905050445669"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#39030344-3fbb-498e-807d-afe8f0af7b22",
+  "source": "https://w3id.org/aidoc-ap#ModelEvaluation",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "http://www.w3.org/ns/mls#ModelEvaluation",
+  "target_ns": "http://www.w3.org/ns/mls",
+  "confidence": 0.95,
+  "rationale": "Despite slight differences in phrasing, both concepts fundamentally represent the process of evaluating a model's performance. The `mlschema` definition is more detailed, explicitly mentioning performance measures and specifications, but this detail doesn't change the core meaning. The lexical similarity is perfect, further supporting equivalence.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#ae754564-c461-46f7-b717-bbaca59aef94"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#772ea501-7b6e-421f-8c48-990a0dbeaa82",
+  "source": "https://w3id.org/aidoc-ap#Dataset",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "http://www.w3.org/ns/mls#Dataset",
+  "target_ns": "http://www.w3.org/ns/mls",
+  "confidence": 0.95,
+  "rationale": "Both concepts share the same label and a very high lexical similarity. While the `mlschema` concept includes a URI providing formal identification, the core meaning – representing a dataset – appears identical. Without further information about internal attributes or constraints, they can be considered equivalent.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#ae754564-c461-46f7-b717-bbaca59aef94"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#004edd93-02e3-4885-b41a-a69bb7ab2a8a",
+  "source": "https://w3id.org/aidoc-ap#ChangeLog",
+  "relation": "http://www.w3.org/2004/02/skos/core#closeMatch",
+  "target": "https://w3id.org/rains#ChangeLog",
+  "target_ns": "https://w3id.org/rains",
+  "confidence": 0.85,
+  "rationale": "Both concepts represent a record of changes. The RAINS concept is more specific, framing the Change Log as a type of accountable result linked to design specifications and requiring specific information elements (Change & ChangeJustification). While AIDOC is a general change log, RAINS provides a more formally defined and constrained version. They are highly similar but not identical.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#c478b879-a69f-4512-971f-fb7a343d16d1"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#2b6a456e-ff6d-4919-a16a-83f27eb71fbf",
+  "source": "https://w3id.org/aidoc-ap#AISystem",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://w3id.org/rains#AI_System",
+  "target_ns": "https://w3id.org/rains",
+  "confidence": 0.95,
+  "rationale": "Both concepts define 'AI System' with highly similar descriptions. The AIDOC definition is more expansive in *how* the AI system operates, but the core definition is identical. The RAINS concept is framed within the context of accountability plans, which doesn't fundamentally change the definition of the AI System itself. Given the 1.0 lexical similarity and overlapping definitions, an equivalentClass relationship is appropriate.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#c478b879-a69f-4512-971f-fb7a343d16d1"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#64980d99-2bce-4256-b8d5-cb14b366c412",
+  "source": "https://w3id.org/aidoc-ap#HumanOversightMechanism",
+  "relation": "http://www.w3.org/2004/02/skos/core#closeMatch",
+  "target": "https://w3id.org/rains#SystemHumanOversightMechanism",
+  "target_ns": "https://w3id.org/rains",
+  "confidence": 0.85,
+  "rationale": "Both concepts address human oversight of systems, particularly those involving AI. The RAINS concept is more specific, detailing *how* that oversight is implemented (stopping, reviewing, altering outputs) and linking it to AI Systems and RealizableObjectCharacteristics. The AIDOC concept is a more general description. The high lexical similarity supports a close match relationship.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#c478b879-a69f-4512-971f-fb7a343d16d1"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#baaaf214-f4cf-4aa8-a5a8-3bb9cc455c3a",
+  "source": "https://w3id.org/aidoc-ap#Log",
+  "relation": "http://www.w3.org/2004/02/skos/core#closeMatch",
+  "target": "https://w3id.org/rains#Log",
+  "target_ns": "https://w3id.org/rains",
+  "confidence": 0.85,
+  "rationale": "Both concepts refer to a 'Log' as a record of events. The RAINS concept is more specifically tied to planned accountable results and changes during implementation, representing a refined specialization of the more general AIDOC 'Log'. While not strictly equivalent, they denote highly similar concepts with different levels of granularity.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#c478b879-a69f-4512-971f-fb7a343d16d1"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#d3d6c3cb-ecf6-4d8b-944c-a5a9883f3faf",
+  "source": "https://w3id.org/aidoc-ap#ModelEvaluation",
+  "relation": "http://www.w3.org/2004/02/skos/core#closeMatch",
+  "target": "http://www.w3.org/ns/mls#ModelEvaluation",
+  "target_ns": "http://www.w3.org/ns/mls",
+  "confidence": 0.85,
+  "rationale": "Both concepts denote the same activity – assessing model performance. The `rains` concept provides a more formal definition connecting the evaluation to a specific result and linking it to performance measures as defined within the ML-Schema. While the AIDOC definition is more generic, the core meaning is highly aligned. Therefore, they are considered a close match rather than equivalent, as `rains` is more specific in its formalization.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#c478b879-a69f-4512-971f-fb7a343d16d1"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#f61894a7-56fb-4fb5-b625-0b85056ebb9a",
+  "source": "https://w3id.org/aidoc-ap#Dataset",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "http://www.w3.org/ns/mls#Dataset",
+  "target_ns": "http://www.w3.org/ns/mls",
+  "confidence": 0.95,
+  "rationale": "Both concepts define 'Dataset' and have highly similar descriptions (a collection of data items). The lexical similarity is perfect (1.0), and while the RAINS concept provides a URI establishing it within a specific namespace, the core meaning aligns directly with the AIDOC concept. Therefore, they can be considered equivalent classes.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#c478b879-a69f-4512-971f-fb7a343d16d1"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#0f92f360-8f2e-4cf2-be8f-df2d53c70f74",
+  "source": "https://w3id.org/aidoc-ap#Deployment",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://w3id.org/vair#Deployment",
+  "target_ns": "https://w3id.org/vair",
+  "confidence": 0.95,
+  "rationale": "Both concepts define the 'Deployment' phase for an AI system and describe the process of making it operational in a target environment. The descriptions are highly similar, and the lexical similarity is perfect. The presence of a URI in the vair concept adds a level of formalization, but doesn't fundamentally change the meaning.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#dfdca1dd-1b54-468f-8b32-d1dd0aceea86"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#484ece88-62ef-411f-9d13-ce824edc59e6",
+  "source": "https://w3id.org/aidoc-ap#TransparencyMeasure",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://w3id.org/vair#TransparencyMeasure",
+  "target_ns": "https://w3id.org/vair",
+  "confidence": 0.95,
+  "rationale": "The labels and descriptions are identical, and the lexical similarity is 1.0. While the AIDOC concept lacks a formal URI, the semantic meaning is clearly the same. Given the complete overlap in definition, `owl:equivalentClass` is the most appropriate relation.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#dfdca1dd-1b54-468f-8b32-d1dd0aceea86"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#67f0bce7-1994-48c4-9554-709c6ff797b1",
+  "source": "https://w3id.org/aidoc-ap#DeclarationOfConformity",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://w3id.org/vair#EUDeclarationOfConformity",
+  "target_ns": "https://w3id.org/vair",
+  "confidence": 0.95,
+  "rationale": "The vair concept is a more specific instance of the general 'Declaration of Conformity' described by the AIDOC concept. Given the high lexical similarity and that the vair concept explicitly defines this document *as* required by the AI Act (and thus is a specific kind of declaration of conformity), they can be considered equivalent classes for most practical interoperability purposes. The URI provides a precise identifier for the vair instance.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#dfdca1dd-1b54-468f-8b32-d1dd0aceea86"
+ },
+ {
+  "mapping": "https://w3id.org/aidoc-ap/alignment#a5d19ac7-0c21-457a-a661-771967bee306",
+  "source": "https://w3id.org/aidoc-ap#Standard",
+  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "target": "https://w3id.org/airo#Standard",
+  "target_ns": "https://w3id.org/airo",
+  "confidence": 0.95,
+  "rationale": "Both concepts share the same label and describe the application of a standard to an AI system. While the vair concept provides a URI, the definitions are effectively identical. The lexical similarity score of 1.0 further supports this.",
+  "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
+  "run": "https://w3id.org/aidoc-ap/alignment#dfdca1dd-1b54-468f-8b32-d1dd0aceea86"
+ }
+]

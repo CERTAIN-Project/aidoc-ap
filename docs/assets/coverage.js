@@ -11,11 +11,23 @@
     return 'low';
   };
 
-  // --- load data: load from TTL ----------------------------
+  // --- load data: prefer pre-aggregated JSON (fast), fall back to TTL -------
+  async function loadCoverageData(){
+    try {
+      const res = await fetch('resources/coverage-data.json');
+      if (res.ok) {
+        const d = await res.json();
+        return { measurements: d.measurements, runs: d.runs, requirements: d.requirements };
+      }
+    } catch(e){ /* fall through to TTL */ }
+    const ttlData = await loadFromTTL();
+    return { ...ttlData, requirements: null };
+  }
+
   async function loadFromTTL(){
     await loadScript('https://unpkg.com/n3@1.17.4/browser/n3.min.js');
     const ttlUrl = window.COVERAGE_TTL || 'resources/semantic_mapping.ttl';
-    const txt = await (await fetch(ttlUrl, {cache:'no-store'})).text();
+    const txt = await (await fetch(ttlUrl)).text();
     const parser = new N3.Parser();
     const quads = parser.parse(txt);
 
@@ -108,7 +120,7 @@
     try {
       await loadScript('https://unpkg.com/n3@1.17.4/browser/n3.min.js');
       const ttlUrl = window.REQUIREMENTS_TTL || 'annex_4.ttl';
-      const txt = await (await fetch(ttlUrl, {cache:'no-store'})).text();
+      const txt = await (await fetch(ttlUrl)).text();
       const parser = new N3.Parser();
       const quads = parser.parse(txt);
 
@@ -149,7 +161,8 @@
   }
 
   // --- render ---------------------------------------------------------------
-  const [coverageData, reqMap] = await Promise.all([loadFromTTL(), loadRequirements()]);
+  const coverageData = await loadCoverageData();
+  const reqMap = coverageData.requirements || await loadRequirements();
   const {measurements, runs} = coverageData;
 
   // Enrich measurements with requirement labels

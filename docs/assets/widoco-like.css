@@ -1,37 +1,140 @@
-:root{--fg:#222;--muted:#666;--accent:#0a6ebd;--bg:#fff;--row:#f7f9fc}
-body{font:16px/1.45 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--fg);background:var(--bg);margin:0}
-.page-header{padding:24px 20px;border-bottom:1px solid #e7edf4;background:#f9fbfe}
-.title{margin:0 0 6px 0}
-.subtitle{margin:0;color:var(--muted)}
-.crumbs a{color:var(--accent);text-decoration:none}
-.filters{padding:16px 20px;border-bottom:1px solid #eee}
-.filters .row{display:flex;gap:10px;flex-wrap:wrap}
-.search{flex:1 1 360px;padding:8px 10px}
-select{padding:8px 10px}
-.legend{margin-top:8px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
-.pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#eef;border:1px solid #dde}
-.pill.eqv{background:#e6ffed;border-color:#b7f5c3}
-.pill.exact{background:#e9f5ff;border-color:#c8e7ff}
-.pill.close{background:#fff8e1;border-color:#ffe6a3}
-.pill.broad,.pill.narrow,.pill.related{background:#f5f5f5}
-.table-wrap{padding:0 20px 60px}
-.table{width:100%;border-collapse:separate;border-spacing:0 6px}
-.table th{font-weight:600;text-align:left;color:#333;border-bottom:1px solid #eaeef3;padding:10px 12px}
-.table td{padding:12px;background:var(--row);border-top:1px solid #eaeef3;border-bottom:1px solid #eaeef3}
-.table tr:hover td{background:#eef5fb}
-.badge{padding:2px 6px;border-radius:4px;border:1px solid #ccd;color:#222;background:#fff}
-.badge.run{background:#f7f7f7}
-.badge.ns{background:#f2faff}
+/* AIDOC-AP pages — shared stylesheet.
+   Keeps the class vocabulary of the original "widoco-like" sheet
+   (page-header, filters, pill, table, drawer, …) with a cleaner visual design. */
+
+:root{
+  --fg:#1c2430;
+  --muted:#5c6773;
+  --accent:#155e9e;
+  --accent-soft:#e8f1f9;
+  --bg:#ffffff;
+  --row:#f7f9fc;
+  --line:#e4e9f0;
+  --radius:8px;
+  --shadow:0 1px 3px rgba(16,42,67,.08);
+  --maxw:1160px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--fg);background:var(--bg);margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;
+  background:#f2f5f8;border-radius:4px;padding:.08em .35em}
 a{color:var(--accent);text-decoration:none}
-.drawer{position:fixed;right:0;top:0;bottom:0;width:560px;max-width:92vw;background:#fff;box-shadow:-2px 0 10px rgba(0,0,0,.07)}
+a:hover{text-decoration:underline}
+
+/* ---------- header & navigation ---------- */
+.page-header{
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#fbfdff 0%,#f4f8fc 100%);
+  padding:0 0 26px;
+}
+.site-nav{
+  display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;
+  max-width:var(--maxw);margin:0 auto;padding:14px 24px;
+  border-bottom:1px solid var(--line);
+}
+.site-nav .brand{
+  font-weight:700;letter-spacing:.02em;color:var(--fg);font-size:1.02rem;
+  text-decoration:none;white-space:nowrap;
+}
+.site-nav .brand span{color:var(--accent)}
+.site-nav a.nav-link{
+  color:var(--muted);font-size:.92rem;padding:.25rem 0;text-decoration:none;
+  border-bottom:2px solid transparent;
+}
+.site-nav a.nav-link:hover{color:var(--fg)}
+.site-nav a.nav-link.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+
+.page-header .head-inner{max-width:var(--maxw);margin:0 auto;padding:26px 24px 0}
+.title{margin:0 0 .45rem;font-size:1.65rem;line-height:1.25;letter-spacing:-.01em}
+.subtitle{margin:0;color:var(--muted);max-width:64ch}
+.crumbs{margin-top:.8rem;font-size:.9rem}
+.crumbs a{color:var(--accent)}
+
+/* ---------- layout ---------- */
+main{max-width:var(--maxw);margin:0 auto;padding:8px 24px 64px}
+.page-footer{
+  border-top:1px solid var(--line);color:var(--muted);
+  font-size:.88rem;padding:20px 24px 40px;
+}
+.page-footer p{max-width:var(--maxw);margin:0 auto}
+
+/* ---------- filters ---------- */
+.filters{padding:18px 0 8px;border-bottom:1px solid var(--line)}
+.filters .row{display:flex;gap:10px;flex-wrap:wrap}
+.search,.filters select,.filters input{
+  padding:.5rem .7rem;border:1px solid #c9d3dd;border-radius:var(--radius);
+  font:inherit;background:#fff;color:var(--fg);
+}
+.search{flex:1 1 340px}
+.search:focus,select:focus,input:focus,button:focus-visible{
+  outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.legend{margin:.7rem 0 .2rem;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;font-size:.88rem}
+
+/* ---------- pills & badges ---------- */
+.pill{display:inline-block;padding:.13em .65em;border-radius:999px;
+  font-size:.78rem;font-weight:600;background:#eef1f5;border:1px solid #dde3ea;color:#3d4854}
+.pill.eqv{background:#e5f6ea;border-color:#bfe8cc;color:#19653a}
+.pill.exact{background:#e7f2fd;border-color:#c4dff7;color:#155e9e}
+.pill.close{background:#fdf5df;border-color:#f3e3ac;color:#7a5d00}
+.pill.broad,.pill.narrow{background:#f1ecfb;border-color:#ddd0f2;color:#5b3fa0}
+.pill.related{background:#f2f4f6;border-color:#dee4ea;color:#4a5561}
+.badge{padding:.12em .5em;border-radius:5px;border:1px solid #d5dde5;color:var(--fg);
+  background:#fff;font-size:.8rem}
+.badge.run{background:#f6f8fa}
+.badge.ns{background:var(--accent-soft);border-color:#cfe3f3}
+
+/* ---------- tables ---------- */
+.table-wrap{padding:6px 0 30px;overflow-x:auto}
+.table{width:100%;border-collapse:collapse;font-size:.94rem}
+.table th{
+  font-weight:600;text-align:left;color:var(--muted);font-size:.8rem;
+  text-transform:uppercase;letter-spacing:.05em;
+  border-bottom:2px solid var(--line);padding:10px 12px;white-space:nowrap;
+}
+.table td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.table tbody tr{transition:background .12s}
+.table tbody tr:hover td{background:var(--accent-soft)}
+
+/* ---------- drawer ---------- */
+.drawer{position:fixed;right:0;top:0;bottom:0;width:580px;max-width:94vw;background:#fff;
+  box-shadow:-6px 0 24px rgba(16,42,67,.14);border-left:1px solid var(--line);z-index:50}
 .drawer.hidden{display:none}
-.drawer header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #eee}
-.drawer #detailsBody{padding:16px 16px 24px;overflow:auto;height:calc(100% - 56px)}
-.page-footer{padding:16px 20px;border-top:1px solid #eee;color:var(--muted)}
-.ontology-metadata{background:var(--row);border:1px solid #e7edf4;border-radius:6px;padding:20px;margin-bottom:24px}
-.metadata-grid{display:grid;grid-template-columns:auto 1fr;gap:12px 20px;margin:0}
-.metadata-grid dt{font-weight:600;color:var(--fg)}
+.drawer header{display:flex;justify-content:space-between;align-items:center;
+  padding:14px 20px;border-bottom:1px solid var(--line);background:#fbfdff}
+.drawer header h2{margin:0;font-size:1.05rem}
+.drawer #closeDetails{border:none;background:none;font-size:1.5rem;cursor:pointer;
+  color:var(--muted);line-height:1;padding:.1rem .4rem;border-radius:6px}
+.drawer #closeDetails:hover{background:#eef1f5;color:var(--fg)}
+.drawer #detailsBody{padding:18px 20px 28px;overflow:auto;height:calc(100% - 58px)}
+
+/* ---------- metadata block ---------- */
+.ontology-metadata{background:var(--row);border:1px solid var(--line);
+  border-radius:var(--radius);padding:20px 22px;margin:22px 0}
+.metadata-grid{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0}
+.metadata-grid dt{font-weight:600}
 .metadata-grid dd{margin:0;color:var(--muted)}
-.metadata-grid code{background:#f5f7fa;padding:2px 6px;border-radius:3px;font-size:.9em;color:#0a6ebd}
-.metadata-grid a{color:var(--accent);text-decoration:none;font-weight:500}
-.metadata-grid a:hover{text-decoration:underline}
+.metadata-grid code{color:var(--accent)}
+.metadata-grid a{font-weight:500}
+
+/* ---------- generic buttons ---------- */
+.btn{padding:.5rem 1rem;border-radius:var(--radius);border:1px solid transparent;
+  font:inherit;cursor:pointer;transition:filter .12s}
+.btn:hover{filter:brightness(.94)}
+.btn.ghost{background:#fff;color:var(--fg);border-color:#c9d3dd}
+
+/* ---------- responsive ---------- */
+@media (max-width:720px){
+  .site-nav{gap:.9rem;padding:12px 16px}
+  .page-header .head-inner{padding:20px 16px 0}
+  main{padding:4px 16px 48px}
+  .title{font-size:1.35rem}
+  .drawer{width:100vw;max-width:100vw}
+  .metadata-grid{grid-template-columns:1fr;gap:2px}
+  .metadata-grid dd{margin-bottom:10px}
+}
