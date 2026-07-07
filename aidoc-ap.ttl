@@ -612,11 +612,45 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
                      rdfs:label "missing data strategy"@en .
 
 
+###  https://w3id.org/aidoc-ap#Modality
+:Modality rdf:type owl:Class ;
+          dcterms:source "EU AI Act 2024/1689, Annex IV(1)" ;
+          rdfs:comment "The form in which the AI system is provided or placed on the market (e.g. standalone software, a software service/API, a component embedded in a product, or a hardware product). Modelled as a class with a controlled vocabulary so provision forms can be enumerated, compared and reused across systems."@en ;
+          rdfs:label "Modality"@en .
+
+###  https://w3id.org/aidoc-ap#hasModality
+:hasModality rdf:type owl:ObjectProperty ;
+          rdfs:domain :AISystem ;
+          rdfs:range :Modality ;
+          rdfs:comment "Links an AI system to its form of provision, modelled as a resource rather than a plain string. The datatype property aidoc:modality is retained as a string shortcut for text-based documentation workflows."@en ;
+          rdfs:label "has modality"@en .
+
+:StandaloneSoftware rdf:type owl:NamedIndividual , :Modality ;
+          rdfs:label "Standalone software"@en ;
+          skos:definition "The AI system is provided as a standalone software application installed and run by the deployer."@en .
+
+:SoftwareService rdf:type owl:NamedIndividual , :Modality ;
+          rdfs:label "Software service / API"@en ;
+          skos:definition "The AI system is provided as a hosted service consumed over an interface such as a web API."@en .
+
+:EmbeddedComponent rdf:type owl:NamedIndividual , :Modality ;
+          rdfs:label "Embedded component"@en ;
+          skos:definition "The AI system is provided as a component embedded within a larger software or hardware product."@en .
+
+:HardwareProduct rdf:type owl:NamedIndividual , :Modality ;
+          rdfs:label "Hardware product"@en ;
+          skos:definition "The AI system is provided as, or integrated into, a physical hardware product."@en .
+
+:CloudService rdf:type owl:NamedIndividual , :Modality ;
+          rdfs:label "Cloud service"@en ;
+          skos:definition "The AI system is provided as a managed cloud service."@en ;
+          skos:broader :SoftwareService .
+
 ###  https://w3id.org/aidoc-ap#modality
 :modality rdf:type owl:DatatypeProperty ;
           rdfs:domain :AISystem ;
           rdfs:range xsd:string ;
-          rdfs:comment "The physical form or modality in which the AI system is provided (e.g., standalone software, API)."@en ;
+          rdfs:comment "String-valued shortcut for the system's form of provision, retained for backward compatibility. For semantic linking and comparison use aidoc:hasModality with an aidoc:Modality resource instead."@en ;
           rdfs:label "modality"@en .
 
 
