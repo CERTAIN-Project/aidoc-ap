@@ -9,8 +9,15 @@ SELECT ?system ?systemLabel ?intendedPurpose ?purpose ?purposeLabel
 WHERE {
   ?system a aidoc:AISystem .
   OPTIONAL { ?system rdfs:label ?systemLabel . }
+  # intended purpose as a string shortcut (aidoc:intendedPurpose) ...
   OPTIONAL { ?system aidoc:intendedPurpose ?intendedPurpose . }
-  OPTIONAL { 
+  # ... or as a resource of type aidoc:IntendedPurpose (aidoc:hasIntendedPurpose)
+  OPTIONAL {
+    ?system aidoc:hasIntendedPurpose ?purpose .
+    OPTIONAL { ?purpose rdfs:label ?purposeLabel . }
+  }
+  # ... or via the reused airo:hasPurpose relation
+  OPTIONAL {
     ?system airo:hasPurpose ?purpose .
     OPTIONAL { ?purpose rdfs:label ?purposeLabel . }
   }
