@@ -572,12 +572,27 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
                  rdfs:label "has architecture"@en .
 
 
+###  https://w3id.org/aidoc-ap#IntendedPurpose
+:IntendedPurpose rdf:type owl:Class ;
+                 rdfs:subClassOf dpv-aiact:IntendedPurpose ;
+                 dcterms:source "EU AI Act 2024/1689, Article 3(12)" ;
+                 rdfs:comment "The use for which an AI system is intended by the provider, including the specific context and conditions of use, as specified in the instructions for use, promotional or sales materials and statements, and the technical documentation. Modelled as a class so that intended purposes can be related (e.g. via skos:broader/narrower), compared and tracked across system versions."@en ;
+                 rdfs:label "Intended Purpose"@en .
+
+###  https://w3id.org/aidoc-ap#hasIntendedPurpose
+:hasIntendedPurpose rdf:type owl:ObjectProperty ;
+                 rdfs:domain :AISystem ;
+                 rdfs:range :IntendedPurpose ;
+                 dcterms:source "EU AI Act 2024/1689, Article 3(12)" ;
+                 rdfs:comment "Links an AI system to its intended purpose modelled as a resource (rather than a plain string), enabling links, comparison and change tracking. The datatype property aidoc:intendedPurpose is retained as a shortcut for text-based documentation workflows."@en ;
+                 rdfs:label "has intended purpose"@en .
+
 ###  https://w3id.org/aidoc-ap#intendedPurpose
 :intendedPurpose rdf:type owl:DatatypeProperty ;
                  rdfs:domain :AISystem ;
                  rdfs:range xsd:string ;
                  dcterms:source "EU AI Act 2024/1689, Article 3(12)" ;
-                 rdfs:comment "Intended purpose means the use for which an AI system is intended by the provider, including the specific context and conditions of use, as specified in the information supplied by the provider in the instructions for use, promotional or sales materials and statements, as well as in the technical documentation."@en ;
+                 rdfs:comment "String-valued shortcut for the intended purpose, retained for backward compatibility with text-based documentation workflows. For semantic linking and comparison, use aidoc:hasIntendedPurpose with an aidoc:IntendedPurpose resource instead."@en ;
                  rdfs:label "intended purpose"@en .
 
 
