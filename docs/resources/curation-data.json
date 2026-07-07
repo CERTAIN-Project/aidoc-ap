@@ -1,6 +1,6 @@
 {
- "batch_id": "2026-07-06_1219",
- "generated": "2026-07-06T12:19:05",
+ "batch_id": "2026-07-07_1347",
+ "generated": "2026-07-07T13:47:36",
  "n_items": 127,
  "items": [
   {
@@ -11,7 +11,7 @@
    "ref_iri": "https://w3id.org/airo#AIProvider",
    "ref_label": "AI Provider",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 1.0,
    "llm_rationale": "The labels and descriptions are identical. The lexical similarity score is 1.0 indicating a perfect match. Therefore, the concepts represent the same class."
   },
@@ -23,7 +23,7 @@
    "ref_iri": "https://w3id.org/airo#AISystem",
    "ref_label": "AI System",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 1.0,
    "llm_rationale": "The labels are identical and the descriptions are also identical. The lexical similarity score is 1.0 indicating a perfect match in textual representation. Therefore, these concepts represent the same class."
   },
@@ -35,7 +35,7 @@
    "ref_iri": "https://www.w3.org/TR/vocab-dcat-3/Dataset",
    "ref_label": "https://www.w3.org/TR/vocab-dcat-3/Dataset",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "The labels are identical and the lexical similarity score is 1.0. While the AIDOC description is more verbose, it doesn't introduce any differing semantics. The airo concept *is* the standard DCAT definition of a Dataset, making them equivalent."
   },
@@ -59,7 +59,7 @@
    "ref_iri": "https://w3id.org/airo#AIModel",
    "ref_label": "AI Model",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both definitions refer to a computational/mathematical representation used for inference or task execution. The lexical similarity is perfect (1.0), and the descriptions are highly overlapping in meaning despite slight phrasing differences. They essentially define the same concept."
   },
@@ -71,7 +71,7 @@
    "ref_iri": "https://w3id.org/airo#AIDeployer",
    "ref_label": "AI Deployer",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 1.0,
    "llm_rationale": "The labels and descriptions are identical. The airo concept also provides a URI which further solidifies the equivalence."
   },
@@ -143,7 +143,7 @@
    "ref_iri": "https://w3id.org/dpv/ai#AISystem",
    "ref_label": "AISystem",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "The descriptions are almost identical, incorporating definitions from ISO/IEC, OECD and EU vocabularies within the dpv-ai concept that essentially restate the AIDOC definition. The lexical similarity is perfect (1.0). While `dpv-ai` explicitly cites sources for its composite definition, this doesn't alter the core meaning; it simply provides provenance. Therefore, they represent the same class."
   },
@@ -443,7 +443,7 @@
    "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#AIProvider",
    "ref_label": "AIProvider",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 1.0,
    "llm_rationale": "The labels and descriptions are identical. The only difference is the URI, indicating they represent the same concept defined in different namespaces."
   },
@@ -455,7 +455,7 @@
    "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#AISystem",
    "ref_label": "AISystem",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "The labels are identical except for case, and the descriptions are verbatim matches. This strongly suggests equivalence; any differences would likely be at the instance level rather than conceptual."
   },
@@ -467,7 +467,7 @@
    "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#AIDeployer",
    "ref_label": "AIDeployer",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 1.0,
    "llm_rationale": "The labels and descriptions are identical. The lexical similarity score is 1.0 indicating a perfect match. Therefore, the concepts represent the same class."
   },
@@ -479,7 +479,7 @@
    "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#ValidationData",
    "ref_label": "ValidationData",
    "lexical_similarity": 0.867,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "The descriptions are almost identical. The AIDOC concept describes *activity* of using data for validation while dpv-aiact defines the *data itself*. However, this difference is minor and doesn't preclude equivalence; the activity inherently relies on the existence of the data. The high lexical similarity supports a strong relationship, leaning towards equivalence."
   },
@@ -491,7 +491,7 @@
    "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#TrainingData",
    "ref_label": "TrainingData",
    "lexical_similarity": 0.846,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "The descriptions are almost identical and the lexical similarity is very high (0.846). Both concepts define 'Data Training'/'TrainingData' as data used for fitting learnable parameters of an AI system. This strongly suggests they represent the same class."
   },
@@ -503,7 +503,7 @@
    "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#TestingData",
    "ref_label": "TestingData",
    "lexical_similarity": 0.833,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "The descriptions are almost identical, and the lexical similarity is high (0.833). Both concepts refer to data used for independent evaluation of AI systems before deployment. The AIDOC concept adds 'Activity of using datasets for model testing' which doesn’t change the core meaning but frames it as an activity rather than a dataset itself; this difference isn't significant enough to prevent equivalence."
   },
@@ -611,7 +611,7 @@
    "ref_iri": "https://w3id.org/dpv#Standard",
    "ref_label": "Standard",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts define 'Standard' as a set of agreed-upon requirements or norms. The descriptions are nearly identical and the lexical similarity is perfect (1.0). While one originates from AI governance (AIDOC) and the other from data privacy vocabulary (dpv), the core meaning remains consistent, suggesting equivalence."
   },
@@ -803,7 +803,7 @@
    "ref_iri": "http://mex.aksw.org/mex-core#Dataset",
    "ref_label": "Dataset",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same class - a dataset used in an AI/data context. The lexical similarity score of 1.0 strongly supports this."
   },
@@ -815,7 +815,7 @@
    "ref_iri": "http://www.w3.org/ns/prov-o#Activity",
    "ref_label": "Activity",
    "lexical_similarity": 0.637,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.85,
    "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Activity (which is what mex-core defines). The lexical similarity is high and the descriptions are essentially identical – one is a specialization of the other within the AI domain, but fundamentally represent the same class. Therefore they denote the same class."
   },
@@ -851,7 +851,7 @@
    "ref_iri": "http://www.w3.org/ns/prov-o#Agent",
    "ref_label": "Agent",
    "lexical_similarity": 0.608,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.85,
    "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Agent (which is what mex-core defines). The lexical similarity is high and the descriptions are essentially identical – one simply clarifies its context within a specific lifecycle. This suggests they represent the same class."
   },
@@ -875,7 +875,7 @@
    "ref_iri": "http://www.w3.org/ns/prov-o#Activity",
    "ref_label": "Activity",
    "lexical_similarity": 0.637,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.85,
    "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Activity (which is what mex-perf uses as its URI). The descriptions are highly similar – both define an 'Activity'. While AIDOC specifies this activity relates to the AI lifecycle, that doesn’t fundamentally change the underlying class; it adds a domain restriction. Therefore, they represent essentially the same concept."
   },
@@ -887,7 +887,7 @@
    "ref_iri": "http://www.w3.org/ns/mls#ModelEvaluation",
    "ref_label": "Model Evaluation",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts have identical labels and very similar descriptions focusing on assessing performance/accuracy. The lack of a description for the ml-onto concept doesn't detract from the strong lexical and semantic overlap; it simply means the information is presented elsewhere."
   },
@@ -899,7 +899,7 @@
    "ref_iri": "http://www.w3.org/ns/mls#Dataset",
    "ref_label": "Dataset",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same class - a dataset used in an AI/ML context. The lexical similarity score of 1.0 further supports this."
   },
@@ -959,7 +959,7 @@
    "ref_iri": "http://www.w3.org/ns/mls#Dataset",
    "ref_label": "Dataset",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts share the same label ('Dataset') and a very high lexical similarity score (1.0). While the mlschema description is empty, the core meaning implied by the URI and label strongly suggests they represent the same concept – a dataset. Without further differentiating information in the mlschema definition, equivalence is the most appropriate relation."
   },
@@ -995,7 +995,7 @@
    "ref_iri": "http://www.w3.org/ns/prov#Activity",
    "ref_label": "Activity",
    "lexical_similarity": 0.637,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.85,
    "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Activity. This indicates a strong intention for equivalence, despite the specific focus of AI activities within AIDOC. The lexical similarity score is also high. While AIDOC adds context (AI lifecycle), it doesn’t fundamentally change the underlying nature of an 'activity'."
   },
@@ -1043,7 +1043,7 @@
    "ref_iri": "http://www.w3.org/ns/mls#Dataset",
    "ref_label": "Dataset",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts define 'Dataset' and their descriptions are highly similar – a collection of data items. The lexical similarity is perfect (1.0), strongly suggesting equivalence. While the RAINS concept has a URI indicating it’s part of a larger vocabulary, this doesn’t negate the core meaning being identical to the AIDOC definition."
   },
@@ -1163,7 +1163,7 @@
    "ref_iri": "http://www.w3.org/ns/prov#Agent",
    "ref_label": "Agent",
    "lexical_similarity": 0.608,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.85,
    "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Agent (the rains Agent). Given the high lexical similarity and the description of AI Agent as a superclass for all agents in the AI lifecycle – which doesn’t fundamentally alter the core meaning of ‘agent’ as defined by PROV – they effectively represent the same class. The AIDOC concept adds context *about* agents within an AI lifecycle, but does not change what constitutes an agent."
   },
@@ -1199,7 +1199,7 @@
    "ref_iri": "https://w3id.org/vair#Dataset",
    "ref_label": "Dataset",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts share the same label and a very high lexical similarity score (1.0). While the AIDOC description is slightly more verbose, it essentially defines the same concept as the vair Dataset – representing data used in an AI context. The URI provided for the vair concept further solidifies this equivalence."
   },
@@ -1211,7 +1211,7 @@
    "ref_iri": "https://w3id.org/vair#TransparencyMeasure",
    "ref_label": "Transparency Measure",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts share the same label and a very similar description. The lexical similarity is perfect (1.0). While 'Refers to transparency measures' in vair is slightly more general phrasing, it doesn’t indicate a different meaning; it simply states what the measure *is*. Therefore, they can be considered equivalent."
   },
@@ -1223,7 +1223,7 @@
    "ref_iri": "https://w3id.org/airo#Standard",
    "ref_label": "Standard",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts share the same label and a very similar (though one is empty) description indicating they represent the same class - an AI system standard. The lexical similarity score of 1.0 further supports this."
   },
@@ -1235,7 +1235,7 @@
    "ref_iri": "https://w3id.org/vair#Deployment",
    "ref_label": "Deployment",
    "lexical_similarity": 1.0,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts define 'Deployment' as the process of making an AI system operational in a production environment. The descriptions are highly similar and cover essentially the same ground. While 'vair' provides a URI which is good practice, it doesn’t alter the semantic meaning."
   },
@@ -1259,7 +1259,7 @@
    "ref_iri": "https://w3id.org/vair#TrainingData",
    "ref_label": "TrainingData",
    "lexical_similarity": 0.846,
-   "llm_relation": "owl:equivalentClass",
+   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
    "llm_rationale": "Both concepts define data used for training machine learning models. The descriptions are nearly identical and the lexical similarity is high. While 'Data Training' frames it as an *activity*, the core meaning focuses on the *data* itself which aligns perfectly with 'TrainingData'."
   },

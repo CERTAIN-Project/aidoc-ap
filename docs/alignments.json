@@ -2,7 +2,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#0bd98110-b502-4bd1-8047-4b8900c347fd",
   "source": "https://w3id.org/aidoc-ap#AIDeployer",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://w3id.org/airo#AIDeployer",
   "target_ns": "https://w3id.org/airo",
   "confidence": 0.99,
@@ -13,7 +13,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#16f6624f-76c6-4ead-9ee6-187e09f55d9a",
   "source": "https://w3id.org/aidoc-ap#Dataset",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://www.w3.org/TR/vocab-dcat-3/Dataset",
   "target_ns": "https://www.w3.org/TR/vocab-dcat-3",
   "confidence": 0.95,
@@ -24,7 +24,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#2c146d59-f475-4188-b157-0c0f5c084a35",
   "source": "https://w3id.org/aidoc-ap#AIModel",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://w3id.org/airo#AIModel",
   "target_ns": "https://w3id.org/airo",
   "confidence": 0.95,
@@ -46,7 +46,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#761a1347-b42b-4fce-8b0a-6226d29ef4d1",
   "source": "https://w3id.org/aidoc-ap#AISystem",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://w3id.org/airo#AISystem",
   "target_ns": "https://w3id.org/airo",
   "confidence": 0.99,
@@ -57,7 +57,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#bce1b463-d30f-45d7-b963-69099f807685",
   "source": "https://w3id.org/aidoc-ap#AIProvider",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://w3id.org/airo#AIProvider",
   "target_ns": "https://w3id.org/airo",
   "confidence": 0.99,
@@ -68,7 +68,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#278b8c14-f85f-46bd-97a9-2560d62caad9",
   "source": "https://w3id.org/aidoc-ap#Dataset",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "http://mex.aksw.org/mex-core#Dataset",
   "target_ns": "http://mex.aksw.org/mex-core",
   "confidence": 0.95,
@@ -79,7 +79,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#4efcf1e7-d104-4174-8325-8d608eaf2937",
   "source": "https://w3id.org/aidoc-ap#Dataset",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "http://www.w3.org/ns/mls#Dataset",
   "target_ns": "http://www.w3.org/ns/mls",
   "confidence": 0.95,
@@ -90,7 +90,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#5dbfc6e6-14e8-483f-958c-8862a4e0d048",
   "source": "https://w3id.org/aidoc-ap#ModelEvaluation",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "http://www.w3.org/ns/mls#ModelEvaluation",
   "target_ns": "http://www.w3.org/ns/mls",
   "confidence": 0.95,
@@ -101,7 +101,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#39030344-3fbb-498e-807d-afe8f0af7b22",
   "source": "https://w3id.org/aidoc-ap#ModelEvaluation",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "http://www.w3.org/ns/mls#ModelEvaluation",
   "target_ns": "http://www.w3.org/ns/mls",
   "confidence": 0.95,
@@ -112,7 +112,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#772ea501-7b6e-421f-8c48-990a0dbeaa82",
   "source": "https://w3id.org/aidoc-ap#Dataset",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "http://www.w3.org/ns/mls#Dataset",
   "target_ns": "http://www.w3.org/ns/mls",
   "confidence": 0.95,
@@ -134,7 +134,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#2b6a456e-ff6d-4919-a16a-83f27eb71fbf",
   "source": "https://w3id.org/aidoc-ap#AISystem",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://w3id.org/rains#AI_System",
   "target_ns": "https://w3id.org/rains",
   "confidence": 0.95,
@@ -178,7 +178,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#f61894a7-56fb-4fb5-b625-0b85056ebb9a",
   "source": "https://w3id.org/aidoc-ap#Dataset",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "http://www.w3.org/ns/mls#Dataset",
   "target_ns": "http://www.w3.org/ns/mls",
   "confidence": 0.95,
@@ -189,7 +189,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#0f92f360-8f2e-4cf2-be8f-df2d53c70f74",
   "source": "https://w3id.org/aidoc-ap#Deployment",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://w3id.org/vair#Deployment",
   "target_ns": "https://w3id.org/vair",
   "confidence": 0.95,
@@ -200,18 +200,18 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#484ece88-62ef-411f-9d13-ce824edc59e6",
   "source": "https://w3id.org/aidoc-ap#TransparencyMeasure",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://w3id.org/vair#TransparencyMeasure",
   "target_ns": "https://w3id.org/vair",
   "confidence": 0.95,
-  "rationale": "The labels and descriptions are identical, and the lexical similarity is 1.0. While the AIDOC concept lacks a formal URI, the semantic meaning is clearly the same. Given the complete overlap in definition, `owl:equivalentClass` is the most appropriate relation.",
+  "rationale": "The labels and descriptions are identical, and the lexical similarity is 1.0. While the AIDOC concept lacks a formal URI, the semantic meaning is clearly the same. Given the complete overlap in definition, `skos:exactMatch` is the most appropriate relation.",
   "agent": "https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot",
   "run": "https://w3id.org/aidoc-ap/alignment#dfdca1dd-1b54-468f-8b32-d1dd0aceea86"
  },
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#67f0bce7-1994-48c4-9554-709c6ff797b1",
   "source": "https://w3id.org/aidoc-ap#DeclarationOfConformity",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://w3id.org/vair#EUDeclarationOfConformity",
   "target_ns": "https://w3id.org/vair",
   "confidence": 0.95,
@@ -222,7 +222,7 @@
  {
   "mapping": "https://w3id.org/aidoc-ap/alignment#a5d19ac7-0c21-457a-a661-771967bee306",
   "source": "https://w3id.org/aidoc-ap#Standard",
-  "relation": "http://www.w3.org/2002/07/owl#equivalentClass",
+  "relation": "http://www.w3.org/2004/02/skos/core#exactMatch",
   "target": "https://w3id.org/airo#Standard",
   "target_ns": "https://w3id.org/airo",
   "confidence": 0.95,

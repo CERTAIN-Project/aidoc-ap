@@ -3,6 +3,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 align:278b8c14-f85f-46bd-97a9-2560d62caad9 a prov:Entity,
@@ -11,11 +12,11 @@ align:278b8c14-f85f-46bd-97a9-2560d62caad9 a prov:Entity,
     prov:wasGeneratedBy align:16dc778c-5eee-41d5-b1df-346ed57a117f ;
     align:confidence "0.95"^^xsd:float ;
     align:rationale "Both concepts share the same label and, critically, describe a 'Dataset'. The `mex-core` concept also provides a URI, solidifying its definition. Absence of a description in `mex-core` isn't a dealbreaker, given the label match and context. While further investigation of the full ontologies would *perfectly* confirm equivalence, based on the provided information they are highly likely equivalent"^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <http://mex.aksw.org/mex-core#Dataset> .
 
-aidoc:Dataset owl:equivalentClass <http://mex.aksw.org/mex-core#Dataset> .
+aidoc:Dataset skos:exactMatch <http://mex.aksw.org/mex-core#Dataset> .
 
 align:16dc778c-5eee-41d5-b1df-346ed57a117f a prov:Activity ;
     prov:endedAtTime "2025-12-04T12:57:21+00:00"^^xsd:dateTime ;

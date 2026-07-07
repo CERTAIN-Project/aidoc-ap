@@ -22,7 +22,7 @@ align:2b6a456e-ff6d-4919-a16a-83f27eb71fbf a prov:Entity,
     prov:wasGeneratedBy align:c478b879-a69f-4512-971f-fb7a343d16d1 ;
     align:confidence "0.95"^^xsd:float ;
     align:rationale "Both concepts define 'AI System' with highly similar descriptions. The AIDOC definition is more expansive in *how* the AI system operates, but the core definition is identical. The RAINS concept is framed within the context of accountability plans, which doesn't fundamentally change the definition of the AI System itself. Given the 1.0 lexical similarity and overlapping definitions, an equivalentClass relationship is appropriate."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/rains#AI_System> .
 
@@ -62,15 +62,15 @@ align:f61894a7-56fb-4fb5-b625-0b85056ebb9a a prov:Entity,
     prov:wasGeneratedBy align:c478b879-a69f-4512-971f-fb7a343d16d1 ;
     align:confidence "0.95"^^xsd:float ;
     align:rationale "Both concepts define 'Dataset' and have highly similar descriptions (a collection of data items). The lexical similarity is perfect (1.0), and while the RAINS concept provides a URI establishing it within a specific namespace, the core meaning aligns directly with the AIDOC concept. Therefore, they can be considered equivalent classes."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
 
-aidoc:AISystem owl:equivalentClass <https://w3id.org/rains#AI_System> .
+aidoc:AISystem skos:exactMatch <https://w3id.org/rains#AI_System> .
 
 aidoc:ChangeLog skos:closeMatch <https://w3id.org/rains#ChangeLog> .
 
-aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
+aidoc:Dataset skos:exactMatch <http://www.w3.org/ns/mls#Dataset> .
 
 aidoc:HumanOversightMechanism skos:closeMatch <https://w3id.org/rains#SystemHumanOversightMechanism> .
 

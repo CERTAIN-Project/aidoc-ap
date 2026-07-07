@@ -42,7 +42,10 @@ def main():
                 "ref_iri": r["ref_iri"],
                 "ref_label": r["ref_label"],
                 "lexical_similarity": round(float(r["lexical_similarity"]), 3),
-                "llm_relation": r["llm_relation"],
+                # normalise to SKOS mapping relations: class-level equivalence is
+                # not asserted at the interoperability layer (see paper, Sec. 5)
+                "llm_relation": str(r["llm_relation"]).replace(
+                    "owl:equivalentClass", "skos:exactMatch"),
                 "llm_confidence": float(r["llm_confidence"]),
                 "llm_rationale": r.get("llm_rationale", "") if pd.notna(r.get("llm_rationale")) else "",
             })

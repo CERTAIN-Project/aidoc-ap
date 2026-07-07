@@ -3,6 +3,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 align:39030344-3fbb-498e-807d-afe8f0af7b22 a prov:Entity,
@@ -11,7 +12,7 @@ align:39030344-3fbb-498e-807d-afe8f0af7b22 a prov:Entity,
     prov:wasGeneratedBy align:ae754564-c461-46f7-b717-bbaca59aef94 ;
     align:confidence "0.95"^^xsd:float ;
     align:rationale "Despite slight differences in phrasing, both concepts fundamentally represent the process of evaluating a model's performance. The `mlschema` definition is more detailed, explicitly mentioning performance measures and specifications, but this detail doesn't change the core meaning. The lexical similarity is perfect, further supporting equivalence."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:ModelEvaluation ;
     align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
 
@@ -21,13 +22,13 @@ align:772ea501-7b6e-421f-8c48-990a0dbeaa82 a prov:Entity,
     prov:wasGeneratedBy align:ae754564-c461-46f7-b717-bbaca59aef94 ;
     align:confidence "0.95"^^xsd:float ;
     align:rationale "Both concepts share the same label and a very high lexical similarity. While the `mlschema` concept includes a URI providing formal identification, the core meaning – representing a dataset – appears identical. Without further information about internal attributes or constraints, they can be considered equivalent."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
 
-aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
+aidoc:Dataset skos:exactMatch <http://www.w3.org/ns/mls#Dataset> .
 
-aidoc:ModelEvaluation owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
+aidoc:ModelEvaluation skos:exactMatch <http://www.w3.org/ns/mls#ModelEvaluation> .
 
 align:ae754564-c461-46f7-b717-bbaca59aef94 a prov:Activity ;
     prov:endedAtTime "2025-12-04T12:57:39+00:00"^^xsd:dateTime ;

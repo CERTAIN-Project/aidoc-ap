@@ -8,7 +8,6 @@
 
   const pillFor = rel => {
     if(!rel) return '';
-    if(rel.endsWith('equivalentClass')) return `<span class="pill eqv">equivalent</span>`;
     if(rel.endsWith('exactMatch')) return `<span class="pill exact">exact</span>`;
     if(rel.endsWith('closeMatch')) return `<span class="pill close">close</span>`;
     if(rel.endsWith('broadMatch')) return `<span class="pill broad">broad</span>`;

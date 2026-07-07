@@ -77,19 +77,21 @@ Description: {ref_comment}
 
 Lexical similarity score (0–1): {similarity}
 
-Decide which single relation holds between the AIDOC concept and the {REF} concept.
-Use exactly one of the following relations, applying these definitions:
+Decide which single SKOS mapping relation holds between the AIDOC concept and the
+{REF} concept. These are interoperability mappings at the concept level; do not
+assert class-level (extensional) equivalence. Use exactly one relation, applying
+these definitions:
 
-- owl:equivalentClass — the two concepts denote the same class: every instance of
-  one is necessarily an instance of the other.
-- skos:closeMatch — the concepts are sufficiently similar that they can be used
+- skos:exactMatch — the two concepts can be used interchangeably across a wide
+  range of applications; they denote the same thing.
+- skos:closeMatch — the concepts are sufficiently similar to be used
   interchangeably in some applications, but their meanings are not identical.
 - skos:broadMatch — the {REF} concept has a broader (more general) meaning that
   subsumes the AIDOC concept.
 - skos:narrowMatch — the {REF} concept has a narrower (more specific) meaning
   that is subsumed by the AIDOC concept.
 - skos:relatedMatch — the concepts are associatively related, but neither
-  equivalent nor in a hierarchical (broader/narrower) relation.
+  matching nor in a hierarchical (broader/narrower) relation.
 - unrelated — no meaningful semantic relation between the concepts.
 
 Also return a score between 0.0 and 1.0 expressing how strongly the given labels

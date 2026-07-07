@@ -3,6 +3,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 align:4efcf1e7-d104-4174-8325-8d608eaf2937 a prov:Entity,
@@ -11,7 +12,7 @@ align:4efcf1e7-d104-4174-8325-8d608eaf2937 a prov:Entity,
     prov:wasGeneratedBy align:c6f56a4d-0704-47e8-95b0-905050445669 ;
     align:confidence "0.95"^^xsd:float ;
     align:rationale "Both concepts share the same label and describe a 'Dataset'. While the ml-onto concept includes a URI and the AIDOC concept does not, the descriptions are essentially identical indicating a very strong semantic overlap. Without further information about the broader context of each ontology, an equivalent class relationship is the most appropriate."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
 
@@ -21,13 +22,13 @@ align:5dbfc6e6-14e8-483f-958c-8862a4e0d048 a prov:Entity,
     prov:wasGeneratedBy align:c6f56a4d-0704-47e8-95b0-905050445669 ;
     align:confidence "0.95"^^xsd:float ;
     align:rationale "Both concepts have the same label and, despite the ml-onto concept lacking a verbose description, the implied meaning from its URI suggests functional equivalence. The lexical similarity is perfect."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:ModelEvaluation ;
     align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-aidoc:Dataset owl:equivalentClass <http://www.w3.org/ns/mls#Dataset> .
+aidoc:Dataset skos:exactMatch <http://www.w3.org/ns/mls#Dataset> .
 
-aidoc:ModelEvaluation owl:equivalentClass <http://www.w3.org/ns/mls#ModelEvaluation> .
+aidoc:ModelEvaluation skos:exactMatch <http://www.w3.org/ns/mls#ModelEvaluation> .
 
 align:c6f56a4d-0704-47e8-95b0-905050445669 a prov:Activity ;
     prov:endedAtTime "2025-12-04T12:57:35+00:00"^^xsd:dateTime ;

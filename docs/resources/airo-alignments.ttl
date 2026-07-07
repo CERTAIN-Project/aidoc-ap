@@ -12,7 +12,7 @@ align:0bd98110-b502-4bd1-8047-4b8900c347fd a prov:Entity,
     prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
     align:confidence "0.99"^^xsd:float ;
     align:rationale "The labels and descriptions are identical. The airo concept provides a URI, indicating it’s formally defined; however, the descriptive semantics are the same. Therefore, they are equivalent."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:AIDeployer ;
     align:target <https://w3id.org/airo#AIDeployer> .
 
@@ -22,7 +22,7 @@ align:16f6624f-76c6-4ead-9ee6-187e09f55d9a a prov:Entity,
     prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
     align:confidence "0.95"^^xsd:float ;
     align:rationale "The AIDOC 'Dataset' concept and the airo concept (using the DCAT vocabulary's Dataset) have identical labels and descriptions (though the airo description is empty, it references a well-defined standard). The lexical similarity is 1.0 indicating a strong match. While AIDOC might add additional properties specific to the 'AI lifecycle', the core meaning is the same. Therefore they can be considered equivalent."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
 
@@ -32,7 +32,7 @@ align:2c146d59-f475-4188-b157-0c0f5c084a35 a prov:Entity,
     prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
     align:confidence "0.95"^^xsd:float ;
     align:rationale "Both concepts define an 'AI Model' as a computational/mathematical entity capable of generating outputs from inputs. The descriptions are highly similar and functionally equivalent, despite slightly different phrasing. The lexical similarity of 1.0 strongly supports this."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:AIModel ;
     align:target <https://w3id.org/airo#AIModel> .
 
@@ -52,7 +52,7 @@ align:761a1347-b42b-4fce-8b0a-6226d29ef4d1 a prov:Entity,
     prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
     align:confidence "0.99"^^xsd:float ;
     align:rationale "The labels and descriptions are identical. The only difference is that 'airo' provides a URI, which indicates it's part of a formally defined ontology. Given the 1.0 lexical similarity score and identical definitions, these concepts are effectively equivalent."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/airo#AISystem> .
 
@@ -62,19 +62,19 @@ align:bce1b463-d30f-45d7-b963-69099f807685 a prov:Entity,
     prov:wasGeneratedBy align:81cb70f3-0d6c-483a-84e9-b50314eb3e48 ;
     align:confidence "0.99"^^xsd:float ;
     align:rationale "The labels and descriptions are identical. The 'airo' concept also provides a URI, establishing it as a formally defined class, but the core meaning is the same. Therefore, they are equivalent classes."^^xsd:string ;
-    align:relation owl:equivalentClass ;
+    align:relation skos:exactMatch ;
     align:source aidoc:AIProvider ;
     align:target <https://w3id.org/airo#AIProvider> .
 
-aidoc:AIDeployer owl:equivalentClass <https://w3id.org/airo#AIDeployer> .
+aidoc:AIDeployer skos:exactMatch <https://w3id.org/airo#AIDeployer> .
 
-aidoc:AIModel owl:equivalentClass <https://w3id.org/airo#AIModel> .
+aidoc:AIModel skos:exactMatch <https://w3id.org/airo#AIModel> .
 
-aidoc:AIProvider owl:equivalentClass <https://w3id.org/airo#AIProvider> .
+aidoc:AIProvider skos:exactMatch <https://w3id.org/airo#AIProvider> .
 
-aidoc:AISystem owl:equivalentClass <https://w3id.org/airo#AISystem> .
+aidoc:AISystem skos:exactMatch <https://w3id.org/airo#AISystem> .
 
-aidoc:Dataset owl:equivalentClass <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
+aidoc:Dataset skos:exactMatch <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
 
 aidoc:Standard skos:closeMatch <https://w3id.org/airo#Standard> .
 
