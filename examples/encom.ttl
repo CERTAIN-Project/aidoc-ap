@@ -21,9 +21,6 @@
 <https://w3id.org/aidoc-ap#frequency> rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/aidoc-ap#intendedPurpose
-<https://w3id.org/aidoc-ap#intendedPurpose> rdf:type owl:AnnotationProperty .
-
 
 #################################################################
 #    Data properties
