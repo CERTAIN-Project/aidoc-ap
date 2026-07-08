@@ -10,7 +10,7 @@ SELECT ?system ?systemLabel ?intendedPurpose ?interface ?interfaceDescription
 WHERE {
   ?system a aidoc:AISystem .
   OPTIONAL { ?system rdfs:label ?systemLabel . }
-  OPTIONAL { ?system aidoc:intendedPurpose ?intendedPurpose . }
+  OPTIONAL { ?system aidoc:hasIntendedPurpose ?intendedPurpose . }
   OPTIONAL {
     ?system aidoc:hasInterface ?interface .
     ?interface dcterms:description ?interfaceDescription .

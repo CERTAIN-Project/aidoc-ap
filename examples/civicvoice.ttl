@@ -1,364 +1,350 @@
 @prefix : <http://www.semanticweb.org/certain/ontologies/2026/05/civicvoice/> .
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix airo: <https://w3id.org/airo#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix airo: <https://w3id.org/airo#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vair: <https://w3id.org/vair#> .
-@prefix aidoc: <https://w3id.org/aidoc-ap#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://www.semanticweb.org/certain/ontologies/2026/05/civicvoice/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.semanticweb.org/certain/ontologies/2026/05/civicvoice> rdf:type owl:Ontology ;
-    owl:imports <https://w3id.org/aidoc-ap/1.0> ,
-                <https://w3id.org/airo/1.0> ,
-                <https://w3id.org/vair/1.0> ;
+<http://www.semanticweb.org/certain/ontologies/2026/05/civicvoice> a owl:Ontology ;
     dcterms:description "AIDOC-AP instantiation for a CivicVoice clustering pipeline with MLOps/RegOps compliance."@en ;
     dcterms:issued "2026-05-28"^^xsd:date ;
-    dcterms:title "Clustering Pipeline"@en .
+    dcterms:title "Clustering Pipeline"@en ;
+    owl:imports <https://w3id.org/aidoc-ap/1.0>,
+        <https://w3id.org/airo/1.0>,
+        <https://w3id.org/vair/1.0> .
 
-#################################################################
-#    Individuals
-#################################################################
-
-###  Lifecycle phases
-:DevelopmentStage rdf:type owl:NamedIndividual ,
-                           vair:Development ;
-    aidoc:hasAIActivity :DataExplorationAndValidationActivity ,
-                        :SyntheticDataProcessingActivity ,
-                        :DataCleaningActivity ,
-                        :ModelEngineeringActivity ,
-                        :ModelEvaluationActivity ,
-                        :ModelVersioningActivity ;
-    rdfs:label "Development Stage"@en .
-
-:DeploymentStage rdf:type owl:NamedIndividual ,
-                          vair:Deployment ;
-    aidoc:hasAIActivity :BuildAndIntegrationTestingActivity ,
-                        :SoftwareDeploymentActivity ;
-    rdfs:label "Deployment Stage"@en .
-
-:RetirementStage rdf:type owl:NamedIndividual ,
-                          vair:Retirement ;
-    aidoc:hasAIActivity :DecommissioningActivity ;
-    rdfs:label "Retirement Stage"@en .
-
-:OperationStage rdf:type owl:NamedIndividual ,
-                         vair:Operation ;
-    aidoc:hasAIActivity :DataMonitoringAndLoggingActivity ,
-                        :PostMarketMonitoringActivity ,
-                        :RiskManagementActivity ;
-    rdfs:label "Operation Stage"@en .
-
-:DecommissioningActivity rdf:type owl:NamedIndividual ,
-                              aidoc:Decommissioning ;
-    dcterms:description "MLOps infrastructure supports controlled rollback and decommissioning for critical issues."@en ;
-    rdfs:label "Decommissioning"@en .
-
-
-###  AI system and agents
-:CivicVoiceClusteringPipeline rdf:type owl:NamedIndividual ,
-                                       aidoc:AISystem ;
-    aidoc:appliesStandard :EU_AI_Act_2024_1689 ,
-                          :GDPR_2016_679 ,
-                          :MLOpsBestPractices ,
-                          :CERTAINAutomatedArchitecturalFramework ;
-    aidoc:hasComponent :ClusteringModel ,
-                       :SyntheticDataGenerationFramework ;
+:CivicVoiceClusteringPipeline a owl:NamedIndividual,
+        aidoc:AISystem ;
+    rdfs:label "CivicVoice Clustering Pipeline"@en ;
+    dcterms:description "Modular MLOps clustering pipeline with experiment tracking, reproducible deployment, and compliance validation."@en ;
+    aidoc:appliesStandard :CERTAINAutomatedArchitecturalFramework,
+        :EU_AI_Act_2024_1689,
+        :GDPR_2016_679,
+        :MLOpsBestPractices ;
     aidoc:hasChangeLog :CivicVoiceChangeLog ;
+    aidoc:hasComponent :ClusteringModel,
+        :SyntheticDataGenerationFramework ;
     aidoc:hasDeclarationOfConformity :EUDeclarationOfConformityStatus ;
     aidoc:hasHumanOversight :HumanOversightMechanism ;
+    aidoc:hasIntendedPurpose :IntendedPurpose_1 ;
     aidoc:hasInterface :MLOpsDashboardInterface ;
-    aidoc:hasLifecycleStage :DevelopmentStage ,
-                            :DeploymentStage ,
-                            :OperationStage ,
-                            :RetirementStage ;
-    aidoc:hasRisk :BiasInClusteringOutputsRisk ,
-                  :PrivacyAndSecurityRisk ,
-                  :RegulatoryAlignmentRisk ;
-    aidoc:hasSoftwareComponent :DataIngestionModule ,
-                               :PreprocessingModule ,
-                               :ClusteringEngine ,
-                               :OutputGenerationModule ,
-                               :MLOpsOrchestrationLayer ;
+    aidoc:hasLifecycleStage :DeploymentStage,
+        :DevelopmentStage,
+        :OperationStage,
+        :RetirementStage ;
+    aidoc:hasModality :Modality_1 ;
+    aidoc:hasRisk :BiasInClusteringOutputsRisk,
+        :PrivacyAndSecurityRisk,
+        :RegulatoryAlignmentRisk ;
+    aidoc:hasSoftwareComponent :ClusteringEngine,
+        :DataIngestionModule,
+        :MLOpsOrchestrationLayer,
+        :OutputGenerationModule,
+        :PreprocessingModule ;
     aidoc:hasTransparencyMeasure :TransparencyMeasureForUsers ;
-    aidoc:intendedPurpose "Automated clustering pipeline that organizes CivicVoice public contributions into thematic groups for downstream analysis." ;
-    aidoc:modality "Software-only service integrated into CivicVoice, deployed via the CERTAIN automated architectural framework." ;
-    aidoc:version "Extends the earlier CivicVoice backend as a modular MLOps-compatible service with compliance validation and reproducible deployment." ;
-    airo:hasAIUser :AuthorizedStakeholders ;
-    airo:hasAIUser :Citizens ;
-    airo:hasAISubject :Citizens ;
-    airo:hasPurpose :ThematicClusteringForPublicDeliberation ;
     aidoc:isProvidedBy :Syntherion ;
-    dcterms:description "Modular MLOps clustering pipeline with experiment tracking, reproducible deployment, and compliance validation."@en ;
-    rdfs:label "CivicVoice Clustering Pipeline"@en .
+    aidoc:version "Extends the earlier CivicVoice backend as a modular MLOps-compatible service with compliance validation and reproducible deployment." ;
+    airo:hasAISubject :Citizens ;
+    airo:hasAIUser :AuthorizedStakeholders,
+        :Citizens ;
+    airo:hasPurpose :ThematicClusteringForPublicDeliberation .
 
-:Syntherion rdf:type owl:NamedIndividual ,
-                    aidoc:AIProvider ;
-    rdfs:label "Syntherion"@en .
+:AddExperimentTracking a owl:NamedIndividual,
+        aidoc:ChangeRecord ;
+    rdfs:label "Add Experiment Tracking"@en ;
+    aidoc:reasonForChange "Introduction of automated experiment tracking." .
 
-:AuthorizedStakeholders rdf:type owl:NamedIndividual ,
-                                 airo:AIUser ;
-    dcterms:description "Access clustering outputs via the CivicVoice platform and MLOps dashboards."@en ;
-    rdfs:label "Authorized Stakeholders"@en .
+:AddReproducibleDeployment a owl:NamedIndividual,
+        aidoc:ChangeRecord ;
+    rdfs:label "Add Reproducible Deployment"@en ;
+    aidoc:reasonForChange "Introduction of reproducible deployment capabilities." .
 
-:Citizens rdf:type owl:NamedIndividual ,
-                   dpv:DataSubject ,
-                   airo:AISubject ,
-                   airo:AIUser ;
-    rdfs:label "Citizens"@en .
+:AuthorizedStakeholders a owl:NamedIndividual,
+        airo:AIUser ;
+    rdfs:label "Authorized Stakeholders"@en ;
+    dcterms:description "Access clustering outputs via the CivicVoice platform and MLOps dashboards."@en .
 
-:ThematicClusteringForPublicDeliberation rdf:type owl:NamedIndividual ,
-                                                  airo:Purpose ;
-    rdfs:label "Thematic Clustering for Public Deliberation"@en .
+:BiasInClusteringOutputsRisk a owl:NamedIndividual,
+        airo:Risk ;
+    rdfs:label "Bias in Clustering Outputs Risk"@en ;
+    dcterms:description "Clustering bias may skew viewpoint representation; mitigated through quality evaluation and human review."@en .
 
+:BuildAndIntegrationTestingActivity a owl:NamedIndividual,
+        aidoc:BuildAndIntegrationTesting ;
+    rdfs:label "Build and Integration Testing Activity"@en ;
+    dcterms:description "Vulnerability scanning of dependencies and infrastructure; repeated for significant system or environment changes."@en .
 
-###  Risks and governance
-:RiskManagementActivity rdf:type owl:NamedIndividual ,
-                                 aidoc:AIActivity ;
-    dcterms:description "Risks evaluated at each pipeline iteration, at significant changes, and periodically within the MLOps lifecycle."@en ;
-    rdfs:label "Risk Management Activity"@en .
-
-:BiasInClusteringOutputsRisk rdf:type owl:NamedIndividual ,
-                                      airo:Risk ;
-    dcterms:description "Clustering bias may skew viewpoint representation; mitigated through quality evaluation and human review."@en ;
-    rdfs:label "Bias in Clustering Outputs Risk"@en .
-
-:PrivacyAndSecurityRisk rdf:type owl:NamedIndividual ,
-                                 airo:Risk ;
-    dcterms:description "Citizen content processing carries privacy risks; mitigated through access controls and GDPR compliance."@en ;
-    rdfs:label "Privacy and Security Risk"@en .
-
-:RegulatoryAlignmentRisk rdf:type owl:NamedIndividual ,
-                                  airo:Risk ;
-    dcterms:description "Risk of misalignment with EU AI Act requirements; mitigated through automated MLOps compliance checks."@en ;
-    rdfs:label "Regulatory Alignment Risk"@en .
-
-:HumanOversightMechanism rdf:type owl:NamedIndividual ,
-                                  aidoc:HumanOversightMechanism ;
-    dcterms:description "Domain experts review cluster coherence and representativeness; can adjust parameters, merge/split clusters, or exclude irrelevant groupings."@en ;
-    rdfs:label "Human Oversight Mechanism"@en .
-
-:TransparencyMeasureForUsers rdf:type owl:NamedIndividual ,
-                                      aidoc:TransparencyMeasure ;
-    dcterms:description "Users receive information on inputs, outputs, methods, limitations, and quality metrics, including summaries and quality indicators."@en ;
-    rdfs:label "Transparency Measure"@en .
-
-
-###  Standards and conformity
-:EU_AI_Act_2024_1689 rdf:type owl:NamedIndividual ,
-                              aidoc:Standard ;
-    rdfs:label "EU AI Act (Regulation 2024/1689)"@en .
-
-:GDPR_2016_679 rdf:type owl:NamedIndividual ,
-                        aidoc:Standard ;
-    rdfs:label "GDPR (Regulation 2016/679)"@en .
-
-:MLOpsBestPractices rdf:type owl:NamedIndividual ,
-                             aidoc:Standard ;
-    rdfs:label "MLOps Best Practices"@en .
-
-:CERTAINAutomatedArchitecturalFramework rdf:type owl:NamedIndividual ,
-                                                 aidoc:Standard ;
+:CERTAINAutomatedArchitecturalFramework a owl:NamedIndividual,
+        aidoc:Standard ;
     rdfs:label "CERTAIN Automated Architectural Framework"@en .
 
-:EUDeclarationOfConformityStatus rdf:type owl:NamedIndividual ,
-                                          aidoc:DeclarationOfConformity ;
-    dcterms:description "N/A in the questionnaire."@en ;
-    rdfs:label "EU Declaration of Conformity Status"@en .
+:CentralizedAccessControlledRepositories a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Centralized Access-Controlled Repositories"@en ;
+    dcterms:description "Centralized repositories with restricted access for auditing, traceability, and regulatory review."@en .
 
+:CivicVoiceChangeLog a owl:NamedIndividual,
+        aidoc:ChangeLog ;
+    rdfs:label "CivicVoice Change Log"@en ;
+    aidoc:hasChangeRecord :AddExperimentTracking,
+        :AddReproducibleDeployment,
+        :PlanRegOpsEngineIntegration,
+        :TransitionToModularService .
 
-###  Software components and architecture
-:DataIngestionModule rdf:type owl:NamedIndividual ,
-                              aidoc:SoftwareComponent ;
-    aidoc:feedsIntoComponent :PreprocessingModule ;
-    rdfs:label "Data Ingestion Module"@en .
-
-:PreprocessingModule rdf:type owl:NamedIndividual ,
-                              aidoc:SoftwareComponent ;
-    aidoc:feedsIntoComponent :ClusteringEngine ;
-    rdfs:label "Preprocessing Module"@en .
-
-:ClusteringEngine rdf:type owl:NamedIndividual ,
-                           aidoc:SoftwareComponent ;
-    aidoc:feedsIntoComponent :OutputGenerationModule ;
-    rdfs:label "Clustering Engine"@en .
-
-:OutputGenerationModule rdf:type owl:NamedIndividual ,
-                                 aidoc:SoftwareComponent ;
-    rdfs:label "Output Generation Module"@en .
-
-:MLOpsOrchestrationLayer rdf:type owl:NamedIndividual ,
-                                  aidoc:SoftwareComponent ;
-    aidoc:dependsOn :ExperimentTrackingSubsystem ,
-                    :ComplianceValidationSubsystem ;
-    rdfs:label "MLOps Orchestration Layer"@en .
-
-:ExperimentTrackingSubsystem rdf:type owl:NamedIndividual ,
-                                      aidoc:SoftwareComponent ;
-    rdfs:label "Experiment Tracking Subsystem"@en .
-
-:ComplianceValidationSubsystem rdf:type owl:NamedIndividual ,
-                                        aidoc:SoftwareComponent ;
-    rdfs:label "Compliance Validation Subsystem"@en .
-
-:MLOpsDashboardInterface rdf:type owl:NamedIndividual ,
-                                  aidoc:Interface ;
-    dcterms:description "Web dashboard for monitoring pipeline executions, experiments, compliance status, and system health, with role-based access control."@en ;
-    rdfs:label "MLOps Dashboard Interface"@en .
-
-:LanguageModelEmbeddingMethod rdf:type owl:NamedIndividual ,
-                                       aidoc:AIMethod ;
-    rdfs:label "Language Model Embedding Method"@en .
-
-:DimensionalityReductionMethod rdf:type owl:NamedIndividual ,
-                                        aidoc:AIMethod ;
-    rdfs:label "Dimensionality Reduction Method"@en .
-
-:DensityBasedClusteringMethod rdf:type owl:NamedIndividual ,
-                                       aidoc:AIMethod ;
-    rdfs:label "Density-based Clustering Method"@en .
-
-:ClusteringModel rdf:type owl:NamedIndividual ,
-                          aidoc:AIModel ;
-    aidoc:hasArchitecture "Modular pipeline-based architecture with ingestion, preprocessing, clustering, and output services orchestrated in MLOps for scalability, reproducibility, automated deployment, and auditing."@en ;
-    aidoc:usesAIMethod :LanguageModelEmbeddingMethod ,
-                       :DimensionalityReductionMethod ,
-                       :DensityBasedClusteringMethod ;
-    dcterms:description "Unsupervised clustering using language-model embeddings and inference-time parameter tuning."@en ;
-    rdfs:label "Clustering Model"@en .
-
-
-###  Data, provenance, and quality
-:PublicCivicVoiceContributions rdf:type owl:NamedIndividual ,
-                                          aidoc:Dataset ;
-    aidoc:dataCharacteristic "Citizen opinions, arguments, and proposals from public input processes on the CivicVoice platform." ;
-    aidoc:dataCollectionMethod "Collected via public input processes on the CivicVoice platform and then used within synthetic data generation workflows." ;
-    aidoc:dataScope "Inputs for thematic clustering in policy-related CivicVoice contexts." ;
-    rdfs:label "Public CivicVoice Contributions"@en .
-
-:SyntheticCivicVoiceDataset rdf:type owl:NamedIndividual ,
-                                       aidoc:Dataset ;
-    aidoc:dataCollectionMethod "Generated through the synthetic data generation framework" ;
-    aidoc:dataScope "Privacy-safe surrogate data for clustering inference and evaluation." ;
-    dcterms:description "Privacy-safe synthetic surrogates of citizen contributions for GDPR-compliant clustering and evaluation."@en ;
-    rdfs:label "Synthetic CivicVoice Dataset"@en .
-
-:SyntheticDataGenerationFramework rdf:type owl:NamedIndividual ,
-                                           aidoc:SoftwareComponent ;
-    rdfs:label "Synthetic Data Generation Framework"@en .
-
-:DataExplorationAndValidationActivity rdf:type owl:NamedIndividual ,
-                                               aidoc:ExplorationAndValidation ;
-    aidoc:hasSourceDataset :PublicCivicVoiceContributions ;
-    dcterms:description "Contributions reviewed for quality, relevance, and suitability before processing."@en ;
-    rdfs:label "Data Exploration and Validation Activity"@en .
-
-:SyntheticDataProcessingActivity rdf:type owl:NamedIndividual ,
-                                          aidoc:DataProcessing ;
-    aidoc:hasSourceDataset :PublicCivicVoiceContributions ;
-    aidoc:producesDataset :SyntheticCivicVoiceDataset ;
-    dcterms:description "Transforms CivicVoice contributions into privacy-safe synthetic surrogates for GDPR-compliant downstream use."@en ;
-    rdfs:label "Synthetic Data Processing Activity"@en .
-
-:DataCleaningActivity rdf:type owl:NamedIndividual ,
-                              aidoc:DataWrangling ;
-    aidoc:hasSourceDataset :PublicCivicVoiceContributions ;
-    dcterms:description "Content moderation filters spam and off-topic content; data is validated for completeness and relevance."@en ;
-    rdfs:label "Data Cleaning Activity"@en .
-
-:DataMonitoringAndLoggingActivity rdf:type owl:NamedIndividual ,
-                                           aidoc:DataMonitoringAndLogging ;
-    aidoc:storesLogsAt :CentralizedAccessControlledRepositories ;
-    dcterms:description "Logs cover ingestion, preprocessing, clustering runs, model parameters, compliance results, execution metadata, and system health."@en ;
-    rdfs:label "Data Monitoring and Logging Activity"@en .
-
-:PostMarketMonitoringActivity rdf:type owl:NamedIndividual ,
-                                       aidoc:AIActivity ;
-    dcterms:description "Tracks execution status, output quality, and compliance; alerts flag anomalies and periodic reviews are performed by authorized personnel."@en ;
-    rdfs:label "Post-market Monitoring Activity"@en .
-
-:CentralizedAccessControlledRepositories rdf:type owl:NamedIndividual ,
-                                                  aidoc:SoftwareComponent ;
-    dcterms:description "Centralized repositories with restricted access for auditing, traceability, and regulatory review."@en ;
-    rdfs:label "Centralized Access-Controlled Repositories"@en .
-
-
-###  Model engineering, evaluation, testing, deployment, and versioning
-:ModelEngineeringActivity rdf:type owl:NamedIndividual ,
-                                   aidoc:ModelEngineering ;
-    dcterms:description "Embeds text via a language model and applies unsupervised clustering; development is iterative with component and integration testing."@en ;
-    rdfs:label "Model Engineering Activity"@en .
-
-:ModelEvaluationActivity rdf:type owl:NamedIndividual ,
-                                  aidoc:ModelEvaluation ;
-    aidoc:hasPerformanceMetric :SilhouetteScoreMetric ,
-                               :ClusterCoherenceMetric ,
-                               :ClusterSeparationMetric ,
-                               :ClusterStabilityMetric ;
-    dcterms:description "Combines clustering metrics with expert qualitative review; includes representative datasets and automated regression testing."@en ;
-    rdfs:label "Model Evaluation Activity"@en .
-
-:BuildAndIntegrationTestingActivity rdf:type owl:NamedIndividual ,
-                                             aidoc:BuildAndIntegrationTesting ;
-    dcterms:description "Vulnerability scanning of dependencies and infrastructure; repeated for significant system or environment changes."@en ;
-    rdfs:label "Build and Integration Testing Activity"@en .
-
-:SoftwareDeploymentActivity rdf:type owl:NamedIndividual ,
-                                     aidoc:Deployment ;
-    dcterms:description "Runs on cloud or on-premise containerized servers, integrated into CivicVoice under CERTAIN framework controls."@en ;
-    rdfs:label "Software Deployment Activity"@en .
-
-:ModelVersioningActivity rdf:type owl:NamedIndividual ,
-                                  aidoc:ModelVersioning ;
-    dcterms:description "Versions managed via version control; MLOps tracks component versions per execution with controlled rollout and regression testing."@en ;
-    rdfs:label "Model Versioning Activity"@en .
-
-:SilhouetteScoreMetric rdf:type owl:NamedIndividual ,
-                                aidoc:PerformanceMetric ;
-    rdfs:label "Silhouette Score"@en .
-
-:ClusterCoherenceMetric rdf:type owl:NamedIndividual ,
-                                 aidoc:PerformanceMetric ;
+:ClusterCoherenceMetric a owl:NamedIndividual,
+        aidoc:PerformanceMetric ;
     rdfs:label "Cluster Coherence"@en .
 
-:ClusterSeparationMetric rdf:type owl:NamedIndividual ,
-                                  aidoc:PerformanceMetric ;
+:ClusterSeparationMetric a owl:NamedIndividual,
+        aidoc:PerformanceMetric ;
     rdfs:label "Cluster Separation"@en .
 
-:ClusterStabilityMetric rdf:type owl:NamedIndividual ,
-                                 aidoc:PerformanceMetric ;
+:ClusterStabilityMetric a owl:NamedIndividual,
+        aidoc:PerformanceMetric ;
     rdfs:label "Cluster Stability"@en .
 
+:ClusteringModel a owl:NamedIndividual,
+        aidoc:AIModel ;
+    rdfs:label "Clustering Model"@en ;
+    dcterms:description "Unsupervised clustering using language-model embeddings and inference-time parameter tuning."@en ;
+    aidoc:hasArchitecture "Modular pipeline-based architecture with ingestion, preprocessing, clustering, and output services orchestrated in MLOps for scalability, reproducibility, automated deployment, and auditing."@en ;
+    aidoc:usesAIMethod :DensityBasedClusteringMethod,
+        :DimensionalityReductionMethod,
+        :LanguageModelEmbeddingMethod .
 
-###  Change log
-:CivicVoiceChangeLog rdf:type owl:NamedIndividual ,
-                              aidoc:ChangeLog ;
-    aidoc:hasChangeRecord :TransitionToModularService ,
-                          :AddExperimentTracking ,
-                          :AddReproducibleDeployment ,
-                          :PlanRegOpsEngineIntegration ;
-    rdfs:label "CivicVoice Change Log"@en .
+:ComplianceValidationSubsystem a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Compliance Validation Subsystem"@en .
 
-:TransitionToModularService rdf:type owl:NamedIndividual ,
-                                     aidoc:ChangeRecord ;
-    aidoc:reasonForChange "Transition from standalone clustering component in CivicVoice to a modular MLOps-integrated service." ;
-    rdfs:label "Transition to Modular Service"@en .
+:DataCleaningActivity a owl:NamedIndividual,
+        aidoc:DataWrangling ;
+    rdfs:label "Data Cleaning Activity"@en ;
+    dcterms:description "Content moderation filters spam and off-topic content; data is validated for completeness and relevance."@en ;
+    aidoc:hasSourceDataset :PublicCivicVoiceContributions .
 
-:AddExperimentTracking rdf:type owl:NamedIndividual ,
-                                aidoc:ChangeRecord ;
-    aidoc:reasonForChange "Introduction of automated experiment tracking." ;
-    rdfs:label "Add Experiment Tracking"@en .
+:DataExplorationAndValidationActivity a owl:NamedIndividual,
+        aidoc:ExplorationAndValidation ;
+    rdfs:label "Data Exploration and Validation Activity"@en ;
+    dcterms:description "Contributions reviewed for quality, relevance, and suitability before processing."@en ;
+    aidoc:hasSourceDataset :PublicCivicVoiceContributions .
 
-:AddReproducibleDeployment rdf:type owl:NamedIndividual ,
-                                    aidoc:ChangeRecord ;
-    aidoc:reasonForChange "Introduction of reproducible deployment capabilities." ;
-    rdfs:label "Add Reproducible Deployment"@en .
+:DataIngestionModule a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Data Ingestion Module"@en ;
+    aidoc:feedsIntoComponent :PreprocessingModule .
 
-:PlanRegOpsEngineIntegration rdf:type owl:NamedIndividual ,
-                                      aidoc:ChangeRecord ;
-    aidoc:reasonForChange "Planned integration of the RegOps engine to ensure compliance." ;
-    rdfs:label "Planned RegOps Engine Integration"@en .
+:DataMonitoringAndLoggingActivity a owl:NamedIndividual,
+        aidoc:DataMonitoringAndLogging ;
+    rdfs:label "Data Monitoring and Logging Activity"@en ;
+    dcterms:description "Logs cover ingestion, preprocessing, clustering runs, model parameters, compliance results, execution metadata, and system health."@en ;
+    aidoc:storesLogsAt :CentralizedAccessControlledRepositories .
 
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+:DecommissioningActivity a owl:NamedIndividual,
+        aidoc:Decommissioning ;
+    rdfs:label "Decommissioning"@en ;
+    dcterms:description "MLOps infrastructure supports controlled rollback and decommissioning for critical issues."@en .
+
+:DensityBasedClusteringMethod a owl:NamedIndividual,
+        aidoc:AIMethod ;
+    rdfs:label "Density-based Clustering Method"@en .
+
+:DeploymentStage a owl:NamedIndividual,
+        vair:Deployment ;
+    rdfs:label "Deployment Stage"@en ;
+    aidoc:hasAIActivity :BuildAndIntegrationTestingActivity,
+        :SoftwareDeploymentActivity .
+
+:DevelopmentStage a owl:NamedIndividual,
+        vair:Development ;
+    rdfs:label "Development Stage"@en ;
+    aidoc:hasAIActivity :DataCleaningActivity,
+        :DataExplorationAndValidationActivity,
+        :ModelEngineeringActivity,
+        :ModelEvaluationActivity,
+        :ModelVersioningActivity,
+        :SyntheticDataProcessingActivity .
+
+:DimensionalityReductionMethod a owl:NamedIndividual,
+        aidoc:AIMethod ;
+    rdfs:label "Dimensionality Reduction Method"@en .
+
+:EUDeclarationOfConformityStatus a owl:NamedIndividual,
+        aidoc:DeclarationOfConformity ;
+    rdfs:label "EU Declaration of Conformity Status"@en ;
+    dcterms:description "N/A in the questionnaire."@en .
+
+:EU_AI_Act_2024_1689 a owl:NamedIndividual,
+        aidoc:Standard ;
+    rdfs:label "EU AI Act (Regulation 2024/1689)"@en .
+
+:ExperimentTrackingSubsystem a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Experiment Tracking Subsystem"@en .
+
+:GDPR_2016_679 a owl:NamedIndividual,
+        aidoc:Standard ;
+    rdfs:label "GDPR (Regulation 2016/679)"@en .
+
+:HumanOversightMechanism a owl:NamedIndividual,
+        aidoc:HumanOversightMechanism ;
+    rdfs:label "Human Oversight Mechanism"@en ;
+    dcterms:description "Domain experts review cluster coherence and representativeness; can adjust parameters, merge/split clusters, or exclude irrelevant groupings."@en .
+
+:IntendedPurpose_1 a aidoc:IntendedPurpose ;
+    rdfs:label "Automated clustering pipeline that organizes CivicVoice public contributions into thematic groups for downstream analysis." .
+
+:LanguageModelEmbeddingMethod a owl:NamedIndividual,
+        aidoc:AIMethod ;
+    rdfs:label "Language Model Embedding Method"@en .
+
+:MLOpsBestPractices a owl:NamedIndividual,
+        aidoc:Standard ;
+    rdfs:label "MLOps Best Practices"@en .
+
+:MLOpsDashboardInterface a owl:NamedIndividual,
+        aidoc:Interface ;
+    rdfs:label "MLOps Dashboard Interface"@en ;
+    dcterms:description "Web dashboard for monitoring pipeline executions, experiments, compliance status, and system health, with role-based access control."@en .
+
+:MLOpsOrchestrationLayer a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "MLOps Orchestration Layer"@en ;
+    aidoc:dependsOn :ComplianceValidationSubsystem,
+        :ExperimentTrackingSubsystem .
+
+:Modality_1 a aidoc:Modality ;
+    rdfs:label "Software-only service integrated into CivicVoice, deployed via the CERTAIN automated architectural framework." ;
+    skos:broader aidoc:SoftwareService .
+
+:ModelEngineeringActivity a owl:NamedIndividual,
+        aidoc:ModelEngineering ;
+    rdfs:label "Model Engineering Activity"@en ;
+    dcterms:description "Embeds text via a language model and applies unsupervised clustering; development is iterative with component and integration testing."@en .
+
+:ModelEvaluationActivity a owl:NamedIndividual,
+        aidoc:ModelEvaluation ;
+    rdfs:label "Model Evaluation Activity"@en ;
+    dcterms:description "Combines clustering metrics with expert qualitative review; includes representative datasets and automated regression testing."@en ;
+    aidoc:hasPerformanceMetric :ClusterCoherenceMetric,
+        :ClusterSeparationMetric,
+        :ClusterStabilityMetric,
+        :SilhouetteScoreMetric .
+
+:ModelVersioningActivity a owl:NamedIndividual,
+        aidoc:ModelVersioning ;
+    rdfs:label "Model Versioning Activity"@en ;
+    dcterms:description "Versions managed via version control; MLOps tracks component versions per execution with controlled rollout and regression testing."@en .
+
+:OperationStage a owl:NamedIndividual,
+        vair:Operation ;
+    rdfs:label "Operation Stage"@en ;
+    aidoc:hasAIActivity :DataMonitoringAndLoggingActivity,
+        :PostMarketMonitoringActivity,
+        :RiskManagementActivity .
+
+:PlanRegOpsEngineIntegration a owl:NamedIndividual,
+        aidoc:ChangeRecord ;
+    rdfs:label "Planned RegOps Engine Integration"@en ;
+    aidoc:reasonForChange "Planned integration of the RegOps engine to ensure compliance." .
+
+:PostMarketMonitoringActivity a owl:NamedIndividual,
+        aidoc:AIActivity ;
+    rdfs:label "Post-market Monitoring Activity"@en ;
+    dcterms:description "Tracks execution status, output quality, and compliance; alerts flag anomalies and periodic reviews are performed by authorized personnel."@en .
+
+:PrivacyAndSecurityRisk a owl:NamedIndividual,
+        airo:Risk ;
+    rdfs:label "Privacy and Security Risk"@en ;
+    dcterms:description "Citizen content processing carries privacy risks; mitigated through access controls and GDPR compliance."@en .
+
+:RegulatoryAlignmentRisk a owl:NamedIndividual,
+        airo:Risk ;
+    rdfs:label "Regulatory Alignment Risk"@en ;
+    dcterms:description "Risk of misalignment with EU AI Act requirements; mitigated through automated MLOps compliance checks."@en .
+
+:RetirementStage a owl:NamedIndividual,
+        vair:Retirement ;
+    rdfs:label "Retirement Stage"@en ;
+    aidoc:hasAIActivity :DecommissioningActivity .
+
+:RiskManagementActivity a owl:NamedIndividual,
+        aidoc:AIActivity ;
+    rdfs:label "Risk Management Activity"@en ;
+    dcterms:description "Risks evaluated at each pipeline iteration, at significant changes, and periodically within the MLOps lifecycle."@en .
+
+:SilhouetteScoreMetric a owl:NamedIndividual,
+        aidoc:PerformanceMetric ;
+    rdfs:label "Silhouette Score"@en .
+
+:SoftwareDeploymentActivity a owl:NamedIndividual,
+        aidoc:Deployment ;
+    rdfs:label "Software Deployment Activity"@en ;
+    dcterms:description "Runs on cloud or on-premise containerized servers, integrated into CivicVoice under CERTAIN framework controls."@en .
+
+:Syntherion a owl:NamedIndividual,
+        aidoc:AIProvider ;
+    rdfs:label "Syntherion"@en .
+
+:SyntheticCivicVoiceDataset a owl:NamedIndividual,
+        aidoc:Dataset ;
+    rdfs:label "Synthetic CivicVoice Dataset"@en ;
+    dcterms:description "Privacy-safe synthetic surrogates of citizen contributions for GDPR-compliant clustering and evaluation."@en ;
+    aidoc:dataCollectionMethod "Generated through the synthetic data generation framework" ;
+    aidoc:dataScope "Privacy-safe surrogate data for clustering inference and evaluation." .
+
+:SyntheticDataGenerationFramework a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Synthetic Data Generation Framework"@en .
+
+:SyntheticDataProcessingActivity a owl:NamedIndividual,
+        aidoc:DataProcessing ;
+    rdfs:label "Synthetic Data Processing Activity"@en ;
+    dcterms:description "Transforms CivicVoice contributions into privacy-safe synthetic surrogates for GDPR-compliant downstream use."@en ;
+    aidoc:hasSourceDataset :PublicCivicVoiceContributions ;
+    aidoc:producesDataset :SyntheticCivicVoiceDataset .
+
+:ThematicClusteringForPublicDeliberation a owl:NamedIndividual,
+        airo:Purpose ;
+    rdfs:label "Thematic Clustering for Public Deliberation"@en .
+
+:TransitionToModularService a owl:NamedIndividual,
+        aidoc:ChangeRecord ;
+    rdfs:label "Transition to Modular Service"@en ;
+    aidoc:reasonForChange "Transition from standalone clustering component in CivicVoice to a modular MLOps-integrated service." .
+
+:TransparencyMeasureForUsers a owl:NamedIndividual,
+        aidoc:TransparencyMeasure ;
+    rdfs:label "Transparency Measure"@en ;
+    dcterms:description "Users receive information on inputs, outputs, methods, limitations, and quality metrics, including summaries and quality indicators."@en .
+
+:Citizens a owl:NamedIndividual,
+        airo:AISubject,
+        airo:AIUser,
+        dpv:DataSubject ;
+    rdfs:label "Citizens"@en .
+
+:ClusteringEngine a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Clustering Engine"@en ;
+    aidoc:feedsIntoComponent :OutputGenerationModule .
+
+:OutputGenerationModule a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Output Generation Module"@en .
+
+:PreprocessingModule a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Preprocessing Module"@en ;
+    aidoc:feedsIntoComponent :ClusteringEngine .
+
+:PublicCivicVoiceContributions a owl:NamedIndividual,
+        aidoc:Dataset ;
+    rdfs:label "Public CivicVoice Contributions"@en ;
+    aidoc:dataCharacteristic "Citizen opinions, arguments, and proposals from public input processes on the CivicVoice platform." ;
+    aidoc:dataCollectionMethod "Collected via public input processes on the CivicVoice platform and then used within synthetic data generation workflows." ;
+    aidoc:dataScope "Inputs for thematic clustering in policy-related CivicVoice contexts." .
+

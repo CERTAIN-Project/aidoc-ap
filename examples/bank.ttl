@@ -1,442 +1,424 @@
 @prefix : <http://www.semanticweb.org/certain/ontologies/2026/05/bank/> .
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix airo: <https://w3id.org/airo#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix airo: <https://w3id.org/airo#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vair: <https://w3id.org/vair#> .
-@prefix aidoc: <https://w3id.org/aidoc-ap#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://www.semanticweb.org/certain/ontologies/2026/05/bank/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.semanticweb.org/certain/ontologies/2026/05/bank> rdf:type owl:Ontology ;
-    owl:imports <https://w3id.org/aidoc-ap/1.0> ,
-                <https://w3id.org/airo/1.0> ,
-                <https://w3id.org/vair/1.0> ;
+<http://www.semanticweb.org/certain/ontologies/2026/05/bank> a owl:Ontology ;
     dcterms:description "AIDOC-AP instantiation for a retail banking investment recommendation pilot."@en ;
     dcterms:issued "2026-05-28"^^xsd:date ;
-    dcterms:title "Bank Investment Recommendation Pilot"@en .
+    dcterms:title "Bank Investment Recommendation Pilot"@en ;
+    owl:imports <https://w3id.org/aidoc-ap/1.0>,
+        <https://w3id.org/airo/1.0>,
+        <https://w3id.org/vair/1.0> .
 
-#################################################################
-#    Individuals
-#################################################################
-
-###  Lifecycle phases
-:DevelopmentStage rdf:type owl:NamedIndividual ,
-                           vair:Development ;
-    aidoc:hasAIActivity :DataPreparationActivity ,
-                        :DataTestingActivity ,
-                        :FeatureEngineeringActivity ,
-                        :ModelTrainingActivity ,
-                        :ValidationActivity ,
-                        :BiasTestingActivity ,
-                        :ModelEngineeringActivity ,
-                        :ModelEvaluationActivity ,
-                        :ModelVersioningActivity , 
-                        :DataCleaningActivity ,
-                        :DataExplorationAndValidationActivity ;
-    rdfs:label "Development Stage"@en .
-
-:DeploymentStage rdf:type owl:NamedIndividual ,
-                          vair:Deployment ;
-    aidoc:hasAIActivity :BuildAndIntegrationTestingActivity ,
-                        :SoftwareDeploymentActivity ;
-    rdfs:label "Deployment Stage"@en .
-
-:RetirementStage rdf:type owl:NamedIndividual ,
-                          vair:Retirement ;
-    aidoc:hasAIActivity :DecommissioningActivity ;
-    rdfs:label "Retirement Stage"@en .
-
-:OperationStage rdf:type owl:NamedIndividual ,
-                         vair:Operation ;
-    aidoc:hasAIActivity :DataMonitoringAndLoggingActivity ,
-                        :PostMarketMonitoringActivity ,
-                        :RiskManagementProcess ;
-    rdfs:label "Operation Stage"@en .
-
-:DecommissioningActivity rdf:type owl:NamedIndividual ,
-                              aidoc:Decommissioning ;
-    dcterms:description "Processes remove the model at end-of-life, replacement, or major-issue stages."@en ;
-    rdfs:label "Decommissioning"@en .
-
-
-###  AI system and provider
-:Bank_Investment_Recommendation_System rdf:type owl:NamedIndividual ,
-                                               aidoc:AISystem ;
-    aidoc:appliesStandard :GDPR_EU_2016_679 ,
-                          :Banking_Model_Risk_Management_Guidance ,
-                          :ISO27001_Aligned_Internal_Cybersecurity_Standards ,
-                          :EBA_ICT_Security_Risk_Management_Guidelines ;
-    aidoc:hasComponent :InvestmentRecommendationModel ,
-                       :CounterfactualExplanationModule ;
-    aidoc:requiresHardware :SecureInternalInfrastructure ;
+:Bank_Investment_Recommendation_System a owl:NamedIndividual,
+        aidoc:AISystem ;
+    rdfs:label "Bank Investment Recommendation System"@en ;
+    dcterms:description "Pilot instance with lifecycle traceability and evidence generation."@en ;
+    aidoc:appliesStandard :Banking_Model_Risk_Management_Guidance,
+        :EBA_ICT_Security_Risk_Management_Guidelines,
+        :GDPR_EU_2016_679,
+        :ISO27001_Aligned_Internal_Cybersecurity_Standards ;
+    aidoc:hasChangeLog :BankChangeLog ;
+    aidoc:hasComponent :CounterfactualExplanationModule,
+        :InvestmentRecommendationModel ;
     aidoc:hasDeclarationOfConformity :EUDeclarationOfConformityStatus ;
     aidoc:hasHumanOversight :HumanOversightMechanism ;
+    aidoc:hasIntendedPurpose :IntendedPurpose_1 ;
     aidoc:hasInterface :GovernanceDocumentationAccess ;
-    aidoc:hasLifecycleStage :DevelopmentStage ,
-                            :DeploymentStage ,
-                            :OperationStage ,
-                            :RetirementStage ;
-    aidoc:hasRisk :DataQualityRisk ,
-                  :ModelDriftRisk ,
-                  :BiasFairnessRisk ,
-                  :ExplainabilityGapRisk ,
-                  :SecurityAccessRisk ;
-    aidoc:hasSoftwareComponent :DataIngestionLayer ,
-                               :FeatureEngineeringPipeline ,
-                               :ModelTrainingModule ,
-                               :EvaluationFramework ,
-                               :CounterfactualExplanationModule ,
-                               :MonitoringDashboard ,
-                               :LoggingAndAuditSubsystem ;
-    aidoc:hasChangeLog :BankChangeLog ;
+    aidoc:hasLifecycleStage :DeploymentStage,
+        :DevelopmentStage,
+        :OperationStage,
+        :RetirementStage ;
+    aidoc:hasModality :Modality_1 ;
+    aidoc:hasRisk :BiasFairnessRisk,
+        :DataQualityRisk,
+        :ExplainabilityGapRisk,
+        :ModelDriftRisk,
+        :SecurityAccessRisk ;
+    aidoc:hasSoftwareComponent :CounterfactualExplanationModule,
+        :DataIngestionLayer,
+        :EvaluationFramework,
+        :FeatureEngineeringPipeline,
+        :LoggingAndAuditSubsystem,
+        :ModelTrainingModule,
+        :MonitoringDashboard ;
     aidoc:hasTransparencyMeasure :TransparencyMeasureForUsers ;
-    aidoc:intendedPurpose "Supports personalised investment recommendations for retail customers, helping authorised staff and controlled channels propose suitable products." ;
-    aidoc:modality "Internal banking decision-support tool and integrated backend service, not a standalone external product." ;
-    aidoc:version "Current operational recommendation version with CERTAIN-aligned lifecycle, testing, and explainability enhancements." ;
-    airo:hasAIUser :AuthorisedBankStaff ;
-    airo:hasAISubject :RetailBankingCustomers ;
-    airo:hasPurpose :PersonalisedInvestmentRecommendations ;
     aidoc:isProvidedBy :Bank ;
-    dcterms:description "Pilot instance with lifecycle traceability and evidence generation."@en ;
-    rdfs:label "Bank Investment Recommendation System"@en .
+    aidoc:requiresHardware :SecureInternalInfrastructure ;
+    aidoc:version "Current operational recommendation version with CERTAIN-aligned lifecycle, testing, and explainability enhancements." ;
+    airo:hasAISubject :RetailBankingCustomers ;
+    airo:hasAIUser :AuthorisedBankStaff ;
+    airo:hasPurpose :PersonalisedInvestmentRecommendations .
 
-:Bank rdf:type owl:NamedIndividual ,
-              aidoc:AIProvider ;
+:AuthorisedBankStaff a owl:NamedIndividual,
+        airo:AIUser ;
+    rdfs:label "Authorised Bank Staff"@en ;
+    dcterms:description "Authorised staff operate and supervise outputs in bank-controlled environments."@en .
+
+:Bank a owl:NamedIndividual,
+        aidoc:AIProvider ;
     rdfs:label "Bank"@en .
 
-:AuthorisedBankStaff rdf:type owl:NamedIndividual ,
-                              airo:AIUser ;
-    dcterms:description "Authorised staff operate and supervise outputs in bank-controlled environments."@en ;
-    rdfs:label "Authorised Bank Staff"@en .
+:BankChangeLog a owl:NamedIndividual,
+        aidoc:ChangeLog ;
+    rdfs:label "Bank Change Log"@en ;
+    aidoc:hasChangeRecord :EnhanceTraceabilityLogging,
+        :ImproveModelCardDocumentation,
+        :IntroduceCounterfactualExplanations,
+        :IntroduceStructuredBiasTesting,
+        :StrengthenMonitoringThresholds .
 
-:RetailBankingCustomers rdf:type owl:NamedIndividual ,
-                                 dpv:DataSubject ,
-                                 airo:AISubject ;
-    rdfs:label "Retail Banking Customers"@en .
-
-:PersonalisedInvestmentRecommendations rdf:type owl:NamedIndividual ,
-                                                airo:Purpose ;
-    rdfs:label "Personalised Investment Recommendations"@en .
-
-
-###  Risks and controls
-:RiskManagementProcess rdf:type owl:NamedIndividual ,
-                                aidoc:AIActivity ;
-    dcterms:description "Risk management covers identification, assessment, mitigation, validation, approval, monitoring, and incident escalation; each model has a risk owner."@en ;
-    rdfs:label "Risk Management Process"@en .
-
-:DataQualityRisk rdf:type owl:NamedIndividual ,
-                          airo:Risk ;
-    dcterms:description "Unsuitable recommendations from incorrect or incomplete customer profile data."@en ;
-    rdfs:label "Data Quality Risk"@en .
-
-:ModelDriftRisk rdf:type owl:NamedIndividual ,
-                         airo:Risk ;
-    dcterms:description "Model drift may reduce recommendation quality as behavior or markets change."@en ;
-    rdfs:label "Model Drift Risk"@en .
-
-:BiasFairnessRisk rdf:type owl:NamedIndividual ,
-                           airo:Risk ;
-    dcterms:description "Unjustified differences in outcomes across customer groups."@en ;
-    rdfs:label "Bias and Fairness Risk"@en .
-
-:ExplainabilityGapRisk rdf:type owl:NamedIndividual ,
-                                airo:Risk ;
-    dcterms:description "Inability to justify recommendations to stakeholders and, where relevant, customers."@en ;
-    rdfs:label "Explainability Gap Risk"@en .
-
-:SecurityAccessRisk rdf:type owl:NamedIndividual ,
-                             airo:Risk ;
-    dcterms:description "Unauthorized access to endpoints, recommendation logic, or sensitive data."@en ;
-    rdfs:label "Security and Access Risk"@en .
-
-:HumanOversightMechanism rdf:type owl:NamedIndividual ,
-                                  aidoc:HumanOversightMechanism ;
-    dcterms:description "Humans review flagged cases, can override outputs, and remain accountable for final decisions."@en ;
-    rdfs:label "Human Oversight Mechanism"@en .
-
-:TransparencyMeasureForUsers rdf:type owl:NamedIndividual ,
-                                      aidoc:TransparencyMeasure ;
-    dcterms:description "Transparency includes intended use and limits, audit traceability, and explanation outputs."@en ;
-    rdfs:label "Transparency Measure"@en .
-
-
-###  Standards and conformity
-:GDPR_EU_2016_679 rdf:type owl:NamedIndividual ,
-                           aidoc:Standard ;
-    rdfs:label "GDPR (EU 2016/679)"@en .
-
-:Banking_Model_Risk_Management_Guidance rdf:type owl:NamedIndividual ,
-                                                 aidoc:Standard ;
+:Banking_Model_Risk_Management_Guidance a owl:NamedIndividual,
+        aidoc:Standard ;
     rdfs:label "Banking supervisory guidance on model risk management"@en .
 
-:ISO27001_Aligned_Internal_Cybersecurity_Standards rdf:type owl:NamedIndividual ,
-                                                             aidoc:Standard ;
-    rdfs:label "Internal cybersecurity standards aligned with ISO 27001 principles"@en .
+:BiasFairnessRisk a owl:NamedIndividual,
+        airo:Risk ;
+    rdfs:label "Bias and Fairness Risk"@en ;
+    dcterms:description "Unjustified differences in outcomes across customer groups."@en .
 
-:EBA_ICT_Security_Risk_Management_Guidelines rdf:type owl:NamedIndividual ,
-                                                      aidoc:Standard ;
-    rdfs:label "EBA guidelines on ICT and security risk management"@en .
-
-:EUDeclarationOfConformityStatus rdf:type owl:NamedIndividual ,
-                                          aidoc:DeclarationOfConformity ;
-    dcterms:description "No formal EU AI Act declaration yet; the pilot supports conformity readiness."@en ;
-    rdfs:label "EU Declaration of Conformity Status"@en .
-
-
-###  Components and architecture
-:InvestmentRecommendationModel rdf:type owl:NamedIndividual ,
-                                        aidoc:AIModel ;
-    aidoc:usesAIMethod :GradientBoostingMethod ,
-                       :LogisticRegressionMethod ,
-                       :TreeBasedEnsembleMethod ,
-                       :CounterfactualExplanationMethod ;
-    aidoc:hasArchitecture "Modular analytics architecture integrated with banking systems, with API-based inference in a secure production environment."@en ;
-    rdfs:label "Investment Recommendation Model"@en .
-
-:GradientBoostingMethod rdf:type owl:NamedIndividual ,
-                                 aidoc:AIMethod ;
-    rdfs:label "Gradient Boosting"@en .
-
-:LogisticRegressionMethod rdf:type owl:NamedIndividual ,
-                                   aidoc:AIMethod ;
-    rdfs:label "Logistic Regression"@en .
-
-:TreeBasedEnsembleMethod rdf:type owl:NamedIndividual ,
-                                  aidoc:AIMethod ;
-    rdfs:label "Tree-based Ensemble Methods"@en .
-
-:CounterfactualExplanationMethod rdf:type owl:NamedIndividual ,
-                                          aidoc:AIMethod ;
-    rdfs:label "Counterfactual Explanation Algorithms"@en .
-
-:DataIngestionLayer rdf:type owl:NamedIndividual ,
-                             aidoc:SoftwareComponent ;
-    aidoc:dependsOn :CoreBankingSystems ,
-                    :DataWarehouses ;
-    aidoc:feedsIntoComponent :FeatureEngineeringPipeline ;
-    rdfs:label "Data Ingestion Layer"@en .
-
-:FeatureEngineeringPipeline rdf:type owl:NamedIndividual ,
-                                     aidoc:SoftwareComponent ;
-    aidoc:feedsIntoComponent :ModelTrainingModule ;
-    rdfs:label "Feature Engineering Pipeline"@en .
-
-:ModelTrainingModule rdf:type owl:NamedIndividual ,
-                              aidoc:SoftwareComponent ;
-    aidoc:feedsIntoComponent :EvaluationFramework ;
-    rdfs:label "Model Training Module"@en .
-
-:EvaluationFramework rdf:type owl:NamedIndividual ,
-                              aidoc:SoftwareComponent ;
-    aidoc:feedsIntoComponent :CounterfactualExplanationModule ;
-    rdfs:label "Evaluation Framework"@en .
-
-:CounterfactualExplanationModule rdf:type owl:NamedIndividual ,
-                                          aidoc:SoftwareComponent ;
-    aidoc:feedsIntoComponent :MonitoringDashboard ;
-    rdfs:label "Counterfactual Explanation Module"@en .
-
-:MonitoringDashboard rdf:type owl:NamedIndividual ,
-                              aidoc:SoftwareComponent ;
-    aidoc:feedsIntoComponent :LoggingAndAuditSubsystem ;
-    rdfs:label "Monitoring Dashboard"@en .
-
-:LoggingAndAuditSubsystem rdf:type owl:NamedIndividual ,
-                                   aidoc:SoftwareComponent ;
-    rdfs:label "Logging and Audit Subsystem"@en .
-
-:CoreBankingSystems rdf:type owl:NamedIndividual ,
-                             aidoc:SoftwareComponent ;
-    rdfs:label "Core Banking Systems"@en .
-
-:DataWarehouses rdf:type owl:NamedIndividual ,
-                         aidoc:SoftwareComponent ;
-    rdfs:label "Data Warehouses"@en .
-
-:SecureInternalInfrastructure rdf:type owl:NamedIndividual ,
-                                       aidoc:HardwareComponent ;
-    dcterms:description "Internal servers or secure cloud infrastructure aligned with banking rules."@en ;
-    rdfs:label "Secure Internal Infrastructure"@en .
-
-:GovernanceDocumentationAccess rdf:type owl:NamedIndividual ,
-                                        aidoc:Interface ;
-    dcterms:description "Role-based access to documentation, test reports, release notes, and audit logs."@en ;
-    rdfs:label "Governance Documentation Access"@en .
-
-
-###  Data and data pipeline
-:RiskProfilingAndSuitabilityData rdf:type owl:NamedIndividual ,
-                                          aidoc:Dataset ;
-    aidoc:dataCharacteristic "Risk tolerance, horizon, liquidity, objectives, knowledge/experience, portfolio holdings, product attributes, and relevant aggregated market indicators." ;
-    aidoc:dataCollectionMethod "Collected from internal core banking systems and investment records under GDPR lawful basis." ;
-    aidoc:dataScope "Inputs for risk profiling and investment suitability recommendations." ;
-    rdfs:label "Risk Profiling and Investment Suitability Data"@en .
-
-:HistoricalAnonymisedBankingData rdf:type owl:NamedIndividual ,
-                                          aidoc:Dataset ;
-    rdfs:label "Historical Anonymised Banking Data"@en .
-
-:InternalInvestmentRecords rdf:type owl:NamedIndividual ,
-                                    aidoc:Dataset ;
-    rdfs:label "Internal Investment Records"@en .
-
-:HoldOutTestSets rdf:type owl:NamedIndividual ,
-                          aidoc:Dataset ;
-    rdfs:label "Hold-out Test Sets"@en .
-
-:CounterfactualSyntheticTestData rdf:type owl:NamedIndividual ,
-                                          aidoc:Dataset ;
-    dcterms:description "Counterfactual synthetic test data added as a CERTAIN enhancement."@en ;
-    rdfs:label "Counterfactual Synthetic Test Data"@en .
-
-:DataExplorationAndValidationActivity rdf:type owl:NamedIndividual ,
-                                               aidoc:ExplorationAndValidation ;
-    aidoc:hasSourceDataset :RiskProfilingAndSuitabilityData ;
-    dcterms:description "Reviews data needs, sources, and initial suitability assessments."@en ;
-    rdfs:label "Data Exploration and Validation Activity"@en .
-
-:DataCleaningActivity rdf:type owl:NamedIndividual ,
-                              aidoc:DataWrangling ;
-    aidoc:hasSourceDataset :RiskProfilingAndSuitabilityData ;
-    dcterms:description "Includes validation, outlier and missing-value handling, consistency checks, refresh checks, and bias-sensitive variable monitoring."@en ;
-    rdfs:label "Data Cleaning Activity"@en .
-
-:DataTestingActivity rdf:type owl:NamedIndividual ,
-                             aidoc:DataTesting ;
-    aidoc:hasSourceDataset :RiskProfilingAndSuitabilityData ;
-    aidoc:usesTestData :HoldOutTestSets ,
-                       :CounterfactualSyntheticTestData ;
-    dcterms:description "Uses hold-out and counterfactual test data plus quality checks for training and evaluation sets."@en ;
-    rdfs:label "Data Testing Activity"@en .
-
-:ModelTrainingActivity rdf:type owl:NamedIndividual ,
-                                aidoc:DataTraining ;
-    aidoc:usesTrainingData :HistoricalAnonymisedBankingData ,
-                           :InternalInvestmentRecords ;
-    dcterms:description "Training uses supervised learning, cross-validation, imbalance mitigation, and feature-importance analysis."@en ;
-    rdfs:label "Model Training Activity"@en .
-
-
-###  ML and software lifecycle activities
-:ModelEngineeringActivity rdf:type owl:NamedIndividual ,
-                                   aidoc:ModelEngineering ;
-    dcterms:description "Model engineering uses a modular architecture covering ingestion, training, evaluation, explainability, monitoring, and logging."@en ;
-    rdfs:label "Model Engineering Activity"@en .
-
-:ModelEvaluationActivity rdf:type owl:NamedIndividual ,
-                                  aidoc:ModelEvaluation ;
-    aidoc:hasPerformanceMetric :SuitabilityClassificationAccuracy ,
-                             :RiskProfileClassificationAccuracy ,
-                             :FairnessDisparityMonitoring ,
-                             :ConstraintComplianceRate ;
-    dcterms:description "Validation uses cross-validation, time-series and counterfactual tests, sensitivity analysis, bias testing, and threshold checks."@en ;
-    rdfs:label "Model Evaluation Activity"@en .
-
-:BuildAndIntegrationTestingActivity rdf:type owl:NamedIndividual ,
-                                             aidoc:BuildAndIntegrationTesting ;
-    dcterms:description "Integration and cybersecurity testing use code review, scanning, penetration tests, secure APIs, and access controls."@en ;
-    rdfs:label "Build and Integration Testing Activity"@en .
-
-:SoftwareDeploymentActivity rdf:type owl:NamedIndividual ,
-                                     aidoc:Deployment ;
-    dcterms:description "Deployment is in secure internal environments as a decision-support backend service."@en ;
-    rdfs:label "Software Deployment Activity"@en .
-
-:DataMonitoringAndLoggingActivity rdf:type owl:NamedIndividual ,
-                                           aidoc:DataMonitoringAndLogging ;
-    aidoc:storesLogsAt :SecureInternalLogStorage ;
-    dcterms:description "Logs capture permissible inputs/outputs, timestamps, model version, access events, overrides, and performance metrics."@en ;
-    rdfs:label "Data Monitoring and Logging Activity"@en .
-
-:PostMarketMonitoringActivity rdf:type owl:NamedIndividual ,
-                                       aidoc:AIActivity ;
-    dcterms:description "Post-deployment monitoring tracks stability, operational and quality KPIs, compliance, and abnormal-pattern alerts with defined escalation."@en ;
-    rdfs:label "Post-market Monitoring Activity"@en .
-
-:ModelVersioningActivity rdf:type owl:NamedIndividual ,
-                                  aidoc:ModelVersioning ;
-    dcterms:description "Versioning follows internal governance; major updates trigger pre- and post-release risk review."@en ;
-    rdfs:label "Model Versioning Activity"@en .
-
-:DataPreparationActivity rdf:type owl:NamedIndividual ,
-                                  aidoc:AIActivity ;
-    rdfs:label "Data Preparation"@en .
-
-:FeatureEngineeringActivity rdf:type owl:NamedIndividual ,
-                                     aidoc:AIActivity ;
-    rdfs:label "Feature Engineering"@en .
-
-:ValidationActivity rdf:type owl:NamedIndividual ,
-                             aidoc:AIActivity ;
-    rdfs:label "Validation"@en .
-
-:BiasTestingActivity rdf:type owl:NamedIndividual ,
-                              aidoc:AIActivity ;
+:BiasTestingActivity a owl:NamedIndividual,
+        aidoc:AIActivity ;
     rdfs:label "Bias Testing"@en .
 
+:BuildAndIntegrationTestingActivity a owl:NamedIndividual,
+        aidoc:BuildAndIntegrationTesting ;
+    rdfs:label "Build and Integration Testing Activity"@en ;
+    dcterms:description "Integration and cybersecurity testing use code review, scanning, penetration tests, secure APIs, and access controls."@en .
 
-###  Logging and storage
-:SecureInternalLogStorage rdf:type owl:NamedIndividual ,
-                                   aidoc:SoftwareComponent ;
-    dcterms:description "Logs are securely stored, access-controlled, policy-retained, and auditable by audit and compliance teams."@en ;
-    rdfs:label "Secure Internal Log Storage"@en .
-
-
-###  Change log (lifecycle changes)
-:BankChangeLog rdf:type owl:NamedIndividual ,
-                       aidoc:ChangeLog ;
-    aidoc:hasChangeRecord :IntroduceCounterfactualExplanations ,
-                          :IntroduceStructuredBiasTesting ,
-                          :EnhanceTraceabilityLogging ,
-                          :ImproveModelCardDocumentation ,
-                          :StrengthenMonitoringThresholds ;
-    rdfs:label "Bank Change Log"@en .
-
-:IntroduceCounterfactualExplanations rdf:type owl:NamedIndividual ,
-                                              aidoc:ChangeRecord ;
-    aidoc:reasonForChange "Integration of explainability mechanisms through counterfactual explanations." ;
-    rdfs:label "Introduce Counterfactual Explanations"@en .
-
-:IntroduceStructuredBiasTesting rdf:type owl:NamedIndividual ,
-                                         aidoc:ChangeRecord ;
-    aidoc:reasonForChange "Introduction of structured bias testing." ;
-    rdfs:label "Introduce Structured Bias Testing"@en .
-
-:EnhanceTraceabilityLogging rdf:type owl:NamedIndividual ,
-                                     aidoc:ChangeRecord ;
-    aidoc:reasonForChange "Enhanced logging for traceability." ;
-    rdfs:label "Enhance Traceability Logging"@en .
-
-:ImproveModelCardDocumentation rdf:type owl:NamedIndividual ,
-                                        aidoc:ChangeRecord ;
-    aidoc:reasonForChange "Improved model documentation using model cards." ;
-    rdfs:label "Improve Model Documentation"@en .
-
-:StrengthenMonitoringThresholds rdf:type owl:NamedIndividual ,
-                                         aidoc:ChangeRecord ;
-    aidoc:reasonForChange "Strengthened monitoring thresholds." ;
-    rdfs:label "Strengthen Monitoring Thresholds"@en .
-
-
-###  Performance metrics
-:SuitabilityClassificationAccuracy rdf:type owl:NamedIndividual ,
-                                            aidoc:PerformanceMetric ;
-    rdfs:label "Suitability Classification Accuracy"@en .
-
-:RiskProfileClassificationAccuracy rdf:type owl:NamedIndividual ,
-                                            aidoc:PerformanceMetric ;
-    rdfs:label "Risk Profile Classification Accuracy"@en .
-
-:FairnessDisparityMonitoring rdf:type owl:NamedIndividual ,
-                                      aidoc:PerformanceMetric ;
-    rdfs:label "Fairness Disparity Monitoring"@en .
-
-:ConstraintComplianceRate rdf:type owl:NamedIndividual ,
-                                   aidoc:PerformanceMetric ;
+:ConstraintComplianceRate a owl:NamedIndividual,
+        aidoc:PerformanceMetric ;
     rdfs:label "Constraint Compliance Rate"@en .
 
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+:CoreBankingSystems a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Core Banking Systems"@en .
+
+:CounterfactualExplanationMethod a owl:NamedIndividual,
+        aidoc:AIMethod ;
+    rdfs:label "Counterfactual Explanation Algorithms"@en .
+
+:CounterfactualSyntheticTestData a owl:NamedIndividual,
+        aidoc:Dataset ;
+    rdfs:label "Counterfactual Synthetic Test Data"@en ;
+    dcterms:description "Counterfactual synthetic test data added as a CERTAIN enhancement."@en .
+
+:DataCleaningActivity a owl:NamedIndividual,
+        aidoc:DataWrangling ;
+    rdfs:label "Data Cleaning Activity"@en ;
+    dcterms:description "Includes validation, outlier and missing-value handling, consistency checks, refresh checks, and bias-sensitive variable monitoring."@en ;
+    aidoc:hasSourceDataset :RiskProfilingAndSuitabilityData .
+
+:DataExplorationAndValidationActivity a owl:NamedIndividual,
+        aidoc:ExplorationAndValidation ;
+    rdfs:label "Data Exploration and Validation Activity"@en ;
+    dcterms:description "Reviews data needs, sources, and initial suitability assessments."@en ;
+    aidoc:hasSourceDataset :RiskProfilingAndSuitabilityData .
+
+:DataIngestionLayer a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Data Ingestion Layer"@en ;
+    aidoc:dependsOn :CoreBankingSystems,
+        :DataWarehouses ;
+    aidoc:feedsIntoComponent :FeatureEngineeringPipeline .
+
+:DataMonitoringAndLoggingActivity a owl:NamedIndividual,
+        aidoc:DataMonitoringAndLogging ;
+    rdfs:label "Data Monitoring and Logging Activity"@en ;
+    dcterms:description "Logs capture permissible inputs/outputs, timestamps, model version, access events, overrides, and performance metrics."@en ;
+    aidoc:storesLogsAt :SecureInternalLogStorage .
+
+:DataPreparationActivity a owl:NamedIndividual,
+        aidoc:AIActivity ;
+    rdfs:label "Data Preparation"@en .
+
+:DataQualityRisk a owl:NamedIndividual,
+        airo:Risk ;
+    rdfs:label "Data Quality Risk"@en ;
+    dcterms:description "Unsuitable recommendations from incorrect or incomplete customer profile data."@en .
+
+:DataTestingActivity a owl:NamedIndividual,
+        aidoc:DataTesting ;
+    rdfs:label "Data Testing Activity"@en ;
+    dcterms:description "Uses hold-out and counterfactual test data plus quality checks for training and evaluation sets."@en ;
+    aidoc:hasSourceDataset :RiskProfilingAndSuitabilityData ;
+    aidoc:usesTestData :CounterfactualSyntheticTestData,
+        :HoldOutTestSets .
+
+:DataWarehouses a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Data Warehouses"@en .
+
+:DecommissioningActivity a owl:NamedIndividual,
+        aidoc:Decommissioning ;
+    rdfs:label "Decommissioning"@en ;
+    dcterms:description "Processes remove the model at end-of-life, replacement, or major-issue stages."@en .
+
+:DeploymentStage a owl:NamedIndividual,
+        vair:Deployment ;
+    rdfs:label "Deployment Stage"@en ;
+    aidoc:hasAIActivity :BuildAndIntegrationTestingActivity,
+        :SoftwareDeploymentActivity .
+
+:DevelopmentStage a owl:NamedIndividual,
+        vair:Development ;
+    rdfs:label "Development Stage"@en ;
+    aidoc:hasAIActivity :BiasTestingActivity,
+        :DataCleaningActivity,
+        :DataExplorationAndValidationActivity,
+        :DataPreparationActivity,
+        :DataTestingActivity,
+        :FeatureEngineeringActivity,
+        :ModelEngineeringActivity,
+        :ModelEvaluationActivity,
+        :ModelTrainingActivity,
+        :ModelVersioningActivity,
+        :ValidationActivity .
+
+:EBA_ICT_Security_Risk_Management_Guidelines a owl:NamedIndividual,
+        aidoc:Standard ;
+    rdfs:label "EBA guidelines on ICT and security risk management"@en .
+
+:EUDeclarationOfConformityStatus a owl:NamedIndividual,
+        aidoc:DeclarationOfConformity ;
+    rdfs:label "EU Declaration of Conformity Status"@en ;
+    dcterms:description "No formal EU AI Act declaration yet; the pilot supports conformity readiness."@en .
+
+:EnhanceTraceabilityLogging a owl:NamedIndividual,
+        aidoc:ChangeRecord ;
+    rdfs:label "Enhance Traceability Logging"@en ;
+    aidoc:reasonForChange "Enhanced logging for traceability." .
+
+:ExplainabilityGapRisk a owl:NamedIndividual,
+        airo:Risk ;
+    rdfs:label "Explainability Gap Risk"@en ;
+    dcterms:description "Inability to justify recommendations to stakeholders and, where relevant, customers."@en .
+
+:FairnessDisparityMonitoring a owl:NamedIndividual,
+        aidoc:PerformanceMetric ;
+    rdfs:label "Fairness Disparity Monitoring"@en .
+
+:FeatureEngineeringActivity a owl:NamedIndividual,
+        aidoc:AIActivity ;
+    rdfs:label "Feature Engineering"@en .
+
+:GDPR_EU_2016_679 a owl:NamedIndividual,
+        aidoc:Standard ;
+    rdfs:label "GDPR (EU 2016/679)"@en .
+
+:GovernanceDocumentationAccess a owl:NamedIndividual,
+        aidoc:Interface ;
+    rdfs:label "Governance Documentation Access"@en ;
+    dcterms:description "Role-based access to documentation, test reports, release notes, and audit logs."@en .
+
+:GradientBoostingMethod a owl:NamedIndividual,
+        aidoc:AIMethod ;
+    rdfs:label "Gradient Boosting"@en .
+
+:HistoricalAnonymisedBankingData a owl:NamedIndividual,
+        aidoc:Dataset ;
+    rdfs:label "Historical Anonymised Banking Data"@en .
+
+:HoldOutTestSets a owl:NamedIndividual,
+        aidoc:Dataset ;
+    rdfs:label "Hold-out Test Sets"@en .
+
+:HumanOversightMechanism a owl:NamedIndividual,
+        aidoc:HumanOversightMechanism ;
+    rdfs:label "Human Oversight Mechanism"@en ;
+    dcterms:description "Humans review flagged cases, can override outputs, and remain accountable for final decisions."@en .
+
+:ISO27001_Aligned_Internal_Cybersecurity_Standards a owl:NamedIndividual,
+        aidoc:Standard ;
+    rdfs:label "Internal cybersecurity standards aligned with ISO 27001 principles"@en .
+
+:ImproveModelCardDocumentation a owl:NamedIndividual,
+        aidoc:ChangeRecord ;
+    rdfs:label "Improve Model Documentation"@en ;
+    aidoc:reasonForChange "Improved model documentation using model cards." .
+
+:IntendedPurpose_1 a aidoc:IntendedPurpose ;
+    rdfs:label "Supports personalised investment recommendations for retail customers, helping authorised staff and controlled channels propose suitable products." .
+
+:InternalInvestmentRecords a owl:NamedIndividual,
+        aidoc:Dataset ;
+    rdfs:label "Internal Investment Records"@en .
+
+:IntroduceCounterfactualExplanations a owl:NamedIndividual,
+        aidoc:ChangeRecord ;
+    rdfs:label "Introduce Counterfactual Explanations"@en ;
+    aidoc:reasonForChange "Integration of explainability mechanisms through counterfactual explanations." .
+
+:IntroduceStructuredBiasTesting a owl:NamedIndividual,
+        aidoc:ChangeRecord ;
+    rdfs:label "Introduce Structured Bias Testing"@en ;
+    aidoc:reasonForChange "Introduction of structured bias testing." .
+
+:InvestmentRecommendationModel a owl:NamedIndividual,
+        aidoc:AIModel ;
+    rdfs:label "Investment Recommendation Model"@en ;
+    aidoc:hasArchitecture "Modular analytics architecture integrated with banking systems, with API-based inference in a secure production environment."@en ;
+    aidoc:usesAIMethod :CounterfactualExplanationMethod,
+        :GradientBoostingMethod,
+        :LogisticRegressionMethod,
+        :TreeBasedEnsembleMethod .
+
+:LogisticRegressionMethod a owl:NamedIndividual,
+        aidoc:AIMethod ;
+    rdfs:label "Logistic Regression"@en .
+
+:Modality_1 a aidoc:Modality ;
+    rdfs:label "Internal banking decision-support tool and integrated backend service, not a standalone external product." ;
+    skos:broader aidoc:SoftwareService .
+
+:ModelDriftRisk a owl:NamedIndividual,
+        airo:Risk ;
+    rdfs:label "Model Drift Risk"@en ;
+    dcterms:description "Model drift may reduce recommendation quality as behavior or markets change."@en .
+
+:ModelEngineeringActivity a owl:NamedIndividual,
+        aidoc:ModelEngineering ;
+    rdfs:label "Model Engineering Activity"@en ;
+    dcterms:description "Model engineering uses a modular architecture covering ingestion, training, evaluation, explainability, monitoring, and logging."@en .
+
+:ModelEvaluationActivity a owl:NamedIndividual,
+        aidoc:ModelEvaluation ;
+    rdfs:label "Model Evaluation Activity"@en ;
+    dcterms:description "Validation uses cross-validation, time-series and counterfactual tests, sensitivity analysis, bias testing, and threshold checks."@en ;
+    aidoc:hasPerformanceMetric :ConstraintComplianceRate,
+        :FairnessDisparityMonitoring,
+        :RiskProfileClassificationAccuracy,
+        :SuitabilityClassificationAccuracy .
+
+:ModelTrainingActivity a owl:NamedIndividual,
+        aidoc:DataTraining ;
+    rdfs:label "Model Training Activity"@en ;
+    dcterms:description "Training uses supervised learning, cross-validation, imbalance mitigation, and feature-importance analysis."@en ;
+    aidoc:usesTrainingData :HistoricalAnonymisedBankingData,
+        :InternalInvestmentRecords .
+
+:ModelVersioningActivity a owl:NamedIndividual,
+        aidoc:ModelVersioning ;
+    rdfs:label "Model Versioning Activity"@en ;
+    dcterms:description "Versioning follows internal governance; major updates trigger pre- and post-release risk review."@en .
+
+:OperationStage a owl:NamedIndividual,
+        vair:Operation ;
+    rdfs:label "Operation Stage"@en ;
+    aidoc:hasAIActivity :DataMonitoringAndLoggingActivity,
+        :PostMarketMonitoringActivity,
+        :RiskManagementProcess .
+
+:PersonalisedInvestmentRecommendations a owl:NamedIndividual,
+        airo:Purpose ;
+    rdfs:label "Personalised Investment Recommendations"@en .
+
+:PostMarketMonitoringActivity a owl:NamedIndividual,
+        aidoc:AIActivity ;
+    rdfs:label "Post-market Monitoring Activity"@en ;
+    dcterms:description "Post-deployment monitoring tracks stability, operational and quality KPIs, compliance, and abnormal-pattern alerts with defined escalation."@en .
+
+:RetailBankingCustomers a owl:NamedIndividual,
+        airo:AISubject,
+        dpv:DataSubject ;
+    rdfs:label "Retail Banking Customers"@en .
+
+:RetirementStage a owl:NamedIndividual,
+        vair:Retirement ;
+    rdfs:label "Retirement Stage"@en ;
+    aidoc:hasAIActivity :DecommissioningActivity .
+
+:RiskManagementProcess a owl:NamedIndividual,
+        aidoc:AIActivity ;
+    rdfs:label "Risk Management Process"@en ;
+    dcterms:description "Risk management covers identification, assessment, mitigation, validation, approval, monitoring, and incident escalation; each model has a risk owner."@en .
+
+:RiskProfileClassificationAccuracy a owl:NamedIndividual,
+        aidoc:PerformanceMetric ;
+    rdfs:label "Risk Profile Classification Accuracy"@en .
+
+:SecureInternalInfrastructure a owl:NamedIndividual,
+        aidoc:HardwareComponent ;
+    rdfs:label "Secure Internal Infrastructure"@en ;
+    dcterms:description "Internal servers or secure cloud infrastructure aligned with banking rules."@en .
+
+:SecureInternalLogStorage a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Secure Internal Log Storage"@en ;
+    dcterms:description "Logs are securely stored, access-controlled, policy-retained, and auditable by audit and compliance teams."@en .
+
+:SecurityAccessRisk a owl:NamedIndividual,
+        airo:Risk ;
+    rdfs:label "Security and Access Risk"@en ;
+    dcterms:description "Unauthorized access to endpoints, recommendation logic, or sensitive data."@en .
+
+:SoftwareDeploymentActivity a owl:NamedIndividual,
+        aidoc:Deployment ;
+    rdfs:label "Software Deployment Activity"@en ;
+    dcterms:description "Deployment is in secure internal environments as a decision-support backend service."@en .
+
+:StrengthenMonitoringThresholds a owl:NamedIndividual,
+        aidoc:ChangeRecord ;
+    rdfs:label "Strengthen Monitoring Thresholds"@en ;
+    aidoc:reasonForChange "Strengthened monitoring thresholds." .
+
+:SuitabilityClassificationAccuracy a owl:NamedIndividual,
+        aidoc:PerformanceMetric ;
+    rdfs:label "Suitability Classification Accuracy"@en .
+
+:TransparencyMeasureForUsers a owl:NamedIndividual,
+        aidoc:TransparencyMeasure ;
+    rdfs:label "Transparency Measure"@en ;
+    dcterms:description "Transparency includes intended use and limits, audit traceability, and explanation outputs."@en .
+
+:TreeBasedEnsembleMethod a owl:NamedIndividual,
+        aidoc:AIMethod ;
+    rdfs:label "Tree-based Ensemble Methods"@en .
+
+:ValidationActivity a owl:NamedIndividual,
+        aidoc:AIActivity ;
+    rdfs:label "Validation"@en .
+
+:EvaluationFramework a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Evaluation Framework"@en ;
+    aidoc:feedsIntoComponent :CounterfactualExplanationModule .
+
+:FeatureEngineeringPipeline a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Feature Engineering Pipeline"@en ;
+    aidoc:feedsIntoComponent :ModelTrainingModule .
+
+:LoggingAndAuditSubsystem a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Logging and Audit Subsystem"@en .
+
+:ModelTrainingModule a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Model Training Module"@en ;
+    aidoc:feedsIntoComponent :EvaluationFramework .
+
+:MonitoringDashboard a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Monitoring Dashboard"@en ;
+    aidoc:feedsIntoComponent :LoggingAndAuditSubsystem .
+
+:CounterfactualExplanationModule a owl:NamedIndividual,
+        aidoc:SoftwareComponent ;
+    rdfs:label "Counterfactual Explanation Module"@en ;
+    aidoc:feedsIntoComponent :MonitoringDashboard .
+
+:RiskProfilingAndSuitabilityData a owl:NamedIndividual,
+        aidoc:Dataset ;
+    rdfs:label "Risk Profiling and Investment Suitability Data"@en ;
+    aidoc:dataCharacteristic "Risk tolerance, horizon, liquidity, objectives, knowledge/experience, portfolio holdings, product attributes, and relevant aggregated market indicators." ;
+    aidoc:dataCollectionMethod "Collected from internal core banking systems and investment records under GDPR lawful basis." ;
+    aidoc:dataScope "Inputs for risk profiling and investment suitability recommendations." .
+

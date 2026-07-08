@@ -1,246 +1,189 @@
 @prefix : <http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/> .
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix airo: <https://w3id.org/airo#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix airo: <https://w3id.org/airo#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vair: <https://w3id.org/vair#> .
-@prefix aidoc: <https://w3id.org/aidoc-ap#> .
-@prefix schema: <https://schema.org/> .
-@prefix server: <http://w3id.org/devops-infra/server#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai> rdf:type owl:Ontology ;
-                                                               owl:imports <http://w3id.org/devops-infra/server/1.0.0> ,
-                                                                           <https://w3id.org/aidoc-ap/1.0> ,
-                                                                           <https://w3id.org/airo/1.0> ,
-                                                                           <https://w3id.org/vair/1.0> ;
-                                                               dcterms:description "This ontology documents a federated Data Space for trusted sharing of sensitive HR data combined with an LLM-powered tool for generating strategic insights."@en ;
-                                                               dcterms:issued "2026-01-13"^^xsd:date ;
-                                                               dcterms:title "HR-AI Data Space and LLM Tool"@en .
+<http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai> a owl:Ontology ;
+    dcterms:description "This ontology documents a federated Data Space for trusted sharing of sensitive HR data combined with an LLM-powered tool for generating strategic insights."@en ;
+    dcterms:issued "2026-01-13"^^xsd:date ;
+    dcterms:title "HR-AI Data Space and LLM Tool"@en ;
+    owl:imports <http://w3id.org/devops-infra/server/1.0.0>,
+        <https://w3id.org/aidoc-ap/1.0>,
+        <https://w3id.org/airo/1.0>,
+        <https://w3id.org/vair/1.0> .
 
-#################################################################
-#    Individuals
-#################################################################
+:Validation a owl:NamedIndividual,
+        vair:Validation ;
+    aidoc:hasAIActivity :data-regulatory-compliance-activity .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/Operation
-:Operation rdf:type owl:NamedIndividual ,
-                    vair:Operation ;
-           aidoc:hasAIActivity :bias-detection-fairness-activity ,
-                               :data-acquisition-from-space ,
-                               :data-minimization-anonymization-activity ,
-                               :logging-record-keeping-activity ,
-                               :regops-workflows ,
-                               :risk-management-system-activity .
+:hr-llm-tool a owl:NamedIndividual,
+        aidoc:AISystem ;
+    rdfs:label "HR LLM-Powered Tool"@en ;
+    dcterms:description "An LLM-powered chat tool that provides actionable insights from anonymized HR data in the Data Space. Includes logging and record-keeping per Article 12 of the EU AI Act. Currently in design phase."@en ;
+    dcterms:issued "2026-01-13"^^xsd:date ;
+    rdfs:comment "High-risk AI system (Article 9) in design phase. Subject to EU AI Act requirements."@en ;
+    aidoc:appliesStandard :eu-ai-act-standard ;
+    aidoc:hasArchitecture "LLM-based chat interface with retrieval augmentation (design specification)"@en ;
+    aidoc:hasComponent :chat-interface,
+        :llm-model,
+        :logging-record-keeping-activity ;
+    aidoc:hasIntendedPurpose :IntendedPurpose_1 ;
+    aidoc:hasInterface :chat-interface ;
+    aidoc:hasLifecycleStage :Operation ;
+    aidoc:version "1.0 (Design Phase)" ;
+    airo:hasCapability :candidate-identification-capability,
+        :statistical-extraction-capability,
+        :workforce-analysis-capability ;
+    airo:hasStakeholder :consulting-recruitment-companies,
+        :governmental-bodies,
+        :hr-stakeholders,
+        :initiator-organization ;
+    airo:isProvidedBy :data-space-developers .
 
+:IntendedPurpose_1 a aidoc:IntendedPurpose ;
+    rdfs:label "Extracts strategic insights from HR data for recruiters and HR managers, including candidate identification, workforce trend analysis, and workforce planning." .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/Validation
-:Validation rdf:type owl:NamedIndividual ,
-                     vair:Validation ;
-            aidoc:hasAIActivity :data-regulatory-compliance-activity .
+:Operation a owl:NamedIndividual,
+        vair:Operation ;
+    aidoc:hasAIActivity :bias-detection-fairness-activity,
+        :data-acquisition-from-space,
+        :data-minimization-anonymization-activity,
+        :logging-record-keeping-activity,
+        :regops-workflows,
+        :risk-management-system-activity .
 
+:bias-detection-fairness-activity a owl:NamedIndividual,
+        aidoc:DataWrangling ;
+    rdfs:label "Bias Detection and Fairness Checking Activity"@en ;
+    dcterms:description "Validates that HR data does not contain or amplify biases leading to discriminatory outcomes in employment decisions. Uses demographic parity, equal opportunity, and disparate impact metrics."@en ;
+    rdfs:comment "Part of RegOps workflows. Bias-checked data is approved for use by the LLM tool. Required for Article 9 (High-Risk AI) compliance."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/bias-detection-fairness-activity
-:bias-detection-fairness-activity rdf:type owl:NamedIndividual ,
-                                           aidoc:DataWrangling ;
-                                  dcterms:description "Validates that HR data does not contain or amplify biases leading to discriminatory outcomes in employment decisions. Uses demographic parity, equal opportunity, and disparate impact metrics."@en ;
-                                  rdfs:comment "Part of RegOps workflows. Bias-checked data is approved for use by the LLM tool. Required for Article 9 (High-Risk AI) compliance."@en ;
-                                  rdfs:label "Bias Detection and Fairness Checking Activity"@en .
+:candidate-identification-capability a owl:NamedIndividual,
+        aidoc:AISystemCapability ;
+    rdfs:label "Candidate Identification Capability"@en ;
+    dcterms:description "To enable recruiters to find suitable candidates matching specific job requirements"@en ;
+    rdfs:comment "The ability to quickly identify groups of individuals or freelance experts with specific skills and qualifications."@en .
 
+:consulting-recruitment-companies a owl:NamedIndividual,
+        airo:Stakeholder ;
+    rdfs:label "Consulting/Recruitment Companies"@en ;
+    dcterms:description "To share employment data and access candidate information through the Data Space"@en ;
+    rdfs:comment "Initial participants handling EU-funded projects and providing recruitment services."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/candidate-identification-capability
-:candidate-identification-capability rdf:type owl:NamedIndividual ,
-                                              aidoc:AISystemCapability ;
-                                     dcterms:description "To enable recruiters to find suitable candidates matching specific job requirements"@en ;
-                                     rdfs:comment "The ability to quickly identify groups of individuals or freelance experts with specific skills and qualifications."@en ;
-                                     rdfs:label "Candidate Identification Capability"@en .
+:data-acquisition-from-space a owl:NamedIndividual,
+        aidoc:DataAcquisitionActivity ;
+    rdfs:label "Data Acquisition from Data Space"@en ;
+    dcterms:description "Securely retrieves HR data from the Data Space after it has passed through RegOps compliance and anonymization workflows."@en ;
+    rdfs:comment "Only fully processed, anonymized, and bias-checked data reaches the LLM tool."@en ;
+    dpv:hasData :hr-data-from-space .
 
+:data-minimization-anonymization-activity a owl:NamedIndividual,
+        aidoc:DataProcessing ;
+    rdfs:label "Data Minimization and Anonymization Activity"@en ;
+    dcterms:description "Removes personally identifiable information from HR data through minimization, aggregation, anonymization, and pseudonymization before use by the LLM tool."@en ;
+    rdfs:comment "Part of RegOps workflows. Anonymized data proceeds to bias detection. Critical for Article 9 compliance."@en ;
+    aidoc:hasSourceDataset :hr-data-from-space .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/chat-interface
-:chat-interface rdf:type owl:NamedIndividual ,
-                         aidoc:Interface ;
-                dcterms:description "To provide an intuitive, conversational interface for users to interact with the LLM and retrieve insights from HR data"@en ;
-                rdfs:comment "The interface through which Data Space participants interact with the LLM tool to query HR data and receive insights."@en ;
-                rdfs:label "Chat-based User Interface"@en .
+:data-regulatory-compliance-activity a owl:NamedIndividual,
+        aidoc:ExplorationAndValidation ;
+    rdfs:label "Automated Regulatory Compliance Activity"@en ;
+    dcterms:description "To ensure compliance with EU regulatory requirements for data protection and data governance"@en ;
+    rdfs:comment "The automated process ensuring all data within the Data Space aligns with EU regulations including GDPR and the Data Act."@en .
 
+:data-space-developers a owl:NamedIndividual,
+        aidoc:AIProvider ;
+    rdfs:label "Data Space Developers"@en ;
+    dcterms:description "To implement and operate the trusted data sharing platform with built-in compliance mechanisms"@en ;
+    rdfs:comment "Stakeholders responsible for developing and maintaining the federated Data Space platform."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/consulting-recruitment-companies
-:consulting-recruitment-companies rdf:type owl:NamedIndividual ,
-                                           airo:Stakeholder ;
-                                  dcterms:description "To share employment data and access candidate information through the Data Space"@en ;
-                                  rdfs:comment "Initial participants handling EU-funded projects and providing recruitment services."@en ;
-                                  rdfs:label "Consulting/Recruitment Companies"@en .
+:eu-ai-act-standard a owl:NamedIndividual,
+        airo:Standard ;
+    rdfs:label "EU Artificial Intelligence Act (2024/1689)"@en ;
+    rdfs:comment "EU Regulation on AI systems. Only the LLM-based tool falls under its scope; the Data Space platform itself is not subject to these obligations."@en ;
+    dpv:hasDataSubject :freelance-experts .
 
+:freelance-experts a owl:NamedIndividual,
+        dpv:DataSubject ;
+    rdfs:label "Freelance Experts and Job Seekers"@en ;
+    dcterms:description "To publish CVs and professional profiles, and to access relevant job and project opportunities"@en ;
+    rdfs:comment "Initial participants who share their profiles and CVs to find relevant projects and employment opportunities."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/data-acquisition-from-space
-:data-acquisition-from-space rdf:type owl:NamedIndividual ,
-                                      aidoc:DataAcquisitionActivity ;
-                             dpv:hasData :hr-data-from-space ;
-                             dcterms:description "Securely retrieves HR data from the Data Space after it has passed through RegOps compliance and anonymization workflows."@en ;
-                             rdfs:comment "Only fully processed, anonymized, and bias-checked data reaches the LLM tool."@en ;
-                             rdfs:label "Data Acquisition from Data Space"@en .
+:governmental-bodies a owl:NamedIndividual,
+        airo:AIUser ;
+    rdfs:label "Governmental Bodies and Decision Makers"@en ;
+    dcterms:description "To access aggregated HR data and trends for policy-making and strategic workforce planning"@en ;
+    rdfs:comment "Initial Participants including Ministries, Public Institutions, and donors from the initiator organization's network."@en .
 
+:hr-stakeholders a owl:NamedIndividual,
+        airo:Stakeholder ;
+    rdfs:label "Other HR Stakeholders"@en ;
+    dcterms:description "To participate in the Data Space ecosystem for various HR-related purposes"@en ;
+    rdfs:comment "Additional relevant partners to be defined as the project progresses."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/data-minimization-anonymization-activity
-:data-minimization-anonymization-activity rdf:type owl:NamedIndividual ,
-                                                   aidoc:DataProcessing ;
-                                          aidoc:hasSourceDataset :hr-data-from-space ;
-                                          dcterms:description "Removes personally identifiable information from HR data through minimization, aggregation, anonymization, and pseudonymization before use by the LLM tool."@en ;
-                                          rdfs:comment "Part of RegOps workflows. Anonymized data proceeds to bias detection. Critical for Article 9 compliance."@en ;
-                                          rdfs:label "Data Minimization and Anonymization Activity"@en .
+:initiator-organization a owl:NamedIndividual,
+        airo:Stakeholder ;
+    rdfs:label "Primary Initiator Organization"@en ;
+    rdfs:comment "The primary initiator, providing the business network and trusted stakeholder connections."@en .
 
+:large-language-model a owl:NamedIndividual,
+        aidoc:AIMethod ;
+    rdfs:label "Large Language Model (LLM) Technique"@en ;
+    rdfs:comment "The AI method based on transformer-based language models trained on extensive text corpora to understand and generate human language."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/data-regulatory-compliance-activity
-:data-regulatory-compliance-activity rdf:type owl:NamedIndividual ,
-                                              aidoc:ExplorationAndValidation ;
-                                     dcterms:description "To ensure compliance with EU regulatory requirements for data protection and data governance"@en ;
-                                     rdfs:comment "The automated process ensuring all data within the Data Space aligns with EU regulations including GDPR and the Data Act."@en ;
-                                     rdfs:label "Automated Regulatory Compliance Activity"@en .
+:llm-model a owl:NamedIndividual,
+        aidoc:AIModel ;
+    rdfs:label "Large Language Model Component"@en ;
+    dcterms:description "To understand and generate natural language responses based on HR data queries"@en ;
+    rdfs:comment "The core LLM component used to process and generate insights from HR data."@en ;
+    aidoc:usesAIMethod :large-language-model .
 
+:regops-workflows a owl:NamedIndividual,
+        aidoc:DataProcessing ;
+    rdfs:label "Data Space RegOps (Regulatory Operations) Workflows"@en ;
+    dcterms:description "Mandatory data pipelines covering anonymization, bias detection, compliance verification, and data quality checks. All HR data must pass through these workflows before reaching the LLM tool."@en ;
+    rdfs:comment "Ensures regulatory compliance for all published datasets in the Data Space. Driven by legal analysis of EU regulations."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/data-space-developers
-:data-space-developers rdf:type owl:NamedIndividual ,
-                                aidoc:AIProvider ;
-                       dcterms:description "To implement and operate the trusted data sharing platform with built-in compliance mechanisms"@en ;
-                       rdfs:comment "Stakeholders responsible for developing and maintaining the federated Data Space platform."@en ;
-                       rdfs:label "Data Space Developers"@en .
+:risk-management-system-activity a owl:NamedIndividual,
+        aidoc:AIActivity ;
+    rdfs:label "Risk Management System Implementation"@en ;
+    dcterms:description "Covers risk identification, assessment, mitigation, monitoring, and reporting for the LLM tool. Aligned with AI Act Article 9 requirements. Currently in design phase."@en ;
+    rdfs:comment "Addresses Article 9 high-risk AI requirements throughout the system lifecycle."@en .
 
+:statistical-extraction-capability a owl:NamedIndividual,
+        aidoc:AISystemCapability ;
+    rdfs:label "Statistical Information Extraction Capability"@en ;
+    dcterms:description "To provide aggregated insights valuable for HR decision-making and strategic planning"@en ;
+    rdfs:comment "The ability to extract and generate aggregated statistical information from the Data Space dataset."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/eu-ai-act-standard
-:eu-ai-act-standard rdf:type owl:NamedIndividual ,
-                             airo:Standard ;
-                    dpv:hasDataSubject :freelance-experts ;
-                    rdfs:comment "EU Regulation on AI systems. Only the LLM-based tool falls under its scope; the Data Space platform itself is not subject to these obligations."@en ;
-                    rdfs:label "EU Artificial Intelligence Act (2024/1689)"@en .
+:workforce-analysis-capability a owl:NamedIndividual,
+        aidoc:AISystemCapability ;
+    rdfs:label "Workforce Analysis Capability"@en ;
+    dcterms:description "To extract insights for building workforce plans, training activities, and broader HR strategies"@en ;
+    rdfs:comment "The ability to analyze trends and patterns across HR data to support strategic workforce planning."@en .
 
+:chat-interface a owl:NamedIndividual,
+        aidoc:Interface ;
+    rdfs:label "Chat-based User Interface"@en ;
+    dcterms:description "To provide an intuitive, conversational interface for users to interact with the LLM and retrieve insights from HR data"@en ;
+    rdfs:comment "The interface through which Data Space participants interact with the LLM tool to query HR data and receive insights."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/freelance-experts
-:freelance-experts rdf:type owl:NamedIndividual ,
-                            dpv:DataSubject ;
-                   dcterms:description "To publish CVs and professional profiles, and to access relevant job and project opportunities"@en ;
-                   rdfs:comment "Initial participants who share their profiles and CVs to find relevant projects and employment opportunities."@en ;
-                   rdfs:label "Freelance Experts and Job Seekers"@en .
+:hr-data-from-space a owl:NamedIndividual,
+        aidoc:Dataset ;
+    rdfs:label "HR Data from Data Space"@en ;
+    dcterms:description "Includes CVs, qualifications, skills, work experience, educational credentials, and HR analytics. All data must pass through RegOps compliance workflows and be anonymized before LLM access."@en ;
+    rdfs:comment "HR data shared within the Data Space, processed through RegOps workflows before use by the LLM tool."@en ;
+    aidoc:dataCharacteristic "Sensitive personal and professional information" ;
+    aidoc:dataCollectionMethod "Aggregated from multiple Data Space participants through standardized data sharing protocols" ;
+    aidoc:dataScope "Human Resources domain data including employment records, skills, qualifications, and trends" .
 
+:logging-record-keeping-activity a owl:NamedIndividual,
+        aidoc:DataMonitoringAndLogging ;
+    rdfs:label "Logging and Record-Keeping Activity"@en ;
+    dcterms:description "Tracks user interactions, data processing, decisions, system performance, and access control. Provides audit trails for Article 12 compliance."@en ;
+    rdfs:comment "Ensures full accountability and traceability for the LLM tool as required by Article 12."@en .
 
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/governmental-bodies
-:governmental-bodies rdf:type owl:NamedIndividual ,
-                              airo:AIUser ;
-                     dcterms:description "To access aggregated HR data and trends for policy-making and strategic workforce planning"@en ;
-                     rdfs:comment "Initial Participants including Ministries, Public Institutions, and donors from the initiator organization's network."@en ;
-                     rdfs:label "Governmental Bodies and Decision Makers"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/hr-data-from-space
-:hr-data-from-space rdf:type owl:NamedIndividual ,
-                             aidoc:Dataset ;
-                    aidoc:dataCharacteristic "Sensitive personal and professional information" ;
-                    aidoc:dataCollectionMethod "Aggregated from multiple Data Space participants through standardized data sharing protocols" ;
-                    aidoc:dataScope "Human Resources domain data including employment records, skills, qualifications, and trends" ;
-                    dcterms:description "Includes CVs, qualifications, skills, work experience, educational credentials, and HR analytics. All data must pass through RegOps compliance workflows and be anonymized before LLM access."@en ;
-                    rdfs:comment "HR data shared within the Data Space, processed through RegOps workflows before use by the LLM tool."@en ;
-                    rdfs:label "HR Data from Data Space"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/hr-llm-tool
-:hr-llm-tool rdf:type owl:NamedIndividual ,
-                      aidoc:AISystem ;
-             aidoc:appliesStandard :eu-ai-act-standard ;
-             aidoc:hasComponent :chat-interface ,
-                                :llm-model ,
-                                :logging-record-keeping-activity ;
-             aidoc:hasInterface :chat-interface ;
-             aidoc:hasLifecycleStage :Operation ;
-             airo:hasCapability :candidate-identification-capability ,
-                                :statistical-extraction-capability ,
-                                :workforce-analysis-capability ;
-             airo:hasStakeholder :consulting-recruitment-companies ,
-                                 :governmental-bodies ,
-                                 :hr-stakeholders ,
-                                 :initiator-organization ;
-             airo:isProvidedBy :data-space-developers ;
-             aidoc:hasArchitecture "LLM-based chat interface with retrieval augmentation (design specification)"@en ;
-             aidoc:intendedPurpose "Extracts strategic insights from HR data for recruiters and HR managers, including candidate identification, workforce trend analysis, and workforce planning." ;
-             aidoc:version "1.0 (Design Phase)" ;
-             dcterms:description "An LLM-powered chat tool that provides actionable insights from anonymized HR data in the Data Space. Includes logging and record-keeping per Article 12 of the EU AI Act. Currently in design phase."@en ;
-             dcterms:issued "2026-01-13"^^xsd:date ;
-             rdfs:comment "High-risk AI system (Article 9) in design phase. Subject to EU AI Act requirements."@en ;
-             rdfs:label "HR LLM-Powered Tool"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/hr-stakeholders
-:hr-stakeholders rdf:type owl:NamedIndividual ,
-                          airo:Stakeholder ;
-                 dcterms:description "To participate in the Data Space ecosystem for various HR-related purposes"@en ;
-                 rdfs:comment "Additional relevant partners to be defined as the project progresses."@en ;
-                 rdfs:label "Other HR Stakeholders"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/initiator-organization
-:initiator-organization rdf:type owl:NamedIndividual ,
-                                 airo:Stakeholder ;
-                        rdfs:comment "The primary initiator, providing the business network and trusted stakeholder connections."@en ;
-                        rdfs:label "Primary Initiator Organization"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/large-language-model
-:large-language-model rdf:type owl:NamedIndividual ,
-                               aidoc:AIMethod ;
-                      rdfs:comment "The AI method based on transformer-based language models trained on extensive text corpora to understand and generate human language."@en ;
-                      rdfs:label "Large Language Model (LLM) Technique"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/llm-model
-:llm-model rdf:type owl:NamedIndividual ,
-                    aidoc:AIModel ;
-           aidoc:usesAIMethod :large-language-model ;
-           dcterms:description "To understand and generate natural language responses based on HR data queries"@en ;
-           rdfs:comment "The core LLM component used to process and generate insights from HR data."@en ;
-           rdfs:label "Large Language Model Component"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/logging-record-keeping-activity
-:logging-record-keeping-activity rdf:type owl:NamedIndividual ,
-                                          aidoc:DataMonitoringAndLogging ;
-                                 dcterms:description "Tracks user interactions, data processing, decisions, system performance, and access control. Provides audit trails for Article 12 compliance."@en ;
-                                 rdfs:comment "Ensures full accountability and traceability for the LLM tool as required by Article 12."@en ;
-                                 rdfs:label "Logging and Record-Keeping Activity"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/regops-workflows
-:regops-workflows rdf:type owl:NamedIndividual ,
-                           aidoc:DataProcessing ;
-                  dcterms:description "Mandatory data pipelines covering anonymization, bias detection, compliance verification, and data quality checks. All HR data must pass through these workflows before reaching the LLM tool."@en ;
-                  rdfs:comment "Ensures regulatory compliance for all published datasets in the Data Space. Driven by legal analysis of EU regulations."@en ;
-                  rdfs:label "Data Space RegOps (Regulatory Operations) Workflows"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/risk-management-system-activity
-:risk-management-system-activity rdf:type owl:NamedIndividual ,
-                                          aidoc:AIActivity ;
-                                 dcterms:description "Covers risk identification, assessment, mitigation, monitoring, and reporting for the LLM tool. Aligned with AI Act Article 9 requirements. Currently in design phase."@en ;
-                                 rdfs:comment "Addresses Article 9 high-risk AI requirements throughout the system lifecycle."@en ;
-                                 rdfs:label "Risk Management System Implementation"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/statistical-extraction-capability
-:statistical-extraction-capability rdf:type owl:NamedIndividual ,
-                                            aidoc:AISystemCapability ;
-                                   dcterms:description "To provide aggregated insights valuable for HR decision-making and strategic planning"@en ;
-                                   rdfs:comment "The ability to extract and generate aggregated statistical information from the Data Space dataset."@en ;
-                                   rdfs:label "Statistical Information Extraction Capability"@en .
-
-
-###  http://www.semanticweb.org/certain/ontologies/2026/01/hr-ai/workforce-analysis-capability
-:workforce-analysis-capability rdf:type owl:NamedIndividual ,
-                                        aidoc:AISystemCapability ;
-                               dcterms:description "To extract insights for building workforce plans, training activities, and broader HR strategies"@en ;
-                               rdfs:comment "The ability to analyze trends and patterns across HR data to support strategic workforce planning."@en ;
-                               rdfs:label "Workforce Analysis Capability"@en .
-
-
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

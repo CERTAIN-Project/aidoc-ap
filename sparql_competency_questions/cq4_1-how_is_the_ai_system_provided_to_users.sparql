@@ -7,11 +7,11 @@ PREFIX vair: <https://w3id.org/vair#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?system ?systemLabel ?modality ?modalityType ?deploymentActivity ?deploymentDescription
+SELECT ?system ?systemLabel ?modality ?modalityLabel ?modalityType ?deploymentActivity ?deploymentDescription
 WHERE {
   ?system a aidoc:AISystem .
   OPTIONAL { ?system rdfs:label ?systemLabel . }
-  OPTIONAL { ?system aidoc:modality ?modality . }
+  OPTIONAL { ?system aidoc:hasModality ?modality . OPTIONAL { ?modality rdfs:label ?modalityLabel . } }
   OPTIONAL { ?system airo:hasModality ?modalityType . }
   OPTIONAL {
     ?system aidoc:hasLifecycleStage ?deploymentStage .
