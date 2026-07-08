@@ -586,16 +586,8 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
                  rdfs:domain :AISystem ;
                  rdfs:range :IntendedPurpose ;
                  dcterms:source "EU AI Act 2024/1689, Article 3(12)" ;
-                 rdfs:comment "Links an AI system to its intended purpose modelled as a resource (rather than a plain string), enabling links, comparison and change tracking. The datatype property aidoc:intendedPurpose is retained as a shortcut for text-based documentation workflows."@en ;
+                 rdfs:comment "Links an AI system to its intended purpose, modelled as an aidoc:IntendedPurpose resource rather than a plain string, so that purposes can be linked, compared and tracked across system versions."@en ;
                  rdfs:label "has intended purpose"@en .
-
-###  https://w3id.org/aidoc-ap#intendedPurpose
-:intendedPurpose rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :AISystem ;
-                 rdfs:range xsd:string ;
-                 dcterms:source "EU AI Act 2024/1689, Article 3(12)" ;
-                 rdfs:comment "String-valued shortcut for the intended purpose, retained for backward compatibility with text-based documentation workflows. For semantic linking and comparison, use aidoc:hasIntendedPurpose with an aidoc:IntendedPurpose resource instead."@en ;
-                 rdfs:label "intended purpose"@en .
 
 
 ###  https://w3id.org/aidoc-ap#labelingGuideline
@@ -647,13 +639,6 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
           rdfs:label "Cloud service"@en ;
           skos:definition "The AI system is provided as a managed cloud service."@en ;
           skos:broader :SoftwareService .
-
-###  https://w3id.org/aidoc-ap#modality
-:modality rdf:type owl:DatatypeProperty ;
-          rdfs:domain :AISystem ;
-          rdfs:range xsd:string ;
-          rdfs:comment "String-valued shortcut for the system's form of provision, retained for backward compatibility. For semantic linking and comparison use aidoc:hasModality with an aidoc:Modality resource instead."@en ;
-          rdfs:label "modality"@en .
 
 
 ###  https://w3id.org/aidoc-ap#outlierHandlingMethod
