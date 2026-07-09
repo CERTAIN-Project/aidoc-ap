@@ -1,0 +1,409 @@
+[
+  {
+    "requirement": "General description of the AI system",
+    "requirement_id": "req1",
+    "coverage_score": 0.8,
+    "matched_terms": [
+      "AI System",
+      "is provided by",
+      "version",
+      "has component"
+    ],
+    "reasoning": "The ontology covers the requirement well, with terms like 'AI System', 'is provided by' to link to the provider, and 'version' to track system versions. However, it lacks explicit representation of the intended purpose of the AI system and its relation to previous versions in a direct, queryable form.",
+    "missing": [
+      "Intended Purpose",
+      "Version History"
+    ]
+  },
+  {
+    "requirement": "Interaction with hardware/software",
+    "requirement_id": "req2",
+    "coverage_score": 0.8,
+    "matched_terms": [
+      "Software Dependency",
+      "Hardware Component",
+      "Computational Resource",
+      "Software Component",
+      "has software component",
+      "requires hardware",
+      "resource configuration",
+      "resource type"
+    ],
+    "reasoning": "The ontology covers the requirement well with terms like Software Dependency, Hardware Component, and Computational Resource. However, it lacks explicit concepts for interacting with other AI systems or external software outside of dependencies. The matched terms provide a solid foundation but could be expanded upon.",
+    "missing": [
+      "Inter-AI System Interaction",
+      "External Software Interface",
+      "System Compatibility"
+    ]
+  },
+  {
+    "requirement": "Software/firmware versioning",
+    "requirement_id": "req3",
+    "coverage_score": 0.8,
+    "matched_terms": [
+      "Software Dependency",
+      "version",
+      "has software component",
+      "Software Component"
+    ],
+    "reasoning": "The ontology covers the requirement through the Software Dependency concept and version property, which can track and update versions of relevant software or firmware. The has software component relationship links an AI system to its components, allowing for identification of dependencies. However, a more explicit concept for version tracking and updates would further enhance coverage.",
+    "missing": [
+      "Version Update Mechanism",
+      "Software Dependency Version History"
+    ]
+  },
+  {
+    "requirement": "Deployment forms",
+    "requirement_id": "req4",
+    "coverage_score": 0.8,
+    "matched_terms": [
+      "AI System",
+      "Software Component",
+      "Interface",
+      "is provided by",
+      "has software component"
+    ],
+    "reasoning": "The ontology provides a good foundation for describing how an AI system is provided to users through the concepts of AI System, Software Component, and Interface. The relationships 'is provided by' and 'has software component' further support this by linking the AI system to its provider and components. However, there's a lack of explicit terms or properties that directly address the various forms in which an AI system can be placed on the market or put into service.",
+    "missing": [
+      "Deployment Form",
+      "Software Package",
+      "API Endpoint"
+    ]
+  },
+  {
+    "requirement": "Hardware required",
+    "requirement_id": "req5",
+    "coverage_score": 0.8,
+    "matched_terms": [
+      "Hardware Component",
+      "Computational Resource",
+      "requires hardware"
+    ],
+    "reasoning": "The ontology provides classes and properties that directly address the requirement, such as 'Hardware Component' and 'requires hardware'. However, the coverage score is not perfect because while 'Computational Resource' and its related properties ('resource configuration', 'resource type', 'resource vendor') offer a detailed description of computational resources, they do not fully encompass all possible hardware aspects (e.g., specific chipsets, storage types).",
+    "missing": [
+      "Storage Component",
+      "Networking Hardware"
+    ]
+  },
+  {
+    "requirement": "Illustrations and markings",
+    "requirement_id": "req6",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "Hardware Component",
+      "Software Component",
+      "has component",
+      "requires hardware"
+    ],
+    "reasoning": "The ontology provides terms that can represent the AI system and its components, including hardware and software components. However, it lacks specific concepts to directly address the documentation of internal layout, physical form, markings, and visual documentation. The matched terms provide a foundation but need extension to fully capture the requirement.",
+    "missing": [
+      "Product Documentation",
+      "Internal Layout Description",
+      "Physical Form Specification",
+      "Marking Specification",
+      "Visual Documentation Artifact"
+    ]
+  },
+  {
+    "requirement": "User interface and instructions for use",
+    "requirement_id": "req7",
+    "coverage_score": 0.8,
+    "matched_terms": [
+      "AI Deployer",
+      "Interface",
+      "has interface",
+      "is deployed by"
+    ],
+    "reasoning": "The ontology covers the requirement well with terms like AI Deployer, Interface, and properties such as has interface and is deployed by. However, it lacks specific concepts directly related to 'instructions for use' provided to the deployer, which reduces the coverage score.",
+    "missing": [
+      "InstructionForUse",
+      "UserManual",
+      "DeployerGuideline"
+    ]
+  },
+  {
+    "requirement": "Elements of system and development process",
+    "requirement_id": "req8",
+    "coverage_score": 0.8,
+    "matched_terms": [
+      "AI Activity",
+      "Software Implementation",
+      "has component",
+      "has software component",
+      "feeds into component"
+    ],
+    "reasoning": "The ontology provides terms that can represent the development activities and components of an AI system, such as AI Activity for the steps performed and Software Implementation for the concrete executable software. The relationships like has component, has software component, and feeds into component can connect these elements, providing a good structure to describe the methods and steps of AI system development. However, specific details about pre-trained systems or tools provided by third parties and their modification might require additional concepts or properties.",
+    "missing": [
+      "Pre-trained Model",
+      "Third-party Tool",
+      "Modification Process"
+    ]
+  },
+  {
+    "requirement": "Design specifications of the system",
+    "requirement_id": "req9",
+    "coverage_score": 0.7,
+    "matched_terms": [
+      "AI System",
+      "Software Component",
+      "has architecture",
+      "has component",
+      "has interface",
+      "is deployed by",
+      "is provided by"
+    ],
+    "reasoning": "The ontology partially covers the requirement as it includes terms related to AI system design, components, and deployment. However, it lacks specific concepts directly addressing key design choices, trade-offs, and expected output quality, which are crucial aspects of the requirement.",
+    "missing": [
+      "Design Choice",
+      "Trade-off Decision",
+      "Expected Output Quality Metric",
+      "Rationale and Assumptions",
+      "Classification Choices"
+    ]
+  },
+  {
+    "requirement": "System architecture",
+    "requirement_id": "req10",
+    "coverage_score": 0.8,
+    "matched_terms": [
+      "Software Component",
+      "feeds into component",
+      "has software component",
+      "AI System",
+      "has architecture",
+      "Computational Resource",
+      "resource type",
+      "resource configuration"
+    ],
+    "reasoning": "The ontology provides a good foundation for representing the system architecture and computational resources used in the AI lifecycle. The 'Software Component' and 'feeds into component' terms can be used to describe how software components interact with each other, while 'has software component' and 'has architecture' provide links between the AI system and its components and architecture. However, some details about the development, training, testing, and validation processes are not explicitly covered.",
+    "missing": [
+      "Development Environment",
+      "Training Process",
+      "Testing Protocol",
+      "Validation Procedure"
+    ]
+  },
+  {
+    "requirement": "Data requirements",
+    "requirement_id": "req11",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "Dataset",
+      "has component",
+      "AI Activity",
+      "AI Artifact"
+    ],
+    "reasoning": "The ontology provides some relevant terms such as Dataset, which can be used to describe the training data sets, and has component, which can link an AI system to its constituent datasets. However, it lacks specific concepts for describing data provenance, labelling procedures, and data cleaning methodologies. The coverage score is 0.6 because while some key concepts are present, others necessary for fully operationalizing the requirement are missing.",
+    "missing": [
+      "Data Provenance",
+      "Labelling Procedure",
+      "Data Cleaning Methodology",
+      "Data Selection Process"
+    ]
+  },
+  {
+    "requirement": "Assessment of human oversight measures",
+    "requirement_id": "req12",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI Deployer",
+      "AI System",
+      "Interface",
+      "has interface",
+      "Software Component",
+      "feeds into component"
+    ],
+    "reasoning": "The ontology covers some aspects of the requirement, such as the involvement of AI deployers and the need for interpretation of AI system outputs through interfaces. However, it lacks specific terms directly addressing human oversight measures and technical measures for facilitating output interpretation, which are central to the requirement.",
+    "missing": [
+      "Human Oversight Measure",
+      "Technical Interpretation Measure",
+      "Oversight Protocol",
+      "Interpretability Method"
+    ]
+  },
+  {
+    "requirement": "Pre-determined changes to the AI system",
+    "requirement_id": "req13",
+    "coverage_score": 0.7,
+    "matched_terms": [
+      "AI System",
+      "has software component",
+      "Software Component",
+      "depends on",
+      "Software Dependency",
+      "has architecture"
+    ],
+    "reasoning": "The ontology covers the key concepts related to AI systems, their components, and dependencies. However, it lacks explicit terms for representing pre-determined changes and technical solutions for ensuring continuous compliance. The matched terms provide a foundation but would need extension or refinement to fully capture the nuances of the requirement.",
+    "missing": [
+      "PreDeterminedChange",
+      "ComplianceSolution",
+      "ChangeManagementProcess"
+    ]
+  },
+  {
+    "requirement": "Validation and testing procedures",
+    "requirement_id": "req14",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI Activity",
+      "Dataset",
+      "AI Model",
+      "has component",
+      "version"
+    ],
+    "reasoning": "The ontology partially covers the requirement, as it includes concepts related to AI activities, datasets, and models, which are essential for validation and testing. However, specific terms for validation and testing procedures, metrics, and test logs are missing. The matched terms provide a foundation but do not fully address the nuances of the requirement.",
+    "missing": [
+      "Validation Procedure",
+      "Testing Metric",
+      "Test Log",
+      "Discriminatory Impact Assessment",
+      "Compliance Metric"
+    ]
+  },
+  {
+    "requirement": "Cybersecurity measures",
+    "requirement_id": "req15",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "Software Component",
+      "Hardware Component",
+      "Computational Resource"
+    ],
+    "reasoning": "The ontology partially covers the cybersecurity measures requirement through concepts related to AI systems and their components, but lacks specific terms directly addressing cybersecurity aspects. The matched terms provide a foundation for describing system components that could be involved in cybersecurity measures, yet the ontology does not explicitly capture the concept of 'cybersecurity' or related measures like encryption, firewalls, etc.",
+    "missing": [
+      "Cybersecurity Measure",
+      "Security Protocol",
+      "Encryption Method",
+      "Access Control"
+    ]
+  },
+  {
+    "requirement": "Monitoring, functioning and control",
+    "requirement_id": "req16",
+    "coverage_score": 0.7,
+    "matched_terms": [
+      "AI System",
+      "AI Model",
+      "Dataset",
+      "has component",
+      "has architecture",
+      "resource configuration",
+      "AI Deployer"
+    ],
+    "reasoning": "The ontology provides a solid foundation for representing AI systems, their components, and deployment context. However, it lacks specific concepts directly addressing 'capabilities and limitations in performance', 'degrees of accuracy', 'foreseeable unintended outcomes', and detailed 'human oversight measures'. The existing terms can partially cover the requirement but do not fully address all aspects.",
+    "missing": [
+      "Performance Metrics",
+      "Accuracy Thresholds",
+      "Risk Assessment",
+      "Oversight Mechanisms",
+      "Output Interpretation Guidelines"
+    ]
+  },
+  {
+    "requirement": "Appropriateness of performance metrics",
+    "requirement_id": "req17",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "has component",
+      "AI Model",
+      "has architecture",
+      "version"
+    ],
+    "reasoning": "The ontology provides a solid foundation for describing AI systems and their components, including models and datasets, which are crucial for understanding performance metrics. However, it lacks direct representation of performance metrics and their appropriateness for specific AI systems. The coverage score reflects this partial alignment.",
+    "missing": [
+      "Performance Metric",
+      "Metric Appropriateness",
+      "Evaluation Criterion"
+    ]
+  },
+  {
+    "requirement": "Risk management",
+    "requirement_id": "req18",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "has component",
+      "Software Component"
+    ],
+    "reasoning": "The ontology partially covers the requirement by providing terms related to AI systems, components, and activities. However, it lacks specific concepts directly addressing risk management systems as described in Article 9. The matched terms can be used to describe parts of the risk management system but do not comprehensively address the detailed description requirement.",
+    "missing": [
+      "Risk Management System",
+      "Risk Assessment Process",
+      "Mitigation Strategy"
+    ]
+  },
+  {
+    "requirement": "Changes to the AI system throughout its lifecycle",
+    "requirement_id": "req19",
+    "coverage_score": 0.8,
+    "matched_terms": [
+      "AI Activity",
+      "version",
+      "has software component",
+      "has component",
+      "Software Dependency"
+    ],
+    "reasoning": "The ontology provides a solid foundation for tracking changes through the lifecycle of an AI system with concepts like AI Activity, versioning, and relationships between components. However, it lacks explicit terms for describing and logging specific types of changes or updates, which would be crucial for fully meeting this requirement.",
+    "missing": [
+      "Change Log Entry",
+      "Update Type",
+      "System Modification"
+    ]
+  },
+  {
+    "requirement": "Harmonised standards and common specifications",
+    "requirement_id": "req20",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "has component",
+      "Software Component",
+      "Software Implementation",
+      "AI Activity"
+    ],
+    "reasoning": "The ontology covers some aspects of the requirement, such as AI systems and their components. However, it lacks specific terms related to harmonised standards and compliance with Chapter III, Section 2 requirements. The matched terms can be used to describe the AI system and its components, but additional concepts are needed to fully address the requirement.",
+    "missing": [
+      "Harmonised Standard",
+      "Compliance Requirement",
+      "Regulatory Reference",
+      "Standard Application"
+    ]
+  },
+  {
+    "requirement": "EU declaration of conformity",
+    "requirement_id": "req21",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI Artifact",
+      "AI Provider"
+    ],
+    "reasoning": "The ontology covers some aspects of the requirement through the AI Artifact and AI Provider concepts, which could be related to the EU declaration of conformity. However, there is no direct concept that represents a 'copy' or the specific context of an 'EU declaration of conformity', indicating a gap in coverage.",
+    "missing": [
+      "Compliance Document",
+      "Regulatory Artifact",
+      "Copy of Document"
+    ]
+  },
+  {
+    "requirement": "Post-market monitoring system",
+    "requirement_id": "req22",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI Activity",
+      "AI System",
+      "has component",
+      "is deployed by",
+      "Software Component"
+    ],
+    "reasoning": "The ontology covers some aspects of the requirement, such as the AI system and its components, but lacks specific terms related to post-market monitoring and performance evaluation. The matched terms provide a foundation for describing the system's structure and deployment, but do not fully address the evaluation process. Additional concepts are needed to comprehensively cover this requirement.",
+    "missing": [
+      "Post-Market Monitoring Plan",
+      "Performance Evaluation Method",
+      "Monitoring Metric",
+      "Evaluation Frequency"
+    ]
+  }
+]

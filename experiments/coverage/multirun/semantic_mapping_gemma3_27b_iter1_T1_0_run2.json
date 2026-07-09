@@ -1,0 +1,451 @@
+[
+  {
+    "requirement": "General description of the AI system",
+    "requirement_id": "req1",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "AI System",
+      "AI Provider",
+      "is provided by"
+    ],
+    "reasoning": "The ontology directly addresses the AI Act requirement through 'AI System', enabling identification of what *is* an AI system for compliance checks. 'AI Provider' and 'is provided by' explicitly cover provider identification, a key aspect of the requirement. The versioning component is only indirectly supported - requiring inference via provenance tracking and relationships between different versions of `AI Model` or `AI System`, which isn't directly captured as a property.",
+    "missing": [
+      "AI System Version",
+      "Version History",
+      "System Purpose"
+    ]
+  },
+  {
+    "requirement": "Interaction with hardware/software",
+    "requirement_id": "req2",
+    "coverage_score": 0.75,
+    "matched_terms": [
+      "AI System",
+      "has component",
+      "is deployed by",
+      "is provided by",
+      "AI Model",
+      "Dataset"
+    ],
+    "reasoning": "The ontology captures the core of the requirement – understanding what an AI system *consists* of (through 'has component', linking to models and datasets) and who is responsible for its lifecycle ('is deployed by,' 'is provided by'). While it identifies constituents, it doesn't explicitly represent *interactions* with external systems. The inclusion of `AI System`, `AI Model` and `Dataset` provide the base elements needed to build up a more complex understanding of dependencies.",
+    "missing": [
+      "ExternalSystem",
+      "interactsWith",
+      "dependency",
+      "InterfaceSpecification"
+    ]
+  },
+  {
+    "requirement": "Software/firmware versioning",
+    "requirement_id": "req3",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "AI Model",
+      "has component",
+      "is provided by"
+    ],
+    "reasoning": "The ontology provides entities to represent the *what* - AI Systems and Models as key components. The 'has component' property links these. We can infer provider responsibility through 'is provided by', suggesting some oversight of dependencies. However, it lacks explicit representation for software/firmware versions, update mechanisms, or dependency tracking itself – focusing on actors and artifacts but not *how* they’re maintained.",
+    "missing": [
+      "SoftwareDependency",
+      "VersionInformation",
+      "UpdatePolicy",
+      "DependencyTrackingMethod"
+    ]
+  },
+  {
+    "requirement": "Deployment forms",
+    "requirement_id": "req4",
+    "coverage_score": 0.75,
+    "matched_terms": [
+      "AI System",
+      "is provided by",
+      "AI Provider",
+      "AI Deployer"
+    ],
+    "reasoning": "The ontology sufficiently captures the requirement because it directly links the AI system to its provider and deployer, reflecting how it's placed on the market or put into service. The 'AI System' class is central, while ‘is provided by’ establishes the delivery mechanism, and differentiates between who creates vs. deploys. However, it lacks explicit terms describing *how* an AI system is deployed (e.g., software package, API), only *who* deploys it.",
+    "missing": [
+      "DeploymentMethod",
+      "DistributionFormat"
+    ]
+  },
+  {
+    "requirement": "Hardware required",
+    "requirement_id": "req5",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "has component"
+    ],
+    "reasoning": "The ontology partially addresses the requirement by allowing us to link an AI System to its components. While this *can* include hardware if represented as a 'component,' it isn't explicit. The existing terms don’t directly model or describe the specific hardware needed for deployment; they focus on actors and functional elements of the system.",
+    "missing": [
+      "Hardware Profile",
+      "requiredHardware",
+      "Deployment Environment"
+    ]
+  },
+  {
+    "requirement": "Illustrations and markings",
+    "requirement_id": "req6",
+    "coverage_score": 0.4,
+    "matched_terms": [
+      "AI System",
+      "AI Artifact"
+    ],
+    "reasoning": "The ontology primarily focuses on the AI *system* itself and general lifecycle agents/artifacts, but it lacks specific concepts to represent the *physical product* that hosts the AI system as a component or detailed documentation about its physical attributes (layout, markings). While 'AI System' covers the existence of an integrated system, it doesn’t address the AI Act requirement concerning documenting the physical presentation of the encompassing product.",
+    "missing": [
+      "Product",
+      "PhysicalComponent",
+      "Documentation",
+      "VisualRepresentation",
+      "Marking",
+      "Layout",
+      "hasDocumentation",
+      "isComponentOf"
+    ]
+  },
+  {
+    "requirement": "User interface and instructions for use",
+    "requirement_id": "req7",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "AI Deployer",
+      "AI Provider"
+    ],
+    "reasoning": "The ontology identifies the key actors (deployer and provider) involved in system operation as well as the core AI System itself which would host these interfaces/instructions. However, it lacks explicit representation of 'user interface' or 'instructions for use' specifically within the context of deployment/operation; those concepts are implicit but not directly modelled. The link between the `AI System` and how a deployer *interacts* with it is missing.",
+    "missing": [
+      "Deployer Interface",
+      "Operational Instructions",
+      "System Documentation"
+    ]
+  },
+  {
+    "requirement": "Elements of system and development process",
+    "requirement_id": "req8",
+    "coverage_score": 0.75,
+    "matched_terms": [
+      "AI Activity",
+      "AI System",
+      "AI Model",
+      "Dataset",
+      "AI Provider",
+      "has component"
+    ],
+    "reasoning": "The ontology effectively covers the requirement by representing development through 'AI Activity' and outlining key components like 'AI System', 'AI Model', and 'Dataset'. The role of the developer is captured via ‘AI Provider’ and linkages between systems & their parts with ‘has component’. However, it lacks explicit terms for *steps* in the development process beyond an activity label - detailing a workflow or methodology isn't directly represented.",
+    "missing": [
+      "Development Step",
+      "Pre-trained System Usage",
+      "Integration Method",
+      "Modification Details",
+      "Provenance Traceability Detail"
+    ]
+  },
+  {
+    "requirement": "Design specifications of the system",
+    "requirement_id": "req9",
+    "coverage_score": 0.65,
+    "matched_terms": [
+      "AI System",
+      "AI Model",
+      "Dataset",
+      "AI Provider",
+      "AI Deployer",
+      "has component"
+    ],
+    "reasoning": "The ontology provides a good foundation for representing the AI system itself (AISystem, AIModel, Dataset) and key actors like provider/deployer. The `has component` property supports linking these elements. However, it lacks specific concepts to represent 'design choices', ‘rationale’, ‘trade-offs’ or detailed output specifications as required by the AI Act, significantly limiting its ability to directly answer all competency questions.",
+    "missing": [
+      "Design Choice",
+      "Rationale",
+      "Assumption",
+      "Optimization Goal",
+      "Parameter",
+      "Output Specification",
+      "Trade-off Analysis",
+      "Classification Scheme",
+      "Intended User Group",
+      "System Logic"
+    ]
+  },
+  {
+    "requirement": "System architecture",
+    "requirement_id": "req10",
+    "coverage_score": 0.75,
+    "matched_terms": [
+      "AI System",
+      "AI Model",
+      "Dataset",
+      "has component",
+      "AI Activity",
+      "AI Provider",
+      "AI Deployer"
+    ],
+    "reasoning": "The ontology provides core concepts for representing AI systems, their components (models and datasets), and the actors involved (provider/deployer). It also has `AI Activity` which can be used to represent development, training, testing & validation – though not specifically named. However, it lacks explicit representation of *system architecture* details like specific component connections or computational resources used; it relies on 'has component' but doesn’t detail *how* these components interact.",
+    "missing": [
+      "SoftwareComponent",
+      "ProcessingPipelineStep",
+      "ComputationalResource",
+      "Algorithm",
+      "ConnectionSpecification",
+      "ArchitectureDiagram"
+    ]
+  },
+  {
+    "requirement": "Data requirements",
+    "requirement_id": "req11",
+    "coverage_score": 0.75,
+    "matched_terms": [
+      "Dataset",
+      "AI Model",
+      "AI System",
+      "has component",
+      "is provided by",
+      "AI Activity"
+    ],
+    "reasoning": "The ontology possesses core elements like 'Dataset' and 'AI System' crucial for representing the requirement’s focus on training data and AI systems. The relationship 'has component' allows linking datasets to AI Systems, while `AI Activity` provides a place to record procedures. However, it lacks specific concepts detailing *how* data is obtained, cleaned (beyond general activities), or labelled - these are crucial aspects of the EU AI Act requirement.",
+    "missing": [
+      "Data Acquisition Method",
+      "Data Selection Criteria",
+      "Data Cleaning Procedure",
+      "Labelling Scheme",
+      "Datasheet",
+      "ProvenanceStatement",
+      "Dataset Characteristic",
+      "OutlierDetectionMethod"
+    ]
+  },
+  {
+    "requirement": "Assessment of human oversight measures",
+    "requirement_id": "req12",
+    "coverage_score": 0.65,
+    "matched_terms": [
+      "AI System",
+      "AI Deployer",
+      "AI Provider",
+      "AI Model"
+    ],
+    "reasoning": "The ontology covers key actors (Deployer, Provider) and the core element – the AI System itself. It also represents a crucial component of interpretation: the AI Model which generates outputs. However, it lacks specific representation for *oversight* as a process or concept, and doesn't directly link outputs to 'interpretation,' making a direct answer to both competency questions difficult without further relationships.",
+    "missing": [
+      "Human Oversight",
+      "Oversight Measure",
+      "AI Output Interpretation",
+      "Technical Facilitation (of interpretation)",
+      "Risk Assessment (related to oversight needs)",
+      "Explainability",
+      "Transparency"
+    ]
+  },
+  {
+    "requirement": "Pre-determined changes to the AI system",
+    "requirement_id": "req13",
+    "coverage_score": 0.65,
+    "matched_terms": [
+      "AI System",
+      "AI Model",
+      "Dataset",
+      "AI Provider",
+      "AI Deployer",
+      "has component",
+      "is deployed by",
+      "is provided by",
+      "AI Activity"
+    ],
+    "reasoning": "The ontology captures the core entities involved (System, Model, Dataset, Provider, Deployer) and relationships like 'has component' which hints at system composition. However it lacks explicit concepts for *changes* to the AI System or detailed *technical solutions* for compliance - these are implicit but not directly modelled. The `AI Activity` class is useful as a base for tracking processes related to changes/solutions, but remains high level.",
+    "missing": [
+      "AI System Change",
+      "Compliance Solution",
+      "Performance Metric",
+      "Retraining Schedule",
+      "Monitoring Process",
+      "Adaptation Strategy",
+      "Version Control",
+      "Change Request",
+      "Continuous Integration/ Continuous Delivery (CI/CD) Pipeline"
+    ]
+  },
+  {
+    "requirement": "Validation and testing procedures",
+    "requirement_id": "req14",
+    "coverage_score": 0.65,
+    "matched_terms": [
+      "AI System",
+      "AI Model",
+      "Dataset",
+      "AI Provider",
+      "AI Deployer",
+      "AI Activity",
+      "has component",
+      "is deployed by",
+      "is provided by",
+      "AI Artifact"
+    ],
+    "reasoning": "The ontology provides good foundational terms for representing the actors (Provider, Deployer), core elements (System, Model, Dataset) and activities associated with AI systems. However, it lacks specific concepts to directly represent 'validation', 'testing procedures', 'test logs/reports' or 'metrics'. While `AI Activity` could *potentially* encompass testing processes, there’s no explicit representation – meaning relationships regarding these key aspects of the requirement are missing.",
+    "missing": [
+      "Validation Procedure",
+      "Test Log",
+      "Test Report",
+      "Testing Data",
+      "Accuracy Metric",
+      "Robustness Metric",
+      "Compliance Metric",
+      "Discrimination Impact Assessment",
+      "Responsible Person (role)",
+      "Predetermined Change"
+    ]
+  },
+  {
+    "requirement": "Cybersecurity measures",
+    "requirement_id": "req15",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "AI Deployer",
+      "AI Provider"
+    ],
+    "reasoning": "The ontology currently identifies the actors (Provider & Deployer) responsible for ensuring cybersecurity within an AI system lifecycle, and broadly covers 'the thing' being secured – the 'AI System'. However, it lacks explicit representation of *what* those cybersecurity measures are. While deployment implies associated security considerations, this isn’t directly encoded as a concept.",
+    "missing": [
+      "CybersecurityMeasure",
+      "VulnerabilityAssessment",
+      "ThreatModel",
+      "SecurityProtocol",
+      "DataEncryption",
+      "AccessControl"
+    ]
+  },
+  {
+    "requirement": "Monitoring, functioning and control",
+    "requirement_id": "req16",
+    "coverage_score": 0.65,
+    "matched_terms": [
+      "AI System",
+      "AI Model",
+      "Dataset",
+      "AI Deployer",
+      "AI Provider",
+      "has component",
+      "is deployed by",
+      "is provided by"
+    ],
+    "reasoning": "The ontology provides foundational elements for representing the AI system and its lifecycle participants (provider, deployer). It establishes links between systems, models, and data. However, it lacks explicit representation of performance characteristics like accuracy or limitations, risk assessment details, or specific human oversight mechanisms—all crucial aspects detailed in the AI Act requirement. The core entities are present but lack attributes to directly address the nuanced elements of monitoring & control.",
+    "missing": [
+      "AI System Performance",
+      "Accuracy Metric",
+      "Bias Assessment",
+      "Risk Profile",
+      "Unintended Outcome",
+      "Human Oversight Procedure",
+      "Output Interpretation Method",
+      "Data Quality Specification",
+      "Vulnerability Assessment"
+    ]
+  },
+  {
+    "requirement": "Appropriateness of performance metrics",
+    "requirement_id": "req17",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "AI Model",
+      "Dataset",
+      "AI Provider",
+      "AI Deployer"
+    ],
+    "reasoning": "The ontology provides core elements involved in *creating* and *deploying* an AI system (Provider, Deployer, Model, Dataset, System). However, it lacks explicit concepts to represent or link to the ‘performance metrics’ themselves or explicitly capture their ‘appropriateness’ for a specific context. While 'AI System' is central, linking its characteristics to quantifiable performance assurances isn't directly represented.",
+    "missing": [
+      "Performance Metric",
+      "Metric Appropriateness Assessment",
+      "Evaluation Protocol",
+      "Acceptable Performance Threshold"
+    ]
+  },
+  {
+    "requirement": "Risk management",
+    "requirement_id": "req18",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "AI Activity",
+      "AI Provider",
+      "AI Deployer"
+    ],
+    "reasoning": "The ontology includes entities central to the AI lifecycle ('AI System', 'AI Activity') and actors responsible for its operation ('AI Provider', 'AI Deployer'). However, it lacks explicit representation of *risk management* itself as a defined activity or process. The requirement asks specifically for a description of the system for managing risk, which isn’t directly modeled – only elements that *would* be subject to such a system.",
+    "missing": [
+      "Risk Management System",
+      "Risk Assessment",
+      "Risk Mitigation Strategy",
+      "Compliance Framework",
+      "Article 9 Compliance Status"
+    ]
+  },
+  {
+    "requirement": "Changes to the AI system throughout its lifecycle",
+    "requirement_id": "req19",
+    "coverage_score": 0.75,
+    "matched_terms": [
+      "AI Activity",
+      "AI System",
+      "AI Provider",
+      "AI Artifact"
+    ],
+    "reasoning": "The ontology provides core classes for tracking activities (AI Activity), the system itself (AI System) and its provider (AI Provider). It also includes a general 'AI Artifact' which can represent changes documented as outputs of activities. However, it lacks explicit representation of *change* or versioning specifically related to those artifacts and lifecycle stage transitions.",
+    "missing": [
+      "Change Record",
+      "Version",
+      "Lifecycle Stage",
+      "Modification Date",
+      "Modification Description"
+    ]
+  },
+  {
+    "requirement": "Harmonised standards and common specifications",
+    "requirement_id": "req20",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "AI Provider",
+      "AI Deployer",
+      "AI Artifact"
+    ],
+    "reasoning": "The ontology provides basic classes for the actors involved (Provider, Deployer) and the core entity being regulated (AI System). It also represents outputs as AI Artifacts which could be linked to documentation detailing compliance. However, it lacks explicit representation of 'harmonized standards' or specific 'solutions adopted' – concepts central to the requirement - focusing more on *who* does what with an AISystem rather than *how* they achieve compliance.",
+    "missing": [
+      "Harmonised Standard",
+      "Compliance Solution",
+      "Chapter III Section 2 Requirement",
+      "Technical Specification",
+      "Standard Application (partial/full)"
+    ]
+  },
+  {
+    "requirement": "EU declaration of conformity",
+    "requirement_id": "req21",
+    "coverage_score": 0.3,
+    "matched_terms": [
+      "AI System"
+    ],
+    "reasoning": "The ontology currently only weakly represents the AI Act requirement. While 'AI System' is related as it's what typically *requires* a declaration of conformity, there isn’t a direct representation of this document itself or its associated compliance aspects. The existing classes focus on actors and components, not on regulatory artifacts.",
+    "missing": [
+      "EU Declaration of Conformity",
+      "Conformity Assessment",
+      "Compliance Evidence"
+    ]
+  },
+  {
+    "requirement": "Post-market monitoring system",
+    "requirement_id": "req22",
+    "coverage_score": 0.6,
+    "matched_terms": [
+      "AI System",
+      "AI Deployer",
+      "AI Provider",
+      "AI Activity"
+    ],
+    "reasoning": "The ontology identifies core elements like the AI System and associated actors (Provider & Deployer), and encompasses general 'AI Activity'. However, it lacks explicit representation of *post-market* activities specifically – monitoring or evaluation. While `AI Activity` could be used to represent these processes, there's no dedicated concept for a 'Post-Market Monitoring Plan' itself or the detailed 'evaluation system' mandated by Article 72.",
+    "missing": [
+      "Post-Market Monitoring Plan",
+      "Performance Evaluation System",
+      "Monitoring Frequency",
+      "Adverse Event Reporting Process",
+      "Data Source for Post-Market Monitoring"
+    ]
+  }
+]

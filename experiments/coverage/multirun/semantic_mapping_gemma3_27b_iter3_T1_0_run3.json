@@ -1,0 +1,616 @@
+[
+  {
+    "requirement": "General description of the AI system",
+    "requirement_id": "req1",
+    "coverage_score": 0.95,
+    "matched_terms": [
+      "AI System",
+      "AI Provider",
+      "version",
+      "intended purpose",
+      "Model Versioning",
+      "Change Log",
+      "Data Sheet",
+      "Declaration of Conformity"
+    ],
+    "reasoning": "The ontology directly includes 'AI System' and 'AI Provider', alongside specific properties like 'version' and 'intended purpose'. It further supports version tracking via 'Model Versioning' and 'Change Log,' which captures the relationship to previous versions. Inclusion of ‘Data Sheet’ and ‘Declaration of Conformity’ provides crucial contextual documentation often encompassing version information, therefore, providing a very high level of coverage for this requirement.",
+    "missing": [
+      "AI System Lineage",
+      "Release Notes"
+    ]
+  },
+  {
+    "requirement": "Interaction with hardware/software",
+    "requirement_id": "req2",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Software Dependency",
+      "Hardware Component",
+      "Software Component",
+      "Interface",
+      "AI System",
+      "Deployment",
+      "Data Pipeline",
+      "Software Code Pipeline",
+      "has software component",
+      "requires hardware",
+      "feeds into component",
+      "depends on"
+    ],
+    "reasoning": "The ontology has excellent coverage of the ‘hardware and software’ interaction aspects. Terms like 'Software Dependency', 'Hardware Component' and especially the relationships 'requires hardware' and 'has software component' directly address what components the system relies on. Additionally, terms related to pipelines (data/code) capture interactions during processing, and concepts like 'Interface' cover ways of interacting with the systems. The score is not 1.0 due to a lack of explicit representation of interactions *between* AI systems.",
+    "missing": [
+      "AI System Interconnection",
+      "External System Dependency",
+      "API Dependency",
+      "Communication Protocol",
+      "Inter-System Interface Specification"
+    ]
+  },
+  {
+    "requirement": "Software/firmware versioning",
+    "requirement_id": "req3",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Software Dependency",
+      "Model Versioning",
+      "Change Log",
+      "Data Pipeline",
+      "Software Implementation",
+      "AI System",
+      "Log",
+      "Software Code Pipeline",
+      "Software Component",
+      "version"
+    ],
+    "reasoning": "The ontology strongly supports tracking software dependencies with 'Software Dependency' and version management with 'Model Versioning'. 'Change Log', 'Software Implementation', and 'Log' provide mechanisms for recording updates and history. The inclusion of 'AI System','Data Pipeline', 'Software Code Pipeline', 'Software Component', and the simple property 'version' further strengthens this coverage, allowing tracing changes throughout the AI lifecycle. However it lacks more explicit links between software/firmware versions and compliance documentation (like Declaration of Conformity).",
+    "missing": [
+      "Firmware Versioning",
+      "Compliance Version Link",
+      "Update Policy",
+      "Software Update Mechanism"
+    ]
+  },
+  {
+    "requirement": "Deployment forms",
+    "requirement_id": "req4",
+    "coverage_score": 0.9,
+    "matched_terms": [
+      "AI System",
+      "Software Implementation",
+      "Model Packaging",
+      "Interface",
+      "Deployment",
+      "Hardware Component",
+      "modality",
+      "has software component",
+      "is deployed by"
+    ],
+    "reasoning": "The ontology includes strong representation for AI Systems, how they are implemented as software (Software Implementation), prepared for use(Model Packaging) and made available through interfaces. It also directly addresses deployment and the physical form with Hardware Component and 'modality'. The ability to link systems to components ('has software component') and deployers ('is deployed by') further supports answering how an AI system is provided. A minor gap exists regarding different *types* of downloads beyond linking to a general software implementation.",
+    "missing": [
+      "Download",
+      "Distribution Channel",
+      "Packaging Format"
+    ]
+  },
+  {
+    "requirement": "Hardware required",
+    "requirement_id": "req5",
+    "coverage_score": 0.95,
+    "matched_terms": [
+      "Hardware Component",
+      "Computational Resource",
+      "AI System",
+      "Deployment"
+    ],
+    "reasoning": "The ontology directly includes 'Hardware Component' and 'Computational Resource' which perfectly addresses the requirement of describing the hardware for an AI system. 'AI System', while broad, is a central entity to which hardware requirements are linked via the 'requires hardware' property. The ‘Deployment’ activity also has strong relevance as hardware constraints become significant in this phase. ",
+    "missing": [
+      "Hardware Configuration",
+      "Minimum Hardware Requirements"
+    ]
+  },
+  {
+    "requirement": "Illustrations and markings",
+    "requirement_id": "req6",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "AI System",
+      "Visual Documentation",
+      "Hardware Component",
+      "Software Component",
+      "Declaration of Conformity",
+      "has visual documentation",
+      "has software component",
+      "has component",
+      "Standard",
+      "applies standard",
+      "Data Sheet"
+    ],
+    "reasoning": "The ontology sufficiently covers the core aspects of documenting physical characteristics for compliance. Key terms like 'AI System', 'Visual Documentation', and relationships such as 'has visual documentation' directly address the need to document external features, layout, and markings. The inclusion of hardware/software components allows representation of product architecture, while Declaration of Conformity is crucial for demonstrating adherence to standards relating to these physical attributes; however, a deeper granularity regarding different *types* of markings (e.g., CE marking specifically) is lacking.",
+    "missing": [
+      "CE Marking",
+      "Product Label",
+      "Internal Layout Diagram",
+      "Physical Product Specification",
+      "External Feature Description"
+    ]
+  },
+  {
+    "requirement": "User interface and instructions for use",
+    "requirement_id": "req7",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "AI Deployer",
+      "Interface",
+      "Data Sheet",
+      "Training Data Sheet",
+      "Declaration of Conformity",
+      "Visual Documentation",
+      "Software Implementation",
+      "Software Component"
+    ],
+    "reasoning": "The ontology provides strong coverage through 'AI Deployer' identifying the target audience, and ‘Interface’ directly representing what is requested. Additionally, 'Data Sheet', 'Training Data Sheet,' and 'Declaration of Conformity' represent documentation provided to deployers. 'Visual Documentation' and 'Software Implementation/Component' are relevant for describing parts of the interface, although not explicitly stating instructions for use.  The coverage isn’t perfect as detailed ‘instructions for use’ as a distinct concept is slightly lacking.",
+    "missing": [
+      "Instructions for Use",
+      "Deployer Documentation",
+      "User Interface Specification"
+    ]
+  },
+  {
+    "requirement": "Elements of system and development process",
+    "requirement_id": "req8",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "AI System",
+      "AI Provider",
+      "Software Component",
+      "Software Implementation",
+      "Software Dependency",
+      "Model Engineering",
+      "Model Versioning",
+      "Data Training",
+      "Data Validation",
+      "Data Acquisition Activity",
+      "Data Wrangling/Cleaning",
+      "Machine Learning Pipeline",
+      "AI Activity",
+      "Build and Integration Testing",
+      "Software Code Pipeline",
+      "Change Log",
+      "Model Packaging",
+      "Data Pipeline",
+      "Training Data Sheet",
+      "Data Sheet"
+    ],
+    "reasoning": "The ontology provides strong coverage by detailing activities like model engineering, data acquisition & cleaning, training/validation and software implementation - all core parts of development steps. Terms related to versioning, change logs, and pipelines also capture the ‘methods and steps’ aspect well. The inclusion of AI Provider is crucial for attribution. However, it lacks a single explicit term for 'development process' or capturing how systems were *modified* specifically. ",
+    "missing": [
+      "Development Process: A high-level concept explicitly representing the full development lifecycle",
+      "Modification Details: Information on how pre-trained models/tools were adapted – this could be a property attached to Software Component or Model Engineering.",
+      "Integration Strategy: How different components are combined which isn't adequately modeled."
+    ]
+  },
+  {
+    "requirement": "Design specifications of the system",
+    "requirement_id": "req9",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "AI System",
+      "Model Engineering",
+      "Data Training",
+      "Data Validation",
+      "Data Testing",
+      "Training Data Sheet",
+      "Data Sheet",
+      "Software Implementation",
+      "Performance Metric",
+      "AI Method",
+      "AI Model",
+      "AI Task",
+      "Change Log",
+      "Explainable AI Feature",
+      "Transparency Measure",
+      "intended purpose",
+      "has architecture",
+      "feeds into component",
+      "has software component",
+      "Data Wrangling/Cleaning",
+      "Labeling Procedure"
+    ],
+    "reasoning": "The ontology provides strong support for describing the technical details of an AI system, including model engineering, data used in training/validation/testing, and software implementation. There's good coverage for design choices (via Model Engineering, Data characteristics), output descriptions (Performance Metric), optimizations(through linking to Task definition) & traceability via Change Log. The inclusion of 'intended purpose', 'has architecture,' `feeds into component`, 'Transparency Measure’ terms directly addresses the regulatory requirements. However while the ontology supports data aspects it is weak on capturing ‘trade-off decisions made’.",
+    "missing": [
+      "Trade-off Analysis/Documentation",
+      "Rationale Capture (beyond just engineering)",
+      "Assumption Documentation",
+      "Risk Assessment (linked explicitly to design choices/tradeoffs)",
+      "Classification Scheme Definition",
+      "Optimisation Goal Specification"
+    ]
+  },
+  {
+    "requirement": "System architecture",
+    "requirement_id": "req10",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "AI System",
+      "Software Component",
+      "Software Implementation",
+      "Model Engineering",
+      "AI Method",
+      "AI Model",
+      "Data Pipeline",
+      "Machine Learning Pipeline",
+      "Software Code Pipeline",
+      "Computational Resource",
+      "Build and Integration Testing",
+      "Data Training",
+      "Data Validation",
+      "Data Testing",
+      "has software component",
+      "feeds into component",
+      "has architecture",
+      "requires hardware",
+      "resource configuration",
+      "resource type",
+      "resource vendor",
+      "AI Activity",
+      "Model Versioning",
+      "Change Log"
+    ],
+    "reasoning": "The ontology contains strong representations of AI systems, software components, the development lifecycle (training, testing, validation), and computational resources. Relationships like 'has software component' and 'feeds into component' directly address the system architecture aspect of the requirement. The score isn’t perfect because finer-grained relationships detailing *how* the integration occurs could be more explicit, and linking specific algorithms/methods to components is present but implicit.",
+    "missing": [
+      "Processing Pipeline",
+      "Algorithm Specification",
+      "System Integration Diagram",
+      "Resource Allocation Details"
+    ]
+  },
+  {
+    "requirement": "Data requirements",
+    "requirement_id": "req11",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Data Acquisition Activity",
+      "Training Data Sheet",
+      "Data Training",
+      "Data Validation",
+      "Data Wrangling/Cleaning",
+      "Data Sheet",
+      "Dataset",
+      "Labeling Procedure",
+      "Model Engineering",
+      "Log",
+      "Data Monitoring and Logging",
+      "Change Log"
+    ],
+    "reasoning": "The ontology provides a strong foundation for representing the AI Act requirements with specific terms relating to data acquisition, cleaning, training, validation and documentation. The `Training Data Sheet` and `Data Sheet` concepts directly address datasheet requirements; however, connecting all aspects of this requirement necessitates tying several elements together within a knowledge graph structure. While many components are present, more explicit links between data characteristics/provenance and the datasheets themselves would improve clarity.",
+    "missing": [
+      "Data Provenance (as a first class concept - currently only attributes of datasets)",
+      "Detailed Data Selection Strategy (beyond `data selection criteria` which is broader).",
+      "Data Labelling Quality Metrics: metrics specific to assessing the validity/accuracy of labels.",
+      "Outlier Detection Method (Separate from, or more granular than simply `Data Cleaning Procedure`).",
+      "Bias Detection and Mitigation Methods – connecting bias identification in datasets with a mitigation strategy."
+    ]
+  },
+  {
+    "requirement": "Assessment of human oversight measures",
+    "requirement_id": "req12",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Human Oversight Mechanism",
+      "Explainable AI Feature",
+      "Transparency Measure",
+      "AI Deployer",
+      "Data Sheet",
+      "Training Data Sheet",
+      "Log",
+      "Post-market Monitoring Activity",
+      "Interface",
+      "Model Evaluation",
+      "Visual Documentation"
+    ],
+    "reasoning": "The ontology provides several directly relevant terms like 'Human Oversight Mechanism' and 'Explainable AI Feature', addressing the need for human control and interpretation. Terms related to data documentation ('Data Sheet', 'Training Data Sheet') support interpretability, while 'Post-market Monitoring Activity' links to ongoing assessment of outputs. However, it lacks explicit connections between these mechanisms *and* specific output characteristics/interpretability metrics. The inclusion of 'Interface','Model Evaluation' and 'Visual Documentation' add additional coverage.",
+    "missing": [
+      "Output Interpretability Metric",
+      "Interpretability Assessment Procedure",
+      "Human-AI Interaction Protocol",
+      "Oversight Action Type (e.g., override, alert)",
+      "Confidence Score Threshold",
+      "Explanation Fidelity Level",
+      "Error Handling and Escalation Policy"
+    ]
+  },
+  {
+    "requirement": "Pre-determined changes to the AI system",
+    "requirement_id": "req13",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Change Log",
+      "Model Versioning",
+      "Post-market Monitoring Activity",
+      "Post-market Performance Evaluation Activity",
+      "Software Implementation",
+      "Data Pipeline",
+      "AI Artifact",
+      "AI System",
+      "Log",
+      "Data Monitoring and Logging",
+      "Declaration of Conformity",
+      "Model Engineering",
+      "Data Training",
+      "Data Validation",
+      "Data Testing"
+    ],
+    "reasoning": "The ontology provides strong coverage for tracking changes (Change Log, Model Versioning), post-market activities ensuring continuous compliance (Post-market Monitoring/Evaluation), and the system's technical realization (Software Implementation, Data Pipeline). It also covers how data is used in the lifecycle from training to validation which underpins any change. The ontology does a good job of representing elements required for demonstrating conformity, but lacks specific terms linking changes *directly* to compliance requirements.",
+    "missing": [
+      "Compliance Requirement",
+      "Technical Solution (for Compliance)",
+      "Pre-determined Change Specification",
+      "Performance Adjustment Procedure",
+      "System Adaptation Plan"
+    ]
+  },
+  {
+    "requirement": "Validation and testing procedures",
+    "requirement_id": "req14",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Data Training",
+      "Data Validation",
+      "Data Testing",
+      "Training Data Sheet",
+      "Data Sheet",
+      "Log",
+      "Model Evaluation",
+      "Performance Metric",
+      "AI Researcher",
+      "Auditor",
+      "Declaration of Conformity",
+      "Change Log",
+      "Post-market Monitoring Activity",
+      "Software Implementation",
+      "Data Pipeline",
+      "Machine Learning Pipeline",
+      "AI System",
+      "AI Artifact",
+      "data characteristic",
+      "data scope",
+      "data selection criteria",
+      "quality metrics used"
+    ],
+    "reasoning": "The ontology strongly covers aspects of data usage for training, validation and testing, logging requirements, and accountability (researcher, auditor). It also includes terms related to documentation like Data Sheets and Change Logs. The inclusion of Performance Metrics and Model Evaluation directly addresses the accuracy/robustness measurement portion of the requirement. A slightly lower score reflects a limited direct association between 'responsible persons' (signature aspects) and specific ontology elements - though AI Researcher or Auditor could be inferred.",
+    "missing": [
+      "Test Report",
+      "Validation Procedure",
+      "Testing Procedure",
+      "Discriminatory Impact Assessment",
+      "Predetermined Changes Definition",
+      "Responsible Person Role",
+      "Compliance Check",
+      "Signatures Data"
+    ]
+  },
+  {
+    "requirement": "Cybersecurity measures",
+    "requirement_id": "req15",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Data Monitoring and Logging",
+      "Log",
+      "Software Component",
+      "Change Log",
+      "Deployment",
+      "Post-market Monitoring Activity",
+      "Data Cleaning Procedure",
+      "AI System",
+      "Standard",
+      "Declaration of Conformity",
+      "Software Dependency",
+      "Auditor"
+    ],
+    "reasoning": "The ontology provides multiple terms relating to logging, monitoring and software components which are central to cybersecurity. Terms like 'Deployment' and 'Post-market Monitoring Activity', 'Change Log' along with aspects of quality control ('Data Cleaning Procedure') directly relate to maintaining security post implementation. The inclusion of compliance related entities such as 'Standard','Declaration of Conformity' and entities involved in verification (Auditor) further enhances this, but lacks explicitly defined cybersecurity specific elements.",
+    "missing": [
+      "Vulnerability Assessment",
+      "Intrusion Detection System",
+      "Data Encryption",
+      "Access Control Mechanism",
+      "Security Audit Trail",
+      "Penetration Testing",
+      "Incident Response Plan",
+      "Cybersecurity Risk"
+    ]
+  },
+  {
+    "requirement": "Monitoring, functioning and control",
+    "requirement_id": "req16",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "AI System",
+      "AI System Capability",
+      "Post-market Monitoring Activity",
+      "Post-market Performance Evaluation Activity",
+      "Model Engineering",
+      "Data Acquisition Activity",
+      "Training Data Sheet",
+      "Data Training",
+      "Data Validation",
+      "Data Testing",
+      "Data Wrangling/Cleaning",
+      "Performance Metric",
+      "Explainable AI Feature",
+      "Transparency Measure",
+      "Human Oversight Mechanism",
+      "Log",
+      "AI Deployer",
+      "AI Provider",
+      "Declaration of Conformity",
+      "has capability",
+      "has performance metric",
+      "has risk",
+      "intended purpose",
+      "data characteristic",
+      "evaluation method"
+    ],
+    "reasoning": "The ontology provides strong coverage for monitoring, performance evaluation, and data aspects crucial to the AI Act requirement. Concepts like 'Post-market Monitoring Activity', 'Performance Metric' directly address accuracy & limitations post deployment. The availability of modeling training and validation activities along with data quality checks are also strengths. However, explicit terms linking foreseen unintended consequences specifically to risks concerning health/safety/fundamental rights were less direct, reliant on the general ‘has risk’ property.",
+    "missing": [
+      "Unintended Outcome",
+      "Risk Assessment Procedure",
+      "Discrimination Impact Assessment",
+      "Fairness Metric",
+      "Bias Detection Method",
+      "Vulnerability Analysis Report",
+      "Accuracy by Demographic Group (a more specific data characteristic)",
+      "Human Oversight Plan"
+    ]
+  },
+  {
+    "requirement": "Appropriateness of performance metrics",
+    "requirement_id": "req17",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Performance Metric",
+      "Model Evaluation",
+      "Post-market Performance Evaluation Activity",
+      "Data Testing",
+      "Training Data Sheet",
+      "AI System",
+      "AI Task",
+      "Data Sheet",
+      "Declaration of Conformity"
+    ],
+    "reasoning": "The ontology includes terms directly related to performance measurement (Performance Metric), evaluation activities pre and post-deployment, data used in evaluating the model, documentation of training datasets, and the AI system itself. These allow for tracing how performance is assessed concerning intended use and compliance standards. While strong coverage exists, connecting these concepts to a holistic 'appropriateness' justification requires inferencing, slightly reducing the score.",
+    "missing": [
+      "Performance Metric Justification",
+      "Appropriateness Assessment Criteria",
+      "Risk-Metric Linkage",
+      "Acceptability Thresholds"
+    ]
+  },
+  {
+    "requirement": "Risk management",
+    "requirement_id": "req18",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "AI System",
+      "AI Provider",
+      "AI Deployer",
+      "Post-market Monitoring Activity",
+      "Post-market Performance Evaluation Activity",
+      "Data Monitoring and Logging",
+      "Log",
+      "Change Log",
+      "Declaration of Conformity",
+      "Human Oversight Mechanism",
+      "Model Versioning",
+      "AI Activity",
+      "Software Component",
+      "Data Pipeline",
+      "Machine Learning Pipeline",
+      "Software Code Pipeline"
+    ],
+    "reasoning": "The ontology provides significant coverage through terms relating to the AI lifecycle, monitoring, data management (pipelines), and system governance. Concepts like 'Post-market Monitoring Activity,' ‘Log’, 'Change Log', 'Declaration of Conformity' directly address elements of a risk management system. However, it lacks explicit connections *between* these components as representing the formal 'system' described in Article 9; instead relies on property linkages (e.g. `has risk`).",
+    "missing": [
+      "Risk Management Plan: A dedicated class/concept for defining and documenting a comprehensive plan to manage risks.",
+      "Risk Assessment Procedure: Explicit representation of the process for identifying, evaluating, and mitigating AI-related risks.",
+      "Risk Mitigation Strategy: Definition of measures taken to reduce the identified risks.",
+      "Formal Risk Register: A structured record of all identified risks, their assessment, mitigation strategies, and ongoing monitoring status.",
+      "Compliance Procedure: A procedure describing how compliance with AI regulations is ensured."
+    ]
+  },
+  {
+    "requirement": "Changes to the AI system throughout its lifecycle",
+    "requirement_id": "req19",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Change Log",
+      "Log",
+      "Model Versioning",
+      "AI Activity",
+      "Software Implementation",
+      "Data Pipeline",
+      "Machine Learning Pipeline",
+      "Software Code Pipeline",
+      "Deployment",
+      "Decommissioning",
+      "Post-market Monitoring Activity",
+      "Data Acquisition Activity",
+      "Model Engineering"
+    ],
+    "reasoning": "The ontology provides excellent coverage through explicit terms like 'Change Log' and 'Model Versioning', directly addressing the lifecycle change requirement. Furthermore, various 'Activity' types ('Deployment', 'Decommissioning', 'Post-market Monitoring', etc.) combined with pipeline concepts provide a strong foundation for representing changes happening throughout the AI system's life. However, there's a reliance on connecting these activity terms to *what* changed; a more direct link between an activity and specific modifications would be ideal.",
+    "missing": [
+      "Change Request",
+      "Modification Details",
+      "System Update",
+      "Revision History (linked directly to AI System)",
+      "Configuration Change",
+      "Incident Report"
+    ]
+  },
+  {
+    "requirement": "Harmonised standards and common specifications",
+    "requirement_id": "req20",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Standard",
+      "Declaration of Conformity",
+      "AI System",
+      "Data Sheet",
+      "Training Data Sheet",
+      "Model Engineering",
+      "Software Implementation",
+      "AI Activity",
+      "Post-market Monitoring Activity",
+      "Post-market Performance Evaluation Activity",
+      "AI Provider",
+      "AI Deployer"
+    ],
+    "reasoning": "The ontology possesses terms directly relating to standards (\"Standard\", \"Declaration of Conformity\") and the actors involved in system development and deployment (“AI Provider”, “AI Deployer”).  It also has high-level activities related to lifecycle phases where such compliance would be addressed, like post-market monitoring. While not exhaustive, it provides a foundational structure for representing both applied standards and alternative solutions since its focus is AI lifecycle activities.",
+    "missing": [
+      "Harmonized Standard",
+      "Non-Harmonized Standard",
+      "Compliance Solution Description",
+      "Technical Specification",
+      "Chapter III Section 2 Requirement",
+      "List of Standards Applied"
+    ]
+  },
+  {
+    "requirement": "EU declaration of conformity",
+    "requirement_id": "req21",
+    "coverage_score": 0.95,
+    "matched_terms": [
+      "Declaration of Conformity",
+      "has declaration of conformity",
+      "AI System"
+    ],
+    "reasoning": "The ontology directly includes a 'Declaration of Conformity' class and a property 'has declaration of conformity', directly addressing the requirement to check for the existence of this document linked to an AI system. The connection between the Declaration of Conformity and the AI System is clear, providing strong coverage. While other elements represent aspects of producing such a document, these are the key elements that operationalize answering the competency question.",
+    "missing": [
+      "Document Repository",
+      "Compliance Status"
+    ]
+  },
+  {
+    "requirement": "Post-market monitoring system",
+    "requirement_id": "req22",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Post-market Monitoring Activity",
+      "Post-market Performance Evaluation Activity",
+      "Log",
+      "Data Monitoring and Logging",
+      "Model Versioning",
+      "Change Log",
+      "AI System",
+      "Deployment",
+      "Performance Metric",
+      "Data Pipeline"
+    ],
+    "reasoning": "The ontology provides strong coverage, directly mapping to 'Post-market Monitoring Activity' and 'Post-market Performance Evaluation Activity'. Supporting terms like 'Log', 'Data Monitoring and Logging,' and 'Model Versioning' capture aspects of ongoing performance tracking. While not explicit in the core terms, concepts related to system architecture ('AI System'), delivery ('Deployment') and measurement ('Performance Metric’) contribute to a holistic picture. The Data Pipeline concept is applicable as it contains an audit trail from data ingestion through training and deployment.",
+    "missing": [
+      "Post-Market Monitoring Plan",
+      "Incident Reporting Procedure",
+      "Corrective Action Process",
+      "Key Performance Indicators (KPIs)",
+      "Feedback Loop Mechanism",
+      "Root Cause Analysis Procedure"
+    ]
+  }
+]

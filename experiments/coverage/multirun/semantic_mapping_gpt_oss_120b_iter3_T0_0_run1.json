@@ -1,0 +1,537 @@
+[
+  {
+    "requirement": "General description of the AI system",
+    "requirement_id": "req1",
+    "coverage_score": 0.78,
+    "matched_terms": [
+      "intended purpose",
+      "AI Provider",
+      "is provided by",
+      "version"
+    ],
+    "reasoning": "The ontology provides explicit properties for the intended purpose and version of an AI system, as well as a class (AI Provider) and a linking property (is provided by) to capture the provider’s identity. However, it lacks a dedicated relation that directly expresses how a given version is linked to its predecessor or successor, which is required to describe the version's relation to previous versions. Consequently, while most of the requirement is covered, the missing version‑lineage concept reduces the overall coverage.",
+    "missing": [
+      "hasPreviousVersion (or predecessorVersion)",
+      "hasNextVersion (or successorVersion)",
+      "systemDescription (a class or property to hold a free‑text general description of the AI system)",
+      "providerName (property to capture the name of the provider as a literal, if not modelled via the Provider agent’s label)"
+    ]
+  },
+  {
+    "requirement": "Interaction with hardware/software",
+    "requirement_id": "req2",
+    "coverage_score": 0.65,
+    "matched_terms": [
+      "Software Dependency",
+      "Hardware Component",
+      "requires hardware",
+      "depends on",
+      "has interface"
+    ],
+    "reasoning": "The ontology includes explicit concepts for software and hardware dependencies (Software Dependency, Hardware Component) and properties that can express those links (requires hardware, depends on). The 'has interface' property also helps model interaction points. However, there is no dedicated term for external AI systems or generic interoperability relationships, so the requirement is only partially covered.",
+    "missing": [
+      "External AI System Dependency – a class or property to represent reliance on other AI systems that are not part of the primary system",
+      "Interoperability Relationship – a property such as 'interacts with' or 'integrates with' to capture bidirectional connections between distinct software/hardware components",
+      "External Component – a generic superclass for any non‑internal hardware, software, or AI system used by the AI system"
+    ]
+  },
+  {
+    "requirement": "Software/firmware versioning",
+    "requirement_id": "req3",
+    "coverage_score": 0.74,
+    "matched_terms": [
+      "Software Dependency",
+      "Software Component",
+      "version",
+      "depends on",
+      "has software component",
+      "Change Log",
+      "Software Implementation",
+      "Software Code Pipeline"
+    ],
+    "reasoning": "The ontology provides explicit classes for software dependencies and components, a 'version' property, and relations (depends on / has software component) that can express which versions are used. The Change Log class allows tracking of version changes. However, there is no dedicated concept for firmware, nor any activity or policy class describing how version updates must be performed, approved, or scheduled, which limits full coverage of the requirement.",
+    "missing": [
+      "Firmware Component (class)",
+      "Version Update Policy (class or property linking a component to its update requirements)",
+      "Software Update Activity (e.g., 'Apply Version Update')",
+      "Release Note / Patch Record (entity for documenting specific version changes)",
+      "Dependency Management Process (activity describing how dependencies are selected, locked, and updated)"
+    ]
+  },
+  {
+    "requirement": "Deployment forms",
+    "requirement_id": "req4",
+    "coverage_score": 0.78,
+    "matched_terms": [
+      "modality",
+      "has interface",
+      "requires hardware",
+      "depends on",
+      "is provided by",
+      "AI Provider",
+      "Deployment",
+      "Software Implementation",
+      "Hardware Component",
+      "has software component"
+    ],
+    "reasoning": "The ontology contains the 'modality' property, which directly captures the form in which an AI system is offered (e.g., standalone software, API, embedded). Complementary properties such as 'has interface', 'requires hardware', and 'depends on' allow description of concrete delivery mechanisms like embedded packages or downloadable binaries. However, there is no dedicated concept for distribution channels or provisioning methods (download, cloud‑service, pre‑installed), so the coverage is good but not complete.",
+    "missing": [
+      "DistributionChannel – class to model the channel through which the AI system reaches users (e.g., app store, direct download, OEM integration).",
+      "ProvisioningMethod – subclass of DistributionChannel for specific methods such as 'download', 'API endpoint', 'embedded firmware'.",
+      "EmbeddedDeliveryMode – concept describing software packaged within hardware components.",
+      "APIEndpoint – specialized Interface subtype representing programmatic access."
+    ]
+  },
+  {
+    "requirement": "Hardware required",
+    "requirement_id": "req5",
+    "coverage_score": 0.88,
+    "matched_terms": [
+      "Hardware Component",
+      "Computational Resource",
+      "requires hardware",
+      "resource configuration",
+      "resource type",
+      "resource vendor"
+    ],
+    "reasoning": "The ontology provides a dedicated class for hardware (Hardware Component) and a complementary class for computational resources, together with properties that link an AI system to required hardware (requires hardware) and capture detailed specifications (resource configuration, resource type, resource vendor). This set of terms allows most of the information needed to answer “What hardware does the AI system need to run?” to be modeled. However, the ontology lacks a fine‑grained concept for individual hardware specs such as CPU model, GPU memory, or power requirements, which prevents full coverage.",
+    "missing": [
+      "Hardware Specification (class for detailed spec sheets)",
+      "Processor",
+      "Memory",
+      "Accelerator",
+      "Power Requirement",
+      "Operating System"
+    ]
+  },
+  {
+    "requirement": "Illustrations and markings",
+    "requirement_id": "req6",
+    "coverage_score": 0.68,
+    "matched_terms": [
+      "Visual Documentation",
+      "has visual documentation",
+      "depicts",
+      "has component",
+      "has architecture",
+      "modality",
+      "Hardware Component"
+    ],
+    "reasoning": "The ontology includes a class for VisualDocumentation and the property 'has visual documentation' together with 'depicts', which can capture photographs, illustrations and indicate whether they show external features, markings or internal layout. Internal component arrangement can be modelled via 'has component' and 'has architecture', while the physical form of the product can be approximated by 'modality' and 'Hardware Component'. However, there is no explicit concept for a product entity itself nor dedicated classes/properties for CE‑type markings or labels, so the requirement is only partially covered.",
+    "missing": [
+      "Product (or Physical Product) class",
+      "Marking / Label class (e.g., CE label)",
+      "PhysicalForm class/property",
+      "ExternalFeature subclass of VisualDocumentation",
+      "InternalLayoutDocumentation class or property"
+    ]
+  },
+  {
+    "requirement": "User interface and instructions for use",
+    "requirement_id": "req7",
+    "coverage_score": 0.65,
+    "matched_terms": [
+      "Interface",
+      "has interface",
+      "AI Deployer",
+      "is deployed by",
+      "intended purpose"
+    ],
+    "reasoning": "The ontology includes the class Interface and the property has interface, which can capture the description of the UI provided to a deployer. It also models the AI Deployer agent and the relationship is deployed by, allowing us to link the UI to the deployer. However, there is no explicit term for \"instructions for use\" or deployment/operator manuals, so the requirement cannot be fully expressed.",
+    "missing": [
+      "InstructionsForUse (or UserManual) – a class representing the textual/visual instructions supplied to the deployer",
+      "DeploymentGuide – a subclass of InstructionsForUse specific to deployment procedures",
+      "OperatorGuidanceDocument – a document class for guidance aimed at operators or deployers"
+    ]
+  },
+  {
+    "requirement": "Elements of system and development process",
+    "requirement_id": "req8",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "AI Activity",
+      "has AI activity",
+      "Machine Learning Pipeline",
+      "Software Code Pipeline",
+      "Model Engineering",
+      "Data Acquisition Activity",
+      "Data Wrangling/Cleaning",
+      "Exploration and Validation",
+      "Data Training",
+      "Data Validation",
+      "Data Testing",
+      "Build and Integration Testing",
+      "Model Packaging",
+      "Model Versioning",
+      "Software Implementation",
+      "Software Dependency",
+      "depends on",
+      "has component",
+      "uses AI method",
+      "uses training data",
+      "uses validation data",
+      "uses test data",
+      "has lifecycle stage",
+      "is provided by"
+    ],
+    "reasoning": "The ontology contains a rich set of activity classes and properties that describe the full development workflow (data handling, model engineering, packaging, versioning, testing and integration) as well as links to software components and dependencies, which capture most of the required information about methods and steps. However, it lacks explicit concepts for pre‑trained models or third‑party tools and their modification/integration provenance, so coverage is high but not complete.",
+    "missing": [
+      "PretrainedModel (subclass of AI Model)",
+      "ThirdPartyTool (software component provided by external vendor)",
+      "IntegrationActivity (specific activity describing integration of external components)",
+      "ModificationActivity (activity that records how an imported component was adapted)",
+      "ComponentProvenance (property linking a component to its original source/provider)",
+      "LicenseInformation (metadata about usage rights for third‑party assets)"
+    ]
+  },
+  {
+    "requirement": "Design specifications of the system",
+    "requirement_id": "req9",
+    "coverage_score": 0.68,
+    "matched_terms": [
+      "has architecture",
+      "uses AI method",
+      "implements task",
+      "AI Method Category",
+      "AI Model",
+      "has capability",
+      "has performance metric",
+      "has risk",
+      "applies standard",
+      "intended purpose",
+      "has transparency measure",
+      "has human oversight",
+      "has declaration of conformity",
+      "Model Engineering",
+      "has component"
+    ],
+    "reasoning": "The ontology contains several core concepts that can express the general logic, algorithms, classification categories, optimisation metrics and compliance trade‑offs (e.g., AI Method, Architecture, Performance Metric, Risk, Standard). However, it lacks explicit constructs for design rationale/assumptions, detailed classification choices, optimisation objectives with parameter relevance, expected output description and quality, and a clear representation of intended user groups. Consequently the coverage is moderate but not complete.",
+    "missing": [
+      "DesignRationale (or DesignAssumption)",
+      "ClassificationChoice",
+      "OptimizationObjective",
+      "ParameterRelevance",
+      "ExpectedOutputDescription",
+      "OutputQualitySpecification",
+      "TradeOffDecision",
+      "IntendedUserGroup"
+    ]
+  },
+  {
+    "requirement": "System architecture",
+    "requirement_id": "req10",
+    "coverage_score": 0.78,
+    "matched_terms": [
+      "Software Component",
+      "feeds into component",
+      "has software component",
+      "has architecture",
+      "AI Method",
+      "uses AI method",
+      "implements task",
+      "Computational Resource",
+      "resource configuration",
+      "resource type",
+      "resource vendor",
+      "Model Engineering",
+      "Build and Integration Testing",
+      "Software Dependency",
+      "Software Implementation",
+      "Machine Learning Pipeline",
+      "Software Code Pipeline"
+    ],
+    "reasoning": "The ontology provides classes for software components, their connections (feeds into component), architecture description, AI methods/algorithms, and detailed computational‑resource concepts, covering most of the competency questions. However, it lacks a dedicated class or property that explicitly models a processing pipeline as an entity and does not link lifecycle activities (training, testing, validation) to the specific resources they consume, which limits full coverage.",
+    "missing": [
+      "ProcessingPipeline (class representing an end‑to‑end pipeline of components)",
+      "usesComputationalResource (property linking AI Activity or Pipeline step to Computational Resource)",
+      "ComponentInteractionDiagram (optional visual documentation class for architecture diagrams)",
+      "AlgorithmSpecification (detailed description of the algorithm used by a component)"
+    ]
+  },
+  {
+    "requirement": "Data requirements",
+    "requirement_id": "req11",
+    "coverage_score": 0.88,
+    "matched_terms": [
+      "Training Data Sheet",
+      "Data Sheet",
+      "Data Acquisition Activity",
+      "Data Wrangling/Cleaning",
+      "Data Cleaning Procedure",
+      "Labeling Procedure",
+      "Dataset",
+      "data characteristic",
+      "data scope",
+      "data selection criteria",
+      "data collection method",
+      "uses training data",
+      "has component"
+    ],
+    "reasoning": "The ontology provides dedicated classes for datasheets (Training Data Sheet, Data Sheet) and detailed activities/procedures covering acquisition, cleaning, and labeling, as well as properties to capture dataset characteristics, scope, and selection criteria. These elements allow answering all competency questions. However, there is no explicit concept or property named “Data Provenance” that directly links a dataset to its source, nor a dedicated class for describing the overall training methodology beyond the datasheet, so coverage is very high but not complete.",
+    "missing": [
+      "Data Provenance (class or property linking Dataset to its source)",
+      "Training Methodology Description (e.g., Training Procedure class)",
+      "Data Selection Process (activity that records how data was selected)",
+      "Dataset Provenance (property on Dataset for provenance details)"
+    ]
+  },
+  {
+    "requirement": "Assessment of human oversight measures",
+    "requirement_id": "req12",
+    "coverage_score": 0.73,
+    "matched_terms": [
+      "Human Oversight Mechanism",
+      "Transparency Measure",
+      "Explainable AI Feature",
+      "has human oversight",
+      "has transparency measure",
+      "has interface",
+      "AI Deployer"
+    ],
+    "reasoning": "The ontology provides explicit classes for Human Oversight Mechanism and Transparency Measure, as well as a concrete Explainable AI Feature, which together capture most of the required human‑oversight and interpretability measures. However, it lacks dedicated concepts for the procedural aspects of oversight (e.g., human‑in‑the‑loop processes) and for technical artefacts that specifically aid deployers in interpreting outputs (e.g., explanation interfaces or decision‑support tools), so coverage is good but not complete.",
+    "missing": [
+      "Interpretability Support Measure",
+      "Explanation Interface",
+      "Human-in-the-Loop Process",
+      "Decision Support Tool",
+      "Oversight Procedure",
+      "User Training Documentation"
+    ]
+  },
+  {
+    "requirement": "Pre-determined changes to the AI system",
+    "requirement_id": "req13",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Change Log",
+      "Model Versioning",
+      "Performance Metric",
+      "Model Evaluation",
+      "Post-market Monitoring Activity",
+      "Post-market Performance Evaluation Activity",
+      "Human Oversight Mechanism",
+      "Transparency Measure",
+      "applies standard",
+      "has declaration of conformity",
+      "has human oversight",
+      "has transparency measure",
+      "Data Monitoring and Logging"
+    ],
+    "reasoning": "The ontology provides explicit entities for recording changes (Change Log, Model Versioning) and for describing performance (Performance Metric, Model Evaluation, Post‑market Performance Evaluation). It also includes several technical solutions that support continuous compliance such as monitoring activities, human oversight, transparency measures and standards. However, it lacks a dedicated concept for a pre‑determined change plan or a formal \"continuous compliance\" mechanism, which reduces the overall fit.",
+    "missing": [
+      "Pre-determined Change Specification",
+      "Compliance Monitoring Strategy",
+      "Automated Compliance Check",
+      "Continuous Validation Process",
+      "Regulatory Requirement Mapping"
+    ]
+  },
+  {
+    "requirement": "Validation and testing procedures",
+    "requirement_id": "req14",
+    "coverage_score": 0.68,
+    "matched_terms": [
+      "Data Testing",
+      "Data Validation",
+      "Model Evaluation",
+      "Performance Metric",
+      "Log",
+      "Change Log",
+      "Training Data Sheet",
+      "Data Sheet",
+      "AI Researcher",
+      "Auditor",
+      "uses test data",
+      "uses validation data",
+      "has performance metric"
+    ],
+    "reasoning": "The ontology provides classes for testing activities, datasets, evaluation and metrics, as well as generic log entities and agents who can sign reports. However it lacks explicit concepts for signed/dated test reports and for fairness or discriminatory‑impact metrics, so the requirement is only partially covered.",
+    "missing": [
+      "TestReport (entity representing a test report with date and signer)",
+      "FairnessMetric / DiscriminatoryImpactMetric",
+      "ValidationProcedure / TestingProcedure (specific activity subclass)",
+      "SignedDocument attributes (prov:generatedAtTime, prov:wasAttributedTo) for provenance of reports"
+    ]
+  },
+  {
+    "requirement": "Cybersecurity measures",
+    "requirement_id": "req15",
+    "coverage_score": 0.25,
+    "matched_terms": [
+      "applies standard",
+      "has transparency measure",
+      "has human oversight",
+      "has risk"
+    ],
+    "reasoning": "The ontology contains generic concepts such as standards, transparency measures and risk that could be used to model security‑related artefacts, but it lacks any dedicated class or property for cybersecurity controls themselves. Consequently only indirect matches are possible, resulting in low coverage.",
+    "missing": [
+      "Cybersecurity Measure",
+      "Security Control",
+      "Encryption Mechanism",
+      "Access Control Policy",
+      "Incident Response Procedure",
+      "Vulnerability Management Process",
+      "Threat Monitoring",
+      "Security Audit Log"
+    ]
+  },
+  {
+    "requirement": "Monitoring, functioning and control",
+    "requirement_id": "req16",
+    "coverage_score": 0.78,
+    "matched_terms": [
+      "AI System",
+      "has capability",
+      "AI System Capability",
+      "Performance Metric",
+      "has performance metric",
+      "has risk",
+      "Human Oversight Mechanism",
+      "has human oversight",
+      "Explainable AI Feature",
+      "Transparency Measure",
+      "has transparency measure",
+      "Post-market Monitoring Activity",
+      "Post-market Performance Evaluation Activity",
+      "Data Monitoring and Logging",
+      "Log",
+      "Change Log",
+      "Data Sheet",
+      "Training Data Sheet",
+      "data characteristic",
+      "data scope",
+      "data selection criteria",
+      "has interface"
+    ],
+    "reasoning": "The ontology provides a solid foundation for describing system capabilities, performance metrics, risks, monitoring activities and human‑oversight mechanisms required by the AI Act clause. However it does not explicitly model subgroup‑specific accuracy, detailed taxonomy of risk sources (health, safety, fundamental rights, discrimination) or a dedicated concept for \"unintended outcomes\", which limits full compliance coverage.",
+    "missing": [
+      "SubgroupPerformanceMetric – performance metric qualified by demographic group",
+      "UnintendedOutcome – explicit class for foreseeable unintended effects",
+      "RiskSource – enumeration of health‑safety, fundamental‑rights, discrimination etc.",
+      "InputDataSpecification – detailed class linking data sheets to provenance, bias and representativeness requirements",
+      "HumanOversightProtocol – concrete description of procedures, responsibilities and escalation paths"
+    ]
+  },
+  {
+    "requirement": "Appropriateness of performance metrics",
+    "requirement_id": "req17",
+    "coverage_score": 0.75,
+    "matched_terms": [
+      "AI System",
+      "Performance Metric",
+      "has performance metric",
+      "Model Evaluation",
+      "evaluation method",
+      "has AI activity"
+    ],
+    "reasoning": "The ontology includes classes for the AI system and its performance metrics, as well as activities (Model Evaluation) and properties (has performance metric, evaluation method) that can be used to record how metrics are applied. However, there is no explicit concept or property to capture a narrative justification of why a given metric is appropriate for the specific system or its intended purpose, so the coverage is good but not complete.",
+    "missing": [
+      "Metric Appropriateness Description (class or annotation)",
+      "has appropriateness justification (property linking Performance Metric to its suitability rationale)",
+      "performance metric suitability (class representing the suitability of a metric for a given AI task or system)",
+      "metric relevance to intended purpose (property relating Performance Metric to intended purpose or capability)"
+    ]
+  },
+  {
+    "requirement": "Risk management",
+    "requirement_id": "req18",
+    "coverage_score": 0.55,
+    "matched_terms": [
+      "has risk",
+      "Human Oversight Mechanism",
+      "Transparency Measure",
+      "Post-market Monitoring Activity",
+      "Data Monitoring and Logging",
+      "logs activity",
+      "has declaration of conformity",
+      "has lifecycle stage"
+    ],
+    "reasoning": "The ontology contains generic concepts for risks, monitoring, human oversight and transparency that can be used to model parts of a risk‑management system, but it lacks dedicated entities or activities that capture the full risk management process required by Article 9 (risk identification, assessment, mitigation, documentation and continuous re‑evaluation). Consequently only a partial representation is possible.",
+    "missing": [
+      "Risk Management System",
+      "Risk Assessment Activity",
+      "Risk Mitigation Measure",
+      "Risk Register / Risk Documentation",
+      "Risk Evaluation Frequency",
+      "Compliance with Article 9 (e.g., compliesWithArticle9 property)",
+      "Risk Management Plan",
+      "has risk management process"
+    ]
+  },
+  {
+    "requirement": "Changes to the AI system throughout its lifecycle",
+    "requirement_id": "req19",
+    "coverage_score": 0.85,
+    "matched_terms": [
+      "Change Log",
+      "Model Versioning",
+      "Log",
+      "AI Activity",
+      "has lifecycle stage",
+      "has component",
+      "is provided by"
+    ],
+    "reasoning": "The ontology includes a dedicated Change Log class and Model Versioning activity, which together capture most of the information required to describe changes over the system's lifecycle. Provenance‑related classes such as AI Activity and has lifecycle stage allow linking each change to a specific phase (e.g., Deployment, Decommissioning). However, there is no explicit entity or properties for the content of a change (type, reason, affected component, timestamp), so the coverage is strong but not complete.",
+    "missing": [
+      "ChangeRecord (entity representing an individual change entry)",
+      "hasChangeType (property indicating addition, modification, removal, etc.)",
+      "hasChangeReason (property describing why the change was made)",
+      "affectsComponent (property linking a ChangeRecord to the specific software/hardware component or model version affected)",
+      "changeTimestamp (property for the date/time of the change)",
+      "hasVersionIdentifier (property to record the new version number after the change)"
+    ]
+  },
+  {
+    "requirement": "Harmonised standards and common specifications",
+    "requirement_id": "req20",
+    "coverage_score": 0.68,
+    "matched_terms": [
+      "Standard",
+      "applies standard",
+      "has declaration of conformity"
+    ],
+    "reasoning": "The ontology provides explicit concepts for standards (Standard) and a property to link an AI system to the standards it uses (applies standard), as well as a document class that can capture the Declaration of Conformity. These cover the part of the requirement that asks for a list of harmonised (or other) standards applied. However, there is no dedicated concept for describing alternative compliance solutions when no harmonised standard is used, nor any element that directly models the specific regulatory clause (Chapter III, Section 2). Consequently the ontology only partially satisfies the competency questions.",
+    "missing": [
+      "ComplianceSolution – a class to represent alternative measures or technical specifications adopted to meet regulatory requirements when no harmonised standard applies",
+      "RegulatoryClause – a class (e.g., ChapterIIISection2Requirement) to capture the specific set of obligations that must be satisfied",
+      "DetailedDescription – a property or entity type for attaching free‑text or structured explanations of how the solution meets the clause"
+    ]
+  },
+  {
+    "requirement": "EU declaration of conformity",
+    "requirement_id": "req21",
+    "coverage_score": 0.88,
+    "matched_terms": [
+      "Declaration of Conformity",
+      "has declaration of conformity"
+    ],
+    "reasoning": "The ontology provides a dedicated class for the EU Declaration of Conformity and a property linking an AI system to that document, which is sufficient to answer whether a copy exists. However, it lacks explicit concepts for the actual stored copy (e.g., file location, version, or availability status), so the coverage is high but not complete.",
+    "missing": [
+      "Document Copy: A subclass of AI Artifact representing a concrete stored instance of a declaration.",
+      "has document copy: Property linking an AI system (or its Declaration of Conformity) to the physical/digital copy.",
+      "stored at / has repository: Property indicating where the copy is kept (URL, file path, archive).",
+      "declaration version: Attribute or property capturing the specific version/date of the EU declaration."
+    ]
+  },
+  {
+    "requirement": "Post-market monitoring system",
+    "requirement_id": "req22",
+    "coverage_score": 0.78,
+    "matched_terms": [
+      "Post-market Monitoring Activity",
+      "Post-market Performance Evaluation Activity",
+      "has performance metric",
+      "evaluation method",
+      "frequency",
+      "logs activity",
+      "stores logs at",
+      "has lifecycle stage"
+    ],
+    "reasoning": "The ontology provides dedicated activities for post‑market monitoring and performance evaluation, as well as properties to capture metrics, logging, frequency and the lifecycle stage, which together can answer both competency questions. However, it lacks an explicit class or property representing a formal \"post‑market monitoring plan\" or a higher‑level \"evaluation system\", so the coverage is good but not complete.",
+    "missing": [
+      "PostMarketMonitoringPlan (class) – to model the documented monitoring plan required by Article 72(3)",
+      "PerformanceEvaluationSystem (class) – to represent the overall system established for post‑market performance assessment",
+      "has responsible party (property) – linking the plan or evaluation system to the auditor/provider responsible for its execution"
+    ]
+  }
+]
