@@ -1,0 +1,99 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+align:0bd95f53-d4d1-43d9-9a3b-14adb63d740e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC 'AI System' is a *specific type* of 'System' as defined by dpv-tech. The dpv-tech definition is very general – any collection of interacting components. An AI system clearly fits this description, but not all systems are AI systems. Therefore, dpv-tech#System is broader."^^xsd:string ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/tech#System> .
+
+align:17ffddf5-ed1f-40ae-a5fe-332cc7cdd46e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to representations used for computation or understanding. The AIDOC 'AI Model' is specifically tied to AI tasks, while the dpv-tech 'Model' is a more general abstraction. They are sufficiently similar for interchangeability in many contexts but aren’t identical due to the AI specificity of the AIDOC concept."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/tech#Model> .
+
+align:7815eecd-074a-498e-9bbc-ffccee70efbc a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to entities that 'provide' something – AI systems/models (AIDOC) and Technology (dpv-tech). While the AIDOC concept is specifically focused on *AI* providers with detailed legal definitions related to development and market placement, the dpv-tech Provider is a more general actor. They are sufficiently similar for interchangeability in many contexts concerning technology supply chains or risk assessment, but not identical due to the AI specificity of AIDOC."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/dpv/tech#Provider> .
+
+align:8f8bb9fa-445e-4c1c-8519-2c2f5e1c2a0b a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to an entity deploying something (AI system vs Technology). The AIDOC definition is more specific regarding the *type* of deployer (natural/legal person) and explicitly excludes personal non-professional use, while dpv-tech's Deployer is a general actor. This difference prevents exact matching but indicates strong similarity."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/dpv/tech#Deployer> .
+
+align:99fae63a-5420-4ef6-8b75-377864e660ff a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to an entity performing audits. However, the dpv-tech definition explicitly links auditing to 'Technology' and 'policies/standards/legal requirements', providing a more specific scope than the AIDOC concept which simply mentions 'AI system for compliance'. This difference in specificity prevents an exact match but indicates strong similarity."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Auditor ;
+    align:target <https://w3id.org/dpv/tech#Auditor> .
+
+align:a7cff074-0f88-4e4b-8190-6d3fecab7701 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts relate to auditing, specifically concerning technology/AI systems. However, 'Auditor' (AIDOC) describes *who* performs the audit, while 'hasAuditor' (dpv-tech) is a property indicating *that* something has an auditor. They are closely related but not interchangeable; one is an entity and the other a relation."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Auditor ;
+    align:target <https://w3id.org/dpv/tech#hasAuditor> .
+
+align:ddc235f7-76b1-45ea-87be-10350864aa6c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept 'Visual Documentation' is a *type* of 'Documentation'. The dpv-tech concept covers all documentation, while the AIDOC concept specifically focuses on visual forms required for AI system assessment. Therefore, dpv-tech#Documentation is broader."^^xsd:string ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:VisualDocumentation ;
+    align:target <https://w3id.org/dpv/tech#Documentation> .
+
+aidoc:AIDeployer skos:closeMatch <https://w3id.org/dpv/tech#Deployer> .
+
+aidoc:AIModel skos:closeMatch <https://w3id.org/dpv/tech#Model> .
+
+aidoc:AIProvider skos:closeMatch <https://w3id.org/dpv/tech#Provider> .
+
+aidoc:AISystem skos:broadMatch <https://w3id.org/dpv/tech#System> .
+
+aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/dpv/tech#Documentation> .
+
+aidoc:Auditor skos:closeMatch <https://w3id.org/dpv/tech#Auditor>,
+        <https://w3id.org/dpv/tech#hasAuditor> .
+
+align:864c3730-46e5-433b-8809-7f4ea120776a a prov:Activity ;
+    prov:endedAtTime "2026-07-08T08:55:01+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-08T08:54:42+00:00"^^xsd:dateTime ;
+    prov:used <https://ollama.com/library/gemma3:27b> ;
+    prov:wasAssociatedWith align:LLMAlignmentBot .
+
+align:LLMAlignmentBot a prov:SoftwareAgent ;
+    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+

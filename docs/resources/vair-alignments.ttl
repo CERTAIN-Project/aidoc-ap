@@ -1,62 +1,346 @@
 @prefix aidoc: <https://w3id.org/aidoc-ap#> .
 @prefix align: <https://w3id.org/aidoc-ap/alignment#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:0f92f360-8f2e-4cf2-be8f-df2d53c70f74 a prov:Entity,
+align:097d1562-ecb1-4f36-bb23-b04026e78003 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:dfdca1dd-1b54-468f-8b32-d1dd0aceea86 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts define the 'Deployment' phase for an AI system and describe the process of making it operational in a target environment. The descriptions are highly similar, and the lexical similarity is perfect. The presence of a URI in the vair concept adds a level of formalization, but doesn't fundamentally change the meaning."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:Deployment ;
-    align:target <https://w3id.org/vair#Deployment> .
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept 'Data Training' is a general activity. The vair concept 'Irrelevant Training Data' specifies *a type* of data training – specifically when the data used is irrelevant. Therefore, IrrelevantTrainingData is a narrower concept than Data Training."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataTraining ;
+    align:target <https://w3id.org/vair#IrrelevantTrainingData> .
 
-align:484ece88-62ef-411f-9d13-ce824edc59e6 a prov:Entity,
+align:0c5a8421-cbdf-4266-b699-719b233e2dcc a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:dfdca1dd-1b54-468f-8b32-d1dd0aceea86 ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept 'Data Training' is a general activity. 'Incomplete Training Data' (vair) describes *a specific issue within* that activity – namely, the data being insufficient. Therefore, incomplete training data is a type of data training."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataTraining ;
+    align:target <https://w3id.org/vair#IncompleteTrainingData> .
+
+align:1e81b200-007b-4fa3-a4dc-3451b3b2d79c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept describes the *activity* of data validation as a whole process for AI model improvement. The vair concept focuses on a specific *problem within* that activity – erroneous data. Therefore, 'Erroneous Validation Data' is a more specific case *of* 'Data Validation'."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataValidation ;
+    align:target <https://w3id.org/vair#ErroneousValidationData> .
+
+align:2c7392cb-6109-4a27-bb9b-dbdd12c1b1aa a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept 'Data Training' is a general activity. The vair concept 'Unrepresentative Training Data' specifies *a type* of data training – specifically when the data used isn’t representative. Thus, unrepresentative training data is a specific case *of* data training."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataTraining ;
+    align:target <https://w3id.org/vair#UnrepresentativeTrainingData> .
+
+align:370532b0-0a88-4ee3-9d30-15b3135579f1 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts relate to ensuring an AI system functions correctly and meets expectations. However, the AIDOC concept specifically focuses on *data* validation for model training/tuning (preventing overfitting/underfitting), while the vair concept is a broader assessment of overall system performance against requirements. They overlap significantly but aren't fully interchangeable; data validation is *a type of* validation."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:DataValidation ;
+    align:target <https://w3id.org/vair#Validation> .
+
+align:4c7528bc-2059-4f44-b8c9-a0f95f063c13 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical, and the lexical similarity is 1.0. While the AIDOC concept lacks a formal URI, the semantic meaning is clearly the same. Given the complete overlap in definition, `skos:exactMatch` is the most appropriate relation."^^xsd:string ;
+    align:rationale "Both concepts define data used for training machine learning models. The descriptions are nearly identical and the lexical similarity is high. While 'Data Training' frames it as an *activity*, 'TrainingData' focuses on the *data* itself – a subtle difference not significant enough to warrant anything less than exact match at this conceptual level."^^xsd:string ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:DataTraining ;
+    align:target <https://w3id.org/vair#TrainingData> .
+
+align:769a47eb-95cb-479b-a860-7955d0e9d9d2 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts share the same label and a highly similar description defining 'Transparency Measure'. The presence of a URI in vair suggests it's a formally defined concept, but the descriptions are functionally equivalent for interoperability purposes at this level."^^xsd:string ;
     align:relation skos:exactMatch ;
     align:source aidoc:TransparencyMeasure ;
     align:target <https://w3id.org/vair#TransparencyMeasure> .
 
-align:67f0bce7-1994-48c4-9554-709c6ff797b1 a prov:Entity,
+align:7c024c9d-78c7-4816-ad18-26003859298a a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:dfdca1dd-1b54-468f-8b32-d1dd0aceea86 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The vair concept is a more specific instance of the general 'Declaration of Conformity' described by the AIDOC concept. Given the high lexical similarity and that the vair concept explicitly defines this document *as* required by the AI Act (and thus is a specific kind of declaration of conformity), they can be considered equivalent classes for most practical interoperability purposes. The URI provides a precise identifier for the vair instance."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:DeclarationOfConformity ;
-    align:target <https://w3id.org/vair#EUDeclarationOfConformity> .
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "A 'Machine Learning Library' (vair) is a *component* used within a broader 'Machine Learning Pipeline' (AIDOC). The pipeline encompasses the entire process, while the library represents tools utilized in that process. Thus, vair is narrower than AIDOC."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:MLPipeline ;
+    align:target <https://w3id.org/vair#MachineLearningLibrary> .
 
-align:a5d19ac7-0c21-457a-a661-771967bee306 a prov:Entity,
+align:902ff0c6-b9d2-49ac-922f-c97b6f278321 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:dfdca1dd-1b54-468f-8b32-d1dd0aceea86 ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept describes the general activity of data validation for AI models. The vair concept 'Incomplete Validation Data' specifically identifies *a type* of problem within that broader validation process – namely, a lack of completeness in the dataset used for validation. Therefore, incomplete validation data is a specific case *of* data validation."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataValidation ;
+    align:target <https://w3id.org/vair#IncompleteValidationData> .
+
+align:a392890c-169b-4c18-a39f-fee35033cdb6 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts relate to monitoring after deployment. However, 'Post-market Monitoring Plan' (vair) explicitly references the AI Act and implies a *plan* – a documented approach. 'Post-market Monitoring Activity' (AIDOC) is the execution of that plan or general monitoring. They are highly related and could be used interchangeably in many contexts, but aren’t identical."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:PostMarketMonitoringActivity ;
+    align:target <https://w3id.org/vair#PostMarketMonitoringPlan> .
+
+align:a5be679d-fcb8-430e-9549-07866cec50b0 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept 'Data Training' is a general activity. 'Biased Training Data' (vair) describes a *specific type* of data training – one that contains bias. Therefore, biased training data is a narrower concept within the broader scope of data training."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataTraining ;
+    align:target <https://w3id.org/vair#BiasedTrainingData> .
+
+align:a8dc2bea-56e5-4edd-b5e7-32018f122be1 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC 'Machine Learning Pipeline' represents a *specific instantiation* of the more general 'Machine Learning' process described by vair. A pipeline *is a part of* machine learning; it’s how you *do* machine learning, not what machine learning *is*. The description of the vair concept is broader and defines the core activity, while AIDOC focuses on the implementation."^^xsd:string ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:MLPipeline ;
+    align:target <https://w3id.org/vair#MachineLearning> .
+
+align:a9411c07-f5f4-4bfb-b9ab-14437d7889f2 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts relate to the environment for machine learning activities. 'Machine Learning Pipeline' (AIDOC) describes *how* ML is done – the process. 'Machine Learning Platform' (vair) describes *where* it’s done - the infrastructure. They are closely related and often co-occurring, but not identical; a pipeline utilizes a platform."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:MLPipeline ;
+    align:target <https://w3id.org/vair#MachineLearningPlatform> .
+
+align:aa9a8607-2762-4798-92dc-3d314e6df976 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts relate to data used for machine learning training. The AIDOC concept is more detailed, specifying *what* information the 'Training Data Sheet' contains (methodologies, hyperparameters etc.), while vair#TrainingData focuses on the data itself. They are highly related and could be used interchangeably in many contexts, but aren’t strictly identical due to the level of detail."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:TrainingDataSheet ;
+    align:target <https://w3id.org/vair#TrainingData> .
+
+align:b29d2c66-6d28-464d-b8ac-b239369b364f a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts address human involvement in overseeing systems. The 'vair' concept explicitly mentions risk detection/prevention which adds a specific focus not directly stated in the AIDOC definition, but the core idea of facilitating human intervention is present in both. Therefore they are close matches rather than exact."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:HumanOversightMechanism ;
+    align:target <https://w3id.org/vair#HumanOversightMeasure> .
+
+align:b92109e6-c31f-476a-b686-255744b278a1 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to the use of machine learning. The AIDOC concept specifies a *pipeline* for ML activities within an AI lifecycle, while 'MachineLearning' (vair) is a more general term. They are highly related and could be used interchangeably in many contexts, but the pipeline aspect adds specificity to the AIDOC definition."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:MLPipeline ;
+    align:target <http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning> .
+
+align:c3337ad0-723d-46c7-a793-bc589e425554 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.88"^^xsd:float ;
+    align:rationale "Both concepts refer to data used for evaluating AI/ML models. However, the AIDOC definition explicitly mentions *tuning* parameters and preventing overfitting/underfitting which introduces a nuance not directly present in the vair concept's broader description of comparing model performance. While highly related, they aren’t interchangeable across all contexts."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:DataValidation ;
+    align:target <https://w3id.org/vair#ValidationData> .
+
+align:cb064470-cc81-48ef-ab9b-7e7f4934fb12 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Erroneous Training Data is a specific *type* of Data Training. The AIDOC concept describes the general activity, while the vair concept focuses on a problematic instance of that activity – data containing errors. Therefore, 'ErroneousTrainingData' is narrower than 'DataTraining'."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataTraining ;
+    align:target <https://w3id.org/vair#ErroneousTrainingData> .
+
+align:cb5bcb0e-c97d-4042-b07a-ba692013e1b9 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and describe the application of a standard to an AI system. While the vair concept provides a URI, the definitions are effectively identical. The lexical similarity score of 1.0 further supports this."^^xsd:string ;
+    align:rationale "Both concepts share the same label and represent a 'Dataset'. While the AIDOC description is minimal, the core meaning aligns perfectly with the vair concept's definition (even though that description is currently empty). The lexical similarity score of 1.0 further supports this."^^xsd:string ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:Dataset ;
+    align:target <https://w3id.org/vair#Dataset> .
+
+align:daf7b1a5-eb17-4d74-8731-690377758e90 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to representations used for understanding or executing something – AI tasks in AIDOC and systems/data in vair. While the AIDOC concept is specifically tied to *AI* models, the vair concept is more general. They are sufficiently similar for interchangeability in many contexts involving model-based reasoning, but not identical due to the AI specificity of the AIDOC definition."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/vair#Model> .
+
+align:e0155010-f9e0-413e-9c58-0cabe39e6d05 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "A 'Machine Learning Pipeline' (AIDOC) *utilizes* a 'Machine Learning Model' (vair). The pipeline encompasses the entire process of building, training, deploying and monitoring models; the model is a component within that pipeline. Therefore, the vair concept is narrower than the AIDOC concept."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:MLPipeline ;
+    align:target <https://w3id.org/vair#MachineLearningModel> .
+
+align:e5aacdda-079c-4633-921b-07d9b264ad54 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts use the label 'Modality' and relate to how an AI system is delivered/exists. However, the AIDOC description focuses specifically on *provision* forms for commercialization (software, API, hardware), while the vair concept lacks a detailed definition. This suggests they are highly related but not identical; interchangeability would depend on the specific application context."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Modality ;
+    align:target <https://w3id.org/airo#Modality> .
+
+align:e9e52c5f-bc95-49ec-a3b9-cf3cb312904f a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept describes the general activity of data validation for AI models. The vair concept 'Biased Validation Data' specifically identifies *a type* of problem within that broader validation process – namely, bias in the data used. Therefore, biased validation data is a specific instance/aspect of data validation."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataValidation ;
+    align:target <https://w3id.org/vair#BiasedValidationData> .
+
+align:ecd26897-b104-4357-8611-174414b4abf8 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept describes the general activity of data validation for AI models. The vair concept specifically identifies *unrepresentative* validation data as a problematic case within that broader process. Thus, 'Unrepresentative Validation Data' is a specific type of 'Data Validation'."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataValidation ;
+    align:target <https://w3id.org/vair#UnrepresentativeValidationData> .
+
+align:f30a9610-a180-484c-9556-1b52867ac6a9 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts define 'Standard' applied to AI systems. The lexical similarity is perfect (1.0). While the AIDOC description provides a little more context ('harmonised or other'), it doesn’t fundamentally alter the meaning. The URI in vair further solidifies this as being the same concept."^^xsd:string ;
     align:relation skos:exactMatch ;
     align:source aidoc:Standard ;
     align:target <https://w3id.org/airo#Standard> .
 
-aidoc:DeclarationOfConformity skos:exactMatch <https://w3id.org/vair#EUDeclarationOfConformity> .
+align:f33ccf28-2c41-473a-8559-d15c9ecb5d3a a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.92"^^xsd:float ;
+    align:rationale "The `vair` concept is a specific instance of a Declaration of Conformity as defined by the EU AI Act, while the `AIDOC` concept is more general. They represent largely the same document type but with differing regulatory contexts and levels of specificity. The high lexical similarity supports this close relationship."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:DeclarationOfConformity ;
+    align:target <https://w3id.org/vair#EUDeclarationOfConformity> .
+
+align:f4763dd6-7e0a-4721-bd00-90a95bfd58bc a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept describes data validation generally for AI models. The vair concept specifically focuses on *irrelevant* data used in that process – a specific type of problematic validation. Thus, 'Irrelevant Validation Data' is a narrower concept within the broader scope of 'Data Validation'."^^xsd:string ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataValidation ;
+    align:target <https://w3id.org/vair#IrrelevantValidationData> .
+
+align:f55a6ca5-30d3-4675-b7d2-beb2b23a66aa a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "Both concepts define 'Deployment' as the process of making an AI system operational in a production environment. The descriptions are highly similar and cover essentially the same ground; differences are stylistic rather than semantic."^^xsd:string ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:Deployment ;
+    align:target <https://w3id.org/vair#Deployment> .
+
+align:f6d9131c-1556-4ca6-8076-5a82fdf215ca a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC concept 'Visual Documentation' is a *type* of 'Documentation'. The vair concept 'Documentation' is broader and encompasses all forms of documentation, while the AIDOC concept specifically focuses on visual representations. The lexical similarity score supports this relationship."^^xsd:string ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:VisualDocumentation ;
+    align:target <https://w3id.org/airo#Documentation> .
+
+aidoc:AIModel skos:closeMatch <https://w3id.org/vair#Model> .
+
+aidoc:Dataset skos:exactMatch <https://w3id.org/vair#Dataset> .
+
+aidoc:DeclarationOfConformity skos:closeMatch <https://w3id.org/vair#EUDeclarationOfConformity> .
 
 aidoc:Deployment skos:exactMatch <https://w3id.org/vair#Deployment> .
 
+aidoc:HumanOversightMechanism skos:closeMatch <https://w3id.org/vair#HumanOversightMeasure> .
+
+aidoc:Modality skos:closeMatch <https://w3id.org/airo#Modality> .
+
+aidoc:PostMarketMonitoringActivity skos:closeMatch <https://w3id.org/vair#PostMarketMonitoringPlan> .
+
 aidoc:Standard skos:exactMatch <https://w3id.org/airo#Standard> .
+
+aidoc:TrainingDataSheet skos:closeMatch <https://w3id.org/vair#TrainingData> .
 
 aidoc:TransparencyMeasure skos:exactMatch <https://w3id.org/vair#TransparencyMeasure> .
 
-align:dfdca1dd-1b54-468f-8b32-d1dd0aceea86 a prov:Activity ;
-    prov:endedAtTime "2025-12-04T12:57:18+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-12-04T12:56:32+00:00"^^xsd:dateTime ;
+aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/airo#Documentation> .
+
+aidoc:MLPipeline skos:broadMatch <https://w3id.org/vair#MachineLearning> ;
+    skos:closeMatch <http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning>,
+        <https://w3id.org/vair#MachineLearningPlatform> ;
+    skos:narrowMatch <https://w3id.org/vair#MachineLearningLibrary>,
+        <https://w3id.org/vair#MachineLearningModel> .
+
+aidoc:DataTraining skos:exactMatch <https://w3id.org/vair#TrainingData> ;
+    skos:narrowMatch <https://w3id.org/vair#BiasedTrainingData>,
+        <https://w3id.org/vair#ErroneousTrainingData>,
+        <https://w3id.org/vair#IncompleteTrainingData>,
+        <https://w3id.org/vair#IrrelevantTrainingData>,
+        <https://w3id.org/vair#UnrepresentativeTrainingData> .
+
+aidoc:DataValidation skos:closeMatch <https://w3id.org/vair#Validation>,
+        <https://w3id.org/vair#ValidationData> ;
+    skos:narrowMatch <https://w3id.org/vair#BiasedValidationData>,
+        <https://w3id.org/vair#ErroneousValidationData>,
+        <https://w3id.org/vair#IncompleteValidationData>,
+        <https://w3id.org/vair#IrrelevantValidationData>,
+        <https://w3id.org/vair#UnrepresentativeValidationData> .
+
+align:e58a2db1-5c28-40a2-a8b6-e77aaa929771 a prov:Activity ;
+    prov:endedAtTime "2026-07-08T08:54:26+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-08T08:53:13+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

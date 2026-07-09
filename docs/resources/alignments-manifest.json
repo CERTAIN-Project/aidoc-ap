@@ -1,6 +1,10 @@
 {
   "files": [
     "resources/airo-alignments.ttl",
+    "resources/dpv-ai-alignments.ttl",
+    "resources/dpv-aiact-alignments.ttl",
+    "resources/dpv-alignments.ttl",
+    "resources/dpv-tech-alignments.ttl",
     "resources/mcro-alignments.ttl",
     "resources/mex-algo-alignments.ttl",
     "resources/mex-core-alignments.ttl",
@@ -11,6 +15,6 @@
     "resources/rains-alignments.ttl",
     "resources/vair-alignments.ttl"
   ],
-  "count": 10,
+  "count": 14,
   "generated": "auto"
 }

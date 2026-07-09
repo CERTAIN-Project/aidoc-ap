@@ -1,11 +1,25 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
 @prefix align: <https://w3id.org/aidoc-ap/alignment#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:5c50b44d-f590-4e3e-a947-aa3a1f796a41 a prov:Activity ;
-    prov:endedAtTime "2025-12-04T12:56:32+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-12-04T12:56:32+00:00"^^xsd:dateTime ;
+align:1447659b-0b92-44ef-912b-72c95eecf47f a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:efd3e83b-1d7b-4cfc-af3f-bd0140016fae ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "The AIDOC 'AI Activity' is *defined* as being derived from prov:Activity (which is what mex-perf's 'Activity' represents). The descriptions are essentially identical; one explicitly states its provenance to the other. While AIDOC adds context of AI lifecycle activities, it doesn’t fundamentally change the meaning of ‘Activity’ itself."^^xsd:string ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIActivity ;
+    align:target <http://www.w3.org/ns/prov-o#Activity> .
+
+aidoc:AIActivity skos:exactMatch <http://www.w3.org/ns/prov-o#Activity> .
+
+align:efd3e83b-1d7b-4cfc-af3f-bd0140016fae a prov:Activity ;
+    prov:endedAtTime "2026-07-08T08:52:24+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-08T08:52:22+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

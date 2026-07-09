@@ -87,7 +87,9 @@
     card.hidden = false;
     const it = items[idx];
     $("posInfo").textContent = `${idx + 1} / ${items.length} (filtered)`;
-    $("metaInfo").textContent = `ontology: ${it.ontology}`;
+    $("metaInfo").textContent = it.ontology.startsWith("fn-band/")
+      ? `ontology: ${it.ontology.slice(8)} — below-threshold sample (lexical [0.5, 0.6), false-negative estimate)`
+      : `ontology: ${it.ontology}`;
     $("aLabel").textContent = it.aidoc_label;
     $("aIri").textContent = it.aidoc_iri; $("aIri").href = it.aidoc_iri;
     $("rLabel").textContent = it.ref_label;

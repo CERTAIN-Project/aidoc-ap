@@ -1,38 +1,61 @@
 @prefix aidoc: <https://w3id.org/aidoc-ap#> .
 @prefix align: <https://w3id.org/aidoc-ap/alignment#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:39030344-3fbb-498e-807d-afe8f0af7b22 a prov:Entity,
+align:47c1d25f-9ecb-46a9-879e-cf82edfcaa1b a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:ae754564-c461-46f7-b717-bbaca59aef94 ;
+    prov:wasGeneratedBy align:4815443f-4b0a-4c3a-9f68-944241fc475a ;
     align:confidence "0.95"^^xsd:float ;
-    align:rationale "Despite slight differences in phrasing, both concepts fundamentally represent the process of evaluating a model's performance. The `mlschema` definition is more detailed, explicitly mentioning performance measures and specifications, but this detail doesn't change the core meaning. The lexical similarity is perfect, further supporting equivalence."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:ModelEvaluation ;
-    align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
-
-align:772ea501-7b6e-421f-8c48-990a0dbeaa82 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:ae754564-c461-46f7-b717-bbaca59aef94 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and a very high lexical similarity. While the `mlschema` concept includes a URI providing formal identification, the core meaning – representing a dataset – appears identical. Without further information about internal attributes or constraints, they can be considered equivalent."^^xsd:string ;
+    align:rationale "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same entity – a dataset. The high lexical similarity supports this."^^xsd:string ;
     align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
 
+align:b177115e-3cb9-4c17-a872-5fca787a559b a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:4815443f-4b0a-4c3a-9f68-944241fc475a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to executable realizations of algorithms. The 'mlschema' concept explicitly focuses on *machine learning* algorithms and includes details like versioning and libraries which are not mentioned in the AIDOC definition. While not identical, they represent very similar ideas and could be used interchangeably in many contexts."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:SoftwareImplementation ;
+    align:target <http://www.w3.org/ns/mls#Implementation> .
+
+align:cb7cf8b5-82cb-43cb-a20c-99dbfae50513 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:4815443f-4b0a-4c3a-9f68-944241fc475a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts refer to a computational entity capable of producing outputs from inputs based on learned patterns. However, the `mlschema` definition is more detailed regarding its origin (data mining algorithm execution) and dual nature as both data structure and function, while `AIDOC`'s description is broader and focuses on enabling an AI task. They are highly related but not interchangeable due to these nuances."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIModel ;
+    align:target <http://www.w3.org/ns/mls#Model> .
+
+align:e37a9de4-f08c-4360-a741-a585e4af1814 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:4815443f-4b0a-4c3a-9f68-944241fc475a ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts relate to evaluating models, however 'mlschema' explicitly links evaluation to *performance measures* and their values, framing it as a specific setting of a value. 'AIDOC' is more general, describing the activity itself (assessing performance, robustness, accuracy). While highly related, the focus on measurement in mlschema adds specificity not present in AIDOC."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:ModelEvaluation ;
+    align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
+
+aidoc:AIModel skos:closeMatch <http://www.w3.org/ns/mls#Model> .
+
 aidoc:Dataset skos:exactMatch <http://www.w3.org/ns/mls#Dataset> .
 
-aidoc:ModelEvaluation skos:exactMatch <http://www.w3.org/ns/mls#ModelEvaluation> .
+aidoc:ModelEvaluation skos:closeMatch <http://www.w3.org/ns/mls#ModelEvaluation> .
 
-align:ae754564-c461-46f7-b717-bbaca59aef94 a prov:Activity ;
-    prov:endedAtTime "2025-12-04T12:57:39+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-12-04T12:57:35+00:00"^^xsd:dateTime ;
+aidoc:SoftwareImplementation skos:closeMatch <http://www.w3.org/ns/mls#Implementation> .
+
+align:4815443f-4b0a-4c3a-9f68-944241fc475a a prov:Activity ;
+    prov:endedAtTime "2026-07-08T08:56:09+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-08T08:55:59+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

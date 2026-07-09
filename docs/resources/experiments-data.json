@@ -61,7 +61,7 @@
    "answered": 39,
    "total": 50,
    "share": 0.78,
-   "triples": 335
+   "triples": 340
   },
   {
    "kg": "encom",
@@ -70,7 +70,7 @@
    "answered": 38,
    "total": 50,
    "share": 0.76,
-   "triples": 369
+   "triples": 374
   },
   {
    "kg": "civicvoice",
@@ -79,7 +79,7 @@
    "answered": 35,
    "total": 50,
    "share": 0.7,
-   "triples": 275
+   "triples": 280
   },
   {
    "kg": "biometrics",
@@ -88,7 +88,7 @@
    "answered": 28,
    "total": 50,
    "share": 0.56,
-   "triples": 251
+   "triples": 256
   },
   {
    "kg": "hr-ai",
@@ -97,7 +97,7 @@
    "answered": 18,
    "total": 50,
    "share": 0.36,
-   "triples": 151
+   "triples": 153
   }
  ],
  "n_seeds": 3

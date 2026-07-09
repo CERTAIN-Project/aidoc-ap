@@ -1,11 +1,26 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
 @prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:54ffc707-0473-4de4-b79b-7942641ec8fc a prov:Activity ;
-    prov:endedAtTime "2025-12-04T12:57:39+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-12-04T12:57:39+00:00"^^xsd:dateTime ;
+align:5c8f7b8b-42fe-4aef-bd13-12d85586f4ad a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:de778c1e-d919-49f4-981e-192a4d97c39c ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "Both concepts represent an 'Agent', however the AIDOC concept explicitly focuses on agents *within the AI lifecycle* and is derived from PROV-O, indicating a specific provenance context. The FOAF Agent is more general. While not identical, they are sufficiently similar for interchangeability in many contexts relating to agency."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIAgent ;
+    align:target foaf:Agent .
+
+aidoc:AIAgent skos:closeMatch foaf:Agent .
+
+align:de778c1e-d919-49f4-981e-192a4d97c39c a prov:Activity ;
+    prov:endedAtTime "2026-07-08T08:56:11+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-08T08:56:09+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 

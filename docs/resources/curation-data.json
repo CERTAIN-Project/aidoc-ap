@@ -1,7 +1,7 @@
 {
- "batch_id": "2026-07-07_1347",
- "generated": "2026-07-07T13:47:36",
- "n_items": 127,
+ "batch_id": "2026-07-08_1433",
+ "generated": "2026-07-08T14:33:42",
+ "n_items": 181,
  "items": [
   {
    "id": "airo|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/airo#AIProvider",
@@ -13,19 +13,7 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 1.0,
-   "llm_rationale": "The labels and descriptions are identical. The lexical similarity score is 1.0 indicating a perfect match. Therefore, the concepts represent the same class."
-  },
-  {
-   "id": "airo|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/airo#AISystem",
-   "ontology": "airo",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystem",
-   "aidoc_label": "AI System",
-   "ref_iri": "https://w3id.org/airo#AISystem",
-   "ref_label": "AI System",
-   "lexical_similarity": 1.0,
-   "llm_relation": "skos:exactMatch",
-   "llm_confidence": 1.0,
-   "llm_rationale": "The labels are identical and the descriptions are also identical. The lexical similarity score is 1.0 indicating a perfect match in textual representation. Therefore, these concepts represent the same class."
+   "llm_rationale": "The labels and descriptions are identical. The presence of a URI in the 'airo' concept further suggests it is the same entity represented in different contexts."
   },
   {
    "id": "airo|https://w3id.org/aidoc-ap#Dataset|https://www.w3.org/TR/vocab-dcat-3/Dataset",
@@ -36,20 +24,8 @@
    "ref_label": "https://www.w3.org/TR/vocab-dcat-3/Dataset",
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
-   "llm_confidence": 0.95,
-   "llm_rationale": "The labels are identical and the lexical similarity score is 1.0. While the AIDOC description is more verbose, it doesn't introduce any differing semantics. The airo concept *is* the standard DCAT definition of a Dataset, making them equivalent."
-  },
-  {
-   "id": "airo|https://w3id.org/aidoc-ap#Standard|https://w3id.org/airo#Standard",
-   "ontology": "airo",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#Standard",
-   "aidoc_label": "Standard",
-   "ref_iri": "https://w3id.org/airo#Standard",
-   "ref_label": "Standard",
-   "lexical_similarity": 1.0,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts define 'Standard', and the lexical similarity is perfect. However, the airo concept provides more detail – specifying adoption by a standardization body and non-compulsory compliance – while AIDOC's definition is broader. They are highly similar but not identical; interchangeability depends on context."
+   "llm_confidence": 1.0,
+   "llm_rationale": "The labels are identical and the lexical similarity score is perfect (1.0). While the AIDOC description is more verbose, it doesn't introduce any differing semantics; it simply elaborates on what a 'Dataset' *is* within the AI lifecycle. The airo concept explicitly references DCAT, a widely accepted standard for describing datasets."
   },
   {
    "id": "airo|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/airo#AIModel",
@@ -61,7 +37,7 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both definitions refer to a computational/mathematical representation used for inference or task execution. The lexical similarity is perfect (1.0), and the descriptions are highly overlapping in meaning despite slight phrasing differences. They essentially define the same concept."
+   "llm_rationale": "Both definitions refer to a computational/mathematical entity used for inference or task execution. While the AIDOC definition is slightly more general in phrasing ('enables an AI method'), the core meaning aligns perfectly with the 'inference or prediction' focus of the airo concept. The lexical similarity score of 1.0 further supports this strong alignment."
   },
   {
    "id": "airo|https://w3id.org/aidoc-ap#AIDeployer|https://w3id.org/airo#AIDeployer",
@@ -73,7 +49,43 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 1.0,
-   "llm_rationale": "The labels and descriptions are identical. The airo concept also provides a URI which further solidifies the equivalence."
+   "llm_rationale": "The labels and descriptions are identical. The presence of a URI in the 'airo' concept further suggests it is intended to represent the same entity as the 'AIDOC' concept."
+  },
+  {
+   "id": "airo|https://w3id.org/aidoc-ap#Standard|https://w3id.org/airo#Standard",
+   "ontology": "airo",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#Standard",
+   "aidoc_label": "Standard",
+   "ref_iri": "https://w3id.org/airo#Standard",
+   "ref_label": "Standard",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to 'Standard' and share a similar high-level definition. However, the airo concept explicitly defines standards as *not* compulsory, while the AIDOC description doesn’t make this distinction. This nuance prevents an exact match but indicates strong similarity suitable for interchangeability in many contexts."
+  },
+  {
+   "id": "airo|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/airo#AISystem",
+   "ontology": "airo",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystem",
+   "aidoc_label": "AI System",
+   "ref_iri": "https://w3id.org/airo#AISystem",
+   "ref_label": "AI System",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:exactMatch",
+   "llm_confidence": 1.0,
+   "llm_rationale": "The labels and descriptions are identical. The presence of a URI for the 'airo' concept further suggests it is intended to represent the same entity as the 'AIDOC' concept."
+  },
+  {
+   "id": "airo|https://w3id.org/aidoc-ap#Modality|https://w3id.org/airo#Modality",
+   "ontology": "airo",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#Modality",
+   "aidoc_label": "Modality",
+   "ref_iri": "https://w3id.org/airo#Modality",
+   "ref_label": "Modality",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts define 'Modality' as the form of an AI system. While the AIDOC definition is more detailed and explicitly mentions controlled vocabularies for enumeration/reuse – suggesting a focus on practical implementation and standardization – the core meaning aligns closely with the airo concept’s simpler description. They aren't *exactly* interchangeable due to this difference in detail, but are very similar."
   },
   {
    "id": "airo|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/airo#AICapability",
@@ -85,7 +97,7 @@
    "lexical_similarity": 0.715,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts define 'AI Capability', focusing on what an AI system *can do*. The descriptions are very similar – AIDOC specifies types of processing (sensory, knowledge, control) which could be considered examples of realizing a system's purposes as stated in the airo definition. While not strictly equivalent, they represent highly overlapping concepts suitable for interchangeability in many contexts."
+   "llm_rationale": "Both concepts define the abilities of an AI system. While 'AI System Capability' (AIDOC) specifies *types* of processing, 'AI Capability' (airo) focuses on enabling a system’s purpose. They are highly related and could be used interchangeably in many contexts, but aren't strictly identical due to the differing emphasis."
   },
   {
    "id": "airo|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/airo#AISystem",
@@ -97,7 +109,7 @@
    "lexical_similarity": 0.648,
    "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The `airo#AISystem` concept is broader than the `AI System Capability`. An AI system *has* capabilities; it isn't a capability itself. The AIDOC concept describes *what* an AI system can do, while the airo concept defines *the system itself*. The lexical similarity score of 0.648 supports this relationship as they are clearly related but not identical."
+   "llm_rationale": "The `airo#AISystem` concept defines *what* an AI system is – a broad definition encompassing its characteristics and operation. The `AI System Capability` focuses on *what an AI system can do*, representing specific functions or tasks. Therefore, capability is a component *of* an AI system; the airo concept is broader."
   },
   {
    "id": "airo|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#Processing",
@@ -109,7 +121,7 @@
    "lexical_similarity": 0.62,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to the manipulation of data to create a modified dataset. While 'Data Processing' (AIDOC) explicitly mentions preprocessing and resulting in *a different* dataset, 'Processing' (airo) is more general. The lexical similarity score of 0.62 supports this close but not identical relationship."
+   "llm_rationale": "Both concepts refer to the manipulation of data to create a modified dataset. While 'Data Processing' explicitly mentions preprocessing and resulting in *a different* dataset, 'Processing' is more general. They are highly similar but not identical; interchangeability would depend on context."
   },
   {
    "id": "airo|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/airo#Documentation",
@@ -121,7 +133,7 @@
    "lexical_similarity": 0.615,
    "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept 'Visual Documentation' is a *type* of 'Documentation'. The airo concept is broader, encompassing all documented information while AIDOC specifies documentation that is visual and related to AI system features as per Annex IV. The lexical similarity score supports this relationship."
+   "llm_rationale": "The 'airo' concept of Documentation is very general. The 'AIDOC' concept 'Visual Documentation' *is a type of* documentation, specifically focusing on visual elements related to AI systems and referencing a specific annex. Therefore, 'Documentation' broadly covers 'Visual Documentation'."
   },
   {
    "id": "airo|https://w3id.org/aidoc-ap#ChangeLog|https://w3id.org/airo#Change",
@@ -131,9 +143,21 @@
    "ref_iri": "https://w3id.org/airo#Change",
    "ref_label": "Change",
    "lexical_similarity": 0.6,
-   "llm_relation": "skos:closeMatch",
+   "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to modifications or alterations. 'Change Log' (AIDOC) is a *type* of 'Change' (airo), specifically a record of those changes. While not identical – a log implies recording, and 'Change' is the event itself – they are highly related and could be used interchangeably in many contexts. The lexical similarity score of 0.6 supports this close relationship."
+   "llm_rationale": "The `airo#Change` concept is very general – any alteration to *anything*. The `AIDOC Change Log` is a specific *type* of change - those recorded relating to a system's lifecycle. Therefore, the AIDOC concept is narrower and falls under the broader `airo#Change`."
+  },
+  {
+   "id": "dpv-ai|https://w3id.org/aidoc-ap#AIAgent|https://w3id.org/dpv/ai#AIAgent",
+   "ontology": "dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AIAgent",
+   "aidoc_label": "AI Agent",
+   "ref_iri": "https://w3id.org/dpv/ai#AIAgent",
+   "ref_label": "AIAgent",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:exactMatch",
+   "llm_confidence": 0.95,
+   "llm_rationale": "Both concepts define an 'AI Agent'. While AIDOC explicitly states derivation from prov:Agent and positions it within the AI lifecycle, and dpv-ai highlights its nature as a software agent utilizing AI technologies, the core meaning is identical. The differences are nuances of definition rather than fundamental semantic distinctions."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/ai#AISystem",
@@ -145,19 +169,7 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "The descriptions are almost identical, incorporating definitions from ISO/IEC, OECD and EU vocabularies within the dpv-ai concept that essentially restate the AIDOC definition. The lexical similarity is perfect (1.0). While `dpv-ai` explicitly cites sources for its composite definition, this doesn't alter the core meaning; it simply provides provenance. Therefore, they represent the same class."
-  },
-  {
-   "id": "dpv-ai|https://w3id.org/aidoc-ap#AIAgent|https://w3id.org/dpv/ai#AIAgent",
-   "ontology": "dpv-ai",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AIAgent",
-   "aidoc_label": "AI Agent",
-   "ref_iri": "https://w3id.org/dpv/ai#AIAgent",
-   "ref_label": "AIAgent",
-   "lexical_similarity": 1.0,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts define an 'AI Agent'. While the AIDOC concept is a more general superclass derived from prov:Agent, and the dpv-ai concept explicitly mentions 'software agent' and 'AI technologies', they are highly overlapping in meaning. They aren’t *exactly* equivalent due to the differing levels of specificity, but can likely be used interchangeably in many contexts."
+   "llm_rationale": "The dpv-ai concept explicitly incorporates and combines definitions from multiple authoritative sources (ISO/IEC, OECD, EU) while the AIDOC definition is a single formulation. However, the core meaning – a machine-based system inferring outputs to influence environments with varying autonomy and adaptiveness – is identical. The lexical similarity score of 1.0 confirms this high degree of overlap."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationData",
@@ -169,7 +181,7 @@
    "lexical_similarity": 0.867,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.92,
-   "llm_rationale": "Both concepts clearly refer to data used for AI system validation. The AIDOC definition is more detailed, explicitly mentioning model tuning and overfitting/underfitting prevention as *purposes* of validation, while dpv-ai provides a broader, more general description. They are highly similar but not identical; one could likely substitute 'ValidationData' for 'Data Validation' in many contexts without significant loss of meaning."
+   "llm_rationale": "Both concepts clearly refer to data used for AI system validation. However, the AIDOC definition is more specific, detailing *how* that data is used (model evaluation, tuning parameters, preventing overfitting/underfitting). dpv-ai provides a broader, more general description of 'data involved in validation'. This difference prevents an exact match but indicates strong similarity suitable for interchangeability in many contexts."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/dpv/ai#TrainingData",
@@ -179,9 +191,9 @@
    "ref_iri": "https://w3id.org/dpv/ai#TrainingData",
    "ref_label": "TrainingData",
    "lexical_similarity": 0.846,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.92,
-   "llm_rationale": "Both concepts clearly define data used for AI model training. While the AIDOC description explicitly mentions 'fitting learnable parameters', this is an implementation detail of *how* training happens and doesn't fundamentally change what 'Data Training' *is*. The dpv-ai concept provides a more general definition, encompassing all data involved in training. Given the high lexical similarity (0.846) and overlapping meaning, they are close matches rather than equivalent or subsuming each other."
+   "llm_relation": "skos:exactMatch",
+   "llm_confidence": 0.95,
+   "llm_rationale": "Both concepts explicitly define data used for AI/ML model training. The descriptions are highly aligned, focusing on the same core idea. While 'Data Training' (AIDOC) frames it as an *activity*, and 'TrainingData' (dpv-ai) focuses on the *data* itself, they represent essentially the same concept – the data utilized in the process of AI model training."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingData",
@@ -193,7 +205,7 @@
    "lexical_similarity": 0.833,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.87,
-   "llm_rationale": "Both concepts refer to data used for evaluating AI systems. The AIDOC definition is more verbose and explicitly mentions 'before placing on the market', indicating a regulatory context not directly present in the dpv-ai concept. However, the core meaning – data for testing an AI system – is highly similar, making them interchangeable in many contexts."
+   "llm_rationale": "Both concepts refer to data used for AI system evaluation. The AIDOC definition is more specific regarding regulatory context ('before placing on the market'), while dpv-ai provides a broader description of testing data. They are highly similar but not interchangeable due to this difference in scope."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/ai#hasAISystem",
@@ -205,7 +217,7 @@
    "lexical_similarity": 0.727,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to AI systems. The AIDOC concept provides a detailed definition of what constitutes an 'AI System', while the dpv-ai concept ('hasAISystem') indicates *use* of such a system within a context. They aren't identical – one defines the thing, the other denotes its application. However, they are highly related and could be used interchangeably in many contexts where simply identifying the presence/usage of an AI system is sufficient."
+   "llm_rationale": "Both concepts relate to AI systems. The AIDOC concept provides a detailed definition of *what* an AI system is, while the dpv-ai concept focuses on its *use* or presence within a context. They aren't identical – one defines the entity, the other indicates its application - but are highly related and could be used interchangeably in many contexts where simply acknowledging the use of 'an AI System' is sufficient."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/dpv/ai#TrainingData",
@@ -217,7 +229,7 @@
    "lexical_similarity": 0.725,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to data used for AI training. The AIDOC concept is more detailed, specifying the *sheet* containing information about the training process (methodologies, hyperparameters etc.), while dpv-ai focuses on the data itself. They are highly related and could be used interchangeably in many contexts, but aren't strictly equivalent due to this difference in focus."
+   "llm_rationale": "Both concepts relate to data used for AI training. The AIDOC concept is more specific, detailing *what* information the 'Training Data' (dpv-ai) includes – methodologies, hyperparameters etc. dpv-ai#TrainingData is a broader category encompassing any data used in training. They are highly related and could be interchanged in many contexts, but the level of detail differs."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/ai#AISystemRisk",
@@ -229,7 +241,7 @@
    "lexical_similarity": 0.713,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept defines an AI System generally. The dpv-ai concept specifically focuses on the *risks* associated with those systems. Therefore, AISystemRisk is a more specific type of AI System; it narrows down the scope to risks."
+   "llm_rationale": "The AIDOC concept defines an AI System generally. The dpv-ai concept specifically focuses on the *risks* associated with those systems. Therefore, AISystemRisk is a more specific type of AI System; it narrows down the scope to risk assessment."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/dpv/ai#MachineLearning",
@@ -241,19 +253,7 @@
    "lexical_similarity": 0.712,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to the process of building and refining AI models. 'Machine Learning Pipeline' (AIDOC) describes a broader workflow *using* machine learning, while 'MachineLearning' (dpv-ai) focuses on the core optimization process itself. They are highly related and often used in conjunction, but aren’t identical – one is a process encompassing the other."
-  },
-  {
-   "id": "dpv-ai|https://w3id.org/aidoc-ap#DataCleaningProcedure|https://w3id.org/dpv/ai#DataCleaning",
-   "ontology": "dpv-ai",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#DataCleaningProcedure",
-   "aidoc_label": "Data Cleaning Procedure",
-   "ref_iri": "https://w3id.org/dpv/ai#DataCleaning",
-   "ref_label": "DataCleaning",
-   "lexical_similarity": 0.689,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts define the process of cleaning data by identifying and removing errors or invalid entries. The descriptions are highly similar, indicating a strong semantic overlap. While not strictly equivalent (slight differences in phrasing), they could likely be used interchangeably in many practical applications."
+   "llm_rationale": "Both concepts relate to the process of machine learning. The AIDOC concept describes a *pipeline* encompassing activities, while dpv-ai focuses on the core parameter optimization *process*. They are highly related and could be used interchangeably in many contexts, but aren't strictly identical due to the pipeline aspect."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataWrangling|https://w3id.org/dpv/ai#DataCleaning",
@@ -265,7 +265,19 @@
    "lexical_similarity": 0.689,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts clearly address the process of improving data quality by addressing errors and inconsistencies. While 'Data Wrangling/Cleaning' (AIDOC) encompasses enrichment as well, and 'DataCleaning' (dpv-ai) focuses specifically on cleaning, the core activity is highly overlapping making them interchangeable in many contexts. The lexical similarity score of 0.689 supports this close relationship."
+   "llm_rationale": "Both concepts address the process of improving data quality by addressing errors and inconsistencies. While 'Data Wrangling/Cleaning' (AIDOC) encompasses enrichment as well, and 'DataCleaning' (dpv-ai) focuses specifically on cleaning, the core activity is highly overlapping. The lexical similarity score of 0.689 supports a close, but not exact, match."
+  },
+  {
+   "id": "dpv-ai|https://w3id.org/aidoc-ap#DataCleaningProcedure|https://w3id.org/dpv/ai#DataCleaning",
+   "ontology": "dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataCleaningProcedure",
+   "aidoc_label": "Data Cleaning Procedure",
+   "ref_iri": "https://w3id.org/dpv/ai#DataCleaning",
+   "ref_label": "DataCleaning",
+   "lexical_similarity": 0.689,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to the process of improving data quality by identifying and handling errors or unwanted records. While the descriptions are very similar, 'Data Cleaning Procedure' (AIDOC) suggests a *description* of how cleaning is done, whereas 'DataCleaning' (dpv-ai) describes the operation itself. This nuance prevents an exact match but indicates strong similarity."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/ai#FrugalAISystem",
@@ -277,7 +289,7 @@
    "lexical_similarity": 0.688,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The dpv-ai concept 'FrugalAISystem' describes a *type* of AI System (AIDOC). It adds the constraint of efficiency and cost-effectiveness to the general definition of an AI system. Therefore, a FrugalAISystem is a specific kind of AI System; it’s narrower in scope."
+   "llm_rationale": "FrugalAISystem is a *type* of AI System. The dpv-ai concept adds constraints (efficiency, cost-effectiveness) to the general definition provided by AIDOC. Therefore, FrugalAISystem is more specific than AI System."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#hasValidationData",
@@ -289,7 +301,7 @@
    "lexical_similarity": 0.682,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to data used for AI validation. The AIDOC concept provides a more detailed *description* of the activity and purpose of validation (tuning parameters, preventing overfitting), while dpv-ai is a simple assertion that validation data exists. They are highly related and could be used interchangeably in many contexts, but aren't strictly equivalent due to the level of detail."
+   "llm_rationale": "Both concepts relate to data used for AI validation. The AIDOC concept provides a more detailed description of *why* validation data is used (preventing overfitting/underfitting), while dpv-ai simply states the association. They are highly related and could be used interchangeably in many contexts, but the added detail in AIDOC prevents an exact match."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/dpv/ai#hasTrainingData",
@@ -301,7 +313,7 @@
    "lexical_similarity": 0.667,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts clearly relate to the data used for AI training. While 'Data Training' (AIDOC) describes *the activity* of training with data, 'hasTrainingData' (dpv-ai) represents *the relationship* between an AI system and its training data. They are highly related and could be used interchangeably in many contexts, but aren’t strictly equivalent due to the difference in focus – process vs. relation."
+   "llm_rationale": "Both concepts relate to the data used for AI training. While 'Data Training' (AIDOC) describes *the activity* of using data, 'hasTrainingData' (dpv-ai) represents *the relationship* between an AI system and its training data. They are highly related and could be interchanged in many contexts, but aren’t strictly identical due to the focus on process vs. relation."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#hasTestingData",
@@ -313,7 +325,7 @@
    "lexical_similarity": 0.657,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts clearly relate to data used for AI system testing. The AIDOC concept provides a more detailed definition including the purpose of testing (performance confirmation before deployment), while dpv-ai simply states the association between data and testing. They are highly similar but not identical; one could likely substitute either in many contexts without significant loss of meaning, making 'closeMatch' appropriate."
+   "llm_rationale": "Both concepts relate to data used for AI system evaluation/testing. While 'Data Testing' (AIDOC) describes the *activity* of testing, 'hasTestingData' (dpv-ai) represents the *relationship* between an AI system and its testing data. They are highly related and could be interchanged in many contexts, but aren’t strictly identical due to this difference in focus – one is a process, the other a property."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#AISystem",
@@ -325,19 +337,7 @@
    "lexical_similarity": 0.648,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to AI systems and their capabilities. The `dpv-ai` concept provides a more detailed definition drawing from established standards (ISO/IEC, OECD, EU), while `AIDOC` offers a higher-level categorization of what an AI system *can do*. They aren't identical – the dpv-ai definition includes aspects like objectives and environments that are not explicitly in AIDOC. However, they are sufficiently similar for interchangeability in many contexts."
-  },
-  {
-   "id": "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataRisk",
-   "ontology": "dpv-ai",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#DataValidation",
-   "aidoc_label": "Data Validation",
-   "ref_iri": "https://w3id.org/dpv/ai#ValidationDataRisk",
-   "ref_label": "ValidationDataRisk",
-   "lexical_similarity": 0.629,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts deal with data used for AI system evaluation (validation). However, 'Data Validation' describes the *activity* of using validation datasets, while 'ValidationDataRisk' focuses specifically on the *risks associated with* that data. They are highly related and could be interchangeable in many contexts, but aren’t identical; risk is a specific aspect of validation."
+   "llm_rationale": "Both concepts refer to the capabilities of AI systems. The AIDOC concept focuses on *what* an AI system can do (sensory, knowledge, control), while dpv-ai provides a more comprehensive definition encompassing purpose, autonomy and outputs. They are highly related but not interchangeable due to differing levels of detail and focus; thus, closeMatch is appropriate."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataBias",
@@ -349,7 +349,19 @@
    "lexical_similarity": 0.629,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes the general activity of data validation for AI models. The dpv-ai concept focuses specifically on *bias* within that validation data – a specific type or concern *within* the broader process of data validation. Therefore, 'ValidationDataBias' is a more specific case of 'Data Validation'."
+   "llm_rationale": "The AIDOC concept describes the general activity of data validation for AI models. The dpv-ai concept focuses specifically on *bias* within that validation data – a specific type or concern *within* the broader process of data validation. Therefore, ValidationDataBias is a narrower concept than Data Validation."
+  },
+  {
+   "id": "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataRisk",
+   "ontology": "dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataValidation",
+   "aidoc_label": "Data Validation",
+   "ref_iri": "https://w3id.org/dpv/ai#ValidationDataRisk",
+   "ref_label": "ValidationDataRisk",
+   "lexical_similarity": 0.629,
+   "llm_relation": "skos:relatedMatch",
+   "llm_confidence": 0.75,
+   "llm_rationale": "While both concepts relate to validation data within the AI lifecycle, they focus on different aspects. AIDOC describes *the activity* of using data for validation, while dpv-ai focuses specifically on *risks associated with* that validation data. They are connected but not subsuming each other; hence a related match is most appropriate."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/dpv/ai#MachineLearningModel",
@@ -361,7 +373,7 @@
    "lexical_similarity": 0.623,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC 'Machine Learning Pipeline' describes a *process* encompassing the entire lifecycle of ML activities. The dpv-ai 'MachineLearningModel' is a *component* within that pipeline – specifically, the mathematical construct used for prediction. Therefore, a MachineLearningModel is a specific element *within* a Machine Learning Pipeline. This indicates a narrower relationship."
+   "llm_rationale": "The AIDOC 'Machine Learning Pipeline' describes a *process* encompassing the entire lifecycle of ML activities. The dpv-ai 'MachineLearningModel' is a *component* within that pipeline – specifically, the mathematical construct used for prediction. Therefore, a MachineLearningModel is a narrower concept than a Machine Learning Pipeline."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataNoise",
@@ -373,7 +385,7 @@
    "lexical_similarity": 0.622,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes the *activity* of data validation for AI models – a process. The dpv-ai concept focuses on a specific *characteristic* of that validation data - its noisiness. Noisy validation data is one aspect considered *within* the broader activity of data validation, making 'ValidationDataNoise' a narrower concept."
+   "llm_rationale": "The AIDOC concept 'Data Validation' describes the *activity* of using data for validation, encompassing a broader process. The dpv-ai concept 'ValidationDataNoise' focuses on a specific *characteristic* of that validation data – its noisiness. Therefore, noisy validation data is a specific type of data used within the overall activity of data validation."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataSparse",
@@ -385,19 +397,7 @@
    "lexical_similarity": 0.616,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes the *activity* of data validation for AI models – a process. The dpv-ai concept specifically denotes a *characteristic* of that validation data (being sparse). Therefore, 'ValidationDataSparse' is a specific type or aspect *within* the broader activity of 'Data Validation'. While lexical similarity is moderate, the semantic relationship is clear: sparse validation data is one kind of data used in the overall validation process."
-  },
-  {
-   "id": "dpv-ai|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/ai#Model",
-   "ontology": "dpv-ai",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AIModel",
-   "aidoc_label": "AI Model",
-   "ref_iri": "https://w3id.org/dpv/ai#Model",
-   "ref_label": "Model",
-   "lexical_similarity": 0.608,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts define 'Model' within the context of AI. The AIDOC definition focuses on enabling an AI *task*, while dpv-ai emphasizes a representation of something using AI techniques. They are highly related and could be used interchangeably in many contexts, but aren’t strictly equivalent due to the differing emphasis – one on function, the other on representation. The lexical similarity score of 0.608 supports this close relationship."
+   "llm_rationale": "The AIDOC concept describes the *activity* of using validation data, while dpv-ai's ValidationDataSparse specifically denotes a *characteristic* of that data (being sparse). The AIDOC concept encompasses the broader process; sparse validation data is one type of data used within that activity. Therefore, dpv-ai is a narrower concept."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#Deployment|https://w3id.org/dpv/ai#DeploymentStage",
@@ -409,7 +409,19 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to the process of making an AI system available for use. The dpv-ai concept is slightly more detailed, explicitly mentioning installation, release and configuration *within* the deployment stage, while AIDOC provides a higher level definition. They are highly similar but not identical; interchangeability would likely be safe in many contexts."
+   "llm_rationale": "Both concepts refer to the process of making an AI system available for use. The dpv-ai concept explicitly mentions installation, release and configuration *within* a deployment stage, suggesting it's slightly more detailed than the AIDOC definition which focuses on delivery to production. They are highly similar but not interchangeable across all contexts."
+  },
+  {
+   "id": "dpv-ai|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/ai#Model",
+   "ontology": "dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AIModel",
+   "aidoc_label": "AI Model",
+   "ref_iri": "https://w3id.org/dpv/ai#Model",
+   "ref_label": "Model",
+   "lexical_similarity": 0.608,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts define an 'AI Model', representing a core component for executing AI tasks. The dpv-ai definition is slightly broader by explicitly including physical/mathematical representations *of anything* using AI, while AIDOC focuses on the model as enabling task execution. This difference isn't substantial enough for broad/narrow match, but prevents exact equivalence."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataOutdated",
@@ -421,7 +433,7 @@
    "lexical_similarity": 0.605,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes the general *activity* of data validation for AI models. The dpv-ai concept specifically identifies a *condition* within that activity – outdated validation data. Therefore, 'ValidationDataOutdated' is a more specific case *of* 'Data Validation'."
+   "llm_rationale": "The AIDOC concept describes the general activity of data validation for AI models. The dpv-ai concept specifically identifies a *type* of issue within that process – outdated validation data. Therefore, 'ValidationDataOutdated' is a more specific case of 'Data Validation'."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/dpv/ai#MachineLearningPlatform",
@@ -433,7 +445,7 @@
    "lexical_similarity": 0.604,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to the infrastructure and process for building and using machine learning models. 'Machine Learning Pipeline' focuses on the *activities* within that lifecycle, while 'MachineLearningPlatform' emphasizes the *technology* enabling it. They are highly related and often overlap in practical usage, but aren’t strictly equivalent – a pipeline can be implemented without a dedicated platform, and a platform supports more than just pipelines (e.g., data management). The lexical similarity score of 0.604 supports this close relationship."
+   "llm_rationale": "Both concepts relate to the infrastructure and process for machine learning. 'MachineLearningPlatform' (dpv-ai) focuses on the *technology* enabling ML, while 'Machine Learning Pipeline' (AIDOC) emphasizes the *activities* within that platform. They are highly related and often co-occur, but aren’t strictly interchangeable; a pipeline is *run on* a platform. The lexical similarity score of 0.604 supports this close relationship."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/dpv/legal/eu/aiact#AIProvider",
@@ -445,19 +457,19 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 1.0,
-   "llm_rationale": "The labels and descriptions are identical. The only difference is the URI, indicating they represent the same concept defined in different namespaces."
+   "llm_rationale": "The labels and descriptions are identical. The URI provides a globally unique identifier for the dpv-aiact concept, but doesn't alter its meaning; therefore they represent the same concept."
   },
   {
-   "id": "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#AISystem",
+   "id": "dpv-aiact|https://w3id.org/aidoc-ap#IntendedPurpose|https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose",
    "ontology": "dpv-aiact",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystem",
-   "aidoc_label": "AI System",
-   "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#AISystem",
-   "ref_label": "AISystem",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#IntendedPurpose",
+   "aidoc_label": "Intended Purpose",
+   "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose",
+   "ref_label": "IntendedPurpose",
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "The labels are identical except for case, and the descriptions are verbatim matches. This strongly suggests equivalence; any differences would likely be at the instance level rather than conceptual."
+   "llm_rationale": "The definitions are almost identical, differing only in minor phrasing and the inclusion of a URI in dpv-aiact. The core meaning – describing the intended use as defined by the provider through documentation – is precisely aligned."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#AIDeployer|https://w3id.org/dpv/legal/eu/aiact#AIDeployer",
@@ -469,7 +481,19 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 1.0,
-   "llm_rationale": "The labels and descriptions are identical. The lexical similarity score is 1.0 indicating a perfect match. Therefore, the concepts represent the same class."
+   "llm_rationale": "The labels and descriptions are identical. The URI provides a globally unique identifier for the dpv-aiact concept, but doesn't alter the meaning. Therefore, they represent the same concept."
+  },
+  {
+   "id": "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#AISystem",
+   "ontology": "dpv-aiact",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystem",
+   "aidoc_label": "AI System",
+   "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#AISystem",
+   "ref_label": "AISystem",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:exactMatch",
+   "llm_confidence": 1.0,
+   "llm_rationale": "The labels and descriptions are identical. The URI suggests a specific legal context for dpv-aiact, but the definitions themselves are equivalent."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/legal/eu/aiact#ValidationData",
@@ -481,7 +505,7 @@
    "lexical_similarity": 0.867,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "The descriptions are almost identical. The AIDOC concept describes *activity* of using data for validation while dpv-aiact defines the *data itself*. However, this difference is minor and doesn't preclude equivalence; the activity inherently relies on the existence of the data. The high lexical similarity supports a strong relationship, leaning towards equivalence."
+   "llm_rationale": "The descriptions are almost identical. The AIDOC concept describes *activity* of using data for validation while dpv-aiact defines the *data itself*. This is a subtle difference that doesn't prevent interchangeability in many contexts; both fundamentally refer to the same thing – the data used for AI model evaluation and tuning."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/dpv/legal/eu/aiact#TrainingData",
@@ -493,7 +517,7 @@
    "lexical_similarity": 0.846,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "The descriptions are almost identical and the lexical similarity is very high (0.846). Both concepts define 'Data Training'/'TrainingData' as data used for fitting learnable parameters of an AI system. This strongly suggests they represent the same class."
+   "llm_rationale": "The definitions are almost identical; both define data used for fitting learnable parameters of an AI system. The lexical similarity is high (0.846) and the descriptions are essentially synonymous."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/legal/eu/aiact#TestingData",
@@ -505,7 +529,7 @@
    "lexical_similarity": 0.833,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "The descriptions are almost identical, and the lexical similarity is high (0.833). Both concepts refer to data used for independent evaluation of AI systems before deployment. The AIDOC concept adds 'Activity of using datasets for model testing' which doesn’t change the core meaning but frames it as an activity rather than a dataset itself; this difference isn't significant enough to prevent equivalence."
+   "llm_rationale": "The descriptions are almost identical, focusing on data used for independent AI system evaluation before deployment. The lexical similarity is high (0.833). While 'Data Testing' (AIDOC) sounds like an *activity*, and 'TestingData' (dpv-aiact) a *thing* (data itself), the core meaning is equivalent in this context – they refer to the same concept."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#DeclarationOfConformity|https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity",
@@ -515,9 +539,9 @@
    "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity",
    "ref_label": "EUDeclarationOfConformity",
    "lexical_similarity": 0.827,
-   "llm_relation": "skos:narrowMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "The dpv-aiact concept (EUDeclarationOfConformity) is a specific instance of the more general 'Declaration of Conformity' described by AIDOC, specifically relating to the EU AI Act. The description clarifies this narrower scope."
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.88,
+   "llm_rationale": "Both concepts refer to a Declaration of Conformity document. However, the `dpv-aiact` concept explicitly ties this declaration to the EU AI Act and Article 47, making it specific to AI systems. The `AIDOC` concept is more general, encompassing declarations for various standards. While highly similar and often overlapping in practical application, they aren't strictly interchangeable due to the legal context of the AI Act."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/dpv/legal/eu/aiact#TrainingData",
@@ -529,7 +553,7 @@
    "lexical_similarity": 0.725,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to data used for AI training. The AIDOC concept is more descriptive, detailing *what* the data sheet contains (methodologies, hyperparameters etc.), while dpv-aiact focuses on *what* the data *is* – data used for parameter fitting. They are highly related and could be used interchangeably in many contexts, but aren't strictly equivalent due to this difference in focus."
+   "llm_rationale": "Both concepts relate to data used for AI training. The AIDOC concept is more descriptive, detailing *what* the data sheet contains (methodologies, hyperparameters etc.), while dpv-aiact focuses on *what* the data *is* – data used for parameter fitting. They are highly related and could be used interchangeably in many contexts, but aren't strictly identical due to this difference in focus."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan",
@@ -541,7 +565,7 @@
    "lexical_similarity": 0.691,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to monitoring after deployment. However, the `dpv-aiact` concept explicitly frames this within the context of the EU AI Act's requirements for a *plan*, suggesting a more formal and legally mandated approach than the broader 'activity' described by AIDOC. They are highly similar but not identical; one is an activity, the other a plan detailing that activity."
+   "llm_rationale": "Both concepts relate to monitoring after deployment. However, the `dpv-aiact` concept explicitly frames this within the context of the EU AI Act's requirements for a *plan*, suggesting a more formal and legally mandated process than the general 'activity' described by AIDOC. While highly related and often overlapping in practice, they aren’t interchangeable due to this difference in scope and purpose."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem",
@@ -553,7 +577,7 @@
    "lexical_similarity": 0.68,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to monitoring AI systems after deployment ('post-market'). However, the dpv-aiact concept explicitly frames this within a legal/regulatory context (EU AIACT) and focuses on corrective/preventive actions stemming from identified issues. The AIDOC concept is more general, simply describing performance & behavior monitoring. While not identical, they are highly related and could be used interchangeably in many contexts."
+   "llm_rationale": "Both concepts relate to monitoring AI systems post-deployment. However, the dpv-aiact concept explicitly frames this activity within a legal/regulatory context (EU AIACT) and emphasizes corrective/preventive actions stemming from identified issues. The AIDOC concept is more general, simply describing performance & behavior monitoring. While highly related and often overlapping in practice, they aren't interchangeable due to the regulatory focus of dpv-aiact."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider",
@@ -565,19 +589,7 @@
    "lexical_similarity": 0.667,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts define an entity providing AI systems. The AIDOC definition is broader, encompassing developers *or* those placing systems on the market. dpv-aiact focuses specifically on providers integrating models (whether developed internally or externally). While not identical, they largely overlap in practical application and could be used interchangeably in many contexts."
-  },
-  {
-   "id": "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem",
-   "ontology": "dpv-aiact",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystem",
-   "aidoc_label": "AI System",
-   "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem",
-   "ref_label": "ProhibitedAISystem",
-   "lexical_similarity": 0.648,
-   "llm_relation": "skos:narrowMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "The `ProhibitedAISystem` (dpv-aiact) is a *specific type* of `AI System` (AIDOC). The description for dpv-aiact explicitly references the AI Act and defines a restricted subset – those systems prohibited by law. Therefore, every instance of a `ProhibitedAISystem` is also an `AI System`, but not all `AI Systems` are `ProhibitedAISystems`. The lexical similarity score of 0.648 supports this close relationship."
+   "llm_rationale": "Both concepts define entities providing AI systems. The AIDOC definition is broader, encompassing developers *or* those placing systems on the market/into service. dpv-aiact focuses specifically on providers integrating an AI model, regardless of origin. While not identical (the 'development' aspect in AIDOC isn’t explicitly present in dpv-aiact), they are highly overlapping and could be used interchangeably in many contexts concerning AI regulation."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/legal/eu/aiact#AISystem",
@@ -589,7 +601,19 @@
    "lexical_similarity": 0.648,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to AI systems and their functionalities. `dpv-aiact` provides a more formal, legally-oriented definition aligned with the EU AI Act, detailing autonomy and impact on environments. `AIDOC` focuses on *what* an AI system can do (capabilities) without specifying the system's characteristics as comprehensively. While not identical, they are highly overlapping and could be used interchangeably in many contexts concerning AI system analysis."
+   "llm_rationale": "Both concepts relate to AI systems and their abilities. `dpv-aiact` provides a more formal, legally-oriented definition aligned with the EU AI Act, detailing autonomy and impact on environments. `AIDOC` is broader, focusing on *what* an AI system can do (capabilities) without specifying the level of autonomy or legal context. While not identical, they are highly related and could be used interchangeably in many contexts concerning AI functionality."
+  },
+  {
+   "id": "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem",
+   "ontology": "dpv-aiact",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystem",
+   "aidoc_label": "AI System",
+   "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem",
+   "ref_label": "ProhibitedAISystem",
+   "lexical_similarity": 0.648,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The `dpv-aiact:ProhibitedAISystem` is a *specific type* of `AIDOC:AI System`. The AI Act defines systems that are not allowed, which inherently fall under the broader category of all AI Systems. While the lexical similarity is reasonably high, the descriptions clearly indicate a specialization – one describes AI systems generally, while the other focuses on those explicitly prohibited by law."
   },
   {
    "id": "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#AISystemPerformance",
@@ -601,7 +625,7 @@
    "lexical_similarity": 0.64,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept defines *what* an AI System is – a broad definition encompassing its capabilities and function. The dpv-aiact concept (AISystemPerformance) focuses on *how well* that system achieves its purpose - a specific aspect *of* an AI System. Therefore, AISystemPerformance is a narrower concept within the broader category of AI System."
+   "llm_rationale": "The AIDOC concept defines *what* an AI System is – a broad definition encompassing its capabilities and operation. The dpv-aiact concept (AISystemPerformance) focuses on *one aspect* of an AI system - its ability to achieve its intended purpose. Therefore, AISystemPerformance is a specific characteristic *of* an AI System, making it a narrower concept."
   },
   {
    "id": "dpv|https://w3id.org/aidoc-ap#Standard|https://w3id.org/dpv#Standard",
@@ -613,7 +637,7 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts define 'Standard' as a set of agreed-upon requirements or norms. The descriptions are nearly identical and the lexical similarity is perfect (1.0). While one originates from AI governance (AIDOC) and the other from data privacy vocabulary (dpv), the core meaning remains consistent, suggesting equivalence."
+   "llm_rationale": "Both concepts define 'Standard' as a set of agreed-upon requirements or norms. The descriptions are nearly identical and the lexical similarity is perfect. While context within their respective ontologies might introduce nuance, at the concept level they represent the same idea."
   },
   {
    "id": "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#DataProcessingPolicy",
@@ -623,9 +647,9 @@
    "ref_iri": "https://w3id.org/dpv#DataProcessingPolicy",
    "ref_label": "DataProcessingPolicy",
    "lexical_similarity": 0.724,
-   "llm_relation": "skos:closeMatch",
+   "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to data processing. However, 'DataProcessingPolicy' (dpv) focuses on the *policy* governing the activity, while 'Data Processing' (AIDOC) describes the activity itself. They are highly related and could be used interchangeably in some contexts, but aren’t identical – a policy governs the process, it isn’t the process."
+   "llm_rationale": "The AIDOC concept focuses on the *activity* of data processing itself. The dpv concept describes a *policy governing* that activity. Therefore, DataProcessingPolicy is broader – it encompasses the rules around data processing, while Data Processing is a specific action potentially subject to such policies."
   },
   {
    "id": "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#DataProcessingRecord",
@@ -637,7 +661,19 @@
    "lexical_similarity": 0.724,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to the activity of data processing. However, 'DataProcessingRecord' (dpv) focuses on *recording* that process – a record *of* the activity – while 'Data Processing' (AIDOC) describes the activity itself. They are highly related and could be used interchangeably in many contexts, but aren’t strictly equivalent due to the recording aspect of dpv. The lexical similarity score of 0.724 supports this close relationship."
+   "llm_rationale": "Both concepts relate to data processing activities. However, 'DataProcessingRecord' (dpv) emphasizes the *record* of the process – documentation and traceability – while 'Data Processing' (AIDOC) focuses on the activity itself. They are highly related and could be used interchangeably in many contexts, but the dpv concept adds a crucial aspect of record-keeping that isn’t explicitly present in the AIDOC definition."
+  },
+  {
+   "id": "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#DataProcessingAgreement",
+   "ontology": "dpv",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataProcessing",
+   "aidoc_label": "Data Processing",
+   "ref_iri": "https://w3id.org/dpv#DataProcessingAgreement",
+   "ref_label": "DataProcessingAgreement",
+   "lexical_similarity": 0.7,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC 'Data Processing' is a general activity. The dpv 'DataProcessingAgreement' *is* data processing, but specifically framed as a legal agreement governing it. Thus, the dpv concept is more specific – a type of data processing – and therefore broader in scope than the generic AIDOC concept."
   },
   {
    "id": "dpv|https://w3id.org/aidoc-ap#HumanOversightMechanism|https://w3id.org/dpv#HumanOversight",
@@ -649,19 +685,7 @@
    "lexical_similarity": 0.7,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts address the need for human involvement in overseeing processes. The dpv concept provides a more detailed and comprehensive definition encompassing understanding, control, reversal, monitoring, anomaly detection, etc., while the AIDOC concept is a higher-level description of *a* mechanism to facilitate intervention. They are highly similar but not identical; one could likely substitute the other in many contexts without significant loss of meaning."
-  },
-  {
-   "id": "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#DataProcessingAgreement",
-   "ontology": "dpv",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#DataProcessing",
-   "aidoc_label": "Data Processing",
-   "ref_iri": "https://w3id.org/dpv#DataProcessingAgreement",
-   "ref_label": "DataProcessingAgreement",
-   "lexical_similarity": 0.7,
-   "llm_relation": "skos:relatedMatch",
-   "llm_confidence": 0.75,
-   "llm_rationale": "While both concepts deal with 'Data Processing', they represent different facets. AIDOC focuses on the *activity* of processing itself, a technical operation. dpv defines a *legal agreement* governing that activity. They are related because an agreement (dpv) is often needed to authorize and regulate data processing (AIDOC), but one isn't a type of the other. The lexical similarity score supports some connection."
+   "llm_rationale": "Both concepts address human oversight, however the dpv concept provides a more detailed and comprehensive definition encompassing control, reversal, monitoring, anomaly detection, and addressing dysfunctions. The AIDOC concept is a higher-level description of *a* mechanism for intervention. They are highly related and could be used interchangeably in many contexts, but the dpv definition adds significant nuance."
   },
   {
    "id": "dpv|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/dpv#DataProtectionTraining",
@@ -673,7 +697,7 @@
    "lexical_similarity": 0.681,
    "llm_relation": "skos:relatedMatch",
    "llm_confidence": 0.75,
-   "llm_rationale": "Both concepts relate to 'training' and 'data', however they focus on different aspects. AIDOC focuses on training *AI models* with data, while dpv focuses on training people about *data protection*. They are related through the shared concept of 'training' and 'data' but aren’t hierarchical or equivalent."
+   "llm_rationale": "Both concepts relate to training involving data, however 'Data Training' focuses on AI/ML model development while 'DataProtectionTraining' concerns legal and ethical compliance. They are related through the shared element of 'data', but represent distinct areas of focus; therefore a related match is most appropriate."
   },
   {
    "id": "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#Processing",
@@ -685,7 +709,7 @@
    "lexical_similarity": 0.62,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to operations performed on data to transform it. While 'Data Processing' (AIDOC) explicitly mentions combining and preprocessing *resulting in a different dataset*, 'Processing' (dpv) is more general. The lexical similarity of 0.62 supports a close relationship, but the AIDOC definition adds specificity not present in dpv, preventing equivalence."
+   "llm_rationale": "Both concepts refer to operations performed on data to transform it. While 'Data Processing' (AIDOC) explicitly mentions combining and preprocessing *resulting in a different dataset*, 'Processing' (dpv) is more general. They are highly related and could be used interchangeably in many contexts, but the AIDOC definition adds specificity regarding output."
   },
   {
    "id": "dpv|https://w3id.org/aidoc-ap#AIAgent|https://w3id.org/dpv#Agent",
@@ -697,7 +721,7 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts define 'Agent', and the lexical similarity is high (0.608). However, their descriptions differ. AIDOC focuses on agents *within* an AI lifecycle, while dpv defines an agent acting on behalf of another entity with authorization. This suggests they aren't identical but are closely related and could be used interchangeably in many contexts. The dpv definition adds constraints (acting on behalf of, authorized) not explicitly present in the AIDOC description."
+   "llm_rationale": "Both concepts define an 'Agent', but with different focuses. AIDOC's AI Agent is specifically within the *AI lifecycle* and inherits from PROV-O, implying a focus on provenance. dpv’s Agent emphasizes acting *on behalf of* another entity with authorization. While overlapping – an AI agent often acts on behalf of someone – the descriptions aren't identical. The lexical similarity score supports this close relationship."
   },
   {
    "id": "dpv-tech|https://w3id.org/aidoc-ap#Auditor|https://w3id.org/dpv/tech#Auditor",
@@ -708,8 +732,8 @@
    "ref_label": "Auditor",
    "lexical_similarity": 1.0,
    "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts define an 'Auditor' responsible for review and compliance. However, the dpv-tech definition explicitly focuses on *Technology* and conformance to policies/standards/legal requirements, while AIDOC’s is broader – reviewing any AI system for compliance. This difference in scope prevents equivalence but suggests a strong similarity suitable for interchangeability in many contexts."
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to an entity performing audits. However, the dpv-tech definition explicitly links auditing to 'Technology' and 'policies/standards/legal requirements', providing a more specific scope than the AIDOC concept which simply mentions 'AI system for compliance'. This difference in specificity prevents an exact match but indicates strong similarity."
   },
   {
    "id": "dpv-tech|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/dpv/tech#Provider",
@@ -721,7 +745,7 @@
    "lexical_similarity": 0.637,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to entities that 'provide' something – AI systems/models in the case of AIDOC and Technology generally for dpv-tech. While the AIDOC concept is much more specific regarding *what* is provided (AI), the core idea of a provider remains consistent. The lexical similarity score of 0.637 supports this close, but not equivalent, relationship."
+   "llm_rationale": "Both concepts refer to entities that 'provide' something – AI systems/models (AIDOC) and Technology (dpv-tech). While the AIDOC concept is specifically focused on *AI* providers with detailed legal definitions related to development and market placement, the dpv-tech Provider is a more general actor. They are sufficiently similar for interchangeability in many contexts concerning technology supply chains or risk assessment, but not identical due to the AI specificity of AIDOC."
   },
   {
    "id": "dpv-tech|https://w3id.org/aidoc-ap#AIDeployer|https://w3id.org/dpv/tech#Deployer",
@@ -733,7 +757,7 @@
    "lexical_similarity": 0.637,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to an entity that 'deploys' something (AI system vs Technology). The AIDOC concept is more specific in defining *who* the deployer is (natural/legal person) and explicitly excludes personal use cases, while dpv-tech provides a broader definition of simply being an actor deploying technology.  The lexical similarity score of 0.637 supports this close but not equivalent relationship."
+   "llm_rationale": "Both concepts refer to an entity deploying something (AI system vs Technology). The AIDOC definition is more specific regarding the *type* of deployer (natural/legal person) and explicitly excludes personal non-professional use, while dpv-tech's Deployer is a general actor. This difference prevents exact matching but indicates strong similarity."
   },
   {
    "id": "dpv-tech|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/tech#System",
@@ -743,9 +767,9 @@
    "ref_iri": "https://w3id.org/dpv/tech#System",
    "ref_label": "System",
    "lexical_similarity": 0.62,
-   "llm_relation": "skos:narrowMatch",
+   "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "An 'AI System' (AIDOC) is a *specific type* of 'System' (dpv-tech). The dpv-tech definition is very general – any collection of interacting components qualifies. The AIDOC concept adds constraints regarding autonomy, adaptiveness, inference and influence on environments, making it a more specialized kind of system. While there’s overlap, the AIDOC concept isn't equivalent to *all* systems; it defines a subset."
+   "llm_rationale": "The AIDOC 'AI System' is a *specific type* of 'System' as defined by dpv-tech. The dpv-tech definition is very general – any collection of interacting components. An AI system clearly fits this description, but not all systems are AI systems. Therefore, dpv-tech#System is broader."
   },
   {
    "id": "dpv-tech|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/dpv/tech#Documentation",
@@ -757,7 +781,7 @@
    "lexical_similarity": 0.615,
    "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept 'Visual Documentation' is a *type* of 'Documentation'. The dpv-tech concept covers all documentation, while the AIDOC concept specifically focuses on visual forms required by Annex IV. Therefore, dpv-tech#Documentation is broader than AIDOC's Visual Documentation."
+   "llm_rationale": "The AIDOC concept 'Visual Documentation' is a *type* of 'Documentation'. The dpv-tech concept covers all documentation, while the AIDOC concept specifically focuses on visual forms required for AI system assessment. Therefore, dpv-tech#Documentation is broader."
   },
   {
    "id": "dpv-tech|https://w3id.org/aidoc-ap#Auditor|https://w3id.org/dpv/tech#hasAuditor",
@@ -769,7 +793,7 @@
    "lexical_similarity": 0.611,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to auditing, specifically concerning technology/AI systems. The AIDOC concept defines *who* the auditor is (an organization or person), while dpv-tech focuses on the *relationship* of having an auditor for a technology. They are highly related and could be used interchangeably in many contexts, but aren't strictly equivalent due to this difference in focus."
+   "llm_rationale": "Both concepts relate to auditing, specifically concerning technology/AI systems. However, 'Auditor' (AIDOC) describes *who* performs the audit, while 'hasAuditor' (dpv-tech) is a property indicating *that* something has an auditor. They are closely related but not interchangeable; one is an entity and the other a relation."
   },
   {
    "id": "dpv-tech|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/tech#Model",
@@ -781,7 +805,7 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to representations used for computation or understanding a system/concept. The AIDOC definition is specifically tied to AI, while the dpv-tech 'Model' is more general. They are highly similar and could be interchanged in many contexts relating to modelling, but aren’t strictly equivalent due to the AI focus of AIDOC."
+   "llm_rationale": "Both concepts refer to representations used for computation or understanding. The AIDOC 'AI Model' is specifically tied to AI tasks, while the dpv-tech 'Model' is a more general abstraction. They are sufficiently similar for interchangeability in many contexts but aren’t identical due to the AI specificity of the AIDOC concept."
   },
   {
    "id": "mcro|https://w3id.org/aidoc-ap#AIAgent|http://xmlns.com/foaf/0.1/Agent",
@@ -793,7 +817,7 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts represent an 'Agent'. The AIDOC concept explicitly defines it within the AI lifecycle and derives from prov:Agent, adding a specific context. FOAF's Agent is more general. While not identical (AIDOC has added constraints), they are sufficiently similar for interchangeability in many contexts. The lexical similarity score of 0.608 supports this."
+   "llm_rationale": "Both concepts represent an 'Agent', however the AIDOC concept explicitly focuses on agents *within the AI lifecycle* and is derived from PROV-O, indicating a specific provenance context. The FOAF Agent is more general. While not identical, they are sufficiently similar for interchangeability in many contexts relating to agency."
   },
   {
    "id": "mex-core|https://w3id.org/aidoc-ap#Dataset|http://mex.aksw.org/mex-core#Dataset",
@@ -805,7 +829,7 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same class - a dataset used in an AI/data context. The lexical similarity score of 1.0 strongly supports this."
+   "llm_rationale": "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same core idea of a 'Dataset'. The high lexical similarity supports this."
   },
   {
    "id": "mex-core|https://w3id.org/aidoc-ap#AIActivity|http://www.w3.org/ns/prov-o#Activity",
@@ -816,8 +840,8 @@
    "ref_label": "Activity",
    "lexical_similarity": 0.637,
    "llm_relation": "skos:exactMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Activity (which is what mex-core defines). The lexical similarity is high and the descriptions are essentially identical – one is a specialization of the other within the AI domain, but fundamentally represent the same class. Therefore they denote the same class."
+   "llm_confidence": 0.95,
+   "llm_rationale": "The AIDOC concept explicitly states it *is derived from* prov:Activity (which is what mex-core's Activity uses as its URI). The descriptions are highly aligned – both represent an 'activity'. While AIDOC specifies this activity relates to the AI lifecycle, that doesn’t fundamentally change the underlying meaning of ‘activity’ itself. Therefore, they can be considered interchangeable in many contexts."
   },
   {
    "id": "mex-core|https://w3id.org/aidoc-ap#DataValidation|http://mex.aksw.org/mex-core#Validation",
@@ -829,7 +853,7 @@
    "lexical_similarity": 0.62,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts center around 'Validation', however the AIDOC concept specifically focuses on validation *within the context of AI/ML models* using datasets for training and tuning. The mex-core concept's description is missing, but given its label 'Validation', it likely represents a more general notion of validation applicable across various domains. They are highly similar but not identical; an AI model validation activity would be *a type of* Validation, but not all Validation activities involve AI models."
+   "llm_rationale": "Both concepts relate to the process of 'Validation', however AIDOC specifically focuses on validation *within* AI/ML model development using datasets, while mex-core's 'Validation' appears more general and lacks this specific context in its provided description. They are highly related and could be used interchangeably in many contexts concerning data quality assessment, but the AI focus of AIDOC introduces a nuance."
   },
   {
    "id": "mex-core|https://w3id.org/aidoc-ap#AIModel|http://mex.aksw.org/mex-core#Model",
@@ -841,7 +865,7 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to a 'Model' used in computation. The AIDOC definition specifies it *enables* an AI task, adding context not present in the mex-core description (which is currently empty). Given the lexical similarity of 0.608 and overlapping core meaning, they are close matches but not equivalent due to the added specificity in AIDOC."
+   "llm_rationale": "Both concepts refer to a computational representation used for tasks. The AIDOC definition explicitly links it to 'AI methods' and 'AI tasks', while the mex-core concept is more general ('Model'). They are highly similar but not identical; an AI Model *is* a Model, but not all Models are necessarily AI Models."
   },
   {
    "id": "mex-core|https://w3id.org/aidoc-ap#AIAgent|http://www.w3.org/ns/prov-o#Agent",
@@ -852,8 +876,8 @@
    "ref_label": "Agent",
    "lexical_similarity": 0.608,
    "llm_relation": "skos:exactMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Agent (which is what mex-core defines). The lexical similarity is high and the descriptions are essentially identical – one simply clarifies its context within a specific lifecycle. This suggests they represent the same class."
+   "llm_confidence": 0.95,
+   "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Agent (which is what mex-core uses). The descriptions are highly aligned – both refer to agents. While AIDOC specifies 'AI lifecycle', this doesn’t fundamentally change the core meaning of ‘agent’ in this context; it simply adds a domain restriction.  The lexical similarity score supports a strong relationship."
   },
   {
    "id": "mex-core|https://w3id.org/aidoc-ap#DataTraining|http://mex.aksw.org/mex-core#Training",
@@ -865,7 +889,7 @@
    "lexical_similarity": 0.605,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts clearly relate to the process of 'Training' within an AI/data context. The AIDOC definition is more specific about *what* is being trained (AI systems and their parameters), while mex-core’s description is missing, but the label suggests a similar activity. They are not identical as the AIDOC concept explicitly focuses on data used for training, which may or may not be fully captured by the broader 'Training' in mex-core."
+   "llm_rationale": "Both concepts refer to the process of 'Training' within an AI/data context. The AIDOC definition explicitly mentions *datasets* and *model training*, while mex-core’s description is missing (and therefore less specific). While not identical due to the lack of detail in `mex-core`, they are highly related and likely interchangeable in many contexts."
   },
   {
    "id": "mex-perf|https://w3id.org/aidoc-ap#AIActivity|http://www.w3.org/ns/prov-o#Activity",
@@ -876,20 +900,8 @@
    "ref_label": "Activity",
    "lexical_similarity": 0.637,
    "llm_relation": "skos:exactMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Activity (which is what mex-perf uses as its URI). The descriptions are highly similar – both define an 'Activity'. While AIDOC specifies this activity relates to the AI lifecycle, that doesn’t fundamentally change the underlying class; it adds a domain restriction. Therefore, they represent essentially the same concept."
-  },
-  {
-   "id": "ml-onto|https://w3id.org/aidoc-ap#ModelEvaluation|http://www.w3.org/ns/mls#ModelEvaluation",
-   "ontology": "ml-onto",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelEvaluation",
-   "aidoc_label": "Model Evaluation",
-   "ref_iri": "http://www.w3.org/ns/mls#ModelEvaluation",
-   "ref_label": "Model Evaluation",
-   "lexical_similarity": 1.0,
-   "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts have identical labels and very similar descriptions focusing on assessing performance/accuracy. The lack of a description for the ml-onto concept doesn't detract from the strong lexical and semantic overlap; it simply means the information is presented elsewhere."
+   "llm_rationale": "The AIDOC 'AI Activity' is *defined* as being derived from prov:Activity (which is what mex-perf's 'Activity' represents). The descriptions are essentially identical; one explicitly states its provenance to the other. While AIDOC adds context of AI lifecycle activities, it doesn’t fundamentally change the meaning of ‘Activity’ itself."
   },
   {
    "id": "ml-onto|https://w3id.org/aidoc-ap#Dataset|http://www.w3.org/ns/mls#Dataset",
@@ -901,7 +913,19 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same class - a dataset used in an AI/ML context. The lexical similarity score of 1.0 further supports this."
+   "llm_rationale": "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same core idea of a 'Dataset'. The high lexical similarity supports this."
+  },
+  {
+   "id": "ml-onto|https://w3id.org/aidoc-ap#ModelEvaluation|http://www.w3.org/ns/mls#ModelEvaluation",
+   "ontology": "ml-onto",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelEvaluation",
+   "aidoc_label": "Model Evaluation",
+   "ref_iri": "http://www.w3.org/ns/mls#ModelEvaluation",
+   "ref_label": "Model Evaluation",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:exactMatch",
+   "llm_confidence": 0.95,
+   "llm_rationale": "Both concepts share the same label and a highly similar description focusing on assessing performance, robustness, and accuracy of models. The lack of a description for ml-onto doesn't detract from the strong lexical and semantic overlap."
   },
   {
    "id": "ml-onto|https://w3id.org/aidoc-ap#AIModel|http://www.w3.org/ns/mls#Model",
@@ -913,7 +937,7 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to a computational representation used for tasks. While the AIDOC definition explicitly links it to 'AI methods' and 'AI tasks', the ml-onto concept provides a more general definition of a 'Model'. The lexical similarity is high (0.608), suggesting strong overlap in meaning, but the added specificity in AIDOC prevents equivalence. They are likely interchangeable in many machine learning contexts."
+   "llm_rationale": "Both concepts refer to a computational representation used for tasks – 'AI Model' explicitly within the AI domain and 'Model' more generally (as indicated by the ml-onto namespace suggesting Machine Learning). The descriptions are highly similar in intent, though AIDOC specifies *how* the model is used. They aren’t identical enough for exactMatch, but sufficiently close to be interchangeable in many ML/AI contexts."
   },
   {
    "id": "ml-onto|https://w3id.org/aidoc-ap#AIAgent|http://xmlns.com/foaf/0.1/Agent",
@@ -925,7 +949,19 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts represent an 'Agent', and the AIDOC definition explicitly derives from a well-established agent concept (prov:Agent). The lexical similarity is high (0.608), suggesting strong overlap in meaning. However, AIDOC specifies this Agent within the context of the *AI lifecycle*, implying a potentially narrower scope than the general foaf:Agent which can represent any agent. Therefore, they aren't equivalent but are close enough to be used interchangeably in many AI-related applications."
+   "llm_rationale": "Both concepts represent an 'Agent', and the lexical similarity is high (0.608). However, AIDOC explicitly frames this agent within the *AI lifecycle*, making it a specialized type of Agent. The ml-onto concept, using FOAF's definition, is more general. Therefore, they aren’t exact matches but are close enough to be interchangeable in many AI-related contexts."
+  },
+  {
+   "id": "ml-onto|https://w3id.org/aidoc-ap#Modality|http://w3id.org/mlso/DataModality",
+   "ontology": "ml-onto",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#Modality",
+   "aidoc_label": "Modality",
+   "ref_iri": "http://w3id.org/mlso/DataModality",
+   "ref_label": "Data Modality",
+   "lexical_similarity": 0.605,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC 'Modality' focuses specifically on *how* an AI system is delivered – a deployment characteristic. The ml-onto 'Data Modality' describes the *type of data itself*. While related (an AI system will *use* data modalities), the ml-onto concept is broader, encompassing all forms of data representation, not just those relevant to AI system provision. Therefore, AIDOC’s modality is a specific instance within the broader scope of Data Modality."
   },
   {
    "id": "ml-onto|https://w3id.org/aidoc-ap#SoftwareImplementation|http://www.w3.org/ns/mls#Implementation",
@@ -937,19 +973,7 @@
    "lexical_similarity": 0.603,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to the realization of something abstract (algorithm/model) into executable code. The descriptions are very similar in intent, though 'Software Implementation' specifies *software* which isn’t explicitly stated in the ml-onto definition. This difference prevents equivalence but suggests a strong similarity allowing interchangeability in many contexts."
-  },
-  {
-   "id": "mlschema|https://w3id.org/aidoc-ap#ModelEvaluation|http://www.w3.org/ns/mls#ModelEvaluation",
-   "ontology": "mlschema",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelEvaluation",
-   "aidoc_label": "Model Evaluation",
-   "ref_iri": "http://www.w3.org/ns/mls#ModelEvaluation",
-   "ref_label": "ModelEvaluation",
-   "lexical_similarity": 1.0,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts clearly refer to the evaluation of a model's performance. However, the `mlschema` definition is more precise, focusing on connecting a *measure* with its *value*, implying a specific outcome of an evaluation. The AIDOC concept is broader, encompassing the entire activity of assessment. While highly similar, they aren’t identical due to this difference in granularity."
+   "llm_rationale": "Both concepts refer to the realization of something abstract (algorithm/model) into executable form. The AIDOC definition explicitly mentions 'executable software', while ml-onto's description is missing, but the label strongly suggests a similar meaning. They aren’t *exactly* interchangeable – one focuses on algorithms specifically, and the other is more general – hence closeMatch rather than exactMatch."
   },
   {
    "id": "mlschema|https://w3id.org/aidoc-ap#Dataset|http://www.w3.org/ns/mls#Dataset",
@@ -961,7 +985,19 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts share the same label ('Dataset') and a very high lexical similarity score (1.0). While the mlschema description is empty, the core meaning implied by the URI and label strongly suggests they represent the same concept – a dataset. Without further differentiating information in the mlschema definition, equivalence is the most appropriate relation."
+   "llm_rationale": "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same entity – a dataset. The high lexical similarity supports this."
+  },
+  {
+   "id": "mlschema|https://w3id.org/aidoc-ap#ModelEvaluation|http://www.w3.org/ns/mls#ModelEvaluation",
+   "ontology": "mlschema",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelEvaluation",
+   "aidoc_label": "Model Evaluation",
+   "ref_iri": "http://www.w3.org/ns/mls#ModelEvaluation",
+   "ref_label": "ModelEvaluation",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to evaluating models, however 'mlschema' explicitly links evaluation to *performance measures* and their values, framing it as a specific setting of a value. 'AIDOC' is more general, describing the activity itself (assessing performance, robustness, accuracy). While highly related, the focus on measurement in mlschema adds specificity not present in AIDOC."
   },
   {
    "id": "mlschema|https://w3id.org/aidoc-ap#AIModel|http://www.w3.org/ns/mls#Model",
@@ -973,7 +1009,7 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to a computational entity capable of making predictions or executing tasks based on data. The `mlschema` definition is more detailed, specifying the model's dual nature as both data structure and function, and differentiating between global/local models. While not identical (the AIDOC description is simpler), they are sufficiently similar for interchangeability in many contexts. The lexical similarity score of 0.608 supports this."
+   "llm_rationale": "Both concepts refer to a computational entity capable of producing outputs from inputs based on learned patterns. However, the `mlschema` definition is more detailed regarding its origin (data mining algorithm execution) and dual nature as both data structure and function, while `AIDOC`'s description is broader and focuses on enabling an AI task. They are highly related but not interchangeable due to these nuances."
   },
   {
    "id": "mlschema|https://w3id.org/aidoc-ap#SoftwareImplementation|http://www.w3.org/ns/mls#Implementation",
@@ -985,7 +1021,7 @@
    "lexical_similarity": 0.603,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to executable realizations of algorithms (specifically machine learning in the mlschema case). The descriptions are highly similar, focusing on executability and versioning. While 'Software Implementation' is more general, and 'Implementation' within mlSchema explicitly mentions machine learning context and libraries, they represent largely overlapping ideas. They aren’t *exactly* equivalent due to the ML focus of mlschema, but can likely be used interchangeably in many contexts."
+   "llm_rationale": "Both concepts refer to executable realizations of algorithms. The 'mlschema' concept explicitly focuses on *machine learning* algorithms and includes details like versioning and libraries which are not mentioned in the AIDOC definition. While not identical, they represent very similar ideas and could be used interchangeably in many contexts."
   },
   {
    "id": "prov-o|https://w3id.org/aidoc-ap#AIActivity|http://www.w3.org/ns/prov#Activity",
@@ -996,8 +1032,8 @@
    "ref_label": "Activity",
    "lexical_similarity": 0.637,
    "llm_relation": "skos:exactMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Activity. This indicates a strong intention for equivalence, despite the specific focus of AI activities within AIDOC. The lexical similarity score is also high. While AIDOC adds context (AI lifecycle), it doesn’t fundamentally change the underlying nature of an 'activity'."
+   "llm_confidence": 0.95,
+   "llm_rationale": "The AIDOC 'AI Activity' is *defined* as being derived from prov:Activity. This indicates a strong intention for interoperability and essentially re-uses the core definition of an activity within the AI domain. While AIDOC adds context (the AI lifecycle), it doesn’t fundamentally alter what constitutes an ‘activity’. The lexical similarity score supports this."
   },
   {
    "id": "prov-o|https://w3id.org/aidoc-ap#AIAgent|http://www.w3.org/ns/prov#Agent",
@@ -1009,19 +1045,31 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC 'AI Agent' is explicitly derived from prov:Agent and describes agents *involved in the AI lifecycle*. While the prov-o 'Agent' is a more general concept, the descriptions suggest significant overlap. They aren’t identical (the AI lifecycle constraint differentiates AIDOC), but are likely interchangeable in many contexts. The lexical similarity score of 0.608 supports this."
+   "llm_rationale": "The AIDOC 'AI Agent' is explicitly described as *derived from* prov:Agent. This indicates a strong relationship but not complete interchangeability; the AIDOC concept adds specificity to the general 'Agent' in the context of the AI lifecycle. The lexical similarity score supports this close, but not exact, match."
   },
   {
-   "id": "rains|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/rains#AI_System",
+   "id": "rains|https://w3id.org/aidoc-ap#Dataset|http://www.w3.org/ns/mls#Dataset",
    "ontology": "rains",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystem",
-   "aidoc_label": "AI System",
-   "ref_iri": "https://w3id.org/rains#AI_System",
-   "ref_label": "AI System",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#Dataset",
+   "aidoc_label": "Dataset",
+   "ref_iri": "http://www.w3.org/ns/mls#Dataset",
+   "ref_label": "Dataset",
    "lexical_similarity": 1.0,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts define 'AI System' with very high lexical similarity. However, the AIDOC definition is more comprehensive and foundational, providing a general description of what an AI system *is*. The RAINS concept defines it within the specific context of accountability planning – indicating a slightly narrower scope or use case. They aren’t identical (owl:equivalentClass) because RAINS ties the AI System to an 'accountability plan', but they are close enough to be interchangeable in many contexts."
+   "llm_rationale": "Both concepts define 'Dataset', and the lexical similarity is perfect. However, the AIDOC description specifies a context ('AI lifecycle') which narrows its scope compared to the more general definition in RAINS ('a set composed of data item(s)'). While highly similar, they aren't interchangeable across *all* applications due to this contextual difference."
+  },
+  {
+   "id": "rains|https://w3id.org/aidoc-ap#ChangeLog|https://w3id.org/rains#ChangeLog",
+   "ontology": "rains",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ChangeLog",
+   "aidoc_label": "Change Log",
+   "ref_iri": "https://w3id.org/rains#ChangeLog",
+   "ref_label": "Change Log",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to a record of changes. However, the RAINS concept is more specific, framing 'Change Log' as an accountable result tied to design specifications and guidelines, requiring associated change/justification information elements. The AIDOC definition is broader and doesn’t specify this accountability or required elements."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#ModelEvaluation|http://www.w3.org/ns/mls#ModelEvaluation",
@@ -1033,31 +1081,7 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to the evaluation of models. However, the RAINS concept is more specific, framing 'Model Evaluation' as a type of 'EvaluationResult' and explicitly linking it to performance measures and specifications within the ML-Schema framework. The AIDOC definition is broader and doesn’t specify this connection to results or metrics. While highly similar, they aren't identical due to these differing levels of specificity."
-  },
-  {
-   "id": "rains|https://w3id.org/aidoc-ap#Dataset|http://www.w3.org/ns/mls#Dataset",
-   "ontology": "rains",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#Dataset",
-   "aidoc_label": "Dataset",
-   "ref_iri": "http://www.w3.org/ns/mls#Dataset",
-   "ref_label": "Dataset",
-   "lexical_similarity": 1.0,
-   "llm_relation": "skos:exactMatch",
-   "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts define 'Dataset' and their descriptions are highly similar – a collection of data items. The lexical similarity is perfect (1.0), strongly suggesting equivalence. While the RAINS concept has a URI indicating it’s part of a larger vocabulary, this doesn’t negate the core meaning being identical to the AIDOC definition."
-  },
-  {
-   "id": "rains|https://w3id.org/aidoc-ap#ChangeLog|https://w3id.org/rains#ChangeLog",
-   "ontology": "rains",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#ChangeLog",
-   "aidoc_label": "Change Log",
-   "ref_iri": "https://w3id.org/rains#ChangeLog",
-   "ref_label": "Change Log",
-   "lexical_similarity": 1.0,
-   "llm_relation": "skos:narrowMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "The rains concept provides a more specific definition of 'Change Log' as an accountable result tied to design specifications and guidelines, requiring associated change and justification information. The AIDOC concept is a general log of changes. Therefore, the rains ChangeLog is a specialized type of the AIDOC ChangeLog."
+   "llm_rationale": "Both concepts refer to the evaluation of models. However, the RAINS definition is more specific, framing 'Model Evaluation' as a *result* recorded for a model component and linking it directly to performance measures and specifications. The AIDOC concept provides a broader, general description of the activity itself. While highly similar, this added specificity in RAINS prevents an exact match."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#Log|https://w3id.org/rains#Log",
@@ -1069,7 +1093,19 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to 'Log' as a record of events. However, the RAINS concept is more specific, framing logs within a planned accountable result related to changes during implementation. The AIDOC definition is broader and doesn’t specify this context. While not identical, they are highly similar and could be used interchangeably in many scenarios."
+   "llm_rationale": "Both concepts refer to 'Log' as a record of events. However, the RAINS concept explicitly links logs to planned accountable results and changes within an implementation stage, adding a specific context not present in the AIDOC definition which is more general. This suggests they are similar but not interchangeable across all contexts."
+  },
+  {
+   "id": "rains|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/rains#AI_System",
+   "ontology": "rains",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystem",
+   "aidoc_label": "AI System",
+   "ref_iri": "https://w3id.org/rains#AI_System",
+   "ref_label": "AI System",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts define 'AI System' with very high lexical similarity. However, the AIDOC definition is a comprehensive technical description of what constitutes an AI system, while the RAINS concept defines it within the specific context of accountability planning. This contextual difference prevents them from being exact matches, but allows for interchangeability in many scenarios."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#HumanOversightMechanism|https://w3id.org/rains#SystemHumanOversightMechanism",
@@ -1081,7 +1117,7 @@
    "lexical_similarity": 0.801,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts address human oversight of systems, particularly those involving AI. The RAINS concept is more specific, detailing *how* human operators integrate into the decision process and focusing on stopping/reviewing outputs. AIDOC's definition is broader – any mechanism for intervention. While not identical, they are highly related and could be used interchangeably in many contexts."
+   "llm_rationale": "Both concepts address human oversight of systems, particularly those involving AI. However, the RAINS concept is more specific – explicitly linking it to 'AI_System' decision processes and detailing *how* humans can intervene (stop, review, alter). The AIDOC concept is a broader description of any mechanism for human intervention. While highly similar, the added specificity in RAINS prevents an exact match."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/rains#AI_System",
@@ -1091,9 +1127,9 @@
    "ref_iri": "https://w3id.org/rains#AI_System",
    "ref_label": "AI System",
    "lexical_similarity": 0.648,
-   "llm_relation": "skos:closeMatch",
+   "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to AI systems. AIDOC focuses on *what* an AI system can do (its capabilities), while RAINS focuses on the AI System as a subject of accountability planning. They are related but not identical; one describes functionality and the other its context within risk assessment."
+   "llm_rationale": "The AIDOC concept 'AI System Capability' describes *what* an AI system can do – a specific function or task. The RAINS concept 'AI System' is the entity itself for which accountability is being planned. Therefore, an AI System *has* capabilities; the RAINS concept is broader and encompasses the entire system while AIDOC focuses on a component of that system."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/sao#System",
@@ -1105,7 +1141,7 @@
    "lexical_similarity": 0.62,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC 'AI System' is a *specific type* of 'System' as defined by rains. The description of the AI System adds significant constraints and characteristics to the general notion of a system. While all AI Systems are Systems, not all Systems are AI Systems."
+   "llm_rationale": "The rains 'System' concept is very general. The AIDOC 'AI System' is a *specific type* of system – one that leverages AI for inference and decision-making. Therefore, an AI System *is a* System, making it a narrowMatch."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#DataCleaningProcedure|https://w3id.org/rains#DataCollectionProcedure",
@@ -1117,7 +1153,7 @@
    "lexical_similarity": 0.617,
    "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.75,
-   "llm_rationale": "The `rains:DataCollectionProcedure` is a more specific type of procedure than the `AIDOC:Data Cleaning Procedure`. Data cleaning often *follows* data collection; therefore, data collection can be considered a broader category encompassing steps that might lead to needing cleaning. While not perfectly aligned (cleaning isn't collecting), the RAINS concept describes *how* information is initially acquired, which is a prerequisite for any subsequent cleaning process."
+   "llm_rationale": "The `rains:DataCollectionProcedure` is a more specific type of procedure than the `AIDOC:Data Cleaning Procedure`. Data cleaning often *follows* data collection; therefore, data collection can be considered a broader process that encompasses steps which might later require cleaning. While not directly hierarchical in all cases, the description of 'how data is collected' logically precedes and informs any subsequent 'data cleaning'."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#DataCleaningProcedure|https://w3id.org/rains#DataPreprocessingProcedure",
@@ -1129,7 +1165,7 @@
    "lexical_similarity": 0.614,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to procedures applied to data before analysis. 'Data Cleaning Procedure' (AIDOC) focuses specifically on cleaning, while 'Data Preprocessing Procedure' (rains) is broader and encompasses cleaning *as well as* other transformations like sampling, filtering, and feature engineering. The lexical similarity score of 0.614 supports a strong degree of overlap in meaning."
+   "llm_rationale": "Both concepts refer to procedures applied to data *before* analysis. While 'Data Cleaning Procedure' (AIDOC) focuses specifically on cleaning, 'Data Preprocessing Procedure' (rains) is broader and encompasses cleaning *along with* other transformations like sampling, filtering, and feature engineering. The lexical similarity score of 0.614 supports a strong degree of overlap, but the differing scope prevents an exact match."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#ModelEvaluation|https://w3id.org/rains#Evaluation",
@@ -1141,7 +1177,7 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to evaluating something (a model in AIDOC's case, a component generally in RAINS). The RAINS concept is significantly more detailed, specifying required and discouraged information elements and linking it to specific ontology classes like `mls:EvaluationProcedure` and `mls:EvaluationMeasure`. This detail doesn’t make them equivalent, but suggests they address the same high-level activity. The lexical similarity score of 0.608 supports this closeness."
+   "llm_rationale": "Both concepts relate to evaluating something (a model in AIDOC's case, a component generally in RAINS). The RAINS concept is significantly more detailed and formalizes the evaluation process with specific required/discouraged information elements and links to other ontologies (mls:, RealizedObject etc.). This detail doesn’t make them *exactly* equivalent, but they are highly related and could be used interchangeably in many contexts. The lexical similarity score of 0.608 supports this."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#AIModel|http://www.w3.org/ns/mls#Model",
@@ -1153,19 +1189,7 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to a representation used for prediction or task execution. The `rains` definition is more detailed, specifying its origin from data mining and dual nature as both data structure and function, while `AIDOC`'s 'AI Model' is broader. They are sufficiently similar for interchangeability in many contexts but aren’t identical due to the differing levels of detail and focus."
-  },
-  {
-   "id": "rains|https://w3id.org/aidoc-ap#AIAgent|http://www.w3.org/ns/prov#Agent",
-   "ontology": "rains",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AIAgent",
-   "aidoc_label": "AI Agent",
-   "ref_iri": "http://www.w3.org/ns/prov#Agent",
-   "ref_label": "Agent",
-   "lexical_similarity": 0.608,
-   "llm_relation": "skos:exactMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept explicitly states it's *derived from* prov:Agent (the rains Agent). Given the high lexical similarity and the description of AI Agent as a superclass for all agents in the AI lifecycle – which doesn’t fundamentally alter the core meaning of ‘agent’ as defined by PROV – they effectively represent the same class. The AIDOC concept adds context *about* agents within an AI lifecycle, but does not change what constitutes an agent."
+   "llm_rationale": "Both concepts refer to a representation used for prediction or task execution. The RAINS definition is more detailed, specifying its origin in data mining and dual nature as both data structure and function, while AIDOC focuses on enabling AI tasks. They are highly related but not interchangeable due to the differing levels of detail and context."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#AIAgent|https://w3id.org/ep-plan#Agent",
@@ -1177,7 +1201,19 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts represent an 'Agent', and the descriptions indicate a similar high-level meaning. AIDOC specifies this agent is within the AI lifecycle, while RAINS doesn't have that restriction in its description (though the URI suggests it’s part of a planning ontology). The lexical similarity score of 0.608 supports a close, but not equivalent, relationship."
+   "llm_rationale": "Both concepts represent an 'Agent', and the descriptions indicate a similar high-level meaning. However, AIDOC explicitly focuses on agents *within the AI lifecycle*, suggesting a more specific scope than the general RAINS 'Agent'. This prevents it from being an exact match but allows for interchangeability in many contexts."
+  },
+  {
+   "id": "rains|https://w3id.org/aidoc-ap#AIAgent|http://www.w3.org/ns/prov#Agent",
+   "ontology": "rains",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AIAgent",
+   "aidoc_label": "AI Agent",
+   "ref_iri": "http://www.w3.org/ns/prov#Agent",
+   "ref_label": "Agent",
+   "lexical_similarity": 0.608,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC 'AI Agent' is explicitly described as *derived from* prov:Agent (the rains concept). While the AIDOC concept specializes this agent to the AI lifecycle, the core meaning remains highly similar. They aren’t identical – the AI focus adds a constraint – but are likely interchangeable in many contexts dealing with agency and provenance."
   },
   {
    "id": "rains|https://w3id.org/aidoc-ap#ChangeLog|https://w3id.org/rains#Change",
@@ -1189,7 +1225,7 @@
    "lexical_similarity": 0.6,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to tracking modifications or deviations. The 'Change Log' (AIDOC) is a general record of changes, while the 'Change' (rains) specifically focuses on deviations from specifications/guidelines – implying a more formal and potentially risk-related context. They are similar enough for interchangeability in many scenarios but aren’t identical due to the specificity of the rains concept."
+   "llm_rationale": "Both concepts relate to tracking modifications or deviations. The AIDOC 'Change Log' is a broader record of *all* changes, while the RAINS 'Change' specifically focuses on deviations from specifications/guidelines – implying a more controlled and formal change management process. They are similar enough for some interoperability but not identical."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#Dataset|https://w3id.org/vair#Dataset",
@@ -1201,7 +1237,7 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts share the same label and a very high lexical similarity score (1.0). While the AIDOC description is slightly more verbose, it essentially defines the same concept as the vair Dataset – representing data used in an AI context. The URI provided for the vair concept further solidifies this equivalence."
+   "llm_rationale": "Both concepts share the same label and represent a 'Dataset'. While the AIDOC description is minimal, the core meaning aligns perfectly with the vair concept's definition (even though that description is currently empty). The lexical similarity score of 1.0 further supports this."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#TransparencyMeasure|https://w3id.org/vair#TransparencyMeasure",
@@ -1213,19 +1249,7 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts share the same label and a very similar description. The lexical similarity is perfect (1.0). While 'Refers to transparency measures' in vair is slightly more general phrasing, it doesn’t indicate a different meaning; it simply states what the measure *is*. Therefore, they can be considered equivalent."
-  },
-  {
-   "id": "vair|https://w3id.org/aidoc-ap#Standard|https://w3id.org/airo#Standard",
-   "ontology": "vair",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#Standard",
-   "aidoc_label": "Standard",
-   "ref_iri": "https://w3id.org/airo#Standard",
-   "ref_label": "Standard",
-   "lexical_similarity": 1.0,
-   "llm_relation": "skos:exactMatch",
-   "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts share the same label and a very similar (though one is empty) description indicating they represent the same class - an AI system standard. The lexical similarity score of 1.0 further supports this."
+   "llm_rationale": "Both concepts share the same label and a highly similar description defining 'Transparency Measure'. The presence of a URI in vair suggests it's a formally defined concept, but the descriptions are functionally equivalent for interoperability purposes at this level."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#Deployment|https://w3id.org/vair#Deployment",
@@ -1237,7 +1261,31 @@
    "lexical_similarity": 1.0,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts define 'Deployment' as the process of making an AI system operational in a production environment. The descriptions are highly similar and cover essentially the same ground. While 'vair' provides a URI which is good practice, it doesn’t alter the semantic meaning."
+   "llm_rationale": "Both concepts define 'Deployment' as the process of making an AI system operational in a production environment. The descriptions are highly similar and cover essentially the same ground; differences are stylistic rather than semantic."
+  },
+  {
+   "id": "vair|https://w3id.org/aidoc-ap#Standard|https://w3id.org/airo#Standard",
+   "ontology": "vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#Standard",
+   "aidoc_label": "Standard",
+   "ref_iri": "https://w3id.org/airo#Standard",
+   "ref_label": "Standard",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:exactMatch",
+   "llm_confidence": 0.95,
+   "llm_rationale": "Both concepts define 'Standard' applied to AI systems. The lexical similarity is perfect (1.0). While the AIDOC description provides a little more context ('harmonised or other'), it doesn’t fundamentally alter the meaning. The URI in vair further solidifies this as being the same concept."
+  },
+  {
+   "id": "vair|https://w3id.org/aidoc-ap#Modality|https://w3id.org/airo#Modality",
+   "ontology": "vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#Modality",
+   "aidoc_label": "Modality",
+   "ref_iri": "https://w3id.org/airo#Modality",
+   "ref_label": "Modality",
+   "lexical_similarity": 1.0,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts use the label 'Modality' and relate to how an AI system is delivered/exists. However, the AIDOC description focuses specifically on *provision* forms for commercialization (software, API, hardware), while the vair concept lacks a detailed definition. This suggests they are highly related but not identical; interchangeability would depend on the specific application context."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#ValidationData",
@@ -1249,7 +1297,7 @@
    "lexical_similarity": 0.867,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.88,
-   "llm_rationale": "Both concepts refer to data used for evaluating AI/ML models. The AIDOC definition is more focused on the *activity* of validation and preventing overfitting/underfitting during model training, while vair's ValidationData focuses specifically on the *data itself* used for comparing different models. They are highly related but not identical; one could likely substitute 'ValidationData' for 'Data Validation' in many contexts without losing core meaning."
+   "llm_rationale": "Both concepts refer to data used for evaluating AI/ML models. However, the AIDOC definition explicitly mentions *tuning* parameters and preventing overfitting/underfitting which introduces a nuance not directly present in the vair concept's broader description of comparing model performance. While highly related, they aren’t interchangeable across all contexts."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#TrainingData",
@@ -1261,7 +1309,7 @@
    "lexical_similarity": 0.846,
    "llm_relation": "skos:exactMatch",
    "llm_confidence": 0.95,
-   "llm_rationale": "Both concepts define data used for training machine learning models. The descriptions are nearly identical and the lexical similarity is high. While 'Data Training' frames it as an *activity*, the core meaning focuses on the *data* itself which aligns perfectly with 'TrainingData'."
+   "llm_rationale": "Both concepts define data used for training machine learning models. The descriptions are nearly identical and the lexical similarity is high. While 'Data Training' frames it as an *activity*, 'TrainingData' focuses on the *data* itself – a subtle difference not significant enough to warrant anything less than exact match at this conceptual level."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DeclarationOfConformity|https://w3id.org/vair#EUDeclarationOfConformity",
@@ -1272,8 +1320,8 @@
    "ref_label": "EU Declaration Of Conformity",
    "lexical_similarity": 0.827,
    "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.95,
-   "llm_rationale": "The 'vair' concept is a specific instance of the more general 'Declaration of Conformity' described by AIDOC, explicitly referencing the AI Act. While not strictly equivalent (the AI act context adds specificity), they are highly similar and likely interchangeable in many contexts. The lexical similarity score of 0.827 supports this."
+   "llm_confidence": 0.92,
+   "llm_rationale": "The `vair` concept is a specific instance of a Declaration of Conformity as defined by the EU AI Act, while the `AIDOC` concept is more general. They represent largely the same document type but with differing regulatory contexts and levels of specificity. The high lexical similarity supports this close relationship."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/vair#TrainingData",
@@ -1285,19 +1333,7 @@
    "lexical_similarity": 0.725,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to data used for machine learning training. The AIDOC concept is more detailed, specifying *what* information the 'Training Data Sheet' contains (methodologies, hyperparameters etc.), while vair#TrainingData focuses on the data itself. They are highly related and could be used interchangeably in many contexts, but aren’t strictly equivalent due to the added detail in AIDOC."
-  },
-  {
-   "id": "vair|https://w3id.org/aidoc-ap#MLPipeline|http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning",
-   "ontology": "vair",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#MLPipeline",
-   "aidoc_label": "Machine Learning Pipeline",
-   "ref_iri": "http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning",
-   "ref_label": "MachineLearning",
-   "lexical_similarity": 0.712,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to the process of Machine Learning. The AIDOC concept specifies it as a 'pipeline' within an AI lifecycle, adding context and detail. While not identical (the pipeline aspect is specific), they are highly related and could be used interchangeably in many contexts. The lexical similarity score supports this."
+   "llm_rationale": "Both concepts relate to data used for machine learning training. The AIDOC concept is more detailed, specifying *what* information the 'Training Data Sheet' contains (methodologies, hyperparameters etc.), while vair#TrainingData focuses on the data itself. They are highly related and could be used interchangeably in many contexts, but aren’t strictly identical due to the level of detail."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearning",
@@ -1309,7 +1345,19 @@
    "lexical_similarity": 0.712,
    "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC 'Machine Learning Pipeline' represents a *specific implementation* of the more general 'Machine Learning' process described by vair. A pipeline is a way to *do* machine learning, not machine learning itself. Therefore, Machine Learning (vair) is broader than Machine Learning Pipeline (AIDOC)."
+   "llm_rationale": "The AIDOC 'Machine Learning Pipeline' represents a *specific instantiation* of the more general 'Machine Learning' process described by vair. A pipeline *is a part of* machine learning; it’s how you *do* machine learning, not what machine learning *is*. The description of the vair concept is broader and defines the core activity, while AIDOC focuses on the implementation."
+  },
+  {
+   "id": "vair|https://w3id.org/aidoc-ap#MLPipeline|http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning",
+   "ontology": "vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#MLPipeline",
+   "aidoc_label": "Machine Learning Pipeline",
+   "ref_iri": "http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning",
+   "ref_label": "MachineLearning",
+   "lexical_similarity": 0.712,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to the use of machine learning. The AIDOC concept specifies a *pipeline* for ML activities within an AI lifecycle, while 'MachineLearning' (vair) is a more general term. They are highly related and could be used interchangeably in many contexts, but the pipeline aspect adds specificity to the AIDOC definition."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/vair#PostMarketMonitoringPlan",
@@ -1321,7 +1369,7 @@
    "lexical_similarity": 0.691,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to monitoring after deployment. However, the 'vair' concept explicitly ties into the AI Act and represents a *plan* for monitoring, while 'AIDOC' describes the *activity* itself. They are highly related and could be used interchangeably in many contexts, but aren’t identical."
+   "llm_rationale": "Both concepts relate to monitoring after deployment. However, 'Post-market Monitoring Plan' (vair) explicitly references the AI Act and implies a *plan* – a documented approach. 'Post-market Monitoring Activity' (AIDOC) is the execution of that plan or general monitoring. They are highly related and could be used interchangeably in many contexts, but aren’t identical."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#BiasedValidationData",
@@ -1333,7 +1381,7 @@
    "lexical_similarity": 0.659,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes the general activity of data validation for AI models. The vair concept 'Biased Validation Data' specifically identifies *a type* of problem within that broader validation process – namely, bias in the data used. Therefore, biased validation data is a specific instance/subset of data validation."
+   "llm_rationale": "The AIDOC concept describes the general activity of data validation for AI models. The vair concept 'Biased Validation Data' specifically identifies *a type* of problem within that broader validation process – namely, bias in the data used. Therefore, biased validation data is a specific instance/aspect of data validation."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#IrrelevantValidationData",
@@ -1345,7 +1393,7 @@
    "lexical_similarity": 0.654,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes data validation generally for AI model evaluation. The vair concept specifically focuses on *irrelevant* data used in that process – a specific type of problematic validation. Thus, 'Irrelevant Validation Data' is a more specific case *of* 'Data Validation'."
+   "llm_rationale": "The AIDOC concept describes data validation generally for AI models. The vair concept specifically focuses on *irrelevant* data used in that process – a specific type of problematic validation. Thus, 'Irrelevant Validation Data' is a narrower concept within the broader scope of 'Data Validation'."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#BiasedTrainingData",
@@ -1369,7 +1417,7 @@
    "lexical_similarity": 0.638,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes data training generally. The vair concept specifically focuses on *irrelevant* data used in training – a specific type of data training. Therefore, 'Irrelevant Training Data' is a narrower concept than 'Data Training'."
+   "llm_rationale": "The AIDOC concept 'Data Training' is a general activity. The vair concept 'Irrelevant Training Data' specifies *a type* of data training – specifically when the data used is irrelevant. Therefore, IrrelevantTrainingData is a narrower concept than Data Training."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#IncompleteValidationData",
@@ -1381,7 +1429,7 @@
    "lexical_similarity": 0.634,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes the general activity of data validation for AI models. The vair concept 'Incomplete Validation Data' specifically identifies a *problem* within that broader process – namely, insufficient completeness of the dataset used for validation. Therefore, incomplete validation data is a specific type of data validation scenario."
+   "llm_rationale": "The AIDOC concept describes the general activity of data validation for AI models. The vair concept 'Incomplete Validation Data' specifically identifies *a type* of problem within that broader validation process – namely, a lack of completeness in the dataset used for validation. Therefore, incomplete validation data is a specific case *of* data validation."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#HumanOversightMechanism|https://w3id.org/vair#HumanOversightMeasure",
@@ -1393,7 +1441,7 @@
    "lexical_similarity": 0.633,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to human involvement in overseeing a system. The 'vair' concept explicitly mentions risk detection/prevention which adds specificity, but the core idea of facilitating human intervention is present in both. They are highly similar and likely interchangeable in many contexts, though not strictly equivalent."
+   "llm_rationale": "Both concepts address human involvement in overseeing systems. The 'vair' concept explicitly mentions risk detection/prevention which adds a specific focus not directly stated in the AIDOC definition, but the core idea of facilitating human intervention is present in both. Therefore they are close matches rather than exact."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningModel",
@@ -1405,7 +1453,7 @@
    "lexical_similarity": 0.623,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "A 'Machine Learning Pipeline' (AIDOC) *includes* a 'Machine Learning Model' (vair). The pipeline encompasses the entire process of building and deploying models, while the vair concept focuses specifically on the model itself – the core predictive component. Therefore, the Machine Learning Model is a narrower concept within the broader context of a Machine Learning Pipeline."
+   "llm_rationale": "A 'Machine Learning Pipeline' (AIDOC) *utilizes* a 'Machine Learning Model' (vair). The pipeline encompasses the entire process of building, training, deploying and monitoring models; the model is a component within that pipeline. Therefore, the vair concept is narrower than the AIDOC concept."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#UnrepresentativeValidationData",
@@ -1417,7 +1465,7 @@
    "lexical_similarity": 0.621,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes data validation generally for AI models. The vair concept specifically identifies *unrepresentative* validation data as a problem within that broader process. Thus, unrepresentative validation data is a specific type of data validation activity."
+   "llm_rationale": "The AIDOC concept describes the general activity of data validation for AI models. The vair concept specifically identifies *unrepresentative* validation data as a problematic case within that broader process. Thus, 'Unrepresentative Validation Data' is a specific type of 'Data Validation'."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#Validation",
@@ -1429,7 +1477,7 @@
    "lexical_similarity": 0.62,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts focus on 'Validation' within the AI lifecycle. The AIDOC concept is more specific to *data* validation for model tuning, while the vair concept describes a broader validation of the entire system against requirements. They are highly related and could be used interchangeably in many contexts, but aren’t identical."
+   "llm_rationale": "Both concepts relate to ensuring an AI system functions correctly and meets expectations. However, the AIDOC concept specifically focuses on *data* validation for model training/tuning (preventing overfitting/underfitting), while the vair concept is a broader assessment of overall system performance against requirements. They overlap significantly but aren't fully interchangeable; data validation is *a type of* validation."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#ErroneousValidationData",
@@ -1441,7 +1489,7 @@
    "lexical_similarity": 0.62,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept describes the *activity* of data validation, a process. The vair concept identifies a specific *problem within* that activity – erroneous data. Therefore, 'Erroneous Validation Data' is a more specific type of thing encountered during 'Data Validation'."
+   "llm_rationale": "The AIDOC concept describes the *activity* of data validation as a whole process for AI model improvement. The vair concept focuses on a specific *problem within* that activity – erroneous data. Therefore, 'Erroneous Validation Data' is a more specific case *of* 'Data Validation'."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#IncompleteTrainingData",
@@ -1453,7 +1501,7 @@
    "lexical_similarity": 0.616,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept 'Data Training' is a general activity. 'Incomplete Training Data' (vair) describes *a specific issue within* that activity – namely, the data being incomplete. Therefore, incomplete training data is a type of data training."
+   "llm_rationale": "The AIDOC concept 'Data Training' is a general activity. 'Incomplete Training Data' (vair) describes *a specific issue within* that activity – namely, the data being insufficient. Therefore, incomplete training data is a type of data training."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/airo#Documentation",
@@ -1463,9 +1511,9 @@
    "ref_iri": "https://w3id.org/airo#Documentation",
    "ref_label": "Documentation",
    "lexical_similarity": 0.615,
-   "llm_relation": "skos:narrowMatch",
+   "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept 'Visual Documentation' is a *type* of 'Documentation'. The vair concept provides the broader category while AIDOC specifies a particular form (visual) of documentation. While not perfectly equivalent, the descriptions clearly indicate a subsumption relationship."
+   "llm_rationale": "The AIDOC concept 'Visual Documentation' is a *type* of 'Documentation'. The vair concept 'Documentation' is broader and encompasses all forms of documentation, while the AIDOC concept specifically focuses on visual representations. The lexical similarity score supports this relationship."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningLibrary",
@@ -1477,7 +1525,7 @@
    "lexical_similarity": 0.61,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "A 'Machine Learning Pipeline' (AIDOC) *uses* or *includes* 'Machine Learning Libraries' (vair). The pipeline is a process encompassing libraries as components. Therefore, the library concept is narrower than the pipeline concept."
+   "llm_rationale": "A 'Machine Learning Library' (vair) is a *component* used within a broader 'Machine Learning Pipeline' (AIDOC). The pipeline encompasses the entire process, while the library represents tools utilized in that process. Thus, vair is narrower than AIDOC."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/vair#Model",
@@ -1489,7 +1537,7 @@
    "lexical_similarity": 0.608,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts refer to representations used for understanding or executing something – AI tasks in AIDOC and systems/data in vair. While 'AI Model' is specifically about artificial intelligence, it *is* a type of model as defined by vair. The descriptions aren’t identical (vair is broader), but they are highly overlapping and could be used interchangeably in many contexts where the ‘AI’ aspect isn’t critical."
+   "llm_rationale": "Both concepts refer to representations used for understanding or executing something – AI tasks in AIDOC and systems/data in vair. While the AIDOC concept is specifically tied to *AI* models, the vair concept is more general. They are sufficiently similar for interchangeability in many contexts involving model-based reasoning, but not identical due to the AI specificity of the AIDOC definition."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#UnrepresentativeTrainingData",
@@ -1501,7 +1549,7 @@
    "lexical_similarity": 0.605,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept 'Data Training' is a general activity. 'Unrepresentative Training Data' (vair) specifies *a type* of data training – specifically when the data used isn’t representative. Therefore, unrepresentative training data is a specific case *of* data training."
+   "llm_rationale": "The AIDOC concept 'Data Training' is a general activity. The vair concept 'Unrepresentative Training Data' specifies *a type* of data training – specifically when the data used isn’t representative. Thus, unrepresentative training data is a specific case *of* data training."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningPlatform",
@@ -1513,7 +1561,7 @@
    "lexical_similarity": 0.604,
    "llm_relation": "skos:closeMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to the environment for machine learning activities. 'Machine Learning Pipeline' (AIDOC) describes *how* ML is done – the process and workflow. 'Machine Learning Platform' (vair) describes *where* it’s done - the infrastructure. They are closely related but not identical; a pipeline runs *on* a platform, implying a part-of relationship, but the pipeline isn't the platform itself."
+   "llm_rationale": "Both concepts relate to the environment for machine learning activities. 'Machine Learning Pipeline' (AIDOC) describes *how* ML is done – the process. 'Machine Learning Platform' (vair) describes *where* it’s done - the infrastructure. They are closely related and often co-occurring, but not identical; a pipeline utilizes a platform."
   },
   {
    "id": "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#ErroneousTrainingData",
@@ -1525,7 +1573,607 @@
    "lexical_similarity": 0.6,
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
-   "llm_rationale": "Erroneous Training Data is a specific *type* of Data Training. While 'Data Training' encompasses the general activity, 'Erroneous Training Data' focuses on a problematic instance within that activity – data containing errors. The lexical similarity score supports this close relationship."
+   "llm_rationale": "Erroneous Training Data is a specific *type* of Data Training. The AIDOC concept describes the general activity, while the vair concept focuses on a problematic instance of that activity – data containing errors. Therefore, 'ErroneousTrainingData' is narrower than 'DataTraining'."
+  },
+  {
+   "id": "fn-band/airo|https://w3id.org/aidoc-ap#DataSheet|https://w3id.org/dpv#Data",
+   "ontology": "fn-band/airo",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataSheet",
+   "aidoc_label": "Data Sheet",
+   "ref_iri": "https://w3id.org/dpv#Data",
+   "ref_label": "Data",
+   "lexical_similarity": 0.529,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC 'Data Sheet' is a *type* of 'Data'. The airo concept of Data is very general, encompassing all kinds of data, while the AIDOC concept specifically refers to documentation *about* data – its provenance, scope and characteristics. Thus, Data Sheet can be considered a more specific form of Data."
+  },
+  {
+   "id": "fn-band/airo|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv#Data",
+   "ontology": "fn-band/airo",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
+   "aidoc_label": "Data Testing",
+   "ref_iri": "https://w3id.org/dpv#Data",
+   "ref_label": "Data",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept 'Data Testing' is a specific *type* of 'Data'. The airo concept represents data in general, while the AIDOC concept focuses on its use within an AI model testing activity. Therefore, Data Testing is a narrower concept falling under the broader category of Data."
+  },
+  {
+   "id": "fn-band/airo|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/airo#Data",
+   "ontology": "fn-band/airo",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
+   "aidoc_label": "Data Testing",
+   "ref_iri": "https://w3id.org/airo#Data",
+   "ref_label": "Data",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept 'Data Testing' is a specific *type* of 'Data'. The airo concept represents data in general, while the AIDOC concept focuses on its use for AI model evaluation – a narrower application within the broader domain of data."
+  },
+  {
+   "id": "fn-band/airo|https://w3id.org/aidoc-ap#PerformanceMetric|http://www.w3.org/ns/dqv#Metric",
+   "ontology": "fn-band/airo",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#PerformanceMetric",
+   "aidoc_label": "Performance Metric",
+   "ref_iri": "http://www.w3.org/ns/dqv#Metric",
+   "ref_label": "Metric",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to a quantifiable measure used for evaluation. The AIDOC concept explicitly focuses on *AI system* performance, while the AIRO 'Metric' is more general. They are highly related and could be interchanged in many contexts concerning AI evaluation, but the specificity of AIDOC introduces a slight difference."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv/ai#DataPoisoning",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataProcessing",
+   "aidoc_label": "Data Processing",
+   "ref_iri": "https://w3id.org/dpv/ai#DataPoisoning",
+   "ref_label": "DataPoisoning",
+   "lexical_similarity": 0.503,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "DataPoisoning is a *specific type* of Data Processing – it's data processing with malicious intent to manipulate training data. The AIDOC concept describes the general activity; dpv-ai focuses on a harmful instance of that activity. While not interchangeable, one clearly falls under the umbrella of the other."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingDataOutdated",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
+   "aidoc_label": "Data Testing",
+   "ref_iri": "https://w3id.org/dpv/ai#TestingDataOutdated",
+   "ref_label": "TestingDataOutdated",
+   "lexical_similarity": 0.57,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept describes the general activity of using data for AI model testing. The dpv-ai concept specifically identifies a *condition* of that testing data – being outdated. Therefore, 'TestingDataOutdated' is a more specific type of 'Data Testing'."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/ai#GPAIModel",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AIModel",
+   "aidoc_label": "AI Model",
+   "ref_iri": "https://w3id.org/dpv/ai#GPAIModel",
+   "ref_label": "GPAIModel",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to AI models. The AIDOC definition is more general – any computational representation enabling an AI task. The dpv-ai concept (GPAIModel) adds the characteristic of 'generality' in capabilities and applications, making it a *type* of AI model with specific properties. They aren’t identical but are highly related and could be used interchangeably in many contexts."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#FrugalAISystem",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystemCapability",
+   "aidoc_label": "AI System Capability",
+   "ref_iri": "https://w3id.org/dpv/ai#FrugalAISystem",
+   "ref_label": "FrugalAISystem",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:relatedMatch",
+   "llm_confidence": 0.75,
+   "llm_rationale": "While both concepts relate to AI systems, they focus on different aspects. 'AI System Capability' describes *what* an AI system can do, a functional categorization. 'FrugalAISystem' describes *how* an AI system is designed – its efficiency and cost-effectiveness. They are related as characteristics of AI systems but aren’t hierarchically linked or interchangeable."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#hasAISystem",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystemCapability",
+   "aidoc_label": "AI System Capability",
+   "ref_iri": "https://w3id.org/dpv/ai#hasAISystem",
+   "ref_label": "hasAISystem",
+   "lexical_similarity": 0.518,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept 'AI System Capability' describes *what* an AI system can do – its functional abilities. The dpv-ai concept 'hasAISystem' indicates the *use* of an AI system within a context. Therefore, having an AI system capability is a prerequisite for 'having an AI system' in use; dpv-ai is broader as it focuses on application rather than inherent ability."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingDataBias",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
+   "aidoc_label": "Data Testing",
+   "ref_iri": "https://w3id.org/dpv/ai#TestingDataBias",
+   "ref_label": "TestingDataBias",
+   "lexical_similarity": 0.593,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept 'Data Testing' is a general activity. The dpv-ai concept 'TestingDataBias' specifies *a type* of data testing – specifically focusing on bias within the test data. Therefore, TestingDataBias is a more specific case of Data Testing."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingDataInconsistent",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
+   "aidoc_label": "Data Testing",
+   "ref_iri": "https://w3id.org/dpv/ai#TestingDataInconsistent",
+   "ref_label": "TestingDataInconsistent",
+   "lexical_similarity": 0.551,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept describes the general activity of using data for AI model testing. The dpv-ai concept specifically focuses on a *type* of issue within that testing – inconsistency in the testing data. Therefore, 'TestingDataInconsistent' is a more specific case of 'Data Testing'."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#AISystemRisk",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystemCapability",
+   "aidoc_label": "AI System Capability",
+   "ref_iri": "https://w3id.org/dpv/ai#AISystemRisk",
+   "ref_label": "AISystemRisk",
+   "lexical_similarity": 0.559,
+   "llm_relation": "skos:relatedMatch",
+   "llm_confidence": 0.75,
+   "llm_rationale": "While both concepts relate to AI systems, they focus on different aspects. 'AI System Capability' describes *what* an AI system can do, while 'AISystemRisk' focuses on potential negative consequences. They are related as risk assessment would consider capabilities, but aren’t hierarchically linked or interchangeable."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataIncomplete",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataValidation",
+   "aidoc_label": "Data Validation",
+   "ref_iri": "https://w3id.org/dpv/ai#ValidationDataIncomplete",
+   "ref_label": "ValidationDataIncomplete",
+   "lexical_similarity": 0.595,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept describes the *activity* of data validation broadly, encompassing its purpose and use within AI system development. The dpv-ai concept 'ValidationDataIncomplete' specifically identifies a *condition* related to that activity – incomplete validation data. Thus, incomplete validation data is a specific case *within* the broader process of data validation."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#ModelVersioning|https://w3id.org/dpv/ai#ModelTraining",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelVersioning",
+   "aidoc_label": "Model Versioning",
+   "ref_iri": "https://w3id.org/dpv/ai#ModelTraining",
+   "ref_label": "ModelTraining",
+   "lexical_similarity": 0.52,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "ModelTraining (dpv-ai) is a *specific activity within* the broader process of Model Versioning (AIDOC). Versioning encompasses all revisions and tracking, while training focuses on parameter adjustment – a key step in creating those versions. The lexical similarity score supports some overlap, but the descriptions clearly indicate dpv-ai is a component of AIDOC."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#ModelEvaluation|https://w3id.org/dpv/ai#ModelEvasion",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelEvaluation",
+   "aidoc_label": "Model Evaluation",
+   "ref_iri": "https://w3id.org/dpv/ai#ModelEvasion",
+   "ref_label": "ModelEvasion",
+   "lexical_similarity": 0.531,
+   "llm_relation": "skos:relatedMatch",
+   "llm_confidence": 0.75,
+   "llm_rationale": "While 'Model Evaluation' is a general activity of assessing ML performance, 'ModelEvasion' describes *a specific type of input* that causes incorrect classification – a potential failure mode discovered during evaluation. They are related as evasion testing would be part of model evaluation, but aren’t interchangeable concepts. The lexical similarity score supports some relation, but not strong enough for close or broad/narrow match."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataUnrepresentative",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataValidation",
+   "aidoc_label": "Data Validation",
+   "ref_iri": "https://w3id.org/dpv/ai#ValidationDataUnrepresentative",
+   "ref_label": "ValidationDataUnrepresentative",
+   "lexical_similarity": 0.57,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept 'Data Validation' describes the *activity* of using data for validation, a broad process. The dpv-ai concept 'ValidationDataUnrepresentative' specifically identifies a *problem within* that activity – namely, unrepresentative validation data. Thus, dpv-ai is a specific type or condition related to the broader AIDOC concept."
+  },
+  {
+   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingDataSparse",
+   "ontology": "fn-band/dpv-ai",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
+   "aidoc_label": "Data Testing",
+   "ref_iri": "https://w3id.org/dpv/ai#TestingDataSparse",
+   "ref_label": "TestingDataSparse",
+   "lexical_similarity": 0.581,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to data used for AI system testing. However, 'TestingDataSparse' specifically denotes *sparse* testing data, implying a particular characteristic of the dataset. The AIDOC concept is more general, describing the activity of using datasets for testing without specifying sparsity. They are sufficiently similar for interchangeability in many contexts but aren’t identical due to the specificity of ‘sparse’."
+  },
+  {
+   "id": "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystemDocumentation",
+   "ontology": "fn-band/dpv-aiact",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#PostMarketMonitoringActivity",
+   "aidoc_label": "Post-market Monitoring Activity",
+   "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystemDocumentation",
+   "ref_label": "PostMarketMonitoringSystemDocumentation",
+   "lexical_similarity": 0.581,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept describes the *activity* of post-market monitoring, while the dpv-aiact concept refers to the *documentation* required for that activity as mandated by the AI Act. Documentation is a specific aspect *of* the broader activity; therefore, dpv-aiact is narrower."
+  },
+  {
+   "id": "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/legal/eu/aiact#GPAIModel",
+   "ontology": "fn-band/dpv-aiact",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AIModel",
+   "aidoc_label": "AI Model",
+   "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#GPAIModel",
+   "ref_label": "GPAIModel",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to 'AI Model'. However, the dpv-aiact concept adds significant legal and technical constraints related to the EU AI Act (scale of training data, generality, downstream applications, exclusion for research). The AIDOC definition is more generic. They are similar enough to be used interchangeably in *some* contexts, but not all; hence a close match rather than an exact match."
+  },
+  {
+   "id": "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#Log|https://w3id.org/dpv/legal/eu/aiact#TestLog",
+   "ontology": "fn-band/dpv-aiact",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#Log",
+   "aidoc_label": "Log",
+   "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#TestLog",
+   "ref_label": "TestLog",
+   "lexical_similarity": 0.518,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "TestLog (dpv-aiact) is a specific *type* of Log (AIDOC). The description of TestLog clearly indicates it's focused on tests, which falls under the broader category of system events and traceability captured in a general Log."
+  },
+  {
+   "id": "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation",
+   "ontology": "fn-band/dpv-aiact",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#VisualDocumentation",
+   "aidoc_label": "Visual Documentation",
+   "ref_iri": "https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation",
+   "ref_label": "TechnicalDocumentation",
+   "lexical_similarity": 0.516,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to 'technical documentation' as defined by Annex IV of the AI Act. While the AIDOC concept explicitly specifies *visual* documentation, and the dpv-aiact concept is a more general 'TechnicalDocumentation', they are highly related and likely interchangeable in many practical contexts concerning AI system compliance. The lexical similarity score supports this close relationship."
+  },
+  {
+   "id": "fn-band/dpv|https://w3id.org/aidoc-ap#DataSheet|https://w3id.org/dpv#Data",
+   "ontology": "fn-band/dpv",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataSheet",
+   "aidoc_label": "Data Sheet",
+   "ref_iri": "https://w3id.org/dpv#Data",
+   "ref_label": "Data",
+   "lexical_similarity": 0.529,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC 'Data Sheet' is a *type* of 'Data' as defined by dpv. A Data Sheet provides structured documentation *about* data; it isn’t the data itself. Therefore, dpv#Data is broader and subsumes the more specific concept of an AIDOC Data Sheet."
+  },
+  {
+   "id": "fn-band/dpv|https://w3id.org/aidoc-ap#IntendedPurpose|https://w3id.org/dpv#Intended",
+   "ontology": "fn-band/dpv",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#IntendedPurpose",
+   "aidoc_label": "Intended Purpose",
+   "ref_iri": "https://w3id.org/dpv#Intended",
+   "ref_label": "Intended",
+   "lexical_similarity": 0.567,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to the intended use or context of something (in AIDOC, an AI system; in dpv, a specified context). While 'Intended Purpose' is more descriptive and detailed – explicitly mentioning documentation and versioning – 'Intended' captures the core idea of specifying what something *is for*. They aren’t identical, as dpv lacks the nuance around documentation and tracking, but are sufficiently similar to be used interchangeably in many contexts relating to purpose or intent."
+  },
+  {
+   "id": "fn-band/dpv|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv#Data",
+   "ontology": "fn-band/dpv",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
+   "aidoc_label": "Data Testing",
+   "ref_iri": "https://w3id.org/dpv#Data",
+   "ref_label": "Data",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept 'Data Testing' is a specific *type* of 'Data'. The dpv concept provides the general notion of data while AIDOC specifies its use in AI model testing. Therefore, dpv#Data is broader than AIDOC:Data Testing."
+  },
+  {
+   "id": "fn-band/dpv-tech|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/tech#hasModel",
+   "ontology": "fn-band/dpv-tech",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AIModel",
+   "aidoc_label": "AI Model",
+   "ref_iri": "https://w3id.org/dpv/tech#hasModel",
+   "ref_label": "hasModel",
+   "lexical_similarity": 0.529,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to 'models' used within a technological context. The AIDOC concept defines *what* an AI Model is, while dpv-tech’s ‘hasModel’ describes a relationship – that something *uses* a model. They aren't identical (not exactMatch), but are highly related and could be substituted in many contexts without losing core meaning. The lexical similarity score of 0.529 supports this level of alignment."
+  },
+  {
+   "id": "fn-band/dpv-tech|https://w3id.org/aidoc-ap#HardwareComponent|https://w3id.org/dpv/tech#Component",
+   "ontology": "fn-band/dpv-tech",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#HardwareComponent",
+   "aidoc_label": "Hardware Component",
+   "ref_iri": "https://w3id.org/dpv/tech#Component",
+   "ref_label": "Component",
+   "lexical_similarity": 0.567,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to parts of a system. 'Hardware Component' is specifically about hardware for AI, while 'Component' is more general. They are sufficiently similar for some applications but not identical in scope; hence closeMatch."
+  },
+  {
+   "id": "fn-band/dpv-tech|https://w3id.org/aidoc-ap#SoftwareDevelopment|https://w3id.org/dpv/tech#Software",
+   "ontology": "fn-band/dpv-tech",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#SoftwareDevelopment",
+   "aidoc_label": "Software Development",
+   "ref_iri": "https://w3id.org/dpv/tech#Software",
+   "ref_label": "Software",
+   "lexical_similarity": 0.529,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The 'Software Development' activity (AIDOC) *results in* 'Software' (dpv-tech). Software is a broader concept encompassing all software, not just that developed for AI systems. The AIDOC concept describes a process leading to an instance of the dpv-tech concept."
+  },
+  {
+   "id": "fn-band/dpv-tech|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/dpv/tech#hasProvider",
+   "ontology": "fn-band/dpv-tech",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AIProvider",
+   "aidoc_label": "AI Provider",
+   "ref_iri": "https://w3id.org/dpv/tech#hasProvider",
+   "ref_label": "hasProvider",
+   "lexical_similarity": 0.548,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to identifying the entity responsible for a technology/AI system. While 'AI Provider' is specifically focused on AI, and 'hasProvider' is more general, they represent similar roles in their respective domains. The descriptions overlap significantly enough to warrant a close match, but aren’t identical due to the specificity of ‘AI’ in the AIDOC concept."
+  },
+  {
+   "id": "fn-band/dpv-tech|https://w3id.org/aidoc-ap#SoftwareComponent|https://w3id.org/dpv/tech#SoftwareAgent",
+   "ontology": "fn-band/dpv-tech",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#SoftwareComponent",
+   "aidoc_label": "Software Component",
+   "ref_iri": "https://w3id.org/dpv/tech#SoftwareAgent",
+   "ref_label": "SoftwareAgent",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to software entities that perform actions within a system. 'Software Component' is broader and could encompass passive elements, while 'SoftwareAgent' implies active behavior. The lexical similarity score of 0.5 supports this close but not identical relationship."
+  },
+  {
+   "id": "fn-band/mcro|https://w3id.org/aidoc-ap#PerformanceMetric|http://purl.obolibrary.org/obo/MCRO_0000027",
+   "ontology": "fn-band/mcro",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#PerformanceMetric",
+   "aidoc_label": "Performance Metric",
+   "ref_iri": "http://purl.obolibrary.org/obo/MCRO_0000027",
+   "ref_label": "Performance Metric Information Section",
+   "lexical_similarity": 0.557,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to 'Performance Metric', however the mcron concept specifies it as an 'Information Section' which suggests a specific *representation* of that metric rather than the metric itself. The lexical similarity is moderate, indicating overlap but not complete interchangeability."
+  },
+  {
+   "id": "fn-band/mex-core|https://w3id.org/aidoc-ap#ModelPackaging|http://mex.aksw.org/mex-core#Model",
+   "ontology": "fn-band/mex-core",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelPackaging",
+   "aidoc_label": "Model Packaging",
+   "ref_iri": "http://mex.aksw.org/mex-core#Model",
+   "ref_label": "Model",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.75,
+   "llm_rationale": "The AIDOC 'Model Packaging' concept describes *preparing* a model for deployment – an activity related to a Model itself. The mex-core 'Model' is the artifact being packaged. Thus, 'Model' is broader; packaging is a process applied *to* a model."
+  },
+  {
+   "id": "fn-band/ml-onto|https://w3id.org/aidoc-ap#SoftwareImplementation|http://www.w3.org/ns/mls#Software",
+   "ontology": "fn-band/ml-onto",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#SoftwareImplementation",
+   "aidoc_label": "Software Implementation",
+   "ref_iri": "http://www.w3.org/ns/mls#Software",
+   "ref_label": "Software",
+   "lexical_similarity": 0.506,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC 'Software Implementation' is a *type* of 'Software'. The ml-onto concept 'Software' is broader and encompasses all software, while the AIDOC concept specifically refers to executable implementations of algorithms. Thus, Software Implementation is narrower than Software."
+  },
+  {
+   "id": "fn-band/mlschema|https://w3id.org/aidoc-ap#ModelPackaging|http://www.w3.org/ns/mls#Model",
+   "ontology": "fn-band/mlschema",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelPackaging",
+   "aidoc_label": "Model Packaging",
+   "ref_iri": "http://www.w3.org/ns/mls#Model",
+   "ref_label": "Model",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The 'mlschema:Model' concept is broader and defines what a model *is* – its characteristics and function. The 'AIDOC:Model Packaging' concept describes an *activity* related to preparing that model for use. Therefore, Model Packaging falls under the umbrella of the more general Model definition."
+  },
+  {
+   "id": "fn-band/mlschema|https://w3id.org/aidoc-ap#DataSheet|http://www.w3.org/ns/mls#Data",
+   "ontology": "fn-band/mlschema",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataSheet",
+   "aidoc_label": "Data Sheet",
+   "ref_iri": "http://www.w3.org/ns/mls#Data",
+   "ref_label": "Data",
+   "lexical_similarity": 0.529,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The `mlschema:Data` concept is significantly broader than the `AIDOC:Data Sheet`. A Data Sheet *is* a type of Data according to mlSchema; it's a specific structured documentation *about* data. The mlSchema definition explicitly covers various granularities (dataset, table, feature, instance) which are all potential subjects of an AIDOC Data Sheet. Therefore, `mlschema:Data` broadly encompasses what an `AIDOC:Data Sheet` describes."
+  },
+  {
+   "id": "fn-band/prov-o|https://w3id.org/aidoc-ap#SoftwareComponent|http://www.w3.org/ns/prov#SoftwareAgent",
+   "ontology": "fn-band/prov-o",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#SoftwareComponent",
+   "aidoc_label": "Software Component",
+   "ref_iri": "http://www.w3.org/ns/prov#SoftwareAgent",
+   "ref_label": "SoftwareAgent",
+   "lexical_similarity": 0.5,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to software entities involved in processing. 'SoftwareAgent' from prov-o is a more general term encompassing any software that *acts* within a provenance context, while 'Software Component' from AIDOC specifically focuses on components *of an AI system*. They are sufficiently similar for many applications but aren’t identical; an agent isn't necessarily part of an AI system and a component doesn't necessarily track provenance."
+  },
+  {
+   "id": "fn-band/rains|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/rains#TrainingDataset",
+   "ontology": "fn-band/rains",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#TrainingDataSheet",
+   "aidoc_label": "Training Data Sheet",
+   "ref_iri": "https://w3id.org/rains#TrainingDataset",
+   "ref_label": "Training Dataset",
+   "lexical_similarity": 0.516,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to data used for machine learning training. The AIDOC concept describes a *document* about the training data, while the RAINS concept defines the *data itself*. They are closely related but not identical; one is metadata describing the other."
+  },
+  {
+   "id": "fn-band/rains|https://w3id.org/aidoc-ap#Dataset|https://w3id.org/rains#DatasetComponent",
+   "ontology": "fn-band/rains",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#Dataset",
+   "aidoc_label": "Dataset",
+   "ref_iri": "https://w3id.org/rains#DatasetComponent",
+   "ref_label": "Dataset Component",
+   "lexical_similarity": 0.533,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts represent datasets. However, the RAINS concept is significantly more detailed and focuses on responsible AI aspects like risks, biases, legal considerations, and data provenance – essentially a 'Dataset' with extensive metadata for trustworthiness. The AIDOC concept appears to be a general representation of a dataset within an AI lifecycle, lacking this level of detail. They are similar enough to potentially be used interchangeably in some contexts, but the RAINS definition is much richer."
+  },
+  {
+   "id": "fn-band/rains|https://w3id.org/aidoc-ap#ChangeRecord|https://w3id.org/rains#Change",
+   "ontology": "fn-band/rains",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ChangeRecord",
+   "aidoc_label": "Change Record",
+   "ref_iri": "https://w3id.org/rains#Change",
+   "ref_label": "Change",
+   "lexical_similarity": 0.553,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts represent records of alterations or deviations. The AIDOC 'Change Record' is more detailed regarding stakeholders and the change itself, while RAINS 'Change' focuses on deviation from specifications/guidelines. They are highly related but not identical; interchangeability would depend on the specific application context."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/vair#PostMarketMonitoringSystemDescription",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#PostMarketMonitoringActivity",
+   "aidoc_label": "Post-market Monitoring Activity",
+   "ref_iri": "https://w3id.org/vair#PostMarketMonitoringSystemDescription",
+   "ref_label": "Post-market Monitoring System Description",
+   "lexical_similarity": 0.589,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to monitoring after deployment, fulfilling requirements related to AI system performance. However, the 'vair' concept explicitly ties this activity to compliance with the AI Act, adding a regulatory dimension absent in the AIDOC description. This difference prevents an exact match but indicates strong similarity."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#HardwareComponent|https://w3id.org/vair#Hardware",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#HardwareComponent",
+   "aidoc_label": "Hardware Component",
+   "ref_iri": "https://w3id.org/vair#Hardware",
+   "ref_label": "Hardware",
+   "lexical_similarity": 0.546,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to physical components needed for a system. 'Hardware Component' (AIDOC) is slightly more specific, indicating it’s *for an AI system*, while 'Hardware' (vair) is general. The lexical similarity score of 0.546 suggests significant overlap but not complete interchangeability."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/vair#IncompleteTrainingData",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#TrainingDataSheet",
+   "aidoc_label": "Training Data Sheet",
+   "ref_iri": "https://w3id.org/vair#IncompleteTrainingData",
+   "ref_label": "Incomplete Training Data",
+   "lexical_similarity": 0.542,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC 'Training Data Sheet' concept describes a comprehensive document *about* training data, including its usage and characteristics. The vair 'Incomplete Training Data' is a specific *problem* that might be documented within such a sheet – it represents a condition the sheet could report on. Thus, incomplete training data is a narrower aspect of what a training data sheet covers."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningFramework",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#MLPipeline",
+   "aidoc_label": "Machine Learning Pipeline",
+   "ref_iri": "https://w3id.org/vair#MachineLearningFramework",
+   "ref_label": "MachineLearningFramework",
+   "lexical_similarity": 0.582,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to the infrastructure supporting machine learning. 'Machine Learning Pipeline' (AIDOC) describes a process *using* a framework, while 'MachineLearningFramework' (vair) is the underlying toolset itself. They are closely related and often discussed together, but not identical; one is procedural, the other infrastructural."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#SoftwareComponent|https://w3id.org/vair#SafetyComponent",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#SoftwareComponent",
+   "aidoc_label": "Software Component",
+   "ref_iri": "https://w3id.org/vair#SafetyComponent",
+   "ref_label": "Safety Component",
+   "lexical_similarity": 0.506,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "A 'Safety Component' (vair) is a *type* of 'Software Component' (AIDOC). All safety components are software components, but not all software components are safety-critical or related to safety functions. The vair definition explicitly focuses on safety implications which narrows the scope compared to the general AIDOC concept."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/vair#Testing",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
+   "aidoc_label": "Data Testing",
+   "ref_iri": "https://w3id.org/vair#Testing",
+   "ref_label": "Testing",
+   "lexical_similarity": 0.595,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to 'Testing', however the AIDOC concept specifically focuses on testing *AI models* with datasets, while the vair concept is a more general 'Testing' activity. They are sufficiently similar for some applications but not identical in scope."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/vair#TechnicalDocumentation",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#VisualDocumentation",
+   "aidoc_label": "Visual Documentation",
+   "ref_iri": "https://w3id.org/vair#TechnicalDocumentation",
+   "ref_label": "Technical Documentation",
+   "lexical_similarity": 0.516,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "The AIDOC concept 'Visual Documentation' is a *type* of 'Technical Documentation' as defined in vair. The vair concept is broader, encompassing all documentation required by the AI Act, while AIDOC specifies one particular form – visual documentation. The lexical similarity score supports this relationship; they are related but not interchangeable."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/vair#TrainedModel",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#AIModel",
+   "aidoc_label": "AI Model",
+   "ref_iri": "https://w3id.org/vair#TrainedModel",
+   "ref_label": "Trained Model",
+   "lexical_similarity": 0.505,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts refer to a finalized AI/ML artifact resulting from a process (training for vair, enabling execution for AIDOC). While 'AI Model' is broader and could encompass models in various states, and 'TrainedModel' specifically highlights the training aspect, they are highly related and often interchangeable in practical contexts. The lexical similarity score of 0.505 supports this near-equivalence."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#ModelVersioning|https://w3id.org/vair#ModelInversion",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelVersioning",
+   "aidoc_label": "Model Versioning",
+   "ref_iri": "https://w3id.org/vair#ModelInversion",
+   "ref_label": "Model Inversion",
+   "lexical_similarity": 0.535,
+   "llm_relation": "skos:relatedMatch",
+   "llm_confidence": 0.65,
+   "llm_rationale": "While seemingly disparate, both concepts relate to the lifecycle and potential vulnerabilities of AI models. 'Model Versioning' is a proactive practice for managing changes, while 'Model Inversion' represents a reactive security concern *about* those models. They aren’t hierarchical or interchangeable, but are clearly connected within the broader domain of responsible AI."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningAlgorithm",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#MLPipeline",
+   "aidoc_label": "Machine Learning Pipeline",
+   "ref_iri": "https://w3id.org/vair#MachineLearningAlgorithm",
+   "ref_label": "Machine Learning Algorithm",
+   "lexical_similarity": 0.582,
+   "llm_relation": "skos:narrowMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "A 'Machine Learning Algorithm' (vair) is a *component* of a broader 'Machine Learning Pipeline' (AIDOC). The pipeline encompasses the entire process, while the algorithm focuses on a specific step within that process – model training. Therefore, the vair concept is narrower in scope than the AIDOC concept."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#SoftwareVersioning|https://w3id.org/vair#Software",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#SoftwareVersioning",
+   "aidoc_label": "Software Versioning",
+   "ref_iri": "https://w3id.org/vair#Software",
+   "ref_label": "Software",
+   "lexical_similarity": 0.537,
+   "llm_relation": "skos:broadMatch",
+   "llm_confidence": 0.75,
+   "llm_rationale": "The AIDOC concept 'Software Versioning' describes a *process* related to software, while the vair concept 'Software' represents the *thing itself*. Versioning is an activity performed on Software; therefore, 'Software' is broader."
+  },
+  {
+   "id": "fn-band/vair|https://w3id.org/aidoc-ap#ModelEvaluation|https://w3id.org/vair#ReEvaluation",
+   "ontology": "fn-band/vair",
+   "aidoc_iri": "https://w3id.org/aidoc-ap#ModelEvaluation",
+   "aidoc_label": "Model Evaluation",
+   "ref_iri": "https://w3id.org/vair#ReEvaluation",
+   "ref_label": "Re-Evaluation",
+   "lexical_similarity": 0.531,
+   "llm_relation": "skos:closeMatch",
+   "llm_confidence": 0.85,
+   "llm_rationale": "Both concepts relate to assessing AI system performance. 'Re-Evaluation' (vair) is specifically triggered *after* operation and monitoring, implying a cyclical process. 'Model Evaluation' (AIDOC) is more general – it doesn’t necessarily specify when the evaluation occurs. While not identical, they are highly related and could be used interchangeably in many contexts concerning AI lifecycle management."
   }
  ]
 }

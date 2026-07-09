@@ -1,11 +1,37 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
 @prefix align: <https://w3id.org/aidoc-ap/alignment#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:3370aadb-4977-4df8-a4ea-31f84da948c2 a prov:Activity ;
-    prov:endedAtTime "2025-12-04T12:57:48+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2025-12-04T12:57:48+00:00"^^xsd:dateTime ;
+align:8d0f325d-b272-449b-9106-68dc414760ec a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:28e666c8-2f99-4f84-a64e-6dbe00957b68 ;
+    align:confidence "0.85"^^xsd:float ;
+    align:rationale "The AIDOC 'AI Agent' is explicitly described as *derived from* prov:Agent. This indicates a strong relationship but not complete interchangeability; the AIDOC concept adds specificity to the general 'Agent' in the context of the AI lifecycle. The lexical similarity score supports this close, but not exact, match."^^xsd:string ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIAgent ;
+    align:target prov:Agent .
+
+align:feb2cd86-db52-4511-a58e-5e15c8b80980 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:LLMAlignmentBot ;
+    prov:wasGeneratedBy align:28e666c8-2f99-4f84-a64e-6dbe00957b68 ;
+    align:confidence "0.95"^^xsd:float ;
+    align:rationale "The AIDOC 'AI Activity' is *defined* as being derived from prov:Activity. This indicates a strong intention for interoperability and essentially re-uses the core definition of an activity within the AI domain. While AIDOC adds context (the AI lifecycle), it doesn’t fundamentally alter what constitutes an ‘activity’. The lexical similarity score supports this."^^xsd:string ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIActivity ;
+    align:target prov:Activity .
+
+aidoc:AIActivity skos:exactMatch prov:Activity .
+
+aidoc:AIAgent skos:closeMatch prov:Agent .
+
+align:28e666c8-2f99-4f84-a64e-6dbe00957b68 a prov:Activity ;
+    prov:endedAtTime "2026-07-08T08:57:55+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-08T08:57:50+00:00"^^xsd:dateTime ;
     prov:used <https://ollama.com/library/gemma3:27b> ;
     prov:wasAssociatedWith align:LLMAlignmentBot .
 
