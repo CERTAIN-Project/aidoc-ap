@@ -99,14 +99,14 @@ coverage_graph.add((metric_uri, SKOS.definition, Literal("Heuristic coverage of 
 
 # Activity and agent
 # Use ISO timestamp with time to ensure uniqueness for multiple runs per day
-run_timestamp_full = datetime.datetime.utcnow()
+run_timestamp_full = datetime.datetime.now(datetime.timezone.utc)
 run_timestamp = run_timestamp_full.strftime("%Y-%m-%dT%H-%M-%S")  # Format: 2025-12-04T14-30-15
 activity_uri = URIRef(f"https://w3id.org/aidoc-ap/coverage/llm-run/{run_timestamp}")
 agent_uri = URIRef("https://w3id.org/aidoc-ap/alignment#LLMCoverageBot")
 
 coverage_graph.add((activity_uri, RDF.type, PROV.Activity))
 coverage_graph.add((activity_uri, RDFS.label, Literal(f"LLM Coverage Analysis using {OLLAMA_MODEL}")))
-coverage_graph.add((activity_uri, PROV.startedAtTime, Literal(run_timestamp_full.isoformat() + "Z", datatype=XSD.dateTime)))
+coverage_graph.add((activity_uri, PROV.startedAtTime, Literal(run_timestamp_full.isoformat().replace("+00:00", "Z"), datatype=XSD.dateTime)))
 coverage_graph.add((activity_uri, COV.temperature, Literal(TEMPERATURE, datatype=XSD.decimal)))
 coverage_graph.add((activity_uri, COV.seed, Literal(SEED, datatype=XSD.integer)))
 
@@ -280,7 +280,7 @@ for req in requirements:
     coverage_graph.add((measurement_uri, PROV.wasAttributedTo, agent_uri))
 
 # Close activity
-coverage_graph.add((activity_uri, PROV.endedAtTime, Literal(datetime.datetime.utcnow().isoformat() + "Z", datatype=XSD.dateTime)))
+coverage_graph.add((activity_uri, PROV.endedAtTime, Literal(datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z"), datatype=XSD.dateTime)))
 
 # ========== SAVE RESULTS ==========
 # Load existing TTL file if it exists (to append new runs)

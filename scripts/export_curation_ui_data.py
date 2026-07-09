@@ -1,8 +1,11 @@
 """Bundle the alignment curation sheets into JSON for the curation web UI.
 
 Reads reports/alignment_semantic/*-curation.csv (produced by
-alignment_semantic.py) and writes docs/resources/curation-data.json,
-which docs/curation.html loads.
+alignment_semantic.py) plus, if present, the below-threshold sample
+reports/alignment_fn_band/*-curation.csv (produced by alignment_fn_band.py;
+exported with an "fn-band/" ontology prefix so the group is distinguishable
+in the UI and routable by merge_curation.py), and writes
+docs/resources/curation-data.json, which docs/curation.html loads.
 
 Run this after every alignment (re-)run:
     python scripts/export_curation_ui_data.py
@@ -16,18 +19,24 @@ import sys
 
 import pandas as pd
 
-CURATION_DIR = "reports/alignment_semantic"
+CURATION_DIRS = [
+    ("reports/alignment_semantic", ""),        # main candidate set
+    ("reports/alignment_fn_band", "fn-band/"), # below-threshold FN sample
+]
 OUT_FILE = "docs/resources/curation-data.json"
 
 
 def main():
-    files = sorted(glob.glob(os.path.join(CURATION_DIR, "*-curation.csv")))
-    if not files:
-        sys.exit(f"No *-curation.csv files found in {CURATION_DIR}")
+    sources = []
+    for d, prefix in CURATION_DIRS:
+        found = sorted(glob.glob(os.path.join(d, "*-curation.csv")))
+        if not found and not prefix:
+            sys.exit(f"No *-curation.csv files found in {d}")
+        sources += [(f, prefix) for f in found]
 
     items = []
-    for f in files:
-        onto = os.path.basename(f).replace("-curation.csv", "")
+    for f, prefix in sources:
+        onto = prefix + os.path.basename(f).replace("-curation.csv", "")
         try:
             df = pd.read_csv(f)
         except pd.errors.EmptyDataError:
@@ -60,7 +69,9 @@ def main():
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=1, ensure_ascii=False)
-    print(f"✅ {len(items)} mappings from {len(files)} ontologies → {OUT_FILE} (batch {batch_id})")
+    n_band = sum(1 for i in items if i["ontology"].startswith("fn-band/"))
+    print(f"✅ {len(items)} mappings ({len(items) - n_band} main + {n_band} fn-band) "
+          f"from {len(sources)} sheets → {OUT_FILE} (batch {batch_id})")
 
 
 if __name__ == "__main__":

@@ -188,7 +188,7 @@ for fname in os.listdir(INPUT_DIR):
     # Create activity node
     activity_uri = URIRef(f"https://w3id.org/aidoc-ap/alignment#{uuid.uuid4()}")
     alignment_graph.add((activity_uri, RDF.type, PROV.Activity))
-    start_time = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+    start_time = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     alignment_graph.add((activity_uri, PROV.startedAtTime, Literal(start_time, datatype=XSD.dateTime)))
     alignment_graph.add((activity_uri, PROV.wasAssociatedWith, agent_uri))
     alignment_graph.add((activity_uri, PROV.used, URIRef(f"https://ollama.com/library/{OLLAMA_MODEL}")))
@@ -276,7 +276,7 @@ for fname in os.listdir(INPUT_DIR):
     # ==========================
     # SAVE OUTPUT
     # ==========================
-    end_time = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+    end_time = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     alignment_graph.add((activity_uri, PROV.endedAtTime, Literal(end_time, datatype=XSD.dateTime)))
 
     alignment_graph.serialize(destination=OUTPUT_FILE, format="turtle")

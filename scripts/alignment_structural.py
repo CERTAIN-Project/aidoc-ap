@@ -121,8 +121,9 @@ def main(threshold, right_dir, left_file):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Structural alignment (lexical) with looser matching options')
-    parser.add_argument('--threshold', '-t', type=float, default=0.75,
-                        help='similarity threshold (0-1) to report an alignment; lower = more candidates')
+    parser.add_argument('--threshold', '-t', type=float, default=0.6,
+                        help='similarity threshold (0-1) to report an alignment; lower = more candidates '
+                             '(0.6 is the candidate-generation threshold reported in the paper)')
     parser.add_argument('--right', '-r', default=RIGHT_FILE, help='directory with reference ontology TTL files')
     parser.add_argument('--left', '-l', default=LEFT_FILE, help='left-hand TTL file')
     args = parser.parse_args()

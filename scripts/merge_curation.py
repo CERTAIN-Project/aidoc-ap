@@ -24,7 +24,10 @@ from collections import defaultdict
 
 import pandas as pd
 
-CURATION_DIR = "reports/alignment_semantic"
+CURATION_DIRS = [
+    ("reports/alignment_semantic", ""),        # main candidate set
+    ("reports/alignment_fn_band", "fn-band/"), # below-threshold FN sample
+]
 
 
 def kappa(pairs):
@@ -117,14 +120,17 @@ def main():
 
     # ---- write consensus back into the *-curation.csv sheets ----
     by_id = {r["id"]: r for r in cons_rows}
-    for f in sorted(glob.glob(os.path.join(CURATION_DIR, "*-curation.csv"))):
+    sheets = [(f, prefix)
+              for d, prefix in CURATION_DIRS
+              for f in sorted(glob.glob(os.path.join(d, "*-curation.csv")))]
+    for f, prefix in sheets:
         try:
             df = pd.read_csv(f)
         except pd.errors.EmptyDataError:
             continue
         for col in ("curator_decision", "curator_relation", "curator_name", "curator_notes"):
             df[col] = df[col].astype("string")
-        onto = os.path.basename(f).replace("-curation.csv", "")
+        onto = prefix + os.path.basename(f).replace("-curation.csv", "")
         changed = 0
         for i, row in df.iterrows():
             pid = f"{onto}|{row['aidoc_iri']}|{row['ref_iri']}"
