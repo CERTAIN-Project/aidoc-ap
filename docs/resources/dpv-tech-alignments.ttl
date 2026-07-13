@@ -55,16 +55,6 @@ align:99fae63a-5420-4ef6-8b75-377864e660ff a prov:Entity,
     align:source aidoc:Auditor ;
     align:target <https://w3id.org/dpv/tech#Auditor> .
 
-align:a7cff074-0f88-4e4b-8190-6d3fecab7701 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to auditing, specifically concerning technology/AI systems. However, 'Auditor' (AIDOC) describes *who* performs the audit, while 'hasAuditor' (dpv-tech) is a property indicating *that* something has an auditor. They are closely related but not interchangeable; one is an entity and the other a relation."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:Auditor ;
-    align:target <https://w3id.org/dpv/tech#hasAuditor> .
-
 align:ddc235f7-76b1-45ea-87be-10350864aa6c a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
@@ -83,10 +73,9 @@ aidoc:AIProvider skos:closeMatch <https://w3id.org/dpv/tech#Provider> .
 
 aidoc:AISystem skos:broadMatch <https://w3id.org/dpv/tech#System> .
 
-aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/dpv/tech#Documentation> .
+aidoc:Auditor skos:closeMatch <https://w3id.org/dpv/tech#Auditor> .
 
-aidoc:Auditor skos:closeMatch <https://w3id.org/dpv/tech#Auditor>,
-        <https://w3id.org/dpv/tech#hasAuditor> .
+aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/dpv/tech#Documentation> .
 
 align:864c3730-46e5-433b-8809-7f4ea120776a a prov:Activity ;
     prov:endedAtTime "2026-07-08T08:55:01+00:00"^^xsd:dateTime ;

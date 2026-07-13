@@ -1,7 +1,7 @@
 {
- "batch_id": "2026-07-08_1433",
- "generated": "2026-07-08T14:33:42",
- "n_items": 181,
+ "batch_id": "2026-07-13_1341",
+ "generated": "2026-07-13T13:41:48",
+ "n_items": 173,
  "items": [
   {
    "id": "airo|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/airo#AIProvider",
@@ -208,18 +208,6 @@
    "llm_rationale": "Both concepts refer to data used for AI system evaluation. The AIDOC definition is more specific regarding regulatory context ('before placing on the market'), while dpv-ai provides a broader description of testing data. They are highly similar but not interchangeable due to this difference in scope."
   },
   {
-   "id": "dpv-ai|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/ai#hasAISystem",
-   "ontology": "dpv-ai",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystem",
-   "aidoc_label": "AI System",
-   "ref_iri": "https://w3id.org/dpv/ai#hasAISystem",
-   "ref_label": "hasAISystem",
-   "lexical_similarity": 0.727,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to AI systems. The AIDOC concept provides a detailed definition of *what* an AI system is, while the dpv-ai concept focuses on its *use* or presence within a context. They aren't identical – one defines the entity, the other indicates its application - but are highly related and could be used interchangeably in many contexts where simply acknowledging the use of 'an AI System' is sufficient."
-  },
-  {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/dpv/ai#TrainingData",
    "ontology": "dpv-ai",
    "aidoc_iri": "https://w3id.org/aidoc-ap#TrainingDataSheet",
@@ -290,42 +278,6 @@
    "llm_relation": "skos:narrowMatch",
    "llm_confidence": 0.85,
    "llm_rationale": "FrugalAISystem is a *type* of AI System. The dpv-ai concept adds constraints (efficiency, cost-effectiveness) to the general definition provided by AIDOC. Therefore, FrugalAISystem is more specific than AI System."
-  },
-  {
-   "id": "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#hasValidationData",
-   "ontology": "dpv-ai",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#DataValidation",
-   "aidoc_label": "Data Validation",
-   "ref_iri": "https://w3id.org/dpv/ai#hasValidationData",
-   "ref_label": "hasValidationData",
-   "lexical_similarity": 0.682,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to data used for AI validation. The AIDOC concept provides a more detailed description of *why* validation data is used (preventing overfitting/underfitting), while dpv-ai simply states the association. They are highly related and could be used interchangeably in many contexts, but the added detail in AIDOC prevents an exact match."
-  },
-  {
-   "id": "dpv-ai|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/dpv/ai#hasTrainingData",
-   "ontology": "dpv-ai",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTraining",
-   "aidoc_label": "Data Training",
-   "ref_iri": "https://w3id.org/dpv/ai#hasTrainingData",
-   "ref_label": "hasTrainingData",
-   "lexical_similarity": 0.667,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to the data used for AI training. While 'Data Training' (AIDOC) describes *the activity* of using data, 'hasTrainingData' (dpv-ai) represents *the relationship* between an AI system and its training data. They are highly related and could be interchanged in many contexts, but aren’t strictly identical due to the focus on process vs. relation."
-  },
-  {
-   "id": "dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#hasTestingData",
-   "ontology": "dpv-ai",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
-   "aidoc_label": "Data Testing",
-   "ref_iri": "https://w3id.org/dpv/ai#hasTestingData",
-   "ref_label": "hasTestingData",
-   "lexical_similarity": 0.657,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to data used for AI system evaluation/testing. While 'Data Testing' (AIDOC) describes the *activity* of testing, 'hasTestingData' (dpv-ai) represents the *relationship* between an AI system and its testing data. They are highly related and could be interchanged in many contexts, but aren’t strictly identical due to this difference in focus – one is a process, the other a property."
   },
   {
    "id": "dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#AISystem",
@@ -782,18 +734,6 @@
    "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
    "llm_rationale": "The AIDOC concept 'Visual Documentation' is a *type* of 'Documentation'. The dpv-tech concept covers all documentation, while the AIDOC concept specifically focuses on visual forms required for AI system assessment. Therefore, dpv-tech#Documentation is broader."
-  },
-  {
-   "id": "dpv-tech|https://w3id.org/aidoc-ap#Auditor|https://w3id.org/dpv/tech#hasAuditor",
-   "ontology": "dpv-tech",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#Auditor",
-   "aidoc_label": "Auditor",
-   "ref_iri": "https://w3id.org/dpv/tech#hasAuditor",
-   "ref_label": "hasAuditor",
-   "lexical_similarity": 0.611,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to auditing, specifically concerning technology/AI systems. However, 'Auditor' (AIDOC) describes *who* performs the audit, while 'hasAuditor' (dpv-tech) is a property indicating *that* something has an auditor. They are closely related but not interchangeable; one is an entity and the other a relation."
   },
   {
    "id": "dpv-tech|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/tech#Model",
@@ -1672,18 +1612,6 @@
    "llm_rationale": "While both concepts relate to AI systems, they focus on different aspects. 'AI System Capability' describes *what* an AI system can do, a functional categorization. 'FrugalAISystem' describes *how* an AI system is designed – its efficiency and cost-effectiveness. They are related as characteristics of AI systems but aren’t hierarchically linked or interchangeable."
   },
   {
-   "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#hasAISystem",
-   "ontology": "fn-band/dpv-ai",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AISystemCapability",
-   "aidoc_label": "AI System Capability",
-   "ref_iri": "https://w3id.org/dpv/ai#hasAISystem",
-   "ref_label": "hasAISystem",
-   "lexical_similarity": 0.518,
-   "llm_relation": "skos:broadMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "The AIDOC concept 'AI System Capability' describes *what* an AI system can do – its functional abilities. The dpv-ai concept 'hasAISystem' indicates the *use* of an AI system within a context. Therefore, having an AI system capability is a prerequisite for 'having an AI system' in use; dpv-ai is broader as it focuses on application rather than inherent ability."
-  },
-  {
    "id": "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingDataBias",
    "ontology": "fn-band/dpv-ai",
    "aidoc_iri": "https://w3id.org/aidoc-ap#DataTesting",
@@ -1864,18 +1792,6 @@
    "llm_rationale": "The AIDOC concept 'Data Testing' is a specific *type* of 'Data'. The dpv concept provides the general notion of data while AIDOC specifies its use in AI model testing. Therefore, dpv#Data is broader than AIDOC:Data Testing."
   },
   {
-   "id": "fn-band/dpv-tech|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/tech#hasModel",
-   "ontology": "fn-band/dpv-tech",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AIModel",
-   "aidoc_label": "AI Model",
-   "ref_iri": "https://w3id.org/dpv/tech#hasModel",
-   "ref_label": "hasModel",
-   "lexical_similarity": 0.529,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to 'models' used within a technological context. The AIDOC concept defines *what* an AI Model is, while dpv-tech’s ‘hasModel’ describes a relationship – that something *uses* a model. They aren't identical (not exactMatch), but are highly related and could be substituted in many contexts without losing core meaning. The lexical similarity score of 0.529 supports this level of alignment."
-  },
-  {
    "id": "fn-band/dpv-tech|https://w3id.org/aidoc-ap#HardwareComponent|https://w3id.org/dpv/tech#Component",
    "ontology": "fn-band/dpv-tech",
    "aidoc_iri": "https://w3id.org/aidoc-ap#HardwareComponent",
@@ -1898,18 +1814,6 @@
    "llm_relation": "skos:broadMatch",
    "llm_confidence": 0.85,
    "llm_rationale": "The 'Software Development' activity (AIDOC) *results in* 'Software' (dpv-tech). Software is a broader concept encompassing all software, not just that developed for AI systems. The AIDOC concept describes a process leading to an instance of the dpv-tech concept."
-  },
-  {
-   "id": "fn-band/dpv-tech|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/dpv/tech#hasProvider",
-   "ontology": "fn-band/dpv-tech",
-   "aidoc_iri": "https://w3id.org/aidoc-ap#AIProvider",
-   "aidoc_label": "AI Provider",
-   "ref_iri": "https://w3id.org/dpv/tech#hasProvider",
-   "ref_label": "hasProvider",
-   "lexical_similarity": 0.548,
-   "llm_relation": "skos:closeMatch",
-   "llm_confidence": 0.85,
-   "llm_rationale": "Both concepts relate to identifying the entity responsible for a technology/AI system. While 'AI Provider' is specifically focused on AI, and 'hasProvider' is more general, they represent similar roles in their respective domains. The descriptions overlap significantly enough to warrant a close match, but aren’t identical due to the specificity of ‘AI’ in the AIDOC concept."
   },
   {
    "id": "fn-band/dpv-tech|https://w3id.org/aidoc-ap#SoftwareComponent|https://w3id.org/dpv/tech#SoftwareAgent",

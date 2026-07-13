@@ -55,16 +55,6 @@ align:14d63946-7420-4c1b-af00-17d09de3aa24 a prov:Entity,
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/dpv/ai#FrugalAISystem> .
 
-align:221df7e7-173e-4742-a09f-ac708b149b33 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to AI systems. The AIDOC concept provides a detailed definition of *what* an AI system is, while the dpv-ai concept focuses on its *use* or presence within a context. They aren't identical – one defines the entity, the other indicates its application - but are highly related and could be used interchangeably in many contexts where simply acknowledging the use of 'an AI System' is sufficient."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/dpv/ai#hasAISystem> .
-
 align:303485f5-ca7e-4555-83ff-9a17264eed45 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
@@ -94,26 +84,6 @@ align:3883f235-195b-411c-8762-58071bdea4d6 a prov:Entity,
     align:relation skos:relatedMatch ;
     align:source aidoc:DataValidation ;
     align:target <https://w3id.org/dpv/ai#ValidationDataRisk> .
-
-align:49d4fadf-2f41-459c-8bb1-a045ab41fcc8 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to data used for AI system evaluation/testing. While 'Data Testing' (AIDOC) describes the *activity* of testing, 'hasTestingData' (dpv-ai) represents the *relationship* between an AI system and its testing data. They are highly related and could be interchanged in many contexts, but aren’t strictly identical due to this difference in focus – one is a process, the other a property."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataTesting ;
-    align:target <https://w3id.org/dpv/ai#hasTestingData> .
-
-align:4e051fda-15a8-40b9-ba6a-9714cae9fbd0 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to the data used for AI training. While 'Data Training' (AIDOC) describes *the activity* of using data, 'hasTrainingData' (dpv-ai) represents *the relationship* between an AI system and its training data. They are highly related and could be interchanged in many contexts, but aren’t strictly identical due to the focus on process vs. relation."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataTraining ;
-    align:target <https://w3id.org/dpv/ai#hasTrainingData> .
 
 align:5f629a2b-5d6d-4c3b-9f91-129043ff63ea a prov:Entity,
         align:Mapping ;
@@ -215,16 +185,6 @@ align:ca49d951-eb91-48ed-9850-84db5113fe3f a prov:Entity,
     align:source aidoc:AIAgent ;
     align:target <https://w3id.org/dpv/ai#AIAgent> .
 
-align:cf83854a-214b-4c18-8f2f-5e6e7b47fec8 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to data used for AI validation. The AIDOC concept provides a more detailed description of *why* validation data is used (preventing overfitting/underfitting), while dpv-ai simply states the association. They are highly related and could be used interchangeably in many contexts, but the added detail in AIDOC prevents an exact match."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataValidation ;
-    align:target <https://w3id.org/dpv/ai#hasValidationData> .
-
 align:d5f08dd2-6285-4591-a5d1-bab23cdd1a49 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:LLMAlignmentBot ;
@@ -263,29 +223,25 @@ aidoc:AISystemCapability skos:closeMatch <https://w3id.org/dpv/ai#AISystem> .
 
 aidoc:DataCleaningProcedure skos:closeMatch <https://w3id.org/dpv/ai#DataCleaning> .
 
+aidoc:DataTesting skos:closeMatch <https://w3id.org/dpv/ai#TestingData> .
+
+aidoc:DataTraining skos:exactMatch <https://w3id.org/dpv/ai#TrainingData> .
+
 aidoc:DataWrangling skos:closeMatch <https://w3id.org/dpv/ai#DataCleaning> .
 
 aidoc:Deployment skos:closeMatch <https://w3id.org/dpv/ai#DeploymentStage> .
 
 aidoc:TrainingDataSheet skos:closeMatch <https://w3id.org/dpv/ai#TrainingData> .
 
-aidoc:DataTesting skos:closeMatch <https://w3id.org/dpv/ai#TestingData>,
-        <https://w3id.org/dpv/ai#hasTestingData> .
-
-aidoc:DataTraining skos:closeMatch <https://w3id.org/dpv/ai#hasTrainingData> ;
-    skos:exactMatch <https://w3id.org/dpv/ai#TrainingData> .
+aidoc:AISystem skos:exactMatch <https://w3id.org/dpv/ai#AISystem> ;
+    skos:narrowMatch <https://w3id.org/dpv/ai#AISystemRisk>,
+        <https://w3id.org/dpv/ai#FrugalAISystem> .
 
 aidoc:MLPipeline skos:closeMatch <https://w3id.org/dpv/ai#MachineLearning>,
         <https://w3id.org/dpv/ai#MachineLearningPlatform> ;
     skos:narrowMatch <https://w3id.org/dpv/ai#MachineLearningModel> .
 
-aidoc:AISystem skos:closeMatch <https://w3id.org/dpv/ai#hasAISystem> ;
-    skos:exactMatch <https://w3id.org/dpv/ai#AISystem> ;
-    skos:narrowMatch <https://w3id.org/dpv/ai#AISystemRisk>,
-        <https://w3id.org/dpv/ai#FrugalAISystem> .
-
-aidoc:DataValidation skos:closeMatch <https://w3id.org/dpv/ai#ValidationData>,
-        <https://w3id.org/dpv/ai#hasValidationData> ;
+aidoc:DataValidation skos:closeMatch <https://w3id.org/dpv/ai#ValidationData> ;
     skos:narrowMatch <https://w3id.org/dpv/ai#ValidationDataBias>,
         <https://w3id.org/dpv/ai#ValidationDataNoise>,
         <https://w3id.org/dpv/ai#ValidationDataOutdated>,

@@ -58,6 +58,14 @@ def extract_entities(g):
     subjects = set(g.subjects(rdflib.RDF.type, OWL.Class))
     subjects.update(g.subjects(rdflib.RDF.type, RDFS.Class))
     subjects.update(g.subjects(rdflib.RDF.type, SKOS.Concept))
+    # ... but DPV also types its *properties* as skos:Concept (e.g.
+    # ai:hasAISystem a rdf:Property, skos:Concept), which would admit
+    # class-to-property candidate pairs. Properties are excluded: the
+    # alignment maps class-level concepts only.
+    property_types = (rdflib.RDF.Property, OWL.ObjectProperty,
+                      OWL.DatatypeProperty, OWL.AnnotationProperty)
+    subjects = {s for s in subjects
+                if not any((s, rdflib.RDF.type, t) in g for t in property_types)}
     for s in subjects:
         labels = []
         # common label predicates
