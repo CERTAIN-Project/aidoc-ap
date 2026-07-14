@@ -111,7 +111,9 @@
       if (d.decision === "reject") $("btnReject").classList.add("sel");
       if (d.decision === "modify") {
         $("btnModify").classList.add("sel");
-        $("modifyRel").style.display = "";
+        // "inline-block", not "": an empty inline style would not override
+        // the stylesheet's #modifyRel{display:none}
+        $("modifyRel").style.display = "inline-block";
         $("modifyRel").value = d.relation || "skos:closeMatch";
       }
     }
@@ -148,8 +150,15 @@
   $("btnModify").onclick = () => {
     if (!requireCurator()) return;
     const sel = $("modifyRel");
-    if (sel.style.display === "none") { sel.style.display = ""; sel.focus(); }
-    else decide("modify", sel.value);
+    // first click reveals the relation dropdown, second click (or picking an
+    // option) records the decision; "inline-block" is required to override
+    // the stylesheet's #modifyRel{display:none}
+    if (sel.style.display !== "inline-block") {
+      sel.style.display = "inline-block";
+      sel.focus();
+    } else {
+      decide("modify", sel.value);
+    }
   };
   $("modifyRel").onchange = () => decide("modify", $("modifyRel").value);
   $("btnSkip").onclick = () => { if (idx < items.length - 1) { idx++; refresh(true); } };

@@ -19,6 +19,7 @@ import glob
 import itertools
 import json
 import os
+import re
 import sys
 from collections import defaultdict
 
@@ -28,6 +29,28 @@ CURATION_DIRS = [
     ("reports/alignment_semantic", ""),        # main candidate set
     ("reports/alignment_fn_band", "fn-band/"), # below-threshold FN sample
 ]
+
+
+# A UI bug (fixed in curation.js v=2) kept the Modify relation dropdown
+# invisible and silently recorded skos:exactMatch; curators worked around it
+# by naming the intended relation in the note field. For modify decisions
+# whose note names a SKOS mapping relation, that relation wins over the
+# recorded one. Every recovery is printed for review.
+REL_IN_NOTE = re.compile(r"\b(?:skos:)?(exact|close|broad|narrow|related)\s*[- ]?match\b", re.I)
+
+
+def recover_relation_from_note(pid, curator, d):
+    if d.get("decision") != "modify" or not d.get("note"):
+        return d
+    m = REL_IN_NOTE.search(d["note"])
+    if not m:
+        return d
+    rel = f"skos:{m.group(1).lower()}Match"
+    if rel != d.get("relation"):
+        print(f"  [note→relation] {curator} on {pid}: "
+              f"{d.get('relation')} → {rel} (note: {d['note']!r})")
+        d = dict(d, relation=rel)
+    return d
 
 
 def kappa(pairs):
@@ -56,7 +79,7 @@ def main():
             p = json.load(fh)
         batches.add(p.get("batch_id"))
         for pid, d in p["decisions"].items():
-            per_pair[pid][p["curator"]] = d
+            per_pair[pid][p["curator"]] = recover_relation_from_note(pid, p["curator"], d)
     if len(batches) > 1:
         print(f"⚠️  exports come from different batches: {batches}")
 
