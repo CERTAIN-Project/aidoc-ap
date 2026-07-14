@@ -9,8 +9,9 @@ https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/tech#Model,skos:broadMatc
 https://w3id.org/aidoc-ap#AIModel,http://mex.aksw.org/mex-core#Model,skos:broadMatch,Team-Konsens 14.07.2026: generisches Oberkonzept
 https://w3id.org/aidoc-ap#AIModel,https://w3id.org/vair#Model,skos:broadMatch,Team-Konsens 14.07.2026: generisches Oberkonzept
 https://w3id.org/aidoc-ap#AISystem,https://w3id.org/sao#System,skos:broadMatch,Team-Konsens 14.07.2026: generisches Oberkonzept
-https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation,skos:broadMatch,Team-Konsens 14.07.2026: visuelle Dok. kann Teil der technischen Dok. sein
-https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/vair#TechnicalDocumentation,skos:broadMatch,Team-Konsens 14.07.2026: visuelle Dok. kann Teil der technischen Dok. sein
-https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/rains#DataPreprocessingProcedure,skos:broadMatch,Team-Konsens 14.07.2026: cleaning ist Teilmenge von preprocessing
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation,skos:relatedMatch,Team consensus 14.07.2026 (2nd round): revised from broadMatch
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/vair#TechnicalDocumentation,skos:relatedMatch,Team consensus 14.07.2026 (2nd round): revised from broadMatch
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/rains#DataPreprocessingProcedure,skos:closeMatch,Team consensus 14.07.2026 (2nd round): revised from broadMatch
 https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/rains#Evaluation,REJECT,Team-Konsens 14.07.2026: Ergebnis vs. Aktivität
 https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem,skos:closeMatch,Team-Konsens 14.07.2026: dpv-Definition: activities carried out by providers
+https://w3id.org/aidoc-ap#SoftwareComponent,https://w3id.org/vair#SafetyComponent,skos:relatedMatch,Team consensus 14.07.2026 (2nd round): safety components need not be software and vice versa

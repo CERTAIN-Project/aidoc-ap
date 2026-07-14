@@ -5,10 +5,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:d1b01bc3-9a53-4f9c-b971-58a8901ba68c a prov:Entity,
+align:7e14d172-6891-4f98-a30c-a56704453714 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:bd303bd9-50d7-4dcb-89e1-f6efde77a56c ;
+    prov:wasGeneratedBy align:c657e7d9-f3ab-4ac2-8561-839cd4c7e79f ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:broadMatch" ;
     align:relation skos:broadMatch ;
@@ -17,9 +17,9 @@ align:d1b01bc3-9a53-4f9c-b971-58a8901ba68c a prov:Entity,
 
 aidoc:DataSheet skos:broadMatch <http://www.w3.org/ns/mls#Data> .
 
-align:bd303bd9-50d7-4dcb-89e1-f6efde77a56c a prov:Activity ;
+align:c657e7d9-f3ab-4ac2-8561-839cd4c7e79f a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

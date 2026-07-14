@@ -5,120 +5,120 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:1a52c701-d7c4-4ed6-b0a3-fee5a792f49d a prov:Entity,
+align:1490ea8d-a435-4697-8397-1079aff52253 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
-    align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:VisualDocumentation ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation> .
-
-align:31974dd7-bbfb-482c-bc51-66e202d595e4 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:narrowMatch" ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem> .
-
-align:436d3c28-eb60-49ef-a352-daa73a3db72c a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:PostMarketMonitoringActivity ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem> .
-
-align:45e998d1-f1a5-4673-a47b-f0e6ad072285 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:narrowMatch" ;
     align:relation skos:narrowMatch ;
     align:source aidoc:Log ;
     align:target <https://w3id.org/dpv/legal/eu/aiact#TestLog> .
 
-align:4d5bd78b-1d12-4b44-ad07-6f22b2a37393 a prov:Entity,
+align:25e27df6-2d1c-4053-b199-3b3a7b6a1db3 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
-    align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:AIProvider ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider> .
-
-align:5f63476b-e149-4931-83d8-23b423c95033 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:exactMatch" ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIProvider ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#AIProvider> .
-
-align:73db6d5b-e1fc-45ba-b12a-af3b6bb616cd a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:IntendedPurpose ;
     align:target <https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose> .
 
-align:b1cfe730-841e-4ef4-a636-2476ea6cd9be a prov:Entity,
+align:31a72b91-5b34-48a6-96a1-e9ecc764bc69 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#AIProvider> .
+
+align:39c9bb1b-9c14-425c-bd11-f56f7269c5fb a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:narrowMatch ;
-    align:source aidoc:AIModel ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#GPAIModel> .
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider> .
 
-align:b40ebb1e-8a6e-49fc-a1fd-3f736c44cfc4 a prov:Entity,
+align:404e1773-98c3-41e3-907f-9b596ccd35d6 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:PostMarketMonitoringActivity ;
     align:target <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan> .
 
-align:d39219e1-5283-45d7-b922-84671acbee78 a prov:Entity,
+align:4f6ecf03-b3bd-4698-8501-c73152c8adcd a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:PostMarketMonitoringActivity ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem> .
+
+align:50848d2c-0192-41bb-9e23-75384c9504a5 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem> .
+
+align:60b0aed8-0645-4d52-b4fd-007b1319df66 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:AIDeployer ;
     align:target <https://w3id.org/dpv/legal/eu/aiact#AIDeployer> .
 
-align:ebc3258c-45d5-4e76-a889-2c334dcce041 a prov:Entity,
+align:7f3e2e98-190d-46f9-9cb7-dea0c33c2bbc a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:relatedMatch ;
+    align:source aidoc:VisualDocumentation ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation> .
+
+align:ba0f6771-d5fc-47f9-842e-5b2bc3af4693 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#GPAIModel> .
+
+align:c57713c2-5b56-4ae5-8af9-8ef3d3b43931 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:narrowMatch ;
     align:source aidoc:DeclarationOfConformity ;
     align:target <https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity> .
 
-align:f7fa48fc-79f8-4b59-834b-54e0560840ad a prov:Entity,
+align:ec852a34-dea2-4325-ba35-bb6ec236ceb1 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    prov:wasGeneratedBy align:28ce98d6-9834-40c9-9df1-5debee921db0 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
@@ -135,7 +135,7 @@ aidoc:IntendedPurpose skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#Inten
 
 aidoc:Log skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#TestLog> .
 
-aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation> .
+aidoc:VisualDocumentation skos:relatedMatch <https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation> .
 
 aidoc:AIProvider skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#AIProvider> ;
     skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider> .
@@ -146,9 +146,9 @@ aidoc:AISystem skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#AISystem> ;
 aidoc:PostMarketMonitoringActivity skos:closeMatch <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan>,
         <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem> .
 
-align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f a prov:Activity ;
+align:28ce98d6-9834-40c9-9df1-5debee921db0 a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

@@ -5,81 +5,81 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:0abfa7a0-06b9-4a1d-bb2a-bf6ebd3eecf5 a prov:Entity,
+align:493f94b6-18d9-4262-9d48-1d19d011b882 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:de5d433d-a5ce-4ac7-8168-3ef5a0337a45 ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:ChangeLog ;
-    align:target <https://w3id.org/rains#ChangeLog> .
-
-align:0df6530c-6415-446a-a932-689fd2eb6ed6 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:de5d433d-a5ce-4ac7-8168-3ef5a0337a45 ;
+    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/rains#AI_System> .
 
-align:4fdf7fad-2d1f-43ff-aaec-c0dc5c54406e a prov:Entity,
+align:55d875f3-5171-4558-8cd2-4b84a5d84fd7 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:de5d433d-a5ce-4ac7-8168-3ef5a0337a45 ;
-    align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:Dataset ;
-    align:target <https://w3id.org/rains#DatasetComponent> .
-
-align:59c88ccf-f8e2-4ec0-a43f-65ddbb130ea7 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:de5d433d-a5ce-4ac7-8168-3ef5a0337a45 ;
+    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:broadMatch ;
     align:source aidoc:AIAgent ;
     align:target <https://w3id.org/ep-plan#Agent> .
 
-align:5b3cbd80-eff2-46aa-ad7b-f808ad4dd22f a prov:Entity,
+align:61e7a692-5ae8-4c3b-94f6-76fd7f6904bd a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:de5d433d-a5ce-4ac7-8168-3ef5a0337a45 ;
-    align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:narrowMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/sao#System> .
-
-align:99afb3a0-fae8-4285-beed-6620677deafe a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:de5d433d-a5ce-4ac7-8168-3ef5a0337a45 ;
-    align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:DataCleaningProcedure ;
-    align:target <https://w3id.org/rains#DataPreprocessingProcedure> .
-
-align:9aed5fc4-ef87-493e-a30e-1a47c995eb43 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:de5d433d-a5ce-4ac7-8168-3ef5a0337a45 ;
+    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:HumanOversightMechanism ;
     align:target <https://w3id.org/rains#SystemHumanOversightMechanism> .
 
+align:c3608bc3-485e-4bb2-b0a7-a89031961e50 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/sao#System> .
+
+align:d2b0e70b-94d5-45b4-bcde-949ef644647d a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:DataCleaningProcedure ;
+    align:target <https://w3id.org/rains#DataPreprocessingProcedure> .
+
+align:e3bf1e3f-db26-4c4a-9378-6322f586046f a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:Dataset ;
+    align:target <https://w3id.org/rains#DatasetComponent> .
+
+align:fdf8081a-5f81-455d-a909-5216116d93cb a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:ChangeLog ;
+    align:target <https://w3id.org/rains#ChangeLog> .
+
 aidoc:AIAgent skos:broadMatch <https://w3id.org/ep-plan#Agent> .
 
 aidoc:ChangeLog skos:closeMatch <https://w3id.org/rains#ChangeLog> .
 
-aidoc:DataCleaningProcedure skos:broadMatch <https://w3id.org/rains#DataPreprocessingProcedure> .
+aidoc:DataCleaningProcedure skos:closeMatch <https://w3id.org/rains#DataPreprocessingProcedure> .
 
 aidoc:Dataset skos:narrowMatch <https://w3id.org/rains#DatasetComponent> .
 
@@ -88,9 +88,9 @@ aidoc:HumanOversightMechanism skos:closeMatch <https://w3id.org/rains#SystemHuma
 aidoc:AISystem skos:broadMatch <https://w3id.org/sao#System> ;
     skos:closeMatch <https://w3id.org/rains#AI_System> .
 
-align:de5d433d-a5ce-4ac7-8168-3ef5a0337a45 a prov:Activity ;
+align:d3dee053-14e0-4730-badd-2d05b503b88e a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

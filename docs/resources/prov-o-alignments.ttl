@@ -5,30 +5,30 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:852cdfef-d86f-417e-bbe2-94ab029f27b7 a prov:Entity,
+align:068cd39c-c5e4-4e80-bbac-89a1e45c6e55 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:55782cad-8f0a-4ee9-b7c4-03931a42e517 ;
-    align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:AIAgent ;
-    align:target prov:Agent .
-
-align:9fd59e8f-f7cd-4677-9480-1941efb7de9c a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:55782cad-8f0a-4ee9-b7c4-03931a42e517 ;
+    prov:wasGeneratedBy align:4efbcae1-51ba-4bff-a96b-0e13a1efd1b4 ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:broadMatch ;
     align:source aidoc:AIActivity ;
     align:target prov:Activity .
 
-align:bb99fbaf-e268-4c62-a865-7f381daa1836 a prov:Entity,
+align:0baaeb1d-2214-4223-8af2-1b1844fa49ca a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:55782cad-8f0a-4ee9-b7c4-03931a42e517 ;
+    prov:wasGeneratedBy align:4efbcae1-51ba-4bff-a96b-0e13a1efd1b4 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIAgent ;
+    align:target prov:Agent .
+
+align:fc46cccb-816c-429b-817b-3a4870663169 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4efbcae1-51ba-4bff-a96b-0e13a1efd1b4 ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:narrowMatch ;
@@ -41,9 +41,9 @@ aidoc:AIAgent skos:broadMatch prov:Agent .
 
 aidoc:SoftwareComponent skos:narrowMatch prov:SoftwareAgent .
 
-align:55782cad-8f0a-4ee9-b7c4-03931a42e517 a prov:Activity ;
+align:4efbcae1-51ba-4bff-a96b-0e13a1efd1b4 a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

@@ -5,85 +5,85 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:23be28cb-6b3f-4875-961d-7c7a9c215028 a prov:Entity,
+align:1d89d293-86a9-4487-b428-0fb871203455 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AIProvider ;
-    align:target <https://w3id.org/dpv/tech#Provider> .
-
-align:37511d54-4558-4382-b7cb-c7d351aebe0c a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    prov:wasGeneratedBy align:6f5b6c8d-a6cf-4d00-b5e0-ee25b8d1b9c1 ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:broadMatch ;
     align:source aidoc:HardwareComponent ;
     align:target <https://w3id.org/dpv/tech#Component> .
 
-align:51294acd-cb06-4afa-8fda-873fc14fbe90 a prov:Entity,
+align:2ae0f6d0-8bb5-4905-8c53-ef0950081ade a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    prov:wasGeneratedBy align:6f5b6c8d-a6cf-4d00-b5e0-ee25b8d1b9c1 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:AIDeployer ;
     align:target <https://w3id.org/dpv/tech#Deployer> .
 
-align:7853ec94-2e5f-418a-86bc-4a30f776b121 a prov:Entity,
+align:7f25eb97-1535-4966-9c52-cf67e40bdc56 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
-    align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:AIModel ;
-    align:target <https://w3id.org/dpv/tech#Model> .
-
-align:ad35c5b2-1362-4747-9d6f-ed5cb58b7068 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
-    align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:SoftwareComponent ;
-    align:target <https://w3id.org/dpv/tech#SoftwareAgent> .
-
-align:cc70ccbc-b430-46cf-9cea-07dae358c2bc a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    prov:wasGeneratedBy align:6f5b6c8d-a6cf-4d00-b5e0-ee25b8d1b9c1 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
-    align:source aidoc:Auditor ;
-    align:target <https://w3id.org/dpv/tech#Auditor> .
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/dpv/tech#Provider> .
 
-align:d012020c-5281-4fd1-8975-cd594e081d75 a prov:Entity,
+align:a0b26fea-fbd3-47df-a6b3-144b4dca3059 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    prov:wasGeneratedBy align:6f5b6c8d-a6cf-4d00-b5e0-ee25b8d1b9c1 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:broadMatch" ;
     align:relation skos:broadMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/dpv/tech#System> .
 
-align:d4b0d721-8052-423c-adbe-cf9d56e69391 a prov:Entity,
+align:a48850d3-a9a8-4f6d-b1ae-26c550472007 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    prov:wasGeneratedBy align:6f5b6c8d-a6cf-4d00-b5e0-ee25b8d1b9c1 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/tech#Model> .
+
+align:c09f55fc-33e6-4d41-a748-5cc9b345b473 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6f5b6c8d-a6cf-4d00-b5e0-ee25b8d1b9c1 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:broadMatch" ;
     align:relation skos:broadMatch ;
     align:source aidoc:VisualDocumentation ;
     align:target <https://w3id.org/dpv/tech#Documentation> .
+
+align:d1250928-d28b-4966-86bf-e93c022710cb a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6f5b6c8d-a6cf-4d00-b5e0-ee25b8d1b9c1 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:SoftwareComponent ;
+    align:target <https://w3id.org/dpv/tech#SoftwareAgent> .
+
+align:fac628ff-aad0-454f-a130-24a66b6a2f1d a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6f5b6c8d-a6cf-4d00-b5e0-ee25b8d1b9c1 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Auditor ;
+    align:target <https://w3id.org/dpv/tech#Auditor> .
 
 aidoc:AIDeployer skos:closeMatch <https://w3id.org/dpv/tech#Deployer> .
 
@@ -101,9 +101,9 @@ aidoc:SoftwareComponent skos:narrowMatch <https://w3id.org/dpv/tech#SoftwareAgen
 
 aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/dpv/tech#Documentation> .
 
-align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe a prov:Activity ;
+align:6f5b6c8d-a6cf-4d00-b5e0-ee25b8d1b9c1 a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

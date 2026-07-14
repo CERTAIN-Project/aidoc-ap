@@ -5,125 +5,125 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:298069cc-56b0-4311-8e42-815337c7b8de a prov:Entity,
+align:07397f93-00cf-41b2-acaf-dde65f8428d4 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataProcessing ;
-    align:target <https://w3id.org/dpv#Processing> .
-
-align:379be35e-332d-45a5-872e-7a7cc905c803 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/airo#AISystem> .
 
-align:4e8fb444-0363-4ab8-9f20-0caa5ad73473 a prov:Entity,
+align:30139dd2-5753-484e-8691-c874b25233c4 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
-    align:curationOutcome "modify" ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:PerformanceMetric ;
-    align:target <http://www.w3.org/ns/dqv#Metric> .
+    align:relation skos:closeMatch ;
+    align:source aidoc:AISystemCapability ;
+    align:target <https://w3id.org/airo#AICapability> .
 
-align:579bad2a-7a27-4541-b4b2-4d9d19f35ef5 a prov:Entity,
+align:40bb8a1f-6be2-4cc1-8203-4e7f6ccc98a4 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:AIModel ;
     align:target <https://w3id.org/airo#AIModel> .
 
-align:60f89c95-c60f-4cf3-8423-af494b44b22d a prov:Entity,
+align:4b955023-0150-46e5-b27d-90841839108f a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:broadMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:VisualDocumentation ;
-    align:target <https://w3id.org/airo#Documentation> .
-
-align:7a12e6c1-45c2-4cb0-8440-fce1e2bd299e a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:exactMatch" ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIDeployer ;
-    align:target <https://w3id.org/airo#AIDeployer> .
-
-align:8ea1c2ab-f670-44d8-abc1-4d24a25b9a19 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:Standard ;
-    align:target <https://w3id.org/airo#Standard> .
-
-align:8fc170a5-c7ec-491c-9efd-d946428c93f3 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:broadMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:DataSheet ;
-    align:target <https://w3id.org/dpv#Data> .
-
-align:ca61af49-b0da-4589-9ad7-255cf6692236 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:AIProvider ;
     align:target <https://w3id.org/airo#AIProvider> .
 
-align:d2daf03a-c31c-4426-80be-322346821ac4 a prov:Entity,
+align:54c42dec-2a50-4c62-85d3-e567e1b7d058 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/airo#AIDeployer> .
+
+align:7f23633b-5d63-40ac-8a83-944aba39552b a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:VisualDocumentation ;
+    align:target <https://w3id.org/airo#Documentation> .
+
+align:8a14d98a-7ee2-4386-9941-6abdd6f1b9a0 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
-    align:source aidoc:Modality ;
-    align:target <https://w3id.org/airo#Modality> .
+    align:source aidoc:DataProcessing ;
+    align:target <https://w3id.org/dpv#Processing> .
 
-align:da53a8a3-2adc-4172-b970-b8d731f1e589 a prov:Entity,
+align:8c7cd74c-04e7-41fa-937c-865d42736d13 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Standard ;
+    align:target <https://w3id.org/airo#Standard> .
+
+align:a882ee27-1c98-42e0-9f1a-467d7d277745 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
 
-align:f9aca42d-1006-4c58-a416-f556ef31ef97 a prov:Entity,
+align:d49372b4-d22c-4153-8fcb-8519b6262e27 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:DataSheet ;
+    align:target <https://w3id.org/dpv#Data> .
+
+align:dbf7f9d8-8ede-4e03-b87e-2d6cd4fd00a8 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
-    align:source aidoc:AISystemCapability ;
-    align:target <https://w3id.org/airo#AICapability> .
+    align:source aidoc:Modality ;
+    align:target <https://w3id.org/airo#Modality> .
+
+align:e204c9eb-6e6a-4c47-a49f-1217bc68e182 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:PerformanceMetric ;
+    align:target <http://www.w3.org/ns/dqv#Metric> .
 
 aidoc:AIDeployer skos:exactMatch <https://w3id.org/airo#AIDeployer> .
 
@@ -149,9 +149,9 @@ aidoc:Standard skos:closeMatch <https://w3id.org/airo#Standard> .
 
 aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/airo#Documentation> .
 
-align:9da85f63-5857-4d79-8331-e227648582e7 a prov:Activity ;
+align:21b15035-300f-4cda-9ea5-0fab86b16f1b a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

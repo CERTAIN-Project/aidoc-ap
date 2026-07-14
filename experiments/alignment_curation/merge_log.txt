@@ -35,11 +35,10 @@ loaded TD: 173 decisions
   FK vs SN: n=157, decision agreement=62.42%, kappa=0.434; relation-vote agreement=59.24%, kappa=0.446
   FK vs TD: n=157, decision agreement=63.06%, kappa=0.433; relation-vote agreement=62.42%, kappa=0.470
   SN vs TD: n=157, decision agreement=77.71%, kappa=0.621; relation-vote agreement=76.43%, kappa=0.642
-loaded 15 adjudicated decisions from experiments/alignment_curation/adjudicated.csv
+loaded 16 adjudicated decisions from experiments/alignment_curation/adjudicated.csv
 
 == Consensus over 157 canonical pairs ==
-  accept: 47, modify: 26, reject: 83, CONFLICT: 1
-  Konflikte im Team auflösen (publication/curation_protocol.md), dann Konsens in reports/curation_consensus.csv eintragen und dieses Skript erneut ausführen (oder die Urteile im UI korrigieren).
+  accept: 48, modify: 26, reject: 83, CONFLICT: 0
   reports/alignment_semantic/airo-curation.csv: 12 rows updated
   reports/alignment_semantic/dpv-ai-curation.csv: 21 rows updated
   reports/alignment_semantic/dpv-aiact-curation.csv: 15 rows updated
