@@ -1,0 +1,1392 @@
+{
+ "curator": "TD",
+ "batch_id": "2026-07-13_1341",
+ "exported": "2026-07-13T14:15:26.613Z",
+ "n_decisions": 173,
+ "decisions": {
+  "airo|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/airo#AIProvider": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:12:49.816Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#Dataset|https://www.w3.org/TR/vocab-dcat-3/Dataset": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:13:54.591Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/airo#AIModel": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:15:17.927Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#AIDeployer|https://w3id.org/airo#AIDeployer": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:15:45.031Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#Standard|https://w3id.org/airo#Standard": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:18:27.710Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/airo#AISystem": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:18:37.102Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#Modality|https://w3id.org/airo#Modality": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:exactMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:21:31.940Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/airo#AICapability": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:exactMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:24:37.836Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/airo#AISystem": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:24:56.650Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#Processing": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:27:13.403Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/airo#Documentation": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:27:46.264Z"
+  },
+  "airo|https://w3id.org/aidoc-ap#ChangeLog|https://w3id.org/airo#Change": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:29:07.274Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#AIAgent|https://w3id.org/dpv/ai#AIAgent": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:30:20.527Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/ai#AISystem": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:31:42.214Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:32:53.645Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/dpv/ai#TrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:33:02.149Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:33:06.061Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/dpv/ai#TrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:34:44.267Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/ai#AISystemRisk": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:34:57.060Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/dpv/ai#MachineLearning": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:36:33.932Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataWrangling|https://w3id.org/dpv/ai#DataCleaning": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:37:14.443Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataCleaningProcedure|https://w3id.org/dpv/ai#DataCleaning": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:38:21.511Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/ai#FrugalAISystem": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:38:48.476Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#AISystem": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:39:22.734Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataBias": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:40:25.059Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataRisk": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:40:38.081Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/dpv/ai#MachineLearningModel": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:41:25.172Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataNoise": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:41:39.826Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataSparse": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:41:40.916Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#Deployment|https://w3id.org/dpv/ai#DeploymentStage": {
+   "decision": "reject",
+   "relation": null,
+   "note": "aidoc:Deployment is an activity not a phase, this is rather https://w3id.org/vair#Deployment",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:44:35.694Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/ai#Model": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:45:14.647Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataOutdated": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:45:21.241Z"
+  },
+  "dpv-ai|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/dpv/ai#MachineLearningPlatform": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:46:11.337Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/dpv/legal/eu/aiact#AIProvider": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:46:52.077Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#IntendedPurpose|https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:47:06.007Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#AIDeployer|https://w3id.org/dpv/legal/eu/aiact#AIDeployer": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:47:09.478Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#AISystem": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:47:11.903Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/legal/eu/aiact#ValidationData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:47:45.495Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/dpv/legal/eu/aiact#TrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:47:46.656Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/legal/eu/aiact#TestingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:47:47.072Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#DeclarationOfConformity|https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:50:07.173Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/dpv/legal/eu/aiact#TrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:50:20.749Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:51:19.453Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:exactMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:52:16.465Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:53:24.305Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/legal/eu/aiact#AISystem": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:53:39.744Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:54:33.985Z"
+  },
+  "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#AISystemPerformance": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:54:44.201Z"
+  },
+  "dpv|https://w3id.org/aidoc-ap#Standard|https://w3id.org/dpv#Standard": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:55:38.240Z"
+  },
+  "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#DataProcessingPolicy": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:57:24.933Z"
+  },
+  "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#DataProcessingRecord": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:57:26.238Z"
+  },
+  "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#DataProcessingAgreement": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:57:28.973Z"
+  },
+  "dpv|https://w3id.org/aidoc-ap#HumanOversightMechanism|https://w3id.org/dpv#HumanOversight": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:exactMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T12:58:18.846Z"
+  },
+  "dpv|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/dpv#DataProtectionTraining": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:00:00.016Z"
+  },
+  "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#Processing": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:02:00.429Z"
+  },
+  "dpv|https://w3id.org/aidoc-ap#AIAgent|https://w3id.org/dpv#Agent": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:03:43.885Z"
+  },
+  "dpv-tech|https://w3id.org/aidoc-ap#Auditor|https://w3id.org/dpv/tech#Auditor": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:05:02.750Z"
+  },
+  "dpv-tech|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/dpv/tech#Provider": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:05:26.020Z"
+  },
+  "dpv-tech|https://w3id.org/aidoc-ap#AIDeployer|https://w3id.org/dpv/tech#Deployer": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:05:37.351Z"
+  },
+  "dpv-tech|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/tech#System": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:06:04.576Z"
+  },
+  "dpv-tech|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/dpv/tech#Documentation": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:06:20.341Z"
+  },
+  "dpv-tech|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/tech#Model": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:06:57.000Z"
+  },
+  "mcro|https://w3id.org/aidoc-ap#AIAgent|http://xmlns.com/foaf/0.1/Agent": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:07:33.833Z"
+  },
+  "mex-core|https://w3id.org/aidoc-ap#Dataset|http://mex.aksw.org/mex-core#Dataset": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:08:05.533Z"
+  },
+  "mex-core|https://w3id.org/aidoc-ap#AIActivity|http://www.w3.org/ns/prov-o#Activity": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:broadMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:09:09.094Z"
+  },
+  "mex-core|https://w3id.org/aidoc-ap#DataValidation|http://mex.aksw.org/mex-core#Validation": {
+   "decision": "reject",
+   "relation": null,
+   "note": "aidoc data validation is a activity, whereas validation is a subclass of phase and mor likely a closeMatch to https://w3id.org/vair#Validation",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:11:37.885Z"
+  },
+  "mex-core|https://w3id.org/aidoc-ap#AIModel|http://mex.aksw.org/mex-core#Model": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:12:02.479Z"
+  },
+  "mex-core|https://w3id.org/aidoc-ap#AIAgent|http://www.w3.org/ns/prov-o#Agent": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:broadMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:14:47.169Z"
+  },
+  "mex-core|https://w3id.org/aidoc-ap#DataTraining|http://mex.aksw.org/mex-core#Training": {
+   "decision": "reject",
+   "relation": null,
+   "note": "ours is the activity, while mex-core Training is a phase",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:15:35.569Z"
+  },
+  "mex-perf|https://w3id.org/aidoc-ap#AIActivity|http://www.w3.org/ns/prov-o#Activity": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:broadMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:17:36.665Z"
+  },
+  "ml-onto|https://w3id.org/aidoc-ap#Dataset|http://www.w3.org/ns/mls#Dataset": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:18:05.185Z"
+  },
+  "ml-onto|https://w3id.org/aidoc-ap#ModelEvaluation|http://www.w3.org/ns/mls#ModelEvaluation": {
+   "decision": "reject",
+   "relation": null,
+   "note": "aidoc is an activity, this is a value: \"It connects a measure specification with its value.\"",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:19:48.724Z"
+  },
+  "ml-onto|https://w3id.org/aidoc-ap#AIModel|http://www.w3.org/ns/mls#Model": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:20:17.114Z"
+  },
+  "ml-onto|https://w3id.org/aidoc-ap#AIAgent|http://xmlns.com/foaf/0.1/Agent": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:20:19.339Z"
+  },
+  "ml-onto|https://w3id.org/aidoc-ap#Modality|http://w3id.org/mlso/DataModality": {
+   "decision": "reject",
+   "relation": null,
+   "note": "aidoc modality is related to an ai system, ml-onto data Modality regards data itself",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:28:04.925Z"
+  },
+  "ml-onto|https://w3id.org/aidoc-ap#SoftwareImplementation|http://www.w3.org/ns/mls#Implementation": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:exactMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:29:41.740Z"
+  },
+  "mlschema|https://w3id.org/aidoc-ap#Dataset|http://www.w3.org/ns/mls#Dataset": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:29:55.482Z"
+  },
+  "mlschema|https://w3id.org/aidoc-ap#ModelEvaluation|http://www.w3.org/ns/mls#ModelEvaluation": {
+   "decision": "reject",
+   "relation": null,
+   "note": "aidoc is activity, mlschema is value: \" It connects a measure specification with its value.\"\"",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:30:27.123Z"
+  },
+  "mlschema|https://w3id.org/aidoc-ap#AIModel|http://www.w3.org/ns/mls#Model": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:30:50.875Z"
+  },
+  "mlschema|https://w3id.org/aidoc-ap#SoftwareImplementation|http://www.w3.org/ns/mls#Implementation": {
+   "decision": "accept",
+   "relation": null,
+   "note": "skos:exactMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:31:04.370Z"
+  },
+  "prov-o|https://w3id.org/aidoc-ap#AIActivity|http://www.w3.org/ns/prov#Activity": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:broadMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:31:33.155Z"
+  },
+  "prov-o|https://w3id.org/aidoc-ap#AIAgent|http://www.w3.org/ns/prov#Agent": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:broadMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:31:45.322Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#Dataset|http://www.w3.org/ns/mls#Dataset": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:32:13.795Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#ChangeLog|https://w3id.org/rains#ChangeLog": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:32:57.671Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#ModelEvaluation|http://www.w3.org/ns/mls#ModelEvaluation": {
+   "decision": "reject",
+   "relation": null,
+   "note": "aidoc is a activity, rains is only the result",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:34:02.401Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#Log|https://w3id.org/rains#Log": {
+   "decision": "reject",
+   "relation": null,
+   "note": "aidoc is a system log, not installation or change log",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:36:18.505Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/rains#AI_System": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:36:59.923Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#HumanOversightMechanism|https://w3id.org/rains#SystemHumanOversightMechanism": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:37:37.323Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/rains#AI_System": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:37:44.187Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/sao#System": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:broadMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:41:07.668Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#DataCleaningProcedure|https://w3id.org/rains#DataCollectionProcedure": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:41:36.867Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#DataCleaningProcedure|https://w3id.org/rains#DataPreprocessingProcedure": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:42:21.804Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#ModelEvaluation|https://w3id.org/rains#Evaluation": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:43:16.164Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#AIModel|http://www.w3.org/ns/mls#Model": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:44:30.789Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#AIAgent|https://w3id.org/ep-plan#Agent": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:46:55.790Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#AIAgent|http://www.w3.org/ns/prov#Agent": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:46:58.079Z"
+  },
+  "rains|https://w3id.org/aidoc-ap#ChangeLog|https://w3id.org/rains#Change": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:47:22.034Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#Dataset|https://w3id.org/vair#Dataset": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:48:10.348Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#TransparencyMeasure|https://w3id.org/vair#TransparencyMeasure": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:48:59.455Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#Deployment|https://w3id.org/vair#Deployment": {
+   "decision": "reject",
+   "relation": null,
+   "note": "aidoc is the activity itself, vair is the life cycle phase",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:50:01.369Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#Standard|https://w3id.org/airo#Standard": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:50:23.747Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#Modality|https://w3id.org/airo#Modality": {
+   "decision": "accept",
+   "relation": null,
+   "note": "skos:exactMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:51:28.931Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#ValidationData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:51:42.675Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#TrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:51:43.539Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DeclarationOfConformity|https://w3id.org/vair#EUDeclarationOfConformity": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:52:55.012Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/vair#TrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:53:01.213Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearning": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:54:40.670Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#MLPipeline|http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:54:54.941Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/vair#PostMarketMonitoringPlan": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:55:52.647Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#BiasedValidationData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:56:05.583Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#IrrelevantValidationData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:56:06.431Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#BiasedTrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:56:07.534Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#IrrelevantTrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:56:08.694Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#IncompleteValidationData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:56:10.927Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#HumanOversightMechanism|https://w3id.org/vair#HumanOversightMeasure": {
+   "decision": "accept",
+   "relation": null,
+   "note": "skos:exactMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:56:41.687Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningModel": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:56:58.258Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#UnrepresentativeValidationData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:57:03.751Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#Validation": {
+   "decision": "reject",
+   "relation": null,
+   "note": "aidoc is activity, vair is phase",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:57:31.141Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/vair#ErroneousValidationData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:57:33.726Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#IncompleteTrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:57:34.230Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/airo#Documentation": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:57:44.412Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningLibrary": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:58:01.691Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/vair#Model": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:broadMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:58:30.921Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#UnrepresentativeTrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:58:33.865Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningPlatform": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:58:47.199Z"
+  },
+  "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#ErroneousTrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:58:51.320Z"
+  },
+  "fn-band/airo|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv#Data": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:59:40.061Z"
+  },
+  "fn-band/airo|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/airo#Data": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:59:40.661Z"
+  },
+  "fn-band/airo|https://w3id.org/aidoc-ap#DataSheet|https://w3id.org/dpv#Data": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T13:59:49.587Z"
+  },
+  "fn-band/airo|https://w3id.org/aidoc-ap#PerformanceMetric|http://www.w3.org/ns/dqv#Metric": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:broadMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:00:28.194Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv/ai#DataPoisoning": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:00:32.730Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingDataOutdated": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:00:38.441Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/ai#GPAIModel": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:11.792Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#FrugalAISystem": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:15.152Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingDataBias": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:16.968Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingDataInconsistent": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:17.999Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#AISystemRisk": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:20.743Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataIncomplete": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:28.549Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#ModelVersioning|https://w3id.org/dpv/ai#ModelTraining": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:32.119Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#ModelEvaluation|https://w3id.org/dpv/ai#ModelEvasion": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:35.774Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataValidation|https://w3id.org/dpv/ai#ValidationDataUnrepresentative": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:38.919Z"
+  },
+  "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv/ai#TestingDataSparse": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:01:41.638Z"
+  },
+  "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystemDocumentation": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:02:41.676Z"
+  },
+  "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/legal/eu/aiact#GPAIModel": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:02:54.731Z"
+  },
+  "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#Log|https://w3id.org/dpv/legal/eu/aiact#TestLog": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:03:19.130Z"
+  },
+  "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:04:09.633Z"
+  },
+  "fn-band/dpv|https://w3id.org/aidoc-ap#DataSheet|https://w3id.org/dpv#Data": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:04:27.296Z"
+  },
+  "fn-band/dpv|https://w3id.org/aidoc-ap#IntendedPurpose|https://w3id.org/dpv#Intended": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:06:19.125Z"
+  },
+  "fn-band/dpv|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/dpv#Data": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:06:21.846Z"
+  },
+  "fn-band/dpv-tech|https://w3id.org/aidoc-ap#HardwareComponent|https://w3id.org/dpv/tech#Component": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:broadMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:06:57.508Z"
+  },
+  "fn-band/dpv-tech|https://w3id.org/aidoc-ap#SoftwareDevelopment|https://w3id.org/dpv/tech#Software": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:07:13.404Z"
+  },
+  "fn-band/dpv-tech|https://w3id.org/aidoc-ap#SoftwareComponent|https://w3id.org/dpv/tech#SoftwareAgent": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:08:05.819Z"
+  },
+  "fn-band/mcro|https://w3id.org/aidoc-ap#PerformanceMetric|http://purl.obolibrary.org/obo/MCRO_0000027": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:08:56.737Z"
+  },
+  "fn-band/mex-core|https://w3id.org/aidoc-ap#ModelPackaging|http://mex.aksw.org/mex-core#Model": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:09:03.273Z"
+  },
+  "fn-band/ml-onto|https://w3id.org/aidoc-ap#SoftwareImplementation|http://www.w3.org/ns/mls#Software": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:09:49.545Z"
+  },
+  "fn-band/mlschema|https://w3id.org/aidoc-ap#ModelPackaging|http://www.w3.org/ns/mls#Model": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:09:51.850Z"
+  },
+  "fn-band/mlschema|https://w3id.org/aidoc-ap#DataSheet|http://www.w3.org/ns/mls#Data": {
+   "decision": "accept",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:09:57.136Z"
+  },
+  "fn-band/prov-o|https://w3id.org/aidoc-ap#SoftwareComponent|http://www.w3.org/ns/prov#SoftwareAgent": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:10:15.136Z"
+  },
+  "fn-band/rains|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/rains#TrainingDataset": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:10:22.088Z"
+  },
+  "fn-band/rains|https://w3id.org/aidoc-ap#Dataset|https://w3id.org/rains#DatasetComponent": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:10:45.263Z"
+  },
+  "fn-band/rains|https://w3id.org/aidoc-ap#ChangeRecord|https://w3id.org/rains#Change": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:10:55.608Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#PostMarketMonitoringActivity|https://w3id.org/vair#PostMarketMonitoringSystemDescription": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:11:39.719Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#HardwareComponent|https://w3id.org/vair#Hardware": {
+   "decision": "accept",
+   "relation": null,
+   "note": "skos:exactMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:11:59.726Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/vair#IncompleteTrainingData": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:12:03.751Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningFramework": {
+   "decision": "reject",
+   "relation": null,
+   "note": "https://delaramglp.github.io/vair/#MachineLearningFramework does not exist?",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:13:15.726Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#SoftwareComponent|https://w3id.org/vair#SafetyComponent": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:13:21.470Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#DataTesting|https://w3id.org/vair#Testing": {
+   "decision": "reject",
+   "relation": null,
+   "note": "activity vs phase",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:13:34.126Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#VisualDocumentation|https://w3id.org/vair#TechnicalDocumentation": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:13:39.894Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/vair#TrainedModel": {
+   "decision": "modify",
+   "relation": "skos:exactMatch",
+   "note": "skos:narrowMatch",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:14:04.477Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#ModelVersioning|https://w3id.org/vair#ModelInversion": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:14:08.869Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#MLPipeline|https://w3id.org/vair#MachineLearningAlgorithm": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:14:21.214Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#SoftwareVersioning|https://w3id.org/vair#Software": {
+   "decision": "reject",
+   "relation": null,
+   "note": null,
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:14:25.229Z"
+  },
+  "fn-band/vair|https://w3id.org/aidoc-ap#ModelEvaluation|https://w3id.org/vair#ReEvaluation": {
+   "decision": "reject",
+   "relation": null,
+   "note": "activity vs phase",
+   "curator": "TD",
+   "batch_id": "2026-07-13_1341",
+   "ts": "2026-07-13T14:14:45.733Z"
+  }
+ }
+}

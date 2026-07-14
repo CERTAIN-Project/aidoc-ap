@@ -1,0 +1,472 @@
+aidoc_iri,ref_iri,buckets,llm_relation,curator,vote,decision,note
+https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov#Activity,prov-o,skos:exactMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov#Activity,prov-o,skos:exactMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov#Activity,prov-o,skos:exactMatch,TD,skos:broadMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov-o#Activity,mex-core+mex-perf,skos:exactMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov-o#Activity,mex-core+mex-perf,skos:exactMatch,SN,skos:exactMatch,accept,skos:broadMatch
+https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov-o#Activity,mex-core+mex-perf,skos:exactMatch,TD,skos:broadMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov#Agent,prov-o+rains,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov#Agent,prov-o+rains,skos:closeMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov#Agent,prov-o+rains,skos:closeMatch,TD,skos:closeMatch,accept,skos:broadMatch
+https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov-o#Agent,mex-core,skos:exactMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov-o#Agent,mex-core,skos:exactMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov-o#Agent,mex-core,skos:exactMatch,TD,skos:broadMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#AIAgent,http://xmlns.com/foaf/0.1/Agent,mcro+ml-onto,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIAgent,http://xmlns.com/foaf/0.1/Agent,mcro+ml-onto,skos:closeMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIAgent,http://xmlns.com/foaf/0.1/Agent,mcro+ml-onto,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/dpv#Agent,dpv,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/dpv#Agent,dpv,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/dpv#Agent,dpv,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/dpv/ai#AIAgent,dpv-ai,skos:exactMatch,FK,skos:closeMatch,modify,
+https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/dpv/ai#AIAgent,dpv-ai,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/dpv/ai#AIAgent,dpv-ai,skos:exactMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/ep-plan#Agent,rains,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/ep-plan#Agent,rains,skos:closeMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/ep-plan#Agent,rains,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIDeployer,https://w3id.org/airo#AIDeployer,airo,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIDeployer,https://w3id.org/airo#AIDeployer,airo,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIDeployer,https://w3id.org/airo#AIDeployer,airo,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIDeployer,https://w3id.org/dpv/legal/eu/aiact#AIDeployer,dpv-aiact,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIDeployer,https://w3id.org/dpv/legal/eu/aiact#AIDeployer,dpv-aiact,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIDeployer,https://w3id.org/dpv/legal/eu/aiact#AIDeployer,dpv-aiact,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIDeployer,https://w3id.org/dpv/tech#Deployer,dpv-tech,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIDeployer,https://w3id.org/dpv/tech#Deployer,dpv-tech,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIDeployer,https://w3id.org/dpv/tech#Deployer,dpv-tech,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,http://mex.aksw.org/mex-core#Model,mex-core,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIModel,http://mex.aksw.org/mex-core#Model,mex-core,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,http://mex.aksw.org/mex-core#Model,mex-core,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AIModel,http://www.w3.org/ns/mls#Model,ml-onto+mlschema+rains,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#AIModel,http://www.w3.org/ns/mls#Model,ml-onto+mlschema+rains,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,http://www.w3.org/ns/mls#Model,ml-onto+mlschema+rains,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/airo#AIModel,airo,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/airo#AIModel,airo,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/airo#AIModel,airo,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/ai#GPAIModel,fn-band/dpv-ai,skos:closeMatch,FK,skos:narrowMatch,modify,"aidoc describes a computational representation that enables an AI method to execute an AI task, while dpv-ai describes a model that displays generality in terms of capabilities and potential applications according to the EU AI Act"
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/ai#GPAIModel,fn-band/dpv-ai,skos:closeMatch,SN,skos:narrowMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/ai#GPAIModel,fn-band/dpv-ai,skos:closeMatch,TD,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/ai#Model,dpv-ai,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/ai#Model,dpv-ai,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/ai#Model,dpv-ai,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/legal/eu/aiact#GPAIModel,fn-band/dpv-aiact,skos:closeMatch,FK,skos:narrowMatch,modify,"aidoc describes a computational representation that enables an AI method to execute an AI task, while dpv-ai describes a model that displays generality in terms of capabilities and potential applications according to the EU AI Act"
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/legal/eu/aiact#GPAIModel,fn-band/dpv-aiact,skos:closeMatch,SN,skos:narrowMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/legal/eu/aiact#GPAIModel,fn-band/dpv-aiact,skos:closeMatch,TD,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/tech#Model,dpv-tech,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/tech#Model,dpv-tech,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/dpv/tech#Model,dpv-tech,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/vair#Model,vair,skos:closeMatch,FK,skos:relatedMatch,modify,"aidoc describes a concrete AI/ML model while vair describes not only a model, but also a system, entity, phenomenon, process or data"
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/vair#Model,vair,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/vair#Model,vair,skos:closeMatch,TD,skos:broadMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/vair#TrainedModel,fn-band/vair,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/vair#TrainedModel,fn-band/vair,skos:closeMatch,SN,skos:narrowMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#AIModel,https://w3id.org/vair#TrainedModel,fn-band/vair,skos:closeMatch,TD,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/airo#AIProvider,airo,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/airo#AIProvider,airo,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/airo#AIProvider,airo,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/dpv/legal/eu/aiact#AIProvider,dpv-aiact,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/dpv/legal/eu/aiact#AIProvider,dpv-aiact,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/dpv/legal/eu/aiact#AIProvider,dpv-aiact,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider,dpv-aiact,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider,dpv-aiact,skos:closeMatch,SN,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider,dpv-aiact,skos:closeMatch,TD,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/dpv/tech#Provider,dpv-tech,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/dpv/tech#Provider,dpv-tech,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AIProvider,https://w3id.org/dpv/tech#Provider,dpv-tech,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/airo#AISystem,airo,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/airo#AISystem,airo,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/airo#AISystem,airo,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/ai#AISystem,dpv-ai,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/ai#AISystem,dpv-ai,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/ai#AISystem,dpv-ai,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/ai#AISystemRisk,dpv-ai,skos:narrowMatch,FK,REJECT,reject,ai systems vs concrete risk associated to an ai system
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/ai#AISystemRisk,dpv-ai,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/ai#AISystemRisk,dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/ai#FrugalAISystem,dpv-ai,skos:narrowMatch,FK,skos:narrowMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/ai#FrugalAISystem,dpv-ai,skos:narrowMatch,SN,skos:narrowMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/ai#FrugalAISystem,dpv-ai,skos:narrowMatch,TD,skos:narrowMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/legal/eu/aiact#AISystem,dpv-aiact,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/legal/eu/aiact#AISystem,dpv-aiact,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/legal/eu/aiact#AISystem,dpv-aiact,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/legal/eu/aiact#AISystemPerformance,dpv-aiact,skos:narrowMatch,FK,REJECT,reject,ai system (concept) vs the ability to achieve an intended purpose
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/legal/eu/aiact#AISystemPerformance,dpv-aiact,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/legal/eu/aiact#AISystemPerformance,dpv-aiact,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem,dpv-aiact,skos:narrowMatch,FK,skos:narrowMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem,dpv-aiact,skos:narrowMatch,SN,skos:narrowMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem,dpv-aiact,skos:narrowMatch,TD,skos:narrowMatch,accept,skos:narrowMatch
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/tech#System,dpv-tech,skos:broadMatch,FK,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/tech#System,dpv-tech,skos:broadMatch,SN,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/dpv/tech#System,dpv-tech,skos:broadMatch,TD,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/rains#AI_System,rains,skos:closeMatch,FK,skos:narrowMatch,modify,"aidoc is broader, while rains describes an ai system with a specified accountability plan"
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/rains#AI_System,rains,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/rains#AI_System,rains,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/sao#System,rains,skos:narrowMatch,FK,REJECT,reject,aidoc specifies a concrete AI System while rains (sao) specifies a general system with collected accountability information
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/sao#System,rains,skos:narrowMatch,SN,skos:narrowMatch,accept,
+https://w3id.org/aidoc-ap#AISystem,https://w3id.org/sao#System,rains,skos:narrowMatch,TD,skos:broadMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/airo#AICapability,airo,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/airo#AICapability,airo,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/airo#AICapability,airo,skos:closeMatch,TD,skos:exactMatch,modify,skos:exactMatch
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/airo#AISystem,airo,skos:broadMatch,FK,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/airo#AISystem,airo,skos:broadMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/airo#AISystem,airo,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/ai#AISystem,dpv-ai,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/ai#AISystem,dpv-ai,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/ai#AISystem,dpv-ai,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/ai#AISystemRisk,fn-band/dpv-ai,skos:relatedMatch,FK,REJECT,reject,"aidoc describes a category of tasks or functions that an AI system can perform, such as sensory, knowledge, or control action processing while dpv-ai describes concrete risks associated with ai systems"
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/ai#AISystemRisk,fn-band/dpv-ai,skos:relatedMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/ai#AISystemRisk,fn-band/dpv-ai,skos:relatedMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/ai#FrugalAISystem,fn-band/dpv-ai,skos:relatedMatch,FK,REJECT,reject,"aidoc describes a a category of tasks or functions that an AI system can perform, such as sensory, knowledge, or control action processing while dpv-ai describes AI systems intended to be more efficient, cost-effective, and accessible while maintaining or even improving their performance"
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/ai#FrugalAISystem,fn-band/dpv-ai,skos:relatedMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/ai#FrugalAISystem,fn-band/dpv-ai,skos:relatedMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/legal/eu/aiact#AISystem,dpv-aiact,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/legal/eu/aiact#AISystem,dpv-aiact,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/dpv/legal/eu/aiact#AISystem,dpv-aiact,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/rains#AI_System,rains,skos:broadMatch,FK,REJECT,reject,aidoc describes a category of tasks or functions that an AI system can perform while rains describes an ai system for which an accountability plan is specified
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/rains#AI_System,rains,skos:broadMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#AISystemCapability,https://w3id.org/rains#AI_System,rains,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#Auditor,https://w3id.org/dpv/tech#Auditor,dpv-tech,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#Auditor,https://w3id.org/dpv/tech#Auditor,dpv-tech,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#Auditor,https://w3id.org/dpv/tech#Auditor,dpv-tech,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#ChangeLog,https://w3id.org/airo#Change,airo,skos:broadMatch,FK,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#ChangeLog,https://w3id.org/airo#Change,airo,skos:broadMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#ChangeLog,https://w3id.org/airo#Change,airo,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#ChangeLog,https://w3id.org/rains#Change,rains,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#ChangeLog,https://w3id.org/rains#Change,rains,skos:closeMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#ChangeLog,https://w3id.org/rains#Change,rains,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#ChangeLog,https://w3id.org/rains#ChangeLog,rains,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#ChangeLog,https://w3id.org/rains#ChangeLog,rains,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#ChangeLog,https://w3id.org/rains#ChangeLog,rains,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#ChangeRecord,https://w3id.org/rains#Change,fn-band/rains,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#ChangeRecord,https://w3id.org/rains#Change,fn-band/rains,skos:closeMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#ChangeRecord,https://w3id.org/rains#Change,fn-band/rains,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/dpv/ai#DataCleaning,dpv-ai,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/dpv/ai#DataCleaning,dpv-ai,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/dpv/ai#DataCleaning,dpv-ai,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/rains#DataCollectionProcedure,rains,skos:broadMatch,FK,REJECT,reject,"aidoc describes a procedure how data is cleaned, while rains describes a specific type of sao:InformationElement which records a specific piece of information detailing how the data is collected."
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/rains#DataCollectionProcedure,rains,skos:broadMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/rains#DataCollectionProcedure,rains,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/rains#DataPreprocessingProcedure,rains,skos:closeMatch,FK,REJECT,reject,"aidoc describes a procedure how data is cleaned, while rains describes a specific type of sao:InformationElement which records a specific piece of information detailing how the data is preprocessed."
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/rains#DataPreprocessingProcedure,rains,skos:closeMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#DataCleaningProcedure,https://w3id.org/rains#DataPreprocessingProcedure,rains,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#DataProcessingAgreement,dpv,skos:broadMatch,FK,REJECT,reject,activity vs description of a concrete processing agreemant
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#DataProcessingAgreement,dpv,skos:broadMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#DataProcessingAgreement,dpv,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#DataProcessingPolicy,dpv,skos:broadMatch,FK,REJECT,reject,activity vs description of a concrete policy
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#DataProcessingPolicy,dpv,skos:broadMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#DataProcessingPolicy,dpv,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#DataProcessingRecord,dpv,skos:closeMatch,FK,REJECT,reject,activity vs description of a concrete processing record
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#DataProcessingRecord,dpv,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#DataProcessingRecord,dpv,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#Processing,airo+dpv,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#Processing,airo+dpv,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv#Processing,airo+dpv,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv/ai#DataPoisoning,fn-band/dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concrete example of poisoning data
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv/ai#DataPoisoning,fn-band/dpv-ai,skos:narrowMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#DataProcessing,https://w3id.org/dpv/ai#DataPoisoning,fn-band/dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataSheet,http://www.w3.org/ns/mls#Data,fn-band/mlschema,skos:broadMatch,FK,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#DataSheet,http://www.w3.org/ns/mls#Data,fn-band/mlschema,skos:broadMatch,SN,REJECT,reject,Dokument/Datenblatt vs. Daten
+https://w3id.org/aidoc-ap#DataSheet,http://www.w3.org/ns/mls#Data,fn-band/mlschema,skos:broadMatch,TD,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#DataSheet,https://w3id.org/dpv#Data,fn-band/airo+fn-band/dpv,skos:broadMatch,FK,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#DataSheet,https://w3id.org/dpv#Data,fn-band/airo+fn-band/dpv,skos:broadMatch,SN,REJECT,reject,Dokument/Datenblatt vs. Daten
+https://w3id.org/aidoc-ap#DataSheet,https://w3id.org/dpv#Data,fn-band/airo+fn-band/dpv,skos:broadMatch,TD,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/airo#Data,fn-band/airo,skos:broadMatch,FK,REJECT,reject,activity vs concrete concept/data
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/airo#Data,fn-band/airo,skos:broadMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/airo#Data,fn-band/airo,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv#Data,fn-band/airo+fn-band/dpv,skos:broadMatch,FK,REJECT,reject,activity vs concrete concept/data; activity vs concrete data
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv#Data,fn-band/airo+fn-band/dpv,skos:broadMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv#Data,fn-band/airo+fn-band/dpv,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingData,dpv-ai,skos:closeMatch,FK,REJECT,reject,activity vs concept
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingData,dpv-ai,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingData,dpv-ai,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataBias,fn-band/dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concrete concept representing bias in testing data
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataBias,fn-band/dpv-ai,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataBias,fn-band/dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataInconsistent,fn-band/dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concrete concept representing inconsitencies in testing data
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataInconsistent,fn-band/dpv-ai,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataInconsistent,fn-band/dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataOutdated,fn-band/dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concrete example of outdated testing data
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataOutdated,fn-band/dpv-ai,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataOutdated,fn-band/dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataSparse,fn-band/dpv-ai,skos:closeMatch,FK,REJECT,reject,activity vs concrete concept representing testing data being sparse
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataSparse,fn-band/dpv-ai,skos:closeMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/ai#TestingDataSparse,fn-band/dpv-ai,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/legal/eu/aiact#TestingData,dpv-aiact,skos:exactMatch,FK,REJECT,reject,activity vs concept
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/legal/eu/aiact#TestingData,dpv-aiact,skos:exactMatch,SN,REJECT,reject,activity vs data
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/dpv/legal/eu/aiact#TestingData,dpv-aiact,skos:exactMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/vair#Testing,fn-band/vair,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/vair#Testing,fn-band/vair,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataTesting,https://w3id.org/vair#Testing,fn-band/vair,skos:closeMatch,TD,REJECT,reject,activity vs phase
+https://w3id.org/aidoc-ap#DataTraining,http://mex.aksw.org/mex-core#Training,mex-core,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#DataTraining,http://mex.aksw.org/mex-core#Training,mex-core,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataTraining,http://mex.aksw.org/mex-core#Training,mex-core,skos:closeMatch,TD,REJECT,reject,"ours is the activity, while mex-core Training is a phase"
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/dpv#DataProtectionTraining,dpv,skos:relatedMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/dpv#DataProtectionTraining,dpv,skos:relatedMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/dpv#DataProtectionTraining,dpv,skos:relatedMatch,TD,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/dpv/ai#TrainingData,dpv-ai,skos:exactMatch,FK,REJECT,reject,activity vs concept
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/dpv/ai#TrainingData,dpv-ai,skos:exactMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/dpv/ai#TrainingData,dpv-ai,skos:exactMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/dpv/legal/eu/aiact#TrainingData,dpv-aiact,skos:exactMatch,FK,REJECT,reject,activity vs concept
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/dpv/legal/eu/aiact#TrainingData,dpv-aiact,skos:exactMatch,SN,REJECT,reject,activity vs data
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/dpv/legal/eu/aiact#TrainingData,dpv-aiact,skos:exactMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#BiasedTrainingData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete bias in validation data
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#BiasedTrainingData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#BiasedTrainingData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#ErroneousTrainingData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete erroneous training data
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#ErroneousTrainingData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#ErroneousTrainingData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#IncompleteTrainingData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete incomplete training data
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#IncompleteTrainingData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#IncompleteTrainingData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#IrrelevantTrainingData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete irrelevancies in validation data
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#IrrelevantTrainingData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#IrrelevantTrainingData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#TrainingData,vair,skos:exactMatch,FK,REJECT,reject,"aidoc activity vs vair (data used to train a machine learning model.  [ISO/IEC 22989, 3.3.16])"
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#TrainingData,vair,skos:exactMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#TrainingData,vair,skos:exactMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#UnrepresentativeTrainingData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete unrepresentative training data
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#UnrepresentativeTrainingData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataTraining,https://w3id.org/vair#UnrepresentativeTrainingData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,http://mex.aksw.org/mex-core#Validation,mex-core,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#DataValidation,http://mex.aksw.org/mex-core#Validation,mex-core,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataValidation,http://mex.aksw.org/mex-core#Validation,mex-core,skos:closeMatch,TD,REJECT,reject,"aidoc data validation is a activity, whereas validation is a subclass of phase and mor likely a closeMatch to https://w3id.org/vair#Validation"
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationData,dpv-ai,skos:closeMatch,FK,REJECT,reject,activity vs concept
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationData,dpv-ai,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationData,dpv-ai,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataBias,dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concept
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataBias,dpv-ai,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataBias,dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataIncomplete,fn-band/dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concrete concept representing incomplete data in validation data
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataIncomplete,fn-band/dpv-ai,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataIncomplete,fn-band/dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataNoise,dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concept
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataNoise,dpv-ai,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataNoise,dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataOutdated,dpv-ai,skos:narrowMatch,FK,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataOutdated,dpv-ai,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataOutdated,dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataRisk,dpv-ai,skos:relatedMatch,FK,REJECT,reject,activity vs concept and concrete risk
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataRisk,dpv-ai,skos:relatedMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataRisk,dpv-ai,skos:relatedMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataSparse,dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concept
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataSparse,dpv-ai,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataSparse,dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataUnrepresentative,fn-band/dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concrete concept representing validation data being unrepresentative
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataUnrepresentative,fn-band/dpv-ai,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/ai#ValidationDataUnrepresentative,fn-band/dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/legal/eu/aiact#ValidationData,dpv-aiact,skos:exactMatch,FK,REJECT,reject,activity vs concept
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/legal/eu/aiact#ValidationData,dpv-aiact,skos:exactMatch,SN,REJECT,reject,activity vs data
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/dpv/legal/eu/aiact#ValidationData,dpv-aiact,skos:exactMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#BiasedValidationData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete bias in validation data
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#BiasedValidationData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#BiasedValidationData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#ErroneousValidationData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete erroneous validation data
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#ErroneousValidationData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#ErroneousValidationData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#IncompleteValidationData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete incompleteness in validation data (concept)
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#IncompleteValidationData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#IncompleteValidationData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#IrrelevantValidationData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete irrelevancies in validation data
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#IrrelevantValidationData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#IrrelevantValidationData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#UnrepresentativeValidationData,vair,skos:narrowMatch,FK,REJECT,reject,activity vs concrete unrepresentatives in validation data
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#UnrepresentativeValidationData,vair,skos:narrowMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#UnrepresentativeValidationData,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#Validation,vair,skos:closeMatch,FK,skos:relatedMatch,modify,"aidoc activity (EU AI Act 2024/1689, Article 3(30)) vs vair activity (ISO/IEC 22989:2022, 6.2.4)"
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#Validation,vair,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#Validation,vair,skos:closeMatch,TD,REJECT,reject,"aidoc is activity, vair is phase"
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#ValidationData,vair,skos:closeMatch,FK,REJECT,reject,"aidoc (activity) vs vair (data used to compare the performance of different candidate models.   [ISO/IEC 22989, 3.2.15])"
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#ValidationData,vair,skos:closeMatch,SN,REJECT,reject,Aktivität/Prozess vs. Datenobjekt
+https://w3id.org/aidoc-ap#DataValidation,https://w3id.org/vair#ValidationData,vair,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#DataWrangling,https://w3id.org/dpv/ai#DataCleaning,dpv-ai,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataWrangling,https://w3id.org/dpv/ai#DataCleaning,dpv-ai,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DataWrangling,https://w3id.org/dpv/ai#DataCleaning,dpv-ai,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#Dataset,http://mex.aksw.org/mex-core#Dataset,mex-core,skos:exactMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#Dataset,http://mex.aksw.org/mex-core#Dataset,mex-core,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Dataset,http://mex.aksw.org/mex-core#Dataset,mex-core,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Dataset,http://www.w3.org/ns/mls#Dataset,ml-onto+mlschema+rains,skos:exactMatch,FK,skos:closeMatch,modify,
+https://w3id.org/aidoc-ap#Dataset,http://www.w3.org/ns/mls#Dataset,ml-onto+mlschema+rains,skos:exactMatch,SN,skos:exactMatch,accept,skos:narrowMatch
+https://w3id.org/aidoc-ap#Dataset,http://www.w3.org/ns/mls#Dataset,ml-onto+mlschema+rains,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Dataset,https://w3id.org/rains#DatasetComponent,fn-band/rains,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#Dataset,https://w3id.org/rains#DatasetComponent,fn-band/rains,skos:closeMatch,SN,skos:narrowMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#Dataset,https://w3id.org/rains#DatasetComponent,fn-band/rains,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#Dataset,https://w3id.org/vair#Dataset,vair,skos:exactMatch,FK,skos:closeMatch,modify,"vair Dataset DOES NOT provide a description, but a close match can be assumed"
+https://w3id.org/aidoc-ap#Dataset,https://w3id.org/vair#Dataset,vair,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Dataset,https://w3id.org/vair#Dataset,vair,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Dataset,https://www.w3.org/TR/vocab-dcat-3/Dataset,airo,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Dataset,https://www.w3.org/TR/vocab-dcat-3/Dataset,airo,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Dataset,https://www.w3.org/TR/vocab-dcat-3/Dataset,airo,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#DeclarationOfConformity,https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity,dpv-aiact,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#DeclarationOfConformity,https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity,dpv-aiact,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DeclarationOfConformity,https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity,dpv-aiact,skos:closeMatch,TD,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#DeclarationOfConformity,https://w3id.org/vair#EUDeclarationOfConformity,vair,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#DeclarationOfConformity,https://w3id.org/vair#EUDeclarationOfConformity,vair,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#DeclarationOfConformity,https://w3id.org/vair#EUDeclarationOfConformity,vair,skos:closeMatch,TD,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#Deployment,https://w3id.org/dpv/ai#DeploymentStage,dpv-ai,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#Deployment,https://w3id.org/dpv/ai#DeploymentStage,dpv-ai,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#Deployment,https://w3id.org/dpv/ai#DeploymentStage,dpv-ai,skos:closeMatch,TD,REJECT,reject,"aidoc:Deployment is an activity not a phase, this is rather https://w3id.org/vair#Deployment"
+https://w3id.org/aidoc-ap#Deployment,https://w3id.org/vair#Deployment,vair,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Deployment,https://w3id.org/vair#Deployment,vair,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Deployment,https://w3id.org/vair#Deployment,vair,skos:exactMatch,TD,REJECT,reject,"aidoc is the activity itself, vair is the life cycle phase"
+https://w3id.org/aidoc-ap#HardwareComponent,https://w3id.org/dpv/tech#Component,fn-band/dpv-tech,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#HardwareComponent,https://w3id.org/dpv/tech#Component,fn-band/dpv-tech,skos:closeMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#HardwareComponent,https://w3id.org/dpv/tech#Component,fn-band/dpv-tech,skos:closeMatch,TD,skos:broadMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#HardwareComponent,https://w3id.org/vair#Hardware,fn-band/vair,skos:closeMatch,FK,skos:broadMatch,modify,aidoc narrows to ai system while vair is the general concept
+https://w3id.org/aidoc-ap#HardwareComponent,https://w3id.org/vair#Hardware,fn-band/vair,skos:closeMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#HardwareComponent,https://w3id.org/vair#Hardware,fn-band/vair,skos:closeMatch,TD,skos:closeMatch,accept,skos:exactMatch
+https://w3id.org/aidoc-ap#HumanOversightMechanism,https://w3id.org/dpv#HumanOversight,dpv,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#HumanOversightMechanism,https://w3id.org/dpv#HumanOversight,dpv,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#HumanOversightMechanism,https://w3id.org/dpv#HumanOversight,dpv,skos:closeMatch,TD,skos:exactMatch,modify,skos:exactMatch
+https://w3id.org/aidoc-ap#HumanOversightMechanism,https://w3id.org/rains#SystemHumanOversightMechanism,rains,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#HumanOversightMechanism,https://w3id.org/rains#SystemHumanOversightMechanism,rains,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#HumanOversightMechanism,https://w3id.org/rains#SystemHumanOversightMechanism,rains,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#HumanOversightMechanism,https://w3id.org/vair#HumanOversightMeasure,vair,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#HumanOversightMechanism,https://w3id.org/vair#HumanOversightMeasure,vair,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#HumanOversightMechanism,https://w3id.org/vair#HumanOversightMeasure,vair,skos:closeMatch,TD,skos:closeMatch,accept,skos:exactMatch
+https://w3id.org/aidoc-ap#IntendedPurpose,https://w3id.org/dpv#Intended,fn-band/dpv,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#IntendedPurpose,https://w3id.org/dpv#Intended,fn-band/dpv,skos:closeMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#IntendedPurpose,https://w3id.org/dpv#Intended,fn-band/dpv,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#IntendedPurpose,https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose,dpv-aiact,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#IntendedPurpose,https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose,dpv-aiact,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#IntendedPurpose,https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose,dpv-aiact,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Log,https://w3id.org/dpv/legal/eu/aiact#TestLog,fn-band/dpv-aiact,skos:narrowMatch,FK,skos:narrowMatch,accept,
+https://w3id.org/aidoc-ap#Log,https://w3id.org/dpv/legal/eu/aiact#TestLog,fn-band/dpv-aiact,skos:narrowMatch,SN,skos:narrowMatch,accept,skos:broadMatch
+https://w3id.org/aidoc-ap#Log,https://w3id.org/dpv/legal/eu/aiact#TestLog,fn-band/dpv-aiact,skos:narrowMatch,TD,skos:narrowMatch,accept,
+https://w3id.org/aidoc-ap#Log,https://w3id.org/rains#Log,rains,skos:closeMatch,FK,REJECT,reject,"aidoc describes ""A record of system events, performance, and traceability."" while rains describes ""A specific type of planned sao:AccountableResult which represents a high level reference to logs of information pertaining either to Installation or Changes"""
+https://w3id.org/aidoc-ap#Log,https://w3id.org/rains#Log,rains,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#Log,https://w3id.org/rains#Log,rains,skos:closeMatch,TD,REJECT,reject,"aidoc is a system log, not installation or change log"
+https://w3id.org/aidoc-ap#MLPipeline,http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning,vair,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#MLPipeline,http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning,vair,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,http://www.semanticweb.org/owl/owlapi/turtle#MachineLearning,vair,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/dpv/ai#MachineLearning,dpv-ai,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/dpv/ai#MachineLearning,dpv-ai,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/dpv/ai#MachineLearning,dpv-ai,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/dpv/ai#MachineLearningModel,dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity vs concept (concrete model)
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/dpv/ai#MachineLearningModel,dpv-ai,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/dpv/ai#MachineLearningModel,dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/dpv/ai#MachineLearningPlatform,dpv-ai,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/dpv/ai#MachineLearningPlatform,dpv-ai,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/dpv/ai#MachineLearningPlatform,dpv-ai,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearning,vair,skos:broadMatch,FK,skos:narrowMatch,modify,"aidoc describes the whole pipeline while vair is specific about the process of optimizing of optimizing model parameters through computational techniques, such that the model's behaviour reflects the data or experience."
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearning,vair,skos:broadMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearning,vair,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningAlgorithm,fn-band/vair,skos:narrowMatch,FK,REJECT,reject,activities of the pipeline vs concrete algorithm in place
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningAlgorithm,fn-band/vair,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningAlgorithm,fn-band/vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningFramework,fn-band/vair,skos:closeMatch,FK,REJECT,reject,pipeline of activities vs concrete concept of a framework
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningFramework,fn-band/vair,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningFramework,fn-band/vair,skos:closeMatch,TD,REJECT,reject,https://delaramglp.github.io/vair/#MachineLearningFramework does not exist?
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningLibrary,vair,skos:narrowMatch,FK,REJECT,reject,activity vs libraries (software used for machine learning)
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningLibrary,vair,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningLibrary,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningModel,vair,skos:narrowMatch,FK,REJECT,reject,pipeline (activities) vs concrete model (concept)
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningModel,vair,skos:narrowMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningModel,vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningPlatform,vair,skos:closeMatch,FK,REJECT,reject,airo pipeline/activity vs vair (concrete) resource on which a ML model runs
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningPlatform,vair,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#MLPipeline,https://w3id.org/vair#MachineLearningPlatform,vair,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#Modality,http://w3id.org/mlso/DataModality,ml-onto,skos:broadMatch,FK,REJECT,reject,"aidoc describes the form in which the AI system is provided or placed on the market, while ml-onto (mlso) describes the different types or forms of data that exist"
+https://w3id.org/aidoc-ap#Modality,http://w3id.org/mlso/DataModality,ml-onto,skos:broadMatch,SN,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#Modality,http://w3id.org/mlso/DataModality,ml-onto,skos:broadMatch,TD,REJECT,reject,"aidoc modality is related to an ai system, ml-onto data Modality regards data itself"
+https://w3id.org/aidoc-ap#Modality,https://w3id.org/airo#Modality,airo+vair,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#Modality,https://w3id.org/airo#Modality,airo+vair,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#Modality,https://w3id.org/airo#Modality,airo+vair,skos:closeMatch,TD,skos:closeMatch,accept,skos:exactMatch
+https://w3id.org/aidoc-ap#ModelEvaluation,http://www.w3.org/ns/mls#ModelEvaluation,ml-onto+mlschema+rains,skos:closeMatch,FK,REJECT,reject,"ml-onto class describes the SETTING of a specific value during evaluation, while aidoc describes the activity; mlschema describes the class with a DISTINCT SETTING of an evaluation value, while aidoc describes the activity; rains (mls) describes again a DISTINCT SETTING of a value, while aidoc describes the activity"
+https://w3id.org/aidoc-ap#ModelEvaluation,http://www.w3.org/ns/mls#ModelEvaluation,ml-onto+mlschema+rains,skos:closeMatch,SN,skos:exactMatch,modify,
+https://w3id.org/aidoc-ap#ModelEvaluation,http://www.w3.org/ns/mls#ModelEvaluation,ml-onto+mlschema+rains,skos:closeMatch,TD,REJECT,reject,"aidoc is a activity, rains is only the result; aidoc is activity, mlschema is value: "" It connects a measure specification with its value.""""; aidoc is an activity, this is a value: ""It connects a measure specification with its value."""
+https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/dpv/ai#ModelEvasion,fn-band/dpv-ai,skos:relatedMatch,FK,REJECT,reject,"activity vs concrete input, which seems normal for a human but is wrongly classified by ML models (according to The EU Assessment List for Trustworthy AI (ALTAI),https://data.europa.eu/doi/10.2759/002360)"
+https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/dpv/ai#ModelEvasion,fn-band/dpv-ai,skos:relatedMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/dpv/ai#ModelEvasion,fn-band/dpv-ai,skos:relatedMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/rains#Evaluation,rains,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/rains#Evaluation,rains,skos:closeMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/rains#Evaluation,rains,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/vair#ReEvaluation,fn-band/vair,skos:closeMatch,FK,skos:narrowMatch,modify,broader activity of evaluation vs narrower re-evaluation based on results
+https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/vair#ReEvaluation,fn-band/vair,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#ModelEvaluation,https://w3id.org/vair#ReEvaluation,fn-band/vair,skos:closeMatch,TD,REJECT,reject,activity vs phase
+https://w3id.org/aidoc-ap#ModelPackaging,http://mex.aksw.org/mex-core#Model,fn-band/mex-core,skos:broadMatch,FK,REJECT,reject,activity vs concrete model
+https://w3id.org/aidoc-ap#ModelPackaging,http://mex.aksw.org/mex-core#Model,fn-band/mex-core,skos:broadMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#ModelPackaging,http://mex.aksw.org/mex-core#Model,fn-band/mex-core,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#ModelPackaging,http://www.w3.org/ns/mls#Model,fn-band/mlschema,skos:broadMatch,FK,REJECT,reject,activity vs concrete model
+https://w3id.org/aidoc-ap#ModelPackaging,http://www.w3.org/ns/mls#Model,fn-band/mlschema,skos:broadMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#ModelPackaging,http://www.w3.org/ns/mls#Model,fn-band/mlschema,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#ModelVersioning,https://w3id.org/dpv/ai#ModelTraining,fn-band/dpv-ai,skos:narrowMatch,FK,REJECT,reject,activity of managing revisions and tracking changes in model iterations vs process to determine or to improve the parameters of a machine learning model based on a machine learning technique by using training data
+https://w3id.org/aidoc-ap#ModelVersioning,https://w3id.org/dpv/ai#ModelTraining,fn-band/dpv-ai,skos:narrowMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#ModelVersioning,https://w3id.org/dpv/ai#ModelTraining,fn-band/dpv-ai,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#ModelVersioning,https://w3id.org/vair#ModelInversion,fn-band/vair,skos:relatedMatch,FK,REJECT,reject,activity of managing revisions vs type of attack
+https://w3id.org/aidoc-ap#ModelVersioning,https://w3id.org/vair#ModelInversion,fn-band/vair,skos:relatedMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#ModelVersioning,https://w3id.org/vair#ModelInversion,fn-band/vair,skos:relatedMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#PerformanceMetric,http://purl.obolibrary.org/obo/MCRO_0000027,fn-band/mcro,skos:closeMatch,FK,skos:broadMatch,modify,concrete metric vs section describing all metrics
+https://w3id.org/aidoc-ap#PerformanceMetric,http://purl.obolibrary.org/obo/MCRO_0000027,fn-band/mcro,skos:closeMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#PerformanceMetric,http://purl.obolibrary.org/obo/MCRO_0000027,fn-band/mcro,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#PerformanceMetric,http://www.w3.org/ns/dqv#Metric,fn-band/airo,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#PerformanceMetric,http://www.w3.org/ns/dqv#Metric,fn-band/airo,skos:closeMatch,SN,skos:broadMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#PerformanceMetric,http://www.w3.org/ns/dqv#Metric,fn-band/airo,skos:closeMatch,TD,skos:broadMatch,modify,skos:broadMatch
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan,dpv-aiact,skos:closeMatch,FK,REJECT,reject,activity vs description of a concrete plan
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan,dpv-aiact,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan,dpv-aiact,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem,dpv-aiact,skos:closeMatch,FK,REJECT,reject,activity vs description of a concrete system
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem,dpv-aiact,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem,dpv-aiact,skos:closeMatch,TD,skos:exactMatch,modify,skos:exactMatch
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystemDocumentation,fn-band/dpv-aiact,skos:narrowMatch,FK,REJECT,reject,"activity vs documentation of the post-market monitoring system in place, as required by the AI Act"
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystemDocumentation,fn-band/dpv-aiact,skos:narrowMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystemDocumentation,fn-band/dpv-aiact,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/vair#PostMarketMonitoringPlan,vair,skos:closeMatch,FK,REJECT,reject,aidoc activity vs vair concrete plan as required by the EU AI Act
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/vair#PostMarketMonitoringPlan,vair,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/vair#PostMarketMonitoringPlan,vair,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/vair#PostMarketMonitoringSystemDescription,fn-band/vair,skos:closeMatch,FK,REJECT,reject,activity vs documentation of the system in place
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/vair#PostMarketMonitoringSystemDescription,fn-band/vair,skos:closeMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#PostMarketMonitoringActivity,https://w3id.org/vair#PostMarketMonitoringSystemDescription,fn-band/vair,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#SoftwareComponent,http://www.w3.org/ns/prov#SoftwareAgent,fn-band/prov-o,skos:closeMatch,FK,skos:narrowMatch,modify,"A logical or physical software component of the AI system, such as a service, module, or microservice participating in the overall processing vs software that acts on behalf of another Entity or technology"
+https://w3id.org/aidoc-ap#SoftwareComponent,http://www.w3.org/ns/prov#SoftwareAgent,fn-band/prov-o,skos:closeMatch,SN,skos:relatedMatch,modify,skos:relatedMatch
+https://w3id.org/aidoc-ap#SoftwareComponent,http://www.w3.org/ns/prov#SoftwareAgent,fn-band/prov-o,skos:closeMatch,TD,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#SoftwareComponent,https://w3id.org/dpv/tech#SoftwareAgent,fn-band/dpv-tech,skos:closeMatch,FK,skos:narrowMatch,modify,"A logical or physical software component of the AI system, such as a service, module, or microservice participating in the overall processing vs software that acts on behalf of another Entity or technology"
+https://w3id.org/aidoc-ap#SoftwareComponent,https://w3id.org/dpv/tech#SoftwareAgent,fn-band/dpv-tech,skos:closeMatch,SN,skos:relatedMatch,modify,skos:relatedMatch
+https://w3id.org/aidoc-ap#SoftwareComponent,https://w3id.org/dpv/tech#SoftwareAgent,fn-band/dpv-tech,skos:closeMatch,TD,skos:narrowMatch,modify,skos:narrowMatch
+https://w3id.org/aidoc-ap#SoftwareComponent,https://w3id.org/vair#SafetyComponent,fn-band/vair,skos:broadMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#SoftwareComponent,https://w3id.org/vair#SafetyComponent,fn-band/vair,skos:broadMatch,SN,skos:relatedMatch,modify,skos:relatedMatch
+https://w3id.org/aidoc-ap#SoftwareComponent,https://w3id.org/vair#SafetyComponent,fn-band/vair,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#SoftwareDevelopment,https://w3id.org/dpv/tech#Software,fn-band/dpv-tech,skos:broadMatch,FK,REJECT,reject,activity of developing software vs concrete parts or components of the technology such as programs and data
+https://w3id.org/aidoc-ap#SoftwareDevelopment,https://w3id.org/dpv/tech#Software,fn-band/dpv-tech,skos:broadMatch,SN,REJECT,reject,Capability/Log/Record vs. anderes Ding
+https://w3id.org/aidoc-ap#SoftwareDevelopment,https://w3id.org/dpv/tech#Software,fn-band/dpv-tech,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#SoftwareImplementation,http://www.w3.org/ns/mls#Implementation,ml-onto+mlschema,skos:closeMatch,FK,skos:narrowMatch,modify,
+https://w3id.org/aidoc-ap#SoftwareImplementation,http://www.w3.org/ns/mls#Implementation,ml-onto+mlschema,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#SoftwareImplementation,http://www.w3.org/ns/mls#Implementation,ml-onto+mlschema,skos:closeMatch,TD,skos:closeMatch,accept,skos:exactMatch
+https://w3id.org/aidoc-ap#SoftwareImplementation,http://www.w3.org/ns/mls#Software,fn-band/ml-onto,skos:broadMatch,FK,skos:broadMatch,accept,concrete executable software realizing an algorithm vs software as a general concept
+https://w3id.org/aidoc-ap#SoftwareImplementation,http://www.w3.org/ns/mls#Software,fn-band/ml-onto,skos:broadMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#SoftwareImplementation,http://www.w3.org/ns/mls#Software,fn-band/ml-onto,skos:broadMatch,TD,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#SoftwareVersioning,https://w3id.org/vair#Software,fn-band/vair,skos:broadMatch,FK,REJECT,reject,activity of managing revisions vs general software concept
+https://w3id.org/aidoc-ap#SoftwareVersioning,https://w3id.org/vair#Software,fn-band/vair,skos:broadMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#SoftwareVersioning,https://w3id.org/vair#Software,fn-band/vair,skos:broadMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#Standard,https://w3id.org/airo#Standard,airo+vair,skos:closeMatch,FK,skos:narrowMatch,modify,"vair is narrower with Regulation (EU) No 1025/2012 on European standardisation as source, while aidoc is broader (harmonised standard)"
+https://w3id.org/aidoc-ap#Standard,https://w3id.org/airo#Standard,airo+vair,skos:closeMatch,SN,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#Standard,https://w3id.org/airo#Standard,airo+vair,skos:closeMatch,TD,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#Standard,https://w3id.org/dpv#Standard,dpv,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Standard,https://w3id.org/dpv#Standard,dpv,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#Standard,https://w3id.org/dpv#Standard,dpv,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/dpv/ai#TrainingData,dpv-ai,skos:closeMatch,FK,skos:broadMatch,modify,activity vs concept
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/dpv/ai#TrainingData,dpv-ai,skos:closeMatch,SN,REJECT,reject,skos:narrowMatch
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/dpv/ai#TrainingData,dpv-ai,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/dpv/legal/eu/aiact#TrainingData,dpv-aiact,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/dpv/legal/eu/aiact#TrainingData,dpv-aiact,skos:closeMatch,SN,REJECT,reject,
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/dpv/legal/eu/aiact#TrainingData,dpv-aiact,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/rains#TrainingDataset,fn-band/rains,skos:closeMatch,FK,skos:broadMatch,modify,
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/rains#TrainingDataset,fn-band/rains,skos:closeMatch,SN,REJECT,reject,Dokument/Datenblatt vs. Daten
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/rains#TrainingDataset,fn-band/rains,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/vair#IncompleteTrainingData,fn-band/vair,skos:narrowMatch,FK,skos:broadMatch,modify,the training data sheet is narrower (contains more) than only incomplete training data
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/vair#IncompleteTrainingData,fn-band/vair,skos:narrowMatch,SN,REJECT,reject,Dokument/Datenblatt vs. Daten
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/vair#IncompleteTrainingData,fn-band/vair,skos:narrowMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/vair#TrainingData,vair,skos:closeMatch,FK,skos:broadMatch,modify,"aidoc (data sheet focusing on training methodologies, techniques, hyperparameters and dataset usage for training, validation and testing.) vs vair data used to train a machine learning model.  [ISO/IEC 22989, 3.3.16]"
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/vair#TrainingData,vair,skos:closeMatch,SN,REJECT,reject,Dokument/Datenblatt vs. Daten
+https://w3id.org/aidoc-ap#TrainingDataSheet,https://w3id.org/vair#TrainingData,vair,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#TransparencyMeasure,https://w3id.org/vair#TransparencyMeasure,vair,skos:exactMatch,FK,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#TransparencyMeasure,https://w3id.org/vair#TransparencyMeasure,vair,skos:exactMatch,SN,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#TransparencyMeasure,https://w3id.org/vair#TransparencyMeasure,vair,skos:exactMatch,TD,skos:exactMatch,accept,
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/airo#Documentation,airo+vair,skos:broadMatch,FK,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/airo#Documentation,airo+vair,skos:broadMatch,SN,skos:broadMatch,accept,skos:narrowMatch
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/airo#Documentation,airo+vair,skos:broadMatch,TD,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation,fn-band/dpv-aiact,skos:closeMatch,FK,skos:closeMatch,accept,
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation,fn-band/dpv-aiact,skos:closeMatch,SN,skos:relatedMatch,modify,skos:relatedMatch
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation,fn-band/dpv-aiact,skos:closeMatch,TD,REJECT,reject,
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/dpv/tech#Documentation,dpv-tech,skos:broadMatch,FK,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/dpv/tech#Documentation,dpv-tech,skos:broadMatch,SN,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/dpv/tech#Documentation,dpv-tech,skos:broadMatch,TD,skos:broadMatch,accept,
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/vair#TechnicalDocumentation,fn-band/vair,skos:narrowMatch,FK,skos:closeMatch,modify,
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/vair#TechnicalDocumentation,fn-band/vair,skos:narrowMatch,SN,skos:relatedMatch,modify,skos:relatedMatch
+https://w3id.org/aidoc-ap#VisualDocumentation,https://w3id.org/vair#TechnicalDocumentation,fn-band/vair,skos:narrowMatch,TD,REJECT,reject,

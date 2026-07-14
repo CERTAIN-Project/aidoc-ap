@@ -88,43 +88,69 @@ def extract_entities(g):
     return entities
 
 
+def namespace_of(iri):
+    return iri.rsplit("#", 1)[0] + "#" if "#" in iri else iri.rsplit("/", 1)[0] + "/"
+
+
 def main(threshold, right_dir, left_file):
     left_g = rdflib.Graph().parse(left_file, format="turtle")
+    left_classes = extract_entities(left_g)
 
-    for fname in Path(right_dir).glob("*.ttl"):
+    # Reference TTLs redeclare terms from other vocabularies (e.g. rains.ttl
+    # contains mls:Dataset and prov:Agent), so the same (aidoc, ref) pair can
+    # surface under several files. Collect candidates globally, then assign
+    # each unique pair to the file whose dominant namespace owns the target
+    # IRI; otherwise to the first file (sorted order) that produced it.
+    files = sorted(Path(right_dir).glob("*.ttl"))
+    dominant_ns = {}
+    candidates = {}  # (l_iri, r_iri) -> {stem: row}
+    for fname in files:
         right_g = rdflib.Graph().parse(fname, format="turtle")
-
-        left_classes = extract_entities(left_g)
         right_classes = extract_entities(right_g)
-
-        alignments = []
+        ns_count = {}
+        for r_iri in right_classes:
+            ns = namespace_of(r_iri)
+            ns_count[ns] = ns_count.get(ns, 0) + 1
+        dominant_ns[fname.stem] = max(ns_count, key=ns_count.get) if ns_count else ""
 
         for l_iri, l_label in left_classes.items():
             for r_iri, r_label in right_classes.items():
-                # skip if the IRIs are identical (same entity appears in both graphs)
                 if l_iri == r_iri:
                     continue
                 score = similarity(l_label, r_label)
-                # collect all above threshold
                 if score >= threshold:
-                    alignments.append({
+                    candidates.setdefault((l_iri, r_iri), {})[fname.stem] = {
                         "aidoc_iri": l_iri,
                         "aidoc_label": l_label,
-                        f"{Path(fname).stem}_iri": r_iri,
-                        f"{Path(fname).stem}_label": r_label,
-                        "similarity": round(score, 3)
-                    })
+                        f"{fname.stem}_iri": r_iri,
+                        f"{fname.stem}_label": r_label,
+                        "similarity": round(score, 3),
+                    }
 
-        out_path = os.path.join(OUTPUT_DIR, f"{Path(fname).stem}_alignment.csv")
+    per_file = {f.stem: [] for f in files}
+    n_dedup = 0
+    for (l_iri, r_iri), by_stem in candidates.items():
+        owners = [s for s in by_stem if namespace_of(r_iri) == dominant_ns[s]]
+        stem = owners[0] if owners else sorted(by_stem)[0]
+        if len(by_stem) > 1:
+            n_dedup += len(by_stem) - 1
+        per_file[stem].append(by_stem[stem])
+
+    for fname in files:
+        stem = fname.stem
+        alignments = per_file[stem]
+        out_path = os.path.join(OUTPUT_DIR, f"{stem}_alignment.csv")
         if alignments:
             with open(out_path, "w", newline="", encoding="utf-8") as f:
                 writer = csv.DictWriter(f, fieldnames=alignments[0].keys())
                 writer.writeheader()
                 writer.writerows(sorted(alignments, key=lambda x: -x['similarity']))
-
+        elif os.path.exists(out_path):
+            os.remove(out_path)
         print(f"Found {len(alignments)} potential lexical alignments → {out_path}")
 
-    print("✅ Structural alignment completed.")
+    print(f"✅ Structural alignment completed "
+          f"({len(candidates)} unique pairs, {n_dedup} cross-file duplicates removed).")
 
 
 if __name__ == '__main__':

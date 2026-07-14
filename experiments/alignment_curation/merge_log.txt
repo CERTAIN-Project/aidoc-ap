@@ -1,0 +1,66 @@
+loaded FK: 173 decisions
+  [stale] SN: dpv-ai|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/ai#hasAISystem not in the current batch -- dropped
+loaded SN: 174 decisions (1 stale dropped)
+loaded TD: 173 decisions
+  [intra-curator] FK voted differently on duplicate buckets of Standard -> Standard: {'skos:closeMatch': 1, 'skos:narrowMatch': 1} -> using skos:narrowMatch
+  [intra-curator] FK voted differently on duplicate buckets of Modality -> Modality: {'skos:closeMatch': 1, 'skos:broadMatch': 1} -> using skos:broadMatch
+  [intra-curator] TD voted differently on duplicate buckets of Modality -> Modality: {'skos:exactMatch': 1, 'skos:closeMatch': 1} -> using skos:closeMatch
+  [intra-curator] SN voted differently on duplicate buckets of VisualDocumentation -> Documentation: {'REJECT': 1, 'skos:narrowMatch': 1} -> using skos:narrowMatch
+  [intra-curator] SN voted differently on duplicate buckets of AIAgent -> Agent: {'skos:closeMatch': 1, 'skos:narrowMatch': 1} -> using skos:narrowMatch
+  [intra-curator] SN voted differently on duplicate buckets of AIActivity -> Activity: {'skos:broadMatch': 1, 'skos:exactMatch': 1} -> using skos:exactMatch
+  [intra-curator] SN voted differently on duplicate buckets of Dataset -> Dataset: {'skos:narrowMatch': 1, 'skos:exactMatch': 2} -> using skos:exactMatch
+  [intra-curator] TD voted differently on duplicate buckets of SoftwareImplementation -> Implementation: {'skos:exactMatch': 1, 'skos:closeMatch': 1} -> using skos:closeMatch
+  [intra-curator] TD voted differently on duplicate buckets of AIAgent -> Agent: {'skos:broadMatch': 1, 'skos:closeMatch': 1} -> using skos:closeMatch
+  [direction] SN on VisualDocumentation -> Documentation: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on AIProvider -> DownstreamAIProvider: skos:narrowMatch kept (coincides with TD)
+  [direction] SN on AIAgent -> Agent: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on AIAgent -> Agent: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on AIActivity -> Activity: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on AIAgent -> Agent: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on DataCleaningProcedure -> DataPreprocessingProcedure: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on ModelEvaluation -> Evaluation: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on AIAgent -> Agent: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on PerformanceMetric -> Metric: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on AIModel -> GPAIModel: skos:broadMatch -> skos:narrowMatch
+  [direction] SN on AIModel -> GPAIModel: skos:broadMatch -> skos:narrowMatch
+  [direction] SN on Log -> TestLog: skos:broadMatch -> skos:narrowMatch
+  [direction] SN on HardwareComponent -> Component: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on Dataset -> DatasetComponent: skos:broadMatch -> skos:narrowMatch
+  [direction] SN on HardwareComponent -> Hardware: skos:narrowMatch -> skos:broadMatch
+  [direction] SN on AIModel -> TrainedModel: skos:broadMatch -> skos:narrowMatch
+
+157 canonical pairs, curators: FK, SN, TD
+
+== Pairwise agreement (canonical pairs) ==
+  FK vs SN: n=157, decision agreement=62.42%, kappa=0.434; relation-vote agreement=59.24%, kappa=0.446
+  FK vs TD: n=157, decision agreement=62.42%, kappa=0.424; relation-vote agreement=61.78%, kappa=0.461
+  SN vs TD: n=157, decision agreement=77.07%, kappa=0.609; relation-vote agreement=75.80%, kappa=0.632
+
+== Consensus over 157 canonical pairs ==
+  accept: 46, modify: 19, reject: 76, CONFLICT: 16
+  Konflikte im Team auflösen (publication/curation_protocol.md), dann Konsens in reports/curation_consensus.csv eintragen und dieses Skript erneut ausführen (oder die Urteile im UI korrigieren).
+  reports/alignment_semantic/airo-curation.csv: 12 rows updated
+  reports/alignment_semantic/dpv-ai-curation.csv: 21 rows updated
+  reports/alignment_semantic/dpv-aiact-curation.csv: 15 rows updated
+  reports/alignment_semantic/dpv-curation.csv: 8 rows updated
+  reports/alignment_semantic/dpv-tech-curation.csv: 6 rows updated
+  reports/alignment_semantic/mcro-curation.csv: 1 rows updated
+  reports/alignment_semantic/mex-core-curation.csv: 6 rows updated
+  reports/alignment_semantic/mex-perf-curation.csv: 1 rows updated
+  reports/alignment_semantic/ml-onto-curation.csv: 6 rows updated
+  reports/alignment_semantic/mlschema-curation.csv: 4 rows updated
+  reports/alignment_semantic/prov-o-curation.csv: 2 rows updated
+  reports/alignment_semantic/rains-curation.csv: 15 rows updated
+  reports/alignment_semantic/vair-curation.csv: 29 rows updated
+  reports/alignment_fn_band/airo-curation.csv: 4 rows updated
+  reports/alignment_fn_band/dpv-ai-curation.csv: 12 rows updated
+  reports/alignment_fn_band/dpv-aiact-curation.csv: 4 rows updated
+  reports/alignment_fn_band/dpv-curation.csv: 3 rows updated
+  reports/alignment_fn_band/dpv-tech-curation.csv: 3 rows updated
+  reports/alignment_fn_band/mcro-curation.csv: 1 rows updated
+  reports/alignment_fn_band/mex-core-curation.csv: 1 rows updated
+  reports/alignment_fn_band/ml-onto-curation.csv: 1 rows updated
+  reports/alignment_fn_band/mlschema-curation.csv: 2 rows updated
+  reports/alignment_fn_band/prov-o-curation.csv: 1 rows updated
+  reports/alignment_fn_band/rains-curation.csv: 3 rows updated
+  reports/alignment_fn_band/vair-curation.csv: 12 rows updated
