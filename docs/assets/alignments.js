@@ -110,7 +110,6 @@
   byId('ontologySel').onchange = e => { state.ns = e.target.value; draw(); };
   byId('relationSel').onchange = e => { state.relation = e.target.value; draw(); };
   byId('runSel').onchange = e => { state.run = e.target.value; draw(); };
-  byId('confSel').onchange = e => { state.conf = parseFloat(e.target.value||'0'); draw(); };
   byId('closeDetails').onclick = () => byId('details').classList.add('hidden');
 
   function runLabel(r){

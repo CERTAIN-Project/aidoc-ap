@@ -5,255 +5,94 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:0ac569f3-5a38-416c-8ee4-bbe440e31233 a prov:Entity,
+align:2c86001e-733d-4a27-927b-67988441fc25 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.92"^^xsd:float ;
-    align:rationale "Both concepts clearly refer to data used for AI system validation. However, the AIDOC definition is more specific, detailing *how* that data is used (model evaluation, tuning parameters, preventing overfitting/underfitting). dpv-ai provides a broader, more general description of 'data involved in validation'. This difference prevents an exact match but indicates strong similarity suitable for interchangeability in many contexts."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataValidation ;
-    align:target <https://w3id.org/dpv/ai#ValidationData> .
-
-align:0db531c7-70af-4712-8796-0782d2d5b5a2 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.87"^^xsd:float ;
-    align:rationale "Both concepts refer to data used for AI system evaluation. The AIDOC definition is more specific regarding regulatory context ('before placing on the market'), while dpv-ai provides a broader description of testing data. They are highly similar but not interchangeable due to this difference in scope."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataTesting ;
-    align:target <https://w3id.org/dpv/ai#TestingData> .
-
-align:0f9e1d8c-8998-4714-befe-2ef67c4fa304 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC concept describes the general activity of data validation for AI models. The dpv-ai concept specifically identifies a *type* of issue within that process – outdated validation data. Therefore, 'ValidationDataOutdated' is a more specific case of 'Data Validation'."^^xsd:string ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:DataValidation ;
-    align:target <https://w3id.org/dpv/ai#ValidationDataOutdated> .
-
-align:10b9eb6f-85ef-4211-9f69-a679449f2428 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC concept defines an AI System generally. The dpv-ai concept specifically focuses on the *risks* associated with those systems. Therefore, AISystemRisk is a more specific type of AI System; it narrows down the scope to risk assessment."^^xsd:string ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/dpv/ai#AISystemRisk> .
-
-align:14d63946-7420-4c1b-af00-17d09de3aa24 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "FrugalAISystem is a *type* of AI System. The dpv-ai concept adds constraints (efficiency, cost-effectiveness) to the general definition provided by AIDOC. Therefore, FrugalAISystem is more specific than AI System."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:179cc08f-e811-4398-8bd8-7b205e0015f4 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
     align:relation skos:narrowMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/dpv/ai#FrugalAISystem> .
 
-align:303485f5-ca7e-4555-83ff-9a17264eed45 a prov:Entity,
+align:4f13800a-2558-4851-9459-e37b1c50ebc5 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts address the process of improving data quality by addressing errors and inconsistencies. While 'Data Wrangling/Cleaning' (AIDOC) encompasses enrichment as well, and 'DataCleaning' (dpv-ai) focuses specifically on cleaning, the core activity is highly overlapping. The lexical similarity score of 0.689 supports a close, but not exact, match."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:179cc08f-e811-4398-8bd8-7b205e0015f4 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:DataWrangling ;
     align:target <https://w3id.org/dpv/ai#DataCleaning> .
 
-align:3568a781-6cad-4dca-b227-b58a039b866f a prov:Entity,
+align:91952354-7e8f-4c95-9e17-a9c0184fe492 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to the infrastructure and process for machine learning. 'MachineLearningPlatform' (dpv-ai) focuses on the *technology* enabling ML, while 'Machine Learning Pipeline' (AIDOC) emphasizes the *activities* within that platform. They are highly related and often co-occur, but aren’t strictly interchangeable; a pipeline is *run on* a platform. The lexical similarity score of 0.604 supports this close relationship."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:MLPipeline ;
-    align:target <https://w3id.org/dpv/ai#MachineLearningPlatform> .
-
-align:3883f235-195b-411c-8762-58071bdea4d6 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.75"^^xsd:float ;
-    align:rationale "While both concepts relate to validation data within the AI lifecycle, they focus on different aspects. AIDOC describes *the activity* of using data for validation, while dpv-ai focuses specifically on *risks associated with* that validation data. They are connected but not subsuming each other; hence a related match is most appropriate."^^xsd:string ;
-    align:relation skos:relatedMatch ;
-    align:source aidoc:DataValidation ;
-    align:target <https://w3id.org/dpv/ai#ValidationDataRisk> .
-
-align:5f629a2b-5d6d-4c3b-9f91-129043ff63ea a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC 'Machine Learning Pipeline' describes a *process* encompassing the entire lifecycle of ML activities. The dpv-ai 'MachineLearningModel' is a *component* within that pipeline – specifically, the mathematical construct used for prediction. Therefore, a MachineLearningModel is a narrower concept than a Machine Learning Pipeline."^^xsd:string ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:MLPipeline ;
-    align:target <https://w3id.org/dpv/ai#MachineLearningModel> .
-
-align:745b2e39-aadc-4b47-b3b5-f2f0f381de43 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to the process of making an AI system available for use. The dpv-ai concept explicitly mentions installation, release and configuration *within* a deployment stage, suggesting it's slightly more detailed than the AIDOC definition which focuses on delivery to production. They are highly similar but not interchangeable across all contexts."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:179cc08f-e811-4398-8bd8-7b205e0015f4 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:Deployment ;
     align:target <https://w3id.org/dpv/ai#DeploymentStage> .
 
-align:9282ed38-4e97-4dd2-9069-8f50fa5eb015 a prov:Entity,
+align:920975d9-43f8-4597-9357-e5d62e2d3b84 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The dpv-ai concept explicitly incorporates and combines definitions from multiple authoritative sources (ISO/IEC, OECD, EU) while the AIDOC definition is a single formulation. However, the core meaning – a machine-based system inferring outputs to influence environments with varying autonomy and adaptiveness – is identical. The lexical similarity score of 1.0 confirms this high degree of overlap."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/dpv/ai#AISystem> .
-
-align:a543039a-57fd-4e43-8a9b-541a5aa98eeb a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to the capabilities of AI systems. The AIDOC concept focuses on *what* an AI system can do (sensory, knowledge, control), while dpv-ai provides a more comprehensive definition encompassing purpose, autonomy and outputs. They are highly related but not interchangeable due to differing levels of detail and focus; thus, closeMatch is appropriate."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AISystemCapability ;
-    align:target <https://w3id.org/dpv/ai#AISystem> .
-
-align:a68c43ab-acc9-42a7-85f2-d281b6f87210 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to data used for AI training. The AIDOC concept is more specific, detailing *what* information the 'Training Data' (dpv-ai) includes – methodologies, hyperparameters etc. dpv-ai#TrainingData is a broader category encompassing any data used in training. They are highly related and could be interchanged in many contexts, but the level of detail differs."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:TrainingDataSheet ;
-    align:target <https://w3id.org/dpv/ai#TrainingData> .
-
-align:b7acc6ec-e7e7-41c6-862f-001628e74b7d a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to the process of machine learning. The AIDOC concept describes a *pipeline* encompassing activities, while dpv-ai focuses on the core parameter optimization *process*. They are highly related and could be used interchangeably in many contexts, but aren't strictly identical due to the pipeline aspect."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:MLPipeline ;
-    align:target <https://w3id.org/dpv/ai#MachineLearning> .
-
-align:b86bb23b-5ec4-4fa1-9a41-610f0e20f586 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts define an 'AI Model', representing a core component for executing AI tasks. The dpv-ai definition is slightly broader by explicitly including physical/mathematical representations *of anything* using AI, while AIDOC focuses on the model as enabling task execution. This difference isn't substantial enough for broad/narrow match, but prevents exact equivalence."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AIModel ;
-    align:target <https://w3id.org/dpv/ai#Model> .
-
-align:ba7b7a4f-1849-4dcb-b051-015dc63b12d9 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC concept describes the *activity* of using validation data, while dpv-ai's ValidationDataSparse specifically denotes a *characteristic* of that data (being sparse). The AIDOC concept encompasses the broader process; sparse validation data is one type of data used within that activity. Therefore, dpv-ai is a narrower concept."^^xsd:string ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:DataValidation ;
-    align:target <https://w3id.org/dpv/ai#ValidationDataSparse> .
-
-align:bbce896c-ac57-45e3-a4c1-84f5ea5f4d7a a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC concept 'Data Validation' describes the *activity* of using data for validation, encompassing a broader process. The dpv-ai concept 'ValidationDataNoise' focuses on a specific *characteristic* of that validation data – its noisiness. Therefore, noisy validation data is a specific type of data used within the overall activity of data validation."^^xsd:string ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:DataValidation ;
-    align:target <https://w3id.org/dpv/ai#ValidationDataNoise> .
-
-align:ca49d951-eb91-48ed-9850-84db5113fe3f a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts define an 'AI Agent'. While AIDOC explicitly states derivation from prov:Agent and positions it within the AI lifecycle, and dpv-ai highlights its nature as a software agent utilizing AI technologies, the core meaning is identical. The differences are nuances of definition rather than fundamental semantic distinctions."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIAgent ;
-    align:target <https://w3id.org/dpv/ai#AIAgent> .
-
-align:d5f08dd2-6285-4591-a5d1-bab23cdd1a49 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC concept describes the general activity of data validation for AI models. The dpv-ai concept focuses specifically on *bias* within that validation data – a specific type or concern *within* the broader process of data validation. Therefore, ValidationDataBias is a narrower concept than Data Validation."^^xsd:string ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:DataValidation ;
-    align:target <https://w3id.org/dpv/ai#ValidationDataBias> .
-
-align:d85064a6-188b-41d6-859f-1005c12d0877 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to the process of improving data quality by identifying and handling errors or unwanted records. While the descriptions are very similar, 'Data Cleaning Procedure' (AIDOC) suggests a *description* of how cleaning is done, whereas 'DataCleaning' (dpv-ai) describes the operation itself. This nuance prevents an exact match but indicates strong similarity."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:179cc08f-e811-4398-8bd8-7b205e0015f4 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:DataCleaningProcedure ;
     align:target <https://w3id.org/dpv/ai#DataCleaning> .
 
-align:fb9b8205-2ccd-4c54-a935-e01aec79b85f a prov:Entity,
+align:cb50534e-fe33-45b0-8461-21c5562a46b9 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:402bfd97-c4c2-4676-bf34-dbb149e6db7d ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts explicitly define data used for AI/ML model training. The descriptions are highly aligned, focusing on the same core idea. While 'Data Training' (AIDOC) frames it as an *activity*, and 'TrainingData' (dpv-ai) focuses on the *data* itself, they represent essentially the same concept – the data utilized in the process of AI model training."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:179cc08f-e811-4398-8bd8-7b205e0015f4 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/ai#GPAIModel> .
+
+align:dbdca9c3-c421-4e7c-9bf0-8440ce987627 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:179cc08f-e811-4398-8bd8-7b205e0015f4 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/ai#Model> .
+
+align:e9a3e024-0b98-494a-8d2c-31cdcedaaa09 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:179cc08f-e811-4398-8bd8-7b205e0015f4 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
-    align:source aidoc:DataTraining ;
-    align:target <https://w3id.org/dpv/ai#TrainingData> .
-
-aidoc:AIAgent skos:exactMatch <https://w3id.org/dpv/ai#AIAgent> .
-
-aidoc:AIModel skos:closeMatch <https://w3id.org/dpv/ai#Model> .
-
-aidoc:AISystemCapability skos:closeMatch <https://w3id.org/dpv/ai#AISystem> .
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/ai#AISystem> .
 
 aidoc:DataCleaningProcedure skos:closeMatch <https://w3id.org/dpv/ai#DataCleaning> .
-
-aidoc:DataTesting skos:closeMatch <https://w3id.org/dpv/ai#TestingData> .
-
-aidoc:DataTraining skos:exactMatch <https://w3id.org/dpv/ai#TrainingData> .
 
 aidoc:DataWrangling skos:closeMatch <https://w3id.org/dpv/ai#DataCleaning> .
 
 aidoc:Deployment skos:closeMatch <https://w3id.org/dpv/ai#DeploymentStage> .
 
-aidoc:TrainingDataSheet skos:closeMatch <https://w3id.org/dpv/ai#TrainingData> .
+aidoc:AIModel skos:closeMatch <https://w3id.org/dpv/ai#Model> ;
+    skos:narrowMatch <https://w3id.org/dpv/ai#GPAIModel> .
 
 aidoc:AISystem skos:exactMatch <https://w3id.org/dpv/ai#AISystem> ;
-    skos:narrowMatch <https://w3id.org/dpv/ai#AISystemRisk>,
-        <https://w3id.org/dpv/ai#FrugalAISystem> .
+    skos:narrowMatch <https://w3id.org/dpv/ai#FrugalAISystem> .
 
-aidoc:MLPipeline skos:closeMatch <https://w3id.org/dpv/ai#MachineLearning>,
-        <https://w3id.org/dpv/ai#MachineLearningPlatform> ;
-    skos:narrowMatch <https://w3id.org/dpv/ai#MachineLearningModel> .
+align:179cc08f-e811-4398-8bd8-7b205e0015f4 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
 
-aidoc:DataValidation skos:closeMatch <https://w3id.org/dpv/ai#ValidationData> ;
-    skos:narrowMatch <https://w3id.org/dpv/ai#ValidationDataBias>,
-        <https://w3id.org/dpv/ai#ValidationDataNoise>,
-        <https://w3id.org/dpv/ai#ValidationDataOutdated>,
-        <https://w3id.org/dpv/ai#ValidationDataSparse> ;
-    skos:relatedMatch <https://w3id.org/dpv/ai#ValidationDataRisk> .
-
-align:402bfd97-c4c2-4676-bf34-dbb149e6db7d a prov:Activity ;
-    prov:endedAtTime "2026-07-08T08:57:49+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-07-08T08:56:42+00:00"^^xsd:dateTime ;
-    prov:used <https://ollama.com/library/gemma3:27b> ;
-    prov:wasAssociatedWith align:LLMAlignmentBot .
-
-align:LLMAlignmentBot a prov:SoftwareAgent ;
-    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+align:ExpertCurationTeam a prov:Agent ;
+    rdfs:label "AIDOC-AP curation team (three domain experts)" .
 

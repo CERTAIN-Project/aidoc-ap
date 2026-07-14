@@ -5,69 +5,89 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:0bd95f53-d4d1-43d9-9a3b-14adb63d740e a prov:Entity,
+align:23be28cb-6b3f-4875-961d-7c7a9c215028 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC 'AI System' is a *specific type* of 'System' as defined by dpv-tech. The dpv-tech definition is very general – any collection of interacting components. An AI system clearly fits this description, but not all systems are AI systems. Therefore, dpv-tech#System is broader."^^xsd:string ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/dpv/tech#System> .
-
-align:17ffddf5-ed1f-40ae-a5fe-332cc7cdd46e a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to representations used for computation or understanding. The AIDOC 'AI Model' is specifically tied to AI tasks, while the dpv-tech 'Model' is a more general abstraction. They are sufficiently similar for interchangeability in many contexts but aren’t identical due to the AI specificity of the AIDOC concept."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AIModel ;
-    align:target <https://w3id.org/dpv/tech#Model> .
-
-align:7815eecd-074a-498e-9bbc-ffccee70efbc a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to entities that 'provide' something – AI systems/models (AIDOC) and Technology (dpv-tech). While the AIDOC concept is specifically focused on *AI* providers with detailed legal definitions related to development and market placement, the dpv-tech Provider is a more general actor. They are sufficiently similar for interchangeability in many contexts concerning technology supply chains or risk assessment, but not identical due to the AI specificity of AIDOC."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:AIProvider ;
     align:target <https://w3id.org/dpv/tech#Provider> .
 
-align:8f8bb9fa-445e-4c1c-8519-2c2f5e1c2a0b a prov:Entity,
+align:37511d54-4558-4382-b7cb-c7d351aebe0c a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to an entity deploying something (AI system vs Technology). The AIDOC definition is more specific regarding the *type* of deployer (natural/legal person) and explicitly excludes personal non-professional use, while dpv-tech's Deployer is a general actor. This difference prevents exact matching but indicates strong similarity."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:HardwareComponent ;
+    align:target <https://w3id.org/dpv/tech#Component> .
+
+align:51294acd-cb06-4afa-8fda-873fc14fbe90 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:AIDeployer ;
     align:target <https://w3id.org/dpv/tech#Deployer> .
 
-align:99fae63a-5420-4ef6-8b75-377864e660ff a prov:Entity,
+align:7853ec94-2e5f-418a-86bc-4a30f776b121 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to an entity performing audits. However, the dpv-tech definition explicitly links auditing to 'Technology' and 'policies/standards/legal requirements', providing a more specific scope than the AIDOC concept which simply mentions 'AI system for compliance'. This difference in specificity prevents an exact match but indicates strong similarity."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/tech#Model> .
+
+align:ad35c5b2-1362-4747-9d6f-ed5cb58b7068 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:SoftwareComponent ;
+    align:target <https://w3id.org/dpv/tech#SoftwareAgent> .
+
+align:cc70ccbc-b430-46cf-9cea-07dae358c2bc a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:Auditor ;
     align:target <https://w3id.org/dpv/tech#Auditor> .
 
-align:ddc235f7-76b1-45ea-87be-10350864aa6c a prov:Entity,
+align:d012020c-5281-4fd1-8975-cd594e081d75 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:864c3730-46e5-433b-8809-7f4ea120776a ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC concept 'Visual Documentation' is a *type* of 'Documentation'. The dpv-tech concept covers all documentation, while the AIDOC concept specifically focuses on visual forms required for AI system assessment. Therefore, dpv-tech#Documentation is broader."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/tech#System> .
+
+align:d4b0d721-8052-423c-adbe-cf9d56e69391 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
     align:relation skos:broadMatch ;
     align:source aidoc:VisualDocumentation ;
     align:target <https://w3id.org/dpv/tech#Documentation> .
 
 aidoc:AIDeployer skos:closeMatch <https://w3id.org/dpv/tech#Deployer> .
 
-aidoc:AIModel skos:closeMatch <https://w3id.org/dpv/tech#Model> .
+aidoc:AIModel skos:broadMatch <https://w3id.org/dpv/tech#Model> .
 
 aidoc:AIProvider skos:closeMatch <https://w3id.org/dpv/tech#Provider> .
 
@@ -75,14 +95,18 @@ aidoc:AISystem skos:broadMatch <https://w3id.org/dpv/tech#System> .
 
 aidoc:Auditor skos:closeMatch <https://w3id.org/dpv/tech#Auditor> .
 
+aidoc:HardwareComponent skos:broadMatch <https://w3id.org/dpv/tech#Component> .
+
+aidoc:SoftwareComponent skos:narrowMatch <https://w3id.org/dpv/tech#SoftwareAgent> .
+
 aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/dpv/tech#Documentation> .
 
-align:864c3730-46e5-433b-8809-7f4ea120776a a prov:Activity ;
-    prov:endedAtTime "2026-07-08T08:55:01+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-07-08T08:54:42+00:00"^^xsd:dateTime ;
-    prov:used <https://ollama.com/library/gemma3:27b> ;
-    prov:wasAssociatedWith align:LLMAlignmentBot .
+align:cf9fa0fe-7bf0-489a-87bd-def7889a0bfe a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
 
-align:LLMAlignmentBot a prov:SoftwareAgent ;
-    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+align:ExpertCurationTeam a prov:Agent ;
+    rdfs:label "AIDOC-AP curation team (three domain experts)" .
 

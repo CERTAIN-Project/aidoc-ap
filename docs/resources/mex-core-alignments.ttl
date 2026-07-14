@@ -5,84 +5,36 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:5c7bd555-3f11-4769-b5c0-cfabdbefbd41 a prov:Entity,
+align:2a86bdea-a8f9-4bc0-b5fe-69aa60c22986 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3ccc1e44-1f86-4ca1-99ca-80678ed7c582 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same core idea of a 'Dataset'. The high lexical similarity supports this."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:a0295267-6ca9-4e12-a96e-b36fde04d7fb ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIModel ;
+    align:target <http://mex.aksw.org/mex-core#Model> .
+
+align:6101a28e-615b-48f4-9e74-a0bc108ada0b a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:a0295267-6ca9-4e12-a96e-b36fde04d7fb ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <http://mex.aksw.org/mex-core#Dataset> .
 
-align:874f3728-80f5-49b1-a122-eed971848b9d a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3ccc1e44-1f86-4ca1-99ca-80678ed7c582 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to the process of 'Validation', however AIDOC specifically focuses on validation *within* AI/ML model development using datasets, while mex-core's 'Validation' appears more general and lacks this specific context in its provided description. They are highly related and could be used interchangeably in many contexts concerning data quality assessment, but the AI focus of AIDOC introduces a nuance."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataValidation ;
-    align:target <http://mex.aksw.org/mex-core#Validation> .
-
-align:cc8a11ac-7ade-4c96-b411-989e29b0a98c a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3ccc1e44-1f86-4ca1-99ca-80678ed7c582 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to the process of 'Training' within an AI/data context. The AIDOC definition explicitly mentions *datasets* and *model training*, while mex-core’s description is missing (and therefore less specific). While not identical due to the lack of detail in `mex-core`, they are highly related and likely interchangeable in many contexts."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataTraining ;
-    align:target <http://mex.aksw.org/mex-core#Training> .
-
-align:d2b204c2-40f2-4b24-b78a-0fbbe83aa6d4 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3ccc1e44-1f86-4ca1-99ca-80678ed7c582 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to a computational representation used for tasks. The AIDOC definition explicitly links it to 'AI methods' and 'AI tasks', while the mex-core concept is more general ('Model'). They are highly similar but not identical; an AI Model *is* a Model, but not all Models are necessarily AI Models."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AIModel ;
-    align:target <http://mex.aksw.org/mex-core#Model> .
-
-align:ddd31aef-0710-44ca-aa64-ba24f54f6453 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3ccc1e44-1f86-4ca1-99ca-80678ed7c582 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The AIDOC concept explicitly states it *is derived from* prov:Activity (which is what mex-core's Activity uses as its URI). The descriptions are highly aligned – both represent an 'activity'. While AIDOC specifies this activity relates to the AI lifecycle, that doesn’t fundamentally change the underlying meaning of ‘activity’ itself. Therefore, they can be considered interchangeable in many contexts."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIActivity ;
-    align:target <http://www.w3.org/ns/prov-o#Activity> .
-
-align:f4210787-2f37-48c4-b795-b133d28f1837 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:3ccc1e44-1f86-4ca1-99ca-80678ed7c582 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The AIDOC concept explicitly states it's *derived from* prov:Agent (which is what mex-core uses). The descriptions are highly aligned – both refer to agents. While AIDOC specifies 'AI lifecycle', this doesn’t fundamentally change the core meaning of ‘agent’ in this context; it simply adds a domain restriction.  The lexical similarity score supports a strong relationship."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIAgent ;
-    align:target <http://www.w3.org/ns/prov-o#Agent> .
-
-aidoc:AIActivity skos:exactMatch <http://www.w3.org/ns/prov-o#Activity> .
-
-aidoc:AIAgent skos:exactMatch <http://www.w3.org/ns/prov-o#Agent> .
-
-aidoc:AIModel skos:closeMatch <http://mex.aksw.org/mex-core#Model> .
-
-aidoc:DataTraining skos:closeMatch <http://mex.aksw.org/mex-core#Training> .
-
-aidoc:DataValidation skos:closeMatch <http://mex.aksw.org/mex-core#Validation> .
+aidoc:AIModel skos:broadMatch <http://mex.aksw.org/mex-core#Model> .
 
 aidoc:Dataset skos:exactMatch <http://mex.aksw.org/mex-core#Dataset> .
 
-align:3ccc1e44-1f86-4ca1-99ca-80678ed7c582 a prov:Activity ;
-    prov:endedAtTime "2026-07-08T08:54:42+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-07-08T08:54:26+00:00"^^xsd:dateTime ;
-    prov:used <https://ollama.com/library/gemma3:27b> ;
-    prov:wasAssociatedWith align:LLMAlignmentBot .
+align:a0295267-6ca9-4e12-a96e-b36fde04d7fb a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
 
-align:LLMAlignmentBot a prov:SoftwareAgent ;
-    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+align:ExpertCurationTeam a prov:Agent ;
+    rdfs:label "AIDOC-AP curation team (three domain experts)" .
 

@@ -6,24 +6,24 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:5c8f7b8b-42fe-4aef-bd13-12d85586f4ad a prov:Entity,
+align:d01d0361-44a7-4cb6-9e13-5639a8d8ae39 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:de778c1e-d919-49f4-981e-192a4d97c39c ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts represent an 'Agent', however the AIDOC concept explicitly focuses on agents *within the AI lifecycle* and is derived from PROV-O, indicating a specific provenance context. The FOAF Agent is more general. While not identical, they are sufficiently similar for interchangeability in many contexts relating to agency."^^xsd:string ;
-    align:relation skos:closeMatch ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:5207c95d-dfc3-405d-9586-39ec92910407 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
     align:source aidoc:AIAgent ;
     align:target foaf:Agent .
 
-aidoc:AIAgent skos:closeMatch foaf:Agent .
+aidoc:AIAgent skos:broadMatch foaf:Agent .
 
-align:de778c1e-d919-49f4-981e-192a4d97c39c a prov:Activity ;
-    prov:endedAtTime "2026-07-08T08:56:11+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-07-08T08:56:09+00:00"^^xsd:dateTime ;
-    prov:used <https://ollama.com/library/gemma3:27b> ;
-    prov:wasAssociatedWith align:LLMAlignmentBot .
+align:5207c95d-dfc3-405d-9586-39ec92910407 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
 
-align:LLMAlignmentBot a prov:SoftwareAgent ;
-    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+align:ExpertCurationTeam a prov:Agent ;
+    rdfs:label "AIDOC-AP curation team (three domain experts)" .
 

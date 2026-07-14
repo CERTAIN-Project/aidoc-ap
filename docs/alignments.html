@@ -21,7 +21,7 @@
     <h1 class="title">Cross‑Ontology Alignments</h1>
     <p class="subtitle">
       Mappings between <code>aidoc:</code> terms and external ontologies,
-      with relation type, confidence, rationale and provenance (PROV‑O).
+      expert‑curated (three curators, majority vote with adjudication) from LLM proposals; with relation type and provenance (PROV‑O).
     </p>
   </div>
 </header>
@@ -43,12 +43,6 @@
       </select>
       <select id="runSel" title="PROV run/version">
         <option value="">All runs</option>
-      </select>
-      <select id="confSel" title="Confidence threshold">
-        <option value="">Any confidence</option>
-        <option value="0.9">≥ 0.90</option>
-        <option value="0.8">≥ 0.80</option>
-        <option value="0.7">≥ 0.70</option>
       </select>
     </div>
     <div class="legend">
@@ -129,5 +123,5 @@
   }
 })();
 </script>
-<script src="assets/alignments.js"></script>
+<script src="assets/alignments.js?v=2"></script>
 </body>

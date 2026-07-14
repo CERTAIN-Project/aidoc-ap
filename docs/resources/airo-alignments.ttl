@@ -5,125 +5,125 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:18e7ed53-7c36-4578-b048-43feb38b0f06 a prov:Entity,
+align:298069cc-56b0-4311-8e42-815337c7b8de a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts define the abilities of an AI system. While 'AI System Capability' (AIDOC) specifies *types* of processing, 'AI Capability' (airo) focuses on enabling a system’s purpose. They are highly related and could be used interchangeably in many contexts, but aren't strictly identical due to the differing emphasis."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AISystemCapability ;
-    align:target <https://w3id.org/airo#AICapability> .
-
-align:4f96d56f-d164-472c-a0ed-0b884b118c5b a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The 'airo' concept of Documentation is very general. The 'AIDOC' concept 'Visual Documentation' *is a type of* documentation, specifically focusing on visual elements related to AI systems and referencing a specific annex. Therefore, 'Documentation' broadly covers 'Visual Documentation'."^^xsd:string ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:VisualDocumentation ;
-    align:target <https://w3id.org/airo#Documentation> .
-
-align:68d48f43-6b25-41ff-9787-b6f847ad7912 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "1.0"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical. The presence of a URI in the 'airo' concept further suggests it is intended to represent the same entity as the 'AIDOC' concept."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIDeployer ;
-    align:target <https://w3id.org/airo#AIDeployer> .
-
-align:6cb48f6e-91de-4d33-838c-e64e24cdfc0c a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "1.0"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical. The presence of a URI in the 'airo' concept further suggests it is the same entity represented in different contexts."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIProvider ;
-    align:target <https://w3id.org/airo#AIProvider> .
-
-align:7e203a93-d5ab-4111-a488-7ca744a08c7f a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts define 'Modality' as the form of an AI system. While the AIDOC definition is more detailed and explicitly mentions controlled vocabularies for enumeration/reuse – suggesting a focus on practical implementation and standardization – the core meaning aligns closely with the airo concept’s simpler description. They aren't *exactly* interchangeable due to this difference in detail, but are very similar."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:Modality ;
-    align:target <https://w3id.org/airo#Modality> .
-
-align:7e93b8a6-4341-4917-800b-ceb1322d24f2 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to the manipulation of data to create a modified dataset. While 'Data Processing' explicitly mentions preprocessing and resulting in *a different* dataset, 'Processing' is more general. They are highly similar but not identical; interchangeability would depend on context."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:DataProcessing ;
     align:target <https://w3id.org/dpv#Processing> .
 
-align:8eaf8553-d5d5-40d8-9c2d-b31475f64dff a prov:Entity,
+align:379be35e-332d-45a5-872e-7a7cc905c803 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "1.0"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical. The presence of a URI for the 'airo' concept further suggests it is intended to represent the same entity as the 'AIDOC' concept."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/airo#AISystem> .
 
-align:8ef713e5-9ce6-40f3-a4be-f4e74898afab a prov:Entity,
+align:4e8fb444-0363-4ab8-9f20-0caa5ad73473 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both definitions refer to a computational/mathematical entity used for inference or task execution. While the AIDOC definition is slightly more general in phrasing ('enables an AI method'), the core meaning aligns perfectly with the 'inference or prediction' focus of the airo concept. The lexical similarity score of 1.0 further supports this strong alignment."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:PerformanceMetric ;
+    align:target <http://www.w3.org/ns/dqv#Metric> .
+
+align:579bad2a-7a27-4541-b4b2-4d9d19f35ef5 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:AIModel ;
     align:target <https://w3id.org/airo#AIModel> .
 
-align:97732387-8444-4364-bd5e-15b1e56e01b8 a prov:Entity,
+align:60f89c95-c60f-4cf3-8423-af494b44b22d a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "1.0"^^xsd:float ;
-    align:rationale "The labels are identical and the lexical similarity score is perfect (1.0). While the AIDOC description is more verbose, it doesn't introduce any differing semantics; it simply elaborates on what a 'Dataset' *is* within the AI lifecycle. The airo concept explicitly references DCAT, a widely accepted standard for describing datasets."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:VisualDocumentation ;
+    align:target <https://w3id.org/airo#Documentation> .
+
+align:7a12e6c1-45c2-4cb0-8440-fce1e2bd299e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/airo#AIDeployer> .
+
+align:8ea1c2ab-f670-44d8-abc1-4d24a25b9a19 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Standard ;
+    align:target <https://w3id.org/airo#Standard> .
+
+align:8fc170a5-c7ec-491c-9efd-d946428c93f3 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:DataSheet ;
+    align:target <https://w3id.org/dpv#Data> .
+
+align:ca61af49-b0da-4589-9ad7-255cf6692236 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/airo#AIProvider> .
+
+align:d2daf03a-c31c-4426-80be-322346821ac4 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Modality ;
+    align:target <https://w3id.org/airo#Modality> .
+
+align:da53a8a3-2adc-4172-b970-b8d731f1e589 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
 
-align:bff5bdd1-ab22-499e-9630-ab4dfcd47fc2 a prov:Entity,
+align:f9aca42d-1006-4c58-a416-f556ef31ef97 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The `airo#AISystem` concept defines *what* an AI system is – a broad definition encompassing its characteristics and operation. The `AI System Capability` focuses on *what an AI system can do*, representing specific functions or tasks. Therefore, capability is a component *of* an AI system; the airo concept is broader."^^xsd:string ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:AISystemCapability ;
-    align:target <https://w3id.org/airo#AISystem> .
-
-align:c3dfe040-35fc-414e-9670-fcbd8bb2e896 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The `airo#Change` concept is very general – any alteration to *anything*. The `AIDOC Change Log` is a specific *type* of change - those recorded relating to a system's lifecycle. Therefore, the AIDOC concept is narrower and falls under the broader `airo#Change`."^^xsd:string ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:ChangeLog ;
-    align:target <https://w3id.org/airo#Change> .
-
-align:e8a39a3c-cd3a-4cbc-bc03-2abbb3e31039 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:06435388-2333-4b31-b2c8-4d96c2ac67ab ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to 'Standard' and share a similar high-level definition. However, the airo concept explicitly defines standards as *not* compulsory, while the AIDOC description doesn’t make this distinction. This nuance prevents an exact match but indicates strong similarity suitable for interchangeability in many contexts."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:9da85f63-5857-4d79-8331-e227648582e7 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
-    align:source aidoc:Standard ;
-    align:target <https://w3id.org/airo#Standard> .
+    align:source aidoc:AISystemCapability ;
+    align:target <https://w3id.org/airo#AICapability> .
 
 aidoc:AIDeployer skos:exactMatch <https://w3id.org/airo#AIDeployer> .
 
@@ -133,27 +133,28 @@ aidoc:AIProvider skos:exactMatch <https://w3id.org/airo#AIProvider> .
 
 aidoc:AISystem skos:exactMatch <https://w3id.org/airo#AISystem> .
 
-aidoc:ChangeLog skos:broadMatch <https://w3id.org/airo#Change> .
+aidoc:AISystemCapability skos:closeMatch <https://w3id.org/airo#AICapability> .
 
 aidoc:DataProcessing skos:closeMatch <https://w3id.org/dpv#Processing> .
+
+aidoc:DataSheet skos:broadMatch <https://w3id.org/dpv#Data> .
 
 aidoc:Dataset skos:exactMatch <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
 
 aidoc:Modality skos:closeMatch <https://w3id.org/airo#Modality> .
 
+aidoc:PerformanceMetric skos:broadMatch <http://www.w3.org/ns/dqv#Metric> .
+
 aidoc:Standard skos:closeMatch <https://w3id.org/airo#Standard> .
 
 aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/airo#Documentation> .
 
-aidoc:AISystemCapability skos:broadMatch <https://w3id.org/airo#AISystem> ;
-    skos:closeMatch <https://w3id.org/airo#AICapability> .
+align:9da85f63-5857-4d79-8331-e227648582e7 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
 
-align:06435388-2333-4b31-b2c8-4d96c2ac67ab a prov:Activity ;
-    prov:endedAtTime "2026-07-08T08:56:42+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-07-08T08:56:12+00:00"^^xsd:dateTime ;
-    prov:used <https://ollama.com/library/gemma3:27b> ;
-    prov:wasAssociatedWith align:LLMAlignmentBot .
-
-align:LLMAlignmentBot a prov:SoftwareAgent ;
-    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+align:ExpertCurationTeam a prov:Agent ;
+    rdfs:label "AIDOC-AP curation team (three domain experts)" .
 

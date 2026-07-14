@@ -55,6 +55,9 @@ SWAP_DIRECTIONS = {"SN"}
 SWAP_REFERENCE = "TD"  # no swap where the direction already matches this curator
 
 REJECT = "REJECT"
+# Team adjudication of pairs without a curator majority: one row per pair with
+# the agreed relation (or REJECT), applied on top of the majority consensus.
+ADJUDICATION_FILE = "experiments/alignment_curation/adjudicated.csv"
 REL_IN_NOTE = re.compile(r"\b(?:skos:)?(exact|close|broad|narrow|related)\s*[- ]?match\b", re.I)
 DIRECTION_SWAP = {"skos:broadMatch": "skos:narrowMatch",
                   "skos:narrowMatch": "skos:broadMatch"}
@@ -229,7 +232,18 @@ def main():
                   f"decision agreement={agree:.2%}, kappa={kappa(dec_pairs):.3f}; "
                   f"relation-vote agreement={vagree:.2%}, kappa={kappa(vote_pairs):.3f}")
 
-    # ---- consensus (majority >= 2) ----
+    # ---- team adjudication (applies where the majority vote is split) ----
+    adjudicated = {}
+    if os.path.exists(ADJUDICATION_FILE):
+        adf = pd.read_csv(ADJUDICATION_FILE)
+        adjudicated = {(r["aidoc_iri"], r["ref_iri"]): (r["consensus"], r.get("note", ""))
+                       for _, r in adf.iterrows()}
+        unknown = [k for k in adjudicated if k not in votes]
+        for k in unknown:
+            print(f"  [warn] adjudication entry does not match any pair: {k}")
+        print(f"loaded {len(adjudicated)} adjudicated decisions from {ADJUDICATION_FILE}")
+
+    # ---- consensus (majority >= 2, adjudication overrides splits) ----
     merged_rows, cons_rows = [], []
     conflicts = 0
     for key in sorted(votes):
@@ -249,6 +263,12 @@ def main():
         cnt = Counter(vs.values())
         top, n = cnt.most_common(1)[0] if cnt else (None, 0)
         consensus = top if n >= 2 else None
+        source = "majority"
+        if consensus is None and key in adjudicated:
+            consensus, adj_note = adjudicated[key]
+            source = "adjudicated"
+            if adj_note and str(adj_note) != "nan":
+                notes[key]["team"] = str(adj_note)
         if consensus is None:
             conflicts += 1
         outcome = (None if consensus is None else
@@ -262,6 +282,7 @@ def main():
             "llm_relation": llm,
             **{f"vote_{c}": votes[key].get(c) or "" for c in curators},
             "consensus": consensus or "CONFLICT",
+            "consensus_source": source if consensus else "",
             "outcome": outcome or "CONFLICT",
             "notes": " | ".join(f"{c}: {n}" for c, n in sorted(notes[key].items())),
         })

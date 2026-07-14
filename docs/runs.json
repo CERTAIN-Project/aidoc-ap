@@ -1,88 +1,76 @@
 {
  "runs": [
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#06435388-2333-4b31-b2c8-4d96c2ac67ab",
-   "startedAt": "2026-07-08T08:56:12+00:00",
-   "endedAt": "2026-07-08T08:56:42+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#9da85f63-5857-4d79-8331-e227648582e7",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#402bfd97-c4c2-4676-bf34-dbb149e6db7d",
-   "startedAt": "2026-07-08T08:56:42+00:00",
-   "endedAt": "2026-07-08T08:57:49+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#179cc08f-e811-4398-8bd8-7b205e0015f4",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#a055f89c-234f-4b4a-b6ff-23d23067eb57",
-   "startedAt": "2026-07-08T08:52:25+00:00",
-   "endedAt": "2026-07-08T08:53:13+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#453ae2e0-36a3-43a5-ae11-dc09d9066b3f",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#b2d6b9df-72d2-45be-b9f9-009c5bbcae54",
-   "startedAt": "2026-07-08T08:51:50+00:00",
-   "endedAt": "2026-07-08T08:52:21+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#59ad78ae-26f4-494a-a893-6a1bcf975447",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#864c3730-46e5-433b-8809-7f4ea120776a",
-   "startedAt": "2026-07-08T08:54:42+00:00",
-   "endedAt": "2026-07-08T08:55:01+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#cf9fa0fe-7bf0-489a-87bd-def7889a0bfe",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#de778c1e-d919-49f4-981e-192a4d97c39c",
-   "startedAt": "2026-07-08T08:56:09+00:00",
-   "endedAt": "2026-07-08T08:56:11+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#5207c95d-dfc3-405d-9586-39ec92910407",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#0867d8eb-d7ba-4cad-8f5e-ca4de18fc5dd",
-   "startedAt": "2026-07-08T08:56:09+00:00",
-   "endedAt": "2026-07-08T08:56:09+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#a0295267-6ca9-4e12-a96e-b36fde04d7fb",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#3ccc1e44-1f86-4ca1-99ca-80678ed7c582",
-   "startedAt": "2026-07-08T08:54:26+00:00",
-   "endedAt": "2026-07-08T08:54:42+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#931dfb5a-bdeb-48a4-871d-f89e373a6b04",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#efd3e83b-1d7b-4cfc-af3f-bd0140016fae",
-   "startedAt": "2026-07-08T08:52:22+00:00",
-   "endedAt": "2026-07-08T08:52:24+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#bd303bd9-50d7-4dcb-89e1-f6efde77a56c",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#b0f22bab-f0d6-439d-9c58-dbd7af7c22e5",
-   "startedAt": "2026-07-08T08:55:42+00:00",
-   "endedAt": "2026-07-08T08:55:59+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#55782cad-8f0a-4ee9-b7c4-03931a42e517",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#4815443f-4b0a-4c3a-9f68-944241fc475a",
-   "startedAt": "2026-07-08T08:55:59+00:00",
-   "endedAt": "2026-07-08T08:56:09+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#de5d433d-a5ce-4ac7-8168-3ef5a0337a45",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   },
   {
-   "id": "https://w3id.org/aidoc-ap/alignment#28e666c8-2f99-4f84-a64e-6dbe00957b68",
-   "startedAt": "2026-07-08T08:57:50+00:00",
-   "endedAt": "2026-07-08T08:57:55+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
-  },
-  {
-   "id": "https://w3id.org/aidoc-ap/alignment#d8e8be51-4d35-4060-990b-0c759260dbf7",
-   "startedAt": "2026-07-08T08:55:01+00:00",
-   "endedAt": "2026-07-08T08:55:42+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
-  },
-  {
-   "id": "https://w3id.org/aidoc-ap/alignment#e58a2db1-5c28-40a2-a8b6-e77aaa929771",
-   "startedAt": "2026-07-08T08:53:13+00:00",
-   "endedAt": "2026-07-08T08:54:26+00:00",
-   "used": "https://ollama.com/library/gemma3:27b"
+   "id": "https://w3id.org/aidoc-ap/alignment#e578e654-0842-4e9f-a984-7b3cf3dc3c90",
+   "startedAt": "2026-07-14T12:28:17+00:00",
+   "endedAt": null,
+   "used": null
   }
  ]
 }

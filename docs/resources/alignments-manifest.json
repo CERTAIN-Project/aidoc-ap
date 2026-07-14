@@ -6,15 +6,13 @@
     "resources/dpv-alignments.ttl",
     "resources/dpv-tech-alignments.ttl",
     "resources/mcro-alignments.ttl",
-    "resources/mex-algo-alignments.ttl",
     "resources/mex-core-alignments.ttl",
-    "resources/mex-perf-alignments.ttl",
     "resources/ml-onto-alignments.ttl",
     "resources/mlschema-alignments.ttl",
     "resources/prov-o-alignments.ttl",
     "resources/rains-alignments.ttl",
     "resources/vair-alignments.ttl"
   ],
-  "count": 14,
+  "count": 12,
   "generated": "auto"
 }

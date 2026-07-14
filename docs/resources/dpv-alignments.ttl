@@ -5,105 +5,60 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:03c4198c-51e0-409c-9c2c-35354bc3380f a prov:Entity,
+align:430ff47a-c6b9-4aad-a10d-98f16f0c9723 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b2d6b9df-72d2-45be-b9f9-009c5bbcae54 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC 'Data Processing' is a general activity. The dpv 'DataProcessingAgreement' *is* data processing, but specifically framed as a legal agreement governing it. Thus, the dpv concept is more specific – a type of data processing – and therefore broader in scope than the generic AIDOC concept."^^xsd:string ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:DataProcessing ;
-    align:target <https://w3id.org/dpv#DataProcessingAgreement> .
-
-align:1b4b5bf9-4757-4744-b381-31239cdfb6b1 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b2d6b9df-72d2-45be-b9f9-009c5bbcae54 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to operations performed on data to transform it. While 'Data Processing' (AIDOC) explicitly mentions combining and preprocessing *resulting in a different dataset*, 'Processing' (dpv) is more general. They are highly related and could be used interchangeably in many contexts, but the AIDOC definition adds specificity regarding output."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataProcessing ;
-    align:target <https://w3id.org/dpv#Processing> .
-
-align:375d7e86-ab6f-48e6-9a4d-19c9073bf3da a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b2d6b9df-72d2-45be-b9f9-009c5bbcae54 ;
-    align:confidence "0.75"^^xsd:float ;
-    align:rationale "Both concepts relate to training involving data, however 'Data Training' focuses on AI/ML model development while 'DataProtectionTraining' concerns legal and ethical compliance. They are related through the shared element of 'data', but represent distinct areas of focus; therefore a related match is most appropriate."^^xsd:string ;
-    align:relation skos:relatedMatch ;
-    align:source aidoc:DataTraining ;
-    align:target <https://w3id.org/dpv#DataProtectionTraining> .
-
-align:397072e7-2bfd-4e92-b641-d5f0cc83257d a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b2d6b9df-72d2-45be-b9f9-009c5bbcae54 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts address human oversight, however the dpv concept provides a more detailed and comprehensive definition encompassing control, reversal, monitoring, anomaly detection, and addressing dysfunctions. The AIDOC concept is a higher-level description of *a* mechanism for intervention. They are highly related and could be used interchangeably in many contexts, but the dpv definition adds significant nuance."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:59ad78ae-26f4-494a-a893-6a1bcf975447 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:HumanOversightMechanism ;
     align:target <https://w3id.org/dpv#HumanOversight> .
 
-align:4793fcbf-480e-4aae-ae12-b29645ad0269 a prov:Entity,
+align:531964ca-0942-4c2a-a156-8bef2bba6046 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b2d6b9df-72d2-45be-b9f9-009c5bbcae54 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to data processing activities. However, 'DataProcessingRecord' (dpv) emphasizes the *record* of the process – documentation and traceability – while 'Data Processing' (AIDOC) focuses on the activity itself. They are highly related and could be used interchangeably in many contexts, but the dpv concept adds a crucial aspect of record-keeping that isn’t explicitly present in the AIDOC definition."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataProcessing ;
-    align:target <https://w3id.org/dpv#DataProcessingRecord> .
-
-align:a9fb5086-884a-4e03-889b-13ce8cb39076 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b2d6b9df-72d2-45be-b9f9-009c5bbcae54 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC concept focuses on the *activity* of data processing itself. The dpv concept describes a *policy governing* that activity. Therefore, DataProcessingPolicy is broader – it encompasses the rules around data processing, while Data Processing is a specific action potentially subject to such policies."^^xsd:string ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:DataProcessing ;
-    align:target <https://w3id.org/dpv#DataProcessingPolicy> .
-
-align:aff2023b-464b-496a-80e1-262ad0149cb8 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b2d6b9df-72d2-45be-b9f9-009c5bbcae54 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts define an 'Agent', but with different focuses. AIDOC's AI Agent is specifically within the *AI lifecycle* and inherits from PROV-O, implying a focus on provenance. dpv’s Agent emphasizes acting *on behalf of* another entity with authorization. While overlapping – an AI agent often acts on behalf of someone – the descriptions aren't identical. The lexical similarity score supports this close relationship."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AIAgent ;
-    align:target <https://w3id.org/dpv#Agent> .
-
-align:e55a1485-f96c-45ef-bfbe-2d93aff96f6c a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b2d6b9df-72d2-45be-b9f9-009c5bbcae54 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts define 'Standard' as a set of agreed-upon requirements or norms. The descriptions are nearly identical and the lexical similarity is perfect. While context within their respective ontologies might introduce nuance, at the concept level they represent the same idea."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:59ad78ae-26f4-494a-a893-6a1bcf975447 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:Standard ;
     align:target <https://w3id.org/dpv#Standard> .
 
+align:54b8065f-064d-4635-b7d0-049a1a382c86 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:59ad78ae-26f4-494a-a893-6a1bcf975447 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:relatedMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataTraining ;
+    align:target <https://w3id.org/dpv#DataProtectionTraining> .
+
+align:8fe79325-898a-4f3d-936a-84f71816e5c7 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:59ad78ae-26f4-494a-a893-6a1bcf975447 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIAgent ;
+    align:target <https://w3id.org/dpv#Agent> .
+
 aidoc:AIAgent skos:closeMatch <https://w3id.org/dpv#Agent> .
 
-aidoc:DataTraining skos:relatedMatch <https://w3id.org/dpv#DataProtectionTraining> .
+aidoc:DataTraining skos:narrowMatch <https://w3id.org/dpv#DataProtectionTraining> .
 
 aidoc:HumanOversightMechanism skos:closeMatch <https://w3id.org/dpv#HumanOversight> .
 
 aidoc:Standard skos:exactMatch <https://w3id.org/dpv#Standard> .
 
-aidoc:DataProcessing skos:broadMatch <https://w3id.org/dpv#DataProcessingAgreement>,
-        <https://w3id.org/dpv#DataProcessingPolicy> ;
-    skos:closeMatch <https://w3id.org/dpv#DataProcessingRecord>,
-        <https://w3id.org/dpv#Processing> .
+align:59ad78ae-26f4-494a-a893-6a1bcf975447 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
 
-align:b2d6b9df-72d2-45be-b9f9-009c5bbcae54 a prov:Activity ;
-    prov:endedAtTime "2026-07-08T08:52:21+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-07-08T08:51:50+00:00"^^xsd:dateTime ;
-    prov:used <https://ollama.com/library/gemma3:27b> ;
-    prov:wasAssociatedWith align:LLMAlignmentBot .
-
-align:LLMAlignmentBot a prov:SoftwareAgent ;
-    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+align:ExpertCurationTeam a prov:Agent ;
+    rdfs:label "AIDOC-AP curation team (three domain experts)" .
 

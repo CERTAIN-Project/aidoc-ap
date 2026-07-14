@@ -1,89 +1,63 @@
 @prefix aidoc: <https://w3id.org/aidoc-ap#> .
 @prefix align: <https://w3id.org/aidoc-ap/alignment#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:16d92a28-4d0a-4bbf-8433-09ca7472861b a prov:Entity,
+align:0b772e05-f6aa-4816-b0b1-3b85d414622b a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b0f22bab-f0d6-439d-9c58-dbd7af7c22e5 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to the realization of something abstract (algorithm/model) into executable form. The AIDOC definition explicitly mentions 'executable software', while ml-onto's description is missing, but the label strongly suggests a similar meaning. They aren’t *exactly* interchangeable – one focuses on algorithms specifically, and the other is more general – hence closeMatch rather than exactMatch."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:931dfb5a-bdeb-48a4-871d-f89e373a6b04 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:SoftwareImplementation ;
     align:target <http://www.w3.org/ns/mls#Implementation> .
 
-align:4c7c5b61-457d-49d4-8df4-496c8ffd4dfd a prov:Entity,
+align:41f209c4-e156-45e9-a52e-389b14949f6a a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b0f22bab-f0d6-439d-9c58-dbd7af7c22e5 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and a highly similar description focusing on assessing performance, robustness, and accuracy of models. The lack of a description for ml-onto doesn't detract from the strong lexical and semantic overlap."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:ModelEvaluation ;
-    align:target <http://www.w3.org/ns/mls#ModelEvaluation> .
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:931dfb5a-bdeb-48a4-871d-f89e373a6b04 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:SoftwareImplementation ;
+    align:target <http://www.w3.org/ns/mls#Software> .
 
-align:5f5ccc33-b0f1-4a3a-b6b6-3d66624859b4 a prov:Entity,
+align:be85dd34-f888-4edb-bf80-2c78912db427 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b0f22bab-f0d6-439d-9c58-dbd7af7c22e5 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "Both concepts share the same label and a very similar (though one is missing) description indicating they represent the same core idea of a 'Dataset'. The high lexical similarity supports this."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:931dfb5a-bdeb-48a4-871d-f89e373a6b04 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
 
-align:b7abe072-1691-49b2-bb80-6498ba6a14f9 a prov:Entity,
+align:c875b586-9191-4d18-bd85-98c95c359607 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b0f22bab-f0d6-439d-9c58-dbd7af7c22e5 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts represent an 'Agent', and the lexical similarity is high (0.608). However, AIDOC explicitly frames this agent within the *AI lifecycle*, making it a specialized type of Agent. The ml-onto concept, using FOAF's definition, is more general. Therefore, they aren’t exact matches but are close enough to be interchangeable in many AI-related contexts."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AIAgent ;
-    align:target foaf:Agent .
-
-align:d77a1d17-a899-42d6-a7cb-3f79fe993f4b a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b0f22bab-f0d6-439d-9c58-dbd7af7c22e5 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts refer to a computational representation used for tasks – 'AI Model' explicitly within the AI domain and 'Model' more generally (as indicated by the ml-onto namespace suggesting Machine Learning). The descriptions are highly similar in intent, though AIDOC specifies *how* the model is used. They aren’t identical enough for exactMatch, but sufficiently close to be interchangeable in many ML/AI contexts."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:931dfb5a-bdeb-48a4-871d-f89e373a6b04 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:AIModel ;
     align:target <http://www.w3.org/ns/mls#Model> .
-
-align:e49519eb-d0c8-4446-ac7e-401a80a00fb6 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:b0f22bab-f0d6-439d-9c58-dbd7af7c22e5 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC 'Modality' focuses specifically on *how* an AI system is delivered – a deployment characteristic. The ml-onto 'Data Modality' describes the *type of data itself*. While related (an AI system will *use* data modalities), the ml-onto concept is broader, encompassing all forms of data representation, not just those relevant to AI system provision. Therefore, AIDOC’s modality is a specific instance within the broader scope of Data Modality."^^xsd:string ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:Modality ;
-    align:target <http://w3id.org/mlso/DataModality> .
-
-aidoc:AIAgent skos:closeMatch foaf:Agent .
 
 aidoc:AIModel skos:closeMatch <http://www.w3.org/ns/mls#Model> .
 
 aidoc:Dataset skos:exactMatch <http://www.w3.org/ns/mls#Dataset> .
 
-aidoc:Modality skos:broadMatch <http://w3id.org/mlso/DataModality> .
+aidoc:SoftwareImplementation skos:broadMatch <http://www.w3.org/ns/mls#Software> ;
+    skos:closeMatch <http://www.w3.org/ns/mls#Implementation> .
 
-aidoc:ModelEvaluation skos:exactMatch <http://www.w3.org/ns/mls#ModelEvaluation> .
+align:931dfb5a-bdeb-48a4-871d-f89e373a6b04 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
 
-aidoc:SoftwareImplementation skos:closeMatch <http://www.w3.org/ns/mls#Implementation> .
-
-align:b0f22bab-f0d6-439d-9c58-dbd7af7c22e5 a prov:Activity ;
-    prov:endedAtTime "2026-07-08T08:55:59+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-07-08T08:55:42+00:00"^^xsd:dateTime ;
-    prov:used <https://ollama.com/library/gemma3:27b> ;
-    prov:wasAssociatedWith align:LLMAlignmentBot .
-
-align:LLMAlignmentBot a prov:SoftwareAgent ;
-    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+align:ExpertCurationTeam a prov:Agent ;
+    rdfs:label "AIDOC-AP curation team (three domain experts)" .
 

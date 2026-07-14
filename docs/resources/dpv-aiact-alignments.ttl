@@ -5,188 +5,153 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:03d5030c-0834-4d10-ba22-228678039aee a prov:Entity,
+align:1a52c701-d7c4-4ed6-b0a3-fee5a792f49d a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The definitions are almost identical; both define data used for fitting learnable parameters of an AI system. The lexical similarity is high (0.846) and the descriptions are essentially synonymous."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:DataTraining ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#TrainingData> .
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:VisualDocumentation ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation> .
 
-align:14106207-daaa-49ae-8315-fb3aa6186eee a prov:Entity,
+align:31974dd7-bbfb-482c-bc51-66e202d595e4 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "1.0"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical. The URI provides a globally unique identifier for the dpv-aiact concept, but doesn't alter the meaning. Therefore, they represent the same concept."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIDeployer ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#AIDeployer> .
-
-align:16b5e58b-ff52-409c-ae86-1dcc6c5a4a58 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The AIDOC concept defines *what* an AI System is – a broad definition encompassing its capabilities and operation. The dpv-aiact concept (AISystemPerformance) focuses on *one aspect* of an AI system - its ability to achieve its intended purpose. Therefore, AISystemPerformance is a specific characteristic *of* an AI System, making it a narrower concept."^^xsd:string ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#AISystemPerformance> .
-
-align:22db99ee-a866-4a72-a7cf-2488f3898834 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The definitions are almost identical, differing only in minor phrasing and the inclusion of a URI in dpv-aiact. The core meaning – describing the intended use as defined by the provider through documentation – is precisely aligned."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:IntendedPurpose ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose> .
-
-align:344eaefd-8d8a-45f4-85f9-b283070caaa2 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to monitoring after deployment. However, the `dpv-aiact` concept explicitly frames this within the context of the EU AI Act's requirements for a *plan*, suggesting a more formal and legally mandated process than the general 'activity' described by AIDOC. While highly related and often overlapping in practice, they aren’t interchangeable due to this difference in scope and purpose."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:PostMarketMonitoringActivity ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan> .
-
-align:3ed7fe0a-0c22-401f-922e-20d1306f97f6 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The descriptions are almost identical. The AIDOC concept describes *activity* of using data for validation while dpv-aiact defines the *data itself*. This is a subtle difference that doesn't prevent interchangeability in many contexts; both fundamentally refer to the same thing – the data used for AI model evaluation and tuning."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:DataValidation ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#ValidationData> .
-
-align:483cc4ab-82c3-4a61-b625-8ad7cce346f6 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.88"^^xsd:float ;
-    align:rationale "Both concepts refer to a Declaration of Conformity document. However, the `dpv-aiact` concept explicitly ties this declaration to the EU AI Act and Article 47, making it specific to AI systems. The `AIDOC` concept is more general, encompassing declarations for various standards. While highly similar and often overlapping in practical application, they aren't strictly interchangeable due to the legal context of the AI Act."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DeclarationOfConformity ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity> .
-
-align:48fe7e65-cfba-4ef4-a732-54eb123271a8 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "1.0"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical. The URI suggests a specific legal context for dpv-aiact, but the definitions themselves are equivalent."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#AISystem> .
-
-align:49734de1-2a86-4ab8-9f8c-16fa9c35d686 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "The `dpv-aiact:ProhibitedAISystem` is a *specific type* of `AIDOC:AI System`. The AI Act defines systems that are not allowed, which inherently fall under the broader category of all AI Systems. While the lexical similarity is reasonably high, the descriptions clearly indicate a specialization – one describes AI systems generally, while the other focuses on those explicitly prohibited by law."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
     align:relation skos:narrowMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem> .
 
-align:57b1daba-d018-4b59-a3d1-9f53fcc0b9ef a prov:Entity,
+align:436d3c28-eb60-49ef-a352-daa73a3db72c a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to AI systems and their abilities. `dpv-aiact` provides a more formal, legally-oriented definition aligned with the EU AI Act, detailing autonomy and impact on environments. `AIDOC` is broader, focusing on *what* an AI system can do (capabilities) without specifying the level of autonomy or legal context. While not identical, they are highly related and could be used interchangeably in many contexts concerning AI functionality."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AISystemCapability ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#AISystem> .
-
-align:5c91c364-5136-452a-b9e3-255ac56a4cc8 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to data used for AI training. The AIDOC concept is more descriptive, detailing *what* the data sheet contains (methodologies, hyperparameters etc.), while dpv-aiact focuses on *what* the data *is* – data used for parameter fitting. They are highly related and could be used interchangeably in many contexts, but aren't strictly identical due to this difference in focus."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:TrainingDataSheet ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#TrainingData> .
-
-align:9119fef2-93af-42b4-89a6-d90d6c5c2f36 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts define entities providing AI systems. The AIDOC definition is broader, encompassing developers *or* those placing systems on the market/into service. dpv-aiact focuses specifically on providers integrating an AI model, regardless of origin. While not identical (the 'development' aspect in AIDOC isn’t explicitly present in dpv-aiact), they are highly overlapping and could be used interchangeably in many contexts concerning AI regulation."^^xsd:string ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AIProvider ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider> .
-
-align:b2a391f9-136f-4566-8e0c-e05780dcb355 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "1.0"^^xsd:float ;
-    align:rationale "The labels and descriptions are identical. The URI provides a globally unique identifier for the dpv-aiact concept, but doesn't alter its meaning; therefore they represent the same concept."^^xsd:string ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIProvider ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#AIProvider> .
-
-align:c5f87953-fb3e-4d60-9ac3-189250baf864 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.85"^^xsd:float ;
-    align:rationale "Both concepts relate to monitoring AI systems post-deployment. However, the dpv-aiact concept explicitly frames this activity within a legal/regulatory context (EU AIACT) and emphasizes corrective/preventive actions stemming from identified issues. The AIDOC concept is more general, simply describing performance & behavior monitoring. While highly related and often overlapping in practice, they aren't interchangeable due to the regulatory focus of dpv-aiact."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:PostMarketMonitoringActivity ;
     align:target <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem> .
 
-align:ca966cdd-b920-43ec-a335-9ff129e2ca4d a prov:Entity,
+align:45e998d1-f1a5-4673-a47b-f0e6ad072285 a prov:Entity,
         align:Mapping ;
-    prov:wasAttributedTo align:LLMAlignmentBot ;
-    prov:wasGeneratedBy align:a055f89c-234f-4b4a-b6ff-23d23067eb57 ;
-    align:confidence "0.95"^^xsd:float ;
-    align:rationale "The descriptions are almost identical, focusing on data used for independent AI system evaluation before deployment. The lexical similarity is high (0.833). While 'Data Testing' (AIDOC) sounds like an *activity*, and 'TestingData' (dpv-aiact) a *thing* (data itself), the core meaning is equivalent in this context – they refer to the same concept."^^xsd:string ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:Log ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#TestLog> .
+
+align:4d5bd78b-1d12-4b44-ad07-6f22b2a37393 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider> .
+
+align:5f63476b-e149-4931-83d8-23b423c95033 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
-    align:source aidoc:DataTesting ;
-    align:target <https://w3id.org/dpv/legal/eu/aiact#TestingData> .
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#AIProvider> .
+
+align:73db6d5b-e1fc-45ba-b12a-af3b6bb616cd a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:IntendedPurpose ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose> .
+
+align:b1cfe730-841e-4ef4-a636-2476ea6cd9be a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#GPAIModel> .
+
+align:b40ebb1e-8a6e-49fc-a1fd-3f736c44cfc4 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:PostMarketMonitoringActivity ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan> .
+
+align:d39219e1-5283-45d7-b922-84671acbee78 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#AIDeployer> .
+
+align:ebc3258c-45d5-4e76-a889-2c334dcce041 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DeclarationOfConformity ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity> .
+
+align:f7fa48fc-79f8-4b59-834b-54e0560840ad a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#AISystem> .
 
 aidoc:AIDeployer skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#AIDeployer> .
 
-aidoc:AISystemCapability skos:closeMatch <https://w3id.org/dpv/legal/eu/aiact#AISystem> .
+aidoc:AIModel skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#GPAIModel> .
 
-aidoc:DataTesting skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#TestingData> .
-
-aidoc:DataTraining skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#TrainingData> .
-
-aidoc:DataValidation skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#ValidationData> .
-
-aidoc:DeclarationOfConformity skos:closeMatch <https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity> .
+aidoc:DeclarationOfConformity skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity> .
 
 aidoc:IntendedPurpose skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose> .
 
-aidoc:TrainingDataSheet skos:closeMatch <https://w3id.org/dpv/legal/eu/aiact#TrainingData> .
+aidoc:Log skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#TestLog> .
 
-aidoc:AIProvider skos:closeMatch <https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider> ;
-    skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#AIProvider> .
+aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation> .
+
+aidoc:AIProvider skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#AIProvider> ;
+    skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider> .
+
+aidoc:AISystem skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#AISystem> ;
+    skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem> .
 
 aidoc:PostMarketMonitoringActivity skos:closeMatch <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan>,
         <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem> .
 
-aidoc:AISystem skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#AISystem> ;
-    skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#AISystemPerformance>,
-        <https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem> .
+align:453ae2e0-36a3-43a5-ae11-dc09d9066b3f a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-14T12:28:17+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
 
-align:a055f89c-234f-4b4a-b6ff-23d23067eb57 a prov:Activity ;
-    prov:endedAtTime "2026-07-08T08:53:13+00:00"^^xsd:dateTime ;
-    prov:startedAtTime "2026-07-08T08:52:25+00:00"^^xsd:dateTime ;
-    prov:used <https://ollama.com/library/gemma3:27b> ;
-    prov:wasAssociatedWith align:LLMAlignmentBot .
-
-align:LLMAlignmentBot a prov:SoftwareAgent ;
-    rdfs:label "LLM Alignment Step using gemma3:27b"^^xsd:string .
+align:ExpertCurationTeam a prov:Agent ;
+    rdfs:label "AIDOC-AP curation team (three domain experts)" .
 
