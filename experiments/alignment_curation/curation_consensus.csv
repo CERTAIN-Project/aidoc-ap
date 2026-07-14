@@ -1,7 +1,7 @@
 aidoc_iri,ref_iri,buckets,aidoc_label,ref_label,llm_relation,vote_FK,vote_SN,vote_TD,consensus,outcome,notes
 https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov#Activity,prov-o,AI Activity,Activity,skos:exactMatch,skos:broadMatch,skos:broadMatch,skos:broadMatch,skos:broadMatch,modify,SN: skos:narrowMatch | TD: skos:broadMatch
 https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov-o#Activity,mex-core+mex-perf,AI Activity,Activity,skos:exactMatch,skos:broadMatch,skos:exactMatch,skos:broadMatch,skos:broadMatch,modify,SN: skos:broadMatch | TD: skos:broadMatch
-https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov#Agent,prov-o+rains,AI Agent,Agent,skos:closeMatch,skos:broadMatch,skos:broadMatch,skos:closeMatch,skos:broadMatch,modify,SN: skos:narrowMatch | TD: skos:broadMatch
+https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov#Agent,prov-o+rains,AI Agent,Agent,skos:closeMatch,skos:broadMatch,skos:broadMatch,skos:broadMatch,skos:broadMatch,modify,SN: skos:narrowMatch | TD: skos:broadMatch
 https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov-o#Agent,mex-core,AI Agent,Agent,skos:exactMatch,skos:broadMatch,skos:broadMatch,skos:broadMatch,skos:broadMatch,modify,SN: skos:narrowMatch | TD: skos:broadMatch
 https://w3id.org/aidoc-ap#AIAgent,http://xmlns.com/foaf/0.1/Agent,mcro+ml-onto,AI Agent,http://xmlns.com/foaf/0.1/Agent,skos:closeMatch,skos:broadMatch,skos:broadMatch,skos:closeMatch,skos:broadMatch,modify,SN: skos:narrowMatch
 https://w3id.org/aidoc-ap#AIAgent,https://w3id.org/dpv#Agent,dpv,AI Agent,Agent,skos:closeMatch,skos:broadMatch,skos:closeMatch,skos:closeMatch,skos:closeMatch,accept,

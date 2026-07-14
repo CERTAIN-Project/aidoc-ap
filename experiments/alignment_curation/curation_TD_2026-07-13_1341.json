@@ -1,7 +1,7 @@
 {
  "curator": "TD",
  "batch_id": "2026-07-13_1341",
- "exported": "2026-07-13T14:15:26.613Z",
+ "exported": "2026-07-14T11:26:45.194Z",
  "n_decisions": 173,
  "decisions": {
   "airo|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/airo#AIProvider": {
@@ -326,11 +326,11 @@
   },
   "dpv-aiact|https://w3id.org/aidoc-ap#DeclarationOfConformity|https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T12:50:07.173Z"
+   "ts": "2026-07-14T11:21:28.690Z"
   },
   "dpv-aiact|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/dpv/legal/eu/aiact#TrainingData": {
    "decision": "reject",
@@ -358,11 +358,11 @@
   },
   "dpv-aiact|https://w3id.org/aidoc-ap#AIProvider|https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T12:53:24.305Z"
+   "ts": "2026-07-14T11:21:41.594Z"
   },
   "dpv-aiact|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/legal/eu/aiact#AISystem": {
    "decision": "reject",
@@ -374,11 +374,11 @@
   },
   "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T12:54:33.985Z"
+   "ts": "2026-07-14T11:21:47.960Z"
   },
   "dpv-aiact|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/dpv/legal/eu/aiact#AISystemPerformance": {
    "decision": "reject",
@@ -430,11 +430,11 @@
   },
   "dpv|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/dpv#DataProtectionTraining": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T13:00:00.016Z"
+   "ts": "2026-07-14T11:22:00.121Z"
   },
   "dpv|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv#Processing": {
    "decision": "accept",
@@ -518,11 +518,11 @@
   },
   "mex-core|https://w3id.org/aidoc-ap#AIActivity|http://www.w3.org/ns/prov-o#Activity": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:broadMatch",
    "note": "skos:broadMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T13:09:09.094Z"
+   "ts": "2026-07-14T11:22:07.435Z"
   },
   "mex-core|https://w3id.org/aidoc-ap#DataValidation|http://mex.aksw.org/mex-core#Validation": {
    "decision": "reject",
@@ -542,11 +542,11 @@
   },
   "mex-core|https://w3id.org/aidoc-ap#AIAgent|http://www.w3.org/ns/prov-o#Agent": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:broadMatch",
    "note": "skos:broadMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T13:14:47.169Z"
+   "ts": "2026-07-14T11:22:15.897Z"
   },
   "mex-core|https://w3id.org/aidoc-ap#DataTraining|http://mex.aksw.org/mex-core#Training": {
    "decision": "reject",
@@ -558,11 +558,11 @@
   },
   "mex-perf|https://w3id.org/aidoc-ap#AIActivity|http://www.w3.org/ns/prov-o#Activity": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:broadMatch",
    "note": "skos:broadMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T13:17:36.665Z"
+   "ts": "2026-07-14T11:22:22.216Z"
   },
   "ml-onto|https://w3id.org/aidoc-ap#Dataset|http://www.w3.org/ns/mls#Dataset": {
    "decision": "accept",
@@ -646,19 +646,19 @@
   },
   "prov-o|https://w3id.org/aidoc-ap#AIActivity|http://www.w3.org/ns/prov#Activity": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:broadMatch",
    "note": "skos:broadMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T13:31:33.155Z"
+   "ts": "2026-07-14T11:22:33.776Z"
   },
   "prov-o|https://w3id.org/aidoc-ap#AIAgent|http://www.w3.org/ns/prov#Agent": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:broadMatch",
    "note": "skos:broadMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T13:31:45.322Z"
+   "ts": "2026-07-14T11:25:37.090Z"
   },
   "rains|https://w3id.org/aidoc-ap#Dataset|http://www.w3.org/ns/mls#Dataset": {
    "decision": "accept",
@@ -718,11 +718,11 @@
   },
   "rains|https://w3id.org/aidoc-ap#AISystem|https://w3id.org/sao#System": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:broadMatch",
    "note": "skos:broadMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T13:41:07.668Z"
+   "ts": "2026-07-14T11:22:39.974Z"
   },
   "rains|https://w3id.org/aidoc-ap#DataCleaningProcedure|https://w3id.org/rains#DataCollectionProcedure": {
    "decision": "reject",
@@ -838,11 +838,11 @@
   },
   "vair|https://w3id.org/aidoc-ap#DeclarationOfConformity|https://w3id.org/vair#EUDeclarationOfConformity": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T13:52:55.012Z"
+   "ts": "2026-07-14T11:22:47.106Z"
   },
   "vair|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/vair#TrainingData": {
    "decision": "reject",
@@ -982,11 +982,11 @@
   },
   "vair|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/vair#Model": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:broadMatch",
    "note": "skos:broadMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T13:58:30.921Z"
+   "ts": "2026-07-14T11:22:55.231Z"
   },
   "vair|https://w3id.org/aidoc-ap#DataTraining|https://w3id.org/vair#UnrepresentativeTrainingData": {
    "decision": "reject",
@@ -1038,11 +1038,11 @@
   },
   "fn-band/airo|https://w3id.org/aidoc-ap#PerformanceMetric|http://www.w3.org/ns/dqv#Metric": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:broadMatch",
    "note": "skos:broadMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T14:00:28.194Z"
+   "ts": "2026-07-14T11:23:03.818Z"
   },
   "fn-band/dpv-ai|https://w3id.org/aidoc-ap#DataProcessing|https://w3id.org/dpv/ai#DataPoisoning": {
    "decision": "reject",
@@ -1062,11 +1062,11 @@
   },
   "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/ai#GPAIModel": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T14:01:11.792Z"
+   "ts": "2026-07-14T11:23:14.009Z"
   },
   "fn-band/dpv-ai|https://w3id.org/aidoc-ap#AISystemCapability|https://w3id.org/dpv/ai#FrugalAISystem": {
    "decision": "reject",
@@ -1150,11 +1150,11 @@
   },
   "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/dpv/legal/eu/aiact#GPAIModel": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T14:02:54.731Z"
+   "ts": "2026-07-14T11:23:20.144Z"
   },
   "fn-band/dpv-aiact|https://w3id.org/aidoc-ap#Log|https://w3id.org/dpv/legal/eu/aiact#TestLog": {
    "decision": "accept",
@@ -1198,11 +1198,11 @@
   },
   "fn-band/dpv-tech|https://w3id.org/aidoc-ap#HardwareComponent|https://w3id.org/dpv/tech#Component": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:broadMatch",
    "note": "skos:broadMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T14:06:57.508Z"
+   "ts": "2026-07-14T11:23:27.385Z"
   },
   "fn-band/dpv-tech|https://w3id.org/aidoc-ap#SoftwareDevelopment|https://w3id.org/dpv/tech#Software": {
    "decision": "reject",
@@ -1214,11 +1214,11 @@
   },
   "fn-band/dpv-tech|https://w3id.org/aidoc-ap#SoftwareComponent|https://w3id.org/dpv/tech#SoftwareAgent": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T14:08:05.819Z"
+   "ts": "2026-07-14T11:23:34.142Z"
   },
   "fn-band/mcro|https://w3id.org/aidoc-ap#PerformanceMetric|http://purl.obolibrary.org/obo/MCRO_0000027": {
    "decision": "reject",
@@ -1262,11 +1262,11 @@
   },
   "fn-band/prov-o|https://w3id.org/aidoc-ap#SoftwareComponent|http://www.w3.org/ns/prov#SoftwareAgent": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T14:10:15.136Z"
+   "ts": "2026-07-14T11:23:40.454Z"
   },
   "fn-band/rains|https://w3id.org/aidoc-ap#TrainingDataSheet|https://w3id.org/rains#TrainingDataset": {
    "decision": "reject",
@@ -1350,11 +1350,11 @@
   },
   "fn-band/vair|https://w3id.org/aidoc-ap#AIModel|https://w3id.org/vair#TrainedModel": {
    "decision": "modify",
-   "relation": "skos:exactMatch",
+   "relation": "skos:narrowMatch",
    "note": "skos:narrowMatch",
    "curator": "TD",
    "batch_id": "2026-07-13_1341",
-   "ts": "2026-07-13T14:14:04.477Z"
+   "ts": "2026-07-14T11:23:46.922Z"
   },
   "fn-band/vair|https://w3id.org/aidoc-ap#ModelVersioning|https://w3id.org/vair#ModelInversion": {
    "decision": "reject",

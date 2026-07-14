@@ -10,7 +10,7 @@ loaded TD: 173 decisions
   [intra-curator] SN voted differently on duplicate buckets of AIActivity -> Activity: {'skos:broadMatch': 1, 'skos:exactMatch': 1} -> using skos:exactMatch
   [intra-curator] SN voted differently on duplicate buckets of Dataset -> Dataset: {'skos:narrowMatch': 1, 'skos:exactMatch': 2} -> using skos:exactMatch
   [intra-curator] TD voted differently on duplicate buckets of SoftwareImplementation -> Implementation: {'skos:exactMatch': 1, 'skos:closeMatch': 1} -> using skos:closeMatch
-  [intra-curator] TD voted differently on duplicate buckets of AIAgent -> Agent: {'skos:broadMatch': 1, 'skos:closeMatch': 1} -> using skos:closeMatch
+  [intra-curator] TD voted differently on duplicate buckets of AIAgent -> Agent: {'skos:broadMatch': 1, 'skos:closeMatch': 1} -> using skos:broadMatch
   [direction] SN on VisualDocumentation -> Documentation: skos:narrowMatch -> skos:broadMatch
   [direction] SN on AIProvider -> DownstreamAIProvider: skos:narrowMatch kept (coincides with TD)
   [direction] SN on AIAgent -> Agent: skos:narrowMatch -> skos:broadMatch
@@ -33,8 +33,8 @@ loaded TD: 173 decisions
 
 == Pairwise agreement (canonical pairs) ==
   FK vs SN: n=157, decision agreement=62.42%, kappa=0.434; relation-vote agreement=59.24%, kappa=0.446
-  FK vs TD: n=157, decision agreement=62.42%, kappa=0.424; relation-vote agreement=61.78%, kappa=0.461
-  SN vs TD: n=157, decision agreement=77.07%, kappa=0.609; relation-vote agreement=75.80%, kappa=0.632
+  FK vs TD: n=157, decision agreement=63.06%, kappa=0.433; relation-vote agreement=62.42%, kappa=0.470
+  SN vs TD: n=157, decision agreement=77.71%, kappa=0.621; relation-vote agreement=76.43%, kappa=0.642
 
 == Consensus over 157 canonical pairs ==
   accept: 46, modify: 19, reject: 76, CONFLICT: 16

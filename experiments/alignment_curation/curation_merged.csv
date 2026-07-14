@@ -7,7 +7,7 @@ https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov-o#Activity,mex-co
 https://w3id.org/aidoc-ap#AIActivity,http://www.w3.org/ns/prov-o#Activity,mex-core+mex-perf,skos:exactMatch,TD,skos:broadMatch,modify,skos:broadMatch
 https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov#Agent,prov-o+rains,skos:closeMatch,FK,skos:broadMatch,modify,
 https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov#Agent,prov-o+rains,skos:closeMatch,SN,skos:broadMatch,modify,skos:narrowMatch
-https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov#Agent,prov-o+rains,skos:closeMatch,TD,skos:closeMatch,accept,skos:broadMatch
+https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov#Agent,prov-o+rains,skos:closeMatch,TD,skos:broadMatch,modify,skos:broadMatch
 https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov-o#Agent,mex-core,skos:exactMatch,FK,skos:broadMatch,modify,
 https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov-o#Agent,mex-core,skos:exactMatch,SN,skos:broadMatch,modify,skos:narrowMatch
 https://w3id.org/aidoc-ap#AIAgent,http://www.w3.org/ns/prov-o#Agent,mex-core,skos:exactMatch,TD,skos:broadMatch,modify,skos:broadMatch
