@@ -19,8 +19,8 @@
 @base <https://w3id.org/aidoc-ap#> .
 
 <https://w3id.org/aidoc-ap#> rdf:type owl:Ontology ;
-                              owl:versionIRI <https://w3id.org/aidoc-ap/1.1> ;
-                              owl:priorVersion <https://w3id.org/aidoc-ap/1.0> ;
+                              owl:versionIRI <https://w3id.org/aidoc-ap/1.2> ;
+                              owl:priorVersion <https://w3id.org/aidoc-ap/1.1> ;
                               dcterms:contributor [ rdf:type foaf:Person ;
                                                     foaf:name "Timea Pahi" ;
                                                     foaf:organization "University of Applied Sciences St. Pölten"
@@ -40,7 +40,7 @@
                                               ] ;
                               dcterms:description "AIDOC-AP is an application profile for representing the technical documentation of AI systems required under Article 11 and Annex IV of the EU AI Act in a structured, machine-readable form. It reuses established Semantic Web vocabularies (PROV-O, DCAT, MLSchema, AIRO, VAIR, DPV) where possible and adds Annex IV-specific terms, so that provider documentation can be captured as a knowledge graph and checked for completeness against the regulation."@en ;
                               dcterms:issued "2025-12-04"^^xsd:date ;
-                              dcterms:modified "2026-07-07"^^xsd:date ;
+                              dcterms:modified "2026-07-15"^^xsd:date ;
                               dcterms:language "en" ;
                               dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
                               dcterms:publisher [ foaf:homepage <https://certain-project.eu> ;
@@ -50,7 +50,8 @@
                               vann:preferredNamespacePrefix "aidoc" ;
                               vann:preferredNamespaceUri "https://w3id.org/aidoc-ap#" ;
                               rdfs:label "AIDOC-AP"@en ;
-                              owl:versionInfo "1.1" ;
+                              owl:versionInfo "1.2" ;
+                              skos:changeNote "v1.2: aidoc:VisualDocumentation was renamed and generalised to aidoc:TechnicalDocumentation, the Annex IV technical documentation artefact (aidoc:hasVisualDocumentation accordingly to aidoc:hasTechnicalDocumentation); grounded via rdfs:subClassOf dpv-aiact:TechnicalDocumentation."@en ;
                               schema:funding <https://cordis.europa.eu/project/id/101189650> ;
                               schema:keywords "AI systems, ontology, AIDOC-AP, AI lifecycle, AI Act"@en .
 
@@ -307,12 +308,12 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
                         rdfs:label "has transparency measure"@en .
 
 
-###  https://w3id.org/aidoc-ap#hasVisualDocumentation
-:hasVisualDocumentation rdf:type owl:ObjectProperty ;
+###  https://w3id.org/aidoc-ap#hasTechnicalDocumentation
+:hasTechnicalDocumentation rdf:type owl:ObjectProperty ;
                         rdfs:domain :AISystem ;
-                        rdfs:range :VisualDocumentation ;
-                        rdfs:comment "Links an AI system to visual documentation such as photographs, diagrams, or illustrations showing external features, markings, and internal layout."@en ;
-                        rdfs:label "has visual documentation"@en .
+                        rdfs:range :TechnicalDocumentation ;
+                        rdfs:comment "Links an AI system to its technical documentation as required by Article 11 and Annex IV, including textual documents and, where applicable, photographs or illustrations showing external features, markings, and internal layout (Annex IV 1(c))."@en ;
+                        rdfs:label "has technical documentation"@en .
 
 
 ###  https://w3id.org/aidoc-ap#hasFrequency
@@ -547,9 +548,9 @@ dcterms:hasPart rdf:type owl:ObjectProperty .
 
 ###  https://w3id.org/aidoc-ap#depicts
 :depicts rdf:type owl:DatatypeProperty ;
-         rdfs:domain :VisualDocumentation ;
+         rdfs:domain :TechnicalDocumentation ;
          rdfs:range xsd:string ;
-         rdfs:comment "Description of what the visual documentation shows (e.g., 'external view', 'internal layout', 'marking placement')."@en ;
+         rdfs:comment "Description of what the technical documentation shows or covers (e.g., 'external view', 'internal layout', 'marking placement')."@en ;
          rdfs:label "depicts"@en ;
          skos:closeMatch foaf:depicts .
 
@@ -1223,12 +1224,12 @@ foaf:Person rdf:type owl:Class .
                      rdfs:label "Transparency Measure"@en .
 
 
-###  https://w3id.org/aidoc-ap#VisualDocumentation
-:VisualDocumentation rdf:type owl:Class ;
+###  https://w3id.org/aidoc-ap#TechnicalDocumentation
+:TechnicalDocumentation rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
-                     rdfs:comment "Visual documentation of an AI system including photographs, illustrations, diagrams, or renderings that show external features, internal layout, or markings as required by Annex IV."@en ;
-                     rdfs:label "Visual Documentation"@en ;
-                     skos:closeMatch foaf:Image .
+                     rdfs:comment "Technical documentation of an AI system as required by Article 11 and Annex IV of the EU AI Act. This can include textual documents as well as photographs, illustrations, diagrams, or renderings showing external features, internal layout, or markings (Annex IV 1(c))."@en ;
+                     rdfs:label "Technical Documentation"@en ;
+                     skos:changeNote "Renamed and generalised from aidoc:VisualDocumentation in v1.2."@en .
 
 
 ###  https://w3id.org/airo#AICapability
@@ -1581,12 +1582,10 @@ foaf:Person rdf:type owl:Class .
 :Standard rdfs:subClassOf dpv:Standard .
 :AIProvider rdfs:subClassOf dpv-aiact:AIProvider .
 :AIDeployer rdfs:subClassOf dpv-aiact:AIDeployer .
+:TechnicalDocumentation rdfs:subClassOf dpv-aiact:TechnicalDocumentation .
 
 # Concept-level correspondences without a clean subsumption:
 :Auditor skos:closeMatch dpv-tech:Auditor .
 :HumanOversightMechanism skos:closeMatch dpv:HumanOversight .
 # DPV's EU declaration of conformity is the narrower (EU-specific) term:
 :DeclarationOfConformity skos:narrowMatch dpv-aiact:EUDeclarationOfConformity .
-
-
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
