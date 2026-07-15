@@ -138,12 +138,12 @@ MODEL_LABELS = {
     "llama3.3:70b": "Llama 3.3 70B",
     "gpt-oss:120b": "GPT-OSS 120B",
 }
-PILOT_META = {  # examples/<name> -> (display, domain / Annex III)
-    "encom": ("Energy forecasting", "Critical infrastructure (III-2)"),
-    "biometrics": ("Biometric verification", "Biometrics (III-1)"),
-    "bank": ("Investment recommendation", "Financial services (III-5)"),
+PILOT_META = {  # examples/<name> -> (display, application domain)
+    "encom": ("Energy forecasting", "Critical infrastructure"),
+    "biometrics": ("Biometric verification", "Biometrics / border management"),
+    "bank": ("Investment recommendation", "Financial services"),
     "civicvoice": ("Civic participation", "Content clustering"),
-    "hr-ai": ("HR / recruitment", "Employment (III-4)"),
+    "hr-ai": ("HR / recruitment", "Employment"),
 }
 
 

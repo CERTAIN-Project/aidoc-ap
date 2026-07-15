@@ -57,7 +57,7 @@
   {
    "kg": "bank",
    "display": "Investment recommendation",
-   "domain": "Financial services (III-5)",
+   "domain": "Financial services",
    "answered": 39,
    "total": 50,
    "share": 0.78,
@@ -66,7 +66,7 @@
   {
    "kg": "encom",
    "display": "Energy forecasting",
-   "domain": "Critical infrastructure (III-2)",
+   "domain": "Critical infrastructure",
    "answered": 38,
    "total": 50,
    "share": 0.76,
@@ -84,7 +84,7 @@
   {
    "kg": "biometrics",
    "display": "Biometric verification",
-   "domain": "Biometrics (III-1)",
+   "domain": "Biometrics / border management",
    "answered": 28,
    "total": 50,
    "share": 0.56,
@@ -93,7 +93,7 @@
   {
    "kg": "hr-ai",
    "display": "HR / recruitment",
-   "domain": "Employment (III-4)",
+   "domain": "Employment",
    "answered": 18,
    "total": 50,
    "share": 0.36,
