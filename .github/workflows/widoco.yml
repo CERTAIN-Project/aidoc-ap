@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history + tags for the versioned ontology snapshots
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -75,6 +77,34 @@ jobs:
           cp docs/curation.html site/curation.html
           cp docs/alignments.json site/alignments.json
           cp annex_4.ttl site/annex_4.ttl
+
+      # Versioned snapshots so the owl:versionIRIs (https://w3id.org/aidoc-ap/<x.y>)
+      # resolve: /<x.y>/ontology.ttl is the ontology at git tag v<x.y>,
+      # /<x.y>/ a small landing page.
+      - name: Publish versioned ontology snapshots
+        run: |
+          for tag in $(git tag -l 'v*'); do
+            v="${tag#v}"
+            mkdir -p "site/$v"
+            git show "$tag:aidoc-ap.ttl" > "site/$v/ontology.ttl"
+            cat > "site/$v/index.html" <<EOF
+          <!doctype html>
+          <html lang="en"><head><meta charset="utf-8">
+          <title>AIDOC-AP $v</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>body{font:16px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:44rem;margin:8vh auto;padding:0 1.2rem;color:#1c2430}
+          a{color:#155e9e}</style></head><body>
+          <h1>AIDOC-AP &mdash; version $v</h1>
+          <p>Archived snapshot of the AIDOC-AP ontology at release <code>$tag</code>.</p>
+          <ul>
+            <li><a href="ontology.ttl">ontology.ttl</a> (Turtle, this version)</li>
+            <li><a href="../">Current documentation</a></li>
+            <li><a href="https://github.com/CERTAIN-Project/aidoc-ap/tree/$tag">Source at tag $tag</a></li>
+          </ul>
+          </body></html>
+          EOF
+          done
+          ls -R site/1.* || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
