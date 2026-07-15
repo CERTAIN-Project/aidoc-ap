@@ -12,8 +12,11 @@ Two modes:
 2. Default mode evaluates a filled sheet: it compares the expert scores with
    the per-requirement LLM coverage at iteration 3, temperature 0 (mean over
    the three seeded runs, per model and pooled over the four models) and
-   reports Spearman's rank correlation plus a 3-category agreement
-   (low < 0.5 <= medium < 0.8 <= high).
+   reports the mean absolute deviation and a 3-category agreement
+   (low < 0.5 <= medium < 0.8 <= high). Spearman's rank correlation is
+   computed as supplementary output; note that the iteration-3 LLM scores are
+   compressed into a narrow band, so a rank correlation over ten heavily tied
+   values carries little signal.
 
 Usage:
     python scripts/coverage_expert_agreement.py --make-sheet
@@ -138,14 +141,16 @@ def evaluate():
         llm = [getter(r) for r in df.requirement_id]
         if any(v is None for v in llm):
             continue
-        rho = spearman(df.expert_score.tolist(), llm)
+        mae = statistics.mean(abs(e - l) for e, l in zip(df.expert_score, llm))
         agree = sum(category(e) == category(l)
                     for e, l in zip(df.expert_score, llm)) / len(llm)
-        rows.append((label, rho, agree))
-        print(f"  {label:28s} Spearman ρ = {rho:5.3f}   "
-              f"category agreement = {agree:.2f}")
+        rho = spearman(df.expert_score.tolist(), llm)
+        rows.append((label, mae, agree, rho))
+        print(f"  {label:28s} MAE = {mae:.3f}   "
+              f"category agreement = {agree:.2f}   (Spearman ρ = {rho:5.3f})")
     out = os.path.join(SHEET_DIR, "agreement_results.csv")
-    pd.DataFrame(rows, columns=["model", "spearman_rho", "category_agreement"]
+    pd.DataFrame(rows, columns=["model", "mean_abs_deviation",
+                                "category_agreement", "spearman_rho"]
                  ).to_csv(out, index=False)
     print(f"\n→ {out}")
 
