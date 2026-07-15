@@ -5,35 +5,35 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:068cd39c-c5e4-4e80-bbac-89a1e45c6e55 a prov:Entity,
+align:bc71d871-5c9f-4eb4-86f1-c7c8db0ca04c a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:4efbcae1-51ba-4bff-a96b-0e13a1efd1b4 ;
+    prov:wasGeneratedBy align:3bca26ba-9ab8-4553-ac41-b1b49c362c77 ;
     align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:exactMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:AIActivity ;
-    align:target prov:Activity .
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:SoftwareComponent ;
+    align:target prov:SoftwareAgent .
 
-align:0baaeb1d-2214-4223-8af2-1b1844fa49ca a prov:Entity,
+align:dfcda9c1-e46a-4388-b4a0-508afbc3b8e3 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:4efbcae1-51ba-4bff-a96b-0e13a1efd1b4 ;
+    prov:wasGeneratedBy align:3bca26ba-9ab8-4553-ac41-b1b49c362c77 ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:broadMatch ;
     align:source aidoc:AIAgent ;
     align:target prov:Agent .
 
-align:fc46cccb-816c-429b-817b-3a4870663169 a prov:Entity,
+align:f3366764-54ff-43c2-9da1-805878ac7df4 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:4efbcae1-51ba-4bff-a96b-0e13a1efd1b4 ;
+    prov:wasGeneratedBy align:3bca26ba-9ab8-4553-ac41-b1b49c362c77 ;
     align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:narrowMatch ;
-    align:source aidoc:SoftwareComponent ;
-    align:target prov:SoftwareAgent .
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIActivity ;
+    align:target prov:Activity .
 
 aidoc:AIActivity skos:broadMatch prov:Activity .
 
@@ -41,9 +41,9 @@ aidoc:AIAgent skos:broadMatch prov:Agent .
 
 aidoc:SoftwareComponent skos:narrowMatch prov:SoftwareAgent .
 
-align:4efbcae1-51ba-4bff-a96b-0e13a1efd1b4 a prov:Activity ;
+align:3bca26ba-9ab8-4553-ac41-b1b49c362c77 a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

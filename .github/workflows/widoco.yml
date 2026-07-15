@@ -74,7 +74,6 @@ jobs:
           cp docs/requirements.html site/requirements.html
           cp docs/curation.html site/curation.html
           cp docs/alignments.json site/alignments.json
-          cp docs/runs.json site/runs.json
           cp annex_4.ttl site/annex_4.ttl
 
       - name: Upload artifact

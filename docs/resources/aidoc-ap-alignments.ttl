@@ -1,0 +1,908 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix align: <https://w3id.org/aidoc-ap/alignment#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+align:00ada32d-ed4f-4341-8dee-8045b1171291 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:ChangeLog ;
+    align:target <https://w3id.org/rains#ChangeLog> .
+
+align:0e38e7e2-718b-46f3-a050-cb45d200efda a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:HardwareComponent ;
+    align:target <https://w3id.org/vair#Hardware> .
+
+align:11dcefcc-9baa-4e7b-98ff-9ba0c8a9c92f a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:PostMarketMonitoringActivity ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem> .
+
+align:1967dd3f-d221-4463-91fb-ae1d1a5fce18 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:8151b71e-dd03-4959-bca9-e11c38df6da2 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Deployment ;
+    align:target <https://w3id.org/dpv/ai#DeploymentStage> .
+
+align:198ba2f0-ed36-4edc-80aa-b77157e35ba3 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/vair#TrainedModel> .
+
+align:1cda271c-d42d-42a9-b024-492d6d701f7f a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:8151b71e-dd03-4959-bca9-e11c38df6da2 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/ai#FrugalAISystem> .
+
+align:220a9eca-a646-4a49-94e9-64629ae8ff66 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:Log ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#TestLog> .
+
+align:2371d5f9-f3d9-4a21-ad8a-71cb055b0621 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#AISystem> .
+
+align:26b1176b-5733-4f05-b8bc-c54d51fee411 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d0a19dcf-9b22-4b9e-9b5b-ed20c9883e7b ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:SoftwareComponent ;
+    align:target <https://w3id.org/dpv/tech#SoftwareAgent> .
+
+align:31528b20-38e2-4704-9cae-39f47619d1c3 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:SoftwareImplementation ;
+    align:target <http://www.w3.org/ns/mls#Implementation> .
+
+align:32559745-e63b-4ee9-8b24-f667bfefe565 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/airo#AISystem> .
+
+align:379d530c-867b-4ae8-851c-72fc9b5c32aa a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "modify" ;
+    align:editorialNote "Post-curation editorial revision: aidoc:VisualDocumentation was renamed and generalised to aidoc:TechnicalDocumentation in ontology v1.2; the IRI was migrated and the adjudicated relation revised accordingly. The curation record (v1.1) is unchanged." ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:TechnicalDocumentation ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation> .
+
+align:3bcbfc2a-e4b5-47f0-b12a-038cfc0f97a9 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:TransparencyMeasure ;
+    align:target <https://w3id.org/vair#TransparencyMeasure> .
+
+align:42c183d7-ed59-4a76-8c5e-d4556003b892 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:11db0318-ab1a-4c00-aca0-7da1f7436f2f ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIAgent ;
+    align:target foaf:Agent .
+
+align:43c5a8fc-db3b-48b9-b011-ddbf763e75e9 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIModel ;
+    align:target <http://www.w3.org/ns/mls#Model> .
+
+align:46a630ea-e53c-4ec8-b1a7-a2ec45a6bb79 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:Dataset ;
+    align:target <http://www.w3.org/ns/mls#Dataset> .
+
+align:48eb53a5-853e-466a-8c53-518bfdf51b10 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:HumanOversightMechanism ;
+    align:target <https://w3id.org/vair#HumanOversightMeasure> .
+
+align:558d0e23-250c-481b-98a6-7b4938d5c41e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:Dataset ;
+    align:target <https://w3id.org/vair#Dataset> .
+
+align:57fa93c5-c974-4956-a5f1-8e0b474d2483 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/airo#AIProvider> .
+
+align:58ccfad0-55fb-4da0-9ebf-cc32f224e7e8 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#AIDeployer> .
+
+align:662eb7a7-d106-47c2-85c8-d65bcafc3680 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:PostMarketMonitoringActivity ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan> .
+
+align:6d8e19e8-4b14-457a-a814-344481783815 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "modify" ;
+    align:editorialNote "Post-curation editorial revision: aidoc:VisualDocumentation was renamed and generalised to aidoc:TechnicalDocumentation in ontology v1.2; the IRI was migrated and the adjudicated relation revised accordingly. The curation record (v1.1) is unchanged." ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:TechnicalDocumentation ;
+    align:target <https://w3id.org/vair#TechnicalDocumentation> .
+
+align:70d315ce-387b-4d44-94ad-df7685a9a538 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#AIProvider> .
+
+align:74de3e1d-3f44-4171-a67c-295733894c12 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d0a19dcf-9b22-4b9e-9b5b-ed20c9883e7b ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/tech#Model> .
+
+align:7521b4e3-89d3-44b4-a816-0206831a7365 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider> .
+
+align:75a51a2b-2c27-4402-92fd-96e79443726c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/airo#AIModel> .
+
+align:778d1c64-00eb-4c21-8546-195e9f52e5fe a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:PerformanceMetric ;
+    align:target <http://www.w3.org/ns/dqv#Metric> .
+
+align:78129ddb-8714-4bca-962a-20bed4a42a29 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem> .
+
+align:78e3331b-8b76-4f19-86a5-e891142f53a2 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:8151b71e-dd03-4959-bca9-e11c38df6da2 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/ai#AISystem> .
+
+align:7b23a84e-e3a5-4373-8eef-4e81fcd91e84 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:8151b71e-dd03-4959-bca9-e11c38df6da2 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:DataWrangling ;
+    align:target <https://w3id.org/dpv/ai#DataCleaning> .
+
+align:7b4dc91c-f1a9-405f-87a4-6c4b4e8dcc51 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/vair#Model> .
+
+align:813ea12e-21ae-4534-90b5-cbaef4ae37b1 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#GPAIModel> .
+
+align:81e279b5-1c51-4e0b-b4c4-7872a0e013da a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DeclarationOfConformity ;
+    align:target <https://w3id.org/vair#EUDeclarationOfConformity> .
+
+align:88a09b08-87e6-4308-9a3a-fc5158093681 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:IntendedPurpose ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose> .
+
+align:965a100a-bc68-4d87-a55f-ae7b2305a2fe a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:narrowMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/sao#System> .
+
+align:9672be92-c084-48a8-8b08-141f8954608c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d4da6a57-7203-49e0-ade2-e28e93eb58f4 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:Standard ;
+    align:target <https://w3id.org/dpv#Standard> .
+
+align:983a3d3c-8213-4743-8bdc-9fa70775d16c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/rains#AI_System> .
+
+align:98831a09-7edb-43fb-87a8-0a5723147b3b a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d0a19dcf-9b22-4b9e-9b5b-ed20c9883e7b ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/dpv/tech#Deployer> .
+
+align:a1aa363c-de6b-4ca4-9fb6-e6e980ecdadc a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d4da6a57-7203-49e0-ade2-e28e93eb58f4 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:relatedMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DataTraining ;
+    align:target <https://w3id.org/dpv#DataProtectionTraining> .
+
+align:a30fe5e1-153f-4c30-8c54-523a73ed7dc6 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:ca067ee7-cb36-458b-b56a-9cd582c21db1 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIModel ;
+    align:target <http://mex.aksw.org/mex-core#Model> .
+
+align:a7e1a291-093e-47de-9512-78e5209c17f5 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d0a19dcf-9b22-4b9e-9b5b-ed20c9883e7b ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Auditor ;
+    align:target <https://w3id.org/dpv/tech#Auditor> .
+
+align:a8ed244c-348c-427e-9cf1-b1cfb6e188cd a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:HumanOversightMechanism ;
+    align:target <https://w3id.org/rains#SystemHumanOversightMechanism> .
+
+align:b195ad76-eeea-4a3c-a2ee-21a75fa93270 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d4da6a57-7203-49e0-ade2-e28e93eb58f4 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIAgent ;
+    align:target <https://w3id.org/dpv#Agent> .
+
+align:b4ef993d-7dc4-4cb2-9112-067da1604c97 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d0a19dcf-9b22-4b9e-9b5b-ed20c9883e7b ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:HardwareComponent ;
+    align:target <https://w3id.org/dpv/tech#Component> .
+
+align:b5d17a5b-7fa3-41ca-a632-f0b09cc1f27c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:Dataset ;
+    align:target <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
+
+align:b78d6669-1a4d-4daf-b2a4-c779b34f0d16 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Modality ;
+    align:target <https://w3id.org/airo#Modality> .
+
+align:b7f11f4c-91b1-4b6f-867b-00ff73319287 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AISystemCapability ;
+    align:target <https://w3id.org/airo#AICapability> .
+
+align:b935e456-4063-4902-9c18-c078b9062aa4 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d0a19dcf-9b22-4b9e-9b5b-ed20c9883e7b ;
+    align:curationOutcome "accept" ;
+    align:editorialNote "Post-curation editorial revision: aidoc:VisualDocumentation was renamed and generalised to aidoc:TechnicalDocumentation in ontology v1.2; the IRI was migrated and the adjudicated relation revised accordingly. The curation record (v1.1) is unchanged." ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:TechnicalDocumentation ;
+    align:target <https://w3id.org/dpv/tech#Documentation> .
+
+align:bc71d871-5c9f-4eb4-86f1-c7c8db0ca04c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:3bca26ba-9ab8-4553-ac41-b1b49c362c77 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:SoftwareComponent ;
+    align:target prov:SoftwareAgent .
+
+align:bfe9dadb-3a72-442f-8d05-5e5cd4fc65ed a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:f790e622-a18a-4c48-ae9f-5653706d824c ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:DataSheet ;
+    align:target <http://www.w3.org/ns/mls#Data> .
+
+align:c570003e-2677-4610-9a54-4e7f79c764d0 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:editorialNote "Post-curation editorial revision: aidoc:VisualDocumentation was renamed and generalised to aidoc:TechnicalDocumentation in ontology v1.2; the IRI was migrated and the adjudicated relation revised accordingly. The curation record (v1.1) is unchanged." ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:TechnicalDocumentation ;
+    align:target <https://w3id.org/airo#Documentation> .
+
+align:c7a2b87e-c840-499f-82c1-11b472ce171e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:6d755597-39b3-4550-863d-a30fee1802e6 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:DeclarationOfConformity ;
+    align:target <https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity> .
+
+align:cafd5d0f-f6b3-40f3-bf3e-b0030b8058b0 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d0a19dcf-9b22-4b9e-9b5b-ed20c9883e7b ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIProvider ;
+    align:target <https://w3id.org/dpv/tech#Provider> .
+
+align:cc5ac1be-aee6-4e82-ab56-c179a9b69c6c a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:relatedMatch ;
+    align:source aidoc:SoftwareComponent ;
+    align:target <https://w3id.org/vair#SafetyComponent> .
+
+align:cdc03157-7d9b-4d9f-9396-c4310ca2c029 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:DataProcessing ;
+    align:target <https://w3id.org/dpv#Processing> .
+
+align:cf081a8c-0728-406c-b72e-8347502c876e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:8151b71e-dd03-4959-bca9-e11c38df6da2 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/ai#GPAIModel> .
+
+align:d36dc898-94f8-4822-a71f-dcfc1b2802c1 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:PostMarketMonitoringActivity ;
+    align:target <https://w3id.org/vair#PostMarketMonitoringPlan> .
+
+align:d795a830-5dae-4a8a-b269-88a2556ca63d a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:ca067ee7-cb36-458b-b56a-9cd582c21db1 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:Dataset ;
+    align:target <http://mex.aksw.org/mex-core#Dataset> .
+
+align:dbe83fda-8b8e-4ce5-bdf2-6b54e6977cec a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Standard ;
+    align:target <https://w3id.org/airo#Standard> .
+
+align:de5d7b93-2148-4020-b787-ce8c5ef2ce2e a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d0a19dcf-9b22-4b9e-9b5b-ed20c9883e7b ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/dpv/tech#System> .
+
+align:dfcda9c1-e46a-4388-b4a0-508afbc3b8e3 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:3bca26ba-9ab8-4553-ac41-b1b49c362c77 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIAgent ;
+    align:target prov:Agent .
+
+align:dff6a1ab-f45f-47dc-b67e-643609b8d9e1 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/airo#AIDeployer> .
+
+align:e8c68542-5d28-4702-97fb-c130bf00bcec a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:Deployment ;
+    align:target <https://w3id.org/vair#Deployment> .
+
+align:ea36f9a6-4897-4bc9-81c4-adc3f1593cf4 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIAgent ;
+    align:target <https://w3id.org/ep-plan#Agent> .
+
+align:ea3e413f-18bb-4de7-9886-a585dc6dbbf4 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:DataSheet ;
+    align:target <https://w3id.org/dpv#Data> .
+
+align:ed835402-0bcd-46fb-951d-7f201550b053 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:SoftwareImplementation ;
+    align:target <http://www.w3.org/ns/mls#Software> .
+
+align:f026cdbf-85dd-49dd-a630-7a6423d40e26 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:d4da6a57-7203-49e0-ade2-e28e93eb58f4 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:HumanOversightMechanism ;
+    align:target <https://w3id.org/dpv#HumanOversight> .
+
+align:f0ad54d6-9ebf-49d1-92f4-da1feaa93c54 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:8151b71e-dd03-4959-bca9-e11c38df6da2 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:DataCleaningProcedure ;
+    align:target <https://w3id.org/dpv/ai#DataCleaning> .
+
+align:f27439e5-4e70-4c23-b875-ebe3684db187 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:DataCleaningProcedure ;
+    align:target <https://w3id.org/rains#DataPreprocessingProcedure> .
+
+align:f3366764-54ff-43c2-9da1-805878ac7df4 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:3bca26ba-9ab8-4553-ac41-b1b49c362c77 ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIActivity ;
+    align:target prov:Activity .
+
+align:f4969b13-e513-4d5a-82e4-cbce8351b471 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:narrowMatch ;
+    align:source aidoc:Dataset ;
+    align:target <https://w3id.org/rains#DatasetComponent> .
+
+align:f62d53cd-2227-4663-a0a1-f71fccdc7291 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:8151b71e-dd03-4959-bca9-e11c38df6da2 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/dpv/ai#Model> .
+
+aidoc:AIActivity skos:broadMatch prov:Activity .
+
+aidoc:AISystemCapability skos:closeMatch <https://w3id.org/airo#AICapability> .
+
+aidoc:Auditor skos:closeMatch <https://w3id.org/dpv/tech#Auditor> .
+
+aidoc:ChangeLog skos:closeMatch <https://w3id.org/rains#ChangeLog> .
+
+aidoc:DataProcessing skos:closeMatch <https://w3id.org/dpv#Processing> .
+
+aidoc:DataTraining skos:narrowMatch <https://w3id.org/dpv#DataProtectionTraining> .
+
+aidoc:DataWrangling skos:closeMatch <https://w3id.org/dpv/ai#DataCleaning> .
+
+aidoc:IntendedPurpose skos:exactMatch <https://w3id.org/dpv/legal/eu/aiact#IntendedPurpose> .
+
+aidoc:Log skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#TestLog> .
+
+aidoc:Modality skos:closeMatch <https://w3id.org/airo#Modality> .
+
+aidoc:PerformanceMetric skos:broadMatch <http://www.w3.org/ns/dqv#Metric> .
+
+aidoc:TransparencyMeasure skos:exactMatch <https://w3id.org/vair#TransparencyMeasure> .
+
+align:11db0318-ab1a-4c00-aca0-7da1f7436f2f a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+align:f790e622-a18a-4c48-ae9f-5653706d824c a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+aidoc:DataCleaningProcedure skos:closeMatch <https://w3id.org/dpv/ai#DataCleaning>,
+        <https://w3id.org/rains#DataPreprocessingProcedure> .
+
+aidoc:DataSheet skos:broadMatch <http://www.w3.org/ns/mls#Data>,
+        <https://w3id.org/dpv#Data> .
+
+aidoc:DeclarationOfConformity skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#EUDeclarationOfConformity>,
+        <https://w3id.org/vair#EUDeclarationOfConformity> .
+
+aidoc:Deployment skos:closeMatch <https://w3id.org/dpv/ai#DeploymentStage> ;
+    skos:exactMatch <https://w3id.org/vair#Deployment> .
+
+aidoc:HardwareComponent skos:broadMatch <https://w3id.org/dpv/tech#Component>,
+        <https://w3id.org/vair#Hardware> .
+
+aidoc:SoftwareImplementation skos:broadMatch <http://www.w3.org/ns/mls#Software> ;
+    skos:closeMatch <http://www.w3.org/ns/mls#Implementation> .
+
+aidoc:Standard skos:closeMatch <https://w3id.org/airo#Standard> ;
+    skos:exactMatch <https://w3id.org/dpv#Standard> .
+
+align:ca067ee7-cb36-458b-b56a-9cd582c21db1 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+aidoc:AIDeployer skos:closeMatch <https://w3id.org/dpv/tech#Deployer> ;
+    skos:exactMatch <https://w3id.org/airo#AIDeployer>,
+        <https://w3id.org/dpv/legal/eu/aiact#AIDeployer> .
+
+aidoc:HumanOversightMechanism skos:closeMatch <https://w3id.org/dpv#HumanOversight>,
+        <https://w3id.org/rains#SystemHumanOversightMechanism>,
+        <https://w3id.org/vair#HumanOversightMeasure> .
+
+aidoc:PostMarketMonitoringActivity skos:closeMatch <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringPlan>,
+        <https://w3id.org/dpv/legal/eu/aiact#PostMarketMonitoringSystem>,
+        <https://w3id.org/vair#PostMarketMonitoringPlan> .
+
+aidoc:SoftwareComponent skos:narrowMatch prov:SoftwareAgent,
+        <https://w3id.org/dpv/tech#SoftwareAgent> ;
+    skos:relatedMatch <https://w3id.org/vair#SafetyComponent> .
+
+align:3bca26ba-9ab8-4553-ac41-b1b49c362c77 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+aidoc:AIAgent skos:broadMatch prov:Agent,
+        foaf:Agent,
+        <https://w3id.org/ep-plan#Agent> ;
+    skos:closeMatch <https://w3id.org/dpv#Agent> .
+
+aidoc:AIProvider skos:closeMatch <https://w3id.org/dpv/tech#Provider> ;
+    skos:exactMatch <https://w3id.org/airo#AIProvider>,
+        <https://w3id.org/dpv/legal/eu/aiact#AIProvider> ;
+    skos:narrowMatch <https://w3id.org/dpv/legal/eu/aiact#DownstreamAIProvider> .
+
+aidoc:TechnicalDocumentation skos:broadMatch <https://w3id.org/airo#Documentation>,
+        <https://w3id.org/dpv/tech#Documentation> ;
+    skos:closeMatch <https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation>,
+        <https://w3id.org/vair#TechnicalDocumentation> .
+
+align:d4da6a57-7203-49e0-ade2-e28e93eb58f4 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+aidoc:Dataset skos:exactMatch <http://mex.aksw.org/mex-core#Dataset>,
+        <http://www.w3.org/ns/mls#Dataset>,
+        <https://w3id.org/vair#Dataset>,
+        <https://www.w3.org/TR/vocab-dcat-3/Dataset> ;
+    skos:narrowMatch <https://w3id.org/rains#DatasetComponent> .
+
+align:4715ac34-eb3c-4d14-ba8f-42e01969e94e a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+align:8151b71e-dd03-4959-bca9-e11c38df6da2 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+aidoc:AISystem skos:broadMatch <https://w3id.org/dpv/tech#System>,
+        <https://w3id.org/sao#System> ;
+    skos:closeMatch <https://w3id.org/rains#AI_System> ;
+    skos:exactMatch <https://w3id.org/airo#AISystem>,
+        <https://w3id.org/dpv/ai#AISystem>,
+        <https://w3id.org/dpv/legal/eu/aiact#AISystem> ;
+    skos:narrowMatch <https://w3id.org/dpv/ai#FrugalAISystem>,
+        <https://w3id.org/dpv/legal/eu/aiact#ProhibitedAISystem> .
+
+align:d0a19dcf-9b22-4b9e-9b5b-ed20c9883e7b a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+aidoc:AIModel skos:broadMatch <http://mex.aksw.org/mex-core#Model>,
+        <https://w3id.org/dpv/tech#Model>,
+        <https://w3id.org/vair#Model> ;
+    skos:closeMatch <http://www.w3.org/ns/mls#Model>,
+        <https://w3id.org/dpv/ai#Model> ;
+    skos:exactMatch <https://w3id.org/airo#AIModel> ;
+    skos:narrowMatch <https://w3id.org/dpv/ai#GPAIModel>,
+        <https://w3id.org/dpv/legal/eu/aiact#GPAIModel>,
+        <https://w3id.org/vair#TrainedModel> .
+
+align:589ea803-6c02-4bc1-b60a-f8af7446c2f9 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+align:6d755597-39b3-4550-863d-a30fee1802e6 a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+align:717a26f3-21dd-4166-b073-5194fcf5113e a prov:Activity ;
+    rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith align:ExpertCurationTeam ;
+    prov:wasInformedBy align:LLMAlignmentBot .
+
+align:ExpertCurationTeam a prov:Agent ;
+    rdfs:label "AIDOC-AP curation team (three domain experts)" .
+

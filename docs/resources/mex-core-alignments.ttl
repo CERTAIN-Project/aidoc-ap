@@ -5,20 +5,20 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:6bb7bdb2-d924-4ae7-8551-5ec0e1c7b7e2 a prov:Entity,
+align:a30fe5e1-153f-4c30-8c54-523a73ed7dc6 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:906ba7de-52b8-4dc4-87d5-d3c1764e1182 ;
+    prov:wasGeneratedBy align:ca067ee7-cb36-458b-b56a-9cd582c21db1 ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:broadMatch ;
     align:source aidoc:AIModel ;
     align:target <http://mex.aksw.org/mex-core#Model> .
 
-align:e316cd7a-3f28-4f63-b3c3-0ed2f87f58ed a prov:Entity,
+align:d795a830-5dae-4a8a-b269-88a2556ca63d a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:906ba7de-52b8-4dc4-87d5-d3c1764e1182 ;
+    prov:wasGeneratedBy align:ca067ee7-cb36-458b-b56a-9cd582c21db1 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
@@ -29,9 +29,9 @@ aidoc:AIModel skos:broadMatch <http://mex.aksw.org/mex-core#Model> .
 
 aidoc:Dataset skos:exactMatch <http://mex.aksw.org/mex-core#Dataset> .
 
-align:906ba7de-52b8-4dc4-87d5-d3c1764e1182 a prov:Activity ;
+align:ca067ee7-cb36-458b-b56a-9cd582c21db1 a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

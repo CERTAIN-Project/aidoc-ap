@@ -5,125 +5,126 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:07397f93-00cf-41b2-acaf-dde65f8428d4 a prov:Entity,
+align:32559745-e63b-4ee9-8b24-f667bfefe565 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/airo#AISystem> .
 
-align:30139dd2-5753-484e-8691-c874b25233c4 a prov:Entity,
+align:57fa93c5-c974-4956-a5f1-8e0b474d2483 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:AISystemCapability ;
-    align:target <https://w3id.org/airo#AICapability> .
-
-align:40bb8a1f-6be2-4cc1-8203-4e7f6ccc98a4 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:exactMatch" ;
-    align:relation skos:exactMatch ;
-    align:source aidoc:AIModel ;
-    align:target <https://w3id.org/airo#AIModel> .
-
-align:4b955023-0150-46e5-b27d-90841839108f a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:AIProvider ;
     align:target <https://w3id.org/airo#AIProvider> .
 
-align:54c42dec-2a50-4c62-85d3-e567e1b7d058 a prov:Entity,
+align:75a51a2b-2c27-4402-92fd-96e79443726c a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
-    align:source aidoc:AIDeployer ;
-    align:target <https://w3id.org/airo#AIDeployer> .
+    align:source aidoc:AIModel ;
+    align:target <https://w3id.org/airo#AIModel> .
 
-align:7f23633b-5d63-40ac-8a83-944aba39552b a prov:Entity,
+align:778d1c64-00eb-4c21-8546-195e9f52e5fe a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:broadMatch" ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:broadMatch ;
-    align:source aidoc:VisualDocumentation ;
-    align:target <https://w3id.org/airo#Documentation> .
+    align:source aidoc:PerformanceMetric ;
+    align:target <http://www.w3.org/ns/dqv#Metric> .
 
-align:8a14d98a-7ee2-4386-9941-6abdd6f1b9a0 a prov:Entity,
+align:b5d17a5b-7fa3-41ca-a632-f0b09cc1f27c a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:DataProcessing ;
-    align:target <https://w3id.org/dpv#Processing> .
-
-align:8c7cd74c-04e7-41fa-937c-865d42736d13 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:Standard ;
-    align:target <https://w3id.org/airo#Standard> .
-
-align:a882ee27-1c98-42e0-9f1a-467d7d277745 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <https://www.w3.org/TR/vocab-dcat-3/Dataset> .
 
-align:d49372b4-d22c-4153-8fcb-8519b6262e27 a prov:Entity,
+align:b78d6669-1a4d-4daf-b2a4-c779b34f0d16 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:broadMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:DataSheet ;
-    align:target <https://w3id.org/dpv#Data> .
-
-align:dbf7f9d8-8ede-4e03-b87e-2d6cd4fd00a8 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:Modality ;
     align:target <https://w3id.org/airo#Modality> .
 
-align:e204c9eb-6e6a-4c47-a49f-1217bc68e182 a prov:Entity,
+align:b7f11f4c-91b1-4b6f-867b-00ff73319287 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:21b15035-300f-4cda-9ea5-0fab86b16f1b ;
-    align:curationOutcome "modify" ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AISystemCapability ;
+    align:target <https://w3id.org/airo#AICapability> .
+
+align:c570003e-2677-4610-9a54-4e7f79c764d0 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:editorialNote "Post-curation editorial revision: aidoc:VisualDocumentation was renamed and generalised to aidoc:TechnicalDocumentation in ontology v1.2; the IRI was migrated and the adjudicated relation revised accordingly. The curation record (v1.1) is unchanged." ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
     align:relation skos:broadMatch ;
-    align:source aidoc:PerformanceMetric ;
-    align:target <http://www.w3.org/ns/dqv#Metric> .
+    align:source aidoc:TechnicalDocumentation ;
+    align:target <https://w3id.org/airo#Documentation> .
+
+align:cdc03157-7d9b-4d9f-9396-c4310ca2c029 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:DataProcessing ;
+    align:target <https://w3id.org/dpv#Processing> .
+
+align:dbe83fda-8b8e-4ce5-bdf2-6b54e6977cec a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:Standard ;
+    align:target <https://w3id.org/airo#Standard> .
+
+align:dff6a1ab-f45f-47dc-b67e-643609b8d9e1 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:exactMatch" ;
+    align:relation skos:exactMatch ;
+    align:source aidoc:AIDeployer ;
+    align:target <https://w3id.org/airo#AIDeployer> .
+
+align:ea3e413f-18bb-4de7-9886-a585dc6dbbf4 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:717a26f3-21dd-4166-b073-5194fcf5113e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:DataSheet ;
+    align:target <https://w3id.org/dpv#Data> .
 
 aidoc:AIDeployer skos:exactMatch <https://w3id.org/airo#AIDeployer> .
 
@@ -147,11 +148,11 @@ aidoc:PerformanceMetric skos:broadMatch <http://www.w3.org/ns/dqv#Metric> .
 
 aidoc:Standard skos:closeMatch <https://w3id.org/airo#Standard> .
 
-aidoc:VisualDocumentation skos:broadMatch <https://w3id.org/airo#Documentation> .
+aidoc:TechnicalDocumentation skos:broadMatch <https://w3id.org/airo#Documentation> .
 
-align:21b15035-300f-4cda-9ea5-0fab86b16f1b a prov:Activity ;
+align:717a26f3-21dd-4166-b073-5194fcf5113e a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

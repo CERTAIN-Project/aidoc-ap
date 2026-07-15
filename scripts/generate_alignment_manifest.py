@@ -7,8 +7,10 @@ RESOURCES_DIR = Path("docs/resources")
 OUTPUT_FILE = RESOURCES_DIR / "alignments-manifest.json"
 
 def main():
-    alignment_files = sorted(RESOURCES_DIR.glob("*-alignments.ttl"))
-    
+    # exclude the combined union file written by export_pages_data.py
+    alignment_files = sorted(f for f in RESOURCES_DIR.glob("*-alignments.ttl")
+                             if f.name != "aidoc-ap-alignments.ttl")
+
     manifest = {
         "files": [f"resources/{f.name}" for f in alignment_files],
         "count": len(alignment_files),

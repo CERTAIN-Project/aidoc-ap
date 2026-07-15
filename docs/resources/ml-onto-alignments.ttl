@@ -5,45 +5,45 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:24b8d452-ef20-488c-abc1-f10807aa27f8 a prov:Entity,
+align:31528b20-38e2-4704-9cae-39f47619d1c3 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:03b80e29-119c-4d2b-9ac1-07df44b25536 ;
+    prov:wasGeneratedBy align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:SoftwareImplementation ;
     align:target <http://www.w3.org/ns/mls#Implementation> .
 
-align:9e4579e7-ea9b-40e0-9ab6-d60975126941 a prov:Entity,
+align:43c5a8fc-db3b-48b9-b011-ddbf763e75e9 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:03b80e29-119c-4d2b-9ac1-07df44b25536 ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:broadMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:SoftwareImplementation ;
-    align:target <http://www.w3.org/ns/mls#Software> .
-
-align:c1e520d0-c732-423c-8e13-5f5185b53fd0 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:03b80e29-119c-4d2b-9ac1-07df44b25536 ;
+    prov:wasGeneratedBy align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:AIModel ;
     align:target <http://www.w3.org/ns/mls#Model> .
 
-align:fd2c240e-2bf0-4dd4-a785-b9938527f820 a prov:Entity,
+align:46a630ea-e53c-4ec8-b1a7-a2ec45a6bb79 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:03b80e29-119c-4d2b-9ac1-07df44b25536 ;
+    prov:wasGeneratedBy align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:exactMatch" ;
     align:relation skos:exactMatch ;
     align:source aidoc:Dataset ;
     align:target <http://www.w3.org/ns/mls#Dataset> .
+
+align:ed835402-0bcd-46fb-951d-7f201550b053 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:broadMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:SoftwareImplementation ;
+    align:target <http://www.w3.org/ns/mls#Software> .
 
 aidoc:AIModel skos:closeMatch <http://www.w3.org/ns/mls#Model> .
 
@@ -52,9 +52,9 @@ aidoc:Dataset skos:exactMatch <http://www.w3.org/ns/mls#Dataset> .
 aidoc:SoftwareImplementation skos:broadMatch <http://www.w3.org/ns/mls#Software> ;
     skos:closeMatch <http://www.w3.org/ns/mls#Implementation> .
 
-align:03b80e29-119c-4d2b-9ac1-07df44b25536 a prov:Activity ;
+align:e08d65a6-cdf6-434b-9cd3-c4e02308bdb6 a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

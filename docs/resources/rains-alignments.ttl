@@ -5,75 +5,75 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-align:493f94b6-18d9-4262-9d48-1d19d011b882 a prov:Entity,
+align:00ada32d-ed4f-4341-8dee-8045b1171291 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
-    align:source aidoc:AISystem ;
-    align:target <https://w3id.org/rains#AI_System> .
+    align:source aidoc:ChangeLog ;
+    align:target <https://w3id.org/rains#ChangeLog> .
 
-align:55d875f3-5171-4558-8cd2-4b84a5d84fd7 a prov:Entity,
+align:965a100a-bc68-4d87-a55f-ae7b2305a2fe a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
-    align:curationOutcome "modify" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:broadMatch ;
-    align:source aidoc:AIAgent ;
-    align:target <https://w3id.org/ep-plan#Agent> .
-
-align:61e7a692-5ae8-4c3b-94f6-76fd7f6904bd a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:HumanOversightMechanism ;
-    align:target <https://w3id.org/rains#SystemHumanOversightMechanism> .
-
-align:c3608bc3-485e-4bb2-b0a7-a89031961e50 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:narrowMatch" ;
     align:relation skos:broadMatch ;
     align:source aidoc:AISystem ;
     align:target <https://w3id.org/sao#System> .
 
-align:d2b0e70b-94d5-45b4-bcde-949ef644647d a prov:Entity,
+align:983a3d3c-8213-4743-8bdc-9fa70775d16c a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:AISystem ;
+    align:target <https://w3id.org/rains#AI_System> .
+
+align:a8ed244c-348c-427e-9cf1-b1cfb6e188cd a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "accept" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:closeMatch ;
+    align:source aidoc:HumanOversightMechanism ;
+    align:target <https://w3id.org/rains#SystemHumanOversightMechanism> .
+
+align:ea36f9a6-4897-4bc9-81c4-adc3f1593cf4 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
+    align:curationOutcome "modify" ;
+    align:llmSuggestedRelation "skos:closeMatch" ;
+    align:relation skos:broadMatch ;
+    align:source aidoc:AIAgent ;
+    align:target <https://w3id.org/ep-plan#Agent> .
+
+align:f27439e5-4e70-4c23-b875-ebe3684db187 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo align:ExpertCurationTeam ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
     align:curationOutcome "accept" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:closeMatch ;
     align:source aidoc:DataCleaningProcedure ;
     align:target <https://w3id.org/rains#DataPreprocessingProcedure> .
 
-align:e3bf1e3f-db26-4c4a-9378-6322f586046f a prov:Entity,
+align:f4969b13-e513-4d5a-82e4-cbce8351b471 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
+    prov:wasGeneratedBy align:4715ac34-eb3c-4d14-ba8f-42e01969e94e ;
     align:curationOutcome "modify" ;
     align:llmSuggestedRelation "skos:closeMatch" ;
     align:relation skos:narrowMatch ;
     align:source aidoc:Dataset ;
     align:target <https://w3id.org/rains#DatasetComponent> .
-
-align:fdf8081a-5f81-455d-a909-5216116d93cb a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo align:ExpertCurationTeam ;
-    prov:wasGeneratedBy align:d3dee053-14e0-4730-badd-2d05b503b88e ;
-    align:curationOutcome "accept" ;
-    align:llmSuggestedRelation "skos:closeMatch" ;
-    align:relation skos:closeMatch ;
-    align:source aidoc:ChangeLog ;
-    align:target <https://w3id.org/rains#ChangeLog> .
 
 aidoc:AIAgent skos:broadMatch <https://w3id.org/ep-plan#Agent> .
 
@@ -88,9 +88,9 @@ aidoc:HumanOversightMechanism skos:closeMatch <https://w3id.org/rains#SystemHuma
 aidoc:AISystem skos:broadMatch <https://w3id.org/sao#System> ;
     skos:closeMatch <https://w3id.org/rains#AI_System> .
 
-align:d3dee053-14e0-4730-badd-2d05b503b88e a prov:Activity ;
+align:4715ac34-eb3c-4d14-ba8f-42e01969e94e a prov:Activity ;
     rdfs:label "Expert curation of LLM-proposed alignments (three curators, 2-of-3 majority vote, joint adjudication of splits)" ;
-    prov:startedAtTime "2026-07-14T12:44:18+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-07-15T07:06:04+00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith align:ExpertCurationTeam ;
     prov:wasInformedBy align:LLMAlignmentBot .
 

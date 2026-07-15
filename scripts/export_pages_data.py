@@ -6,9 +6,12 @@ This script converts the published TTL resources into the JSON files the
 pages prefer; the TTL path remains as a fallback.
 
 Outputs:
-    docs/alignments.json                  mappings for alignments.html
-    docs/runs.json                        PROV runs for alignments.html
-    docs/resources/coverage-data.json     measurements + runs + requirement labels
+    docs/alignments.json                       curated mappings for alignments.html
+                                               (relation, curation outcome, LLM-suggested
+                                               relation, editorial notes, source TTL)
+    docs/resources/aidoc-ap-alignments.ttl     union of all curated alignment TTLs
+                                               ("download all" target)
+    docs/resources/coverage-data.json          measurements + runs + requirement labels
 
 Run after every update of docs/resources/*.ttl:
     python scripts/export_pages_data.py
@@ -35,37 +38,53 @@ def lit(g, s, p):
     return str(v) if v is not None else None
 
 
+# Display names for the curated alignment files (bucket -> vocabulary label).
+VOCAB_LABELS = {
+    "airo": "AIRO", "vair": "VAIR", "rains": "RAINS", "dpv": "DPV",
+    "dpv-ai": "DPV-AI", "dpv-aiact": "DPV-AIAct", "dpv-tech": "DPV-TECH",
+    "mlschema": "MLSchema", "ml-onto": "ML-Onto", "mex-core": "MEX-Core",
+    "prov-o": "PROV-O", "mcro": "MCRO",
+}
+
+COMBINED_TTL = "docs/resources/aidoc-ap-alignments.ttl"
+
+
 def export_alignments():
-    maps, runs = [], {}
+    maps = []
+    combined = Graph()
+    combined.bind("prov", PROV)
+    combined.bind("skos", "http://www.w3.org/2004/02/skos/core#")
+    combined.bind("align", ALIGN)
+    combined.bind("aidoc", "https://w3id.org/aidoc-ap#")
     for f in sorted(glob.glob("docs/resources/*-alignments.ttl")):
+        if os.path.abspath(f) == os.path.abspath(COMBINED_TTL):
+            continue
+        bucket = os.path.basename(f).replace("-alignments.ttl", "")
         g = Graph().parse(f, format="turtle")
-        for a in g.subjects(RDF.type, PROV.Activity):
-            runs[str(a)] = {
-                "id": str(a),
-                "startedAt": lit(g, a, PROV.startedAtTime),
-                "endedAt": lit(g, a, PROV.endedAtTime),
-                "used": lit(g, a, PROV.used),
-            }
+        combined += g
+        started = {str(a): lit(g, a, PROV.startedAtTime)
+                   for a in g.subjects(RDF.type, PROV.Activity)}
         for m in g.subjects(RDF.type, ALIGN.Mapping):
             tgt = lit(g, m, ALIGN.target) or ""
-            ns = tgt.split("#")[0] if "#" in tgt else tgt.rsplit("/", 1)[0]
-            conf = g.value(m, ALIGN.confidence)
+            run = lit(g, m, PROV.wasGeneratedBy)
             maps.append({
                 "mapping": str(m),
                 "source": lit(g, m, ALIGN.source),
                 "relation": lit(g, m, ALIGN.relation),
                 "target": tgt,
-                "target_ns": ns,
-                "confidence": float(conf) if conf is not None else None,
-                "rationale": lit(g, m, ALIGN.rationale),
+                "vocab": VOCAB_LABELS.get(bucket, bucket.upper()),
+                "outcome": lit(g, m, ALIGN.curationOutcome),
+                "llm_relation": lit(g, m, ALIGN.llmSuggestedRelation),
+                "editorial_note": lit(g, m, ALIGN.editorialNote),
                 "agent": lit(g, m, PROV.wasAttributedTo),
-                "run": lit(g, m, PROV.wasGeneratedBy),
+                "generated_at": started.get(run),
+                "file": f"resources/{os.path.basename(f)}",
             })
+    maps.sort(key=lambda m: (m["vocab"], m["source"]))
     with open("docs/alignments.json", "w", encoding="utf-8") as f:
         json.dump(maps, f, indent=1, ensure_ascii=False)
-    with open("docs/runs.json", "w", encoding="utf-8") as f:
-        json.dump({"runs": list(runs.values())}, f, indent=1, ensure_ascii=False)
-    print(f"✅ {len(maps)} mappings, {len(runs)} runs → docs/alignments.json, docs/runs.json")
+    combined.serialize(destination=COMBINED_TTL, format="turtle")
+    print(f"✅ {len(maps)} curated mappings → docs/alignments.json, {COMBINED_TTL}")
 
 
 def export_coverage():

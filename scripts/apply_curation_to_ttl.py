@@ -14,6 +14,12 @@ mapping node records the curation outcome. The bogus mex-core namespace
 http://www.w3.org/ns/prov-o# is normalised to the real PROV namespace, and
 pairs that coincide after normalisation are emitted once.
 
+Post-curation editorial revisions (ontology v1.2): the consensus CSV is the
+frozen record of the curation against ontology v1.1 and is never rewritten;
+renames of AIDOC-AP terms after the curation are applied here as a documented
+IRI migration, together with relation revisions that the rename entails.
+Revised mappings carry an align:editorialNote.
+
 Usage:
     python scripts/apply_curation_to_ttl.py
 """
@@ -37,6 +43,28 @@ IRI_FIXES = {"http://www.w3.org/ns/prov-o#": "http://www.w3.org/ns/prov#"}
 CURATORS_AGENT = URIRef("https://w3id.org/aidoc-ap/alignment#ExpertCurationTeam")
 LLM_AGENT = URIRef("https://w3id.org/aidoc-ap/alignment#LLMAlignmentBot")
 
+# v1.2 (2026-07-15): aidoc:VisualDocumentation was renamed and generalised to
+# aidoc:TechnicalDocumentation after the curation was finalised. The two
+# adjudicated relatedMatch pairs targeting a TechnicalDocumentation concept
+# expressed the semantic distance between *visual* documentation and the
+# technical documentation artefact; with the rename that distance is gone, so
+# they are revised to closeMatch. The broadMatch pairs targeting the generic
+# Documentation concepts remain valid.
+AIDOC_RENAMES = {
+    "https://w3id.org/aidoc-ap#VisualDocumentation":
+        "https://w3id.org/aidoc-ap#TechnicalDocumentation",
+}
+RELATION_REVISIONS = {  # (aidoc_iri after rename, ref_iri) -> revised relation
+    ("https://w3id.org/aidoc-ap#TechnicalDocumentation",
+     "https://w3id.org/dpv/legal/eu/aiact#TechnicalDocumentation"): "skos:closeMatch",
+    ("https://w3id.org/aidoc-ap#TechnicalDocumentation",
+     "https://w3id.org/vair#TechnicalDocumentation"): "skos:closeMatch",
+}
+EDITORIAL_NOTE = ("Post-curation editorial revision: aidoc:VisualDocumentation was "
+                  "renamed and generalised to aidoc:TechnicalDocumentation in "
+                  "ontology v1.2; the IRI was migrated and the adjudicated relation "
+                  "revised accordingly. The curation record (v1.1) is unchanged.")
+
 
 def normalise(iri):
     for wrong, right in IRI_FIXES.items():
@@ -49,6 +77,19 @@ def main():
     df = pd.read_csv(CONSENSUS)
     kept = df[df.outcome.isin(["accept", "modify"])].copy()
     kept["ref_iri"] = kept.ref_iri.map(normalise)
+    kept["revised"] = False
+    renamed = kept.aidoc_iri.isin(AIDOC_RENAMES)
+    kept.loc[renamed, "aidoc_iri"] = kept.loc[renamed, "aidoc_iri"].map(AIDOC_RENAMES)
+    for (a_iri, r_iri), rel in RELATION_REVISIONS.items():
+        sel = (kept.aidoc_iri == a_iri) & (kept.ref_iri == r_iri)
+        kept.loc[sel, "consensus"] = rel
+        kept.loc[sel, "revised"] = True
+    kept.loc[renamed, "revised"] = True
+    if renamed.any():
+        n_rel = int(sum(((kept.aidoc_iri == a) & (kept.ref_iri == r)).sum()
+                        for a, r in RELATION_REVISIONS))
+        print(f"[editorial] {int(renamed.sum())} pair(s) migrated to renamed IRIs, "
+              f"{n_rel} relation(s) revised")
     n_before = len(kept)
     kept = kept.drop_duplicates(subset=["aidoc_iri", "ref_iri", "consensus"])
     if len(kept) < n_before:
@@ -94,6 +135,8 @@ def main():
             g.add((m, ALIGN.relation, rel_uri))
             g.add((m, ALIGN.curationOutcome, Literal(r.outcome)))
             g.add((m, ALIGN.llmSuggestedRelation, Literal(r.llm_relation)))
+            if r.revised:
+                g.add((m, ALIGN.editorialNote, Literal(EDITORIAL_NOTE)))
             g.add((m, PROV.wasGeneratedBy, activity))
             g.add((m, PROV.wasAttributedTo, CURATORS_AGENT))
             total += 1
