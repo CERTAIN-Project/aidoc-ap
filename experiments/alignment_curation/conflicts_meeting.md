@@ -5,7 +5,7 @@ Three-way merge (FK+SN+TD, 2-of-3 majority vote) over **157 canonical pairs** (1
 **Inter-annotator agreement (decision-level Cohen's κ):** FK–SN 0.434 · FK–TD 0.433 · SN–TD 0.621.
 
 The 16 pairs below lacked a majority and were decided by the team in two joint adjudication
-sessions (both on 14.07.2026). The decisions are machine-readable in `adjudicated.csv` and applied
+sessions (both on 14.07.2026). The decisions are in `adjudicated.csv` and applied
 reproducibly by `scripts/merge_curation.py`; the independent votes remain published, so the
 reported agreement is not masked by the adjudication.
 
@@ -135,3 +135,16 @@ Curated alignment artifact: **72 mappings** (`scripts/apply_curation_to_ttl.py`;
   [intra-curator] TD voted differently on duplicate buckets of SoftwareImplementation -> Implementation: {'skos:exactMatch': 1, 'skos:closeMatch': 1} -> using skos:closeMatch
   [intra-curator] TD voted differently on duplicate buckets of AIAgent -> Agent: {'skos:broadMatch': 1, 'skos:closeMatch': 1} -> using skos:broadMatch
 ```
+
+---
+
+## Postscript (2026-07-15): post-curation rename
+
+Ontology v1.2 renamed and generalised `aidoc:VisualDocumentation` to
+`aidoc:TechnicalDocumentation` after this curation was finalised. This record is kept
+unchanged as the historical curation against v1.1. The published curated TTLs migrate the
+IRI and revise the two adjudicated `relatedMatch` pairs (targets
+`dpv-aiact:TechnicalDocumentation`, `vair:TechnicalDocumentation`) to `closeMatch`, since
+the rename removes the visual-vs-technical distance those judgments expressed; see the
+documented editorial revision table in `scripts/apply_curation_to_ttl.py` and the note in
+`publication/curation_protocol.md`.
