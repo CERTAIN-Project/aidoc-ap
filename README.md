@@ -4,7 +4,7 @@
 
 - **Persistent identifier:** <https://w3id.org/aidoc-ap>
 - **Documentation & resources:** <https://certain-project.github.io/aidoc-ap/>
-- **Archived releases (DOI):** [10.5281/zenodo.17787787](http://doi.org/10.5281/zenodo.17787787)
+- **Archived releases (DOI):** [10.5281/zenodo.17787786](https://doi.org/10.5281/zenodo.17787786) (concept DOI, resolves to the latest version)
 - **Current ontology version:** 1.2
 
 Developed as part of the [**CERTAIN** project](https://certain-project.eu/) and applied in CERTAIN use cases and pilots.
